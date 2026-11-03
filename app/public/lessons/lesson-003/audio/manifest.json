@@ -292,8 +292,8 @@
         ]
       ]
     },
-    "madame-benali|— Je suis la gardienne. C’est le travail que je fais.": {
-      "file": "5aacc3c450870d8f.mp3",
+    "madame-benali|— Je suis la gardienne. C’est mon métier.": {
+      "file": "ef625656f81e4f34.mp3",
       "voice": "NpMqpbmlioUVh6og0U5p",
       "words": [
         [
@@ -306,35 +306,23 @@
         ],
         [
           10,
-          0.418
+          0.406
         ],
         [
           13,
-          0.557
+          0.522
         ],
         [
           24,
-          1.509
+          1.3
         ],
         [
           30,
-          1.718
+          1.509
         ],
         [
-          33,
-          1.834
-        ],
-        [
-          41,
-          2.241
-        ],
-        [
-          45,
-          2.403
-        ],
-        [
-          48,
-          2.577
+          34,
+          1.649
         ]
       ]
     },
@@ -710,8 +698,8 @@
         ]
       ]
     },
-    "narrator|— Je suis la gardienne. C’est le travail que je fais.": {
-      "file": "934bda58b310b342.mp3",
+    "narrator|— Je suis la gardienne. C’est mon métier.": {
+      "file": "91c6786041943721.mp3",
       "voice": "Xy5q4w05TJGcKXPWeWoz",
       "words": [
         [
@@ -720,39 +708,27 @@
         ],
         [
           5,
-          0.232
+          0.163
         ],
         [
           10,
-          0.418
+          0.313
         ],
         [
           13,
-          0.546
+          0.43
         ],
         [
           24,
-          1.289
+          1.091
         ],
         [
           30,
-          1.521
+          1.289
         ],
         [
-          33,
-          1.637
-        ],
-        [
-          41,
-          1.997
-        ],
-        [
-          45,
-          2.136
-        ],
-        [
-          48,
-          2.287
+          34,
+          1.416
         ]
       ]
     },
@@ -917,36 +893,6 @@
         [
           28,
           1.103
-        ]
-      ]
-    },
-    "narrator|C’est le travail que je fais.": {
-      "file": "b9f7c4227deb051e.mp3",
-      "voice": "Xy5q4w05TJGcKXPWeWoz",
-      "words": [
-        [
-          0,
-          0
-        ],
-        [
-          6,
-          0.221
-        ],
-        [
-          9,
-          0.325
-        ],
-        [
-          17,
-          0.639
-        ],
-        [
-          21,
-          0.789
-        ],
-        [
-          24,
-          0.871
         ]
       ]
     },
@@ -1388,82 +1334,6 @@
         ]
       ]
     },
-    "narrator|Entre nous, personne a jamais vu un ouvrier.": {
-      "file": "5af19d45b6977da3.mp3",
-      "voice": "Xy5q4w05TJGcKXPWeWoz",
-      "words": [
-        [
-          0,
-          0
-        ],
-        [
-          6,
-          0.337
-        ],
-        [
-          12,
-          0.499
-        ],
-        [
-          21,
-          0.894
-        ],
-        [
-          23,
-          0.987
-        ],
-        [
-          30,
-          1.289
-        ],
-        [
-          33,
-          1.428
-        ],
-        [
-          36,
-          1.544
-        ]
-      ]
-    },
-    "narrator|Entre nous, personne n’a jamais vu un ouvrier.": {
-      "file": "c74f7f3404ea18f9.mp3",
-      "voice": "Xy5q4w05TJGcKXPWeWoz",
-      "words": [
-        [
-          0,
-          0
-        ],
-        [
-          6,
-          0.313
-        ],
-        [
-          12,
-          0.476
-        ],
-        [
-          21,
-          0.859
-        ],
-        [
-          25,
-          1.01
-        ],
-        [
-          32,
-          1.289
-        ],
-        [
-          35,
-          1.416
-        ],
-        [
-          38,
-          1.544
-        ]
-      ]
-    },
     "narrator|Il arrivait de Bordeaux avec douze cartons, et bien sûr, l’ascenseur était en panne.": {
       "file": "c3335f6b8df521b0.mp3",
       "voice": "Xy5q4w05TJGcKXPWeWoz",
@@ -1582,6 +1452,32 @@
         ]
       ]
     },
+    "narrator|J’vais demander à la concierge.": {
+      "file": "5fca185cd95ab346.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          7,
+          0.279
+        ],
+        [
+          16,
+          0.639
+        ],
+        [
+          18,
+          0.697
+        ],
+        [
+          21,
+          0.801
+        ]
+      ]
+    },
     "narrator|Je connais tout le monde depuis le jour où je suis arrivée.": {
       "file": "e52e9610b6c40c6c.mp3",
       "voice": "Xy5q4w05TJGcKXPWeWoz",
@@ -1659,6 +1555,36 @@
         [
           16,
           0.743
+        ]
+      ]
+    },
+    "narrator|Je vais demander à la gardienne.": {
+      "file": "7c5f4e86383e094e.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          0.186
+        ],
+        [
+          8,
+          0.313
+        ],
+        [
+          17,
+          0.731
+        ],
+        [
+          19,
+          0.836
+        ],
+        [
+          22,
+          0.952
         ]
       ]
     },
@@ -2275,6 +2201,36 @@
         [
           62,
           2.659
+        ]
+      ]
+    },
+    "narrator|Voilà la clé que vous cherchiez.": {
+      "file": "77f79d4a54470ec9.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          6,
+          0.395
+        ],
+        [
+          9,
+          0.511
+        ],
+        [
+          13,
+          0.72
+        ],
+        [
+          17,
+          0.848
+        ],
+        [
+          22,
+          0.998
         ]
       ]
     },
