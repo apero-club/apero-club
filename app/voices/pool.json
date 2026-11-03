@@ -1,0 +1,9 @@
+{
+  "$comment": "Your curated ElevenLabs voices. New characters get the best match from here: same gender, then age, then tags found in the character's description. Fill in name, age and tags for each voice. age: young | middle | older. accent: parisian | french | other. tags: a few words for how it sounds, e.g. warm, bright, dry, deep, crisp, soft, teasing, brisk, calm.",
+  "voices": [
+    { "id": "Xy5q4w05TJGcKXPWeWoz", "name": "", "gender": "male", "age": "middle", "accent": "parisian", "tags": [], "notes": "Narrator voice." },
+    { "id": "QGfpyFuk3rtPv4pRSQwp", "name": "", "gender": "female", "age": "older", "accent": "parisian", "tags": [], "notes": "Madame Lefèvre's voice." },
+    { "id": "L9J8xZmPSCimnHB0LjN1", "name": "", "gender": "female", "age": "young", "accent": "parisian", "tags": [], "notes": "La boulangère's voice." },
+    { "id": "2oMnSKxLeHBxE0KdeHJD", "name": "", "gender": "female", "age": "", "accent": "parisian", "tags": ["calm"], "notes": "Felt too dull for Madame Lefèvre; may suit a calmer character." }
+  ]
+}

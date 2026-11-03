@@ -58,6 +58,7 @@
       "id": "narrator",
       "name": "Moi",
       "role": "the narrator",
+      "description": "The narrator, \"Moi\": a learner in their 30s who lives in Paris. Friendly, relaxed, a bit self-mocking.",
       "color": "ink-900",
       "label": "ink-500",
       "critter": {
@@ -67,9 +68,10 @@
       "voice": "male"
     },
     {
-      "id": "neighbour",
+      "id": "madame-lefevre",
       "name": "Madame Lefèvre",
       "role": "the neighbour",
+      "description": "An older Parisian woman, the neighbour from the third floor. Warm but dry, teasing, quick.",
       "color": "violet-500",
       "critter": {
         "kind": "dome",
@@ -78,9 +80,10 @@
       "voice": "female"
     },
     {
-      "id": "baker",
+      "id": "la-boulangere",
       "name": "La boulangère",
       "role": "the baker",
+      "description": "A young Parisian baker behind the counter. Bright, brisk, friendly.",
       "color": "sky-700",
       "critter": {
         "kind": "jelly",
@@ -117,7 +120,7 @@
     ],
     [
       {
-        "speaker": "neighbour",
+        "speaker": "madame-lefevre",
         "fr": "— Non, mon fils m’a réveillée à sept heures. Il voulait des croissants.",
         "en": "“No, my son woke me up at seven. He wanted croissants.”",
         "note": "accord"
@@ -133,7 +136,7 @@
     ],
     [
       {
-        "speaker": "baker",
+        "speaker": "la-boulangere",
         "fr": "— Bonjour, qu’est-ce que je vous sers ?",
         "en": "“Hello, what can I get you?”"
       }
@@ -149,7 +152,7 @@
     [
       {
         "id": "baker-sold-out",
-        "speaker": "baker",
+        "speaker": "la-boulangere",
         "fr": "— Désolée, on n’en a plus, des pains au chocolat. Il me reste des croissants.",
         "en": "“Sorry, we’re out of pains au chocolat. I’ve got croissants left.”",
         "note": "pronom-en"
@@ -169,7 +172,7 @@
         "speaker": "narrator",
         "fr": "En sortant, Madame Lefèvre m’a dit en riant : « Vous voyez, il faut venir avant huit heures. »",
         "en": "On the way out, Madame Lefèvre said, laughing: “You see, you have to come before eight.”",
-        "quoteSpeaker": "neighbour"
+        "quoteSpeaker": "madame-lefevre"
       },
       {
         "speaker": "narrator",
@@ -181,7 +184,7 @@
         "speaker": "narrator",
         "fr": "Elle a haussé les épaules : « C’est ce que vous dites tous les samedis ! »",
         "en": "She shrugged: “That’s what you say every Saturday!”",
-        "quoteSpeaker": "neighbour"
+        "quoteSpeaker": "madame-lefevre"
       }
     ]
   ],

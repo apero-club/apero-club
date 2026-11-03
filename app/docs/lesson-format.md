@@ -45,7 +45,9 @@ Colours are design system tokens without the `--`: `violet-500`, `sky-700`, `ora
 - `color` is the text colour of that person's lines. Stick to `ink-900`, `violet-500` and `sky-700`, which pass contrast on the page.
 - `role` (optional) is shown under the name in the desktop cast key, e.g. `"the baker"`.
 - `label` (optional) colours the small name above their dialogue. It defaults to `color`.
-- `voice` is `male` or `female`. The app gives each cast member a different French voice from the learner's device when it can. When the device has too few voices, they share one at different pitches. Put the narrator first.
+- `id` is the character's identity across all lessons: **reuse the same id** when a character comes back (`narrator`, `madame-lefevre`), and they keep their voice.
+- `description` (required) is a sentence about age, personality and how they talk. It's used to pick a voice for a new character, e.g. `"A young Parisian student in her twenties. Bright, quick, a little sarcastic."`
+- `voice` is `male` or `female`. Put the narrator first.
 
 ### Story lines
 
@@ -99,7 +101,7 @@ The `result` uses the same shape the prototype's AI tutor returned, so a live ch
 Every French line can play a recorded voice instead of the device's built-in one. Recordings are made once per lesson, not when learners listen, so visits cost nothing.
 
 - **What gets recorded:** each story line (a narration line that quotes someone is split, so the quote is in that character's voice), the quiz quotes, both sides of each phrase, the grammar examples, and the spoken version of the sample correction. Everything except the story is read by the first cast member.
-- **Voices:** `audio.config.json` lists default ElevenLabs voice IDs under `voices.male` and `voices.female`. Characters take them in cast order by their `voice`. To give one character a specific voice, add `"voiceId"` to them in the lesson.
+- **Voices:** see "Voice casting" below.
 - **Automatic:** when you push a lesson to `main`, the **Record lesson audio** GitHub Action records anything missing and commits it to `public/lessons/<date>/audio/`. Edited lines are re-recorded; removed ones are deleted; unchanged ones are kept.
 - **Cost check:** `npm run record-audio -- --dry-run` prints how many characters a run would use. The first lesson is about 1,900 characters.
 - **No recordings yet?** The app falls back to device voices for any line without a recording, so a lesson works before its audio exists.
@@ -119,3 +121,15 @@ Add an optional `ambience` to a lesson for background sound during the story:
 - Describe a place and its sounds. Always ask for **no music and no clear speech**, so it never competes with the French.
 - It plays quietly, only while the story audio plays, and fades out on pause or when leaving the story. Learners can turn it off with the **Ambience** button; the choice is remembered.
 - `volume` is 0 to 1 (default 0.18). Keep it low.
+
+### Voice casting
+
+Characters keep one voice across every lesson, and no two characters in a story share one.
+
+- **`voices/pool.json`**: the ElevenLabs voices to choose from. For each, fill in `name`, `gender`, `age` (`young`, `middle`, `older`), `accent` and a few `tags` describing the sound (`warm`, `bright`, `dry`, `deep`…). Add more voices any time.
+- **`voices/cast.json`**: who has which voice. The recording script writes it; you only change `status`.
+- **A new character** gets the best match from the pool: the right gender, a voice no other character uses if possible (never one already in the same story), then the best fit between the voice's age and tags and the words in the character's `description`. It starts as `"pending"`, with a short sample.
+- **Listen** on the site at `?casting` (e.g. `https://your-site/?casting`).
+- **Approve or reject** by editing `voices/cast.json` on GitHub: set the character's `status` to `"approved"` (their lines get recorded) or `"rejected"` (they get the next-best voice and a new sample; rejected voices are never offered to them again).
+- Until a character is approved, their lines play with the device voice.
+- If the pool runs out of voices of a gender, the recording run stops and says so; add voices to the pool.

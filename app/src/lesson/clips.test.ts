@@ -16,7 +16,7 @@ describe('collectClips', () => {
       for (const p of line.parts) expect(keys.has(clipKey(p.speaker, line.fr.slice(p.start, p.end)))).toBe(true);
   });
   it('splits a narration line that quotes someone into two voices', () => {
-    expect(clips.some(c => c.speaker === 'neighbour' && c.text.startsWith('« Vous voyez'))).toBe(true);
+    expect(clips.some(c => c.speaker === 'madame-lefevre' && c.text.startsWith('« Vous voyez'))).toBe(true);
   });
   it('covers phrases, grammar examples, quiz quotes and the spoken correction (narrator)', () => {
     const n = lesson.cast[0].id;

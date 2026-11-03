@@ -16,6 +16,7 @@ import { Corrections, Describe } from './screens/Describe';
 import { Complete } from './screens/Complete';
 import { Critter } from './ds/brand';
 import { Desktop, NoteDrawer } from './desktop/Desktop';
+import { Casting } from './casting/Casting';
 
 const WIDE = '(min-width: 900px)';
 /** True on screens wide enough for the desktop design. */
@@ -30,6 +31,12 @@ function useWide() {
 }
 
 export default function App() {
+  // ?casting opens the voice casting review page instead of the lesson.
+  if (new URLSearchParams(window.location.search).has('casting')) return <Casting />;
+  return <LessonRoot />;
+}
+
+function LessonRoot() {
   const wide = useWide();
   const [state, setState] = useState<{ lesson?: Lesson; error?: string }>({});
   useEffect(() => {

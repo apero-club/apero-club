@@ -45,24 +45,28 @@ const HeroTile = z.union([
 ]);
 
 const CastMember = z.object({
-  /** Short id used by story lines, e.g. "narrator", "neighbour". */
+  /**
+   * The character's id, used by story lines and by the voice cast registry
+   * (voices/cast.json). Use the SAME id whenever this character appears in a
+   * later lesson, so they keep their voice. E.g. "narrator", "madame-lefevre".
+   */
   id: z.string().regex(/^[a-z][a-z0-9-]*$/),
   /** Shown in the cast key and above dialogue, e.g. "Madame Lefèvre". */
   name: z.string().min(1),
   /** Shown under the name in the desktop cast key, e.g. "the baker". */
   role: z.string().optional(),
+  /**
+   * A short description used to pick a voice when the character first appears:
+   * age, personality, how they talk. E.g. "An older Parisian woman. Warm but dry, teasing."
+   */
+  description: z.string().min(10).max(300),
   /** Text colour for this speaker's lines. Keep to ink-900, violet-500, sky-700 (AA on paper). */
   color: Token,
   /** Colour for the small name label above dialogue. Defaults to `color`. */
   label: Token.optional(),
   critter: z.object({ kind: CritterKind, color: Token }).strict(),
-  /** Which kind of voice to use. Each cast member gets a different voice when possible. */
+  /** Which kind of voice to use. Voices are picked from voices/pool.json and kept in voices/cast.json. */
   voice: z.enum(['male', 'female']),
-  /**
-   * Optional ElevenLabs voice ID for this character's recordings. Without it, the
-   * recording script picks from the defaults in audio.config.json by `voice`.
-   */
-  voiceId: z.string().min(1).optional(),
 }).strict();
 
 const Line = z.object({

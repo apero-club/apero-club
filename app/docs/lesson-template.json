@@ -3,22 +3,72 @@
   "title": "Titre de l’histoire",
   "summary": "One sentence in English about where the story happens.",
   "level": "A2 to B1",
-  "minutes": { "story": 4, "quiz": 3, "phrases": 1, "describe": 2 },
+  "minutes": {
+    "story": 4,
+    "quiz": 3,
+    "phrases": 1,
+    "describe": 2
+  },
   "hero": [
-    { "image": "illo-story.svg", "bg": "orange-500", "alt": "" },
-    { "shape": "circle", "bg": "sky-300", "fg": "violet-500", "eyes": "look", "blink": true },
-    { "shape": "flower", "bg": "green-900", "fg": "green-300" }
+    {
+      "image": "illo-story.svg",
+      "bg": "orange-500",
+      "alt": ""
+    },
+    {
+      "shape": "circle",
+      "bg": "sky-300",
+      "fg": "violet-500",
+      "eyes": "look",
+      "blink": true
+    },
+    {
+      "shape": "flower",
+      "bg": "green-900",
+      "fg": "green-300"
+    }
   ],
   "cast": [
-    { "id": "narrator", "name": "Moi", "color": "ink-900", "label": "ink-500", "critter": { "kind": "bean", "color": "sun-500" }, "voice": "male" },
-    { "id": "friend", "name": "Camille", "color": "violet-500", "critter": { "kind": "dome", "color": "violet-500" }, "voice": "female" }
+    {
+      "id": "narrator",
+      "name": "Moi",
+      "description": "Describe age, personality and how they talk, e.g. \"A young Parisian student. Bright, quick, a little sarcastic.\"",
+      "color": "ink-900",
+      "label": "ink-500",
+      "critter": {
+        "kind": "bean",
+        "color": "sun-500"
+      },
+      "voice": "male"
+    },
+    {
+      "id": "friend",
+      "name": "Camille",
+      "description": "Describe age, personality and how they talk, e.g. \"A young Parisian student. Bright, quick, a little sarcastic.\"",
+      "color": "violet-500",
+      "critter": {
+        "kind": "dome",
+        "color": "violet-500"
+      },
+      "voice": "female"
+    }
   ],
   "story": [
     [
-      { "speaker": "narrator", "fr": "Une phrase de narration.", "en": "A line of narration.", "note": "example-note" }
+      {
+        "speaker": "narrator",
+        "fr": "Une phrase de narration.",
+        "en": "A line of narration.",
+        "note": "example-note"
+      }
     ],
     [
-      { "id": "friend-line", "speaker": "friend", "fr": "— Une réplique de dialogue.", "en": "“A line of dialogue.”" }
+      {
+        "id": "friend-line",
+        "speaker": "friend",
+        "fr": "— Une réplique de dialogue.",
+        "en": "“A line of dialogue.”"
+      }
     ]
   ],
   "notes": [
@@ -27,10 +77,22 @@
       "kicker": "Catégorie",
       "title": "La question de grammaire ?",
       "short": "One sentence that answers it.",
-      "body": ["The longer explanation, in English. Explain the why."],
-      "examples": [{ "fr": "Un exemple.", "en": "An example.", "tag": "Étiquette" }],
+      "body": [
+        "The longer explanation, in English. Explain the why."
+      ],
+      "examples": [
+        {
+          "fr": "Un exemple.",
+          "en": "An example.",
+          "tag": "Étiquette"
+        }
+      ],
       "spoken": "How this plays out in everyday Paris speech.",
-      "trap": { "wrong": "La version fausse.", "right": "La bonne version.", "why": "Why learners get this wrong." }
+      "trap": {
+        "wrong": "La version fausse.",
+        "right": "La bonne version.",
+        "why": "Why learners get this wrong."
+      }
     }
   ],
   "quiz": [
@@ -39,14 +101,29 @@
       "prompt": "Listen. What does Camille say?",
       "listen": "friend-line",
       "options": [
-        { "text": "A wrong answer.", "why": "Why it's wrong." },
-        { "text": "The right answer.", "correct": true, "why": "Why it's right." },
-        { "text": "Another wrong answer.", "why": "Why it's wrong." }
+        {
+          "text": "A wrong answer.",
+          "why": "Why it's wrong."
+        },
+        {
+          "text": "The right answer.",
+          "correct": true,
+          "why": "Why it's right."
+        },
+        {
+          "text": "Another wrong answer.",
+          "why": "Why it's wrong."
+        }
       ]
     }
   ],
   "phrases": [
-    { "written": "Ce qu’on écrit.", "spoken": "Ce qu’on dit.", "register": "Courant", "note": "Why people say it this way." }
+    {
+      "written": "Ce qu’on écrit.",
+      "spoken": "Ce qu’on dit.",
+      "register": "Courant",
+      "note": "Why people say it this way."
+    }
   ],
   "describe": {
     "image": "scene.png",
@@ -54,13 +131,37 @@
     "imagePosition": "50% 100%",
     "instructions": "Write 3 to 5 sentences: who is there, what are they doing?",
     "placeholder": "Il y a…",
-    "helpers": ["il y a…", "en train de", "au premier plan"],
+    "helpers": [
+      "il y a…",
+      "en train de",
+      "au premier plan"
+    ],
     "scene": "Plain-English description of everything in the image, for a future AI tutor.",
     "sample": {
       "text": "Il y a un pigeon. Il porte un chapeau blanc.",
       "result": {
-        "segments": [{ "t": "Il y a un pigeon. Il porte un chapeau " }, { "from": "blanc", "to": "blanc", "n": 1 }, { "t": "." }],
-        "corrections": [{ "n": 1, "from": "blanc", "to": "blanc", "rule": "Rule name", "why": "Explain the rule behind the fix." }],
+        "segments": [
+          {
+            "t": "Il y a un pigeon. Il porte un chapeau "
+          },
+          {
+            "from": "blanc",
+            "to": "blanc",
+            "n": 1
+          },
+          {
+            "t": "."
+          }
+        ],
+        "corrections": [
+          {
+            "n": 1,
+            "from": "blanc",
+            "to": "blanc",
+            "rule": "Rule name",
+            "why": "Explain the rule behind the fix."
+          }
+        ],
         "corrected": "Il y a un pigeon. Il porte un chapeau blanc.",
         "spoken": "Y a un pigeon. Il a un chapeau blanc.",
         "spokenNote": "What changes when it's said out loud.",

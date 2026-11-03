@@ -1,0 +1,8 @@
+{
+  "$comment": "Who speaks with which voice, across all lessons. Written by the recording script; you only change \"status\". New characters arrive as \"pending\" with a sample to listen to (open the site with ?casting). Set \"approved\" to record their lines, or \"rejected\" to get the next-best voice and a new sample.",
+  "characters": {
+    "narrator": { "name": "Moi", "voiceId": "Xy5q4w05TJGcKXPWeWoz", "status": "approved", "firstLesson": "2026-11-03", "rejected": [] },
+    "madame-lefevre": { "name": "Madame Lefèvre", "voiceId": "QGfpyFuk3rtPv4pRSQwp", "status": "approved", "firstLesson": "2026-11-03", "rejected": ["2oMnSKxLeHBxE0KdeHJD"] },
+    "la-boulangere": { "name": "La boulangère", "voiceId": "L9J8xZmPSCimnHB0LjN1", "status": "approved", "firstLesson": "2026-11-03", "rejected": [] }
+  }
+}

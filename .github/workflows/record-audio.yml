@@ -1,17 +1,19 @@
 name: Record lesson audio
 
-# When a lesson is added or changed on main, record any missing French audio with
-# ElevenLabs and commit it next to the lesson. Unchanged lines are never re-recorded.
-# Needs the repository secret ELEVENLABS_API_KEY and voice IDs in app/audio.config.json;
-# until both exist, this skips with a warning instead of failing.
+# When a lesson or the voice cast changes on main: cast voices for new characters
+# (with a sample to approve), record any missing French audio with ElevenLabs, and
+# commit it all. Unchanged lines are never re-recorded.
+# Needs the repository secret ELEVENLABS_API_KEY; without it, this skips with a warning.
 on:
   push:
     branches: [main]
     paths:
       - app/lessons/**
       - app/audio.config.json
+      - app/voices/**
       - app/src/lesson/**
       - app/scripts/record-audio.ts
+      - app/scripts/casting.ts
   workflow_dispatch:
 
 permissions:
@@ -44,10 +46,6 @@ jobs:
             echo "::warning::ELEVENLABS_API_KEY secret is not set, so no audio was recorded."
             echo "ready=false" >> "$GITHUB_OUTPUT"; exit 0
           fi
-          if ! node -e "const v=require('./audio.config.json').voices; process.exit(v.male.length && v.female.length ? 0 : 1)"; then
-            echo "::warning::No ElevenLabs voice IDs in app/audio.config.json yet, so no audio was recorded."
-            echo "ready=false" >> "$GITHUB_OUTPUT"; exit 0
-          fi
           echo "ready=true" >> "$GITHUB_OUTPUT"
 
       - if: steps.setup.outputs.ready == 'true'
@@ -67,10 +65,10 @@ jobs:
           AUTHOR_NAME: ${{ github.event.head_commit.author.name || github.actor }}
           AUTHOR_EMAIL: ${{ github.event.head_commit.author.email || format('{0}+{1}@users.noreply.github.com', github.actor_id, github.actor) }}
         run: |
-          git add public/lessons
+          git add public/lessons public/voices voices
           if git diff --cached --quiet; then echo "No new audio."; exit 0; fi
           git config user.name "$AUTHOR_NAME"
           git config user.email "$AUTHOR_EMAIL"
-          git commit -m "Record lesson audio (automatic)"
+          git commit -m "Record lesson audio and voice samples (automatic)"
           git pull --rebase origin main
           git push origin HEAD:main

@@ -1,16 +1,7 @@
 {
-  "$comment": "Settings for scripts/record-audio.ts (ElevenLabs). Voice IDs come from the ElevenLabs Voice Library. Characters are matched by their 'voice' (male/female) in cast order: the first male character gets the first male voice, and so on. A character's own 'voiceId' in the lesson overrides this.",
+  "$comment": "Settings for scripts/record-audio.ts (ElevenLabs). Which voice each character uses lives in voices/cast.json; the voices to choose from are in voices/pool.json.",
   "model": "eleven_multilingual_v2",
   "outputFormat": "mp3_44100_64",
-  "voices": {
-    "male": [
-      "Xy5q4w05TJGcKXPWeWoz"
-    ],
-    "female": [
-      "QGfpyFuk3rtPv4pRSQwp",
-      "L9J8xZmPSCimnHB0LjN1"
-    ]
-  },
   "voiceSettings": {
     "stability": 0.5,
     "similarity_boost": 0.75,

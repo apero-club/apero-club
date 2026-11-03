@@ -29,7 +29,11 @@ src/desktop/                 the desktop layout (Apero v3), used at 900px and wi
 src/ds/                      design system components, ported from the apéro club DS bundle
 src/audio/                   playback: recorded clips (ElevenLabs) with device voices as fallback
 scripts/record-audio.ts      records lesson audio with ElevenLabs (run by GitHub Actions)
-audio.config.json            ElevenLabs model and default voice IDs
+scripts/casting.ts           picks voices for new characters (voice casting)
+voices/pool.json             your curated ElevenLabs voices to choose from
+voices/cast.json             which character has which voice, and approval status
+src/casting/                 the ?casting review page (listen to samples)
+audio.config.json            ElevenLabs model and sound settings
 src/styles/                  design tokens copied from the DS, plus app layout
 ```
 

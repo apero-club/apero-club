@@ -9,6 +9,11 @@
  * Output per lesson: public/lessons/<date>/audio/<hash>.mp3 plus manifest.json,
  * which maps each clip (see src/lesson/clips.ts) to its file and word timings.
  * Unchanged lines are never re-recorded; lines that were removed are deleted.
+ *
+ * Voices come from voice casting (scripts/casting.ts): voices/cast.json says which
+ * voice each character uses. New characters are matched from voices/pool.json and
+ * get a short sample in public/voices/samples/; their lines are recorded only once
+ * you set their status to "approved".
  * The manifest is saved after every clip, so a run that stops halfway (e.g. out
  * of credits) keeps what it already recorded.
  */
@@ -16,10 +21,11 @@ import { createHash } from 'node:crypto';
 import { existsSync, mkdirSync, readdirSync, readFileSync, unlinkSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { LessonSchema, type Lesson } from '../src/lesson/schema';
+import { LessonSchema } from '../src/lesson/schema';
 import { collectClips, speechText, wordTimes, type Clip } from '../src/lesson/clips';
 import { forSpeech } from '../src/lesson/story';
 import type { AudioManifest } from '../src/audio/manifest';
+import { castLesson, CastingError, sampleText, type Pool, type Registry } from './casting';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const API = process.env.ELEVENLABS_API_BASE || 'https://api.elevenlabs.io';
@@ -30,7 +36,6 @@ const ONLY = args.find(a => a.startsWith('--date='))?.slice(7);
 
 type Config = {
   model: string; outputFormat: string;
-  voices: { male: string[]; female: string[] };
   voiceSettings?: Record<string, unknown>;
   ambience?: { model?: string; durationSeconds?: number; promptInfluence?: number };
 };
@@ -38,19 +43,10 @@ const config: Config = JSON.parse(readFileSync(join(ROOT, 'audio.config.json'), 
 
 class Stop extends Error {}
 
-/** Which ElevenLabs voice reads each character: their own voiceId, else the next unused default of their kind. */
-function assignVoices(lesson: Lesson, cfg: Config): Record<string, string> {
-  const used = { male: 0, female: 0 };
-  const out: Record<string, string> = {};
-  for (const c of lesson.cast) {
-    if (c.voiceId) { out[c.id] = c.voiceId; continue; }
-    const pool = cfg.voices[c.voice];
-    if (!pool?.length && DRY) { out[c.id] = `(no ${c.voice} voice yet)`; continue; }
-    if (!pool?.length) throw new Stop(`No ${c.voice} voice for "${c.name}" in ${lesson.date}. Add an ElevenLabs voice ID to "voices.${c.voice}" in audio.config.json, or a "voiceId" on that character.`);
-    out[c.id] = pool[used[c.voice]++ % pool.length];
-  }
-  return out;
-}
+const POOL = join(ROOT, 'voices/pool.json'), REGISTRY = join(ROOT, 'voices/cast.json'), SAMPLES = join(ROOT, 'public/voices/samples');
+const pool: Pool = JSON.parse(readFileSync(POOL, 'utf8'));
+const registry: Registry & Record<string, unknown> = JSON.parse(readFileSync(REGISTRY, 'utf8'));
+const saveRegistry = () => { if (!DRY) writeFileSync(REGISTRY, JSON.stringify(registry, null, 2) + '\n'); };
 
 /** Where the spoken text starts inside a clip's original text (after a dialogue dash, spaces). */
 const leadOf = (text: string) => Math.max(0, forSpeech(text).indexOf(speechText(text)));
@@ -114,24 +110,53 @@ async function main() {
   let total = 0, recorded = 0;
   for (const f of files) {
     const lesson = LessonSchema.parse(JSON.parse(readFileSync(join(dir, f), 'utf8')));
-    const voices = assignVoices(lesson, config);
+    let cast;
+    try { cast = castLesson(lesson, pool, registry); } catch (e) { throw e instanceof CastingError ? new Stop(e.message) : e; }
+    for (const n of cast.notes) console.log(`  · ${n}`);
+    saveRegistry();
+    // Voice samples for anyone waiting for approval.
+    for (const p of cast.pending) {
+      const entry = registry.characters[p.id], member = lesson.cast.find(c => c.id === p.id)!;
+      if (!p.needsSample) { console.log(`  · ${entry.name}: waiting for approval (sample ready).`); continue; }
+      const text = sampleText(lesson, p.id, entry.name, member.voice);
+      console.log(`  · ${entry.name}: sample to make (${text.length} characters)`);
+      total += text.length;
+      if (DRY) continue;
+      const { audio } = await record(p.voiceId, speechText(text));
+      mkdirSync(SAMPLES, { recursive: true });
+      if (entry.sample && existsSync(join(SAMPLES, entry.sample))) unlinkSync(join(SAMPLES, entry.sample));
+      entry.sample = `${p.id}-${p.voiceId}.mp3`;
+      writeFileSync(join(SAMPLES, entry.sample), audio);
+      saveRegistry();
+      console.log(`  ✓ sample for ${entry.name}: listen on the site with ?casting, then approve in voices/cast.json`);
+    }
+    // Approved characters no longer need their sample.
+    for (const id of Object.keys(cast.approved)) {
+      const entry = registry.characters[id];
+      if (entry.sample) { if (!DRY && existsSync(join(SAMPLES, entry.sample))) unlinkSync(join(SAMPLES, entry.sample)); delete entry.sample; saveRegistry(); }
+    }
+    const voices = cast.approved;
     const out = join(ROOT, 'public/lessons', lesson.date, 'audio');
     const manifestPath = join(out, 'manifest.json');
     const manifest: AudioManifest = existsSync(manifestPath)
       ? JSON.parse(readFileSync(manifestPath, 'utf8'))
       : { version: 1, model: config.model, clips: {} };
-    const clips = collectClips(lesson);
+    const allClips = collectClips(lesson);
+    // Lines of characters still waiting for voice approval aren't recorded yet (the app uses device voices for them).
+    const clips = allClips.filter(c => voices[c.speaker]);
+    const waiting = allClips.length - clips.length;
     const todo = clips.filter(c => {
       const have = manifest.clips[c.key];
       return FORCE || !have || have.voice !== voices[c.speaker] || manifest.model !== config.model || !existsSync(join(out, have.file));
     });
-    const uniq = new Map(todo.map(c => [fileFor(voices[c.speaker], c), c]));
+    // Count only audio that doesn't exist yet: identical sentences in the same voice are reused.
+    const uniq = new Map(todo.map(c => [fileFor(voices[c.speaker], c), c] as const).filter(([f]) => FORCE || !existsSync(join(out, f))));
     const chars = [...uniq.values()].reduce((n, c) => n + speechText(c.text).length, 0);
     total += chars;
     const amb = lesson.ambience;
     const ambFile = amb ? 'ambience-' + createHash('sha1').update(amb.prompt).digest('hex').slice(0, 12) + '.mp3' : null;
     const ambTodo = !!amb && (FORCE || manifest.ambience?.prompt !== amb.prompt || !existsSync(join(out, ambFile!)));
-    console.log(`${lesson.date}: ${clips.length} clips, ${todo.length} to record (${chars} characters)${ambTodo ? `, plus ambience (${config.ambience?.durationSeconds ?? 30} s sound effect)` : ''}`);
+    console.log(`${lesson.date}: ${allClips.length} clips, ${uniq.size} to record (${chars} characters)${waiting ? `, ${waiting} waiting for voice approval` : ''}${ambTodo ? `, plus ambience (${config.ambience?.durationSeconds ?? 30} s sound effect)` : ''}`);
     if (DRY || (!todo.length && !ambTodo && !existsSync(out))) continue;
 
     mkdirSync(out, { recursive: true });
@@ -167,12 +192,17 @@ async function main() {
       console.log(`  ✓ ambience: ${amb!.prompt.slice(0, 60)}`);
     }
     if (!amb) delete manifest.ambience;
-    // Drop recordings of lines that no longer exist.
+    // Drop recordings of lines that no longer exist, or whose character's voice changed / awaits approval.
     const keep = new Set(clips.map(c => c.key));
-    for (const k of Object.keys(manifest.clips)) if (!keep.has(k)) delete manifest.clips[k];
+    for (const [k, v] of Object.entries(manifest.clips)) if (!keep.has(k) || v.voice !== voices[k.slice(0, k.indexOf('|'))]) delete manifest.clips[k];
     const files = new Set([...Object.values(manifest.clips).map(c => c.file), ...(manifest.ambience ? [manifest.ambience.file] : [])]);
     for (const mp3 of readdirSync(out)) if (mp3.endsWith('.mp3') && !files.has(mp3)) unlinkSync(join(out, mp3));
     save();
+  }
+  // Remove samples nobody points to any more (re-cast or approved characters).
+  if (!DRY && existsSync(SAMPLES)) {
+    const live = new Set(Object.values(registry.characters).map(e => e.sample).filter(Boolean));
+    for (const f of readdirSync(SAMPLES)) if (f.endsWith('.mp3') && !live.has(f)) unlinkSync(join(SAMPLES, f));
   }
   console.log(DRY ? `Dry run: ${total} characters would be recorded.` : `Recorded ${recorded} clips (${total} characters).`);
 }
