@@ -197,8 +197,8 @@
     [
       {
         "speaker": "madame-benali",
-        "fr": "— Je suis la gardienne. C’est le travail que je fais.",
-        "en": "“I’m the gardienne. It’s the job I do.”"
+        "fr": "— Je suis la gardienne. C’est mon métier.",
+        "en": "“I’m the gardienne. It’s my job.”"
       }
     ]
   ],
@@ -230,7 +230,7 @@
           "tag": "C’est… qui"
         }
       ],
-      "spoken": "« C’est X qui… » is everywhere in speech, to point at who did something: « C’est Petrovic qui chante. » In fast, casual speech qui before a vowel can shrink to qu’: « C’est lui qu’a fait ça. » Don’t write it, but expect to hear it.",
+      "spoken": "« C’est X qui… » is everywhere in speech, to point at who did something: « C’est Petrovic qui chante. » In very relaxed speech, qui before a vowel sometimes shrinks to qu’: « C’est lui qu’a fait ça. » It sounds sloppy, so never write it, but expect to hear it.",
       "trap": {
         "wrong": "Le voisin que chante la nuit.",
         "right": "Le voisin qui chante la nuit.",
@@ -244,7 +244,7 @@
       "short": "Que stands for the object of the next verb: after it comes a new subject.",
       "body": [
         "Vous verrez le couple partout. Le couple is the object of verrez; the subject is vous. So it becomes que: le couple que vous verrez.",
-        "English often drops the word: “the couple you’ll see”, “the job I do”. French never can. Que has to be there, and it becomes qu’ before a vowel: les colis qu’Inès reçoit.",
+        "English often drops the word: “the couple you’ll see”, “the key you lost”. French never can. Que has to be there, and it becomes qu’ before a vowel: les colis qu’Inès reçoit.",
         "Quick check: after que you find a subject, a pronoun like je, vous, on, or a name, then the verb."
       ],
       "examples": [
@@ -254,8 +254,8 @@
           "tag": "Que : objet"
         },
         {
-          "fr": "C’est le travail que je fais.",
-          "en": "It’s the job I do.",
+          "fr": "Voilà la clé que vous cherchiez.",
+          "en": "Here’s the key you were looking for.",
           "tag": "Que : objet"
         },
         {
@@ -298,7 +298,7 @@
           "tag": "Se souvenir de"
         }
       ],
-      "spoken": "Dont is a little formal, and in relaxed speech many people dodge it: « le monsieur, je vous en ai parlé ». You’ll also hear « le truc que je t’ai parlé » in very casual French, but it counts as a mistake, so don’t copy it.",
+      "spoken": "Dont is a little formal, and in relaxed speech many people dodge it: « le monsieur, je vous en ai parlé ». You’ll also hear « le truc que je t’ai parlé » in very casual French, but it’s considered incorrect, so don’t copy it.",
       "trap": {
         "wrong": "Le monsieur que je vous parle.",
         "right": "Le monsieur dont je vous parle.",
@@ -480,7 +480,7 @@
     },
     {
       "kind": "Compréhension",
-      "quote": "— Je suis la gardienne. C’est le travail que je fais.",
+      "quote": "— Je suis la gardienne. C’est mon métier.",
       "prompt": "What makes Madame Benali’s last line funny?",
       "options": [
         {
@@ -531,10 +531,10 @@
       "note": "En panne is fine anywhere; en rade is the friendly, slightly fed-up version. You’ll see « en panne » on the sign and hear « en rade » in the stairs."
     },
     {
-      "written": "Entre nous, personne n’a jamais vu un ouvrier.",
-      "spoken": "Entre nous, personne a jamais vu un ouvrier.",
+      "written": "Je vais demander à la gardienne.",
+      "spoken": "J’vais demander à la concierge.",
       "register": "Courant",
-      "note": "Entre nous (between you and me) announces a secret. The ne disappears as usual; personne and jamais carry the negation."
+      "note": "Gardienne is the official, modern word; concierge is older but many Parisians still say it, hence the title. She works in la loge."
     }
   ],
   "describe": {
