@@ -51,6 +51,19 @@
         "calm"
       ],
       "notes": "Gilles's voice (chosen by hand)."
+    },
+    {
+      "id": "WQKwBV2Uzw1gSGr69N8I",
+      "name": "",
+      "gender": "female",
+      "age": "older",
+      "accent": "other",
+      "tags": [
+        "british",
+        "warm",
+        "careful"
+      ],
+      "notes": "Harriet's voice (chosen by hand): British English, so her French has a British accent."
     }
   ]
 }
