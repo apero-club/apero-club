@@ -1718,5 +1718,9 @@
         ]
       ]
     }
+  },
+  "ambience": {
+    "file": "ambience-76f1b1d06ce2.mp3",
+    "prompt": "Inside a small Paris bakery on a rainy Saturday morning: a quiet murmur of customers waiting in line, a door bell, paper bags rustling, coins on a counter, an espresso machine hissing, soft rain outside. Calm and steady. No music, no clear speech."
   }
 }
