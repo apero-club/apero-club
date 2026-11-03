@@ -148,7 +148,8 @@
       "voiceId": "2oMnSKxLeHBxE0KdeHJD",
       "status": "pending",
       "firstLesson": "lesson-004",
-      "rejected": []
+      "rejected": [],
+      "sample": "madame-lucchini-2oMnSKxLeHBxE0KdeHJD.mp3"
     },
     "mamie-yasmina": {
       "name": "Mamie Yasmina",
