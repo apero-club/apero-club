@@ -87,7 +87,6 @@ function LessonGroup({ name, items, onOpen, note }: { name: string; items: Lesso
 export function LessonSheet({ lesson, app, onClose, centered }: { lesson: Lesson; app: AppCtx; onClose: () => void; centered?: boolean }) {
   const mins = (id: string) => lesson.minutes[id === 'spoken' ? 'phrases' : (id as 'story')];
   const upcoming = lesson.number > Math.max(1, app.library.todayNumber);
-  const done = isDone(lesson);
   return (
     <div className="sheet-wrap" role="dialog" aria-modal="true" aria-label={lesson.title} style={centered ? { position: 'fixed', justifyContent: 'center', alignItems: 'center', padding: 24 } : undefined}>
       <button className="sheet-scrim" aria-label="Close" onClick={onClose} />
@@ -114,7 +113,7 @@ export function LessonSheet({ lesson, app, onClose, centered }: { lesson: Lesson
             {topicsOf(lesson).map(t => <span key={t} style={{ font: '600 13px/1 var(--font-body)', padding: '8px 12px', borderRadius: 'var(--radius-pill)', background: 'var(--violet-100)', color: 'var(--violet-700)', whiteSpace: 'nowrap' }}>{t}</span>)}
             {upcoming && <Badge tone="ink" size="sm">Preview</Badge>}
           </div>
-          <Button size="lg" block iconRight="arrow-right" onClick={() => { onClose(); app.library.open(lesson.number, true); }}>{done ? 'Do it again' : 'Start lesson'}</Button>
+          <Button size="lg" block iconRight="arrow-right" onClick={() => { onClose(); app.library.open(lesson.number); }}>Open lesson</Button>
         </div>
       </div>
     </div>
