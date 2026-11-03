@@ -1585,8 +1585,8 @@
       ]
     },
     "neighbour|— Non, mon fils m’a réveillée à sept heures. Il voulait des croissants.": {
-      "file": "40e16b9b9128aa79.mp3",
-      "voice": "2oMnSKxLeHBxE0KdeHJD",
+      "file": "60a8e5f24a02ced5.mp3",
+      "voice": "QGfpyFuk3rtPv4pRSQwp",
       "words": [
         [
           2,
@@ -1594,23 +1594,23 @@
         ],
         [
           7,
-          0.453
+          0.348
         ],
         [
           11,
-          0.615
+          0.569
         ],
         [
           16,
-          0.859
+          0.929
         ],
         [
           20,
-          1.01
+          1.08
         ],
         [
           30,
-          1.533
+          1.544
         ],
         [
           32,
@@ -1618,29 +1618,29 @@
         ],
         [
           37,
-          1.927
+          2.043
         ],
         [
           45,
-          2.438
+          2.694
         ],
         [
           48,
-          2.601
+          2.961
         ],
         [
           56,
-          2.879
+          3.286
         ],
         [
           60,
-          3.007
+          3.402
         ]
       ]
     },
     "neighbour|« C’est ce que vous dites tous les samedis ! »": {
-      "file": "67cc068755916109.mp3",
-      "voice": "2oMnSKxLeHBxE0KdeHJD",
+      "file": "6711763823b2dfe6.mp3",
+      "voice": "QGfpyFuk3rtPv4pRSQwp",
       "words": [
         [
           2,
@@ -1648,41 +1648,41 @@
         ],
         [
           8,
-          0.302
+          0.58
         ],
         [
           11,
-          0.464
+          0.848
         ],
         [
           15,
-          0.627
+          1.057
         ],
         [
           20,
-          0.801
+          1.277
         ],
         [
           26,
-          1.115
+          1.858
         ],
         [
           31,
-          1.289
+          2.043
         ],
         [
           35,
-          1.428
+          2.206
         ],
         [
           43,
-          1.904
+          2.902
         ]
       ]
     },
     "neighbour|« Vous voyez, il faut venir avant huit heures. »": {
-      "file": "36d8d0613f42e4ae.mp3",
-      "voice": "2oMnSKxLeHBxE0KdeHJD",
+      "file": "a3ad6625e7f8e9ea.mp3",
+      "voice": "QGfpyFuk3rtPv4pRSQwp",
       "words": [
         [
           2,
@@ -1690,31 +1690,31 @@
         ],
         [
           7,
-          0.221
+          0.163
         ],
         [
           14,
-          0.766
+          0.824
         ],
         [
           17,
-          0.917
+          0.975
         ],
         [
           22,
-          1.091
+          1.138
         ],
         [
           28,
-          1.463
+          1.498
         ],
         [
           34,
-          1.695
+          1.707
         ],
         [
           39,
-          1.927
+          1.962
         ]
       ]
     }
