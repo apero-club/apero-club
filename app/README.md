@@ -34,7 +34,7 @@ src/styles/                  design tokens copied from the DS, plus app layout
 
 Vercel builds from this `app/` folder on every push (`main` is production; other branches get preview URLs). `vercel.json` runs the tests first, so a broken lesson never deploys. GitHub Actions (`.github/workflows/ci.yml`) runs the same checks but doesn't deploy.
 
-**Access code.** `middleware.ts` runs on Vercel before every request, including the app's scripts and lesson files. Until a visitor enters the code, they only get the access-code screen (`gate/page.ts`). A correct code sets an HttpOnly cookie for 400 days, so a device only enters it once. The code is never in the repo or sent to the browser.
+**Access code.** `middleware.js` runs on Vercel before every request, including the app's scripts and lesson files. Until a visitor enters the code, they only get the access-code screen. Keep it one plain-JavaScript file with no imports: Vercel ships middleware without bundling it, so imports or TypeScript there break the site with `MIDDLEWARE_INVOCATION_FAILED`. A correct code sets an HttpOnly cookie for 400 days, so a device only enters it once. The code is never in the repo or sent to the browser.
 
 - The code comes from the Vercel environment variable `ACCESS_CODE`. Changing an environment variable only takes effect after a redeploy (Deployments → ⋯ → Redeploy, no code change needed).
 - To change it instantly with no redeploy, connect a Vercel **Edge Config** store to the project and add an item `accessCode`; it takes priority over `ACCESS_CODE`.

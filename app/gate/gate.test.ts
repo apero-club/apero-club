@@ -1,6 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it } from 'vitest';
-import middleware from '../middleware';
-import { COOKIE, safeNext, tokenFor } from './access';
+import middleware, { COOKIE, safeNext, tokenFor } from '../middleware.js';
 
 const BASE = 'https://apero.example';
 const page = (path = '/', cookie?: string) =>

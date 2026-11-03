@@ -1,18 +1,104 @@
+// @ts-check
 /**
- * The access-code screen. Self-contained HTML (no app bundle, which is behind the
- * gate) built from the apéro club tokens: ultramarine hero band, lilac wordmark,
- * a 3-tile poster strip with one blinking face, lipped pill button.
+ * Vercel Routing Middleware: the access-code gate.
+ *
+ * Runs on Vercel before every request (pages, scripts, lesson files), so nothing
+ * is served without the access code. Local `npm run dev` stays open.
+ *
+ * Deliberately ONE plain-JavaScript file with NO imports. Vercel ships middleware
+ * files as-is without bundling them, so a TypeScript file, a relative import or
+ * an npm package here fails at runtime with MIDDLEWARE_INVOCATION_FAILED.
+ *
+ * The code never ships to the browser. A device is remembered with an HttpOnly
+ * cookie holding a hash of the current code, so a cookie can't be forged without
+ * the code, and changing the code signs every device out.
  */
-const esc = (s: string) => s.replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]!);
 
-export type GateState = 'ask' | 'wrong' | 'unset';
+export const COOKIE = 'apero_access';
+/** 400 days, the longest browsers keep a cookie. */
+const MAX_AGE = 400 * 24 * 60 * 60;
+const NOINDEX = { 'X-Robots-Tag': 'noindex, nofollow' };
 
-const MESSAGES: Record<Exclude<GateState, 'ask'>, string> = {
+/** Codes are compared without case or surrounding spaces, so phone auto-capitalisation doesn't matter. */
+const normalize = (/** @type {string} */ code) => code.trim().toLowerCase();
+
+/**
+ * Reads one item from a connected Vercel Edge Config store, the same request
+ * @vercel/edge-config makes. Returns undefined if not connected or not found.
+ * @param {string} key
+ */
+async function edgeConfigItem(key) {
+  const conn = process.env.EDGE_CONFIG;
+  if (!conn) return undefined;
+  let id = null, token = null;
+  if (conn.startsWith('edge-config:')) {
+    const p = new URLSearchParams(conn.slice(12));
+    id = p.get('id'); token = p.get('token');
+  } else {
+    const u = new URL(conn);
+    id = u.pathname.split('/')[1] || null; token = u.searchParams.get('token');
+  }
+  if (!id || !token) return undefined;
+  const res = await fetch(`https://edge-config.vercel.com/${id}/item/${encodeURIComponent(key)}?version=1`, {
+    headers: { Authorization: `Bearer ${token}` }, cache: 'no-store',
+  });
+  return res.ok ? res.json() : undefined;
+}
+
+/**
+ * The current access code. An Edge Config item `accessCode` wins when a store is
+ * connected (changes apply within seconds, no redeploy); otherwise the
+ * `ACCESS_CODE` environment variable. Null means not set up: nobody gets in.
+ * @returns {Promise<string | null>}
+ */
+async function currentCode() {
+  try {
+    const v = await edgeConfigItem('accessCode');
+    if (typeof v === 'string' && v.trim()) return v.trim();
+  } catch { /* fall back to the environment variable */ }
+  return process.env.ACCESS_CODE?.trim() || null;
+}
+
+/** @param {string} code */
+export async function tokenFor(code) {
+  const hash = await crypto.subtle.digest('SHA-256', new TextEncoder().encode('apero-club-access:v1:' + normalize(code)));
+  return [...new Uint8Array(hash)].map(b => b.toString(16).padStart(2, '0')).join('');
+}
+
+/** Constant-time comparison of two hex strings. @param {string} a @param {string} b */
+function sameToken(a, b) {
+  if (a.length !== b.length) return false;
+  let diff = 0;
+  for (let i = 0; i < a.length; i++) diff |= a.charCodeAt(i) ^ b.charCodeAt(i);
+  return diff === 0;
+}
+
+/** @param {string | null} header @param {string} name */
+function readCookie(header, name) {
+  for (const part of (header ?? '').split(';')) {
+    const [k, ...v] = part.trim().split('=');
+    if (k === name) return decodeURIComponent(v.join('='));
+  }
+  return null;
+}
+
+/** Only same-site paths are allowed as a post-login destination. @param {unknown} n */
+export const safeNext = n => (typeof n === 'string' && n.startsWith('/') && !n.startsWith('//') && !n.startsWith('/\\') ? n : '/');
+
+/** @param {string} s */
+const esc = s => s.replace(/[&<>"']/g, c => /** @type {Record<string, string>} */ ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
+
+const MESSAGES = {
   wrong: 'That code didn’t work. Check it and try again.',
   unset: 'Access isn’t set up yet. Ask the person who invited you.',
 };
 
-export function gatePage(state: GateState, next: string): string {
+/**
+ * The access-code screen in the apéro club design. Self-contained (the app bundle is behind the gate).
+ * @param {'ask' | 'wrong' | 'unset'} state
+ * @param {string} next
+ */
+function gatePage(state, next) {
   const msg = state === 'ask' ? '' : `<p class="msg" role="alert">${MESSAGES[state]}</p>`;
   return `<!doctype html>
 <html lang="en">
@@ -91,4 +177,48 @@ button:hover{background:#4A30EA}button:active{transform:translateY(4px);box-shad
 </main>
 </body>
 </html>`;
+}
+
+/** @param {'ask' | 'wrong' | 'unset'} state @param {string} nextPath */
+function gate(state, nextPath, status = 401) {
+  return new Response(gatePage(state, nextPath), {
+    status,
+    headers: { ...NOINDEX, 'Content-Type': 'text/html; charset=utf-8', 'Cache-Control': 'no-store' },
+  });
+}
+
+/** Let the request through to the site (what `next()` from @vercel/functions does). */
+const pass = () => new Response(null, { headers: { ...NOINDEX, 'x-middleware-next': '1' } });
+
+/** @param {Request} request @returns {Promise<Response>} */
+export default async function middleware(request) {
+  const url = new URL(request.url);
+  const code = await currentCode();
+
+  // The form posts here.
+  if (url.pathname === '/__access' && request.method === 'POST') {
+    const form = await request.formData().catch(() => null);
+    const entered = String(form?.get('code') ?? '');
+    const dest = safeNext(form?.get('next'));
+    if (!code) return gate('unset', dest, 503);
+    const want = await tokenFor(code);
+    if (entered.trim() && sameToken(await tokenFor(entered), want)) {
+      return new Response(null, {
+        status: 303,
+        headers: { ...NOINDEX, Location: dest, 'Cache-Control': 'no-store', 'Set-Cookie': `${COOKIE}=${want}; Path=/; Max-Age=${MAX_AGE}; HttpOnly; Secure; SameSite=Lax` },
+      });
+    }
+    await new Promise(r => setTimeout(r, 600)); // slows down guessing
+    return gate('wrong', dest);
+  }
+
+  if (code) {
+    const have = readCookie(request.headers.get('cookie'), COOKIE);
+    if (have && sameToken(have, await tokenFor(code))) return pass();
+  }
+
+  // Pages get the gate screen; anything else (scripts, lesson data, images) is just refused.
+  const wantsPage = request.method === 'GET' && (request.headers.get('accept') ?? '').includes('text/html');
+  if (wantsPage) return gate(code ? 'ask' : 'unset', url.pathname + url.search, code ? 401 : 503);
+  return new Response('Access code required', { status: 401, headers: { ...NOINDEX, 'Cache-Control': 'no-store' } });
 }
