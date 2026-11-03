@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="An old record player">
+  <!-- Lesson 4 hero tile: Monsieur Fabre's record player, flat brand colours. Transparent background. -->
+  <!-- case -->
+  <rect x="26" y="70" width="148" height="96" rx="12" fill="#3A1FD4"/>
+  <rect x="26" y="150" width="148" height="16" rx="8" fill="#2913A6"/>
+  <rect x="40" y="166" width="14" height="10" rx="3" fill="#2913A6"/>
+  <rect x="146" y="166" width="14" height="10" rx="3" fill="#2913A6"/>
+  <!-- record -->
+  <circle cx="86" cy="110" r="36" fill="#121014"/>
+  <circle cx="86" cy="110" r="27" fill="none" stroke="#3B3741" stroke-width="2"/>
+  <circle cx="86" cy="110" r="19" fill="none" stroke="#3B3741" stroke-width="2"/>
+  <circle cx="86" cy="110" r="11" fill="#F0A4EB"/>
+  <circle cx="86" cy="110" r="2.5" fill="#121014"/>
+  <!-- tone arm -->
+  <circle cx="148" cy="86" r="8" fill="#FFCF66"/>
+  <path d="M148 86 L144 128 L112 134" fill="none" stroke="#FFCF66" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="104" y="129" width="12" height="9" rx="2" transform="rotate(-10 110 133)" fill="#FFCF66"/>
+  <!-- knobs -->
+  <circle cx="140" cy="146" r="0" fill="none"/>
+  <circle cx="156" cy="132" r="5" fill="#F0A4EB"/>
+  <circle cx="156" cy="114" r="5" fill="#F0A4EB"/>
+</svg>

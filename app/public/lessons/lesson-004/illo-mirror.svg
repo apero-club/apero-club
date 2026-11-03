@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="A gilded mirror">
+  <!-- Lesson 4 hero tile: "le plus beau miroir de toute la brocante", flat brand colours. Transparent background. -->
+  <!-- crest -->
+  <path d="M84 30 C84 18 92 12 100 12 C108 12 116 18 116 30 Z" fill="#F29A00"/>
+  <circle cx="100" cy="22" r="5" fill="#FFCF66"/>
+  <!-- frame -->
+  <ellipse cx="100" cy="104" rx="56" ry="76" fill="#F29A00"/>
+  <ellipse cx="100" cy="104" rx="47" ry="67" fill="#FFCF66"/>
+  <!-- little gilded bumps around the frame -->
+  <g fill="#FFCF66">
+    <circle cx="44" cy="104" r="6"/><circle cx="156" cy="104" r="6"/>
+    <circle cx="100" cy="180" r="6"/><circle cx="58" cy="56" r="5"/><circle cx="142" cy="56" r="5"/>
+    <circle cx="58" cy="152" r="5"/><circle cx="142" cy="152" r="5"/>
+  </g>
+  <!-- glass with a reflection -->
+  <ellipse cx="100" cy="104" rx="39" ry="59" fill="#ADD1F1"/>
+  <path d="M78 80 L104 54 M76 100 L116 60" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round"/>
+</svg>

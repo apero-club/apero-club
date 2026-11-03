@@ -1,0 +1,668 @@
+{
+  "title": "La brocante du dimanche",
+  "summary": "A Sunday brocante, two rival sellers, and the ugliest cat in Paris.",
+  "level": "A2 to B1",
+  "minutes": {
+    "story": 4,
+    "quiz": 3,
+    "phrases": 1,
+    "describe": 2
+  },
+  "hero": [
+    {
+      "image": "illo-record-player.svg",
+      "bg": "orange-500",
+      "alt": ""
+    },
+    {
+      "shape": "circle",
+      "bg": "green-300",
+      "fg": "violet-500",
+      "eyes": "happy",
+      "blink": true
+    },
+    {
+      "image": "illo-mirror.svg",
+      "bg": "lilac-500",
+      "alt": ""
+    }
+  ],
+  "heroWide": [
+    {
+      "image": "illo-record-player.svg",
+      "bg": "orange-500",
+      "alt": ""
+    },
+    {
+      "pattern": "halves",
+      "a": "sky-500",
+      "b": "sky-300"
+    },
+    {
+      "shape": "circle",
+      "bg": "green-300",
+      "fg": "violet-500",
+      "eyes": "happy",
+      "blink": true
+    },
+    {
+      "image": "illo-mirror.svg",
+      "bg": "lilac-500",
+      "alt": ""
+    }
+  ],
+  "place": "place d’Aligre, 12e",
+  "cast": [
+    {
+      "id": "narrator",
+      "name": "Moi",
+      "role": "the narrator",
+      "description": "The narrator, \"Moi\": a learner in their 30s who lives in Paris. Friendly, relaxed, a bit self-mocking.",
+      "color": "ink-900",
+      "label": "ink-500",
+      "critter": {
+        "kind": "bean",
+        "color": "sun-500"
+      },
+      "voice": "male"
+    },
+    {
+      "id": "samir",
+      "name": "Samir",
+      "role": "the narrator’s friend",
+      "description": "The narrator’s friend, a Parisian man of 34, middle-aged rather than young. Friendly and amused; a natural, relaxed Parisian accent.",
+      "color": "sky-700",
+      "critter": {
+        "kind": "jelly",
+        "color": "sky-500"
+      },
+      "voice": "male"
+    },
+    {
+      "id": "monsieur-fabre",
+      "name": "Monsieur Fabre",
+      "role": "a seller",
+      "description": "A brocante seller in his sixties, an older Parisian man in a silk scarf. Theatrical and grandiose, a born showman who loves an audience.",
+      "color": "violet-500",
+      "critter": {
+        "kind": "tower",
+        "color": "violet-500"
+      },
+      "voice": "male"
+    },
+    {
+      "id": "madame-lucchini",
+      "name": "Madame Lucchini",
+      "role": "the seller next door",
+      "description": "A brocante seller in her sixties, an older woman with glasses on her nose. Dry, blunt, deadpan and calm; warmth shows only at the end. Standard French, no accent.",
+      "color": "pink-900",
+      "critter": {
+        "kind": "diamond",
+        "color": "pink-500"
+      },
+      "voice": "female"
+    }
+  ],
+  "story": [
+    [
+      {
+        "speaker": "narrator",
+        "fr": "Dimanche matin, j’ai accompagné mon ami Samir à la brocante d’Aligre.",
+        "en": "On Sunday morning I went with my friend Samir to the Aligre brocante."
+      },
+      {
+        "speaker": "narrator",
+        "fr": "Il cherchait un cadeau pour sa grand-mère, qui a quatre-vingt-dix ans et des goûts… particuliers.",
+        "en": "He was looking for a present for his grandmother, who is ninety and has… unusual taste."
+      },
+      {
+        "speaker": "narrator",
+        "fr": "Deux stands côte à côte : Monsieur Fabre, en écharpe de soie, et Madame Lucchini, le nez dans son journal.",
+        "en": "Two stalls side by side: Monsieur Fabre, in a silk scarf, and Madame Lucchini, her nose in her newspaper."
+      }
+    ],
+    [
+      {
+        "id": "fabre-miroir",
+        "speaker": "monsieur-fabre",
+        "fr": "— Jeune homme ! C’est le plus beau miroir de toute la brocante.",
+        "en": "“Young man! It’s the most beautiful mirror in the whole market.",
+        "note": "superlatif"
+      },
+      {
+        "speaker": "monsieur-fabre",
+        "fr": "Il a appartenu à une comtesse !",
+        "en": "It belonged to a countess!”"
+      }
+    ],
+    [
+      {
+        "id": "lucchini-miroir",
+        "speaker": "madame-lucchini",
+        "fr": "— Une comtesse, bien sûr… Le mien est moins doré, mais plus solide. Et deux fois moins cher.",
+        "en": "“A countess, of course… Mine is less gilded, but sturdier. And half the price.”",
+        "note": "comparatif"
+      }
+    ],
+    [
+      {
+        "id": "fabre-tourne-disque",
+        "speaker": "monsieur-fabre",
+        "fr": "— Et ce tourne-disque ? Il est plus vieux que moi, et il marche mieux que moi !",
+        "en": "“And this record player? It’s older than me, and it works better than I do!”",
+        "note": "meilleur-mieux"
+      }
+    ],
+    [
+      {
+        "speaker": "narrator",
+        "fr": "Pendant vingt minutes, ils ont tout comparé. Samir ne savait plus où regarder.",
+        "en": "For twenty minutes they compared everything. Samir didn’t know where to look any more."
+      },
+      {
+        "speaker": "narrator",
+        "fr": "Puis il a vu, sous une table, un petit chat orange en céramique : l’objet le plus laid de la brocante.",
+        "en": "Then, under a table, he saw a little orange ceramic cat: the ugliest object in the market.",
+        "note": "article-double"
+      }
+    ],
+    [
+      {
+        "id": "samir-chat",
+        "speaker": "samir",
+        "fr": "— Celui-là ! Ma grand-mère va l’adorer. Vous me faites un prix ?",
+        "en": "“That one! My grandmother will love it. Can you do me a deal?”"
+      }
+    ],
+    [
+      {
+        "speaker": "madame-lucchini",
+        "fr": "— Il est moche ! Mais pour vous, cinq euros : la meilleure affaire de la journée.",
+        "en": "“It’s hideous! But for you, five euros: the best deal of the day.”",
+        "note": "meilleur-mieux"
+      }
+    ],
+    [
+      {
+        "speaker": "narrator",
+        "fr": "À midi, on a vu les deux vendeurs charger la même camionnette.",
+        "en": "At noon, we saw the two sellers loading the same van."
+      },
+      {
+        "speaker": "narrator",
+        "fr": "Madame Lucchini a fait un bisou à Monsieur Fabre.",
+        "en": "Madame Lucchini gave Monsieur Fabre a kiss."
+      }
+    ],
+    [
+      {
+        "speaker": "monsieur-fabre",
+        "fr": "— Le coup de la comtesse marche toujours, ma chérie !",
+        "en": "“The countess trick works every time, darling!”"
+      }
+    ],
+    [
+      {
+        "speaker": "madame-lucchini",
+        "fr": "— Eh oui, on est mariés. Les clients préfèrent les disputes aux prix fixes.",
+        "en": "“That’s right, we’re married. Customers prefer arguments to fixed prices."
+      },
+      {
+        "speaker": "madame-lucchini",
+        "fr": "C’est mieux pour les affaires.",
+        "en": "It’s better for business.”",
+        "note": "cest-mieux"
+      }
+    ]
+  ],
+  "notes": [
+    {
+      "id": "superlatif",
+      "kicker": "Comparaison",
+      "title": "« Le plus beau miroir de toute la brocante » : pourquoi « de » ?",
+      "short": "The superlative is le, la or les + plus or moins + adjective, and the group takes de.",
+      "body": [
+        "To say “the most” or “the least”, put le, la or les before plus or moins: le plus beau miroir, la moins chère, les plus rares. The article agrees with the noun.",
+        "Where English says “in the market” or “in Paris”, French uses de for the group something stands out from: le plus beau de la brocante, le moins cher du stand, la plus vieille de Paris.",
+        "Quick check: after a superlative, dans is almost always wrong."
+      ],
+      "examples": [
+        {
+          "fr": "C’est le plus beau miroir de toute la brocante.",
+          "en": "It’s the most beautiful mirror in the whole market.",
+          "tag": "Le plus… de"
+        },
+        {
+          "fr": "C’est la lampe la moins chère du stand.",
+          "en": "It’s the cheapest lamp on the stall.",
+          "tag": "La moins… de"
+        },
+        {
+          "fr": "Ce sont les plus vieilles cartes postales de Paris.",
+          "en": "They’re the oldest postcards in Paris.",
+          "tag": "Les plus… de"
+        }
+      ],
+      "spoken": "At a brocante, everything is « le plus beau » or « le moins cher ». In everyday speech, people also boost adjectives with super or trop: « C’est super beau », « Il est trop mignon ».",
+      "trap": {
+        "wrong": "Le plus beau miroir dans la brocante.",
+        "right": "Le plus beau miroir de la brocante.",
+        "why": "After a superlative, the group takes de, even when English says “in”. De + le becomes du: le moins cher du marché."
+      }
+    },
+    {
+      "id": "comparatif",
+      "kicker": "Comparaison",
+      "title": "« Moins doré, mais plus solide » : comment comparer ?",
+      "short": "Plus, moins or aussi go before the adjective, and que introduces what you compare it with.",
+      "body": [
+        "Plus solide (more solid), moins doré (less gilded), aussi beau (as beautiful). Add que + the other thing when you need it: plus solide que le vôtre. Madame Lucchini drops it because everyone knows she means his mirror.",
+        "With nouns, use plus de, moins de, and autant de for “as much” or “as many”: plus de clients, autant de vases.",
+        "« Deux fois moins cher » is how French says half the price: two times less expensive. Twice the price is deux fois plus cher."
+      ],
+      "examples": [
+        {
+          "fr": "Le mien est moins doré, mais plus solide.",
+          "en": "Mine is less gilded, but sturdier.",
+          "tag": "Moins / plus"
+        },
+        {
+          "fr": "Il est plus vieux que moi.",
+          "en": "It’s older than me.",
+          "tag": "Plus… que"
+        },
+        {
+          "fr": "Il y a autant de clients que dimanche dernier.",
+          "en": "There are as many customers as last Sunday.",
+          "tag": "Autant de"
+        }
+      ],
+      "spoken": "Market talk is full of « moins cher »: « Vous l’avez moins cher ? », « Ailleurs, c’est deux fois moins cher ! » After que, French uses moi, toi, lui: « plus vieux que moi », never « que je ».",
+      "trap": {
+        "wrong": "Il y a aussi de clients que dimanche.",
+        "right": "Il y a autant de clients que dimanche.",
+        "why": "Aussi goes with adjectives and adverbs (aussi beau, aussi vite). With nouns it becomes autant de."
+      }
+    },
+    {
+      "id": "meilleur-mieux",
+      "kicker": "Comparaison",
+      "title": "Pourquoi « il marche mieux » mais « la meilleure affaire » ?",
+      "short": "Meilleur is an adjective for things and agrees; mieux is an adverb for how something is done.",
+      "body": [
+        "English uses “better” for both, which is why this trips up even advanced learners. Go back to the basic word: good or well?",
+        "A good deal becomes a better deal: une bonne affaire, la meilleure affaire. Meilleur describes a noun and agrees with it: meilleur, meilleure, meilleurs, meilleures.",
+        "It works well becomes it works better: il marche bien, il marche mieux. Mieux describes a verb and never changes. Bad works the same way: mauvais becomes pire, mal becomes plus mal."
+      ],
+      "examples": [
+        {
+          "fr": "Il marche mieux que moi !",
+          "en": "It works better than I do!",
+          "tag": "Mieux : adverbe"
+        },
+        {
+          "fr": "Cinq euros : la meilleure affaire de la journée.",
+          "en": "Five euros: the best deal of the day.",
+          "tag": "Meilleure : adjectif"
+        },
+        {
+          "fr": "Le vôtre ? C’est le pire !",
+          "en": "Yours? It’s the worst!",
+          "tag": "Pire"
+        }
+      ],
+      "spoken": "You’ll never hear « plus bon » or « plus bien » from an adult: they’re the mistakes French children get corrected for. « Pire » is common on its own as a reaction: « Non, c’est pire ! »",
+      "trap": {
+        "wrong": "Il marche meilleur que moi.",
+        "right": "Il marche mieux que moi.",
+        "why": "Marcher is an action, and the base word is bien (it works well), so the comparative is mieux."
+      }
+    },
+    {
+      "id": "article-double",
+      "kicker": "Superlatif",
+      "title": "« L’objet le plus laid » : pourquoi deux articles ?",
+      "short": "When the adjective comes after the noun, the superlative repeats the article: l’objet le plus laid.",
+      "body": [
+        "Most French adjectives go after the noun: un objet laid, une tasse chère. In the superlative they stay there, and you add le, la or les again before plus: l’objet le plus laid, la tasse la moins chère.",
+        "A few short adjectives go before the noun (beau, petit, grand, bon, vieux). They keep the simple form: le plus beau miroir.",
+        "Quick check: say it without plus. Adjective after the noun? Then you need two articles."
+      ],
+      "examples": [
+        {
+          "fr": "L’objet le plus laid de la brocante.",
+          "en": "The ugliest object in the market.",
+          "tag": "Après le nom"
+        },
+        {
+          "fr": "La tasse la moins chère du stand.",
+          "en": "The cheapest cup on the stall.",
+          "tag": "Après le nom"
+        },
+        {
+          "fr": "Le plus beau miroir de la brocante.",
+          "en": "The most beautiful mirror in the market.",
+          "tag": "Avant le nom"
+        }
+      ],
+      "spoken": "With the short adjectives you can choose: « le miroir le plus beau » also works, with a little more emphasis on beau. In speech, the second article is never dropped.",
+      "trap": {
+        "wrong": "L’objet plus laid de la brocante.",
+        "right": "L’objet le plus laid de la brocante.",
+        "why": "Without the second le, it reads as a comparison, an uglier object, rather than the ugliest one."
+      }
+    },
+    {
+      "id": "cest-mieux",
+      "kicker": "Comparaison",
+      "title": "« C’est mieux » ou « c’est meilleur » ?",
+      "short": "C’est meilleur is about taste or quality; c’est mieux means it’s the better choice or situation.",
+      "body": [
+        "After c’est, both exist, which seems to break the rule. C’est meilleur says the thing itself is better, mostly food and drink: ce café est meilleur.",
+        "C’est mieux says something is preferable, the smarter choice: partir tôt, c’est mieux.",
+        "Madame Lucchini isn’t saying that arguing tastes better. She’s saying it’s the better strategy, so it’s mieux."
+      ],
+      "examples": [
+        {
+          "fr": "C’est mieux pour les affaires.",
+          "en": "It’s better for business.",
+          "tag": "Choix"
+        },
+        {
+          "fr": "Ce café est meilleur que l’autre.",
+          "en": "This coffee is better than the other one.",
+          "tag": "Goût"
+        },
+        {
+          "fr": "On y va à pied ? C’est mieux.",
+          "en": "Shall we walk? It’s better.",
+          "tag": "Choix"
+        }
+      ],
+      "spoken": "« C’est mieux » is everywhere: « C’est mieux comme ça », « Ce serait mieux si… ». « Ah, c’est meilleur ! » is what you say after tasting the second, better croissant.",
+      "trap": {
+        "wrong": "Prendre le métro, c’est meilleur.",
+        "right": "Prendre le métro, c’est mieux.",
+        "why": "Taking the métro is a choice, not something you taste, so it’s mieux."
+      }
+    }
+  ],
+  "quiz": [
+    {
+      "kind": "Écoute",
+      "prompt": "Listen to Madame Lucchini. What does she say about her mirror?",
+      "listen": "lucchini-miroir",
+      "note": "comparatif",
+      "options": [
+        {
+          "text": "It’s more gilded than his, and twice the price.",
+          "why": "She says the opposite: « moins doré », less gilded, and « deux fois moins cher », half the price."
+        },
+        {
+          "text": "It’s less gilded, but sturdier, and half the price.",
+          "correct": true,
+          "why": "« Moins doré, mais plus solide. Et deux fois moins cher »: less gilded, sturdier, and half the price."
+        },
+        {
+          "text": "It also belonged to a countess.",
+          "why": "« Une comtesse, bien sûr… » is sarcasm: she doesn’t believe his countess for a second."
+        }
+      ]
+    },
+    {
+      "kind": "Écoute",
+      "prompt": "Listen to Monsieur Fabre. What does he claim about the record player?",
+      "listen": "fabre-tourne-disque",
+      "note": "meilleur-mieux",
+      "options": [
+        {
+          "text": "It’s older than him, and works better than he does.",
+          "correct": true,
+          "why": "« Plus vieux que moi » = older than me, and « il marche mieux que moi » = it works better than I do."
+        },
+        {
+          "text": "It’s newer than his neighbour’s and works just as well.",
+          "why": "He says « plus vieux », older, and he’s comparing it with himself, « que moi », not with Madame Lucchini’s."
+        },
+        {
+          "text": "It doesn’t work any more.",
+          "why": "Quite the reverse: « il marche mieux que moi ». Marcher is what machines do when they work."
+        }
+      ]
+    },
+    {
+      "kind": "Grammaire",
+      "quote": "— Il est moche ! Mais pour vous, cinq euros : la meilleure affaire de la journée.",
+      "prompt": "Why “la meilleure affaire”, and not “la mieux affaire”?",
+      "note": "meilleur-mieux",
+      "options": [
+        {
+          "text": "Mieux sounds too familiar for a seller.",
+          "why": "It has nothing to do with register. Mieux is an adverb, and it can’t describe a noun like affaire."
+        },
+        {
+          "text": "Prices and money always take meilleur.",
+          "why": "There’s no special rule for money. The question is whether you describe a thing or an action."
+        },
+        {
+          "text": "Affaire is a noun: meilleur is the adjective, and it agrees with it.",
+          "correct": true,
+          "why": "Une bonne affaire becomes la meilleure affaire: an adjective, feminine like affaire, so meilleure with an -e."
+        }
+      ]
+    },
+    {
+      "kind": "Grammaire",
+      "quote": "— Jeune homme ! C’est le plus beau miroir de toute la brocante.",
+      "prompt": "Why “de toute la brocante” and not “dans toute la brocante”?",
+      "note": "superlatif",
+      "options": [
+        {
+          "text": "Dans would mean the mirror is physically inside something.",
+          "why": "Tempting, since the mirror really is at the market, but after a superlative French always uses de for the group."
+        },
+        {
+          "text": "After a superlative, French uses de for the group, where English says “in”.",
+          "correct": true,
+          "why": "Le plus beau de la brocante, la plus vieille de Paris: de marks what it stands out from."
+        },
+        {
+          "text": "Monsieur Fabre is speaking casually, and de is shorter.",
+          "why": "It isn’t casual or careless: de is the correct form in writing too. Dans would be the mistake."
+        }
+      ]
+    },
+    {
+      "kind": "Lecture",
+      "quote": "— Celui-là ! Ma grand-mère va l’adorer. Vous me faites un prix ?",
+      "prompt": "In “Ma grand-mère va l’adorer”, what does “l’” stand for?",
+      "options": [
+        {
+          "text": "La brocante.",
+          "why": "Samir isn’t talking about the market. He has just spotted something under the table: « Celui-là ! »"
+        },
+        {
+          "text": "Madame Lucchini.",
+          "why": "His grandmother has never met her. L’ points back to « celui-là », the thing he has just found."
+        },
+        {
+          "text": "The little ceramic cat.",
+          "correct": true,
+          "why": "Celui-là is the ugly orange cat, and l’ stands for it: my grandmother is going to love it."
+        }
+      ]
+    },
+    {
+      "kind": "Compréhension",
+      "quote": "— Eh oui, on est mariés. Les clients préfèrent les disputes aux prix fixes. C’est mieux pour les affaires.",
+      "prompt": "What is the twist at the end?",
+      "options": [
+        {
+          "text": "The two sellers are a married couple, and their rivalry is an act to sell more.",
+          "correct": true,
+          "why": "« On est mariés »: the arguing was a show. Customers enjoy a fight more than a price tag."
+        },
+        {
+          "text": "Madame Lucchini is going to stop selling at the brocante.",
+          "why": "Nothing says she’s stopping. « C’est mieux pour les affaires » means the act is good for business."
+        },
+        {
+          "text": "Customers hate haggling, so she’ll use fixed prices from now on.",
+          "why": "The opposite: « les clients préfèrent les disputes aux prix fixes », customers prefer arguments to fixed prices."
+        }
+      ]
+    }
+  ],
+  "phrases": [
+    {
+      "written": "Pourriez-vous me faire un prix ?",
+      "spoken": "Vous me faites un prix ?",
+      "register": "Courant",
+      "note": "The magic words at any brocante: can you give me a deal? Spoken questions keep normal word order and let the voice rise."
+    },
+    {
+      "written": "Il est laid.",
+      "spoken": "Il est moche.",
+      "register": "Familier",
+      "note": "Moche is what everyone says out loud, even about their own things. Laid is more neutral, and more common in writing."
+    },
+    {
+      "written": "Je vous le laisse à cinq euros.",
+      "spoken": "Allez, cinq euros, et on n’en parle plus.",
+      "register": "Courant",
+      "note": "The seller’s closing line: I’ll let you have it for five. « Et on n’en parle plus » means and that’s the end of it."
+    },
+    {
+      "written": "Cela en vaut la peine.",
+      "spoken": "Ça vaut le coup.",
+      "register": "Courant",
+      "note": "It’s worth it. Coup is a busy word: « le coup de la comtesse » is the countess trick, a seller’s favourite move."
+    },
+    {
+      "written": "C’est une très bonne affaire.",
+      "spoken": "C’est une super affaire.",
+      "register": "Familier",
+      "note": "Super in front of a noun or adjective is everyday enthusiasm. Une affaire is a deal; une vraie affaire, a real bargain."
+    },
+    {
+      "written": "Il ne fonctionne plus très bien.",
+      "spoken": "Il marche plus trop.",
+      "register": "Familier",
+      "note": "Machines marchent in everyday French. « Plus trop » means not really any more; the ne drops, as in lesson 2."
+    }
+  ],
+  "describe": {
+    "image": "scene-brocante.svg",
+    "alt": "A cluttered brocante stall on a sunny morning: a gilded mirror, two mismatched lamps, an old radio, a stack of records, a chipped teapot, a box of postcards, and a little orange cat under the table",
+    "imagePosition": "50% 70%",
+    "caption": "Place d’Aligre · dimanche, 9 h",
+    "instructions": "Write 3 to 5 sentences: you’re a seller at the brocante. Present three objects, comparing them. Use a comparative, a superlative, and meilleur or mieux.",
+    "placeholder": "Regardez cette radio : elle est…",
+    "helpers": [
+      "plus ancien que…",
+      "moins cher que…",
+      "le plus… de la brocante",
+      "la meilleure affaire",
+      "marche mieux que…",
+      "en bon état",
+      "un peu ébréché",
+      "ça vaut le coup"
+    ],
+    "scene": "A flat, colourful illustration of a brocante stall on a Paris square on a sunny Sunday morning, under an orange and white striped awning. On a table with a lilac cloth: an old red radio, a stack of black vinyl records, a white teapot with a small chip in the lid, and a wooden box of vintage postcards. Behind the table: a large gilded oval mirror and two mismatched lamps, one with a pink shade and one with a green base. Under the table sits a little orange ceramic cat with one eye bigger than the other. Trees and pale buildings line the square, and the sun shines in a blue sky.",
+    "sample": {
+      "text": "Regardez cette radio : elle est plus vieille que les lampes, et elle marche meilleur que ma voiture ! Ces disques sont moins chers que le miroir, mais ils sont les plus bons de la brocante. Et cette théière ? Elle est un peu ébréché, mais c’est l’objet plus charmant dans mon stand.",
+      "result": {
+        "segments": [
+          {
+            "t": "Regardez cette radio : elle est plus vieille que les lampes, et elle marche "
+          },
+          {
+            "from": "meilleur",
+            "to": "mieux",
+            "n": 1
+          },
+          {
+            "t": " que ma voiture ! Ces disques sont moins chers que le miroir, mais ils sont les "
+          },
+          {
+            "from": "plus bons",
+            "to": "meilleurs",
+            "n": 2
+          },
+          {
+            "t": " de la brocante. Et cette théière ? Elle est un peu "
+          },
+          {
+            "from": "ébréché",
+            "to": "ébréchée",
+            "n": 3
+          },
+          {
+            "t": ", mais c’est l’objet "
+          },
+          {
+            "from": "plus charmant",
+            "to": "le plus charmant",
+            "n": 4
+          },
+          {
+            "t": " "
+          },
+          {
+            "from": "dans",
+            "to": "de",
+            "n": 5
+          },
+          {
+            "t": " mon stand."
+          }
+        ],
+        "corrections": [
+          {
+            "n": 1,
+            "from": "meilleur",
+            "to": "mieux",
+            "rule": "Mieux : adverbe",
+            "why": "Marcher is an action, and the base word is bien (it works well), so it’s mieux."
+          },
+          {
+            "n": 2,
+            "from": "plus bons",
+            "to": "meilleurs",
+            "rule": "Bon → meilleur",
+            "why": "Bon has its own comparative: meilleur, never plus bon. It agrees with disques: meilleurs."
+          },
+          {
+            "n": 3,
+            "from": "ébréché",
+            "to": "ébréchée",
+            "rule": "Accord de l’adjectif",
+            "why": "Théière is feminine, so the adjective takes an -e: elle est ébréchée."
+          },
+          {
+            "n": 4,
+            "from": "plus charmant",
+            "to": "le plus charmant",
+            "rule": "Superlatif : deux articles",
+            "why": "Charmant goes after the noun, so the superlative repeats the article: l’objet le plus charmant."
+          },
+          {
+            "n": 5,
+            "from": "dans",
+            "to": "de",
+            "rule": "Superlatif + de",
+            "why": "After a superlative, the group takes de, even where English says “in”: le plus charmant de mon stand."
+          }
+        ],
+        "corrected": "Regardez cette radio : elle est plus vieille que les lampes, et elle marche mieux que ma voiture ! Ces disques sont moins chers que le miroir, mais ils sont les meilleurs de la brocante. Et cette théière ? Elle est un peu ébréchée, mais c’est l’objet le plus charmant de mon stand.",
+        "spoken": "Regardez-moi cette radio : elle est plus vieille que les lampes, et elle marche mieux que ma bagnole ! Les disques, ils sont moins chers que le miroir, mais c’est les meilleurs de la brocante. Et la théière ? Bon, elle est un peu ébréchée, mais c’est le truc le plus mignon du stand.",
+        "spokenNote": "Regardez-moi adds sales energy, voiture becomes bagnole, ce sont becomes c’est, and objet becomes truc.",
+        "praise": "Nice “plus vieille que”!"
+      }
+    }
+  },
+  "ambience": {
+    "prompt": "An open-air flea market on a Paris square on a sunny Sunday morning: a gentle murmur of browsers, china and glass clinking on wooden tables, cardboard boxes shifting, pigeons, distant church bells, a light breeze. Calm and steady. No music, no clear speech.",
+    "volume": 0.18
+  }
+}

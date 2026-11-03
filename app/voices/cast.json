@@ -119,6 +119,48 @@
         "lesson-003"
       ],
       "voice": "male"
+    },
+    "samir": {
+      "name": "Samir",
+      "description": "The narrator’s friend, a Parisian man of 34, middle-aged rather than young. Friendly and amused; a natural, relaxed Parisian accent.",
+      "voiceId": "",
+      "status": "needs-voice",
+      "firstLesson": "lesson-004",
+      "rejected": [
+        "jUHQdLfy668sllNiNTSW",
+        "SsVUx1gFlvniIrUMZtgF"
+      ]
+    },
+    "monsieur-fabre": {
+      "name": "Monsieur Fabre",
+      "description": "A brocante seller in his sixties, an older Parisian man in a silk scarf. Theatrical and grandiose, a born showman who loves an audience.",
+      "voiceId": "",
+      "status": "needs-voice",
+      "firstLesson": "lesson-004",
+      "rejected": [
+        "jUHQdLfy668sllNiNTSW",
+        "SsVUx1gFlvniIrUMZtgF"
+      ]
+    },
+    "madame-lucchini": {
+      "name": "Madame Lucchini",
+      "description": "A brocante seller in her sixties, an older woman with glasses on her nose. Dry, blunt, deadpan and calm; warmth shows only at the end. Standard French, no accent.",
+      "voiceId": "2oMnSKxLeHBxE0KdeHJD",
+      "status": "pending",
+      "firstLesson": "lesson-004",
+      "rejected": []
+    },
+    "mamie-yasmina": {
+      "name": "Mamie Yasmina",
+      "description": "Samir’s grandmother, ninety years old, with… particular taste in objects. Mentioned only so far.",
+      "voiceId": "",
+      "status": "future",
+      "firstLesson": "",
+      "rejected": [],
+      "mentionedIn": [
+        "lesson-004"
+      ],
+      "voice": "female"
     }
   }
 }
