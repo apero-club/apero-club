@@ -4,6 +4,8 @@ Every apéro club lesson is one JSON file, `public/lessons/lesson-001.json`, `le
 
 **Today → 01 Écouter et lire → 02 Comprendre → 03 Comme on dit → 04 Décrire → Séance terminée**, plus the **Grammar** tab.
 
+**How lessons are written** (length, level, tone, grammar notes, quiz, prompts) is in [`STYLE.md`](../STYLE.md). Follow it for every lesson.
+
 The source of truth for the format is [`src/lesson/schema.ts`](../src/lesson/schema.ts). `npm test` checks every lesson against it, and the deploy fails if a lesson is broken.
 
 ## Adding a lesson

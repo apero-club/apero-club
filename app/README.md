@@ -21,7 +21,8 @@ npm run build      # static site in dist/
 public/lessons/lesson-001.json   one file per lesson (lesson 1, 2, 3… one per day)
 public/lessons/lesson-001/       that lesson's images and recorded audio
 public/lessons/schedule.json     start date: lesson 1 goes live that day, then one per day
-docs/lesson-format.md        how to write a lesson
+STYLE.md                     how lessons are written (follow it for every lesson)
+docs/lesson-format.md        the lesson file format
 docs/lesson-template.json    a starting point to copy
 src/lesson/schema.ts         the lesson format (zod), and its validation rules
 src/lesson/load.ts           finds and loads today's lesson
