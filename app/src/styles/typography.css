@@ -1,0 +1,32 @@
+:root {
+  --font-display: 'Unbounded', 'Figtree', system-ui, sans-serif;
+  --font-body: 'Figtree', system-ui, sans-serif;
+  --font-hand: 'Caveat', 'Comic Sans MS', cursive;
+
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+  --weight-black: 800;
+  --weight-ultra: 900;
+
+  /* Size scale — Unbounded is wide, so display sizes sit a step below a condensed grotesk */
+  --text-poster: 96px;
+  --text-display: 72px;
+  --text-h1: 48px;
+  --text-h2: 34px;
+  --text-h3: 26px;
+  --text-h4: 20px;
+  --text-lg: 19px;
+  --text-md: 16px;
+  --text-sm: 14px;
+  --text-xs: 12px;
+
+  --leading-tight: 0.92;
+  --leading-snug: 1.1;
+  --leading-body: 1.5;
+
+  --tracking-tight: -0.04em;
+  --tracking-snug: -0.02em;
+  --tracking-caps: 0.04em;
+}

@@ -1,0 +1,201 @@
+/**
+ * The apéro club lesson format.
+ *
+ * One lesson = one JSON file in `app/lessons/`, named `YYYY-MM-DD.json` after the
+ * day it goes live. Its images live in `app/public/lessons/YYYY-MM-DD/`.
+ * Every lesson renders through the same template: Today → Story → Quiz → Say it →
+ * Describe → Séance terminée, plus the Grammar tab.
+ *
+ * See docs/lesson-format.md for an author-facing walkthrough.
+ */
+import { z } from 'zod';
+
+/** A design-system colour token without the `--` prefix, e.g. "violet-500". */
+const Token = z
+  .string()
+  .regex(/^(violet|lilac|pink|orange|sun|green|sky|cream|ink)-\d{2,3}$|^white$/, 'Use a design token like "violet-500"');
+
+const Shape = z.enum(['arch', 'circle', 'halves', 'flower', 'asterisk', 'pill']);
+const Expression = z.enum(['look', 'wide', 'dots', 'happy', 'sleepy', 'closed', 'wink']);
+const CritterKind = z.enum(['arch', 'jelly', 'bean', 'dome', 'flower', 'diamond', 'macaron', 'spark', 'olive', 'tower', 'sugar', 'bowl']);
+
+/** One square of the Today hero strip: either a kit shape or a story illustration. */
+const HeroTile = z.union([
+  z.object({
+    shape: Shape,
+    bg: Token,
+    fg: Token,
+    accent: Token.optional(),
+    /** Eyes on the shape. At most one tile per strip should have eyes. */
+    eyes: Expression.optional(),
+    blink: z.boolean().optional(),
+  }).strict(),
+  z.object({
+    /** File in public/lessons/<date>/, drawn flat in the brand style (SVG preferred). */
+    image: z.string().min(1),
+    bg: Token,
+    alt: z.string().default(''),
+  }).strict(),
+]);
+
+const CastMember = z.object({
+  /** Short id used by story lines, e.g. "narrator", "neighbour". */
+  id: z.string().regex(/^[a-z][a-z0-9-]*$/),
+  /** Shown in the cast key and above dialogue, e.g. "Madame Lefèvre". */
+  name: z.string().min(1),
+  /** Text colour for this speaker's lines. Keep to ink-900, violet-500, sky-700 (AA on paper). */
+  color: Token,
+  /** Colour for the small name label above dialogue. Defaults to `color`. */
+  label: Token.optional(),
+  critter: z.object({ kind: CritterKind, color: Token }).strict(),
+  /** Which kind of device voice to prefer. Each cast member gets a different voice when possible. */
+  voice: z.enum(['male', 'female']),
+}).strict();
+
+const Line = z.object({
+  /** Optional id so quiz questions can play this line. */
+  id: z.string().regex(/^[a-z0-9-]+$/).optional(),
+  speaker: z.string(),
+  /** French text. Start spoken dialogue with "— ". */
+  fr: z.string().min(1),
+  en: z.string().min(1),
+  /** A grammar note id: adds a "why?" chip after the line. */
+  note: z.string().optional(),
+  /**
+   * When a narration line quotes someone in «guillemets», the quoted part plays in
+   * this speaker's voice.
+   */
+  quoteSpeaker: z.string().optional(),
+}).strict();
+
+const Note = z.object({
+  id: z.string().regex(/^[a-z0-9-]+$/),
+  /** Small label, e.g. "Temps du passé". */
+  kicker: z.string(),
+  title: z.string(),
+  /** One-sentence summary shown on the Grammar card and the sheet header. */
+  short: z.string(),
+  body: z.array(z.string()).min(1),
+  examples: z.array(z.object({ fr: z.string(), en: z.string(), tag: z.string() }).strict()).min(1),
+  /** "Spoken, in Paris" box: how the rule plays out in real speech. */
+  spoken: z.string(),
+  trap: z.object({ wrong: z.string(), right: z.string(), why: z.string() }).strict(),
+}).strict();
+
+const QuizOption = z.object({
+  text: z.string().min(1),
+  correct: z.boolean().optional(),
+  /** Shown after answering: why this option is right, or why it's wrong. */
+  why: z.string().min(1),
+}).strict();
+
+const Question = z.object({
+  /** Shown in the band, e.g. "Écoute", "Grammaire", "Lecture", "Compréhension". */
+  kind: z.string(),
+  prompt: z.string(),
+  /** Listening question: id of the story line to play (transcript hidden until answered). */
+  listen: z.string().optional(),
+  /** Reading question: a quote shown in the band, with a play button. */
+  quote: z.string().optional(),
+  /** Grammar note id behind this question, offered after answering. */
+  note: z.string().optional(),
+  /** Options appear in this order. Put the right one in different positions across questions. */
+  options: z.array(QuizOption).min(2).max(3),
+}).strict();
+
+const Phrase = z.object({
+  written: z.string(),
+  spoken: z.string(),
+  register: z.enum(['Soigné', 'Courant', 'Familier']),
+  note: z.string(),
+}).strict();
+
+/**
+ * The same shape the AI tutor returns, so a live "Check" can drop in later.
+ * Concatenating each segment's `t` or `from` reproduces the learner's text exactly.
+ */
+export const CorrectionResult = z.object({
+  segments: z.array(z.union([
+    z.object({ t: z.string() }).strict(),
+    z.object({ from: z.string(), to: z.string(), n: z.number().int().positive() }).strict(),
+  ])),
+  corrections: z.array(z.object({
+    n: z.number().int().positive(),
+    from: z.string(),
+    to: z.string(),
+    /** Rule name, 4 words max. */
+    rule: z.string(),
+    why: z.string(),
+  }).strict()),
+  corrected: z.string(),
+  spoken: z.string(),
+  spokenNote: z.string(),
+  /** Hand-note praise, 5 words max. */
+  praise: z.string(),
+}).strict();
+
+const Describe = z.object({
+  /** File in public/lessons/<date>/. Square, cropped into an arch. */
+  image: z.string(),
+  alt: z.string(),
+  /** Where the arch crop anchors, CSS object-position. */
+  imagePosition: z.string().default('50% 100%'),
+  instructions: z.string(),
+  placeholder: z.string(),
+  /** Tap-to-insert phrase chips. A trailing "…" is stripped when inserted. */
+  helpers: z.array(z.string()).max(8),
+  /** Plain-English description of the image, for a future AI tutor. Never shown. */
+  scene: z.string(),
+  /** A typical learner description with mistakes, and its worked corrections. */
+  sample: z.object({ text: z.string(), result: CorrectionResult }).strict(),
+}).strict();
+
+export const LessonSchema = z.object({
+  /** Day the lesson goes live, YYYY-MM-DD. Must match the file name. */
+  date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
+  title: z.string().min(1),
+  summary: z.string().min(1),
+  level: z.string().default('A2 to B1'),
+  minutes: z.object({ story: z.number(), quiz: z.number(), phrases: z.number(), describe: z.number() }).strict(),
+  /** Exactly 3 squares under the Today hero. Make at least one about the story. */
+  hero: z.array(HeroTile).length(3),
+  cast: z.array(CastMember).min(1),
+  /** Paragraphs of lines. A paragraph whose first line starts with "—" is shown as dialogue. */
+  story: z.array(z.array(Line).min(1)).min(1),
+  notes: z.array(Note).min(1),
+  quiz: z.array(Question).min(1),
+  phrases: z.array(Phrase).min(1),
+  describe: Describe,
+}).strict().superRefine((l, ctx) => {
+  const cast = new Set(l.cast.map(c => c.id));
+  const notes = new Set(l.notes.map(n => n.id));
+  const lines = l.story.flat();
+  const lineIds = new Set(lines.flatMap(x => (x.id ? [x.id] : [])));
+  const err = (path: (string | number)[], message: string) => ctx.addIssue({ code: 'custom', path, message });
+
+  if (notes.size !== l.notes.length) err(['notes'], 'Note ids must be unique');
+  l.story.forEach((p, pi) => p.forEach((x, li) => {
+    const at = ['story', pi, li];
+    if (!cast.has(x.speaker)) err([...at, 'speaker'], `Unknown speaker "${x.speaker}"`);
+    if (x.quoteSpeaker && !cast.has(x.quoteSpeaker)) err([...at, 'quoteSpeaker'], `Unknown speaker "${x.quoteSpeaker}"`);
+    if (x.quoteSpeaker && !x.fr.includes('«')) err([...at, 'quoteSpeaker'], 'quoteSpeaker needs a «quote» in the line');
+    if (x.note && !notes.has(x.note)) err([...at, 'note'], `Unknown note "${x.note}"`);
+  }));
+  l.quiz.forEach((q, qi) => {
+    const right = q.options.filter(o => o.correct).length;
+    if (right !== 1) err(['quiz', qi, 'options'], `Exactly one option must be correct (found ${right})`);
+    if (q.listen && !lineIds.has(q.listen)) err(['quiz', qi, 'listen'], `No story line with id "${q.listen}"`);
+    if (q.listen && q.quote) err(['quiz', qi], 'Use either listen or quote, not both');
+    if (q.note && !notes.has(q.note)) err(['quiz', qi, 'note'], `Unknown note "${q.note}"`);
+  });
+  const s = l.describe.sample;
+  const rebuilt = s.result.segments.map(g => ('t' in g ? g.t : g.from)).join('');
+  if (rebuilt !== s.text) err(['describe', 'sample', 'result', 'segments'], 'Segments must rebuild sample.text exactly');
+});
+
+export type Lesson = z.output<typeof LessonSchema>;
+export type LessonLine = z.output<typeof Line>;
+export type LessonNote = z.output<typeof Note>;
+export type HeroTileT = z.output<typeof HeroTile>;
+export type CorrectionResultT = z.output<typeof CorrectionResult>;
+export type Phrase = z.output<typeof Phrase>;

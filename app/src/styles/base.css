@@ -1,0 +1,46 @@
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg-1);
+  font-family: var(--font-body);
+  font-size: var(--text-md);
+  line-height: var(--leading-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 { margin: 0; font-family: var(--font-display); font-weight: var(--weight-black); letter-spacing: var(--tracking-tight); line-height: var(--leading-snug); text-wrap: balance; }
+p { margin: 0; text-wrap: pretty; }
+
+a { color: var(--violet-500); text-decoration-thickness: 2px; text-underline-offset: 3px; }
+a:hover { color: var(--orange-500); }
+
+::selection { background: var(--lilac-500); color: var(--violet-900); }
+
+:focus-visible { outline: 3px solid var(--focus-ring); outline-offset: 2px; }
+
+/* Type helpers */
+.t-poster { font: var(--weight-ultra) var(--text-poster)/0.86 var(--font-display); letter-spacing: var(--tracking-tight); text-transform: uppercase; }
+.t-display { font: var(--weight-black) var(--text-display)/var(--leading-tight) var(--font-display); letter-spacing: var(--tracking-tight); }
+.t-h1 { font: var(--weight-black) var(--text-h1)/var(--leading-tight) var(--font-display); letter-spacing: var(--tracking-tight); }
+.t-h2 { font: var(--weight-bold) var(--text-h2)/var(--leading-snug) var(--font-display); letter-spacing: var(--tracking-tight); }
+.t-h3 { font: var(--weight-bold) var(--text-h3)/var(--leading-snug) var(--font-display); letter-spacing: var(--tracking-snug); }
+.t-h4 { font: var(--weight-bold) var(--text-h4)/var(--leading-snug) var(--font-display); letter-spacing: var(--tracking-snug); }
+.t-lg { font: var(--weight-regular) var(--text-lg)/var(--leading-body) var(--font-body); }
+.t-body { font: var(--weight-regular) var(--text-md)/var(--leading-body) var(--font-body); }
+.t-sm { font: var(--weight-regular) var(--text-sm)/var(--leading-body) var(--font-body); }
+.t-eyebrow { font: var(--weight-bold) var(--text-xs)/1 var(--font-display); letter-spacing: var(--tracking-caps); text-transform: uppercase; }
+.t-hand { font: var(--weight-bold) 28px/1 var(--font-hand); }
+
+/* Brand patterns — CSS only. Use at large scale (module ≥ 40px), one per tile, never behind text. */
+.pat-checker { background: repeating-conic-gradient(var(--pat-a, var(--green-900)) 0 25%, var(--pat-b, var(--green-500)) 0 50%) 0 0 / var(--pat-size, 96px) calc(var(--pat-size, 96px) * 0.5); }
+.pat-halves { background: radial-gradient(circle at 0 50%, var(--pat-a, var(--orange-300)) 0 70%, transparent 70.5%) 0 0 / var(--pat-size, 80px) var(--pat-size, 80px), var(--pat-b, var(--orange-500)); }
+.pat-clouds { background: radial-gradient(circle at 50% 50%, var(--pat-a, var(--sky-300)) 0 50%, transparent 50.5%) 0 0 / calc(var(--pat-size, 64px) * 0.72) calc(var(--pat-size, 64px) * 1.2), var(--pat-b, var(--sky-500)); }
+
+/* Ribbon — one sweep per band, celebration moments only */
+.ribbon { background: var(--pat-b, var(--orange-500)) url('./ribbon-lilac.svg') center / cover no-repeat; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 1ms !important; transition-duration: 1ms !important; }
+}
