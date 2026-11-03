@@ -67,6 +67,7 @@ Rules marked **(checked)** are enforced by `npm test` (`src/lesson/style.test.ts
 ## Today screen art
 
 - `hero` (phone) has 3 squares and `heroWide` (desktop) has 4. Make **one or two about the story** (lesson 1: the croissant and the coffee cup), drawn flat in the brand style. The rest are kit shapes or one pattern, with **exactly one blinking face**.
+- The **first picture in `hero`** is also shown at the top of the story page, so make it the one that best sums up the story (lesson 1: the croissant; lesson 2: the tower in fog). The tiles beside it change colour automatically to avoid a clash.
 
 ## Story ambience
 

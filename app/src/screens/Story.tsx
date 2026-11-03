@@ -5,12 +5,14 @@ import { Icon } from '../ds/Icon';
 import { isDialogue } from '../lesson/story';
 import type { AppCtx } from './common';
 import { Eyebrow, SessionHeader } from './common';
+import { FillImage, listenColors, storyImage } from './HeroTile';
 
 export function Story({ app }: { app: AppCtx }) {
   const { lesson, lines, paragraphs, speech: sp, prefs, setPrefs, go, openNote } = app;
   const [started, setStarted] = useState(false);
   const cast = Object.fromEntries(lesson.cast.map(c => [c.id, c]));
   const last = lines.length - 1;
+  const pic = storyImage(lesson), colors = listenColors(pic?.bg);
 
   // unlock() must run inside the tap so phones allow the background sound.
   const playFrom = (i: number) => { app.ambience.unlock(); setStarted(true); sp.playFrom(i); };
@@ -35,12 +37,13 @@ export function Story({ app }: { app: AppCtx }) {
   return <>
     <SessionHeader value={started ? sp.cur + 1 : 0} max={lines.length} step="1/4" onClose={() => go('home')} />
     <div className="scroll">
-      <div style={{ display: 'grid', gridTemplateColumns: 'minmax(0,1fr) 88px' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: pic ? 'minmax(0,1fr) 88px 88px' : 'minmax(0,1fr) 88px' }}>
         <div style={{ background: 'var(--violet-500)', padding: '18px 20px', display: 'flex', flexDirection: 'column', gap: 8 }}>
           <Eyebrow color="var(--lilac-500)">01 · Écouter et lire</Eyebrow>
           <h2 style={{ margin: 0, font: '900 26px/0.95 var(--font-display)', letterSpacing: '-0.045em', color: 'var(--lilac-500)' }}>{lesson.title}</h2>
         </div>
-        <FillTile minHeight={88} shape="arch" bg="orange-500" fg="sun-300"><Icon name="headphones" size={24} color="var(--orange-700)" /></FillTile>
+        {pic && <FillImage tile={pic} asset={app.asset} minHeight={88} />}
+        <FillTile minHeight={88} shape="arch" bg={colors.arch.bg} fg={colors.arch.fg}><Icon name="headphones" size={24} color={colors.icon} /></FillTile>
       </div>
 
       <div style={{ padding: '16px 20px 4px', display: 'flex', flexWrap: 'wrap', gap: '10px 16px' }}>

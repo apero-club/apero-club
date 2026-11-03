@@ -14,7 +14,7 @@ import { groupLessons, isDone, lessonStatus, topicsOf, useLessonList } from '../
 import { LessonSheet } from '../screens/Lessons';
 import type { AppCtx, Screen } from '../screens/common';
 import { Eyebrow, pad, PRAISE, STEPS } from '../screens/common';
-import { HeroTile } from '../screens/HeroTile';
+import { FillImage, HeroTile, listenColors, storyImage } from '../screens/HeroTile';
 
 const EN_LABEL = { story: 'Listen', quiz: 'Check', spoken: 'Say it', describe: 'Write' } as const;
 const STEP_TILE = [
@@ -210,6 +210,7 @@ function DStory({ app }: P) {
   const [started, setStarted] = useState(false);
   const cast = Object.fromEntries(lesson.cast.map(c => [c.id, c]));
   const last = lines.length - 1;
+  const pic = storyImage(lesson), colors = listenColors(pic?.bg);
   // unlock() must run inside the tap so browsers allow the background sound.
   const playFrom = (i: number) => { app.ambience.unlock(); setStarted(true); sp.playFrom(i); };
   // Background ambience follows story playback (and the learner's on/off choice).
@@ -228,10 +229,11 @@ function DStory({ app }: P) {
           <h2 style={bandTitle}>{lesson.title}</h2>
           <p style={{ margin: 0, fontSize: 16, color: 'var(--white)' }}>{lines.length} sentences{lesson.place ? ` · ${lesson.place}` : ''}</p>
         </div>
-        <BandTiles tiles={[
-          { shape: 'arch', bg: 'orange-500', fg: 'sun-300', icon: <Icon name="headphones" size={36} color="var(--orange-700)" /> },
-          { shape: 'pill', bg: 'lilac-500', fg: 'violet-500' }, { shape: 'asterisk', bg: 'sun-300', fg: 'orange-500' },
-        ]} />
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, minmax(0, 1fr))', alignSelf: 'stretch' }}>
+          <FillTile minHeight={150} shape="arch" bg={colors.arch.bg} fg={colors.arch.fg}><Icon name="headphones" size={36} color={colors.icon} /></FillTile>
+          {pic ? <FillImage tile={pic} asset={app.asset} minHeight={150} /> : <FillTile minHeight={150} shape="pill" bg="lilac-500" fg="violet-500" />}
+          <FillTile minHeight={150} shape="asterisk" bg={colors.extra.bg} fg={colors.extra.fg} />
+        </div>
       </div>
     </section>
 
