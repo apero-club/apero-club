@@ -23,6 +23,23 @@
       "status": "approved",
       "firstLesson": "lesson-001",
       "rejected": []
+    },
+    "harriet": {
+      "name": "Harriet",
+      "description": "A retired schoolteacher from Manchester in her sixties, on her first trip to Paris. Nervous but determined; speaks careful learner French with a British accent.",
+      "voiceId": "2oMnSKxLeHBxE0KdeHJD",
+      "status": "pending",
+      "firstLesson": "lesson-002",
+      "rejected": [],
+      "sample": "harriet-2oMnSKxLeHBxE0KdeHJD.mp3"
+    },
+    "gilles": {
+      "name": "Gilles",
+      "description": "A retired Parisian man in his seventies who feeds the pigeons at the Trocadéro every morning. Dry, deadpan, unhurried; a low, calm voice.",
+      "voiceId": "",
+      "status": "needs-voice",
+      "firstLesson": "lesson-002",
+      "rejected": []
     }
   }
 }

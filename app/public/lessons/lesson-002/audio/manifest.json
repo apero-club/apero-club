@@ -1,0 +1,1454 @@
+{
+  "version": 1,
+  "model": "eleven_multilingual_v2",
+  "clips": {
+    "narrator|— Elle n’est jamais partie. C’est le soleil qui ne revient plus.": {
+      "file": "e7151c076f11730b.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          2,
+          0
+        ],
+        [
+          7,
+          0.197
+        ],
+        [
+          13,
+          0.372
+        ],
+        [
+          20,
+          0.65
+        ],
+        [
+          28,
+          1.428
+        ],
+        [
+          34,
+          1.66
+        ],
+        [
+          37,
+          1.8
+        ],
+        [
+          44,
+          2.148
+        ],
+        [
+          48,
+          2.287
+        ],
+        [
+          51,
+          2.392
+        ],
+        [
+          59,
+          2.717
+        ]
+      ]
+    },
+    "narrator|— Mais je ne vois rien ! On l’a volée ? On l’a démolie ?": {
+      "file": "2e199c0ccb2cd8d7.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          2,
+          0
+        ],
+        [
+          7,
+          0.197
+        ],
+        [
+          10,
+          0.279
+        ],
+        [
+          13,
+          0.395
+        ],
+        [
+          18,
+          0.58
+        ],
+        [
+          23,
+          0.906
+        ],
+        [
+          25,
+          1.242
+        ],
+        [
+          28,
+          1.405
+        ],
+        [
+          32,
+          1.533
+        ],
+        [
+          38,
+          1.927
+        ],
+        [
+          40,
+          2.159
+        ],
+        [
+          43,
+          2.299
+        ],
+        [
+          47,
+          2.426
+        ],
+        [
+          55,
+          2.914
+        ]
+      ]
+    },
+    "narrator|— Pas de panique, madame. Elle a pas bougé, votre tour.": {
+      "file": "556bd456b967fe8e.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          2,
+          0
+        ],
+        [
+          6,
+          0.221
+        ],
+        [
+          9,
+          0.325
+        ],
+        [
+          18,
+          0.697
+        ],
+        [
+          26,
+          1.312
+        ],
+        [
+          31,
+          1.533
+        ],
+        [
+          33,
+          1.602
+        ],
+        [
+          37,
+          1.741
+        ],
+        [
+          44,
+          2.032
+        ],
+        [
+          50,
+          2.322
+        ]
+      ]
+    },
+    "narrator|— Personne n’a volé votre tour.": {
+      "file": "8fa3a80368ed5bdf.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          2,
+          0
+        ],
+        [
+          11,
+          0.453
+        ],
+        [
+          15,
+          0.58
+        ],
+        [
+          20,
+          0.789
+        ],
+        [
+          26,
+          1.103
+        ]
+      ]
+    },
+    "narrator|C’est le soleil qui ne revient plus.": {
+      "file": "616c48967fd31f4e.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          6,
+          0.232
+        ],
+        [
+          9,
+          0.36
+        ],
+        [
+          16,
+          0.755
+        ],
+        [
+          20,
+          0.906
+        ],
+        [
+          23,
+          1.022
+        ],
+        [
+          31,
+          1.347
+        ]
+      ]
+    },
+    "narrator|Ce jour-là, il y avait un brouillard épais : on ne voyait même pas la Seine.": {
+      "file": "ce25b863e0c8cf71.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          0.221
+        ],
+        [
+          12,
+          1.103
+        ],
+        [
+          15,
+          1.254
+        ],
+        [
+          17,
+          1.3
+        ],
+        [
+          23,
+          1.521
+        ],
+        [
+          26,
+          1.602
+        ],
+        [
+          37,
+          2.113
+        ],
+        [
+          43,
+          2.519
+        ],
+        [
+          45,
+          2.81
+        ],
+        [
+          48,
+          2.972
+        ],
+        [
+          51,
+          3.077
+        ],
+        [
+          58,
+          3.344
+        ],
+        [
+          63,
+          3.553
+        ],
+        [
+          67,
+          3.704
+        ],
+        [
+          70,
+          3.843
+        ]
+      ]
+    },
+    "narrator|Chais pas.": {
+      "file": "7c454a4aba943979.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          6,
+          0.383
+        ]
+      ]
+    },
+    "narrator|Dimanche matin, j’étais assis sur un banc du Trocadéro, à côté de Gilles.": {
+      "file": "94b41f308e2e176a.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          9,
+          0.43
+        ],
+        [
+          16,
+          0.778
+        ],
+        [
+          24,
+          1.057
+        ],
+        [
+          30,
+          1.416
+        ],
+        [
+          34,
+          1.649
+        ],
+        [
+          37,
+          1.753
+        ],
+        [
+          42,
+          2.009
+        ],
+        [
+          45,
+          2.148
+        ],
+        [
+          56,
+          3.088
+        ],
+        [
+          58,
+          3.204
+        ],
+        [
+          63,
+          3.483
+        ],
+        [
+          66,
+          3.646
+        ]
+      ]
+    },
+    "narrator|Elle a pas bougé, votre tour.": {
+      "file": "9538e3624babac70.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          5,
+          0.244
+        ],
+        [
+          7,
+          0.325
+        ],
+        [
+          11,
+          0.476
+        ],
+        [
+          18,
+          0.778
+        ],
+        [
+          24,
+          1.091
+        ]
+      ]
+    },
+    "narrator|Elle a pas bougé.": {
+      "file": "b23c69e0948d7326.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          5,
+          0.244
+        ],
+        [
+          7,
+          0.325
+        ],
+        [
+          11,
+          0.499
+        ]
+      ]
+    },
+    "narrator|Elle n’a pas bougé.": {
+      "file": "3f8c6e668b7a14fb.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          5,
+          0.267
+        ],
+        [
+          9,
+          0.43
+        ],
+        [
+          13,
+          0.604
+        ]
+      ]
+    },
+    "narrator|Elle n’est jamais partie.": {
+      "file": "7ffabf7f544ad404.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          5,
+          0.244
+        ],
+        [
+          11,
+          0.43
+        ],
+        [
+          18,
+          0.697
+        ]
+      ]
+    },
+    "narrator|Elle n’est plus là !": {
+      "file": "578472c1c3db7acb.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          5,
+          0.232
+        ],
+        [
+          11,
+          0.395
+        ],
+        [
+          16,
+          0.58
+        ],
+        [
+          19,
+          0.789
+        ]
+      ]
+    },
+    "narrator|Elle s’est arrêtée devant nous, toute pâle.": {
+      "file": "9748719ac0dd3001.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          5,
+          0.221
+        ],
+        [
+          11,
+          0.441
+        ],
+        [
+          19,
+          0.755
+        ],
+        [
+          26,
+          1.057
+        ],
+        [
+          32,
+          1.486
+        ],
+        [
+          38,
+          1.765
+        ]
+      ]
+    },
+    "narrator|Et soudain, la tour Eiffel est sortie de la brume, toute grise sous un ciel couvert.": {
+      "file": "d1f9815f285f5d63.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          0.163
+        ],
+        [
+          12,
+          0.511
+        ],
+        [
+          15,
+          0.65
+        ],
+        [
+          20,
+          0.859
+        ],
+        [
+          27,
+          1.173
+        ],
+        [
+          31,
+          1.3
+        ],
+        [
+          38,
+          1.707
+        ],
+        [
+          41,
+          1.8
+        ],
+        [
+          44,
+          1.939
+        ],
+        [
+          51,
+          2.705
+        ],
+        [
+          57,
+          2.984
+        ],
+        [
+          63,
+          3.355
+        ],
+        [
+          68,
+          3.564
+        ],
+        [
+          71,
+          3.669
+        ],
+        [
+          76,
+          3.936
+        ]
+      ]
+    },
+    "narrator|Gilles, un retraité du quartier, donne du pain aux pigeons tous les matins.": {
+      "file": "b10db2d7b35c4667.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          8,
+          0.615
+        ],
+        [
+          11,
+          0.743
+        ],
+        [
+          20,
+          1.184
+        ],
+        [
+          23,
+          1.324
+        ],
+        [
+          33,
+          1.753
+        ],
+        [
+          39,
+          1.985
+        ],
+        [
+          42,
+          2.148
+        ],
+        [
+          47,
+          2.322
+        ],
+        [
+          51,
+          2.438
+        ],
+        [
+          59,
+          2.868
+        ],
+        [
+          64,
+          3.019
+        ],
+        [
+          68,
+          3.146
+        ]
+      ]
+    },
+    "narrator|Il n’y a personne.": {
+      "file": "be1deb2e28f2eb4d.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          0.174
+        ],
+        [
+          7,
+          0.279
+        ],
+        [
+          9,
+          0.348
+        ]
+      ]
+    },
+    "narrator|Il n’y a plus de pain.": {
+      "file": "18a1029fa2465ff2.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          0.163
+        ],
+        [
+          7,
+          0.302
+        ],
+        [
+          9,
+          0.406
+        ],
+        [
+          14,
+          0.627
+        ],
+        [
+          17,
+          0.766
+        ]
+      ]
+    },
+    "narrator|Il ne pleut jamais à Manchester ?": {
+      "file": "3d09506f506e7ff6.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          0.186
+        ],
+        [
+          6,
+          0.313
+        ],
+        [
+          12,
+          0.522
+        ],
+        [
+          19,
+          0.813
+        ],
+        [
+          21,
+          0.882
+        ],
+        [
+          32,
+          1.463
+        ]
+      ]
+    },
+    "narrator|J’en veux plus, merci.": {
+      "file": "4d4162fdd919ca70.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          5,
+          0.255
+        ],
+        [
+          10,
+          0.406
+        ],
+        [
+          16,
+          0.72
+        ]
+      ]
+    },
+    "narrator|J’en veux plus, s’il vous plaît !": {
+      "file": "7a8249d8db84fa75.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          5,
+          0.221
+        ],
+        [
+          10,
+          0.36
+        ],
+        [
+          16,
+          0.615
+        ],
+        [
+          21,
+          0.813
+        ],
+        [
+          26,
+          0.964
+        ],
+        [
+          32,
+          1.196
+        ]
+      ]
+    },
+    "narrator|Je n’ai vu personne.": {
+      "file": "a0b37d0c00caf8a1.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          0.163
+        ],
+        [
+          8,
+          0.29
+        ],
+        [
+          11,
+          0.488
+        ]
+      ]
+    },
+    "narrator|Je ne fume plus.": {
+      "file": "0656ab2d722b0434.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          0.197
+        ],
+        [
+          6,
+          0.302
+        ],
+        [
+          11,
+          0.534
+        ]
+      ]
+    },
+    "narrator|Je ne sais pas.": {
+      "file": "0d3603c40c1b8dc7.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          0.186
+        ],
+        [
+          6,
+          0.29
+        ],
+        [
+          11,
+          0.453
+        ]
+      ]
+    },
+    "narrator|Je ne suis jamais venue à Paris.": {
+      "file": "990c877b1aad6dcd.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          0.197
+        ],
+        [
+          6,
+          0.267
+        ],
+        [
+          11,
+          0.441
+        ],
+        [
+          18,
+          0.697
+        ],
+        [
+          24,
+          1.022
+        ],
+        [
+          26,
+          1.161
+        ]
+      ]
+    },
+    "narrator|Je ne vois rien !": {
+      "file": "4c7ca097c2056d6b.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          0.197
+        ],
+        [
+          6,
+          0.313
+        ],
+        [
+          11,
+          0.557
+        ],
+        [
+          16,
+          0.906
+        ]
+      ]
+    },
+    "narrator|Je sais pas.": {
+      "file": "f88c9a88bcdc456b.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          0.209
+        ],
+        [
+          8,
+          0.372
+        ]
+      ]
+    },
+    "narrator|La dame s’appelait Harriet ; elle venait de Manchester et c’était son premier voyage à Paris.": {
+      "file": "84c89afc5ed25fce.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          0.209
+        ],
+        [
+          8,
+          0.406
+        ],
+        [
+          19,
+          0.731
+        ],
+        [
+          27,
+          1.37
+        ],
+        [
+          29,
+          1.776
+        ],
+        [
+          34,
+          1.95
+        ],
+        [
+          41,
+          2.218
+        ],
+        [
+          44,
+          2.334
+        ],
+        [
+          55,
+          3.03
+        ],
+        [
+          58,
+          3.262
+        ],
+        [
+          66,
+          3.541
+        ],
+        [
+          70,
+          3.704
+        ],
+        [
+          78,
+          4.017
+        ],
+        [
+          85,
+          4.389
+        ],
+        [
+          87,
+          4.458
+        ]
+      ]
+    },
+    "narrator|Ne t’inquiète pas.": {
+      "file": "d18641e055a7e893.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          0.209
+        ],
+        [
+          14,
+          0.592
+        ]
+      ]
+    },
+    "narrator|Nous ne voyons rien.": {
+      "file": "899a6435bcbaeabf.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          5,
+          0.244
+        ],
+        [
+          8,
+          0.372
+        ],
+        [
+          15,
+          0.72
+        ]
+      ]
+    },
+    "narrator|On y voit rien.": {
+      "file": "1796c1113c141e9a.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          0.232
+        ],
+        [
+          5,
+          0.313
+        ],
+        [
+          10,
+          0.522
+        ]
+      ]
+    },
+    "narrator|Personne n’a volé votre tour.": {
+      "file": "8fa3a80368ed5bdf.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          9,
+          0.453
+        ],
+        [
+          13,
+          0.58
+        ],
+        [
+          18,
+          0.789
+        ],
+        [
+          24,
+          1.103
+        ]
+      ]
+    },
+    "narrator|Peu à peu, le brouillard s’est levé.": {
+      "file": "09564f38207e42f8.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          4,
+          0.29
+        ],
+        [
+          6,
+          0.372
+        ],
+        [
+          11,
+          0.604
+        ],
+        [
+          14,
+          0.72
+        ],
+        [
+          25,
+          1.138
+        ],
+        [
+          31,
+          1.3
+        ]
+      ]
+    },
+    "narrator|T’inquiète.": {
+      "file": "94df48cda0e1d086.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ]
+      ]
+    },
+    "narrator|Une dame est arrivée en courant, un plan de Paris à la main.": {
+      "file": "52890a6aaf741c0f.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          4,
+          0.209
+        ],
+        [
+          9,
+          0.441
+        ],
+        [
+          13,
+          0.58
+        ],
+        [
+          21,
+          0.848
+        ],
+        [
+          24,
+          0.952
+        ],
+        [
+          33,
+          1.474
+        ],
+        [
+          36,
+          1.602
+        ],
+        [
+          41,
+          1.811
+        ],
+        [
+          44,
+          1.892
+        ],
+        [
+          50,
+          2.171
+        ],
+        [
+          52,
+          2.229
+        ],
+        [
+          55,
+          2.334
+        ]
+      ]
+    },
+    "narrator|Y a personne.": {
+      "file": "845b687f92c16b25.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          2,
+          0.163
+        ],
+        [
+          4,
+          0.232
+        ]
+      ]
+    },
+    "narrator|Y a plus de pain.": {
+      "file": "39668fe60ec447cf.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          2,
+          0.174
+        ],
+        [
+          4,
+          0.267
+        ],
+        [
+          9,
+          0.499
+        ],
+        [
+          12,
+          0.627
+        ]
+      ]
+    },
+    "narrator|Y a un brouillard pas possible au Trocadéro. Le ciel est tout gris, les nuages sont super bas. On voit rien au loin, et la tour Eiffel, elle est plus là. Sur le banc, y a un monsieur qui donne du pain aux pigeons. Et à part lui, y a personne.": {
+      "file": "84ca0a92018d10f1.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          2,
+          0.186
+        ],
+        [
+          4,
+          0.348
+        ],
+        [
+          7,
+          0.499
+        ],
+        [
+          18,
+          0.859
+        ],
+        [
+          22,
+          1.01
+        ],
+        [
+          31,
+          1.486
+        ],
+        [
+          34,
+          1.614
+        ],
+        [
+          45,
+          2.728
+        ],
+        [
+          48,
+          2.891
+        ],
+        [
+          53,
+          3.111
+        ],
+        [
+          57,
+          3.251
+        ],
+        [
+          62,
+          3.46
+        ],
+        [
+          68,
+          4.156
+        ],
+        [
+          72,
+          4.307
+        ],
+        [
+          79,
+          4.644
+        ],
+        [
+          84,
+          4.841
+        ],
+        [
+          90,
+          5.248
+        ],
+        [
+          95,
+          5.886
+        ],
+        [
+          98,
+          6.026
+        ],
+        [
+          103,
+          6.2
+        ],
+        [
+          108,
+          6.42
+        ],
+        [
+          111,
+          6.525
+        ],
+        [
+          117,
+          7.117
+        ],
+        [
+          120,
+          7.268
+        ],
+        [
+          123,
+          7.407
+        ],
+        [
+          128,
+          7.605
+        ],
+        [
+          136,
+          8.092
+        ],
+        [
+          141,
+          8.324
+        ],
+        [
+          145,
+          8.44
+        ],
+        [
+          150,
+          8.673
+        ],
+        [
+          154,
+          9.392
+        ],
+        [
+          158,
+          9.671
+        ],
+        [
+          161,
+          9.787
+        ],
+        [
+          167,
+          10.333
+        ],
+        [
+          169,
+          10.449
+        ],
+        [
+          171,
+          10.495
+        ],
+        [
+          174,
+          10.588
+        ],
+        [
+          183,
+          10.937
+        ],
+        [
+          187,
+          11.076
+        ],
+        [
+          193,
+          11.25
+        ],
+        [
+          196,
+          11.389
+        ],
+        [
+          201,
+          11.54
+        ],
+        [
+          205,
+          11.645
+        ],
+        [
+          214,
+          12.574
+        ],
+        [
+          217,
+          12.736
+        ],
+        [
+          219,
+          12.817
+        ],
+        [
+          224,
+          13.015
+        ],
+        [
+          229,
+          13.491
+        ],
+        [
+          231,
+          13.595
+        ],
+        [
+          233,
+          13.665
+        ]
+      ]
+    }
+  },
+  "ambience": {
+    "file": "ambience-23ab66e5d93c.mp3",
+    "prompt": "Early morning on the Trocadéro esplanade in Paris, in thick fog: muffled distant traffic, pigeons cooing and fluttering nearby, footsteps on damp stone, a far-off boat horn on the Seine, a soft breeze. Calm and steady. No music, no clear speech."
+  }
+}
