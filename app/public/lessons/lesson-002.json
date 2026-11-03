@@ -1,0 +1,649 @@
+{
+  "title": "Brouillard au Trocadéro",
+  "summary": "A foggy morning at the Trocadéro, and the Eiffel Tower has vanished.",
+  "level": "A2 to B1",
+  "minutes": {
+    "story": 4,
+    "quiz": 3,
+    "phrases": 1,
+    "describe": 2
+  },
+  "hero": [
+    {
+      "image": "illo-tower-fog.svg",
+      "bg": "sky-300",
+      "alt": ""
+    },
+    {
+      "shape": "circle",
+      "bg": "lilac-500",
+      "fg": "violet-500",
+      "eyes": "wide",
+      "blink": true
+    },
+    {
+      "shape": "pill",
+      "bg": "green-900",
+      "fg": "green-300"
+    }
+  ],
+  "heroWide": [
+    {
+      "pattern": "clouds",
+      "a": "sky-100",
+      "b": "sky-300"
+    },
+    {
+      "image": "illo-tower-fog.svg",
+      "bg": "sky-300",
+      "alt": ""
+    },
+    {
+      "shape": "circle",
+      "bg": "lilac-500",
+      "fg": "violet-500",
+      "eyes": "wide",
+      "blink": true
+    },
+    {
+      "shape": "arch",
+      "bg": "orange-500",
+      "fg": "sun-300"
+    }
+  ],
+  "place": "Trocadéro, 16e",
+  "cast": [
+    {
+      "id": "narrator",
+      "name": "Moi",
+      "role": "the narrator",
+      "description": "The narrator, \"Moi\": a learner in their 30s who lives in Paris. Friendly, relaxed, a bit self-mocking.",
+      "color": "ink-900",
+      "label": "ink-500",
+      "critter": {
+        "kind": "bean",
+        "color": "sun-500"
+      },
+      "voice": "male"
+    },
+    {
+      "id": "harriet",
+      "name": "Harriet",
+      "role": "visiting from Manchester",
+      "description": "A retired schoolteacher from Manchester in her sixties, on her first trip to Paris. Nervous but determined; speaks careful learner French with a British accent.",
+      "color": "violet-500",
+      "critter": {
+        "kind": "flower",
+        "color": "pink-500"
+      },
+      "voice": "female"
+    },
+    {
+      "id": "gilles",
+      "name": "Gilles",
+      "role": "feeds the pigeons",
+      "description": "A retired Parisian man in his seventies who feeds the pigeons at the Trocadéro every morning. Dry, deadpan, unhurried; a low, calm voice.",
+      "color": "sky-700",
+      "critter": {
+        "kind": "olive",
+        "color": "green-900"
+      },
+      "voice": "male"
+    }
+  ],
+  "story": [
+    [
+      {
+        "speaker": "narrator",
+        "fr": "Dimanche matin, j’étais assis sur un banc du Trocadéro, à côté de Gilles.",
+        "en": "On Sunday morning, I was sitting on a bench at the Trocadéro, next to Gilles."
+      },
+      {
+        "speaker": "narrator",
+        "fr": "Gilles, un retraité du quartier, donne du pain aux pigeons tous les matins.",
+        "en": "Gilles, a retired man from the neighbourhood, feeds the pigeons bread every morning."
+      },
+      {
+        "speaker": "narrator",
+        "fr": "Ce jour-là, il y avait un brouillard épais : on ne voyait même pas la Seine.",
+        "en": "That day there was a thick fog: you couldn’t even see the Seine."
+      }
+    ],
+    [
+      {
+        "speaker": "narrator",
+        "fr": "Une dame est arrivée en courant, un plan de Paris à la main.",
+        "en": "A woman came running up, a map of Paris in her hand."
+      },
+      {
+        "speaker": "narrator",
+        "fr": "Elle s’est arrêtée devant nous, toute pâle.",
+        "en": "She stopped in front of us, completely pale."
+      }
+    ],
+    [
+      {
+        "id": "harriet-plus-la",
+        "speaker": "harriet",
+        "fr": "— Excusez-moi, monsieur… La tour Eiffel ! Elle n’est plus là !",
+        "en": "“Excuse me, sir… The Eiffel Tower! It’s not there any more!”",
+        "note": "ne-plus"
+      }
+    ],
+    [
+      {
+        "speaker": "gilles",
+        "fr": "— Pas de panique, madame. Elle a pas bougé, votre tour.",
+        "en": "“Don’t panic, madam. Your tower hasn’t moved.”",
+        "note": "ne-tombe"
+      }
+    ],
+    [
+      {
+        "speaker": "harriet",
+        "fr": "— Mais je ne vois rien ! On l’a volée ? On l’a démolie ?",
+        "en": "“But I can’t see anything! Has someone stolen it? Knocked it down?”"
+      }
+    ],
+    [
+      {
+        "speaker": "gilles",
+        "fr": "— Personne n’a volé votre tour. Le matin, on n’y voit rien, c’est tout.",
+        "en": "“Nobody has stolen your tower. In the morning you can’t see a thing, that’s all.”",
+        "note": "rien-personne"
+      },
+      {
+        "id": "gilles-rassure",
+        "speaker": "gilles",
+        "fr": "Ne vous inquiétez pas, je vous assure : ça arrive tout le temps.",
+        "en": "Don’t worry, I promise you: it happens all the time."
+      }
+    ],
+    [
+      {
+        "speaker": "narrator",
+        "fr": "La dame s’appelait Harriet ; elle venait de Manchester et c’était son premier voyage à Paris.",
+        "en": "Her name was Harriet; she was from Manchester and it was her first trip to Paris."
+      },
+      {
+        "speaker": "narrator",
+        "fr": "Peu à peu, le brouillard s’est levé.",
+        "en": "Little by little, the fog lifted."
+      },
+      {
+        "speaker": "narrator",
+        "fr": "Et soudain, la tour Eiffel est sortie de la brume, toute grise sous un ciel couvert.",
+        "en": "And suddenly the Eiffel Tower came out of the mist, all grey under an overcast sky."
+      }
+    ],
+    [
+      {
+        "speaker": "harriet",
+        "fr": "— Elle est revenue !",
+        "en": "“It’s come back!”"
+      }
+    ],
+    [
+      {
+        "speaker": "gilles",
+        "fr": "— Elle n’est jamais partie.",
+        "en": "“It never left.”",
+        "note": "ne-jamais"
+      },
+      {
+        "speaker": "gilles",
+        "fr": "C’est le soleil qui ne revient plus.",
+        "en": "It’s the sun that doesn’t come back any more.",
+        "note": "plus-prononciation"
+      }
+    ]
+  ],
+  "notes": [
+    {
+      "id": "ne-plus",
+      "kicker": "Négation",
+      "title": "« Elle n’est plus là » : pourquoi « plus » ?",
+      "short": "Ne… plus means no longer: something was true before and has stopped.",
+      "body": [
+        "Ne… pas just says no. Ne… plus adds time: it was there, and now it isn’t. Harriet expects the tower to be there, so she says « Elle n’est plus là », not « Elle n’est pas là ».",
+        "Plus takes the place of pas around the verb. In the passé composé it goes before the past participle: je ne l’ai plus vue.",
+        "Quick check: could you add “any more” or “any longer” in English? Then it’s ne… plus."
+      ],
+      "examples": [
+        {
+          "fr": "Elle n’est plus là !",
+          "en": "It’s not there any more!",
+          "tag": "Ne… plus"
+        },
+        {
+          "fr": "Il n’y a plus de pain.",
+          "en": "There’s no bread left.",
+          "tag": "Ne… plus de"
+        },
+        {
+          "fr": "Je ne fume plus.",
+          "en": "I don’t smoke any more.",
+          "tag": "Ne… plus"
+        }
+      ],
+      "spoken": "In conversation the ne usually goes: « Elle est plus là ! », « Y a plus de pain. » Plus is then the only negative word left, which is why its pronunciation matters: see the note on plus.",
+      "trap": {
+        "wrong": "Elle n’est pas plus là.",
+        "right": "Elle n’est plus là.",
+        "why": "Plus replaces pas; the two never go together here. « Pas plus » means “not more”, as in « pas plus de deux » (no more than two)."
+      }
+    },
+    {
+      "id": "ne-jamais",
+      "kicker": "Négation",
+      "title": "« Jamais » : plus fort que « pas »",
+      "short": "Ne… jamais means never: not once, at no time.",
+      "body": [
+        "Gilles could have said « Elle n’est pas partie » (it didn’t leave). « Elle n’est jamais partie » is stronger, and funnier: it never left, not for a second.",
+        "Like pas and plus, jamais sits around the verb, and before the past participle in the passé composé: elle n’est jamais partie, je n’ai jamais vu ça.",
+        "Partie takes an -e because partir uses être, and with être the participle agrees with the subject: elle, the tower."
+      ],
+      "examples": [
+        {
+          "fr": "Elle n’est jamais partie.",
+          "en": "It never left.",
+          "tag": "Ne… jamais"
+        },
+        {
+          "fr": "Je ne suis jamais venue à Paris.",
+          "en": "I’ve never been to Paris. (a woman speaking)",
+          "tag": "Ne… jamais"
+        },
+        {
+          "fr": "Il ne pleut jamais à Manchester ?",
+          "en": "It never rains in Manchester?",
+          "tag": "Ne… jamais"
+        }
+      ],
+      "spoken": "Jamais is strong enough to stand alone: « Jamais ! » (Never!), « Jamais de la vie ! » (Not on your life!). In speech the ne goes here too: « J’ai jamais vu ça. »",
+      "trap": {
+        "wrong": "Je n’ai vu jamais la tour.",
+        "right": "Je n’ai jamais vu la tour.",
+        "why": "Jamais goes before the past participle, like pas and plus. Personne is the odd one out: it goes after."
+      }
+    },
+    {
+      "id": "rien-personne",
+      "kicker": "Négation",
+      "title": "« Rien », « personne » : où les mettre ?",
+      "short": "Rien (nothing) and personne (nobody) replace pas, and they can also be the subject of the sentence.",
+      "body": [
+        "Je ne vois rien: I see nothing. Il n’y a personne: there’s nobody. Like plus and jamais, they take the place of pas.",
+        "They can also start the sentence. Ne still comes before the verb, but there’s no pas: « Personne n’a volé votre tour », « Rien ne bouge ».",
+        "In the passé composé they split up: rien goes before the past participle (je n’ai rien vu), personne after it (je n’ai vu personne)."
+      ],
+      "examples": [
+        {
+          "fr": "Je ne vois rien !",
+          "en": "I can’t see a thing!",
+          "tag": "Ne… rien"
+        },
+        {
+          "fr": "Personne n’a volé votre tour.",
+          "en": "Nobody has stolen your tower.",
+          "tag": "Personne ne…"
+        },
+        {
+          "fr": "Je n’ai vu personne.",
+          "en": "I didn’t see anybody.",
+          "tag": "Ne… personne"
+        }
+      ],
+      "spoken": "« On n’y voit rien » is the fixed way to say you can’t see a thing, in fog, smoke or the dark. Out loud, n’y and y sound the same, so the careful « on n’y voit rien » and the casual « on y voit rien » can’t be told apart.",
+      "trap": {
+        "wrong": "Personne n’a pas volé la tour.",
+        "right": "Personne n’a volé la tour.",
+        "why": "Pas never goes with personne, rien, plus or jamais. Those can combine with each other, though: « Personne n’a rien vu » means nobody saw anything."
+      }
+    },
+    {
+      "id": "ne-tombe",
+      "kicker": "Français parlé",
+      "title": "Où est passé le « ne » ?",
+      "short": "In everyday speech Parisians drop the ne almost every time; the second word carries the negation.",
+      "body": [
+        "Written French needs both parts: elle n’a pas bougé. Spoken French mostly keeps only the second: « Elle a pas bougé. »",
+        "It isn’t slang or a mistake. Teachers, doctors and politicians do it in conversation. The ne comes back in writing, in speeches, and when someone wants to sound careful or firm.",
+        "So when you listen, don’t wait for the ne: listen for pas, plus, jamais, rien or personne."
+      ],
+      "examples": [
+        {
+          "fr": "Elle a pas bougé, votre tour.",
+          "en": "Your tower hasn’t moved.",
+          "tag": "Courant"
+        },
+        {
+          "fr": "Je sais pas.",
+          "en": "I don’t know.",
+          "tag": "Courant"
+        },
+        {
+          "fr": "T’inquiète.",
+          "en": "Don’t worry.",
+          "tag": "Familier"
+        }
+      ],
+      "spoken": "As a learner, keep the ne when you write and in formal situations; dropping it in conversation will make you sound more natural. Either way, nobody will misunderstand you.",
+      "trap": {
+        "wrong": "Je ne sais.",
+        "right": "Je ne sais pas. / Je sais pas.",
+        "why": "You can drop ne, but not pas: pas is the part that carries the meaning. « Je ne sais » alone is old literary French."
+      }
+    },
+    {
+      "id": "plus-prononciation",
+      "kicker": "Prononciation",
+      "title": "« Plus » : avec ou sans le s ?",
+      "short": "When plus means no more, the s is silent; when it means more, you usually hear it.",
+      "body": [
+        "In « le soleil qui ne revient plus », plus means no longer, and it’s said [ply], with no s.",
+        "When plus means more at the end of a phrase, the s is pronounced: « J’en veux plus » [plys], I want more.",
+        "Now drop the ne, as everyone does in speech: « J’en veux plus » [ply], I don’t want any more. Same spelling, opposite meaning: only the s tells you which."
+      ],
+      "examples": [
+        {
+          "fr": "C’est le soleil qui ne revient plus.",
+          "en": "It’s the sun that doesn’t come back any more.",
+          "tag": "[ply] : no more"
+        },
+        {
+          "fr": "J’en veux plus, merci.",
+          "en": "I don’t want any more, thanks. (said [ply])",
+          "tag": "[ply] : no more"
+        },
+        {
+          "fr": "J’en veux plus, s’il vous plaît !",
+          "en": "I’d like more, please! (said [plys])",
+          "tag": "[plys] : more"
+        }
+      ],
+      "spoken": "The same goes for « plus de »: « Y a plus de pain » said with [ply] means there’s no bread left; with [plys], there’s more bread. With the ne gone, Parisians rely on that s and on context.",
+      "trap": {
+        "wrong": "On n’y voit plus [plys].",
+        "right": "On n’y voit plus [ply].",
+        "why": "In a negation, the s of plus is never pronounced. Say it, and a French ear hears “we can see more”."
+      }
+    }
+  ],
+  "quiz": [
+    {
+      "kind": "Écoute",
+      "prompt": "Listen to Harriet. What does she think has happened?",
+      "listen": "harriet-plus-la",
+      "note": "ne-plus",
+      "options": [
+        {
+          "text": "She can’t find the Eiffel Tower on her map.",
+          "why": "Nothing about the map: she says « elle n’est plus là », it isn’t there any more."
+        },
+        {
+          "text": "The Eiffel Tower isn’t there any more.",
+          "correct": true,
+          "why": "« Elle n’est plus là » = it’s no longer there. Ne… plus means something was there before and has stopped being."
+        },
+        {
+          "text": "The Eiffel Tower is closed today.",
+          "why": "« Plus là » is about being there, not about opening hours. Closed would be « fermée »."
+        }
+      ]
+    },
+    {
+      "kind": "Grammaire",
+      "quote": "— Pas de panique, madame. Elle a pas bougé, votre tour.",
+      "prompt": "Gilles says “elle a pas bougé”. Where has the “ne” gone?",
+      "note": "ne-tombe",
+      "options": [
+        {
+          "text": "He dropped it, as almost everyone does in speech: “pas” carries the negation.",
+          "correct": true,
+          "why": "In everyday spoken French the ne usually disappears. Written, it would be « elle n’a pas bougé »."
+        },
+        {
+          "text": "It’s a mistake: Gilles speaks careless French.",
+          "why": "It isn’t a mistake. Dropping ne is normal in conversation, for everyone from teachers to politicians."
+        },
+        {
+          "text": "Without “ne”, it means the tower did move.",
+          "why": "Pas alone still makes it negative. The meaning doesn’t change at all: the tower hasn’t moved."
+        }
+      ]
+    },
+    {
+      "kind": "Grammaire",
+      "quote": "— Personne n’a volé votre tour.",
+      "prompt": "Why is there no “pas” in “Personne n’a volé votre tour”?",
+      "note": "rien-personne",
+      "options": [
+        {
+          "text": "Because “personne” is the subject, so “ne” isn’t needed either.",
+          "why": "Ne is still there: « Personne n’a volé ». Only pas goes, because personne takes its place."
+        },
+        {
+          "text": "Gilles dropped “pas” because he’s speaking casually.",
+          "why": "In casual speech it’s ne that disappears, never pas. And with personne there’s no pas even in writing."
+        },
+        {
+          "text": "“Personne” replaces “pas”: the two never go together.",
+          "correct": true,
+          "why": "Personne, like rien, jamais and plus, takes the place of pas. « Personne n’a pas volé » is wrong."
+        }
+      ]
+    },
+    {
+      "kind": "Lecture",
+      "quote": "— Mais je ne vois rien ! On l’a volée ? On l’a démolie ?",
+      "prompt": "In “On l’a volée ?”, what does “l’” stand for?",
+      "options": [
+        {
+          "text": "Her map (le plan).",
+          "why": "Plan is masculine, so it would be « volé », with no -e. And she’s worried about the tower, not her map."
+        },
+        {
+          "text": "The Eiffel Tower.",
+          "correct": true,
+          "why": "L’ = la tour Eiffel. That’s why volée takes an -e: the object comes before avoir, as in lesson 1."
+        },
+        {
+          "text": "Gilles.",
+          "why": "She talks to Gilles as vous, and l’ + volée (with -e) points to something feminine: la tour."
+        }
+      ]
+    },
+    {
+      "kind": "Écoute",
+      "prompt": "Listen to Gilles. How does he reassure Harriet?",
+      "listen": "gilles-rassure",
+      "options": [
+        {
+          "text": "He tells her it happens all the time.",
+          "correct": true,
+          "why": "« Ça arrive tout le temps » = it happens all the time, and « je vous assure » = I promise you."
+        },
+        {
+          "text": "He says the fog will lift in an hour.",
+          "why": "He doesn’t give a time. « Tout le temps » means all the time, not in a moment."
+        },
+        {
+          "text": "He suggests she comes back tomorrow.",
+          "why": "Nothing about tomorrow: « Ne vous inquiétez pas » means don’t worry."
+        }
+      ]
+    },
+    {
+      "kind": "Compréhension",
+      "quote": "— Elle n’est jamais partie. C’est le soleil qui ne revient plus.",
+      "prompt": "What is Gilles joking about?",
+      "note": "ne-jamais",
+      "options": [
+        {
+          "text": "The tower was taken away and has just been brought back.",
+          "why": "« Elle n’est jamais partie » = it never left. It was there all along, behind the fog."
+        },
+        {
+          "text": "The sun will come back tomorrow.",
+          "why": "« Ne revient plus » means it doesn’t come back any more: the opposite. Look at the grey sky."
+        },
+        {
+          "text": "Paris weather: the tower never left, but the sun hardly ever shows up.",
+          "correct": true,
+          "why": "Deadpan Parisian humour: the tower is fine; it’s the sunshine that has gone missing."
+        }
+      ]
+    }
+  ],
+  "phrases": [
+    {
+      "written": "Elle n’a pas bougé.",
+      "spoken": "Elle a pas bougé.",
+      "register": "Courant",
+      "note": "The ne disappears in almost all conversation; pas does the work. Keep the ne when you write."
+    },
+    {
+      "written": "Il n’y a personne.",
+      "spoken": "Y a personne.",
+      "register": "Courant",
+      "note": "Il n’y a shrinks to y a, and the ne goes with it. You’ll hear « y a personne » at every empty shop counter."
+    },
+    {
+      "written": "Nous ne voyons rien.",
+      "spoken": "On y voit rien.",
+      "register": "Courant",
+      "note": "On replaces nous, and « on n’y voit rien » is the set phrase for fog or the dark. The n’ is silent anyway, so nobody can hear whether you said it."
+    },
+    {
+      "written": "Il n’y a plus de pain.",
+      "spoken": "Y a plus de pain.",
+      "register": "Courant",
+      "note": "Without ne, only the sound of plus says no more: [ply]. Say [plys] and you’re asking for more bread."
+    },
+    {
+      "written": "Je ne sais pas.",
+      "spoken": "Chais pas.",
+      "register": "Familier",
+      "note": "Je sais pas runs together into « chais pas » in fast speech. Fine with friends, never in an email."
+    },
+    {
+      "written": "Ne t’inquiète pas.",
+      "spoken": "T’inquiète.",
+      "register": "Familier",
+      "note": "Friends cut it down to one word, which means don’t worry or no problem. Gilles stays polite: « Ne vous inquiétez pas »."
+    }
+  ],
+  "describe": {
+    "image": "scene-fog.svg",
+    "alt": "The Trocadéro in thick fog: a bench with a man feeding pigeons, a woman with a map, and the faint outline of the Eiffel Tower across the river",
+    "imagePosition": "50% 100%",
+    "caption": "Le Trocadéro dans le brouillard · dimanche, 8 h 30",
+    "instructions": "Write 3 to 5 sentences: what can you still see, what has disappeared, who is on the bench?",
+    "placeholder": "Dans le brouillard, on voit…",
+    "helpers": [
+      "on ne voit plus…",
+      "il n’y a personne",
+      "au loin",
+      "à peine",
+      "à travers la brume",
+      "on dirait que"
+    ],
+    "scene": "A flat, colourful illustration of the Trocadéro esplanade in Paris in thick fog. In the foreground, on a green bench, an older man in a dark coat and flat cap throws bread to four pigeons on the paving stones. Beside the bench stands a woman with grey hair, a raincoat and a paper map, looking worried. Behind them, pale grey bands of fog cover the view; across the river, the top of the Eiffel Tower is only a faint violet outline, and the rest of the tower has disappeared into the fog. A row of street lamps fades into the mist. The sky is overcast and grey. There is no sun.",
+    "sample": {
+      "text": "Il y a beaucoup de brouillard au Trocadéro. Le ciel est gris et les nuages est bas. On ne voit pas rien au loin, et la tour Eiffel n’est pas plus là. Sur le banc, un homme donne du pain à les pigeons. Il ne y a personne d’autre.",
+      "result": {
+        "segments": [
+          {
+            "t": "Il y a beaucoup de brouillard au Trocadéro. Le ciel est gris et les nuages "
+          },
+          {
+            "from": "est",
+            "to": "sont",
+            "n": 1
+          },
+          {
+            "t": " bas. On ne voit "
+          },
+          {
+            "from": "pas rien",
+            "to": "rien",
+            "n": 2
+          },
+          {
+            "t": " au loin, et la tour Eiffel n’est "
+          },
+          {
+            "from": "pas plus",
+            "to": "plus",
+            "n": 3
+          },
+          {
+            "t": " là. Sur le banc, un homme donne du pain "
+          },
+          {
+            "from": "à les",
+            "to": "aux",
+            "n": 4
+          },
+          {
+            "t": " pigeons. Il "
+          },
+          {
+            "from": "ne y",
+            "to": "n’y",
+            "n": 5
+          },
+          {
+            "t": " a personne d’autre."
+          }
+        ],
+        "corrections": [
+          {
+            "n": 1,
+            "from": "est",
+            "to": "sont",
+            "rule": "Accord du verbe",
+            "why": "The verb agrees with its subject: les nuages is plural, so être becomes sont."
+          },
+          {
+            "n": 2,
+            "from": "pas rien",
+            "to": "rien",
+            "rule": "Ne… rien, sans pas",
+            "why": "Rien takes the place of pas, so the two never go together: on ne voit rien."
+          },
+          {
+            "n": 3,
+            "from": "pas plus",
+            "to": "plus",
+            "rule": "Ne… plus, sans pas",
+            "why": "Plus replaces pas: elle n’est plus là means it’s no longer there. « Pas plus » means not more."
+          },
+          {
+            "n": 4,
+            "from": "à les",
+            "to": "aux",
+            "rule": "À + les = aux",
+            "why": "À and les always merge into aux: on donne du pain aux pigeons."
+          },
+          {
+            "n": 5,
+            "from": "ne y",
+            "to": "n’y",
+            "rule": "Élision devant y",
+            "why": "Ne loses its e before a vowel sound, and y counts: il n’y a personne."
+          }
+        ],
+        "corrected": "Il y a beaucoup de brouillard au Trocadéro. Le ciel est gris et les nuages sont bas. On ne voit rien au loin, et la tour Eiffel n’est plus là. Sur le banc, un homme donne du pain aux pigeons. Il n’y a personne d’autre.",
+        "spoken": "Y a un brouillard pas possible au Trocadéro. Le ciel est tout gris, les nuages sont super bas. On voit rien au loin, et la tour Eiffel, elle est plus là. Sur le banc, y a un monsieur qui donne du pain aux pigeons. Et à part lui, y a personne.",
+        "spokenNote": "Out loud, the ne disappears (on voit rien, elle est plus là, y a personne), il y a becomes y a, and the tower gets named twice for emphasis.",
+        "praise": "Nice use of “au loin”!"
+      }
+    }
+  },
+  "ambience": {
+    "prompt": "Early morning on the Trocadéro esplanade in Paris, in thick fog: muffled distant traffic, pigeons cooing and fluttering nearby, footsteps on damp stone, a far-off boat horn on the Seine, a soft breeze. Calm and steady. No music, no clear speech.",
+    "volume": 0.18
+  }
+}

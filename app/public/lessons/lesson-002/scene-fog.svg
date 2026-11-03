@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" role="img" aria-label="The Trocadéro in thick fog">
+  <!-- Placeholder drawing for lesson 2 (flat brand colours). Replace with illustrator artwork of the same name. -->
+  <rect width="600" height="600" fill="#DFDBD2"/>
+  <!-- the tower across the river: only its top shows above the fog -->
+  <g fill="#9D8FFF">
+    <rect x="296" y="70" width="8" height="26" rx="4"/>
+    <polygon points="289,96 311,96 318,150 282,150"/>
+    <rect x="274" y="150" width="52" height="9" rx="3"/>
+    <polygon points="278,159 322,159 334,215 266,215"/>
+  </g>
+  <rect x="-40" y="170" width="380" height="56" rx="28" fill="#ECE9E3"/>
+  <rect x="250" y="196" width="420" height="60" rx="30" fill="#F8F7F4"/>
+  <rect x="-60" y="236" width="720" height="70" rx="35" fill="#FFFFFF"/>
+  <!-- street lamps fading into the mist -->
+  <g fill="#CBC5B9"><rect x="96" y="250" width="6" height="140"/><circle cx="99" cy="248" r="13"/><rect x="498" y="262" width="6" height="128"/><circle cx="501" cy="260" r="12"/></g>
+  <rect x="-60" y="300" width="720" height="60" rx="30" fill="#F8F7F4"/>
+  <!-- paving -->
+  <rect y="388" width="600" height="212" fill="#CBC5B9"/>
+  <g stroke="#DFDBD2" stroke-width="4"><line x1="0" y1="440" x2="600" y2="440"/><line x1="0" y1="500" x2="600" y2="500"/><line x1="0" y1="560" x2="600" y2="560"/></g>
+  <!-- bench -->
+  <g fill="#004A3A"><rect x="70" y="408" width="250" height="18" rx="9"/><rect x="70" y="372" width="250" height="18" rx="9"/><rect x="90" y="426" width="14" height="52"/><rect x="286" y="426" width="14" height="52"/></g>
+  <!-- Gilles: dark coat, flat cap, on the bench -->
+  <path d="M150 412 V350 A40 40 0 0 1 230 350 V412 Z" fill="#075F9C"/>
+  <circle cx="190" cy="304" r="30" fill="#FFE3D5"/>
+  <path d="M158 296 A32 26 0 0 1 222 296 Z" fill="#3B3741"/><rect x="152" y="292" width="76" height="9" rx="4" fill="#3B3741"/>
+  <g><circle cx="181" cy="310" r="5" fill="#fff"/><circle cx="199" cy="310" r="5" fill="#fff"/><circle cx="182" cy="311" r="2.6" fill="#121014"/><circle cx="200" cy="311" r="2.6" fill="#121014"/></g>
+  <!-- Harriet: pink raincoat, grey hair, holding a map -->
+  <path d="M410 520 V420 A44 44 0 0 1 498 420 V520 Z" fill="#FF7ADB"/>
+  <circle cx="454" cy="358" r="38" fill="#A9A4AE"/>
+  <circle cx="454" cy="368" r="28" fill="#FFE3D5"/>
+  <g><circle cx="444" cy="368" r="6" fill="#fff"/><circle cx="464" cy="368" r="6" fill="#fff"/><circle cx="444" cy="366" r="3" fill="#121014"/><circle cx="464" cy="366" r="3" fill="#121014"/></g>
+  <rect x="372" y="430" width="62" height="46" rx="4" fill="#FFFFFF"/><g stroke="#ADD1F1" stroke-width="4"><line x1="384" y1="444" x2="422" y2="444"/><line x1="384" y1="458" x2="414" y2="458"/></g>
+  <!-- pigeons -->
+  <g fill="#9D8FFF">
+    <ellipse cx="120" cy="530" rx="26" ry="16"/><circle cx="142" cy="516" r="10"/>
+    <ellipse cx="220" cy="560" rx="26" ry="16"/><circle cx="198" cy="546" r="10"/>
+    <ellipse cx="300" cy="520" rx="24" ry="15"/><circle cx="321" cy="507" r="9"/>
+    <ellipse cx="350" cy="575" rx="24" ry="15"/><circle cx="329" cy="562" r="9"/>
+  </g>
+  <g fill="#FFCF66"><circle cx="160" cy="548" r="4"/><circle cx="250" cy="540" r="4"/><circle cx="276" cy="560" r="4"/><circle cx="174" cy="566" r="4"/></g>
+</svg>

@@ -38,7 +38,7 @@ export function Home({ app }: { app: AppCtx }) {
     {!app.isToday && (
       <button onClick={() => app.library.open(app.library.today.number)} style={{ flex: 'none', display: 'flex', alignItems: 'center', gap: 8, margin: '0 20px 12px', padding: '10px 14px', border: 0, borderRadius: 'var(--radius-md)', background: 'var(--sun-100)', color: 'var(--sun-900)', font: '600 13px/1.3 var(--font-body)', textAlign: 'left', cursor: 'pointer' }}>
         <Icon name="calendar-days" size={16} />
-        <span style={{ flex: 1 }}>From the archive. Back to today’s apéro</span>
+        <span style={{ flex: 1 }}>{app.lesson.number > app.library.today.number ? 'Coming up, not live yet.' : 'From the archive.'} Back to today’s apéro</span>
         <Icon name="arrow-right" size={16} />
       </button>
     )}

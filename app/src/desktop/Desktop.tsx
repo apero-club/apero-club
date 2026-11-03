@@ -101,7 +101,7 @@ function DHome({ app }: P) {
     <section style={{ background: 'var(--violet-500)', color: 'var(--white)' }}>
       <div className="band-grid" style={{ maxWidth: 1120, margin: '0 auto' }}>
         <div style={{ padding: '48px 20px 44px', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 20 }}>
-          <Eyebrow color="var(--lilac-500)">{frDate(lesson.date)} · {app.isToday ? 'Today’s apéro' : 'From the archive'}</Eyebrow>
+          <Eyebrow color="var(--lilac-500)">{frDate(lesson.date)} · {app.isToday ? 'Today’s apéro' : lesson.number > app.library.today.number ? 'Coming up' : 'From the archive'}</Eyebrow>
           <h1 style={{ font: '900 clamp(44px,7vw,80px)/0.92 var(--font-display)', letterSpacing: '-0.045em', color: 'var(--lilac-500)', margin: 0 }}>{lesson.title}</h1>
           <p style={{ margin: 0, fontSize: 18, lineHeight: 1.5, maxWidth: '44ch' }}>{lesson.summary} Listen, check you understood, see how it’s really said, then write.</p>
           {allDone && <span className="hand" style={{ fontSize: 30, color: 'var(--lilac-500)', transform: 'rotate(-2deg)' }}>Séance terminée ! À demain.</span>}
