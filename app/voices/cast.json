@@ -46,7 +46,8 @@
       "voiceId": "2oMnSKxLeHBxE0KdeHJD",
       "status": "pending",
       "firstLesson": "lesson-003",
-      "rejected": []
+      "rejected": [],
+      "sample": "madame-benali-2oMnSKxLeHBxE0KdeHJD.mp3"
     },
     "clement": {
       "name": "Clément",
