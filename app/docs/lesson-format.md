@@ -103,3 +103,19 @@ Every French line can play a recorded voice instead of the device's built-in one
 - **Automatic:** when you push a lesson to `main`, the **Record lesson audio** GitHub Action records anything missing and commits it to `public/lessons/<date>/audio/`. Edited lines are re-recorded; removed ones are deleted; unchanged ones are kept.
 - **Cost check:** `npm run record-audio -- --dry-run` prints how many characters a run would use. The first lesson is about 1,900 characters.
 - **No recordings yet?** The app falls back to device voices for any line without a recording, so a lesson works before its audio exists.
+
+### Story ambience
+
+Add an optional `ambience` to a lesson for background sound during the story:
+
+```json
+"ambience": {
+  "prompt": "Inside a small Paris bakery on a rainy Saturday morning: a quiet murmur of customers waiting in line, a door bell, paper bags rustling… No music, no clear speech.",
+  "volume": 0.18
+}
+```
+
+- The same GitHub Action generates it once with ElevenLabs Sound Effects (a 30-second loop) and commits it. Changing the `prompt` generates a new one.
+- Describe a place and its sounds. Always ask for **no music and no clear speech**, so it never competes with the French.
+- It plays quietly, only while the story audio plays, and fades out on pause or when leaving the story. Learners can turn it off with the **Ambience** button; the choice is remembered.
+- `volume` is 0 to 1 (default 0.18). Keep it low.

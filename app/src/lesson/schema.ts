@@ -189,6 +189,16 @@ export const LessonSchema = z.object({
   quiz: z.array(Question).min(1),
   phrases: z.array(Phrase).min(1),
   describe: Describe,
+  /**
+   * Background sound for the story, generated once by ElevenLabs Sound Effects from
+   * this description. Plays quietly, looped, while the story audio plays.
+   */
+  ambience: z.object({
+    /** What it should sound like. Ask for no music and no clear speech, so it never competes with the French. */
+    prompt: z.string().min(10).max(450),
+    /** Loudness under the voices, 0 to 1. Keep it low. */
+    volume: z.number().min(0).max(1).default(0.18),
+  }).strict().optional(),
 }).strict().superRefine((l, ctx) => {
   const cast = new Set(l.cast.map(c => c.id));
   const notes = new Set(l.notes.map(n => n.id));

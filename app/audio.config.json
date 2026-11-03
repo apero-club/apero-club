@@ -16,5 +16,10 @@
     "similarity_boost": 0.75,
     "style": 0,
     "use_speaker_boost": true
+  },
+  "ambience": {
+    "model": "eleven_text_to_sound_v2",
+    "durationSeconds": 30,
+    "promptInfluence": 0.4
   }
 }

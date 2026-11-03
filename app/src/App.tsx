@@ -4,6 +4,7 @@ import { assetUrl, loadLesson, requestedDate } from './lesson/load';
 import { flattenStory } from './lesson/story';
 import { useSpeech } from './audio/useSpeech';
 import { loadManifest, type AudioManifest } from './audio/manifest';
+import { useAmbience } from './audio/useAmbience';
 import { loadPrefs, loadProgress, savePrefs, saveProgress, type Prefs, type Progress } from './progress';
 import type { AppCtx, Screen } from './screens/common';
 import { Home } from './screens/Home';
@@ -60,6 +61,7 @@ function LessonApp({ lesson, wide }: { lesson: Lesson; wide: boolean }) {
   const [manifest, setManifest] = useState<AudioManifest | null>(null);
   useEffect(() => { loadManifest(assetUrl(lesson.date, 'audio/manifest.json')).then(setManifest); }, [lesson.date]);
   const speech = useSpeech(lesson.cast, lines, prefs.slow, manifest, assetUrl(lesson.date, 'audio/'));
+  const ambience = useAmbience(manifest?.ambience ? assetUrl(lesson.date, 'audio/' + manifest.ambience.file) : null, lesson.ambience?.volume ?? 0.18);
   const root = useRef<HTMLDivElement>(null);
 
   const setProgress = useCallback((p: Partial<Progress>) => setProgressState(prev => {
@@ -79,7 +81,7 @@ function LessonApp({ lesson, wide }: { lesson: Lesson; wide: boolean }) {
   };
 
   const app: AppCtx = {
-    lesson, lines, paragraphs, speech, progress, setProgress, prefs, setPrefs, go,
+    lesson, lines, paragraphs, speech, ambience, progress, setProgress, prefs, setPrefs, go,
     openNote: id => { if (id) { speech.stop(); setNote(id); } },
     asset: file => assetUrl(lesson.date, file),
   };

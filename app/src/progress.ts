@@ -5,7 +5,7 @@
  */
 export type StepId = 'story' | 'quiz' | 'spoken' | 'describe';
 export type Progress = { done: Partial<Record<StepId, true>>; score?: number; text?: string };
-export type Prefs = { showEN: boolean; slow: boolean };
+export type Prefs = { showEN: boolean; slow: boolean; ambience: boolean };
 
 const KEY = (date: string) => `apero:v1:lesson:${date}`;
 const PREFS = 'apero:v1:prefs';
@@ -19,5 +19,5 @@ function write(key: string, value: unknown) {
 
 export const loadProgress = (date: string): Progress => read<Progress>(KEY(date), { done: {} });
 export const saveProgress = (date: string, p: Progress) => write(KEY(date), p);
-export const loadPrefs = (): Prefs => read<Prefs>(PREFS, { showEN: false, slow: false });
+export const loadPrefs = (): Prefs => read<Prefs>(PREFS, { showEN: false, slow: false, ambience: true });
 export const savePrefs = (p: Prefs) => write(PREFS, p);

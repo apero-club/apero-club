@@ -32,6 +32,7 @@ type Config = {
   model: string; outputFormat: string;
   voices: { male: string[]; female: string[] };
   voiceSettings?: Record<string, unknown>;
+  ambience?: { model?: string; durationSeconds?: number; promptInfluence?: number };
 };
 const config: Config = JSON.parse(readFileSync(join(ROOT, 'audio.config.json'), 'utf8'));
 
@@ -79,6 +80,34 @@ async function record(voice: string, text: string) {
   }
 }
 
+/**
+ * Story background sound from ElevenLabs Sound Effects. Asks for a seamless loop
+ * when the model supports it; if the API rejects those options, retries with the
+ * basic request (the app crossfades the loop either way).
+ */
+async function generateAmbience(prompt: string): Promise<Buffer> {
+  const key = process.env.ELEVENLABS_API_KEY;
+  if (!key) throw new Stop('ELEVENLABS_API_KEY is not set.');
+  const a = config.ambience ?? {};
+  const basic = { text: prompt, duration_seconds: a.durationSeconds ?? 30, prompt_influence: a.promptInfluence ?? 0.4 };
+  const looped = { ...basic, loop: true, model_id: a.model ?? 'eleven_text_to_sound_v2' };
+  let body: object = looped;
+  for (let attempt = 1; ; attempt++) {
+    const res = await fetch(`${API}/v1/sound-generation?output_format=${encodeURIComponent(config.outputFormat)}`, {
+      method: 'POST',
+      headers: { 'xi-api-key': key, 'Content-Type': 'application/json', Accept: 'audio/mpeg' },
+      body: JSON.stringify(body),
+    });
+    if (res.ok) return Buffer.from(await res.arrayBuffer());
+    const text = await res.text();
+    if ((res.status === 400 || res.status === 422) && body === looped) { body = basic; console.log('  (loop option not accepted; using a plain clip)'); continue; }
+    if (res.status === 401 || res.status === 403) throw new Stop(`ElevenLabs refused the sound effect (${res.status}). ${/quota/i.test(text) ? 'You are out of credits for this month.' : 'Check ELEVENLABS_API_KEY.'}\n${text.slice(0, 300)}`);
+    if (res.status < 500 && res.status !== 429) throw new Stop(`ElevenLabs rejected the ambience request (${res.status}).\n${text.slice(0, 300)}`);
+    if (attempt >= 5) throw new Stop(`ElevenLabs kept failing (${res.status}).\n${text.slice(0, 300)}`);
+    await new Promise(r => setTimeout(r, 2000 * 2 ** (attempt - 1)));
+  }
+}
+
 async function main() {
   const dir = join(ROOT, 'lessons');
   const files = readdirSync(dir).filter(f => /^\d{4}-\d{2}-\d{2}\.json$/.test(f) && (!ONLY || f === `${ONLY}.json`)).sort();
@@ -99,8 +128,11 @@ async function main() {
     const uniq = new Map(todo.map(c => [fileFor(voices[c.speaker], c), c]));
     const chars = [...uniq.values()].reduce((n, c) => n + speechText(c.text).length, 0);
     total += chars;
-    console.log(`${lesson.date}: ${clips.length} clips, ${todo.length} to record (${chars} characters)`);
-    if (DRY || (!todo.length && !existsSync(out))) continue;
+    const amb = lesson.ambience;
+    const ambFile = amb ? 'ambience-' + createHash('sha1').update(amb.prompt).digest('hex').slice(0, 12) + '.mp3' : null;
+    const ambTodo = !!amb && (FORCE || manifest.ambience?.prompt !== amb.prompt || !existsSync(join(out, ambFile!)));
+    console.log(`${lesson.date}: ${clips.length} clips, ${todo.length} to record (${chars} characters)${ambTodo ? `, plus ambience (${config.ambience?.durationSeconds ?? 30} s sound effect)` : ''}`);
+    if (DRY || (!todo.length && !ambTodo && !existsSync(out))) continue;
 
     mkdirSync(out, { recursive: true });
     manifest.model = config.model;
@@ -128,10 +160,17 @@ async function main() {
       recorded++;
       console.log(`  ✓ ${c.speaker}: ${speechText(c.text).slice(0, 60)}`);
     }
+    if (ambTodo) {
+      writeFileSync(join(out, ambFile!), await generateAmbience(amb!.prompt));
+      manifest.ambience = { file: ambFile!, prompt: amb!.prompt };
+      save();
+      console.log(`  ✓ ambience: ${amb!.prompt.slice(0, 60)}`);
+    }
+    if (!amb) delete manifest.ambience;
     // Drop recordings of lines that no longer exist.
     const keep = new Set(clips.map(c => c.key));
     for (const k of Object.keys(manifest.clips)) if (!keep.has(k)) delete manifest.clips[k];
-    const files = new Set(Object.values(manifest.clips).map(c => c.file));
+    const files = new Set([...Object.values(manifest.clips).map(c => c.file), ...(manifest.ambience ? [manifest.ambience.file] : [])]);
     for (const mp3 of readdirSync(out)) if (mp3.endsWith('.mp3') && !files.has(mp3)) unlinkSync(join(out, mp3));
     save();
   }

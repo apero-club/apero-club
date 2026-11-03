@@ -10,7 +10,12 @@ export type ClipAudio = {
   /** Which voice recorded it, so changing a speaker's voice re-records their lines. */
   voice: string;
 };
-export type AudioManifest = { version: 1; model: string; clips: Record<string, ClipAudio> };
+export type AmbienceAudio = {
+  file: string;
+  /** The description it was generated from: changing it in the lesson generates a new one. */
+  prompt: string;
+};
+export type AudioManifest = { version: 1; model: string; clips: Record<string, ClipAudio>; ambience?: AmbienceAudio };
 
 /** Loads a lesson's recordings. Null when there are none yet: the app falls back to device voices. */
 export async function loadManifest(url: string): Promise<AudioManifest | null> {

@@ -1,13 +1,13 @@
 import type { CSSProperties } from 'react';
 import {
-  ArrowLeft, ArrowRight, BookOpen, Check, CircleHelp, Headphones, House, Lightbulb, Lock, MessagesSquare,
+  ArrowLeft, ArrowRight, AudioLines, BookOpen, Check, CircleHelp, Headphones, House, Lightbulb, Lock, MessagesSquare,
   Pause, PenLine, Play, RotateCcw, SkipBack, SkipForward, Sparkles, Star, Trophy, Turtle, Volume2, X,
   type LucideIcon,
 } from 'lucide-react';
 
 // Only the icons the app uses are bundled. Add new ones here.
 const ICONS = {
-  'arrow-left': ArrowLeft, 'arrow-right': ArrowRight, 'book-open': BookOpen, check: Check, 'circle-help': CircleHelp,
+  'arrow-left': ArrowLeft, 'arrow-right': ArrowRight, 'audio-lines': AudioLines, 'book-open': BookOpen, check: Check, 'circle-help': CircleHelp,
   headphones: Headphones, house: House, lightbulb: Lightbulb, lock: Lock, 'messages-square': MessagesSquare,
   pause: Pause, 'pen-line': PenLine, play: Play, 'rotate-ccw': RotateCcw, 'skip-back': SkipBack, 'skip-forward': SkipForward,
   sparkles: Sparkles, star: Star, trophy: Trophy, turtle: Turtle, 'volume-2': Volume2, x: X,

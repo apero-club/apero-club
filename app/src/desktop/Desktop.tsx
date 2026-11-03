@@ -4,7 +4,7 @@
  * tiles, a 1120px content column, and a right-hand drawer for grammar notes.
  * Same lesson data, state and audio as the phone layout.
  */
-import { useState, type ReactNode } from 'react';
+import { useEffect, useState, type ReactNode } from 'react';
 import { Badge, Button, ChoiceBlock, IconButton, type ChoiceState } from '../ds/controls';
 import { Critter, FillTile, ShapeTile, tok, type ShapeName } from '../ds/brand';
 import { Icon } from '../ds/Icon';
@@ -207,7 +207,13 @@ function DStory({ app }: P) {
   const [started, setStarted] = useState(false);
   const cast = Object.fromEntries(lesson.cast.map(c => [c.id, c]));
   const last = lines.length - 1;
-  const playFrom = (i: number) => { setStarted(true); sp.playFrom(i); };
+  // unlock() must run inside the tap so browsers allow the background sound.
+  const playFrom = (i: number) => { app.ambience.unlock(); setStarted(true); sp.playFrom(i); };
+  // Background ambience follows story playback (and the learner's on/off choice).
+  const amb = app.ambience;
+  useEffect(() => { amb.setActive(prefs.ambience && sp.playing); }, [amb, prefs.ambience, sp.playing]);
+  useEffect(() => () => amb.setActive(false), [amb]);
+  const toggleAmbience = () => { amb.unlock(); setPrefs({ ambience: !prefs.ambience }); };
   const move = (d: number) => { const i = Math.max(0, Math.min(last, sp.cur + d)); setStarted(true); if (sp.playing) sp.playFrom(i); else sp.setCur(i); };
   const toggleSlow = () => { const was = sp.playing; setPrefs({ slow: !prefs.slow }); setStarted(true); setTimeout(() => (was ? sp.playFrom(sp.cur) : sp.sayLine(sp.cur)), 150); };
 
@@ -284,6 +290,7 @@ function DStory({ app }: P) {
         <div className="seg">
           <button aria-pressed={prefs.slow} onClick={toggleSlow} style={{ fontSize: 12, padding: '0 14px' }}>Slow</button>
           <button aria-pressed={prefs.showEN} onClick={() => setPrefs({ showEN: !prefs.showEN })} style={{ fontSize: 12, padding: '0 14px' }}>EN</button>
+          {amb.available && <button aria-pressed={prefs.ambience} onClick={toggleAmbience} title="Background sound while the story plays" style={{ fontSize: 12, padding: '0 14px' }}>Ambience</button>}
         </div>
         <Button variant="secondary" iconRight="arrow-right" onClick={() => go('quiz', 'story')}>Quiz</Button>
       </div>

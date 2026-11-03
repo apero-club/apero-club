@@ -2,6 +2,7 @@ import type { ReactNode } from 'react';
 import type { Lesson } from '../lesson/schema';
 import type { FlatLine } from '../lesson/story';
 import type { Speech } from '../audio/useSpeech';
+import type { Ambience } from '../audio/useAmbience';
 import type { Prefs, Progress, StepId } from '../progress';
 import type { IconName } from '../ds/Icon';
 import { Icon } from '../ds/Icon';
@@ -22,6 +23,8 @@ export type AppCtx = {
   lines: FlatLine[];
   paragraphs: number[][];
   speech: Speech;
+  /** Story background sound, if this lesson has one. */
+  ambience: Ambience;
   progress: Progress;
   setProgress: (p: Partial<Progress>) => void;
   prefs: Prefs;

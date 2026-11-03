@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Button, IconButton } from '../ds/controls';
 import { Critter, FillTile, tok } from '../ds/brand';
 import { Icon } from '../ds/Icon';
@@ -12,7 +12,13 @@ export function Story({ app }: { app: AppCtx }) {
   const cast = Object.fromEntries(lesson.cast.map(c => [c.id, c]));
   const last = lines.length - 1;
 
-  const playFrom = (i: number) => { setStarted(true); sp.playFrom(i); };
+  // unlock() must run inside the tap so phones allow the background sound.
+  const playFrom = (i: number) => { app.ambience.unlock(); setStarted(true); sp.playFrom(i); };
+  // Background ambience follows story playback (and the learner's on/off choice).
+  const amb = app.ambience;
+  useEffect(() => { amb.setActive(prefs.ambience && sp.playing); }, [amb, prefs.ambience, sp.playing]);
+  useEffect(() => () => amb.setActive(false), [amb]);
+  const toggleAmbience = () => { amb.unlock(); setPrefs({ ambience: !prefs.ambience }); };
   const toggleSlow = () => {
     const wasPlaying = sp.playing;
     setPrefs({ slow: !prefs.slow });
@@ -46,7 +52,10 @@ export function Story({ app }: { app: AppCtx }) {
         ))}
       </div>
       <div style={{ padding: '6px 20px 0', display: 'flex', flexDirection: 'column', gap: 4 }}>
-        <span className="hand" style={{ fontSize: 22, color: 'var(--violet-500)', transform: 'rotate(-2deg)', whiteSpace: 'nowrap' }}>tap any line to hear it</span>
+        <span style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 10 }}>
+          <span className="hand" style={{ fontSize: 22, color: 'var(--violet-500)', transform: 'rotate(-2deg)', whiteSpace: 'nowrap' }}>tap any line to hear it</span>
+          {amb.available && <button className="pill-toggle" aria-pressed={prefs.ambience} onClick={toggleAmbience} title="Background sound while the story plays" style={{ height: 32, padding: '0 12px', fontSize: 12 }}><Icon name="audio-lines" size={15} />Ambience</button>}
+        </span>
         {(sp.noFrench || !sp.supported) && <span style={{ fontSize: 12, color: 'var(--fg-3)' }}>
           {sp.supported ? 'No French voice on this device, so audio uses the default voice.' : 'This browser can’t play audio, but you can still read along.'}
         </span>}
