@@ -220,6 +220,140 @@
         ]
       ]
     },
+    "harriet|— Elle est revenue !": {
+      "file": "e78a874d8f7b9109.mp3",
+      "voice": "WQKwBV2Uzw1gSGr69N8I",
+      "words": [
+        [
+          2,
+          0
+        ],
+        [
+          7,
+          0.232
+        ],
+        [
+          11,
+          0.348
+        ],
+        [
+          19,
+          0.813
+        ]
+      ]
+    },
+    "harriet|— Excusez-moi, monsieur… La tour Eiffel ! Elle n’est plus là !": {
+      "file": "09958d893747abbc.mp3",
+      "voice": "WQKwBV2Uzw1gSGr69N8I",
+      "words": [
+        [
+          2,
+          0
+        ],
+        [
+          15,
+          0.604
+        ],
+        [
+          25,
+          1.231
+        ],
+        [
+          28,
+          1.428
+        ],
+        [
+          33,
+          1.672
+        ],
+        [
+          40,
+          2.09
+        ],
+        [
+          42,
+          2.241
+        ],
+        [
+          47,
+          2.426
+        ],
+        [
+          53,
+          2.577
+        ],
+        [
+          58,
+          2.786
+        ],
+        [
+          61,
+          2.972
+        ]
+      ]
+    },
+    "harriet|— Mais je ne vois rien ! On l’a volée ? On l’a démolie ?": {
+      "file": "537d4f928bea75d7.mp3",
+      "voice": "WQKwBV2Uzw1gSGr69N8I",
+      "words": [
+        [
+          2,
+          0
+        ],
+        [
+          7,
+          0.221
+        ],
+        [
+          10,
+          0.313
+        ],
+        [
+          13,
+          0.406
+        ],
+        [
+          18,
+          0.58
+        ],
+        [
+          23,
+          0.952
+        ],
+        [
+          25,
+          1.196
+        ],
+        [
+          28,
+          1.393
+        ],
+        [
+          32,
+          1.544
+        ],
+        [
+          38,
+          1.95
+        ],
+        [
+          40,
+          2.125
+        ],
+        [
+          43,
+          2.31
+        ],
+        [
+          47,
+          2.45
+        ],
+        [
+          55,
+          2.984
+        ]
+      ]
+    },
     "narrator|— Elle n’est jamais partie. C’est le soleil qui ne revient plus.": {
       "file": "e7151c076f11730b.mp3",
       "voice": "Xy5q4w05TJGcKXPWeWoz",
