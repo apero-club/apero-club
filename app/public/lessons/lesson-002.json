@@ -35,12 +35,12 @@
     },
     {
       "image": "illo-tower-fog.svg",
-      "bg": "sky-300",
+      "bg": "lilac-500",
       "alt": ""
     },
     {
       "shape": "circle",
-      "bg": "lilac-500",
+      "bg": "sun-300",
       "fg": "violet-500",
       "eyes": "wide",
       "blink": true
