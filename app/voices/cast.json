@@ -123,8 +123,8 @@
     "samir": {
       "name": "Samir",
       "description": "The narrator’s friend, a Parisian man of 34, middle-aged rather than young. Friendly and amused; a natural, relaxed Parisian accent.",
-      "voiceId": "",
-      "status": "needs-voice",
+      "voiceId": "MJKL8oE6ZYeX9UUCDFcR",
+      "status": "approved",
       "firstLesson": "lesson-004",
       "rejected": [
         "jUHQdLfy668sllNiNTSW",
@@ -134,8 +134,8 @@
     "monsieur-fabre": {
       "name": "Monsieur Fabre",
       "description": "A brocante seller in his sixties, an older Parisian man in a silk scarf. Theatrical and grandiose, a born showman who loves an audience.",
-      "voiceId": "",
-      "status": "needs-voice",
+      "voiceId": "vCsptCe91UKbZe2sIB2T",
+      "status": "approved",
       "firstLesson": "lesson-004",
       "rejected": [
         "jUHQdLfy668sllNiNTSW",
@@ -146,7 +146,7 @@
       "name": "Madame Lucchini",
       "description": "A brocante seller in her sixties, an older woman with glasses on her nose. Dry, blunt, deadpan and calm; warmth shows only at the end. Standard French, no accent.",
       "voiceId": "2oMnSKxLeHBxE0KdeHJD",
-      "status": "pending",
+      "status": "approved",
       "firstLesson": "lesson-004",
       "rejected": [],
       "sample": "madame-lucchini-2oMnSKxLeHBxE0KdeHJD.mp3"

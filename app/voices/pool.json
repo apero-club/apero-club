@@ -32,12 +32,14 @@
       "id": "2oMnSKxLeHBxE0KdeHJD",
       "name": "",
       "gender": "female",
-      "age": "",
+      "age": "older",
       "accent": "parisian",
       "tags": [
-        "calm"
+        "calm",
+        "dry",
+        "deadpan"
       ],
-      "notes": "Felt too dull for Madame Lefèvre; may suit a calmer character."
+      "notes": "Madame Lucchini's voice. Felt too dull for Madame Lefèvre and Madame Benali."
     },
     {
       "id": "jUHQdLfy668sllNiNTSW",
@@ -89,6 +91,32 @@
         "standard"
       ],
       "notes": "Clément's voice (chosen by hand)."
+    },
+    {
+      "id": "MJKL8oE6ZYeX9UUCDFcR",
+      "name": "",
+      "gender": "male",
+      "age": "middle",
+      "accent": "parisian",
+      "tags": [
+        "friendly",
+        "amused",
+        "natural"
+      ],
+      "notes": "Samir's voice (chosen by hand)."
+    },
+    {
+      "id": "vCsptCe91UKbZe2sIB2T",
+      "name": "",
+      "gender": "male",
+      "age": "older",
+      "accent": "parisian",
+      "tags": [
+        "theatrical",
+        "grandiose",
+        "expressive"
+      ],
+      "notes": "Monsieur Fabre's voice (chosen by hand)."
     }
   ]
 }
