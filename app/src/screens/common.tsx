@@ -3,12 +3,13 @@ import type { Lesson } from '../lesson/schema';
 import type { FlatLine } from '../lesson/story';
 import type { Speech } from '../audio/useSpeech';
 import type { Ambience } from '../audio/useAmbience';
+import type { Library } from '../library';
 import type { Prefs, Progress, StepId } from '../progress';
 import type { IconName } from '../ds/Icon';
 import { Icon } from '../ds/Icon';
 import { Badge, IconButton, ProgressBar } from '../ds/controls';
 
-export type Screen = 'home' | 'grammar' | StepId | 'result' | 'complete';
+export type Screen = 'home' | 'grammar' | 'lessons' | StepId | 'result' | 'complete';
 
 /** The fixed 4-step template every lesson runs through. */
 export const STEPS: { id: StepId; n: string; label: string; icon: IconName }[] = [
@@ -33,14 +34,20 @@ export type AppCtx = {
   go: (s: Screen, markDone?: StepId) => void;
   openNote: (id: string | undefined) => void;
   asset: (file: string) => string;
+  /** All lessons: today's, the archive, preview mode. */
+  library: Library;
+  /** This lesson is today's apéro (not one from the archive or a preview). */
+  isToday: boolean;
 };
 
 /** Rotating praise for right answers (design system: short and varied). */
 export const PRAISE = ['Nice one!', 'Très bien.', 'Perfect.', 'Exactement.', 'Bien vu.', 'Spot on.'];
 export const pad = (n: number) => String(n).padStart(2, '0');
 
-export function TabBar({ current, go }: { current: Screen; go: (s: Screen) => void }) {
-  const tabs: [Screen, string, IconName][] = [['home', 'Today', 'house'], ['grammar', 'Grammar', 'book-open']];
+export function TabBar({ current, app }: { current: Screen; app: AppCtx }) {
+  // "Today" always means today's apéro, even while an older lesson is open.
+  const go = (s: Screen) => (s === 'home' && !app.isToday ? app.library.open(app.library.today.number) : app.go(s));
+  const tabs: [Screen, string, IconName][] = [['home', 'Today', 'house'], ['lessons', 'Lessons', 'calendar-days'], ['grammar', 'Grammar', 'book-open']];
   return (
     <nav className="tabs" aria-label="Main">
       {tabs.map(([id, label, icon]) => (

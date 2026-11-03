@@ -11,7 +11,7 @@
  * short sample. "approved" records their lines; "rejected" moves to the next-best
  * voice and makes a new sample.
  */
-import type { Lesson } from '../src/lesson/schema';
+import type { LessonData } from '../src/lesson/schema';
 
 export type PoolVoice = {
   id: string; name?: string; gender: 'male' | 'female';
@@ -61,7 +61,7 @@ export class CastingError extends Error {}
  * Updates the registry (in place) for one lesson's cast and reports who can be recorded.
  * Pure: no files, no network.
  */
-export function castLesson(lesson: Lesson, pool: Pool, reg: Registry): CastResult {
+export function castLesson(lesson: LessonData, lessonId: string, pool: Pool, reg: Registry): CastResult {
   const res: CastResult = { approved: {}, pending: [], notes: [] };
   const inStory = new Set<string>();
   // Characters already cast keep their voice; collect those first so new ones avoid them.
@@ -78,13 +78,13 @@ export function castLesson(lesson: Lesson, pool: Pool, reg: Registry): CastResul
       const candidates = pool.voices.filter(v => v.gender === c.voice && !rejected.includes(v.id) && !inStory.has(v.id));
       const fresh = candidates.filter(v => !usedAnywhere.has(v.id));
       const from = fresh.length ? fresh : candidates;
-      if (!from.length) throw new CastingError(`No ${c.voice} voice left in voices/pool.json for "${c.name}" in ${lesson.date}. Add more ${c.voice} voices to the pool${rejected.length ? ` (already rejected for this character: ${rejected.join(', ')})` : ''}.`);
+      if (!from.length) throw new CastingError(`No ${c.voice} voice left in voices/pool.json for "${c.name}" in ${lessonId}. Add more ${c.voice} voices to the pool${rejected.length ? ` (already rejected for this character: ${rejected.join(', ')})` : ''}.`);
       if (!fresh.length) res.notes.push(`Every ${c.voice} voice in the pool is taken, so "${c.name}" shares a voice with a character from another story. Add more ${c.voice} voices to avoid that.`);
       // Best score wins; ties go to the order in the pool file.
       const best = from.reduce((a, b) => (matchScore(b, c.description) > matchScore(a, c.description) ? b : a));
       e = reg.characters[c.id] = {
         name: c.name, description: c.description, voiceId: best.id, status: 'pending',
-        firstLesson: e?.firstLesson ?? lesson.date, rejected,
+        firstLesson: e?.firstLesson ?? lessonId, rejected,
       };
       res.notes.push(`${c.name}: suggested ${best.name || best.id} (${needsVoice && rejected.length ? 'after rejecting ' + rejected.length : 'new character'}). Waiting for approval.`);
     }
@@ -96,14 +96,14 @@ export function castLesson(lesson: Lesson, pool: Pool, reg: Registry): CastResul
   const seen = new Map<string, string>();
   for (const c of lesson.cast) {
     const v = reg.characters[c.id].voiceId, other = seen.get(v);
-    if (other) throw new CastingError(`"${other}" and "${c.name}" both use voice ${v} in ${lesson.date}. Set one of them to "rejected" in voices/cast.json to recast them.`);
+    if (other) throw new CastingError(`"${other}" and "${c.name}" both use voice ${v} in ${lessonId}. Set one of them to "rejected" in voices/cast.json to recast them.`);
     seen.set(v, c.name);
   }
   return res;
 }
 
 /** A short line for a voice sample: the character's first line in the story, or a greeting. */
-export function sampleText(lesson: Lesson, id: string, name: string, gender: 'male' | 'female'): string {
+export function sampleText(lesson: LessonData, id: string, name: string, gender: 'male' | 'female'): string {
   for (const p of lesson.story) for (const l of p) {
     if (l.speaker === id) {
       const t = l.fr.replace(/^—\s*/, '').split(/(?<=[.!?…])\s/)[0];

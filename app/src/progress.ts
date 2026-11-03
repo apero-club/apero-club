@@ -17,7 +17,12 @@ function write(key: string, value: unknown) {
   try { localStorage.setItem(key, JSON.stringify(value)); } catch { /* storage unavailable */ }
 }
 
-export const loadProgress = (date: string): Progress => read<Progress>(KEY(date), { done: {} });
+/** Progress for a lesson. `legacyKey` reads progress saved before lessons were numbered (lesson 1 was keyed by its date). */
+export const loadProgress = (id: string, legacyKey?: string): Progress => {
+  const p = read<Progress>(KEY(id), { done: {} });
+  if (!Object.keys(p.done).length && p.score == null && !p.text && legacyKey) return read<Progress>(KEY(legacyKey), p);
+  return p;
+};
 export const saveProgress = (date: string, p: Progress) => write(KEY(date), p);
 export const loadPrefs = (): Prefs => read<Prefs>(PREFS, { showEN: false, slow: false, ambience: true });
 export const savePrefs = (p: Prefs) => write(PREFS, p);

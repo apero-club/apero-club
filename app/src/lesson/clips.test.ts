@@ -5,7 +5,7 @@ import { LessonSchema } from './schema';
 import { flattenStory } from './story';
 import { clipKey, collectClips, speechText, wordTimes } from './clips';
 
-const lesson = LessonSchema.parse(JSON.parse(readFileSync(join(__dirname, '../../lessons/2026-11-03.json'), 'utf8')));
+const lesson = LessonSchema.parse(JSON.parse(readFileSync(join(__dirname, '../../public/lessons/lesson-001.json'), 'utf8')));
 
 describe('collectClips', () => {
   const clips = collectClips(lesson);

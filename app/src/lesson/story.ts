@@ -1,4 +1,4 @@
-import type { Lesson, LessonLine } from './schema';
+import type { LessonData, LessonLine } from './schema';
 
 export type Word = { t: string; start: number };
 /** A stretch of a line spoken by one voice. Narration that quotes «someone» splits in two. */
@@ -11,7 +11,7 @@ export const stripDash = (t: string) => t.replace(/^—\s*/, '');
 /** Text cleaned up for speech synthesis: guillemets and dashes read badly. */
 export const forSpeech = (t: string) => t.replace(/[«»—]/g, ' ').replace(/[’‘]/g, "'").replace(/ | /g, ' ');
 
-export function flattenStory(lesson: Lesson): { lines: FlatLine[]; paragraphs: number[][] } {
+export function flattenStory(lesson: LessonData): { lines: FlatLine[]; paragraphs: number[][] } {
   const lines: FlatLine[] = [];
   const paragraphs = lesson.story.map(p => p.map(line => {
     const words = [...line.fr.matchAll(/\S+/g)].map(m => ({ t: m[0], start: m.index! }));

@@ -1,26 +1,61 @@
 import { LessonSchema, type Lesson } from './schema';
-import { localISODate, pickLessonDate } from './pick';
+import { dateOfLesson, lessonId, lessonNumberOn, todayIn, type Schedule } from './schedule';
 
-// Each lesson file becomes its own chunk, so only today's is downloaded.
-const files = import.meta.glob<{ default: unknown }>('../../lessons/*.json');
-const byDate = new Map(Object.entries(files).map(([path, load]) => [path.match(/(\d{4}-\d{2}-\d{2})\.json$/)?.[1] ?? path, load]));
+/**
+ * Lessons are plain files under public/lessons/, fetched when needed (not bundled
+ * into the app), so the server can refuse a lesson until its day comes: on Vercel,
+ * middleware.js returns 404 for future lessons unless preview mode is on.
+ */
+const BASE = import.meta.env.BASE_URL;
 
-export const lessonDates = [...byDate.keys()].sort();
+/** URL for a file in a lesson's folder, public/lessons/<id>/. */
+export const assetUrl = (id: string, file: string) => `${BASE}lessons/${id}/${file}`;
 
-/** `?date=YYYY-MM-DD` previews a specific lesson (handy when writing a new one). */
-export function requestedDate(): string {
-  const q = new URLSearchParams(window.location.search).get('date');
-  return q && byDate.has(q) ? q : pickLessonDate(lessonDates, localISODate()) ?? '';
+export async function loadSchedule(): Promise<Schedule> {
+  const res = await fetch(`${BASE}lessons/schedule.json`, { cache: 'no-cache' });
+  if (!res.ok) throw new Error('Couldn’t load lessons/schedule.json.');
+  const s = await res.json();
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(s.startDate)) throw new Error('lessons/schedule.json needs "startDate": "YYYY-MM-DD".');
+  return { startDate: s.startDate, timeZone: s.timeZone || 'Europe/Paris' };
 }
 
-export async function loadLesson(date: string): Promise<Lesson> {
-  const load = byDate.get(date);
-  if (!load) throw new Error('No lessons found in app/lessons/.');
-  const raw = (await load()).default;
-  const parsed = LessonSchema.safeParse(raw);
-  if (!parsed.success) throw new Error(`Lesson ${date} is invalid:\n` + parsed.error.issues.map(i => `• ${i.path.join('.')}: ${i.message}`).join('\n'));
-  return parsed.data;
+/** Lesson N, or null if there's no such lesson (or it isn't live yet and preview is off). */
+export async function loadLesson(n: number, schedule: Schedule): Promise<Lesson | null> {
+  const id = lessonId(n);
+  const res = await fetch(`${BASE}lessons/${id}.json`, { cache: 'no-cache' });
+  // The dev server answers unknown paths with the app's HTML page rather than a 404.
+  if (res.status === 404 || !(res.headers.get('content-type') ?? '').includes('json')) return null;
+  if (!res.ok) throw new Error(`Couldn’t load ${id} (${res.status}).`);
+  const parsed = LessonSchema.safeParse(await res.json());
+  if (!parsed.success) throw new Error(`${id} is invalid:\n` + parsed.error.issues.map(i => `• ${i.path.join('.')}: ${i.message}`).join('\n'));
+  return { ...parsed.data, id, number: n, date: dateOfLesson(schedule.startDate, n) };
 }
 
-/** URL for a file in public/lessons/<date>/. */
-export const assetUrl = (date: string, file: string) => `${import.meta.env.BASE_URL}lessons/${date}/${file}`;
+/** Today's scheduled lesson number (can be 0 or less before the start date). */
+export const todaysNumber = (s: Schedule, now = new Date()) => lessonNumberOn(s.startDate, todayIn(s.timeZone, now));
+
+/**
+ * Today's apéro: the lesson scheduled for today, or if that file doesn't exist yet,
+ * the most recent one that does. Before the start date, lesson 1.
+ */
+export async function loadToday(s: Schedule): Promise<Lesson | null> {
+  const today = Math.max(1, todaysNumber(s));
+  for (let n = today; n >= 1 && n > today - 60; n--) {
+    const l = await loadLesson(n, s);
+    if (l) return l;
+  }
+  return null;
+}
+
+/**
+ * Preview mode (open any lesson, including future ones). The server decides with an
+ * HttpOnly cookie; this readable cookie only tells the app to show the preview tools.
+ * Local development always has preview on.
+ */
+export const isPreview = () => import.meta.env.DEV || document.cookie.split(/;\s*/).includes('apero_preview_ui=1');
+
+/** ?lesson=N in the address, if any. */
+export function requestedNumber(): number | null {
+  const n = Number(new URLSearchParams(window.location.search).get('lesson'));
+  return Number.isInteger(n) && n >= 1 ? n : null;
+}

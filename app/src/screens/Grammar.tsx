@@ -14,7 +14,7 @@ const NOTE_LOOKS: { tint: string; lip: string; kick: string; shape: ShapeName; t
 ];
 
 export function Grammar({ app }: { app: AppCtx }) {
-  const { lesson, go, openNote } = app;
+  const { lesson, openNote } = app;
   return <>
     <div className="scroll" style={{ display: 'flex', flexDirection: 'column' }}>
       <div style={{ flex: 'none', display: 'grid', gridTemplateColumns: 'minmax(0,1fr) 92px', background: 'var(--violet-500)' }}>
@@ -45,7 +45,7 @@ export function Grammar({ app }: { app: AppCtx }) {
         })}
       </div>
     </div>
-    <TabBar current="grammar" go={go} />
+    <TabBar current="grammar" app={app} />
   </>;
 }
 

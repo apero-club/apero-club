@@ -6,7 +6,7 @@
  * A clip's key is `speaker|text`: editing a line's text (or who says it) makes it
  * a new clip, which gets recorded on the next run; unchanged lines are reused.
  */
-import type { Lesson } from './schema';
+import type { LessonData } from './schema';
 import { flattenStory, forSpeech, stripDash } from './story';
 
 export type Clip = { key: string; speaker: string; text: string };
@@ -16,7 +16,7 @@ export const clipKey = (speaker: string, text: string) => `${speaker}|${text}`;
 /** The text actually sent to the voice: dialogue dash removed, typography cleaned for speech. */
 export const speechText = (text: string) => forSpeech(stripDash(text)).trim();
 
-export function collectClips(lesson: Lesson): Clip[] {
+export function collectClips(lesson: LessonData): Clip[] {
   const out = new Map<string, Clip>();
   const add = (speaker: string, text: string) => {
     if (!speechText(text)) return;

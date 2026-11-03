@@ -12,9 +12,18 @@
  * The code never ships to the browser. A device is remembered with an HttpOnly
  * cookie holding a hash of the current code, so a cookie can't be forged without
  * the code, and changing the code signs every device out.
+ *
+ * Daily lessons: lesson N's file (lessons/lesson-00N.json) and folder (images,
+ * audio) are refused until its day, per lessons/schedule.json and Paris time.
+ * Preview mode (PREVIEW_CODE, entered at /__preview) unlocks every lesson for
+ * 30 days on that device; /__preview/exit turns it off.
  */
 
 export const COOKIE = 'apero_access';
+export const PREVIEW_COOKIE = 'apero_preview';
+/** Readable by the app, only to show preview tools; the HttpOnly cookie above is what the server trusts. */
+const PREVIEW_UI_COOKIE = 'apero_preview_ui';
+const PREVIEW_MAX_AGE = 30 * 24 * 60 * 60;
 /** 400 days, the longest browsers keep a cookie. */
 const MAX_AGE = 400 * 24 * 60 * 60;
 const NOINDEX = { 'X-Robots-Tag': 'noindex, nofollow' };
@@ -59,9 +68,13 @@ async function currentCode() {
   return process.env.ACCESS_CODE?.trim() || null;
 }
 
-/** @param {string} code */
-export async function tokenFor(code) {
-  const hash = await crypto.subtle.digest('SHA-256', new TextEncoder().encode('apero-club-access:v1:' + normalize(code)));
+/**
+ * Cookie value for a code. `scope` keeps access and preview tokens distinct, so
+ * one can never be used as the other even if the two codes were the same.
+ * @param {string} code @param {'access' | 'preview'} [scope]
+ */
+export async function tokenFor(code, scope = 'access') {
+  const hash = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(`apero-club-${scope}:v1:` + normalize(code)));
   return [...new Uint8Array(hash)].map(b => b.toString(16).padStart(2, '0')).join('');
 }
 
@@ -82,24 +95,71 @@ function readCookie(header, name) {
   return null;
 }
 
+/** Today's date (YYYY-MM-DD) in a time zone. Same as src/lesson/schedule.ts. @param {string} timeZone */
+export function todayIn(timeZone, now = new Date()) {
+  return new Intl.DateTimeFormat('en-CA', { timeZone, year: 'numeric', month: '2-digit', day: '2-digit' }).format(now);
+}
+/** Lesson number live on a date. Same as src/lesson/schedule.ts. @param {string} start @param {string} date */
+export function lessonNumberOn(start, date) {
+  const utc = (/** @type {string} */ d) => { const [y, m, dd] = d.split('-').map(Number); return Date.UTC(y, m - 1, dd); };
+  return Math.floor((utc(date) - utc(start)) / 86_400_000) + 1;
+}
+
+/** @type {{ at: number, value: { startDate: string, timeZone: string } | null } | null} */
+let scheduleCache = null;
+/**
+ * The schedule, read from the site's own lessons/schedule.json (cached 5 minutes).
+ * LESSON_START_DATE in Vercel overrides the file's start date if set.
+ * @param {string} origin
+ */
+async function loadSchedule(origin) {
+  const age = scheduleCache ? Date.now() - scheduleCache.at : -1;
+  if (scheduleCache && age >= 0 && age < (scheduleCache.value ? 300_000 : 30_000)) return scheduleCache.value;
+  /** @type {{ startDate: string, timeZone: string } | null} */
+  let value = null;
+  try {
+    const r = await fetch(`${origin}/lessons/schedule.json`);
+    if (r.ok) { const j = await r.json(); if (/^\d{4}-\d{2}-\d{2}$/.test(j.startDate)) value = { startDate: j.startDate, timeZone: j.timeZone || 'Europe/Paris' }; }
+  } catch { /* fall through */ }
+  const override = process.env.LESSON_START_DATE?.trim();
+  if (override && /^\d{4}-\d{2}-\d{2}$/.test(override)) value = { startDate: override, timeZone: value?.timeZone ?? 'Europe/Paris' };
+  scheduleCache = { at: Date.now(), value };
+  return value;
+}
+/** Highest lesson number open today (at least lesson 1). If the schedule can't be read, only lesson 1. @param {string} origin */
+async function openUpTo(origin) {
+  const s = await loadSchedule(origin);
+  return s ? Math.max(1, lessonNumberOn(s.startDate, todayIn(s.timeZone))) : 1;
+}
+
 /** Only same-site paths are allowed as a post-login destination. @param {unknown} n */
 export const safeNext = n => (typeof n === 'string' && n.startsWith('/') && !n.startsWith('//') && !n.startsWith('/\\') ? n : '/');
 
 /** @param {string} s */
 const esc = s => s.replace(/[&<>"']/g, c => /** @type {Record<string, string>} */ ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
 
-const MESSAGES = {
-  wrong: 'That code didn’t work. Check it and try again.',
-  unset: 'Access isn’t set up yet. Ask the person who invited you.',
+const TEXT = {
+  access: {
+    eyebrow: 'Private preview', lede: 'A short French story every day, with the why behind the grammar.',
+    action: '/__access', label: 'Access code', hand: 'ask the club for yours', fine: 'You’ll only need it once on this device.',
+    wrong: 'That code didn’t work. Check it and try again.', unset: 'Access isn’t set up yet. Ask the person who invited you.',
+  },
+  preview: {
+    eyebrow: 'Preview mode', lede: 'Open any lesson, including ones that aren’t live yet, to review them before they go out.',
+    action: '/__preview', label: 'Preview code', hand: 'for the editor only', fine: 'Lasts 30 days on this device. To leave preview mode, open /__preview/exit.',
+    wrong: 'That code didn’t work. Check it and try again.', unset: 'Preview isn’t set up yet. Add PREVIEW_CODE in Vercel, then redeploy.',
+  },
 };
 
 /**
- * The access-code screen in the apéro club design. Self-contained (the app bundle is behind the gate).
+ * The access-code (or preview-code) screen in the apéro club design. Self-contained (the app bundle is behind the gate).
  * @param {'ask' | 'wrong' | 'unset'} state
  * @param {string} next
+ * @param {'access' | 'preview'} [mode]
  */
-function gatePage(state, next) {
-  const msg = state === 'ask' ? '' : `<p class="msg" role="alert">${MESSAGES[state]}</p>`;
+function gatePage(state, next, mode = 'access') {
+  const t = TEXT[mode];
+  const msg = state === 'ask' ? '' : `<p class="msg" role="alert">${t[state]}</p>`;
   return `<!doctype html>
 <html lang="en">
 <head>
@@ -156,32 +216,32 @@ button:hover{background:#4A30EA}button:active{transform:translateY(4px);box-shad
 <body>
 <main class="shell">
   <section class="hero">
-    <span class="eyebrow">Private preview</span>
+    <span class="eyebrow">${t.eyebrow}</span>
     <h1>apéro club</h1>
-    <p class="lede">A short French story every day, with the why behind the grammar.</p>
+    <p class="lede">${t.lede}</p>
   </section>
   <div class="tiles" aria-hidden="true">
     <div class="tile t2"><div class="a"></div></div>
     <div class="tile t1"><div class="c"></div><span class="eyes"><i></i><i></i></span></div>
     <div class="tile t3"><div class="f"><span></span><span></span><span></span><span></span><b></b></div></div>
   </div>
-  <form method="post" action="/__access">
-    <label for="code">Access code</label>
+  <form method="post" action="${t.action}">
+    <label for="code">${t.label}</label>
     <input id="code" name="code" type="text" required autofocus autocomplete="off" autocapitalize="none" autocorrect="off" spellcheck="false" enterkeyhint="go"${state === 'wrong' ? ' aria-invalid="true"' : ''}>
     <input type="hidden" name="next" value="${esc(next)}">
     ${msg}
     <button type="submit">Enter</button>
-    <span class="hand">ask the club for yours</span>
-    <p class="fine">You’ll only need it once on this device.</p>
+    <span class="hand">${t.hand}</span>
+    <p class="fine">${t.fine}</p>
   </form>
 </main>
 </body>
 </html>`;
 }
 
-/** @param {'ask' | 'wrong' | 'unset'} state @param {string} nextPath */
-function gate(state, nextPath, status = 401) {
-  return new Response(gatePage(state, nextPath), {
+/** @param {'ask' | 'wrong' | 'unset'} state @param {string} nextPath @param {'access' | 'preview'} [mode] */
+function gate(state, nextPath, status = 401, mode = /** @type {'access' | 'preview'} */ ('access')) {
+  return new Response(gatePage(state, nextPath, mode), {
     status,
     headers: { ...NOINDEX, 'Content-Type': 'text/html; charset=utf-8', 'Cache-Control': 'no-store' },
   });
@@ -212,13 +272,57 @@ export default async function middleware(request) {
     return gate('wrong', dest);
   }
 
-  if (code) {
-    const have = readCookie(request.headers.get('cookie'), COOKIE);
-    if (have && sameToken(have, await tokenFor(code))) return pass();
+  // The schedule holds only a start date; it's public so this middleware can read it.
+  if (url.pathname === '/lessons/schedule.json') return pass();
+
+  const cookies = request.headers.get('cookie');
+  const have = readCookie(cookies, COOKIE);
+  const allowed = !!code && !!have && sameToken(have, await tokenFor(code));
+  if (!allowed) {
+    // Pages get the gate screen; anything else (scripts, lesson data, images) is just refused.
+    const wantsPage = request.method === 'GET' && (request.headers.get('accept') ?? '').includes('text/html');
+    if (wantsPage) return gate(code ? 'ask' : 'unset', url.pathname + url.search, code ? 401 : 503);
+    return new Response('Access code required', { status: 401, headers: { ...NOINDEX, 'Cache-Control': 'no-store' } });
   }
 
-  // Pages get the gate screen; anything else (scripts, lesson data, images) is just refused.
-  const wantsPage = request.method === 'GET' && (request.headers.get('accept') ?? '').includes('text/html');
-  if (wantsPage) return gate(code ? 'ask' : 'unset', url.pathname + url.search, code ? 401 : 503);
-  return new Response('Access code required', { status: 401, headers: { ...NOINDEX, 'Cache-Control': 'no-store' } });
+  // Preview mode: /__preview asks for PREVIEW_CODE; /__preview/exit turns it off.
+  const previewCode = process.env.PREVIEW_CODE?.trim() || null;
+  const previewToken = previewCode ? await tokenFor(previewCode, 'preview') : null;
+  if (url.pathname === '/__preview/exit') return redirectClearingPreview();
+  if (url.pathname === '/__preview') {
+    if (request.method === 'POST') {
+      const form = await request.formData().catch(() => null);
+      const entered = String(form?.get('code') ?? '');
+      const dest = safeNext(form?.get('next'));
+      if (!previewToken) return gate('unset', dest, 503, 'preview');
+      if (entered.trim() && sameToken(await tokenFor(entered, 'preview'), previewToken)) {
+        const h = new Headers({ ...NOINDEX, Location: dest, 'Cache-Control': 'no-store' });
+        h.append('Set-Cookie', `${PREVIEW_COOKIE}=${previewToken}; Path=/; Max-Age=${PREVIEW_MAX_AGE}; HttpOnly; Secure; SameSite=Lax`);
+        h.append('Set-Cookie', `${PREVIEW_UI_COOKIE}=1; Path=/; Max-Age=${PREVIEW_MAX_AGE}; Secure; SameSite=Lax`);
+        return new Response(null, { status: 303, headers: h });
+      }
+      await new Promise(r => setTimeout(r, 600));
+      return gate('wrong', dest, 401, 'preview');
+    }
+    return gate(previewToken ? 'ask' : 'unset', '/', 200, 'preview');
+  }
+
+  // Lessons that aren't live yet: their file and folder don't exist, unless in preview mode.
+  const m = url.pathname.match(/^\/lessons\/lesson-(\d{3,})(?:\.json$|\/)/);
+  if (m) {
+    const pv = readCookie(cookies, PREVIEW_COOKIE);
+    const previewing = !!previewToken && !!pv && sameToken(pv, previewToken);
+    if (!previewing && Number(m[1]) > await openUpTo(url.origin)) {
+      return new Response('Not found', { status: 404, headers: { ...NOINDEX, 'Cache-Control': 'no-store' } });
+    }
+  }
+  return pass();
+}
+
+/** Leave preview mode: clear both preview cookies and go home. */
+function redirectClearingPreview() {
+  const h = new Headers({ ...NOINDEX, Location: '/', 'Cache-Control': 'no-store' });
+  h.append('Set-Cookie', `${PREVIEW_COOKIE}=; Path=/; Max-Age=0; HttpOnly; Secure; SameSite=Lax`);
+  h.append('Set-Cookie', `${PREVIEW_UI_COOKIE}=; Path=/; Max-Age=0; Secure; SameSite=Lax`);
+  return new Response(null, { status: 303, headers: h });
 }

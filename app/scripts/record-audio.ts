@@ -3,10 +3,10 @@
  *
  *   ELEVENLABS_API_KEY=... npm run record-audio            record anything missing
  *   npm run record-audio -- --dry-run                      show what would be recorded and how many characters it costs
- *   npm run record-audio -- --date=2026-11-03              only that lesson
+ *   npm run record-audio -- --lesson=lesson-003            only that lesson
  *   npm run record-audio -- --force                        re-record everything (uses credits!)
  *
- * Output per lesson: public/lessons/<date>/audio/<hash>.mp3 plus manifest.json,
+ * Output per lesson: public/lessons/lesson-NNN/audio/<hash>.mp3 plus manifest.json,
  * which maps each clip (see src/lesson/clips.ts) to its file and word timings.
  * Unchanged lines are never re-recorded; lines that were removed are deleted.
  *
@@ -32,7 +32,7 @@ const API = process.env.ELEVENLABS_API_BASE || 'https://api.elevenlabs.io';
 const args = process.argv.slice(2);
 const DRY = args.includes('--dry-run');
 const FORCE = args.includes('--force');
-const ONLY = args.find(a => a.startsWith('--date='))?.slice(7);
+const ONLY = args.find(a => a.startsWith('--lesson='))?.slice(9);
 
 type Config = {
   model: string; outputFormat: string;
@@ -105,13 +105,14 @@ async function generateAmbience(prompt: string): Promise<Buffer> {
 }
 
 async function main() {
-  const dir = join(ROOT, 'lessons');
-  const files = readdirSync(dir).filter(f => /^\d{4}-\d{2}-\d{2}\.json$/.test(f) && (!ONLY || f === `${ONLY}.json`)).sort();
+  const dir = join(ROOT, 'public/lessons');
+  const files = readdirSync(dir).filter(f => /^lesson-\d{3,}\.json$/.test(f) && (!ONLY || f === `${ONLY}.json`)).sort();
   let total = 0, recorded = 0;
   for (const f of files) {
     const lesson = LessonSchema.parse(JSON.parse(readFileSync(join(dir, f), 'utf8')));
+    const id = f.slice(0, -5); // lesson-001
     let cast;
-    try { cast = castLesson(lesson, pool, registry); } catch (e) { throw e instanceof CastingError ? new Stop(e.message) : e; }
+    try { cast = castLesson(lesson, id, pool, registry); } catch (e) { throw e instanceof CastingError ? new Stop(e.message) : e; }
     for (const n of cast.notes) console.log(`  · ${n}`);
     saveRegistry();
     // Voice samples for anyone waiting for approval.
@@ -136,7 +137,7 @@ async function main() {
       if (entry.sample) { if (!DRY && existsSync(join(SAMPLES, entry.sample))) unlinkSync(join(SAMPLES, entry.sample)); delete entry.sample; saveRegistry(); }
     }
     const voices = cast.approved;
-    const out = join(ROOT, 'public/lessons', lesson.date, 'audio');
+    const out = join(ROOT, 'public/lessons', id, 'audio');
     const manifestPath = join(out, 'manifest.json');
     const manifest: AudioManifest = existsSync(manifestPath)
       ? JSON.parse(readFileSync(manifestPath, 'utf8'))
@@ -156,7 +157,7 @@ async function main() {
     const amb = lesson.ambience;
     const ambFile = amb ? 'ambience-' + createHash('sha1').update(amb.prompt).digest('hex').slice(0, 12) + '.mp3' : null;
     const ambTodo = !!amb && (FORCE || manifest.ambience?.prompt !== amb.prompt || !existsSync(join(out, ambFile!)));
-    console.log(`${lesson.date}: ${allClips.length} clips, ${uniq.size} to record (${chars} characters)${waiting ? `, ${waiting} waiting for voice approval` : ''}${ambTodo ? `, plus ambience (${config.ambience?.durationSeconds ?? 30} s sound effect)` : ''}`);
+    console.log(`${id}: ${allClips.length} clips, ${uniq.size} to record (${chars} characters)${waiting ? `, ${waiting} waiting for voice approval` : ''}${ambTodo ? `, plus ambience (${config.ambience?.durationSeconds ?? 30} s sound effect)` : ''}`);
     if (DRY || (!todo.length && !ambTodo && !existsSync(out))) continue;
 
     mkdirSync(out, { recursive: true });

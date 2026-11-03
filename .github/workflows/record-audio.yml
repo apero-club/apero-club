@@ -8,7 +8,7 @@ on:
   push:
     branches: [main]
     paths:
-      - app/lessons/**
+      - app/public/lessons/*.json
       - app/audio.config.json
       - app/voices/**
       - app/src/lesson/**

@@ -5,14 +5,14 @@
       "name": "Moi",
       "voiceId": "Xy5q4w05TJGcKXPWeWoz",
       "status": "approved",
-      "firstLesson": "2026-11-03",
+      "firstLesson": "lesson-001",
       "rejected": []
     },
     "madame-lefevre": {
       "name": "Madame Lefèvre",
       "voiceId": "QGfpyFuk3rtPv4pRSQwp",
       "status": "approved",
-      "firstLesson": "2026-11-03",
+      "firstLesson": "lesson-001",
       "rejected": [
         "2oMnSKxLeHBxE0KdeHJD"
       ]
@@ -21,7 +21,7 @@
       "name": "La boulangère",
       "voiceId": "L9J8xZmPSCimnHB0LjN1",
       "status": "approved",
-      "firstLesson": "2026-11-03",
+      "firstLesson": "lesson-001",
       "rejected": []
     }
   }

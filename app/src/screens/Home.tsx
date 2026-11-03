@@ -1,6 +1,7 @@
 import { Button, LessonNode, type NodeState } from '../ds/controls';
 import { FillTile } from '../ds/brand';
 import { HeroTile } from './HeroTile';
+import { Icon } from '../ds/Icon';
 import type { AppCtx } from './common';
 import { Eyebrow, STEPS, TabBar } from './common';
 import type { IconName } from '../ds/Icon';
@@ -34,6 +35,13 @@ export function Home({ app }: { app: AppCtx }) {
     <div className="pad-top" style={{ paddingLeft: 20, paddingRight: 20, paddingBottom: 12, display: 'flex', alignItems: 'center' }}>
       <span style={{ font: '900 22px/1 var(--font-display)', letterSpacing: '-0.05em', color: 'var(--violet-500)', whiteSpace: 'nowrap' }}>apéro club</span>
     </div>
+    {!app.isToday && (
+      <button onClick={() => app.library.open(app.library.today.number)} style={{ flex: 'none', display: 'flex', alignItems: 'center', gap: 8, margin: '0 20px 12px', padding: '10px 14px', border: 0, borderRadius: 'var(--radius-md)', background: 'var(--sun-100)', color: 'var(--sun-900)', font: '600 13px/1.3 var(--font-body)', textAlign: 'left', cursor: 'pointer' }}>
+        <Icon name="calendar-days" size={16} />
+        <span style={{ flex: 1 }}>From the archive. Back to today’s apéro</span>
+        <Icon name="arrow-right" size={16} />
+      </button>
+    )}
     <div className="scroll">
       <section style={{ background: 'var(--violet-500)', padding: '24px 20px 26px', display: 'flex', flexDirection: 'column', gap: 12 }}>
         <Eyebrow color="var(--lilac-500)">{frDate(lesson.date)}</Eyebrow>
@@ -74,6 +82,6 @@ export function Home({ app }: { app: AppCtx }) {
         </button>
       </section>
     </div>
-    <TabBar current="home" go={go} />
+    <TabBar current="home" app={app} />
   </>;
 }

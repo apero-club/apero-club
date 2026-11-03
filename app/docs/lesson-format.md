@@ -1,25 +1,32 @@
 # Writing a lesson
 
-Every apéro club lesson is one JSON file. The app reads it and renders it through the same template every day, as a phone layout or, on screens 900px and wider, the desktop layout:
+Every apéro club lesson is one JSON file, `public/lessons/lesson-001.json`, `lesson-002.json`… The app reads it and renders it through the same template every day, as a phone layout or, on screens 900px and wider, the desktop layout:
 
 **Today → 01 Écouter et lire → 02 Comprendre → 03 Comme on dit → 04 Décrire → Séance terminée**, plus the **Grammar** tab.
 
 The source of truth for the format is [`src/lesson/schema.ts`](../src/lesson/schema.ts). `npm test` checks every lesson against it, and the deploy fails if a lesson is broken.
 
-## Adding a new day
+## Adding a lesson
 
-1. Copy [`lesson-template.json`](./lesson-template.json) to `lessons/YYYY-MM-DD.json`. The file name is the day it goes live, and must match the `date` inside.
-2. Put its images in `public/lessons/YYYY-MM-DD/`.
-3. Preview it: `npm run dev`, then open `http://localhost:5173/?date=YYYY-MM-DD`.
-4. Run `npm test`, then commit and push. Vercel redeploys.
+1. Copy [`lesson-template.json`](./lesson-template.json) to `public/lessons/lesson-NNN.json`, the next number up (`lesson-002.json`, `lesson-003.json`…). Numbers have no gaps: each one is a day.
+2. Put its images in `public/lessons/lesson-NNN/` (same name, no `.json`).
+3. Preview it: `npm run dev`, then open `http://localhost:5173/?lesson=NNN` (e.g. `?lesson=2`). Locally, every lesson is open.
+4. Run `npm test`, then commit and push. Vercel redeploys, and the recording Action records its audio.
 
-You can push lessons ahead of time. The app shows the newest lesson dated today or earlier, using the learner's local date, so lessons switch at midnight wherever the learner is. If a day has no lesson, the previous one stays up. Each lesson is loaded as its own small file, so a long archive doesn't slow the app down.
+### The schedule
+
+`public/lessons/schedule.json` sets `startDate`: lesson 1 goes live that day, lesson 2 the day after, and so on, switching at midnight in `timeZone` (Paris). Everyone sees the same lesson on the same day. If a day's lesson doesn't exist yet, the previous one stays up. Change `startDate` to move the whole schedule.
+
+You can push lessons weeks ahead: on the live site, a lesson's file, images and audio are only served from its day. The **Lessons** tab lists every lesson before today.
+
+### Preview mode
+
+To review lessons before they go live, open `/__preview` on the live site and enter the preview code (`PREVIEW_CODE` in Vercel). For 30 days on that device, every lesson opens: a dark bar shows which lesson you're on and when it goes live, the Lessons tab adds a **Coming up** section, and `?lesson=N` opens any lesson. `/__preview/exit` turns it off.
 
 ## The fields
 
 | Field | What it is |
 |---|---|
-| `date` | `YYYY-MM-DD`, same as the file name. |
 | `title`, `summary` | Shown in the Today hero. Title in French, summary in English. |
 | `level` | Defaults to `"A2 to B1"`. Not shown in the app yet. |
 | `minutes` | Time for each step: `story`, `quiz`, `phrases`, `describe`. The Today total is their sum. |
@@ -102,7 +109,7 @@ Every French line can play a recorded voice instead of the device's built-in one
 
 - **What gets recorded:** each story line (a narration line that quotes someone is split, so the quote is in that character's voice), the quiz quotes, both sides of each phrase, the grammar examples, and the spoken version of the sample correction. Everything except the story is read by the first cast member.
 - **Voices:** see "Voice casting" below.
-- **Automatic:** when you push a lesson to `main`, the **Record lesson audio** GitHub Action records anything missing and commits it to `public/lessons/<date>/audio/`. Edited lines are re-recorded; removed ones are deleted; unchanged ones are kept.
+- **Automatic:** when you push a lesson to `main`, the **Record lesson audio** GitHub Action records anything missing and commits it to `public/lessons/lesson-NNN/audio/`. Edited lines are re-recorded; removed ones are deleted; unchanged ones are kept.
 - **Cost check:** `npm run record-audio -- --dry-run` prints how many characters a run would use. The first lesson is about 1,900 characters.
 - **No recordings yet?** The app falls back to device voices for any line without a recording, so a lesson works before its audio exists.
 

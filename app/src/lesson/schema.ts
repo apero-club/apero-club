@@ -1,8 +1,9 @@
 /**
  * The apéro club lesson format.
  *
- * One lesson = one JSON file in `app/lessons/`, named `YYYY-MM-DD.json` after the
- * day it goes live. Its images live in `app/public/lessons/YYYY-MM-DD/`.
+ * One lesson = one JSON file, `app/public/lessons/lesson-001.json`, `lesson-002.json`…
+ * Its images and audio live in the folder of the same name, `app/public/lessons/lesson-001/`.
+ * Lesson N goes live N-1 days after the start date in `app/public/lessons/schedule.json`.
  * Every lesson renders through the same template: Today → Story → Quiz → Say it →
  * Describe → Séance terminée, plus the Grammar tab.
  *
@@ -170,8 +171,6 @@ const Describe = z.object({
 }).strict();
 
 export const LessonSchema = z.object({
-  /** Day the lesson goes live, YYYY-MM-DD. Must match the file name. */
-  date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
   title: z.string().min(1),
   summary: z.string().min(1),
   level: z.string().default('A2 to B1'),
@@ -231,7 +230,17 @@ export const LessonSchema = z.object({
   if (rebuilt !== s.text) err(['describe', 'sample', 'result', 'segments'], 'Segments must rebuild sample.text exactly');
 });
 
-export type Lesson = z.output<typeof LessonSchema>;
+/** A lesson as written in its file. */
+export type LessonData = z.output<typeof LessonSchema>;
+/** A loaded lesson: its file contents plus where it sits in the schedule. */
+export type Lesson = LessonData & {
+  /** "lesson-001": the file name and asset folder. */
+  id: string;
+  /** 1, 2, 3… */
+  number: number;
+  /** The day it goes live, YYYY-MM-DD (from the schedule). */
+  date: string;
+};
 export type LessonLine = z.output<typeof Line>;
 export type LessonNote = z.output<typeof Note>;
 export type HeroTileT = z.output<typeof HeroTile>;

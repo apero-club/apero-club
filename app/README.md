@@ -9,7 +9,7 @@ Hosted free on Vercel behind a shared access code. No accounts and no payments.
 ```sh
 cd app
 npm install
-npm run dev        # http://localhost:5173  (add ?date=YYYY-MM-DD to preview a lesson)
+npm run dev        # http://localhost:5173  (add ?lesson=2 to open lesson 2; locally every lesson is open)
 npm test           # validates every lesson file + unit tests
 npm run record-audio -- --dry-run   # characters ElevenLabs would use (needs ELEVENLABS_API_KEY for a real run)
 npm run build      # static site in dist/
@@ -18,8 +18,9 @@ npm run build      # static site in dist/
 ## How it's organised
 
 ```
-lessons/YYYY-MM-DD.json      one file per day: the lesson data
-public/lessons/YYYY-MM-DD/   that lesson's images
+public/lessons/lesson-001.json   one file per lesson (lesson 1, 2, 3… one per day)
+public/lessons/lesson-001/       that lesson's images and recorded audio
+public/lessons/schedule.json     start date: lesson 1 goes live that day, then one per day
 docs/lesson-format.md        how to write a lesson
 docs/lesson-template.json    a starting point to copy
 src/lesson/schema.ts         the lesson format (zod), and its validation rules
@@ -47,6 +48,7 @@ Vercel builds from this `app/` folder on every push (`main` is production; other
 - To change it instantly with no redeploy, connect a Vercel **Edge Config** store to the project and add an item `accessCode`; it takes priority over `ACCESS_CODE`.
 - Codes ignore case and surrounding spaces. Changing the code signs every device out.
 - If no code is set, nobody gets in.
+- **Preview mode:** set `PREVIEW_CODE` in Vercel (different from the access code). Entering it at `/__preview` opens every lesson, including future ones, for 30 days on that device. Without it, the gate only serves lessons whose day has come.
 - Local `npm run dev` has no gate.
 
 **Search engines.** Every response carries `X-Robots-Tag: noindex, nofollow`, and the pages have a matching robots meta tag.
@@ -56,6 +58,7 @@ Lessons can be pushed ahead of time: the app picks the right one on the learner'
 ## What's different from the prototype
 
 - **No live corrections yet.** The Claude API has no free tier, so **Check** in step 04 shows the lesson's worked example (a typical description with every correction explained). The example uses the same data shape the AI tutor returned, so a serverless check can slot in later.
-- **No accounts, Lessons archive, Account tab or paywall.** The tab bar has Today and Grammar.
+- **Daily lessons.** One lesson per day from the start date in `schedule.json`, the same for everyone (Paris time). The Lessons tab lists past lessons, from the designs' Leçons / Toutes les leçons pages without the paywall. Future lessons are only served in preview mode (`/__preview` with `PREVIEW_CODE`).
+- **No accounts, Account tab or paywall.**
 - **Progress and preferences** (finished steps, quiz score, your text, Slow and EN) are saved in the browser's local storage, per device.
 - **Voices** are recorded once per lesson with ElevenLabs (see "Audio" in docs/lesson-format.md) and committed with the lesson. Lines without a recording fall back to the device's built-in voices.

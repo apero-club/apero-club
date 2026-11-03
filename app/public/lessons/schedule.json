@@ -1,0 +1,5 @@
+{
+  "$comment": "Lesson 1 goes live on startDate; lesson N goes live N-1 days later, at midnight in timeZone. Everyone sees the same lesson that day. Changing startDate moves the whole schedule.",
+  "startDate": "2026-11-03",
+  "timeZone": "Europe/Paris"
+}
