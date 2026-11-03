@@ -30,9 +30,8 @@ describe('the real pool and registry', () => {
     expect(r.approved).toEqual({ narrator: 'Xy5q4w05TJGcKXPWeWoz', 'madame-lefevre': 'QGfpyFuk3rtPv4pRSQwp', 'la-boulangere': 'L9J8xZmPSCimnHB0LjN1' });
     expect(reg).toEqual(realReg);
   });
-  it('every registry voice is in the pool', () => {
-    const ids = new Set(realPool.voices.map(v => v.id));
-    for (const c of Object.values(realReg.characters)) expect(ids.has(c.voiceId)).toBe(true);
+  it('every approved character has a voice ID', () => {
+    for (const c of Object.values(realReg.characters)) if (c.status === 'approved') expect(c.voiceId).toMatch(/^\w{10,}$/);
   });
 });
 
@@ -67,10 +66,24 @@ describe('castLesson', () => {
     expect(reg.characters.mamie.status).toBe('pending');
     expect(r.pending[0].needsSample).toBe(true);
   });
-  it('stops with a clear message when the pool runs out', () => {
+  it('when the pool runs out, marks the character as needing a voice and carries on', () => {
     const reg: Registry = { characters: {} };
-    expect(() => castLesson(lessonWith([char('a', 'male', 'x x x x x x'), char('b', 'male', 'y y y y y y'), char('c', 'male', 'z z z z z z')]), 'lesson-010', pool, reg))
-      .toThrow(/No male voice left in voices\/pool\.json/);
+    const r = castLesson(lessonWith([char('a', 'male', 'x x x x x x'), char('b', 'male', 'y y y y y y'), char('c', 'male', 'z z z z z z')]), 'lesson-010', pool, reg);
+    expect(r.needsVoice).toEqual([{ id: 'c', name: 'c' }]);
+    expect(reg.characters.c).toMatchObject({ status: 'needs-voice', voiceId: '' });
+    expect(r.pending.map(p => p.id)).toEqual(['a', 'b']); // the others are still cast
+    expect(r.notes.join(' ')).toMatch(/needs a male voice/);
+  });
+  it('casts a waiting character once a voice is added to the pool', () => {
+    const reg: Registry = { characters: { c: { name: 'c', voiceId: '', status: 'needs-voice', firstLesson: 'lesson-010', rejected: [] } } };
+    const bigger: Pool = { voices: [...pool.voices, { id: 'm3', gender: 'male', age: 'older', tags: ['dry'] }] };
+    const r = castLesson(lessonWith([char('c', 'male', 'An older man, dry and deadpan.')]), 'lesson-011', bigger, reg);
+    expect(reg.characters.c).toMatchObject({ voiceId: 'm3', status: 'pending', firstLesson: 'lesson-010' });
+    expect(r.needsVoice).toEqual([]);
+  });
+  it('accepts a voice you set yourself in cast.json, even if it isn’t in the pool', () => {
+    const reg: Registry = { characters: { c: { name: 'c', voiceId: 'myOwnVoiceId', status: 'approved', firstLesson: 'lesson-010', rejected: [] } } };
+    expect(castLesson(lessonWith([char('c', 'male', 'An older man.')]), 'lesson-010', pool, reg).approved).toEqual({ c: 'myOwnVoiceId' });
   });
   it('flags two recurring characters who would share a voice in one story', () => {
     const reg: Registry = { characters: {

@@ -7,7 +7,7 @@ import { useState } from 'react';
 import { Badge, Button } from '../ds/controls';
 import { Icon } from '../ds/Icon';
 import type { Lesson } from '../lesson/schema';
-import { GROUPS, groupOf, isDone, topicsOf, useLessonList } from '../library';
+import { GROUPS, groupOf, isDone, lessonStatus, topicsOf, useLessonList } from '../library';
 import { lessonNumberOn } from '../lesson/schedule';
 import type { AppCtx } from './common';
 import { Eyebrow, STEPS, TabBar } from './common';
@@ -50,7 +50,7 @@ export function Lessons({ app }: { app: AppCtx }) {
       </div>
 
       {library.preview && upcoming.length > 0 && (
-        <LessonGroup name="Coming up · preview only" items={upcoming} onOpen={setOpen} note={l => `Goes live ${frDate(l.date)}`} />
+        <LessonGroup name="Coming up · preview only" items={upcoming} onOpen={setOpen} note={l => lessonStatus(l, library)} />
       )}
       {groups.map(g => <LessonGroup key={g.name} name={g.name} items={g.items} onOpen={setOpen} />)}
       {!loading && past.length === 0 && <p style={{ margin: 0, fontSize: 15, color: 'var(--fg-3)' }}>Past lessons will appear here, one more every day.</p>}
@@ -97,7 +97,7 @@ export function LessonSheet({ lesson, app, onClose, centered }: { lesson: Lesson
       <div className="sheet" style={centered ? { width: 'min(520px, 100%)', borderRadius: 32, maxHeight: '90vh' } : undefined}>
         <div style={{ background: 'var(--violet-500)', padding: '16px 20px 22px', display: 'flex', flexDirection: 'column', gap: 10 }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 12 }}>
-            <Eyebrow color="var(--lilac-500)">{upcoming ? 'Goes live ' : ''}{frDate(lesson.date)}</Eyebrow>
+            <Eyebrow color="var(--lilac-500)">{upcoming ? lessonStatus(lesson, app.library) : frDate(lesson.date)}</Eyebrow>
             <button onClick={onClose} aria-label="Close" style={{ width: 36, height: 36, borderRadius: '50%', border: 0, background: 'var(--lilac-500)', color: 'var(--violet-500)', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', boxShadow: '0 3px 0 var(--lilac-700)' }}><Icon name="x" size={18} /></button>
           </div>
           <h2 style={{ margin: 0, font: '900 26px/1 var(--font-display)', letterSpacing: '-0.045em', color: 'var(--lilac-500)', textWrap: 'balance' }}>{lesson.title}</h2>

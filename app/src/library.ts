@@ -19,6 +19,16 @@ export type Library = {
   open: (n: number, start?: boolean) => void;
 };
 
+/** Where a lesson stands, for preview labels: live, scheduled for a later day, or held by readyThrough. */
+export function lessonStatus(l: Lesson, lib: Library): string {
+  const when = frDateShort(l.date);
+  if (l.number <= lib.todayNumber) return `Live since ${when}`;
+  const ready = lib.schedule.readyThrough;
+  if (ready != null && l.number > ready) return `On hold: set readyThrough to ${l.number} · scheduled ${when}`;
+  return `Goes live ${when}`;
+}
+const frDateShort = (iso: string) => { const [y, m, d] = iso.split('-').map(Number); return new Date(y, m - 1, d).toLocaleDateString('fr-FR', { weekday: 'long', day: 'numeric', month: 'long' }); };
+
 /** Grammar topics of a lesson, for lists: its notes' categories. */
 export const topicsOf = (l: Lesson) => [...new Set(l.notes.map(n => n.kicker))].slice(0, 3);
 

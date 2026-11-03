@@ -10,7 +10,7 @@ import { Critter, FillTile, ShapeTile, tok, type ShapeName } from '../ds/brand';
 import { Icon } from '../ds/Icon';
 import { isDialogue, stripDash } from '../lesson/story';
 import type { HeroTileT, Lesson, LessonNote } from '../lesson/schema';
-import { GROUPS, groupOf, isDone, topicsOf, useLessonList } from '../library';
+import { GROUPS, groupOf, isDone, lessonStatus, topicsOf, useLessonList } from '../library';
 import { lessonNumberOn } from '../lesson/schedule';
 import { LessonSheet } from '../screens/Lessons';
 import type { AppCtx, Screen } from '../screens/common';
@@ -669,7 +669,7 @@ function DLessons({ app }: P) {
       {library.preview && upcoming.length > 0 && (
         <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
           <div style={{ display: 'flex', alignItems: 'baseline', gap: 14, flexWrap: 'wrap' }}><H2>Coming up</H2><span style={{ fontSize: 14, color: 'var(--fg-3)' }}>preview only · {count(upcoming.length)}</span></div>
-          <Grid>{upcoming.map(l => <Card key={l.id} l={l} note={`Goes live ${frDate(l.date)}`} />)}</Grid>
+          <Grid>{upcoming.map(l => <Card key={l.id} l={l} note={lessonStatus(l, library)} />)}</Grid>
         </div>
       )}
 

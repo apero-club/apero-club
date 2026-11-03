@@ -105,7 +105,7 @@ export function lessonNumberOn(start, date) {
   return Math.floor((utc(date) - utc(start)) / 86_400_000) + 1;
 }
 
-/** @type {{ at: number, value: { startDate: string, timeZone: string } | null } | null} */
+/** @type {{ at: number, value: { startDate: string, timeZone: string, readyThrough?: number } | null } | null} */
 let scheduleCache = null;
 /**
  * The schedule, read from the site's own lessons/schedule.json (cached 5 minutes).
@@ -115,21 +115,25 @@ let scheduleCache = null;
 async function loadSchedule(origin) {
   const age = scheduleCache ? Date.now() - scheduleCache.at : -1;
   if (scheduleCache && age >= 0 && age < (scheduleCache.value ? 300_000 : 30_000)) return scheduleCache.value;
-  /** @type {{ startDate: string, timeZone: string } | null} */
+  /** @type {{ startDate: string, timeZone: string, readyThrough?: number } | null} */
   let value = null;
   try {
     const r = await fetch(`${origin}/lessons/schedule.json`);
-    if (r.ok) { const j = await r.json(); if (/^\d{4}-\d{2}-\d{2}$/.test(j.startDate)) value = { startDate: j.startDate, timeZone: j.timeZone || 'Europe/Paris' }; }
+    if (r.ok) { const j = await r.json(); if (/^\d{4}-\d{2}-\d{2}$/.test(j.startDate)) value = { startDate: j.startDate, timeZone: j.timeZone || 'Europe/Paris', readyThrough: Number.isInteger(j.readyThrough) && j.readyThrough >= 1 ? j.readyThrough : undefined }; }
   } catch { /* fall through */ }
   const override = process.env.LESSON_START_DATE?.trim();
-  if (override && /^\d{4}-\d{2}-\d{2}$/.test(override)) value = { startDate: override, timeZone: value?.timeZone ?? 'Europe/Paris' };
+  if (override && /^\d{4}-\d{2}-\d{2}$/.test(override)) value = { startDate: override, timeZone: value?.timeZone ?? 'Europe/Paris', readyThrough: value?.readyThrough };
   scheduleCache = { at: Date.now(), value };
   return value;
 }
-/** Highest lesson number open today (at least lesson 1). If the schedule can't be read, only lesson 1. @param {string} origin */
+/**
+ * Highest lesson number open today: by date, capped by readyThrough (lessons not yet
+ * reviewed), at least lesson 1. If the schedule can't be read, only lesson 1.
+ * @param {string} origin
+ */
 async function openUpTo(origin) {
   const s = await loadSchedule(origin);
-  return s ? Math.max(1, lessonNumberOn(s.startDate, todayIn(s.timeZone))) : 1;
+  return s ? Math.max(1, Math.min(lessonNumberOn(s.startDate, todayIn(s.timeZone)), s.readyThrough ?? Infinity)) : 1;
 }
 
 /** Only same-site paths are allowed as a post-login destination. @param {unknown} n */

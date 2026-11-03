@@ -1,5 +1,5 @@
 import { LessonSchema, type Lesson } from './schema';
-import { dateOfLesson, lessonId, lessonNumberOn, todayIn, type Schedule } from './schedule';
+import { dateOfLesson, lessonId, openUpTo, todayIn, type Schedule } from './schedule';
 
 /**
  * Lessons are plain files under public/lessons/, fetched when needed (not bundled
@@ -16,7 +16,8 @@ export async function loadSchedule(): Promise<Schedule> {
   if (!res.ok) throw new Error('Couldn’t load lessons/schedule.json.');
   const s = await res.json();
   if (!/^\d{4}-\d{2}-\d{2}$/.test(s.startDate)) throw new Error('lessons/schedule.json needs "startDate": "YYYY-MM-DD".');
-  return { startDate: s.startDate, timeZone: s.timeZone || 'Europe/Paris' };
+  const ready = Number.isInteger(s.readyThrough) && s.readyThrough >= 1 ? s.readyThrough : undefined;
+  return { startDate: s.startDate, timeZone: s.timeZone || 'Europe/Paris', readyThrough: ready };
 }
 
 /** Lesson N, or null if there's no such lesson (or it isn't live yet and preview is off). */
@@ -31,15 +32,15 @@ export async function loadLesson(n: number, schedule: Schedule): Promise<Lesson 
   return { ...parsed.data, id, number: n, date: dateOfLesson(schedule.startDate, n) };
 }
 
-/** Today's scheduled lesson number (can be 0 or less before the start date). */
-export const todaysNumber = (s: Schedule, now = new Date()) => lessonNumberOn(s.startDate, todayIn(s.timeZone, now));
+/** Today's lesson number: by date, capped by readyThrough, at least 1. */
+export const todaysNumber = (s: Schedule, now = new Date()) => openUpTo(s, todayIn(s.timeZone, now));
 
 /**
  * Today's apéro: the lesson scheduled for today, or if that file doesn't exist yet,
  * the most recent one that does. Before the start date, lesson 1.
  */
 export async function loadToday(s: Schedule): Promise<Lesson | null> {
-  const today = Math.max(1, todaysNumber(s));
+  const today = todaysNumber(s);
   for (let n = today; n >= 1 && n > today - 60; n--) {
     const l = await loadLesson(n, s);
     if (l) return l;

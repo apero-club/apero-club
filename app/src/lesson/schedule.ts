@@ -6,7 +6,14 @@
  * middleware.js has its own copy of todayIn/lessonNumberOn (it can't import);
  * schedule.test.ts checks the two agree.
  */
-export type Schedule = { startDate: string; timeZone: string };
+export type Schedule = {
+  startDate: string; timeZone: string;
+  /** Optional: lessons above this number stay hidden even after their day (a backlog not yet reviewed). */
+  readyThrough?: number;
+};
+
+/** Highest lesson open on a date: by the schedule, capped by readyThrough, and never below lesson 1. */
+export const openUpTo = (s: Schedule, date: string) => Math.max(1, Math.min(lessonNumberOn(s.startDate, date), s.readyThrough ?? Infinity));
 
 const DAY = 86_400_000;
 const utc = (iso: string) => { const [y, m, d] = iso.split('-').map(Number); return Date.UTC(y, m - 1, d); };

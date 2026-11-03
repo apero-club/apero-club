@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { dateOfLesson, lessonId, lessonNumberOf, lessonNumberOn, todayIn } from './schedule';
+import { dateOfLesson, lessonId, lessonNumberOf, lessonNumberOn, openUpTo, todayIn } from './schedule';
 import { lessonNumberOn as mwNumber, todayIn as mwToday } from '../../middleware.js';
 
 describe('schedule', () => {
@@ -17,6 +17,13 @@ describe('schedule', () => {
     // 23:30 UTC on 3 Nov is already 00:30 on 4 Nov in Paris (UTC+1 in winter).
     expect(todayIn('Europe/Paris', new Date('2026-11-03T23:30:00Z'))).toBe('2026-11-04');
     expect(todayIn('America/New_York', new Date('2026-11-03T23:30:00Z'))).toBe('2026-11-03');
+  });
+  it('caps the open lesson with readyThrough, never below lesson 1', () => {
+    const s = { startDate: '2026-11-03', timeZone: 'Europe/Paris' };
+    expect(openUpTo(s, '2026-11-10')).toBe(8);
+    expect(openUpTo({ ...s, readyThrough: 2 }, '2026-11-10')).toBe(2);
+    expect(openUpTo({ ...s, readyThrough: 20 }, '2026-11-10')).toBe(8);
+    expect(openUpTo(s, '2026-10-01')).toBe(1);
   });
   it('maps ids and numbers', () => {
     expect(lessonId(7)).toBe('lesson-007');

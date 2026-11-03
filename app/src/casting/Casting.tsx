@@ -14,6 +14,7 @@ type Voice = { id: string; name?: string; gender: string; age?: string; accent?:
 
 const STATUS: Record<string, [BadgeTone, string]> = {
   approved: ['green', 'Approved'], pending: ['sun', 'Waiting for you'], rejected: ['orange', 'Rejected: new voice on next run'],
+  'needs-voice': ['orange', 'Needs a voice'],
 };
 const REPO_FILE = 'app/voices/cast.json';
 
@@ -31,8 +32,8 @@ export function Casting() {
     a.onended = () => setPlaying(null);
     void a.play(); setPlaying(file);
   };
-  const pending = chars.filter(([, e]) => e.status === 'pending');
-  const order = [...pending, ...chars.filter(([, e]) => e.status !== 'pending')];
+  const pending = chars.filter(([, e]) => e.status === 'pending' || e.status === 'needs-voice');
+  const order = [...pending, ...chars.filter(c => !pending.includes(c))];
 
   return (
     <div className="desk">
@@ -41,7 +42,7 @@ export function Casting() {
           <Eyebrow color="var(--lilac-500)">apéro club · behind the scenes</Eyebrow>
           <h1 style={{ margin: 0, font: '900 clamp(36px,6vw,56px)/0.95 var(--font-display)', letterSpacing: '-0.045em', color: 'var(--lilac-500)' }}>Voice casting</h1>
           <p style={{ margin: 0, fontSize: 16, lineHeight: 1.5, color: 'var(--white)', maxWidth: '58ch' }}>
-            {pending.length ? `${pending.length} character${pending.length > 1 ? 's are' : ' is'} waiting for you to approve a voice.` : 'Every character has an approved voice.'} Characters keep their voice in every lesson.
+            {pending.length ? `${pending.length} character${pending.length > 1 ? 's need' : ' needs'} you: approve a voice, or add one.` : 'Every character has an approved voice.'} Characters keep their voice in every lesson.
           </p>
         </div>
       </section>
@@ -61,8 +62,8 @@ export function Casting() {
               <div style={{ display: 'flex', alignItems: 'center', gap: 12, flexWrap: 'wrap' }}>
                 {e.sample && <IconButton icon={playing === e.sample ? 'pause' : 'play'} label={`Play ${e.name}'s sample`} variant="primary" shape="circle" onClick={() => play(e.sample!)} />}
                 <span style={{ display: 'flex', flexDirection: 'column', gap: 2, fontSize: 14 }}>
-                  <span><strong>{v?.name || 'Voice'}</strong> <code style={{ fontSize: 13 }}>{e.voiceId}</code></span>
-                  <span style={{ color: 'var(--fg-3)' }}>{[v?.gender, v?.age, v?.accent, ...(v?.tags ?? [])].filter(Boolean).join(' · ') || 'No details in the pool yet'}</span>
+                  <span>{e.voiceId ? <><strong>{v?.name || 'Voice'}</strong> <code style={{ fontSize: 13 }}>{e.voiceId}</code></> : <strong>No voice yet</strong>}</span>
+                  <span style={{ color: 'var(--fg-3)' }}>{e.voiceId ? [v?.gender, v?.age, v?.accent, ...(v?.tags ?? [])].filter(Boolean).join(' · ') || 'Not in the pool' : 'Add a voice ID: set "voiceId" and "status": "approved" here, or add voices to the pool.'}</span>
                 </span>
               </div>
               <span style={{ fontSize: 13, color: 'var(--fg-3)' }}>
@@ -76,7 +77,7 @@ export function Casting() {
           <Eyebrow color="var(--sun-900)">How to approve or reject</Eyebrow>
           <ol style={{ margin: 0, paddingLeft: 20, display: 'flex', flexDirection: 'column', gap: 6 }}>
             <li>On GitHub, open <code>{REPO_FILE}</code> and click the pencil to edit.</li>
-            <li>Find the character and change <code>"status": "pending"</code> to <code>"approved"</code>, or to <code>"rejected"</code> to hear another voice.</li>
+            <li>Find the character and change <code>"status": "pending"</code> to <code>"approved"</code>, or to <code>"rejected"</code> to hear another voice. To choose a voice yourself, put its ID in <code>"voiceId"</code> and set <code>"approved"</code>.</li>
             <li>Commit. Approved characters' lines are recorded in a minute or two; rejected ones get the next-best voice and a new sample here.</li>
           </ol>
           <span style={{ color: 'var(--sun-900)' }}>{pool.length} voices in the pool (<code>app/voices/pool.json</code>). Until a character is approved, their lines use the device voice.</span>

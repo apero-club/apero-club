@@ -21,6 +21,8 @@ The source of truth for the format is [`src/lesson/schema.ts`](../src/lesson/sch
 
 You can push lessons weeks ahead: on the live site, a lesson's file, images and audio are only served from its day. The **Lessons** tab lists every lesson before today.
 
+**Holding a backlog back:** `readyThrough` in `schedule.json` is the highest lesson learners can get, even after later lessons' days have come. Push new lessons whenever you like, review them in preview mode (their voices get recorded meanwhile), then raise `readyThrough`. If a lesson is held on its day, learners keep the latest ready lesson. Remove `readyThrough` to let every lesson go live on its date.
+
 ### Preview mode
 
 To review lessons before they go live, open `/__preview` on the live site and enter the preview code (`PREVIEW_CODE` in Vercel). For 30 days on that device, every lesson opens: a dark bar shows which lesson you're on and when it goes live, the Lessons tab adds a **Coming up** section, and `?lesson=N` opens any lesson. `/__preview/exit` turns it off.
@@ -141,4 +143,4 @@ Characters keep one voice across every lesson, and no two characters in a story 
 - **Listen** on the site at `?casting` (e.g. `https://your-site/?casting`).
 - **Approve or reject** by editing `voices/cast.json` on GitHub: set the character's `status` to `"approved"` (their lines get recorded) or `"rejected"` (they get the next-best voice and a new sample; rejected voices are never offered to them again).
 - Until a character is approved, their lines play with the device voice.
-- If the pool runs out of voices of a gender, the recording run stops and says so; add voices to the pool.
+- If the pool has no suitable voice left, the character shows as **Needs a voice** on the casting page and their lines use device voices; everything else still records. Add voices to the pool, or choose one yourself: put its ID in the character's `voiceId` in `voices/cast.json` and set `"status": "approved"`.

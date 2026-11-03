@@ -1,5 +1,6 @@
 {
-  "$comment": "Lesson 1 goes live on startDate; lesson N goes live N-1 days later, at midnight in timeZone. Everyone sees the same lesson that day. Changing startDate moves the whole schedule.",
+  "$comment": "Lesson 1 goes live on startDate; lesson N goes live N-1 days later, at midnight in timeZone. Everyone sees the same lesson that day. readyThrough: lessons above this number stay hidden from learners even after their day (you can still see them in preview); raise it when you've reviewed them. Changing startDate moves the whole schedule.",
   "startDate": "2026-11-03",
-  "timeZone": "Europe/Paris"
+  "timeZone": "Europe/Paris",
+  "readyThrough": 1
 }

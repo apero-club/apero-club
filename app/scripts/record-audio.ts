@@ -42,6 +42,8 @@ type Config = {
 const config: Config = JSON.parse(readFileSync(join(ROOT, 'audio.config.json'), 'utf8'));
 
 class Stop extends Error {}
+/** A warning in the log (and as an annotation on the GitHub Actions run). */
+const warn = (msg: string) => console.log(process.env.GITHUB_ACTIONS ? `::warning::${msg}` : `  ! ${msg}`);
 
 const POOL = join(ROOT, 'voices/pool.json'), REGISTRY = join(ROOT, 'voices/cast.json'), SAMPLES = join(ROOT, 'public/voices/samples');
 const pool: Pool = JSON.parse(readFileSync(POOL, 'utf8'));
@@ -112,8 +114,14 @@ async function main() {
     const lesson = LessonSchema.parse(JSON.parse(readFileSync(join(dir, f), 'utf8')));
     const id = f.slice(0, -5); // lesson-001
     let cast;
-    try { cast = castLesson(lesson, id, pool, registry); } catch (e) { throw e instanceof CastingError ? new Stop(e.message) : e; }
+    try { cast = castLesson(lesson, id, pool, registry); } catch (e) {
+      // A casting problem in one lesson shouldn't stop the others from recording.
+      if (!(e instanceof CastingError)) throw e;
+      warn(`${id}: ${e.message} Skipped this lesson's audio.`);
+      continue;
+    }
     for (const n of cast.notes) console.log(`  · ${n}`);
+    for (const v of cast.needsVoice) warn(`${v.name} (${id}) has no voice yet; add one to voices/pool.json or voices/cast.json.`);
     saveRegistry();
     // Voice samples for anyone waiting for approval.
     for (const p of cast.pending) {

@@ -18,7 +18,8 @@ export type PoolVoice = {
   age?: string; accent?: string; tags?: string[]; notes?: string;
 };
 export type Pool = { voices: PoolVoice[] };
-export type Status = 'pending' | 'approved' | 'rejected';
+/** needs-voice: nothing suitable in the pool yet; their lines use device voices until a voice is added. */
+export type Status = 'pending' | 'approved' | 'rejected' | 'needs-voice';
 export type CastEntry = {
   name: string; voiceId: string; status: Status; firstLesson: string;
   /** Voices already turned down for this character; never offered again. */
@@ -51,6 +52,8 @@ export type CastResult = {
   approved: Record<string, string>;
   /** Characters waiting for approval (new or just re-cast). */
   pending: { id: string; voiceId: string; needsSample: boolean }[];
+  /** Characters with no suitable voice in the pool: skipped, not an error, so other lessons still record. */
+  needsVoice: { id: string; name: string }[];
   /** Human-readable notes for the log. */
   notes: string[];
 };
@@ -62,23 +65,28 @@ export class CastingError extends Error {}
  * Pure: no files, no network.
  */
 export function castLesson(lesson: LessonData, lessonId: string, pool: Pool, reg: Registry): CastResult {
-  const res: CastResult = { approved: {}, pending: [], notes: [] };
+  const res: CastResult = { approved: {}, pending: [], needsVoice: [], notes: [] };
   const inStory = new Set<string>();
   // Characters already cast keep their voice; collect those first so new ones avoid them.
   for (const c of lesson.cast) {
     const e = reg.characters[c.id];
-    if (e && e.status !== 'rejected') inStory.add(e.voiceId);
+    if (e && e.status !== 'rejected' && e.voiceId) inStory.add(e.voiceId);
   }
   for (const c of lesson.cast) {
     let e = reg.characters[c.id];
-    const needsVoice = !e || e.status === 'rejected';
+    const needsVoice = !e || e.status === 'rejected' || e.status === 'needs-voice' || !e.voiceId;
     if (needsVoice) {
       const rejected = e ? [...new Set([...e.rejected, e.voiceId])] : [];
-      const usedAnywhere = new Set(Object.entries(reg.characters).filter(([id, x]) => id !== c.id && x.status !== 'rejected').map(([, x]) => x.voiceId));
+      const usedAnywhere = new Set(Object.entries(reg.characters).filter(([id, x]) => id !== c.id && x.status !== 'rejected' && x.voiceId).map(([, x]) => x.voiceId));
       const candidates = pool.voices.filter(v => v.gender === c.voice && !rejected.includes(v.id) && !inStory.has(v.id));
       const fresh = candidates.filter(v => !usedAnywhere.has(v.id));
       const from = fresh.length ? fresh : candidates;
-      if (!from.length) throw new CastingError(`No ${c.voice} voice left in voices/pool.json for "${c.name}" in ${lessonId}. Add more ${c.voice} voices to the pool${rejected.length ? ` (already rejected for this character: ${rejected.join(', ')})` : ''}.`);
+      if (!from.length) {
+        reg.characters[c.id] = { name: c.name, description: c.description, voiceId: '', status: 'needs-voice', firstLesson: e?.firstLesson ?? lessonId, rejected };
+        res.needsVoice.push({ id: c.id, name: c.name });
+        res.notes.push(`${c.name} (${lessonId}) needs a ${c.voice} voice: none left in voices/pool.json. Add one to the pool, or set their voiceId and "approved" in voices/cast.json. Until then their lines use device voices.`);
+        continue;
+      }
       if (!fresh.length) res.notes.push(`Every ${c.voice} voice in the pool is taken, so "${c.name}" shares a voice with a character from another story. Add more ${c.voice} voices to avoid that.`);
       // Best score wins; ties go to the order in the pool file.
       const best = from.reduce((a, b) => (matchScore(b, c.description) > matchScore(a, c.description) ? b : a));
@@ -96,6 +104,7 @@ export function castLesson(lesson: LessonData, lessonId: string, pool: Pool, reg
   const seen = new Map<string, string>();
   for (const c of lesson.cast) {
     const v = reg.characters[c.id].voiceId, other = seen.get(v);
+    if (!v) continue;
     if (other) throw new CastingError(`"${other}" and "${c.name}" both use voice ${v} in ${lessonId}. Set one of them to "rejected" in voices/cast.json to recast them.`);
     seen.set(v, c.name);
   }
