@@ -43,17 +43,18 @@
     "madame-benali": {
       "name": "Madame Benali",
       "description": "The building’s gardienne, an older Parisian woman in her sixties. Warm, theatrical, expressive; knows everything about everyone and loves telling it.",
-      "voiceId": "2oMnSKxLeHBxE0KdeHJD",
-      "status": "pending",
+      "voiceId": "NpMqpbmlioUVh6og0U5p",
+      "status": "approved",
       "firstLesson": "lesson-003",
-      "rejected": [],
-      "sample": "madame-benali-2oMnSKxLeHBxE0KdeHJD.mp3"
+      "rejected": [
+        "2oMnSKxLeHBxE0KdeHJD"
+      ]
     },
     "clement": {
       "name": "Clément",
       "description": "A young man of 26 from Bordeaux, just moved to Paris. Polite, slightly overwhelmed; a natural, standard French accent.",
-      "voiceId": "",
-      "status": "needs-voice",
+      "voiceId": "SsVUx1gFlvniIrUMZtgF",
+      "status": "approved",
       "firstLesson": "lesson-003",
       "rejected": [
         "jUHQdLfy668sllNiNTSW"

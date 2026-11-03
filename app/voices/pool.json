@@ -64,6 +64,31 @@
         "careful"
       ],
       "notes": "Harriet's voice (chosen by hand): British English, so her French has a British accent."
+    },
+    {
+      "id": "NpMqpbmlioUVh6og0U5p",
+      "name": "",
+      "gender": "female",
+      "age": "older",
+      "accent": "parisian",
+      "tags": [
+        "warm",
+        "expressive",
+        "theatrical"
+      ],
+      "notes": "Madame Benali's voice (chosen by hand)."
+    },
+    {
+      "id": "SsVUx1gFlvniIrUMZtgF",
+      "name": "",
+      "gender": "male",
+      "age": "young",
+      "accent": "french",
+      "tags": [
+        "natural",
+        "standard"
+      ],
+      "notes": "Clément's voice (chosen by hand)."
     }
   ]
 }

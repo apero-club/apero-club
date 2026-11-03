@@ -47,8 +47,7 @@ describe('future characters (mentioned, not speaking yet)', () => {
     const reg = clone(realReg);
     castLesson(l3, 'lesson-003', realPool, reg);
     for (const id of ['monsieur-petrovic', 'madame-martin', 'monsieur-martin', 'ines', 'le-locataire-du-sixieme']) expect(reg.characters[id].status).toBe('future');
-    // Gilles's voice was ruled out for Clément (too old), so he waits for a young male voice.
-    expect(reg.characters.clement).toMatchObject({ status: 'needs-voice', voiceId: '' });
+    expect(reg.characters.clement).toMatchObject({ status: 'approved', voiceId: 'SsVUx1gFlvniIrUMZtgF' });
   });
 });
 
