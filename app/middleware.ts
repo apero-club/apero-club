@@ -3,11 +3,18 @@
  * the app's scripts and lesson files, so nothing is served without the access code.
  * Not used by `npm run dev` (local development stays open).
  */
-import { next } from '@vercel/functions';
 import { cookieHeader, COOKIE, currentCode, readCookie, safeNext, sameToken, tokenFor } from './gate/access';
 import { gatePage, type GateState } from './gate/page';
 
 const NOINDEX = { 'X-Robots-Tag': 'noindex, nofollow' };
+
+/**
+ * Let the request through to the site. This is what `next()` from
+ * @vercel/functions does; it's inlined because importing that package pulls in
+ * Node-only code (child_process, fs) that crashes the Edge runtime.
+ */
+const next = (init: { headers?: Record<string, string> } = {}) =>
+  new Response(null, { headers: { ...init.headers, 'x-middleware-next': '1' } });
 
 function gate(state: GateState, nextPath: string, status = 401) {
   return new Response(gatePage(state, nextPath), {
