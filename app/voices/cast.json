@@ -1,5 +1,5 @@
 {
-  "$comment": "Who speaks with which voice, across all lessons. Written by the recording script; you only change \"status\". New characters arrive as \"pending\" with a sample to listen to (open the site with ?casting). Set \"approved\" to record their lines, or \"rejected\" to get the next-best voice and a new sample.",
+  "$comment": "Who speaks with which voice, across all lessons. Written by the recording script; you only change \"status\". New characters arrive as \"pending\" with a sample to listen to (open the site with ?casting). Set \"approved\" to record their lines, or \"rejected\" to get the next-best voice and a new sample. \"future\" marks a character who is only mentioned so far: they get a voice the first time they speak in a lesson.",
   "characters": {
     "narrator": {
       "name": "Moi",
@@ -39,6 +39,84 @@
       "status": "approved",
       "firstLesson": "lesson-002",
       "rejected": []
+    },
+    "madame-benali": {
+      "name": "Madame Benali",
+      "description": "The building’s gardienne, an older Parisian woman in her sixties. Warm, theatrical, expressive; knows everything about everyone and loves telling it.",
+      "voiceId": "2oMnSKxLeHBxE0KdeHJD",
+      "status": "pending",
+      "firstLesson": "lesson-003",
+      "rejected": []
+    },
+    "clement": {
+      "name": "Clément",
+      "description": "A young man of 26 from Bordeaux, just moved to Paris. Polite, slightly overwhelmed; a natural, standard French accent.",
+      "voiceId": "",
+      "status": "needs-voice",
+      "firstLesson": "lesson-003",
+      "rejected": [
+        "jUHQdLfy668sllNiNTSW"
+      ]
+    },
+    "monsieur-petrovic": {
+      "name": "Monsieur Petrovic",
+      "description": "A retired opera chorus singer on the third floor, in his seventies. Grand, theatrical, a big rich voice; still sings at 2am.",
+      "voiceId": "",
+      "status": "future",
+      "firstLesson": "",
+      "rejected": [],
+      "mentionedIn": [
+        "lesson-003"
+      ],
+      "voice": "male"
+    },
+    "madame-martin": {
+      "name": "Madame Martin",
+      "description": "Half of the couple on the fourth floor who have been renovating for six years. Middle-aged, cheerful, always busy, a little vague about the works.",
+      "voiceId": "",
+      "status": "future",
+      "firstLesson": "",
+      "rejected": [],
+      "mentionedIn": [
+        "lesson-003"
+      ],
+      "voice": "female"
+    },
+    "monsieur-martin": {
+      "name": "Monsieur Martin",
+      "description": "The other half of the Martins on the fourth floor. Middle-aged, friendly, enthusiastic about DIY he never seems to finish.",
+      "voiceId": "",
+      "status": "future",
+      "firstLesson": "",
+      "rejected": [],
+      "mentionedIn": [
+        "lesson-003"
+      ],
+      "voice": "male"
+    },
+    "ines": {
+      "name": "Inès",
+      "description": "A young woman on the fifth floor who gets a parcel every single day. Bright, friendly, a little secretive.",
+      "voiceId": "",
+      "status": "future",
+      "firstLesson": "",
+      "rejected": [],
+      "mentionedIn": [
+        "lesson-003"
+      ],
+      "voice": "female"
+    },
+    "le-locataire-du-sixieme": {
+      "name": "Le locataire du sixième",
+      "description": "The sixth-floor tenant no one has ever seen, only his cat. Age and voice unknown: decide when he finally appears.",
+      "voiceId": "",
+      "status": "future",
+      "firstLesson": "",
+      "rejected": [],
+      "mentionedIn": [
+        "lesson-003"
+      ],
+      "voice": "male"
     }
   }
 }

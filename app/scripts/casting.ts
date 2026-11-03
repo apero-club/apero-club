@@ -18,8 +18,12 @@ export type PoolVoice = {
   age?: string; accent?: string; tags?: string[]; notes?: string;
 };
 export type Pool = { voices: PoolVoice[] };
-/** needs-voice: nothing suitable in the pool yet; their lines use device voices until a voice is added. */
-export type Status = 'pending' | 'approved' | 'rejected' | 'needs-voice';
+/**
+ * needs-voice: nothing suitable in the pool yet; their lines use device voices until a voice is added.
+ * future: mentioned in a story but not speaking yet. No voice until they first appear in a lesson's
+ * cast; then they're cast like any new character, using the description kept here.
+ */
+export type Status = 'pending' | 'approved' | 'rejected' | 'needs-voice' | 'future';
 export type CastEntry = {
   name: string; voiceId: string; status: Status; firstLesson: string;
   /** Voices already turned down for this character; never offered again. */
@@ -27,6 +31,9 @@ export type CastEntry = {
   /** Sample MP3 (in public/voices/samples/) for a pending voice. */
   sample?: string;
   description?: string;
+  /** For a future character: lessons that mention them, and the voice they'll need. */
+  mentionedIn?: string[];
+  voice?: 'male' | 'female';
 };
 export type Registry = { characters: Record<string, CastEntry> };
 
@@ -74,15 +81,17 @@ export function castLesson(lesson: LessonData, lessonId: string, pool: Pool, reg
   }
   for (const c of lesson.cast) {
     let e = reg.characters[c.id];
-    const needsVoice = !e || e.status === 'rejected' || e.status === 'needs-voice' || !e.voiceId;
+    const needsVoice = !e || e.status === 'rejected' || e.status === 'needs-voice' || e.status === 'future' || !e.voiceId;
     if (needsVoice) {
-      const rejected = e ? [...new Set([...e.rejected, e.voiceId])] : [];
+      const rejected = e ? [...new Set([...e.rejected, e.voiceId])].filter(Boolean) : [];
+      // A character mentioned earlier starts their voice history in the lesson where they first speak.
+      const first = e && e.status !== 'future' ? e.firstLesson : lessonId;
       const usedAnywhere = new Set(Object.entries(reg.characters).filter(([id, x]) => id !== c.id && x.status !== 'rejected' && x.voiceId).map(([, x]) => x.voiceId));
       const candidates = pool.voices.filter(v => v.gender === c.voice && !rejected.includes(v.id) && !inStory.has(v.id));
       const fresh = candidates.filter(v => !usedAnywhere.has(v.id));
       const from = fresh.length ? fresh : candidates;
       if (!from.length) {
-        reg.characters[c.id] = { name: c.name, description: c.description, voiceId: '', status: 'needs-voice', firstLesson: e?.firstLesson ?? lessonId, rejected };
+        reg.characters[c.id] = { name: c.name, description: c.description, voiceId: '', status: 'needs-voice', firstLesson: first, rejected };
         res.needsVoice.push({ id: c.id, name: c.name });
         res.notes.push(`${c.name} (${lessonId}) needs a ${c.voice} voice: none left in voices/pool.json. Add one to the pool, or set their voiceId and "approved" in voices/cast.json. Until then their lines use device voices.`);
         continue;
@@ -92,7 +101,7 @@ export function castLesson(lesson: LessonData, lessonId: string, pool: Pool, reg
       const best = from.reduce((a, b) => (matchScore(b, c.description) > matchScore(a, c.description) ? b : a));
       e = reg.characters[c.id] = {
         name: c.name, description: c.description, voiceId: best.id, status: 'pending',
-        firstLesson: e?.firstLesson ?? lessonId, rejected,
+        firstLesson: first, rejected,
       };
       res.notes.push(`${c.name}: suggested ${best.name || best.id} (${needsVoice && rejected.length ? 'after rejecting ' + rejected.length : 'new character'}). Waiting for approval.`);
     }

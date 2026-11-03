@@ -9,12 +9,13 @@ import poolFile from '../../voices/pool.json';
 import { Badge, IconButton, type BadgeTone } from '../ds/controls';
 import { Eyebrow } from '../screens/common';
 
-type Entry = { name: string; voiceId: string; status: string; firstLesson: string; rejected: string[]; sample?: string; description?: string };
+type Entry = { name: string; voiceId: string; status: string; firstLesson: string; rejected: string[]; sample?: string; description?: string; mentionedIn?: string[]; voice?: string };
 type Voice = { id: string; name?: string; gender: string; age?: string; accent?: string; tags?: string[]; notes?: string };
 
 const STATUS: Record<string, [BadgeTone, string]> = {
   approved: ['green', 'Approved'], pending: ['sun', 'Waiting for you'], rejected: ['orange', 'Rejected: new voice on next run'],
   'needs-voice': ['orange', 'Needs a voice'],
+  future: ['sky', 'Mentioned only'],
 };
 const REPO_FILE = 'app/voices/cast.json';
 
@@ -22,7 +23,7 @@ export function Casting() {
   const chars = Object.entries((registry as { characters: Record<string, Entry> }).characters);
   const pool = (poolFile as { voices: Voice[] }).voices;
   const voice = (id: string) => pool.find(v => v.id === id);
-  const usedBy = (id: string) => chars.filter(([, e]) => e.voiceId === id && e.status !== 'rejected').map(([, e]) => e.name);
+  const usedBy = (id: string) => !id ? [] : chars.filter(([, e]) => e.voiceId === id && e.status !== 'rejected').map(([, e]) => e.name);
   const audio = useRef<HTMLAudioElement | null>(null);
   const [playing, setPlaying] = useState<string | null>(null);
   const play = (file: string) => {
@@ -33,7 +34,8 @@ export function Casting() {
     void a.play(); setPlaying(file);
   };
   const pending = chars.filter(([, e]) => e.status === 'pending' || e.status === 'needs-voice');
-  const order = [...pending, ...chars.filter(c => !pending.includes(c))];
+  const future = chars.filter(([, e]) => e.status === 'future');
+  const order = [...pending, ...chars.filter(c => !pending.includes(c) && !future.includes(c)), ...future];
 
   return (
     <div className="desk">
@@ -62,12 +64,13 @@ export function Casting() {
               <div style={{ display: 'flex', alignItems: 'center', gap: 12, flexWrap: 'wrap' }}>
                 {e.sample && <IconButton icon={playing === e.sample ? 'pause' : 'play'} label={`Play ${e.name}'s sample`} variant="primary" shape="circle" onClick={() => play(e.sample!)} />}
                 <span style={{ display: 'flex', flexDirection: 'column', gap: 2, fontSize: 14 }}>
+                  {e.status === 'future' ? <span style={{ color: 'var(--fg-3)' }}>No voice yet: mentioned in {e.mentionedIn?.join(', ') || 'a story'}. They get a {e.voice ?? ''} voice the first time they speak.</span> : <>
                   <span>{e.voiceId ? <><strong>{v?.name || 'Voice'}</strong> <code style={{ fontSize: 13 }}>{e.voiceId}</code></> : <strong>No voice yet</strong>}</span>
-                  <span style={{ color: 'var(--fg-3)' }}>{e.voiceId ? [v?.gender, v?.age, v?.accent, ...(v?.tags ?? [])].filter(Boolean).join(' · ') || 'Not in the pool' : 'Add a voice ID: set "voiceId" and "status": "approved" here, or add voices to the pool.'}</span>
+                  <span style={{ color: 'var(--fg-3)' }}>{e.voiceId ? [v?.gender, v?.age, v?.accent, ...(v?.tags ?? [])].filter(Boolean).join(' · ') || 'Not in the pool' : 'Add a voice ID: set "voiceId" and "status": "approved" here, or add voices to the pool.'}</span></>}
                 </span>
               </div>
               <span style={{ fontSize: 13, color: 'var(--fg-3)' }}>
-                First appears {e.firstLesson}{e.rejected.length ? ` · ${e.rejected.length} voice${e.rejected.length > 1 ? 's' : ''} rejected` : ''}{others.length ? ` · also used by ${others.join(', ')}` : ''}
+                {e.status === 'future' ? 'Not in a cast yet' : `First appears ${e.firstLesson}`}{e.rejected.length ? ` · ${e.rejected.length} voice${e.rejected.length > 1 ? 's' : ''} rejected` : ''}{others.length ? ` · also used by ${others.join(', ')}` : ''}
               </span>
             </article>
           );

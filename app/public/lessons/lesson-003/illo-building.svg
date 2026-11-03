@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="A Paris apartment building where every window tells a story">
+  <!-- Lesson 3 hero tile: the building and its neighbours, in flat brand colours. Transparent background. -->
+  <!-- roof (6th floor) and chimney -->
+  <rect x="124" y="10" width="11" height="18" rx="2" fill="#2913A6"/>
+  <path d="M54 46 L66 20 H134 L146 46 Z" fill="#2913A6"/>
+  <!-- façade -->
+  <rect x="48" y="44" width="104" height="148" rx="4" fill="#3A1FD4"/>
+  <!-- 6th: the dormer window with the cat no one can explain -->
+  <rect x="86" y="24" width="28" height="18" rx="3" fill="#F0A4EB"/>
+  <g fill="#121014">
+    <path d="M93 42 C93 34 96 31 100 31 C104 31 107 34 107 42 Z"/>
+    <circle cx="100" cy="31" r="5"/>
+    <path d="M95.5 28 L96.5 23 L99 27 Z M104.5 28 L103.5 23 L101 27 Z"/>
+  </g>
+  <!-- 5th: Inès's parcels on the balcony -->
+  <rect x="62" y="54" width="26" height="28" rx="3" fill="#FFFFFF"/>
+  <rect x="112" y="54" width="26" height="28" rx="3" fill="#FFFFFF"/>
+  <g fill="#FF5A1F"><rect x="114" y="72" width="12" height="10" rx="1.5"/><rect x="126" y="74" width="10" height="8" rx="1.5"/><rect x="117" y="64" width="10" height="8" rx="1.5"/></g>
+  <!-- 4th: the Martins' everlasting works -->
+  <rect x="62" y="94" width="26" height="28" rx="3" fill="#FFFFFF"/>
+  <rect x="112" y="94" width="26" height="28" rx="3" fill="#FFCF66"/>
+  <g stroke="#3A1FD4" stroke-width="3" stroke-linecap="round"><path d="M116 120 L134 97"/><path d="M122 120 L138 101"/></g>
+  <rect x="66" y="110" width="8" height="12" rx="1.5" fill="#FF5A1F"/>
+  <!-- 3rd: Monsieur Petrovic, singing at 2am -->
+  <rect x="62" y="134" width="26" height="28" rx="3" fill="#F0A4EB"/>
+  <rect x="112" y="134" width="26" height="28" rx="3" fill="#FFFFFF"/>
+  <g fill="#F0A4EB">
+    <circle cx="40" cy="138" r="4"/><rect x="43" y="122" width="2.5" height="16" rx="1"/>
+    <circle cx="30" cy="124" r="3.5"/><rect x="32.5" y="111" width="2.5" height="13" rx="1"/>
+  </g>
+  <!-- balcony rails -->
+  <g fill="#F0A4EB"><rect x="58" y="82" width="34" height="3" rx="1.5"/><rect x="108" y="82" width="34" height="3" rx="1.5"/><rect x="58" y="122" width="34" height="3" rx="1.5"/><rect x="108" y="122" width="34" height="3" rx="1.5"/></g>
+  <!-- ground floor: the door and the loge -->
+  <path d="M88 192 V180 C88 172 93 168 100 168 C107 168 112 172 112 180 V192 Z" fill="#FF5A1F"/>
+  <rect x="120" y="172" width="20" height="14" rx="3" fill="#FFCF66"/>
+</svg>

@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" role="img" aria-label="A cutaway of a Paris apartment building, with a different neighbour on every floor">
+  <!-- Placeholder drawing for lesson 3 (flat brand colours). Replace with illustrator artwork of the same name. -->
+  <rect width="600" height="600" fill="#FFF0CC"/>
+  <!-- roof and chimney -->
+  <rect x="430" y="22" width="34" height="50" rx="4" fill="#2913A6"/>
+  <path d="M70 140 L120 50 H480 L530 140 Z" fill="#2913A6"/>
+  <!-- the building, cut open -->
+  <rect x="60" y="138" width="480" height="430" fill="#3A1FD4"/>
+  <!-- rooms: 6th (attic), 5th, 4th, 3rd, ground floor -->
+  <path d="M150 128 L180 74 H420 L450 128 Z" fill="#FCEBFB"/>
+  <rect x="76" y="150" width="448" height="92" fill="#FFFFFF"/>
+  <rect x="76" y="254" width="448" height="92" fill="#FFE3D5"/>
+  <rect x="76" y="358" width="448" height="92" fill="#FCEBFB"/>
+  <rect x="76" y="462" width="448" height="106" fill="#FFFFFF"/>
+  <!-- floor numbers -->
+  <g font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="18" text-anchor="middle">
+    <text x="105" y="118" fill="#FFFFFF">6e</text>
+    <g fill="#3A1FD4"><text x="32" y="202">5e</text><text x="32" y="306">4e</text><text x="32" y="410">3e</text><text x="32" y="520">RDC</text></g>
+  </g>
+  <!-- 6th: an empty armchair and the cat -->
+  <rect x="210" y="98" width="56" height="30" rx="10" fill="#C463BE"/>
+  <g fill="#121014">
+    <path d="M330 128 C330 108 338 100 350 100 C362 100 370 108 370 128 Z"/>
+    <circle cx="350" cy="96" r="12"/>
+    <path d="M340 90 L342 78 L348 88 Z M360 90 L358 78 L352 88 Z"/>
+    <path d="M368 124 C384 124 388 112 382 104" stroke="#121014" stroke-width="5" fill="none" stroke-linecap="round"/>
+  </g>
+  <circle cx="345" cy="95" r="2.5" fill="#FFCF66"/><circle cx="355" cy="95" r="2.5" fill="#FFCF66"/>
+  <!-- 5th: Inès and a tower of parcels -->
+  <g fill="#FF5A1F"><rect x="300" y="200" width="60" height="42" rx="4"/><rect x="366" y="210" width="48" height="32" rx="4"/><rect x="312" y="164" width="44" height="36" rx="4"/><rect x="420" y="220" width="36" height="22" rx="4"/></g>
+  <g stroke="#FFE3D5" stroke-width="4"><path d="M330 200 V242 M390 210 V242 M334 164 V200"/></g>
+  <circle cx="200" cy="176" r="16" fill="#F29A00"/><rect x="180" y="194" width="40" height="48" rx="16" fill="#0A86D6"/>
+  <!-- 4th: the Martins, the ladder, paint pots, and no workers -->
+  <g stroke="#B57200" stroke-width="6" stroke-linecap="round"><path d="M300 344 L340 262 M330 344 L370 262"/><path d="M308 326 H340 M318 304 H350 M328 282 H360"/></g>
+  <rect x="400" y="314" width="30" height="30" rx="4" fill="#0A86D6"/><rect x="438" y="322" width="24" height="22" rx="4" fill="#2FAE68"/>
+  <circle cx="160" cy="280" r="15" fill="#F29A00"/><rect x="141" y="297" width="38" height="47" rx="15" fill="#004A3A"/>
+  <circle cx="218" cy="284" r="14" fill="#C93C07"/><rect x="200" y="300" width="36" height="44" rx="15" fill="#FF7ADB"/>
+  <!-- 3rd: Monsieur Petrovic, mid-aria -->
+  <circle cx="240" cy="384" r="17" fill="#F29A00"/><rect x="218" y="403" width="44" height="47" rx="16" fill="#121014"/>
+  <rect x="234" y="398" width="12" height="7" rx="3" fill="#C93C07"/>
+  <g fill="#3A1FD4">
+    <circle cx="300" cy="400" r="7"/><rect x="305" y="370" width="4" height="30" rx="2"/>
+    <circle cx="340" cy="384" r="7"/><rect x="345" y="354" width="4" height="30" rx="2"/>
+    <circle cx="380" cy="404" r="7"/><rect x="385" y="374" width="4" height="30" rx="2"/>
+  </g>
+  <circle cx="460" cy="384" r="16" fill="#FFCF66"/><path d="M460 372 V384 L468 390" stroke="#3A1FD4" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <!-- ground floor: the loge, Madame Benali, the letterboxes, and Clément with his boxes -->
+  <rect x="96" y="482" width="130" height="86" rx="8" fill="#FFCF66"/>
+  <rect x="112" y="496" width="98" height="40" rx="6" fill="#FFFFFF"/>
+  <circle cx="161" cy="508" r="13" fill="#C93C07"/><rect x="146" y="520" width="30" height="16" rx="8" fill="#3A1FD4"/>
+  <g fill="#9D8FFF"><rect x="250" y="490" width="22" height="16" rx="2"/><rect x="276" y="490" width="22" height="16" rx="2"/><rect x="250" y="510" width="22" height="16" rx="2"/><rect x="276" y="510" width="22" height="16" rx="2"/></g>
+  <circle cx="400" cy="486" r="16" fill="#F29A00"/><rect x="380" y="504" width="40" height="64" rx="16" fill="#0A86D6"/>
+  <g fill="#B57200"><rect x="424" y="512" width="50" height="40" rx="3"/><rect x="430" y="476" width="40" height="36" rx="3"/></g>
+  <rect x="490" y="490" width="30" height="78" rx="4" fill="#FF5A1F"/>
+  <!-- the stairs running up the right side -->
+  <g fill="#ADD1F1"><rect x="470" y="440" width="54" height="10"/><rect x="470" y="336" width="54" height="10"/><rect x="470" y="232" width="54" height="10"/></g>
+  <!-- street -->
+  <rect y="568" width="600" height="32" fill="#CBC5B9"/>
+</svg>

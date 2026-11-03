@@ -1,0 +1,654 @@
+{
+  "title": "La concierge sait tout",
+  "summary": "Moving day in Belleville, and the gardienne knows every neighbour’s secrets.",
+  "level": "A2 to B1",
+  "minutes": {
+    "story": 4,
+    "quiz": 3,
+    "phrases": 1,
+    "describe": 2
+  },
+  "hero": [
+    {
+      "image": "illo-building.svg",
+      "bg": "sun-300",
+      "alt": ""
+    },
+    {
+      "shape": "circle",
+      "bg": "sky-300",
+      "fg": "violet-500",
+      "eyes": "look",
+      "blink": true
+    },
+    {
+      "shape": "flower",
+      "bg": "green-900",
+      "fg": "green-300",
+      "accent": "sun-300"
+    }
+  ],
+  "heroWide": [
+    {
+      "pattern": "halves",
+      "a": "pink-500",
+      "b": "pink-300"
+    },
+    {
+      "image": "illo-building.svg",
+      "bg": "sun-300",
+      "alt": ""
+    },
+    {
+      "shape": "flower",
+      "bg": "green-900",
+      "fg": "green-300",
+      "accent": "sun-300"
+    },
+    {
+      "shape": "circle",
+      "bg": "sky-300",
+      "fg": "violet-500",
+      "eyes": "look",
+      "blink": true
+    }
+  ],
+  "place": "Belleville, 20e",
+  "cast": [
+    {
+      "id": "narrator",
+      "name": "Moi",
+      "role": "the narrator",
+      "description": "The narrator, \"Moi\": a learner in their 30s who lives in Paris. Friendly, relaxed, a bit self-mocking.",
+      "color": "ink-900",
+      "label": "ink-500",
+      "critter": {
+        "kind": "bean",
+        "color": "sun-500"
+      },
+      "voice": "male"
+    },
+    {
+      "id": "madame-benali",
+      "name": "Madame Benali",
+      "role": "the gardienne",
+      "description": "The building’s gardienne, an older Parisian woman in her sixties. Warm, theatrical, expressive; knows everything about everyone and loves telling it.",
+      "color": "violet-500",
+      "critter": {
+        "kind": "macaron",
+        "color": "pink-500"
+      },
+      "voice": "female"
+    },
+    {
+      "id": "clement",
+      "name": "Clément",
+      "role": "the new tenant",
+      "description": "A young man of 26 from Bordeaux, just moved to Paris. Polite, slightly overwhelmed; a natural, standard French accent.",
+      "color": "sky-700",
+      "critter": {
+        "kind": "spark",
+        "color": "sky-500"
+      },
+      "voice": "male"
+    }
+  ],
+  "story": [
+    [
+      {
+        "speaker": "narrator",
+        "fr": "Samedi, j’ai aidé mon ami Clément à emménager dans son premier appartement parisien.",
+        "en": "On Saturday I helped my friend Clément move into his first Paris flat."
+      },
+      {
+        "speaker": "narrator",
+        "fr": "Il arrivait de Bordeaux avec douze cartons, et bien sûr, l’ascenseur était en panne.",
+        "en": "He’d come from Bordeaux with twelve boxes, and of course the lift was out of order."
+      },
+      {
+        "speaker": "narrator",
+        "fr": "Devant la loge, la gardienne nous attendait déjà : Madame Benali.",
+        "en": "The gardienne was already waiting for us outside her lodge: Madame Benali."
+      }
+    ],
+    [
+      {
+        "speaker": "madame-benali",
+        "fr": "— Bienvenue, monsieur Clément ! Ici, je connais tout le monde depuis le jour où je suis arrivée.",
+        "en": "“Welcome, Monsieur Clément! I’ve known everyone here since the day I arrived.”",
+        "note": "ou-temps"
+      }
+    ],
+    [
+      {
+        "speaker": "narrator",
+        "fr": "On a monté l’escalier avec les cartons, et à chaque palier, elle avait une histoire.",
+        "en": "We carried the boxes up the stairs, and on every landing she had a story."
+      }
+    ],
+    [
+      {
+        "speaker": "madame-benali",
+        "fr": "— Au troisième, Monsieur Petrovic, un ancien chanteur d’opéra qui chante encore à deux heures du matin.",
+        "en": "“On the third floor, Monsieur Petrovic, a retired opera singer who still sings at two in the morning.",
+        "note": "qui"
+      },
+      {
+        "id": "benali-martin",
+        "speaker": "madame-benali",
+        "fr": "Au quatrième, les Martin, le couple que vous verrez partout : ils font des travaux depuis six ans.",
+        "en": "On the fourth, the Martins, the couple you’ll see everywhere: they’ve been doing up their flat for six years.",
+        "note": "que"
+      },
+      {
+        "speaker": "madame-benali",
+        "fr": "Entre nous, personne n’a jamais vu un seul ouvrier.",
+        "en": "Between you and me, nobody has ever seen a single workman.”"
+      }
+    ],
+    [
+      {
+        "speaker": "narrator",
+        "fr": "Au cinquième, devant une porte, il y avait trois colis.",
+        "en": "On the fifth floor there were three parcels in front of a door."
+      }
+    ],
+    [
+      {
+        "id": "benali-ines",
+        "speaker": "madame-benali",
+        "fr": "— Ça, c’est Inès. Un colis par jour ! Ça ne me regarde pas, mais… qu’est-ce qu’il y a dedans ?",
+        "en": "“That’s Inès. A parcel a day! It’s none of my business, but… what’s inside them?"
+      },
+      {
+        "speaker": "madame-benali",
+        "fr": "Et le sixième, c’est l’étage où habite notre locataire mystère.",
+        "en": "And the sixth is the floor where our mystery tenant lives.",
+        "note": "ou-lieu"
+      },
+      {
+        "speaker": "madame-benali",
+        "fr": "Le monsieur dont je vous parle, personne ne l’a jamais vu. Seulement son chat.",
+        "en": "The man I’m telling you about, nobody has ever seen him. Only his cat.”",
+        "note": "dont"
+      }
+    ],
+    [
+      {
+        "speaker": "clement",
+        "fr": "— Et sur moi, vous dites quoi ?",
+        "en": "“And what do you say about me?”"
+      }
+    ],
+    [
+      {
+        "speaker": "madame-benali",
+        "fr": "— Vous ? Vous êtes infirmier, votre mère vous appelle tous les dimanches et vous détestez la coriandre.",
+        "en": "“You? You’re a nurse, your mother calls you every Sunday and you hate coriander.”"
+      }
+    ],
+    [
+      {
+        "speaker": "clement",
+        "fr": "— Comment vous savez ça ?!",
+        "en": "“How do you know that?!”"
+      }
+    ],
+    [
+      {
+        "speaker": "madame-benali",
+        "fr": "— Je suis la gardienne. C’est le travail que je fais.",
+        "en": "“I’m the gardienne. It’s the job I do.”"
+      }
+    ]
+  ],
+  "notes": [
+    {
+      "id": "qui",
+      "kicker": "Pronoms relatifs",
+      "title": "« Un chanteur qui chante » : pourquoi « qui » ?",
+      "short": "Qui stands for the subject of the next verb: the person or thing doing the action.",
+      "body": [
+        "A relative pronoun joins two sentences. Un ancien chanteur d’opéra. Il chante encore la nuit. Il is the subject of chante, so it becomes qui.",
+        "Apps often teach “qui for people, que for things”, but both work for both: le colis qui arrive, la dame que je connais. What decides is the word’s job in its clause.",
+        "Quick check: qui is followed by a verb, maybe with ne or a pronoun in between: qui chante, qui ne dort pas, qui me parle."
+      ],
+      "examples": [
+        {
+          "fr": "Un ancien chanteur d’opéra qui chante encore à deux heures du matin.",
+          "en": "A retired opera singer who still sings at two in the morning.",
+          "tag": "Qui : sujet"
+        },
+        {
+          "fr": "Le colis qui est devant la porte, c’est pour Inès.",
+          "en": "The parcel that’s outside the door is for Inès.",
+          "tag": "Qui : sujet"
+        },
+        {
+          "fr": "C’est la gardienne qui sait tout.",
+          "en": "It’s the gardienne who knows everything.",
+          "tag": "C’est… qui"
+        }
+      ],
+      "spoken": "« C’est X qui… » is everywhere in speech, to point at who did something: « C’est Petrovic qui chante. » In fast, casual speech qui before a vowel can shrink to qu’: « C’est lui qu’a fait ça. » Don’t write it, but expect to hear it.",
+      "trap": {
+        "wrong": "Le voisin que chante la nuit.",
+        "right": "Le voisin qui chante la nuit.",
+        "why": "The neighbour is the one singing, the subject of chante, so it’s qui. Que needs its own subject after it: le voisin que j’entends."
+      }
+    },
+    {
+      "id": "que",
+      "kicker": "Pronoms relatifs",
+      "title": "« Le couple que vous verrez » : pourquoi « que » ?",
+      "short": "Que stands for the object of the next verb: after it comes a new subject.",
+      "body": [
+        "Vous verrez le couple partout. Le couple is the object of verrez; the subject is vous. So it becomes que: le couple que vous verrez.",
+        "English often drops the word: “the couple you’ll see”, “the job I do”. French never can. Que has to be there, and it becomes qu’ before a vowel: les colis qu’Inès reçoit.",
+        "Quick check: after que you find a subject, a pronoun like je, vous, on, or a name, then the verb."
+      ],
+      "examples": [
+        {
+          "fr": "Les Martin, le couple que vous verrez partout.",
+          "en": "The Martins, the couple you’ll see everywhere.",
+          "tag": "Que : objet"
+        },
+        {
+          "fr": "C’est le travail que je fais.",
+          "en": "It’s the job I do.",
+          "tag": "Que : objet"
+        },
+        {
+          "fr": "Les colis qu’Inès reçoit sont énormes.",
+          "en": "The parcels Inès gets are huge.",
+          "tag": "Qu’ + voyelle"
+        }
+      ],
+      "spoken": "Que survives in even the fastest speech, but it often blurs into the next word: « le couple que vous verrez » sounds like « le couple qu’vous verrez ». Listen for that little k sound: it tells you a new clause has started.",
+      "trap": {
+        "wrong": "Le couple vous verrez partout.",
+        "right": "Le couple que vous verrez partout.",
+        "why": "English lets you drop “that”, French doesn’t. Without que, a French ear hears two sentences crashing into each other."
+      }
+    },
+    {
+      "id": "dont",
+      "kicker": "Pronoms relatifs",
+      "title": "Pourquoi « dont je vous parle » et pas « que je vous parle » ?",
+      "short": "Dont replaces de + something, so it goes with verbs and expressions built with de.",
+      "body": [
+        "In French you parle de quelqu’un: je vous parle de ce monsieur. When that de + something becomes a relative pronoun, it turns into dont: le monsieur dont je vous parle.",
+        "The same goes for avoir besoin de, se souvenir de, avoir peur de, être fier de: le digicode dont vous avez besoin, la voisine dont je me souviens.",
+        "Quick check: say the plain sentence first. If you would need de, use dont. If the verb takes its object directly, use que."
+      ],
+      "examples": [
+        {
+          "fr": "Le monsieur dont je vous parle, personne ne l’a jamais vu.",
+          "en": "The man I’m telling you about, nobody has ever seen him.",
+          "tag": "Parler de"
+        },
+        {
+          "fr": "Voilà le code dont vous avez besoin.",
+          "en": "Here’s the code you need.",
+          "tag": "Avoir besoin de"
+        },
+        {
+          "fr": "C’est une soirée dont je me souviens encore.",
+          "en": "It’s an evening I still remember.",
+          "tag": "Se souvenir de"
+        }
+      ],
+      "spoken": "Dont is a little formal, and in relaxed speech many people dodge it: « le monsieur, je vous en ai parlé ». You’ll also hear « le truc que je t’ai parlé » in very casual French, but it counts as a mistake, so don’t copy it.",
+      "trap": {
+        "wrong": "Le monsieur que je vous parle.",
+        "right": "Le monsieur dont je vous parle.",
+        "why": "Parler takes de before the person you talk about, so que doesn’t fit. Que would make the man the thing being spoken, like a language."
+      }
+    },
+    {
+      "id": "ou-lieu",
+      "kicker": "Pronoms relatifs",
+      "title": "« L’étage où habite… » : « où » et le verbe avant le sujet",
+      "short": "Où stands for a place: it replaces au, dans, sur + that place.",
+      "body": [
+        "Notre locataire mystère habite au sixième. The place, au sixième, becomes où: le sixième, c’est l’étage où habite notre locataire mystère.",
+        "Notice the order: où habite notre locataire, verb first. After où or que, when the subject is a noun rather than a pronoun, French may put the verb before it. L’étage où notre locataire mystère habite is just as correct, but ends on a heavy, lopsided note.",
+        "Quick check: could you say “where” or “in which” in English? Then it’s où."
+      ],
+      "examples": [
+        {
+          "fr": "Le sixième, c’est l’étage où habite notre locataire mystère.",
+          "en": "The sixth is the floor where our mystery tenant lives.",
+          "tag": "Où : lieu"
+        },
+        {
+          "fr": "La loge, c’est l’endroit où on récupère ses colis.",
+          "en": "The lodge is where you pick up your parcels.",
+          "tag": "Où : lieu"
+        },
+        {
+          "fr": "Bordeaux, c’est la ville où Clément est né.",
+          "en": "Bordeaux is the town where Clément was born.",
+          "tag": "Où : lieu"
+        }
+      ],
+      "spoken": "In speech, people often use « c’est là que » instead: « La loge, c’est là qu’on récupère les colis. » The verb-first order (où habite…) is more common in writing and careful speech; with a pronoun it never happens: l’étage où il habite.",
+      "trap": {
+        "wrong": "La ville que je suis né.",
+        "right": "La ville où je suis né.",
+        "why": "You’re born in a place (à Bordeaux), not born it, so the place needs où. Que only stands for a direct object."
+      }
+    },
+    {
+      "id": "ou-temps",
+      "kicker": "Pronoms relatifs",
+      "title": "« Le jour où je suis arrivée » : « où » pour le temps ?",
+      "short": "Où also works for time, after le jour, le moment, l’année: where English says “when”.",
+      "body": [
+        "English learners want to say le jour quand. French doesn’t allow it: after a word for a moment in time, the relative pronoun is où. Le jour où je suis arrivée, l’année où Clément est né, au moment où le chat est sorti.",
+        "Quand still means “when” on its own, at the start of a sentence or a question: Quand je suis arrivée, … ; Quand est-ce que vous partez ?",
+        "Arrivée takes an -e because Madame Benali is a woman and arriver uses être."
+      ],
+      "examples": [
+        {
+          "fr": "Je connais tout le monde depuis le jour où je suis arrivée.",
+          "en": "I’ve known everyone since the day I arrived.",
+          "tag": "Où : temps"
+        },
+        {
+          "fr": "Au moment où j’ai ouvert la porte, le chat est sorti.",
+          "en": "Just as I opened the door, the cat came out.",
+          "tag": "Où : temps"
+        },
+        {
+          "fr": "Tu te souviens de la fois où l’ascenseur a marché ?",
+          "en": "Remember the time the lift worked?",
+          "tag": "La fois où"
+        }
+      ],
+      "spoken": "« La fois où… » opens half the stories you’ll hear at an apéro: « Tu te souviens de la fois où… ? » It’s the easiest way to start an anecdote, and it sounds completely natural.",
+      "trap": {
+        "wrong": "Le jour quand je suis arrivée.",
+        "right": "Le jour où je suis arrivée.",
+        "why": "After le jour, le moment or l’année, French uses où. Quand can’t follow a noun like that."
+      }
+    }
+  ],
+  "quiz": [
+    {
+      "kind": "Écoute",
+      "prompt": "Listen to Madame Benali. How long have the Martins been doing building work?",
+      "listen": "benali-martin",
+      "note": "que",
+      "options": [
+        {
+          "text": "For six months.",
+          "why": "Listen again for the end of the line: « depuis six ans », six years, not six mois."
+        },
+        {
+          "text": "For six years.",
+          "correct": true,
+          "why": "« Ils font des travaux depuis six ans » = they’ve been doing work for six years. Depuis + present tense means it’s still going on."
+        },
+        {
+          "text": "Since Madame Benali arrived.",
+          "why": "That was her own story: she has known everyone since she arrived. For the Martins she says « depuis six ans »."
+        }
+      ]
+    },
+    {
+      "kind": "Grammaire",
+      "quote": "— Au troisième, Monsieur Petrovic, un ancien chanteur d’opéra qui chante encore à deux heures du matin.",
+      "prompt": "Why “qui” in “qui chante encore”?",
+      "note": "qui",
+      "options": [
+        {
+          "text": "Because Petrovic is a person, and qui is for people.",
+          "why": "Qui works for things too: le colis qui arrive. What matters is the job the word does, not whether it’s a person."
+        },
+        {
+          "text": "Because it comes right after a noun.",
+          "why": "Que and dont come after nouns too: le couple que vous verrez. Look at what follows instead: a verb."
+        },
+        {
+          "text": "Because the singer is the subject of “chante”: he’s the one singing.",
+          "correct": true,
+          "why": "Qui stands for the subject of the next verb. Il chante encore becomes un chanteur qui chante encore."
+        }
+      ]
+    },
+    {
+      "kind": "Écoute",
+      "prompt": "Listen to Madame Benali. What does she say about Inès?",
+      "listen": "benali-ines",
+      "options": [
+        {
+          "text": "She gets a parcel every day, and Madame Benali wonders what’s inside.",
+          "correct": true,
+          "why": "« Un colis par jour ! » and « qu’est-ce qu’il y a dedans ? »: one parcel a day, and what’s in them?"
+        },
+        {
+          "text": "She has lost three parcels this week.",
+          "why": "Nobody loses anything. The three parcels are outside her door, and « par jour » means every day."
+        },
+        {
+          "text": "She works for a delivery company.",
+          "why": "Nothing about her job. « Ça ne me regarde pas » means it’s none of my business, before asking about the parcels anyway."
+        }
+      ]
+    },
+    {
+      "kind": "Grammaire",
+      "quote": "Le monsieur dont je vous parle, personne ne l’a jamais vu.",
+      "prompt": "Why “dont” and not “que”?",
+      "note": "dont",
+      "options": [
+        {
+          "text": "Because you “parle de” someone: dont replaces de + the man.",
+          "correct": true,
+          "why": "Je vous parle de ce monsieur becomes le monsieur dont je vous parle. Que can’t carry the de."
+        },
+        {
+          "text": "Because dont is the polite form of que.",
+          "why": "Dont isn’t about politeness. It replaces de + something, and parler is built with de."
+        },
+        {
+          "text": "Because the man is mysterious and nobody has seen him.",
+          "why": "The meaning of the story doesn’t choose the pronoun. The verb does: parler de needs dont."
+        }
+      ]
+    },
+    {
+      "kind": "Lecture",
+      "quote": "Le monsieur dont je vous parle, personne ne l’a jamais vu. Seulement son chat.",
+      "prompt": "In “personne ne l’a jamais vu”, what does “l’” stand for?",
+      "options": [
+        {
+          "text": "Son chat.",
+          "why": "The cat comes after, as the exception: people have seen the cat, only the cat."
+        },
+        {
+          "text": "Le monsieur.",
+          "correct": true,
+          "why": "The man is named first, then picked up again by l’: a classic spoken dislocation. Nobody has ever seen him."
+        },
+        {
+          "text": "Le sixième étage.",
+          "why": "Everyone can see the sixth floor. It’s the man who lives there that nobody has seen."
+        }
+      ]
+    },
+    {
+      "kind": "Compréhension",
+      "quote": "— Je suis la gardienne. C’est le travail que je fais.",
+      "prompt": "What makes Madame Benali’s last line funny?",
+      "options": [
+        {
+          "text": "She admits she reads Clément’s letters.",
+          "why": "She never says how she knows. She just answers calmly, as if no explanation were needed."
+        },
+        {
+          "text": "She is annoyed that Clément asked.",
+          "why": "Nothing suggests she’s cross: she answers straight away, perfectly at ease."
+        },
+        {
+          "text": "She treats knowing everyone’s secrets as her actual job description.",
+          "correct": true,
+          "why": "Deadpan humour: knowing everything isn’t gossip to her, it’s simply part of being the gardienne."
+        }
+      ]
+    }
+  ],
+  "phrases": [
+    {
+      "written": "Comment savez-vous cela ?",
+      "spoken": "Comment vous savez ça ?",
+      "register": "Courant",
+      "note": "Spoken questions keep the normal word order and let the voice rise; cela shrinks to ça. Inversion sounds formal in conversation."
+    },
+    {
+      "written": "Cela ne me regarde pas, mais…",
+      "spoken": "Ça me regarde pas, mais…",
+      "register": "Courant",
+      "note": "The classic gossip opener: it’s none of my business, but… The ne drops, and the “but” always comes."
+    },
+    {
+      "written": "Il paraît qu’elle reçoit un colis par jour.",
+      "spoken": "Paraît qu’elle reçoit un colis par jour.",
+      "register": "Familier",
+      "note": "Il paraît que means apparently, word has it. Among friends, the il falls off. In writing you can also tuck in « paraît-il » at the end."
+    },
+    {
+      "written": "Je ne dis rien, mais…",
+      "spoken": "J’dis rien, mais…",
+      "register": "Familier",
+      "note": "I’m not saying anything, but… which is always followed by saying something. Je shrinks to j’ before a consonant in fast speech."
+    },
+    {
+      "written": "L’ascenseur est en panne.",
+      "spoken": "L’ascenseur est en rade.",
+      "register": "Familier",
+      "note": "En panne is fine anywhere; en rade is the friendly, slightly fed-up version. You’ll see « en panne » on the sign and hear « en rade » in the stairs."
+    },
+    {
+      "written": "Entre nous, personne n’a jamais vu un ouvrier.",
+      "spoken": "Entre nous, personne a jamais vu un ouvrier.",
+      "register": "Courant",
+      "note": "Entre nous (between you and me) announces a secret. The ne disappears as usual; personne and jamais carry the negation."
+    }
+  ],
+  "describe": {
+    "image": "scene-building.svg",
+    "alt": "A cutaway of a Paris apartment building: the gardienne in her lodge, a singer on the third floor, a ladder on the fourth, parcels on the fifth and a black cat in the attic",
+    "imagePosition": "50% 50%",
+    "caption": "Un immeuble à Belleville · samedi, 10 h",
+    "instructions": "Write 3 to 5 sentences: who lives on each floor? Try to use qui, que, dont and où to describe the neighbours.",
+    "placeholder": "Au rez-de-chaussée, il y a…",
+    "helpers": [
+      "au rez-de-chaussée",
+      "l’étage où…",
+      "le voisin qui…",
+      "le couple que…",
+      "le chat dont…",
+      "sur le palier",
+      "la loge de la gardienne",
+      "il paraît que"
+    ],
+    "scene": "A flat, colourful cutaway of a six-storey Paris apartment building, with the front wall removed so every floor shows. Ground floor: the gardienne's lodge with a woman behind a window, a row of letterboxes, and a young man in blue carrying two cardboard boxes next to an orange front door. Third floor: an older man in black singing, with music notes floating out and a clock nearby showing night. Fourth floor: a couple standing beside a ladder and paint pots, with no workers anywhere. Fifth floor: a woman next to a tall pile of orange parcels. Sixth floor, under the mansard roof: an empty armchair and a black cat with yellow eyes. A staircase runs up the right side. The sky behind is pale yellow.",
+    "sample": {
+      "text": "Au rez-de-chaussée, il y a la loge où la gardienne travaille. Au troisième, il y a un homme que chante la nuit. Au quatrième, c’est le couple qui on voit toujours avec des pots de peinture. Au cinquième, il y a beaucoup des colis. Le sixième, c’est l’étage dont il y a un chat noir sur la fenêtre.",
+      "result": {
+        "segments": [
+          {
+            "t": "Au rez-de-chaussée, il y a la loge où la gardienne travaille. Au troisième, il y a un homme "
+          },
+          {
+            "from": "que",
+            "to": "qui",
+            "n": 1
+          },
+          {
+            "t": " chante la nuit. Au quatrième, c’est le couple "
+          },
+          {
+            "from": "qui on",
+            "to": "qu’on",
+            "n": 2
+          },
+          {
+            "t": " voit toujours avec des pots de peinture. Au cinquième, il y a "
+          },
+          {
+            "from": "beaucoup des",
+            "to": "beaucoup de",
+            "n": 3
+          },
+          {
+            "t": " colis. Le sixième, c’est l’étage "
+          },
+          {
+            "from": "dont",
+            "to": "où",
+            "n": 4
+          },
+          {
+            "t": " il y a un chat noir "
+          },
+          {
+            "from": "sur",
+            "to": "à",
+            "n": 5
+          },
+          {
+            "t": " la fenêtre."
+          }
+        ],
+        "corrections": [
+          {
+            "n": 1,
+            "from": "que",
+            "to": "qui",
+            "rule": "Qui : le sujet",
+            "why": "The man is the one singing, the subject of chante, so it’s qui. Que needs its own subject after it."
+          },
+          {
+            "n": 2,
+            "from": "qui on",
+            "to": "qu’on",
+            "rule": "Que : l’objet",
+            "why": "On is the subject and the couple is what you see, the object, so it’s que. Before on, que becomes qu’."
+          },
+          {
+            "n": 3,
+            "from": "beaucoup des",
+            "to": "beaucoup de",
+            "rule": "Beaucoup de + nom",
+            "why": "After beaucoup, use de on its own, never des: beaucoup de colis."
+          },
+          {
+            "n": 4,
+            "from": "dont",
+            "to": "où",
+            "rule": "Où : un lieu",
+            "why": "The sixth floor is a place: the cat is there, au sixième. Dont replaces de + something, and there’s no de here."
+          },
+          {
+            "n": 5,
+            "from": "sur",
+            "to": "à",
+            "rule": "À la fenêtre",
+            "why": "Someone looking out of a window is à la fenêtre. Sur la fenêtre would put the cat on the glass."
+          }
+        ],
+        "corrected": "Au rez-de-chaussée, il y a la loge où la gardienne travaille. Au troisième, il y a un homme qui chante la nuit. Au quatrième, c’est le couple qu’on voit toujours avec des pots de peinture. Au cinquième, il y a beaucoup de colis. Le sixième, c’est l’étage où il y a un chat noir à la fenêtre.",
+        "spoken": "En bas, y a la loge, c’est là que la gardienne bosse. Au troisième, y a un monsieur qui chante la nuit. Au quatrième, c’est le couple qu’on voit toujours avec des pots de peinture. Au cinquième, y a des colis partout. Et au sixième, y a un chat noir à la fenêtre, mais son proprio, personne l’a jamais vu.",
+        "spokenNote": "Il y a becomes y a, travailler becomes bosser, and the ne disappears. « C’est là que » is the everyday way round où.",
+        "praise": "Nice use of “la loge où”!"
+      }
+    }
+  },
+  "ambience": {
+    "prompt": "The stairwell of an old Paris apartment building on a Saturday morning: footsteps on creaky wooden stairs, cardboard boxes set down on a landing, a door closing upstairs, keys jingling, a cat's bell, pigeons in the courtyard. Calm and steady. No music, no clear speech.",
+    "volume": 0.18
+  }
+}

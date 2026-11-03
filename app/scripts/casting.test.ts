@@ -35,6 +35,23 @@ describe('the real pool and registry', () => {
   });
 });
 
+describe('future characters (mentioned, not speaking yet)', () => {
+  it('are cast like a new character when they first speak, from that lesson', () => {
+    const reg: Registry = { characters: { ines: { name: 'Inès', voiceId: '', status: 'future', firstLesson: '', rejected: [], mentionedIn: ['lesson-003'], voice: 'female' } } };
+    const r = castLesson(lessonWith([char('ines', 'female', 'A young woman, bright and friendly.')]), 'lesson-007', pool, reg);
+    expect(reg.characters.ines).toMatchObject({ voiceId: 'f2', status: 'pending', firstLesson: 'lesson-007', rejected: [] });
+    expect(r.pending.map(p => p.id)).toEqual(['ines']);
+  });
+  it('lesson 3: the real registry casts nobody who is only mentioned', () => {
+    const l3 = LessonSchema.parse(JSON.parse(readFileSync(join(__dirname, '../public/lessons/lesson-003.json'), 'utf8')));
+    const reg = clone(realReg);
+    castLesson(l3, 'lesson-003', realPool, reg);
+    for (const id of ['monsieur-petrovic', 'madame-martin', 'monsieur-martin', 'ines', 'le-locataire-du-sixieme']) expect(reg.characters[id].status).toBe('future');
+    // Gilles's voice was ruled out for Clément (too old), so he waits for a young male voice.
+    expect(reg.characters.clement).toMatchObject({ status: 'needs-voice', voiceId: '' });
+  });
+});
+
 describe('castLesson', () => {
   it('gives a new character the best-matching unused voice, pending approval', () => {
     const reg: Registry = { characters: {} };
