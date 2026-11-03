@@ -56,8 +56,13 @@ const CastMember = z.object({
   /** Colour for the small name label above dialogue. Defaults to `color`. */
   label: Token.optional(),
   critter: z.object({ kind: CritterKind, color: Token }).strict(),
-  /** Which kind of device voice to prefer. Each cast member gets a different voice when possible. */
+  /** Which kind of voice to use. Each cast member gets a different voice when possible. */
   voice: z.enum(['male', 'female']),
+  /**
+   * Optional ElevenLabs voice ID for this character's recordings. Without it, the
+   * recording script picks from the defaults in audio.config.json by `voice`.
+   */
+  voiceId: z.string().min(1).optional(),
 }).strict();
 
 const Line = z.object({

@@ -3,6 +3,7 @@ import type { Lesson } from './lesson/schema';
 import { assetUrl, loadLesson, requestedDate } from './lesson/load';
 import { flattenStory } from './lesson/story';
 import { useSpeech } from './audio/useSpeech';
+import { loadManifest, type AudioManifest } from './audio/manifest';
 import { loadPrefs, loadProgress, savePrefs, saveProgress, type Prefs, type Progress } from './progress';
 import type { AppCtx, Screen } from './screens/common';
 import { Home } from './screens/Home';
@@ -55,7 +56,10 @@ function LessonApp({ lesson, wide }: { lesson: Lesson; wide: boolean }) {
   const [note, setNote] = useState<string | null>(null);
   const [progress, setProgressState] = useState<Progress>(() => loadProgress(lesson.date));
   const [prefs, setPrefsState] = useState<Prefs>(loadPrefs);
-  const speech = useSpeech(lesson.cast, lines, prefs.slow);
+  // Recorded voices (ElevenLabs), if this lesson has them; otherwise device voices.
+  const [manifest, setManifest] = useState<AudioManifest | null>(null);
+  useEffect(() => { loadManifest(assetUrl(lesson.date, 'audio/manifest.json')).then(setManifest); }, [lesson.date]);
+  const speech = useSpeech(lesson.cast, lines, prefs.slow, manifest, assetUrl(lesson.date, 'audio/'));
   const root = useRef<HTMLDivElement>(null);
 
   const setProgress = useCallback((p: Partial<Progress>) => setProgressState(prev => {

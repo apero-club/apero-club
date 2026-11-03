@@ -1,0 +1,76 @@
+name: Record lesson audio
+
+# When a lesson is added or changed on main, record any missing French audio with
+# ElevenLabs and commit it next to the lesson. Unchanged lines are never re-recorded.
+# Needs the repository secret ELEVENLABS_API_KEY and voice IDs in app/audio.config.json;
+# until both exist, this skips with a warning instead of failing.
+on:
+  push:
+    branches: [main]
+    paths:
+      - app/lessons/**
+      - app/audio.config.json
+      - app/src/lesson/**
+      - app/scripts/record-audio.ts
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: record-audio
+  cancel-in-progress: false
+
+jobs:
+  record:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: app
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: app/package-lock.json
+
+      - name: Check setup
+        id: setup
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+        run: |
+          if [ -z "$ELEVENLABS_API_KEY" ]; then
+            echo "::warning::ELEVENLABS_API_KEY secret is not set, so no audio was recorded."
+            echo "ready=false" >> "$GITHUB_OUTPUT"; exit 0
+          fi
+          if ! node -e "const v=require('./audio.config.json').voices; process.exit(v.male.length && v.female.length ? 0 : 1)"; then
+            echo "::warning::No ElevenLabs voice IDs in app/audio.config.json yet, so no audio was recorded."
+            echo "ready=false" >> "$GITHUB_OUTPUT"; exit 0
+          fi
+          echo "ready=true" >> "$GITHUB_OUTPUT"
+
+      - if: steps.setup.outputs.ready == 'true'
+        run: npm ci
+
+      - name: Record missing audio
+        if: steps.setup.outputs.ready == 'true'
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+        run: npm run record-audio
+
+      - name: Commit recordings
+        if: always() && steps.setup.outputs.ready == 'true'
+        env:
+          # Author the commit as whoever pushed the lesson: Vercel's Hobby plan can refuse
+          # to deploy commits whose author isn't on the Vercel team.
+          AUTHOR_NAME: ${{ github.event.head_commit.author.name || github.actor }}
+          AUTHOR_EMAIL: ${{ github.event.head_commit.author.email || format('{0}+{1}@users.noreply.github.com', github.actor_id, github.actor) }}
+        run: |
+          git add public/lessons
+          if git diff --cached --quiet; then echo "No new audio."; exit 0; fi
+          git config user.name "$AUTHOR_NAME"
+          git config user.email "$AUTHOR_EMAIL"
+          git commit -m "Record lesson audio (automatic)"
+          git pull --rebase origin main
+          git push origin HEAD:main

@@ -93,3 +93,13 @@ The `result` uses the same shape the prototype's AI tutor returned, so a live ch
 - `segments`: the text split into unchanged parts `{ "t" }` and changes `{ "from", "to", "n" }`. Joining every `t` and `from` in order must give back `text` exactly; the test checks this.
 - `corrections`: one per change, numbered in order, with a short `rule` (4 words max) and a `why`.
 - `corrected`, `spoken` (how a Parisian would say it), `spokenNote`, and `praise` (5 words max).
+
+## Audio (ElevenLabs)
+
+Every French line can play a recorded voice instead of the device's built-in one. Recordings are made once per lesson, not when learners listen, so visits cost nothing.
+
+- **What gets recorded:** each story line (a narration line that quotes someone is split, so the quote is in that character's voice), the quiz quotes, both sides of each phrase, the grammar examples, and the spoken version of the sample correction. Everything except the story is read by the first cast member.
+- **Voices:** `audio.config.json` lists default ElevenLabs voice IDs under `voices.male` and `voices.female`. Characters take them in cast order by their `voice`. To give one character a specific voice, add `"voiceId"` to them in the lesson.
+- **Automatic:** when you push a lesson to `main`, the **Record lesson audio** GitHub Action records anything missing and commits it to `public/lessons/<date>/audio/`. Edited lines are re-recorded; removed ones are deleted; unchanged ones are kept.
+- **Cost check:** `npm run record-audio -- --dry-run` prints how many characters a run would use. The first lesson is about 1,900 characters.
+- **No recordings yet?** The app falls back to device voices for any line without a recording, so a lesson works before its audio exists.

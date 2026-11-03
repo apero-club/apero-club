@@ -11,6 +11,7 @@ cd app
 npm install
 npm run dev        # http://localhost:5173  (add ?date=YYYY-MM-DD to preview a lesson)
 npm test           # validates every lesson file + unit tests
+npm run record-audio -- --dry-run   # characters ElevenLabs would use (needs ELEVENLABS_API_KEY for a real run)
 npm run build      # static site in dist/
 ```
 
@@ -26,7 +27,9 @@ src/lesson/load.ts           finds and loads today's lesson
 src/screens/                 the phone layout (Apero App v2): one file per screen
 src/desktop/                 the desktop layout (Apero v3), used at 900px and wider
 src/ds/                      design system components, ported from the apéro club DS bundle
-src/audio/                   French voice casting and story playback (browser speech synthesis)
+src/audio/                   playback: recorded clips (ElevenLabs) with device voices as fallback
+scripts/record-audio.ts      records lesson audio with ElevenLabs (run by GitHub Actions)
+audio.config.json            ElevenLabs model and default voice IDs
 src/styles/                  design tokens copied from the DS, plus app layout
 ```
 
@@ -51,4 +54,4 @@ Lessons can be pushed ahead of time: the app picks the right one on the learner'
 - **No live corrections yet.** The Claude API has no free tier, so **Check** in step 04 shows the lesson's worked example (a typical description with every correction explained). The example uses the same data shape the AI tutor returned, so a serverless check can slot in later.
 - **No accounts, Lessons archive, Account tab or paywall.** The tab bar has Today and Grammar.
 - **Progress and preferences** (finished steps, quiz score, your text, Slow and EN) are saved in the browser's local storage, per device.
-- **Voices** are the learner's device voices, as in the prototype. They sound best in Microsoft Edge and Safari with downloaded Premium voices.
+- **Voices** are recorded once per lesson with ElevenLabs (see "Audio" in docs/lesson-format.md) and committed with the lesson. Lines without a recording fall back to the device's built-in voices.
