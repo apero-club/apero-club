@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="A black cat">
+  <!-- Lesson 3 hero tile: the sixth-floor tenant's cat, flat brand colours. Transparent background. -->
+  <g fill="#121014">
+    <!-- tail, curling up beside the body -->
+    <path d="M132 184 C166 184 176 156 160 138" fill="none" stroke="#121014" stroke-width="12" stroke-linecap="round"/>
+    <!-- body -->
+    <path d="M60 188 C56 142 74 108 100 108 C126 108 144 142 140 188 Z"/>
+    <!-- ears and head -->
+    <path d="M70 74 L72 30 L100 56 Z"/>
+    <path d="M130 74 L128 30 L100 56 Z"/>
+    <circle cx="100" cy="80" r="32"/>
+  </g>
+  <!-- inner ears -->
+  <g fill="#FF7ADB"><path d="M76 62 L77 42 L90 55 Z"/><path d="M124 62 L123 42 L110 55 Z"/></g>
+  <!-- eyes -->
+  <g fill="#FFCF66"><ellipse cx="87" cy="78" rx="8" ry="9"/><ellipse cx="113" cy="78" rx="8" ry="9"/></g>
+  <g fill="#121014"><ellipse cx="87" cy="78" rx="2.5" ry="7"/><ellipse cx="113" cy="78" rx="2.5" ry="7"/></g>
+  <!-- nose -->
+  <path d="M95 92 H105 L100 98 Z" fill="#FF7ADB"/>
+</svg>
