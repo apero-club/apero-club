@@ -1,0 +1,96 @@
+:root {
+  /* Violet — ultramarine brand + primary action (tved cards) */
+  --violet-50: #EFECFF;
+  --violet-100: #DDD7FF;
+  --violet-300: #9D8FFF;
+  --violet-500: #3A1FD4;
+  --violet-700: #2913A6;
+  --violet-900: #160A5C;
+
+  /* Lilac — the ribbon; partner to violet for rewards + highlights */
+  --lilac-100: #FCEBFB;
+  --lilac-300: #F7CDF4;
+  --lilac-500: #F0A4EB;
+  --lilac-700: #C463BE;
+  --lilac-900: #5C1D58;
+
+  /* Pink — hot pink + plum (neta) */
+  --pink-100: #FFE5F7;
+  --pink-300: #FFB6EA;
+  --pink-500: #FF7ADB;
+  --pink-700: #D236A5;
+  --pink-900: #6A1459; /* plum */
+
+  /* Orange — vermilion (tved, NICELAB); also "wrong" feedback */
+  --orange-100: #FFE3D5;
+  --orange-300: #FFA982;
+  --orange-500: #FF5A1F;
+  --orange-700: #C93C07;
+  --orange-900: #641B02;
+
+  /* Sun — mustard (neta); streaks, XP */
+  --sun-100: #FFF0CC;
+  --sun-300: #FFCF66;
+  --sun-500: #F29A00;
+  --sun-700: #B57200;
+  --sun-900: #563500;
+
+  /* Green — grass + forest (NICELAB); "correct" feedback */
+  --green-100: #D6F3E2;
+  --green-300: #86D9A9;
+  --green-500: #2FAE68;
+  --green-700: #137A45;
+  --green-900: #004A3A; /* forest */
+
+  /* Sky (NICELAB) */
+  --sky-100: #E1EFFB;
+  --sky-300: #ADD1F1;
+  --sky-500: #0A86D6;
+  --sky-700: #075F9C;
+  --sky-900: #053659;
+
+  /* Neutrals — paper grey ground, near-black ink */
+  --white: #FFFFFF;
+  --cream-50: #F8F7F4;
+  --cream-100: #ECE9E3;
+  --cream-200: #DFDBD2;
+  --cream-300: #CBC5B9;
+  --ink-300: #A9A4AE;
+  --ink-500: #6C6773;
+  --ink-700: #3B3741;
+  --ink-900: #121014;
+
+  /* Semantic */
+  --bg: var(--cream-100);
+  --surface: var(--white);
+  --surface-sunken: var(--cream-200);
+  --surface-inverse: var(--ink-900);
+  --fg-1: var(--ink-900);
+  --fg-2: var(--ink-700);
+  --fg-3: var(--ink-500);
+  --fg-inverse: var(--white);
+  --border: var(--cream-300);
+  --border-strong: var(--ink-900);
+
+  --primary: var(--violet-500);
+  --primary-hover: #4A30EA;
+  --primary-press: var(--violet-700);
+  --primary-lip: var(--violet-900);
+  --on-primary: var(--white);
+  --highlight: var(--lilac-500);
+  --on-highlight: var(--violet-500);
+
+  --correct: var(--green-500);
+  --correct-fg: var(--green-700);
+  --correct-tint: var(--green-100);
+  --wrong: var(--orange-500);
+  --wrong-fg: var(--orange-700);
+  --wrong-tint: var(--orange-100);
+  --warning: var(--sun-500);
+  --warning-tint: var(--sun-100);
+  --info: var(--sky-500);
+  --info-tint: var(--sky-100);
+
+  --focus-ring: var(--lilac-500);
+  --scrim: rgba(22, 10, 92, 0.6);
+}

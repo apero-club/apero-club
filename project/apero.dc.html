@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/modernist-f2407e6c-7d76-4ec7-96ff-2183ee631156/styles.css">
+<script src="_ds/modernist-f2407e6c-7d76-4ec7-96ff-2183ee631156/_ds_bundle.js"></script>
+<script src="./image-slot.js"></script>
+<style>
+body{margin:0;background:var(--color-bg);color:var(--color-text)}
+a{color:var(--color-accent-700)}a:hover{color:var(--color-accent)}
+button{font-family:inherit}
+</style>
+</helmet>
+<div style="min-height:100vh;display:flex;flex-direction:column;font-family:var(--font-body)">
+
+<header class="nav" style="flex-wrap:wrap;position:sticky;top:0;z-index:10;background:var(--color-bg)">
+  <button onClick="{{ goHome }}" style="background:none;border:0;padding:0;cursor:pointer;color:var(--color-text);font-family:var(--font-heading);font-weight:800;font-size:24px;letter-spacing:-0.03em;margin-right:auto">apéro<span style="color:var(--color-accent)">.</span></button>
+  <nav style="display:flex;gap:20px;align-items:center">
+    <button onClick="{{ goHome }}" style="background:none;border:0;padding:4px 0;cursor:pointer;font-size:14px;font-weight:600;color:{{ navHomeColor }}" style-hover="color:var(--color-accent)">Aujourd’hui</button>
+    <button onClick="{{ goLibrary }}" style="background:none;border:0;padding:4px 0;cursor:pointer;font-size:14px;font-weight:600;color:{{ navLibColor }}" style-hover="color:var(--color-accent)">Pourquoi ?</button>
+    <span class="tag tag-outline">B1 → B2</span>
+  </nav>
+</header>
+
+<sc-if value="{{ inSession }}" hint-placeholder-val="{{ false }}">
+  <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-bottom:2px solid var(--color-divider)">
+    <sc-for list="{{ steps }}" as="st" hint-placeholder-count="4">
+      <button onClick="{{ st.go }}" style="display:flex;flex-direction:column;align-items:flex-start;gap:2px;text-align:left;background:none;border:0;border-right:1px solid var(--color-divider);padding:0 0 10px;cursor:pointer;color:var(--color-text);min-width:0" style-hover="background:color-mix(in srgb, var(--color-text) 5%, transparent)">
+        <span style="display:block;width:100%;height:4px;background:{{ st.bar }}"></span>
+        <span style="padding:8px 14px 0;font-size:11px;font-weight:800;letter-spacing:0.08em;color:{{ st.numColor }}">{{ st.n }}</span>
+        <span style="padding:0 14px;font-size:13px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%">{{ st.label }}</span>
+      </button>
+    </sc-for>
+  </div>
+</sc-if>
+
+<main style="width:100%;max-width:1040px;margin:0 auto;padding:36px 20px 120px;flex:1">
+
+<!-- HOME -->
+<sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
+  <section style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr));gap:40px;padding-bottom:40px;border-bottom:2px solid var(--color-divider)">
+    <div style="display:flex;flex-direction:column;align-items:flex-start;gap:18px">
+      <span style="font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-accent-700)">{{ dateLabel }} · Séance du jour</span>
+      <h1 style="margin:0;font-size:clamp(48px,8vw,88px);line-height:0.95;letter-spacing:-0.035em">Le pain du samedi</h1>
+      <p style="margin:0;font-size:18px;line-height:1.5;max-width:46ch;text-wrap:pretty">A Saturday morning queue at a bakery on rue des Martyrs. Listen, check you understood, see how it’s really said, then write.</p>
+      <sc-if value="{{ allDone }}" hint-placeholder-val="{{ false }}">
+        <p style="margin:0;font-size:15px;font-weight:600;color:var(--color-accent-700)">Séance terminée. À demain pour la suivante.</p>
+      </sc-if>
+      <button class="btn btn-primary" onClick="{{ startSession }}" style="font-size:16px;padding:14px 18px;min-width:260px;justify-content:space-between;gap:24px">
+        <span>{{ startLabel }}</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="square"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+      </button>
+    </div>
+    <div style="display:flex;flex-direction:column;border-top:2px solid var(--color-divider)">
+      <span style="padding:12px 0;font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-neutral-700)">Les « pourquoi » de cette histoire</span>
+      <sc-for list="{{ focusNotes }}" as="fn" hint-placeholder-count="4">
+        <button onClick="{{ fn.open }}" style="display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px;align-items:center;text-align:left;background:none;border:0;border-top:1px solid var(--color-divider);padding:14px 0;cursor:pointer;color:var(--color-text)" style-hover="color:var(--color-accent-700)">
+          <span style="display:flex;flex-direction:column;gap:2px">
+            <span style="font-size:17px;font-weight:600">{{ fn.title }}</span>
+            <span style="font-size:13px;color:var(--color-neutral-700)">{{ fn.kicker }}</span>
+          </span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="square"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+        </button>
+      </sc-for>
+    </div>
+  </section>
+
+  <section style="padding-top:28px">
+    <h6 style="margin:0 0 12px;color:var(--color-neutral-700)">La séance · 10 min</h6>
+    <div style="display:flex;flex-direction:column;border-top:2px solid var(--color-divider)">
+      <sc-for list="{{ steps }}" as="st" hint-placeholder-count="4">
+        <button onClick="{{ st.go }}" style="display:grid;grid-template-columns:64px minmax(0,1fr) auto;gap:16px;align-items:center;text-align:left;background:none;border:0;border-bottom:1px solid var(--color-divider);padding:18px 0;cursor:pointer;color:var(--color-text)" style-hover="background:color-mix(in srgb, var(--color-text) 4%, transparent)">
+          <span style="font-family:var(--font-heading);font-weight:800;font-size:32px;letter-spacing:-0.03em;color:{{ st.numColor }}">{{ st.n }}</span>
+          <span style="display:flex;flex-direction:column;gap:2px;min-width:0">
+            <span style="font-size:18px;font-weight:700">{{ st.label }}</span>
+            <span style="font-size:14px;color:var(--color-neutral-700);text-wrap:pretty">{{ st.desc }}</span>
+          </span>
+          <span style="display:flex;align-items:center;gap:10px;padding-right:4px">
+            <sc-if value="{{ st.done }}" hint-placeholder-val="{{ false }}"><span class="tag tag-accent">Fait</span></sc-if>
+            <span style="font-size:13px;color:var(--color-neutral-700);white-space:nowrap">{{ st.mins }}</span>
+          </span>
+        </button>
+      </sc-for>
+    </div>
+  </section>
+</sc-if>
+
+<!-- LIBRARY -->
+<sc-if value="{{ isLibrary }}" hint-placeholder-val="{{ false }}">
+  <section style="display:flex;flex-direction:column;gap:12px;padding-bottom:28px;border-bottom:2px solid var(--color-divider)">
+    <h1 style="margin:0;font-size:clamp(40px,6vw,64px);letter-spacing:-0.03em">Pourquoi ?</h1>
+    <p style="margin:0;font-size:17px;max-width:56ch;text-wrap:pretty">The grammar behind the stories, explained in English: what the rule is, how it shows up in the story, how people actually say it, and the usual trap.</p>
+  </section>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:2px;background:var(--color-divider);border:2px solid var(--color-divider);margin-top:28px">
+    <sc-for list="{{ allNotes }}" as="an" hint-placeholder-count="5">
+      <button onClick="{{ an.open }}" style="display:flex;flex-direction:column;align-items:flex-start;gap:10px;text-align:left;background:var(--color-bg);border:0;padding:20px;cursor:pointer;color:var(--color-text);min-height:180px" style-hover="background:var(--color-surface)">
+        <span style="font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-accent-700)">{{ an.kicker }}</span>
+        <span style="font-family:var(--font-heading);font-weight:800;font-size:20px;line-height:1.15">{{ an.title }}</span>
+        <span style="font-size:14px;color:var(--color-neutral-800);text-wrap:pretty">{{ an.short }}</span>
+      </button>
+    </sc-for>
+  </div>
+</sc-if>
+
+<!-- STORY -->
+<sc-if value="{{ isStory }}" hint-placeholder-val="{{ false }}">
+  <section style="display:flex;flex-direction:column;gap:10px;padding-bottom:20px">
+    <span style="font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-accent-700)">01 · Écouter et lire</span>
+    <h2 style="margin:0;font-size:clamp(32px,5vw,48px);letter-spacing:-0.03em">Le pain du samedi</h2>
+    <p style="margin:0;font-size:14px;color:var(--color-neutral-700)">13 phrases · B1 · rue des Martyrs, 9e. Tap a sentence to hear it. <strong style="color:var(--color-accent-700)">Pourquoi ?</strong> opens the explanation.</p>
+    <sc-if value="{{ noFr }}" hint-placeholder-val="{{ false }}">
+      <p style="margin:0;font-size:13px;color:var(--color-accent-800)">No French voice found on this device. Audio will use the default voice.</p>
+    </sc-if>
+  </section>
+
+  <sc-if value="{{ isPage }}" hint-placeholder-val="{{ true }}">
+    <div style="display:flex;flex-direction:column;border-top:2px solid var(--color-divider)">
+      <sc-for list="{{ sentences }}" as="s" hint-placeholder-count="6">
+        <div onClick="{{ s.play }}" style="display:grid;grid-template-columns:40px minmax(0,1fr);gap:12px;padding:16px 0;border-bottom:1px solid var(--color-divider);cursor:pointer" style-hover="background:color-mix(in srgb, var(--color-text) 3%, transparent)">
+          <span style="font-size:12px;font-weight:800;letter-spacing:0.06em;padding-top:8px;color:{{ s.numColor }}">{{ s.num }}</span>
+          <div style="display:flex;flex-direction:column;gap:6px;min-width:0">
+            <p style="margin:0;font-size:clamp(19px,2.4vw,23px);line-height:1.5;color:{{ s.color }};text-wrap:pretty"><sc-for list="{{ s.words }}" as="w"><span style="background:{{ w.bg }};color:{{ w.fg }}">{{ w.t }}</span>{{ w.sp }}</sc-for><sc-if value="{{ s.hasNote }}"><button onClick="{{ s.openNote }}" style="display:inline-flex;vertical-align:3px;margin-left:8px;font-size:10px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;padding:3px 6px;background:var(--color-accent);color:var(--color-bg);border:0;cursor:pointer" style-hover="background:var(--color-accent-600)">Pourquoi ?</button></sc-if></p>
+            <sc-if value="{{ showEN }}" hint-placeholder-val="{{ false }}">
+              <p style="margin:0;font-size:15px;color:var(--color-neutral-700)">{{ s.en }}</p>
+            </sc-if>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ isFocus }}" hint-placeholder-val="{{ false }}">
+    <div style="display:flex;flex-direction:column;gap:24px;border-top:2px solid var(--color-divider);padding-top:20px;min-height:380px">
+      <div style="display:grid;grid-template-columns:repeat(13,minmax(0,1fr));gap:4px">
+        <sc-for list="{{ sentences }}" as="s" hint-placeholder-count="13">
+          <button onClick="{{ s.play }}" aria-label="Phrase {{ s.num }}" style="height:22px;padding:8px 0;background:none;border:0;cursor:pointer"><span style="display:block;height:6px;background:{{ s.tickBg }}"></span></button>
+        </sc-for>
+      </div>
+      <span style="font-size:12px;font-weight:800;letter-spacing:0.08em;color:var(--color-accent-700)">PHRASE {{ focus.num }} / 13</span>
+      <p style="margin:0;font-size:clamp(28px,4.6vw,46px);line-height:1.22;font-weight:600;letter-spacing:-0.015em;text-wrap:pretty"><sc-for list="{{ focus.words }}" as="w"><span style="background:{{ w.bg }};color:{{ w.fg }}">{{ w.t }}</span>{{ w.sp }}</sc-for></p>
+      <sc-if value="{{ showEN }}" hint-placeholder-val="{{ false }}">
+        <p style="margin:0;font-size:18px;color:var(--color-neutral-700);max-width:60ch">{{ focus.en }}</p>
+      </sc-if>
+      <sc-if value="{{ focus.hasNote }}" hint-placeholder-val="{{ false }}">
+        <div><button class="btn btn-secondary" onClick="{{ focus.openNote }}" style="gap:10px"><span style="color:var(--color-accent-700)">Pourquoi ?</span><span>{{ focus.noteTitle }}</span></button></div>
+      </sc-if>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ isSplit }}" hint-placeholder-val="{{ false }}">
+    <div style="display:flex;flex-direction:column;border-top:2px solid var(--color-divider)">
+      <sc-for list="{{ sentences }}" as="s" hint-placeholder-count="6">
+        <div onClick="{{ s.play }}" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));column-gap:32px;row-gap:4px;padding:16px 0;border-bottom:1px solid var(--color-divider);cursor:pointer" style-hover="background:color-mix(in srgb, var(--color-text) 3%, transparent)">
+          <div style="display:grid;grid-template-columns:36px minmax(0,1fr);gap:10px">
+            <span style="font-size:12px;font-weight:800;padding-top:5px;color:{{ s.numColor }}">{{ s.num }}</span>
+            <p style="margin:0;font-size:19px;line-height:1.5;color:{{ s.color }};text-wrap:pretty"><sc-for list="{{ s.words }}" as="w"><span style="background:{{ w.bg }};color:{{ w.fg }}">{{ w.t }}</span>{{ w.sp }}</sc-for><sc-if value="{{ s.hasNote }}"><button onClick="{{ s.openNote }}" style="display:inline-flex;vertical-align:3px;margin-left:8px;font-size:10px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;padding:3px 6px;background:var(--color-accent);color:var(--color-bg);border:0;cursor:pointer" style-hover="background:var(--color-accent-600)">Pourquoi ?</button></sc-if></p>
+          </div>
+          <p style="margin:0;font-size:16px;line-height:1.5;color:var(--color-neutral-700);padding-left:46px">{{ s.en }}</p>
+        </div>
+      </sc-for>
+    </div>
+  </sc-if>
+
+  <div style="position:sticky;bottom:0;z-index:5;background:var(--color-bg);border-top:2px solid var(--color-text);margin-top:28px;padding:12px 0;display:flex;flex-wrap:wrap;gap:10px;align-items:center">
+    <button class="btn btn-secondary btn-icon" onClick="{{ prevS }}" aria-label="Phrase précédente"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25"><polygon points="19 20 9 12 19 4 19 20"></polygon><line x1="5" x2="5" y1="19" y2="5"></line></svg></button>
+    <button class="btn btn-primary" onClick="{{ togglePlay }}" style="min-width:132px;height:44px;justify-content:flex-start;gap:10px">
+      <sc-if value="{{ playing }}" hint-placeholder-val="{{ false }}"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><rect x="14" y="4" width="4" height="16"></rect><rect x="6" y="4" width="4" height="16"></rect></svg></sc-if>
+      <sc-if value="{{ notPlaying }}" hint-placeholder-val="{{ true }}"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 3 20 12 6 21 6 3"></polygon></svg></sc-if>
+      <span>{{ playLabel }}</span>
+    </button>
+    <button class="btn btn-secondary btn-icon" onClick="{{ nextS }}" aria-label="Phrase suivante"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25"><polygon points="5 4 15 12 5 20 5 4"></polygon><line x1="19" x2="19" y1="5" y2="19"></line></svg></button>
+    <span style="font-size:13px;font-weight:600;font-variant-numeric:tabular-nums;margin-right:auto;padding-left:4px">{{ counter }}</span>
+    <div class="seg">
+      <label class="seg-opt"><input type="radio" name="rate" checked="{{ rateSlow }}" onChange="{{ setSlow }}">0,75×</label>
+      <label class="seg-opt"><input type="radio" name="rate" checked="{{ rateNorm }}" onChange="{{ setNorm }}">1×</label>
+    </div>
+    <sc-if value="{{ notSplit }}" hint-placeholder-val="{{ true }}">
+      <button class="btn btn-secondary" onClick="{{ toggleEN }}" style="height:36px;background:{{ enBg }};color:{{ enFg }}">EN</button>
+    </sc-if>
+  </div>
+  <div style="padding-top:24px">
+    <button class="btn btn-primary" onClick="{{ toQuiz }}" style="font-size:15px;padding:12px 16px;gap:24px;min-width:260px;justify-content:space-between"><span>Continuer : Comprendre</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="square"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></button>
+  </div>
+</sc-if>
+
+<!-- QUIZ -->
+<sc-if value="{{ isQuiz }}" hint-placeholder-val="{{ false }}">
+  <section style="display:flex;flex-direction:column;gap:14px;padding-bottom:24px">
+    <span style="font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-accent-700)">02 · Comprendre</span>
+    <div style="display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:4px;max-width:360px">
+      <sc-for list="{{ qTicks }}" as="t" hint-placeholder-count="6"><span style="display:block;height:6px;background:{{ t.bg }}"></span></sc-for>
+    </div>
+  </section>
+
+  <sc-if value="{{ quizActive }}" hint-placeholder-val="{{ true }}">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr));gap:40px;align-items:start">
+      <div style="display:flex;flex-direction:column;gap:16px;border-top:2px solid var(--color-divider);padding-top:16px;max-width:680px">
+        <span style="font-size:12px;font-weight:800;letter-spacing:0.08em;color:var(--color-neutral-700)">QUESTION {{ qNum }} / 6 · {{ qKind }}</span>
+        <h3 style="margin:0;font-size:clamp(22px,3vw,28px);line-height:1.2;text-wrap:pretty">{{ qPrompt }}</h3>
+        <sc-if value="{{ qListen }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;padding:16px 0;border-bottom:1px solid var(--color-divider)">
+            <button class="btn btn-primary" onClick="{{ playQ }}" style="height:44px;gap:10px;justify-content:flex-start"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4.702a.705.705 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298z"></path><path d="M16 9a5 5 0 0 1 0 6"></path><path d="M19.364 18.364a9 9 0 0 0 0-12.728"></path></svg><span>{{ playQLabel }}</span></button>
+            <sc-if value="{{ answered }}" hint-placeholder-val="{{ false }}">
+              <span style="font-size:17px;font-style:italic">{{ qTranscript }}</span>
+            </sc-if>
+            <sc-if value="{{ notAnswered }}" hint-placeholder-val="{{ true }}">
+              <span style="font-size:13px;color:var(--color-neutral-700)">The text appears after you answer.</span>
+            </sc-if>
+          </div>
+        </sc-if>
+        <sc-if value="{{ qHasQuote }}" hint-placeholder-val="{{ false }}">
+          <div style="display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:center;padding:16px 0;border-bottom:1px solid var(--color-divider)">
+            <p style="margin:0;font-size:20px;line-height:1.45;text-wrap:pretty">{{ qQuote }}</p>
+            <button class="btn btn-secondary btn-icon" onClick="{{ playQ }}" aria-label="Écouter"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4.702a.705.705 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298z"></path><path d="M16 9a5 5 0 0 1 0 6"></path></svg></button>
+          </div>
+        </sc-if>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <sc-for list="{{ opts }}" as="o" hint-placeholder-count="3">
+            <div style="display:flex;flex-direction:column">
+              <button onClick="{{ o.pick }}" disabled="{{ answered }}" style="display:grid;grid-template-columns:24px minmax(0,1fr) auto;gap:12px;align-items:baseline;text-align:left;width:100%;padding:14px 16px;font-size:16px;line-height:1.4;cursor:{{ o.cursor }};background:{{ o.bg }};color:{{ o.fg }};border:{{ o.border }};opacity:{{ o.op }}" style-hover="border-color:var(--color-text)">
+                <span style="font-weight:800">{{ o.letter }}</span>
+                <span>{{ o.t }}</span>
+                <span style="font-size:10px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;white-space:nowrap">{{ o.label }}</span>
+              </button>
+              <sc-if value="{{ o.showInline }}" hint-placeholder-val="{{ false }}">
+                <div style="padding:12px 16px 16px 52px;font-size:15px;line-height:1.5;background:{{ o.whyBg }};color:{{ o.whyFg }};text-wrap:pretty"><strong>{{ o.whyLead }}</strong> {{ o.why }}</div>
+              </sc-if>
+            </div>
+          </sc-for>
+        </div>
+        <sc-if value="{{ showInlineActions }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex;flex-wrap:wrap;gap:10px;padding-top:8px">
+            <button class="btn btn-primary" onClick="{{ nextQ }}" style="padding:12px 16px">{{ nextQLabel }}</button>
+            <sc-if value="{{ qHasNote }}" hint-placeholder-val="{{ false }}"><button class="btn btn-secondary" onClick="{{ openQNote }}" style="padding:12px 16px">Pourquoi ? {{ qNoteTitle }}</button></sc-if>
+          </div>
+        </sc-if>
+      </div>
+
+      <sc-if value="{{ isMargin }}" hint-placeholder-val="{{ false }}">
+        <aside style="display:flex;flex-direction:column;gap:18px;border-top:2px solid var(--color-text);padding-top:16px">
+          <span style="font-size:12px;font-weight:800;letter-spacing:0.08em;color:var(--color-accent-700)">EN MARGE</span>
+          <sc-if value="{{ notAnswered }}" hint-placeholder-val="{{ true }}">
+            <p style="margin:0;font-size:15px;color:var(--color-neutral-700)">Pick an answer. The explanation is written here, next to the question.</p>
+          </sc-if>
+          <sc-if value="{{ answered }}" hint-placeholder-val="{{ false }}">
+            <h3 style="margin:0;font-size:32px;letter-spacing:-0.02em;color:{{ fbHeadColor }}">{{ fbHead }}</h3>
+            <sc-if value="{{ fbWrong }}" hint-placeholder-val="{{ false }}">
+              <div style="display:grid;grid-template-columns:28px minmax(0,1fr);gap:10px;padding-top:14px;border-top:1px solid var(--color-divider)">
+                <span style="font-weight:800;color:var(--color-accent-700)">{{ fbPickedLetter }}</span>
+                <div style="display:flex;flex-direction:column;gap:4px">
+                  <span style="font-size:11px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-accent-700)">Votre réponse · pourquoi c’est faux</span>
+                  <p style="margin:0;font-size:15px;line-height:1.55;text-wrap:pretty">{{ fbWrongWhy }}</p>
+                </div>
+              </div>
+            </sc-if>
+            <div style="display:grid;grid-template-columns:28px minmax(0,1fr);gap:10px;padding-top:14px;border-top:1px solid var(--color-divider)">
+              <span style="font-weight:800">{{ fbRightLetter }}</span>
+              <div style="display:flex;flex-direction:column;gap:4px">
+                <span style="font-size:11px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase">La bonne réponse</span>
+                <p style="margin:0;font-size:16px;font-weight:600">{{ fbRightText }}</p>
+                <p style="margin:0;font-size:15px;line-height:1.55;text-wrap:pretty">{{ fbRightWhy }}</p>
+              </div>
+            </div>
+            <div style="display:flex;flex-wrap:wrap;gap:10px;padding-top:6px">
+              <button class="btn btn-primary" onClick="{{ nextQ }}" style="padding:12px 16px">{{ nextQLabel }}</button>
+              <sc-if value="{{ qHasNote }}" hint-placeholder-val="{{ false }}"><button class="btn btn-secondary" onClick="{{ openQNote }}" style="padding:12px 16px">Pourquoi ?</button></sc-if>
+            </div>
+          </sc-if>
+        </aside>
+      </sc-if>
+    </div>
+
+    <sc-if value="{{ showPanel }}" hint-placeholder-val="{{ false }}">
+      <div style="height:300px"></div>
+      <div style="position:fixed;left:0;right:0;bottom:0;z-index:20;background:{{ fbBg }};color:var(--color-bg);box-shadow:var(--shadow-lg)">
+        <div style="max-width:1040px;margin:0 auto;padding:24px 20px 28px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:20px 40px">
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <h3 style="margin:0;font-size:clamp(28px,4vw,40px);letter-spacing:-0.025em;color:var(--color-bg)">{{ fbHead }}</h3>
+            <sc-if value="{{ fbWrong }}" hint-placeholder-val="{{ false }}">
+              <span style="font-size:11px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase">Vous avez choisi {{ fbPickedLetter }} · pourquoi c’est faux</span>
+              <p style="margin:0;font-size:15px;line-height:1.55;text-wrap:pretty">{{ fbWrongWhy }}</p>
+            </sc-if>
+            <sc-if value="{{ fbRight }}" hint-placeholder-val="{{ false }}">
+              <p style="margin:0;font-size:15px;line-height:1.55;text-wrap:pretty">{{ fbRightWhy }}</p>
+            </sc-if>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:8px;justify-content:space-between">
+            <sc-if value="{{ fbWrong }}" hint-placeholder-val="{{ false }}">
+              <div style="display:flex;flex-direction:column;gap:6px;padding-top:12px;border-top:2px solid color-mix(in srgb, var(--color-bg) 50%, transparent)">
+                <span style="font-size:11px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase">La bonne réponse · {{ fbRightLetter }}</span>
+                <p style="margin:0;font-size:17px;font-weight:700">{{ fbRightText }}</p>
+                <p style="margin:0;font-size:15px;line-height:1.55;text-wrap:pretty">{{ fbRightWhy }}</p>
+              </div>
+            </sc-if>
+            <div style="display:flex;flex-wrap:wrap;gap:10px;padding-top:8px">
+              <button class="btn" onClick="{{ nextQ }}" style="background:var(--color-bg);color:var(--color-text);padding:12px 16px;min-width:200px;justify-content:flex-start" style-hover="background:var(--color-neutral-200)">{{ nextQLabel }}</button>
+              <sc-if value="{{ qHasNote }}" hint-placeholder-val="{{ false }}"><button class="btn" onClick="{{ openQNote }}" style="border:1px solid var(--color-bg);color:var(--color-bg);padding:12px 16px" style-hover="background:color-mix(in srgb, var(--color-bg) 15%, transparent)">Pourquoi ?</button></sc-if>
+            </div>
+          </div>
+        </div>
+      </div>
+    </sc-if>
+  </sc-if>
+
+  <sc-if value="{{ quizDone }}" hint-placeholder-val="{{ false }}">
+    <section style="display:flex;flex-direction:column;gap:20px;border-top:2px solid var(--color-divider);padding-top:20px">
+      <div style="display:flex;align-items:baseline;gap:16px;flex-wrap:wrap">
+        <span style="font-family:var(--font-heading);font-weight:800;font-size:clamp(64px,10vw,112px);line-height:0.9;letter-spacing:-0.04em">{{ score }}<span style="color:var(--color-neutral-500)">/6</span></span>
+        <span style="font-size:17px;max-width:36ch">{{ scoreLine }}</span>
+      </div>
+      <div style="display:flex;flex-direction:column;border-top:2px solid var(--color-divider)">
+        <sc-for list="{{ summary }}" as="r" hint-placeholder-count="6">
+          <div style="display:grid;grid-template-columns:40px minmax(0,1fr) auto;gap:12px;align-items:center;padding:12px 0;border-bottom:1px solid var(--color-divider)">
+            <span style="font-size:12px;font-weight:800">{{ r.num }}</span>
+            <span style="font-size:15px;text-wrap:pretty">{{ r.prompt }}</span>
+            <span style="display:flex;gap:8px;align-items:center">
+              <sc-if value="{{ r.canReview }}" hint-placeholder-val="{{ false }}"><button class="btn btn-ghost" onClick="{{ r.open }}" style="font-size:13px">Pourquoi ?</button></sc-if>
+              <span class="{{ r.tagClass }}">{{ r.label }}</span>
+            </span>
+          </div>
+        </sc-for>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:10px">
+        <button class="btn btn-primary" onClick="{{ toSpoken }}" style="font-size:15px;padding:12px 16px;gap:24px;min-width:260px;justify-content:space-between"><span>Continuer : Comme on dit</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="square"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></button>
+        <button class="btn btn-secondary" onClick="{{ resetQuiz }}" style="padding:12px 16px">Refaire le quiz</button>
+      </div>
+    </section>
+  </sc-if>
+</sc-if>
+
+<!-- SPOKEN -->
+<sc-if value="{{ isSpoken }}" hint-placeholder-val="{{ false }}">
+  <section style="display:flex;flex-direction:column;gap:12px;padding-bottom:24px">
+    <span style="font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-accent-700)">03 · Comme on dit</span>
+    <h2 style="margin:0;font-size:clamp(32px,5vw,48px);letter-spacing:-0.03em">Ce qu’on écrit, ce qu’on dit</h2>
+    <p style="margin:0;font-size:17px;max-width:60ch;text-wrap:pretty">Lines from today’s story, written carefully and as you’d hear them in Paris. Both are correct French. The question is where you use each one.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:16px;font-size:13px;color:var(--color-neutral-800)">
+      <span style="display:flex;gap:6px;align-items:center"><span class="tag tag-neutral">Courant</span>everyday, safe anywhere</span>
+      <span style="display:flex;gap:6px;align-items:center"><span class="tag tag-accent">Familier</span>friends, neighbours, never in an email</span>
+    </div>
+  </section>
+  <div style="display:flex;flex-direction:column;border-top:2px solid var(--color-divider)">
+    <sc-for list="{{ pairs }}" as="pr" hint-placeholder-count="5">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:12px 32px;padding:20px 0;border-bottom:1px solid var(--color-divider)">
+        <div style="display:flex;flex-direction:column;gap:6px">
+          <span style="font-size:10px;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-neutral-700)">À l’écrit</span>
+          <div style="display:flex;gap:10px;align-items:center">
+            <button class="btn btn-secondary btn-icon" onClick="{{ pr.sayW }}" aria-label="Écouter" style="flex:none"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4.702a.705.705 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298z"></path><path d="M16 9a5 5 0 0 1 0 6"></path></svg></button>
+            <span style="font-size:19px;color:var(--color-neutral-800)">{{ pr.written }}</span>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:6px">
+          <span style="display:flex;gap:8px;align-items:center"><span style="font-size:10px;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-accent-700)">À l’oral, à Paris</span><span class="{{ pr.tagClass }}">{{ pr.reg }}</span></span>
+          <div style="display:flex;gap:10px;align-items:center">
+            <button class="btn btn-primary btn-icon" onClick="{{ pr.sayS }}" aria-label="Écouter" style="flex:none"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4.702a.705.705 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298z"></path><path d="M16 9a5 5 0 0 1 0 6"></path></svg></button>
+            <span style="font-size:21px;font-weight:700">{{ pr.spoken }}</span>
+          </div>
+        </div>
+        <p style="grid-column:1/-1;margin:0;font-size:15px;line-height:1.55;color:var(--color-neutral-800);max-width:72ch;text-wrap:pretty">{{ pr.note }}</p>
+      </div>
+    </sc-for>
+  </div>
+  <div style="padding-top:24px">
+    <button class="btn btn-primary" onClick="{{ toDescribe }}" style="font-size:15px;padding:12px 16px;gap:24px;min-width:260px;justify-content:space-between"><span>Continuer : Décrire</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="square"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></button>
+  </div>
+</sc-if>
+
+<!-- DESCRIBE -->
+<sc-if value="{{ isDescribe }}" hint-placeholder-val="{{ false }}">
+  <section style="display:flex;flex-direction:column;gap:12px;padding-bottom:24px">
+    <span style="font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-accent-700)">04 · Décrire</span>
+    <h2 style="margin:0;font-size:clamp(32px,5vw,48px);letter-spacing:-0.03em">Décrivez la scène</h2>
+  </section>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr));gap:32px;align-items:start;border-top:2px solid var(--color-divider);padding-top:20px">
+    <figure style="margin:0;display:flex;flex-direction:column;gap:8px">
+      <div class="grayscale" style="position:relative;width:100%;aspect-ratio:4/3;background:var(--color-surface)">
+        <image-slot id="scene-abbesses" shape="rect" placeholder="Photo : terrasse de café, place des Abbesses" style="width:100%;height:100%"></image-slot>
+      </div>
+      <figcaption style="font-size:12px;color:var(--color-neutral-700)">Place des Abbesses, 18e · un dimanche après-midi</figcaption>
+    </figure>
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <p style="margin:0;font-size:17px;line-height:1.5;text-wrap:pretty">In 3 to 5 sentences: who is there, what are they doing, what’s the weather like? Don’t look words up. Write what you can.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:6px">
+        <sc-for list="{{ helpers }}" as="h" hint-placeholder-count="5"><span class="tag tag-neutral" style="font-size:13px">{{ h }}</span></sc-for>
+      </div>
+      <div class="field">
+        <label for="desc">Votre description</label>
+        <textarea id="desc" class="input" rows="7" value="{{ text }}" onChange="{{ onText }}" placeholder="Il y a…" style="font-size:16px;line-height:1.55;min-height:170px"></textarea>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center">
+        <button class="btn btn-primary" onClick="{{ correct }}" disabled="{{ cantCorrect }}" style="padding:12px 16px;min-width:160px;justify-content:flex-start">{{ correctLabel }}</button>
+        <button class="btn btn-ghost" onClick="{{ fillSample }}">Essayer avec un exemple</button>
+        <span style="margin-left:auto;font-size:12px;color:var(--color-neutral-700)">{{ wordCount }}</span>
+      </div>
+      <sc-if value="{{ isError }}" hint-placeholder-val="{{ false }}">
+        <p style="margin:0;font-size:14px;color:var(--color-accent-800)">{{ err }}</p>
+      </sc-if>
+    </div>
+  </div>
+
+  <sc-if value="{{ hasResult }}" hint-placeholder-val="{{ false }}">
+    <section style="margin-top:36px;border-top:2px solid var(--color-text);padding-top:20px;display:flex;flex-direction:column;gap:24px">
+      <div style="display:flex;align-items:baseline;gap:12px;flex-wrap:wrap">
+        <h3 style="margin:0;font-size:28px;letter-spacing:-0.02em">Corrections</h3>
+        <span class="tag tag-accent">{{ nCorr }}</span>
+        <sc-if value="{{ hasPraise }}" hint-placeholder-val="{{ false }}"><span style="font-size:14px;color:var(--color-neutral-800)"><strong>Bien vu :</strong> {{ praise }}</span></sc-if>
+      </div>
+
+      <sc-if value="{{ isRedline }}" hint-placeholder-val="{{ true }}">
+        <p style="margin:0;font-size:clamp(19px,2.4vw,22px);line-height:1.75;max-width:70ch;text-wrap:pretty"><sc-for list="{{ segs }}" as="g"><sc-if value="{{ g.isPlain }}">{{ g.t }}</sc-if><sc-if value="{{ g.isChange }}"><span><del style="color:var(--color-accent-700);text-decoration-thickness:2px">{{ g.from }}</del><sc-if value="{{ g.both }}"> </sc-if><ins style="text-decoration:none;font-weight:700;border-bottom:2px solid var(--color-accent)">{{ g.to }}</ins><sup style="font-size:11px;font-weight:800;color:var(--color-accent-700);margin-left:2px">{{ g.n }}</sup></span></sc-if></sc-for></p>
+      </sc-if>
+
+      <sc-if value="{{ isColumns }}" hint-placeholder-val="{{ false }}">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:2px;background:var(--color-divider);border:2px solid var(--color-divider)">
+          <div style="background:var(--color-bg);padding:18px;display:flex;flex-direction:column;gap:10px">
+            <span style="font-size:10px;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-neutral-700)">Vous avez écrit</span>
+            <p style="margin:0;font-size:18px;line-height:1.7;text-wrap:pretty"><sc-for list="{{ segs }}" as="g"><sc-if value="{{ g.isPlain }}">{{ g.t }}</sc-if><sc-if value="{{ g.isChange }}"><span style="background:var(--color-accent-100);color:var(--color-accent-800);padding:1px 2px">{{ g.fromShown }}<sup style="font-size:10px;font-weight:800;margin-left:2px">{{ g.n }}</sup></span></sc-if></sc-for></p>
+          </div>
+          <div style="background:var(--color-bg);padding:18px;display:flex;flex-direction:column;gap:10px">
+            <span style="font-size:10px;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-accent-700)">Corrigé</span>
+            <p style="margin:0;font-size:18px;line-height:1.7;text-wrap:pretty"><sc-for list="{{ segs }}" as="g"><sc-if value="{{ g.isPlain }}">{{ g.t }}</sc-if><sc-if value="{{ g.isChange }}"><span style="font-weight:700;border-bottom:2px solid var(--color-accent)">{{ g.to }}<sup style="font-size:10px;font-weight:800;color:var(--color-accent-700);margin-left:2px">{{ g.n }}</sup></span></sc-if></sc-for></p>
+          </div>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ showList }}" hint-placeholder-val="{{ true }}">
+        <div style="display:flex;flex-direction:column;border-top:2px solid var(--color-divider)">
+          <sc-for list="{{ corrs }}" as="c" hint-placeholder-count="3">
+            <div style="display:grid;grid-template-columns:36px minmax(0,1fr);gap:12px;padding:14px 0;border-bottom:1px solid var(--color-divider)">
+              <span style="font-family:var(--font-heading);font-weight:800;font-size:20px;color:var(--color-accent-700)">{{ c.n }}</span>
+              <div style="display:flex;flex-direction:column;gap:4px;min-width:0">
+                <span style="font-size:10px;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-neutral-700)">{{ c.rule }}</span>
+                <span style="font-size:17px"><del style="color:var(--color-accent-700)">{{ c.from }}</del> → <strong>{{ c.to }}</strong></span>
+                <p style="margin:0;font-size:15px;line-height:1.55;max-width:68ch;text-wrap:pretty">{{ c.why }}</p>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isStepper }}" hint-placeholder-val="{{ false }}">
+        <sc-if value="{{ hasCorrs }}" hint-placeholder-val="{{ true }}">
+          <div style="display:flex;flex-direction:column;gap:16px;border:2px solid var(--color-text);padding:24px">
+            <div style="display:flex;justify-content:space-between;align-items:center;gap:12px">
+              <span style="font-size:12px;font-weight:800;letter-spacing:0.08em;color:var(--color-accent-700)">CORRECTION {{ stepNum }} / {{ nCorrNum }} · {{ stepC.rule }}</span>
+              <div style="display:flex;gap:6px">
+                <button class="btn btn-secondary btn-icon" onClick="{{ prevStep }}" aria-label="Précédente"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="square"><path d="m12 19-7-7 7-7"></path><path d="M19 12H5"></path></svg></button>
+                <button class="btn btn-secondary btn-icon" onClick="{{ nextStep }}" aria-label="Suivante"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="square"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></button>
+              </div>
+            </div>
+            <div style="display:flex;flex-wrap:wrap;gap:8px 16px;align-items:baseline">
+              <del style="font-size:clamp(22px,3.4vw,32px);color:var(--color-accent-700);text-decoration-thickness:2px">{{ stepC.from }}</del>
+              <span style="font-size:24px">→</span>
+              <span style="font-size:clamp(26px,4vw,38px);font-weight:800;letter-spacing:-0.02em">{{ stepC.to }}</span>
+            </div>
+            <p style="margin:0;font-size:17px;line-height:1.55;max-width:62ch;text-wrap:pretty">{{ stepC.why }}</p>
+          </div>
+        </sc-if>
+        <div style="display:flex;flex-direction:column;gap:6px">
+          <span style="font-size:10px;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-neutral-700)">Le texte corrigé</span>
+          <p style="margin:0;font-size:19px;line-height:1.65;max-width:70ch;text-wrap:pretty">{{ corrected }}</p>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ hasSpoken }}" hint-placeholder-val="{{ false }}">
+        <div class="card" style="padding:20px;gap:10px">
+          <span class="card-kicker">À l’oral, un Parisien dirait</span>
+          <div style="display:flex;gap:12px;align-items:flex-start">
+            <button class="btn btn-primary btn-icon" onClick="{{ saySpoken }}" aria-label="Écouter" style="flex:none"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4.702a.705.705 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298z"></path><path d="M16 9a5 5 0 0 1 0 6"></path></svg></button>
+            <p style="margin:0;font-size:19px;line-height:1.55;font-weight:600;text-wrap:pretty">{{ spoken }}</p>
+          </div>
+          <p style="margin:0;font-size:14px;line-height:1.55;color:var(--color-neutral-800);text-wrap:pretty">{{ spokenNote }}</p>
+        </div>
+      </sc-if>
+
+      <div style="display:flex;flex-wrap:wrap;gap:10px">
+        <button class="btn btn-primary" onClick="{{ finish }}" style="padding:12px 16px;min-width:220px;justify-content:flex-start">Terminer la séance</button>
+        <button class="btn btn-secondary" onClick="{{ rewrite }}" style="padding:12px 16px">Réécrire</button>
+      </div>
+    </section>
+  </sc-if>
+</sc-if>
+
+</main>
+
+<!-- WHY PANEL -->
+<sc-if value="{{ noteOpen }}" hint-placeholder-val="{{ false }}">
+  <div style="position:fixed;inset:0;z-index:40;display:flex;justify-content:flex-end">
+    <div onClick="{{ closeNote }}" style="position:absolute;inset:0;background:color-mix(in srgb, var(--color-neutral-900) 50%, transparent)"></div>
+    <aside style="position:relative;width:min(580px,100%);height:100%;overflow-y:auto;background:var(--color-bg);box-shadow:var(--shadow-lg);padding:20px 28px 56px;display:flex;flex-direction:column;gap:22px">
+      <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid var(--color-divider);padding-bottom:12px">
+        <span style="font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-accent-700)">Pourquoi ? · {{ note.kicker }}</span>
+        <button class="btn btn-secondary btn-icon" onClick="{{ closeNote }}" aria-label="Fermer"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="square"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg></button>
+      </div>
+      <h2 style="margin:0;font-size:clamp(28px,4vw,36px);letter-spacing:-0.025em;text-wrap:pretty">{{ note.title }}</h2>
+      <p style="margin:0;font-size:20px;line-height:1.4;font-weight:600;text-wrap:pretty">{{ note.short }}</p>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <sc-for list="{{ note.body }}" as="para" hint-placeholder-count="2"><p style="margin:0;font-size:16px;line-height:1.6;text-wrap:pretty">{{ para }}</p></sc-for>
+      </div>
+      <div style="display:flex;flex-direction:column;border-top:2px solid var(--color-divider)">
+        <span style="padding:12px 0 4px;font-size:10px;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-neutral-700)">Exemples</span>
+        <sc-for list="{{ noteEx }}" as="ex" hint-placeholder-count="2">
+          <div style="display:grid;grid-template-columns:36px minmax(0,1fr);gap:12px;padding:12px 0;border-bottom:1px solid var(--color-divider)">
+            <button class="btn btn-secondary btn-icon" onClick="{{ ex.say }}" aria-label="Écouter"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4.702a.705.705 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298z"></path><path d="M16 9a5 5 0 0 1 0 6"></path></svg></button>
+            <div style="display:flex;flex-direction:column;gap:4px">
+              <span style="display:flex;gap:8px;align-items:baseline;flex-wrap:wrap"><span style="font-size:17px;font-weight:600">{{ ex.fr }}</span><span class="tag tag-neutral">{{ ex.tag }}</span></span>
+              <span style="font-size:14px;color:var(--color-neutral-700)">{{ ex.en }}</span>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:8px;background:var(--color-surface);padding:18px">
+        <span style="font-size:10px;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:var(--color-accent-700)">À l’oral, à Paris</span>
+        <p style="margin:0;font-size:15px;line-height:1.6;text-wrap:pretty">{{ note.oral }}</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:8px;border-top:2px solid var(--color-text);padding-top:14px">
+        <span style="font-size:10px;font-weight:800;letter-spacing:0.1em;text-transform:uppercase">Le piège</span>
+        <span style="font-size:17px"><del style="color:var(--color-accent-700);text-decoration-thickness:2px">{{ note.trapWrong }}</del></span>
+        <span style="font-size:17px;font-weight:700">{{ note.trapRight }}</span>
+        <p style="margin:0;font-size:15px;line-height:1.6;color:var(--color-neutral-800);text-wrap:pretty">{{ note.trapWhy }}</p>
+      </div>
+    </aside>
+  </div>
+</sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;playerLayout&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;page&quot;,&quot;focus&quot;,&quot;split&quot;],&quot;default&quot;:&quot;page&quot;,&quot;tsType&quot;:&quot;'page'|'focus'|'split'&quot;,&quot;section&quot;:&quot;Variations&quot;,&quot;label&quot;:&quot;Read-along layout&quot;},&quot;quizFeedback&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;inline&quot;,&quot;panel&quot;,&quot;margin&quot;],&quot;default&quot;:&quot;inline&quot;,&quot;tsType&quot;:&quot;'inline'|'panel'|'margin'&quot;,&quot;section&quot;:&quot;Variations&quot;,&quot;label&quot;:&quot;Quiz feedback&quot;},&quot;correctionStyle&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;redline&quot;,&quot;columns&quot;,&quot;stepper&quot;],&quot;default&quot;:&quot;redline&quot;,&quot;tsType&quot;:&quot;'redline'|'columns'|'stepper'&quot;,&quot;section&quot;:&quot;Variations&quot;,&quot;label&quot;:&quot;Writing corrections&quot;}}">
+const pad = n => String(n).padStart(2, '0');
+const MUTED = 'color-mix(in srgb, var(--color-text) 50%, transparent)';
+
+const STORY = [
+  { fr: 'Tous les samedis matin, je descends à la boulangerie en bas de chez moi.', en: 'Every Saturday morning, I go down to the bakery at the bottom of my building.' },
+  { fr: 'Ce samedi-là, il pleuvait et la queue débordait sur le trottoir.', en: 'That Saturday, it was raining and the queue spilled out onto the pavement.', note: 'impf' },
+  { fr: 'Devant moi, il y avait Madame Lefèvre, ma voisine du troisième.', en: 'In front of me was Madame Lefèvre, my neighbour from the third floor.' },
+  { fr: '— Ah, bonjour ! Vous non plus, vous n’avez pas pu faire la grasse mat’ ?', en: '“Oh, hello! You couldn’t sleep in either?”' },
+  { fr: '— Non, mon fils m’a réveillée à sept heures. Il voulait des croissants.', en: '“No, my son woke me up at seven. He wanted croissants.”', note: 'agree' },
+  { fr: 'Quand notre tour est arrivé, la boulangère m’a souri.', en: 'When our turn came, the baker smiled at me.', note: 'impf' },
+  { fr: '— Bonjour, qu’est-ce que je vous sers ?', en: '“Hello, what can I get you?”' },
+  { fr: '— Je voudrais une tradi bien cuite et deux pains au chocolat, s’il vous plaît.', en: '“I’d like a well-baked tradition baguette and two pains au chocolat, please.”', note: 'cond' },
+  { fr: '— Désolée, on n’en a plus, des pains au chocolat. Il me reste des croissants.', en: '“Sorry, we’re out of pains au chocolat. I’ve got croissants left.”', note: 'en' },
+  { fr: '— Bon, ben, j’en prends deux, alors.', en: '“Well then, I’ll take two.”', note: 'en' },
+  { fr: 'En sortant, Madame Lefèvre m’a dit en riant : « Vous voyez, il faut venir avant huit heures. »', en: 'On the way out, Madame Lefèvre said, laughing: “You see, you have to come before eight.”' },
+  { fr: 'Je lui ai répondu que la semaine prochaine, je mettrais un réveil.', en: 'I told her that next week I would set an alarm.', note: 'concord' },
+  { fr: 'Elle a haussé les épaules : « C’est ce que vous dites tous les samedis ! »', en: 'She shrugged: “That’s what you say every Saturday!”' },
+];
+STORY.forEach(s => { s.words = [...s.fr.matchAll(/\S+/g)].map(m => ({ t: m[0], start: m.index })); });
+const spk = t => t.replace(/^—\s*/, '');
+
+const NOTES = {
+  impf: {
+    kicker: 'Temps du passé', title: 'Imparfait ou passé composé ?',
+    short: 'The imparfait paints the scene. The passé composé moves the story forward.',
+    body: [
+      'Apps usually teach this as “unfinished vs. finished”. That rule breaks quickly: “il pleuvait” in the story is finished too. It rained that one morning and then stopped.',
+      'A better test: imagine filming the story. Anything already going on when the camera starts rolling (the weather, what people wanted, how they felt) is imparfait. Anything that happens on camera, one action after another, is passé composé.',
+      'Quick check: can you put “and then…” in front of it? If yes, passé composé.'
+    ],
+    examples: [
+      { fr: 'Il pleuvait et la queue débordait sur le trottoir.', en: 'Background: the scene as the story opens.', tag: 'Imparfait' },
+      { fr: 'Quand notre tour est arrivé, la boulangère m’a souri.', en: 'Two events, one after the other.', tag: 'Passé composé' },
+      { fr: 'Il voulait des croissants.', en: 'A state of mind. Vouloir, être, avoir and savoir lean imparfait in stories.', tag: 'Imparfait' }
+    ],
+    oral: 'The passé simple you see in novels (“il plut”, “elle sourit”) is never used in conversation. Parisians tell every story with passé composé and imparfait.',
+    trap: { wrong: 'J’ai été fatigué, alors je suis resté chez moi.', right: 'J’étais fatigué, alors je suis resté chez moi.', why: '“J’ai été fatigué” isn’t wrong, but it frames the tiredness as a bounded episode. When a state is the reason for an action, use the imparfait.' }
+  },
+  cond: {
+    kicker: 'Politesse', title: 'Pourquoi « je voudrais » et pas « je veux » ?',
+    short: 'The conditional softens a request. “Je veux” at a counter sounds like a child demanding.',
+    body: [
+      '“Je voudrais” is the conditional of vouloir, literally “I would want”. The conditional puts a little distance between you and the demand, which is what makes it polite.',
+      'It works the same way with other verbs: “Vous auriez… ?” (Would you have…?), “Ce serait possible de… ?” (Would it be possible to…?).'
+    ],
+    examples: [
+      { fr: 'Je voudrais une tradi bien cuite, s’il vous plaît.', en: 'I’d like a well-baked tradi, please.', tag: 'Soigné' },
+      { fr: 'Je vais prendre une tradi, s’il vous plaît.', en: 'I’ll have a tradi, please.', tag: 'Courant' },
+      { fr: 'Vous auriez des croissants ?', en: 'Would you have any croissants?', tag: 'Courant' }
+    ],
+    oral: '“Je vais prendre…” is as common as “je voudrais” in Paris and sounds natural. More important than the verb: always open with “Bonjour”. Skipping it is the real rudeness.',
+    trap: { wrong: 'Je veux un café.', right: 'Je voudrais un café. / Je vais prendre un café.', why: '“Je veux” is fine for wishes (“je veux habiter à Paris”), not for asking someone to give you something.' }
+  },
+  en: {
+    kicker: 'Pronoms', title: 'Que fait « en » ici ?',
+    short: '“En” replaces “de + noun”, and it has to be there when you give a quantity without repeating the noun.',
+    body: [
+      'Once something has been mentioned with de, du or des, “en” stands in for it: “Tu veux du pain ? — Oui, j’en veux.”',
+      'With numbers, English can drop the noun (“I’ll take two”). French can’t leave the number floating: you have to say “j’en prends deux”. Forgetting “en” here is one of the most common B1 mistakes.'
+    ],
+    examples: [
+      { fr: 'Bon, ben, j’en prends deux, alors.', en: 'en = des croissants. “I’ll take two (of them).”', tag: 'Quantité' },
+      { fr: 'On n’en a plus, des pains au chocolat.', en: 'en = des pains au chocolat. “We don’t have any left.”', tag: 'Ne… plus' }
+    ],
+    oral: '“On n’en a plus, des pains au chocolat” names the thing twice: once as “en”, again at the end. This is called dislocation and it’s everywhere in spoken Paris French: “Je l’aime bien, ce quartier.” “Il est où, ton frère ?” In writing you’d say “Nous n’avons plus de pains au chocolat.”',
+    trap: { wrong: 'Je prends deux.', right: 'J’en prends deux.', why: 'Without “en”, the sentence sounds unfinished to a French ear: two of what?' }
+  },
+  concord: {
+    kicker: 'Discours indirect', title: '« Je mettrais » : le futur dans le passé',
+    short: 'When you report what someone said about the future, the future becomes the conditional.',
+    body: [
+      'Direct: « La semaine prochaine, je mettrai un réveil. » (future)',
+      'Reported: Je lui ai répondu que la semaine prochaine, je mettrais un réveil. (conditional)',
+      'This conditional isn’t about politeness or “what if”. It’s the future seen from a point in the past. English does the same thing: “I will” becomes “I said I would”.'
+    ],
+    examples: [
+      { fr: 'Je lui ai répondu que je mettrais un réveil.', en: 'I told her I would set an alarm.', tag: 'Conditionnel' },
+      { fr: 'Elle m’a dit qu’elle viendrait à huit heures.', en: 'She told me she would come at eight.', tag: 'Conditionnel' }
+    ],
+    oral: 'Mettrai and mettrais sound almost the same for most Parisians, so in speech the difference lives in context. In writing the -s matters, and it’s a classic B2 exam point.',
+    trap: { wrong: 'Il m’a dit qu’il viendra demain.', right: 'Il m’a dit qu’il viendrait demain.', why: 'You’ll hear the first version in casual speech when “tomorrow” is still ahead. The conditional is the correct form and what’s expected in writing.' }
+  },
+  agree: {
+    kicker: 'Accord', title: 'Pourquoi « réveillée » avec un -e ?',
+    short: 'With avoir, the past participle agrees with a direct object that comes before the verb.',
+    body: [
+      'Normally the participle after avoir doesn’t change: “Mon fils a réveillé sa mère.”',
+      'But when the direct object comes before the verb, usually as a pronoun (me, te, la, les…), the participle agrees with it. In “mon fils m’a réveillée”, m’ is Madame Lefèvre, a woman, so réveillé takes an -e.'
+    ],
+    examples: [
+      { fr: 'Mon fils m’a réveillée à sept heures.', en: 'm’ = Madame Lefèvre (feminine).', tag: 'Accord' },
+      { fr: 'Les croissants ? Je les ai mangés.', en: 'les = les croissants (masculine plural).', tag: 'Accord' }
+    ],
+    oral: 'Usually you can’t hear this agreement: réveillé and réveillée sound the same. With some verbs you can (“je l’ai prise”, “je l’ai faite”), and plenty of French people skip it in speech.',
+    trap: { wrong: 'La baguette ? Je l’ai pris.', right: 'La baguette ? Je l’ai prise.', why: 'l’ = la baguette, feminine, placed before avoir.' }
+  }
+};
+const NOTE_ORDER = ['impf', 'en', 'cond', 'concord', 'agree'];
+
+const QUIZ = [
+  { kind: 'Écoute', audio: 8, prompt: 'Listen to the baker. What is she telling the narrator?', note: 'en', options: [
+    { t: 'They’ve run out of pains au chocolat, but there are croissants.', ok: true, why: '“On n’en a plus” = we have none left. “Ne… plus” means no more, and “il me reste” means I still have.' },
+    { t: 'They only have pains au chocolat left.', why: '“Plus” here is part of “ne… plus” (no more), not “more”. Listen for the n’ before en: “on n’en a plus”. It’s short in fast speech, but it’s there.' },
+    { t: 'The pains au chocolat will be ready soon.', why: 'Nothing in the line refers to time. “Il me reste des croissants” = I’ve got croissants left. She’s offering an alternative.' } ] },
+  { kind: 'Grammaire', quote: 'Ce samedi-là, il pleuvait et la queue débordait sur le trottoir.', prompt: 'Why “il pleuvait” (imparfait) and not “il a plu” (passé composé)?', note: 'impf', options: [
+    { t: 'It sets the scene: it was already raining when the events happen.', ok: true, why: 'The rain is the backdrop. The events (the son waking her, the baker smiling) happen against it, in passé composé.' },
+    { t: 'Weather is always in the imparfait.', why: 'Weather can take either tense. “Il a plu toute la nuit” is correct when the rain is a complete event with a start and an end.' },
+    { t: 'Because the rain lasted a long time.', why: 'Duration isn’t the test. “Il a plu pendant trois jours” lasts a long time and uses passé composé. What matters is background vs. event.' } ] },
+  { kind: 'Grammaire', quote: '— Non, mon fils m’a réveillée à sept heures.', prompt: 'Why “réveillée”, with an extra -e?', note: 'agree', options: [
+    { t: 'Because m’ (Madame Lefèvre) is feminine and comes before avoir.', ok: true, why: 'With avoir, the participle agrees with a direct object placed before the verb. M’ is her, so: réveillée.' },
+    { t: 'Because “fils” is a feminine noun.', why: '“Fils” is masculine (le fils). And with avoir, the participle never agrees with the subject anyway.' },
+    { t: 'Because the verb is reflexive.', why: 'It isn’t. Reflexive would be “je me suis réveillée”, with être. Here her son wakes her up: réveiller quelqu’un, with avoir.' } ] },
+  { kind: 'Lecture', quote: '— Bon, ben, j’en prends deux, alors.', prompt: 'What does “en” stand for?', note: 'en', options: [
+    { t: 'des croissants', ok: true, why: 'The baker has just said “il me reste des croissants”. “En” picks that up: two (croissants).' },
+    { t: 'des pains au chocolat', why: 'They’re sold out. The narrator settles for what’s left, the croissants.' },
+    { t: 'la boulangerie', why: '“En” can replace a place introduced with de (“j’en viens” = I’ve just come from there), but nobody’s coming from anywhere here. It replaces the thing being counted.' } ] },
+  { kind: 'Écoute', audio: 10, prompt: 'Listen. What advice does Madame Lefèvre give?', options: [
+    { t: 'Come before eight.', ok: true, why: '“Il faut venir avant huit heures” = you have to come before eight. “Il faut” + infinitive is the everyday way to say you have to.' },
+    { t: 'Come after eight, when it’s quieter.', why: '“Avant” means before. After would be “après”. Listen again for the “a-van” at the start.' },
+    { t: 'Order the day before.', why: '“Il faut venir” = you have to come. Nothing about ordering ahead.' } ] },
+  { kind: 'Compréhension', quote: 'Elle a haussé les épaules : « C’est ce que vous dites tous les samedis ! »', prompt: 'What is Madame Lefèvre implying?', options: [
+    { t: 'The narrator says this every week and never does it.', ok: true, why: '“Tous les samedis” plus a shrug: she’s teasing. That dry, deadpan irony is very Parisian.' },
+    { t: 'The narrator always arrives before eight.', why: 'If that were true, there’d be no queue story. The shrug (hausser les épaules) signals doubt.' },
+    { t: 'She’s also planning to set an alarm.', why: '“Vous dites” = you say. She’s talking about the narrator, not herself.' } ] }
+];
+
+const PAIRS = [
+  { written: 'Nous n’avons plus de pains au chocolat.', spoken: 'On n’en a plus, des pains au chocolat.', reg: 'Courant', note: '“On” replaces “nous” in almost all speech, and the noun gets moved to the end. Saying “nous n’avons plus” at a bakery would sound like a press release.' },
+  { written: 'Une baguette de tradition', spoken: 'Une tradi', reg: 'Courant', note: 'The tradition is the bakery’s better baguette, and everyone orders it as “une tradi”. Bien cuite = well baked, pas trop cuite = pale.' },
+  { written: 'Faire la grasse matinée', spoken: 'Faire la grasse mat’', reg: 'Familier', note: 'Clipping long words is very Parisian: l’apéro, le resto, la clim, d’acc. Fine with neighbours and friends.' },
+  { written: 'Eh bien, j’en prends deux.', spoken: 'Bon, ben, j’en prends deux.', reg: 'Familier', note: '“Ben” (rhymes with “un”) is the spoken filler version of “bien”: “well…”. You’ll also hear “bah”. Neither belongs in an email.' },
+  { written: 'Il y avait Madame Lefèvre.', spoken: 'Y avait Madame Lefèvre.', reg: 'Courant', note: 'In fast speech “il y a” shrinks to “y a”, and “il n’y a pas” becomes “y a pas”. Listen for it on the métro.' },
+  { written: 'Voulez-vous venir avant huit heures ?', spoken: 'Vous venez avant huit heures ?', reg: 'Courant', note: 'Inversion (“voulez-vous”) is for writing and formal speech. In conversation, a plain statement with rising intonation is the default question.' }
+];
+
+const STEPS = [
+  { id: 'story', n: '01', label: 'Écouter et lire', mins: '4 min', desc: 'A 13-sentence story with French audio. Tap any line to hear it.' },
+  { id: 'quiz', n: '02', label: 'Comprendre', mins: '3 min', desc: '6 questions. Every wrong answer comes with the reason.' },
+  { id: 'spoken', n: '03', label: 'Comme on dit', mins: '1 min', desc: 'What you’d write next to what Parisians actually say.' },
+  { id: 'describe', n: '04', label: 'Décrire', mins: '2 min', desc: 'Describe a photo in French. Each correction is explained.' }
+];
+
+const SCENE = 'A café terrace on Place des Abbesses, Montmartre, on a sunny Sunday afternoon. Small round tables and wicker chairs facing the square. A waiter in a black apron carries a tray with two espressos. An older man reads a newspaper with a glass of red wine. A young couple shares a plate of fries. A woman walks past with a small dog and a baguette under her arm. Behind them is the green Art Nouveau métro entrance.';
+const SAMPLE = 'Il y a beaucoup de personnes qui est assis sur la terrasse. Un serveur porte deux cafés et il souris. Il fait beau et les gens a l’air content. Au fond, je vois un homme qui lit son journal pendant il boit un verre du vin. Une femme marche avec son chien et une baguette.';
+const SYS = `You are a French tutor for an English-speaking adult (A2–B1) who lives in Paris and wants to reach B2. Correct their short description of a photo.
+Fix real errors only: grammar, agreement, conjugation, gender, prepositions, wrong word, and clearly unnatural phrasing. Do not rewrite for style.
+Explanations are in plain English, 1–2 sentences, and must explain the rule (the why), not just restate the fix.
+Then give the same description as a Parisian would naturally say it out loud: colloquial but not slangy (on instead of nous, dropped ne, y a, etc.).
+Respond with ONLY a JSON object, no markdown fences:
+{"segments":[{"t":"unchanged text"},{"from":"original wrong text","to":"corrected text","n":1}],"corrections":[{"n":1,"from":"...","to":"...","rule":"rule name, max 4 words","why":"..."}],"corrected":"full corrected text","spoken":"...","spokenNote":"one sentence on what changed in the spoken version and why it sounds natural","praise":"one specific thing they did well, max 15 words"}
+Concatenating each segment's "t" or "from", in order, must reproduce the learner's text exactly. Keep each change to the smallest span. Number corrections in order of appearance. If there are no errors, return a single segment with the whole text and an empty corrections array.`;
+
+class Component extends DCLogic {
+  state = { screen: 'home', note: null, cur: 0, playing: false, started: false, wordPos: -1, rate: 1, showEN: false, noFr: false,
+    q: 0, picks: {}, quizDone: false, text: '', status: 'idle', result: null, err: '', step: 0, done: {} };
+  tok = 0;
+
+  componentDidMount() {
+    const ss = window.speechSynthesis; if (!ss) return;
+    const pick = () => {
+      const vs = ss.getVoices(); if (!vs.length) return;
+      const fr = vs.filter(v => /^fr/i.test(v.lang)); const frFR = fr.filter(v => /fr[-_]FR/i.test(v.lang));
+      const v = frFR.find(v => /Google|Amélie|Thomas|Audrey|Marie|Denise|Henri|Daniel/i.test(v.name)) || frFR[0] || fr[0];
+      this.voice = v || null; this.setState({ noFr: !v });
+    };
+    pick(); ss.addEventListener('voiceschanged', pick);
+  }
+  componentWillUnmount() { this.stopAudio(); }
+
+  stopAudio() { this.tok++; if (window.speechSynthesis) speechSynthesis.cancel(); }
+  mkU(text) { const u = new SpeechSynthesisUtterance(text); u.lang = 'fr-FR'; if (this.voice) u.voice = this.voice; u.rate = this.state.rate === 1 ? 0.95 : 0.72; return u; }
+  playFrom(i) {
+    if (!window.speechSynthesis) return;
+    this.stopAudio(); const tok = this.tok;
+    this.setState({ playing: true, started: true, cur: i, wordPos: -1 });
+    setTimeout(() => this.utter(i, tok), 60);
+  }
+  utter(i, tok) {
+    if (tok !== this.tok) return;
+    const s = STORY[i], sp = spk(s.fr), off = s.fr.length - sp.length, u = this.mkU(sp);
+    u.onboundary = e => { if (tok === this.tok && e.name !== 'sentence') this.setState({ wordPos: e.charIndex + off }); };
+    u.onend = () => {
+      if (tok !== this.tok) return;
+      if (i + 1 < STORY.length) { this.setState({ cur: i + 1, wordPos: -1 }); setTimeout(() => this.utter(i + 1, tok), 250); }
+      else this.setState({ playing: false, wordPos: -1 });
+    };
+    speechSynthesis.speak(u);
+  }
+  pause() { this.stopAudio(); this.setState({ playing: false, wordPos: -1 }); }
+  say(text) {
+    if (!window.speechSynthesis) return;
+    this.stopAudio(); const tok = this.tok; this.setState({ playing: false, wordPos: -1 });
+    setTimeout(() => { if (tok === this.tok) speechSynthesis.speak(this.mkU(spk(text))); }, 60);
+  }
+  go(screen, markDone) {
+    this.stopAudio();
+    this.setState(s => ({ screen, playing: false, wordPos: -1, done: markDone ? { ...s.done, [markDone]: true } : s.done }));
+    window.scrollTo(0, 0);
+  }
+  openNote(id) { if (id) this.setState({ note: id }); }
+  stopProp(fn) { return e => { if (e && e.stopPropagation) e.stopPropagation(); fn(); }; }
+
+  async correct() {
+    const text = this.state.text.trim(); if (!text || this.state.status === 'loading') return;
+    this.setState({ status: 'loading', result: null, err: '', step: 0 });
+    try {
+      const raw = await window.claude.complete({ max_tokens: 2500, system: SYS,
+        messages: [{ role: 'user', content: `Scene in the photo: ${SCENE}\n\nLearner's description:\n${text}` }] });
+      const j = JSON.parse(raw.slice(raw.indexOf('{'), raw.lastIndexOf('}') + 1));
+      this.setState({ status: 'done', result: j, done: { ...this.state.done, describe: true } });
+    } catch (e) {
+      this.setState({ status: 'error', err: 'The correction didn’t come through. Try again in a moment.' });
+    }
+  }
+
+  renderVals() {
+    const st = this.state, p = this.props;
+    const layout = p.playerLayout ?? 'page', fbMode = p.quizFeedback ?? 'inline', cs = p.correctionStyle ?? 'redline';
+    const scr = st.screen, inSession = ['story', 'quiz', 'spoken', 'describe'].includes(scr);
+
+    const steps = STEPS.map(s => ({ ...s, done: !!st.done[s.id], go: () => this.go(s.id),
+      bar: scr === s.id ? 'var(--color-accent)' : st.done[s.id] ? 'var(--color-text)' : 'transparent',
+      numColor: scr === s.id || st.done[s.id] ? 'var(--color-accent-700)' : 'var(--color-neutral-600)' }));
+    const nextStep = STEPS.find(s => !st.done[s.id]);
+    const allDone = !nextStep;
+
+    const sentences = STORY.map((s, i) => {
+      const isCur = i === st.cur, last = s.words.length - 1;
+      return {
+        num: pad(i + 1), en: s.en, hasNote: !!s.note, noteTitle: s.note ? NOTES[s.note].title : '',
+        openNote: this.stopProp(() => this.openNote(s.note)), play: () => this.playFrom(i),
+        numColor: isCur && st.started ? 'var(--color-accent)' : 'var(--color-neutral-600)',
+        color: !st.started || isCur ? 'var(--color-text)' : MUTED,
+        tickBg: !st.started ? 'var(--color-neutral-300)' : i < st.cur ? 'var(--color-accent-300)' : isCur ? 'var(--color-accent)' : 'var(--color-neutral-300)',
+        words: s.words.map((w, j) => {
+          const a = isCur && st.playing && st.wordPos >= w.start && (j === last || st.wordPos < s.words[j + 1].start);
+          return { t: w.t, sp: j < last ? ' ' : '', bg: a ? 'var(--color-accent)' : 'transparent', fg: a ? 'var(--color-bg)' : 'inherit' };
+        })
+      };
+    });
+
+    const Q = QUIZ[st.q], pick = st.picks[st.q], answered = pick != null;
+    const okIdx = Q.options.findIndex(o => o.ok), correct = answered && !!Q.options[pick].ok;
+    const opts = Q.options.map((o, i) => {
+      const isPick = i === pick, s = { letter: 'ABC'[i], t: o.t, why: o.why, pick: () => !answered && this.setState(x => ({ picks: { ...x.picks, [x.q]: i } })),
+        cursor: answered ? 'default' : 'pointer', bg: 'transparent', fg: 'var(--color-text)', border: '1px solid var(--color-divider)', op: 1, label: '',
+        showInline: false, whyBg: 'var(--color-surface)', whyFg: 'var(--color-text)', whyLead: '' };
+      if (answered) {
+        if (o.ok) Object.assign(s, { bg: 'var(--color-text)', fg: 'var(--color-bg)', border: '1px solid var(--color-text)', label: isPick ? 'Juste' : 'Bonne réponse', whyLead: 'Pourquoi c’est juste :' });
+        else if (isPick) Object.assign(s, { bg: 'var(--color-accent-100)', fg: 'var(--color-accent-800)', border: '2px solid var(--color-accent)', label: 'Votre réponse', whyBg: 'var(--color-accent-100)', whyFg: 'var(--color-accent-900)', whyLead: 'Pourquoi c’est faux :' });
+        else s.op = 0.45;
+        s.showInline = fbMode === 'inline' && (o.ok || isPick);
+      }
+      return s;
+    });
+    const score = QUIZ.filter((q, i) => st.picks[i] != null && q.options[st.picks[i]].ok).length;
+    const qTicks = QUIZ.map((q, i) => ({ bg: st.picks[i] != null ? (q.options[st.picks[i]].ok ? 'var(--color-text)' : 'var(--color-accent)') : (i === st.q && !st.quizDone ? 'var(--color-neutral-600)' : 'var(--color-neutral-300)') }));
+
+    const r = st.result || {};
+    const segs = (Array.isArray(r.segments) ? r.segments : []).map(g => {
+      const isChange = g.from != null || g.to != null;
+      return isChange ? { isChange: true, isPlain: false, from: g.from || '', to: g.to || '', both: !!(g.from && g.to), fromShown: g.from || '‸', n: g.n ?? '' } : { isPlain: true, isChange: false, t: g.t || '' };
+    });
+    const corrs = (Array.isArray(r.corrections) ? r.corrections : []).map(c => ({ n: c.n ?? '', from: c.from || '—', to: c.to || '—', rule: c.rule || '', why: c.why || '' }));
+    const stepIdx = Math.min(st.step, Math.max(corrs.length - 1, 0));
+    const words = st.text.trim() ? st.text.trim().split(/\s+/).length : 0;
+    const noteObj = st.note ? NOTES[st.note] : null;
+
+    return {
+      goHome: () => this.go('home'), goLibrary: () => this.go('library'),
+      navHomeColor: scr === 'home' || inSession ? 'var(--color-accent-700)' : 'var(--color-text)',
+      navLibColor: scr === 'library' ? 'var(--color-accent-700)' : 'var(--color-text)',
+      inSession, steps, allDone,
+      isHome: scr === 'home', isLibrary: scr === 'library', isStory: scr === 'story', isQuiz: scr === 'quiz', isSpoken: scr === 'spoken', isDescribe: scr === 'describe',
+      dateLabel: (d => d.charAt(0).toUpperCase() + d.slice(1))(new Date().toLocaleDateString('fr-FR', { weekday: 'long', day: 'numeric', month: 'long' })),
+      startLabel: allDone ? 'Revoir la séance' : st.done.story ? `Reprendre : ${nextStep.label}` : 'Commencer · 10 min',
+      startSession: () => this.go(allDone ? 'story' : nextStep.id),
+      focusNotes: NOTE_ORDER.slice(0, 4).map(id => ({ ...NOTES[id], open: () => this.openNote(id) })),
+      allNotes: NOTE_ORDER.map(id => ({ ...NOTES[id], open: () => this.openNote(id) })),
+
+      noFr: st.noFr, sentences, focus: sentences[st.cur], showEN: st.showEN,
+      isPage: layout === 'page', isFocus: layout === 'focus', isSplit: layout === 'split', notSplit: layout !== 'split',
+      playing: st.playing, notPlaying: !st.playing, playLabel: st.playing ? 'Pause' : st.started ? 'Reprendre' : 'Écouter',
+      togglePlay: () => st.playing ? this.pause() : this.playFrom(st.cur),
+      prevS: () => st.playing ? this.playFrom(Math.max(0, st.cur - 1)) : this.setState({ cur: Math.max(0, st.cur - 1), started: true }),
+      nextS: () => st.playing ? this.playFrom(Math.min(STORY.length - 1, st.cur + 1)) : this.setState({ cur: Math.min(STORY.length - 1, st.cur + 1), started: true }),
+      counter: `${pad(st.cur + 1)} / ${STORY.length}`,
+      rateSlow: st.rate !== 1, rateNorm: st.rate === 1,
+      setSlow: () => this.setState({ rate: 0.75 }, () => st.playing && this.playFrom(this.state.cur)),
+      setNorm: () => this.setState({ rate: 1 }, () => st.playing && this.playFrom(this.state.cur)),
+      toggleEN: () => this.setState({ showEN: !st.showEN }),
+      enBg: st.showEN ? 'var(--color-text)' : 'transparent', enFg: st.showEN ? 'var(--color-bg)' : 'var(--color-text)',
+      toQuiz: () => this.go('quiz', 'story'),
+
+      qTicks, quizActive: !st.quizDone, quizDone: st.quizDone,
+      qNum: st.q + 1, qKind: Q.kind.toUpperCase(), qPrompt: Q.prompt,
+      qListen: Q.audio != null, qHasQuote: !!Q.quote, qQuote: Q.quote || '', qTranscript: Q.audio != null ? spk(STORY[Q.audio].fr) : '',
+      playQ: () => this.say(Q.audio != null ? STORY[Q.audio].fr : Q.quote), playQLabel: 'Écouter la phrase',
+      opts, answered, notAnswered: !answered,
+      isMargin: fbMode === 'margin', showInlineActions: fbMode === 'inline' && answered, showPanel: fbMode === 'panel' && answered,
+      fbHead: correct ? 'Exactement.' : 'Pas tout à fait.', fbHeadColor: correct ? 'var(--color-text)' : 'var(--color-accent-700)',
+      fbWrong: answered && !correct, fbRight: correct, fbBg: correct ? 'var(--color-text)' : 'var(--color-accent-700)',
+      fbPickedLetter: answered ? 'ABC'[pick] : '', fbWrongWhy: answered && !correct ? Q.options[pick].why : '',
+      fbRightLetter: 'ABC'[okIdx], fbRightText: Q.options[okIdx].t, fbRightWhy: Q.options[okIdx].why,
+      qHasNote: !!Q.note, qNoteTitle: Q.note ? NOTES[Q.note].title : '', openQNote: () => this.openNote(Q.note),
+      nextQLabel: st.q < QUIZ.length - 1 ? 'Question suivante' : 'Voir le bilan',
+      nextQ: () => { this.stopAudio(); if (st.q < QUIZ.length - 1) this.setState({ q: st.q + 1 }); else this.setState({ quizDone: true, done: { ...st.done, quiz: true } }); window.scrollTo(0, 0); },
+      score, scoreLine: score === 6 ? 'Tout juste. The grammar notes are still worth a look before tomorrow.' : score >= 4 ? 'Bien. Read the explanation for the ones you missed. Each is a pattern you’ll meet again.' : 'Worth a second listen. Each missed question links to its explanation.',
+      summary: QUIZ.map((q, i) => { const ok = st.picks[i] != null && q.options[st.picks[i]].ok; return { num: pad(i + 1), prompt: q.prompt, label: ok ? 'Juste' : 'À revoir', tagClass: ok ? 'tag tag-neutral' : 'tag tag-accent', canReview: !ok && !!q.note, open: () => this.openNote(q.note) }; }),
+      resetQuiz: () => this.setState({ q: 0, picks: {}, quizDone: false }),
+      toSpoken: () => this.go('spoken', 'quiz'),
+
+      pairs: PAIRS.map(x => ({ ...x, tagClass: x.reg === 'Familier' ? 'tag tag-accent' : 'tag tag-neutral', sayW: () => this.say(x.written), sayS: () => this.say(x.spoken) })),
+      toDescribe: () => this.go('describe', 'spoken'),
+
+      helpers: ['il y a…', 'en train de + infinitif', 'au premier plan', 'au fond', 'à côté de', 'on dirait que…'],
+      text: st.text, onText: e => this.setState({ text: e.target.value }),
+      wordCount: `${words} mot${words === 1 ? '' : 's'}`,
+      cantCorrect: !st.text.trim() || st.status === 'loading',
+      correctLabel: st.status === 'loading' ? 'Correction…' : 'Corriger',
+      correct: () => this.correct(), fillSample: () => this.setState({ text: SAMPLE, result: null, status: 'idle' }),
+      isError: st.status === 'error', err: st.err,
+      hasResult: st.status === 'done' && !!st.result,
+      nCorr: corrs.length === 0 ? 'Aucune erreur' : `${corrs.length} correction${corrs.length > 1 ? 's' : ''}`,
+      hasPraise: !!r.praise, praise: r.praise || '',
+      isRedline: cs === 'redline', isColumns: cs === 'columns', isStepper: cs === 'stepper', showList: cs !== 'stepper' && corrs.length > 0,
+      segs, corrs, hasCorrs: corrs.length > 0,
+      stepNum: stepIdx + 1, nCorrNum: corrs.length, stepC: corrs[stepIdx] || { from: '', to: '', rule: '', why: '' },
+      prevStep: () => this.setState({ step: Math.max(0, stepIdx - 1) }), nextStep: () => this.setState({ step: Math.min(corrs.length - 1, stepIdx + 1) }),
+      corrected: r.corrected || '',
+      hasSpoken: !!r.spoken, spoken: r.spoken || '', spokenNote: r.spokenNote || '', saySpoken: () => this.say(r.spoken || ''),
+      finish: () => this.go('home', 'describe'), rewrite: () => this.setState({ status: 'idle', result: null, step: 0 }),
+
+      noteOpen: !!noteObj, closeNote: () => { this.stopAudio(); this.setState({ note: null }); },
+      note: noteObj ? { ...noteObj, trapWrong: noteObj.trap.wrong, trapRight: noteObj.trap.right, trapWhy: noteObj.trap.why } : { body: [] },
+      noteEx: noteObj ? noteObj.examples.map(ex => ({ ...ex, say: () => this.say(ex.fr) })) : []
+    };
+  }
+}
+</script>
+</body>
+</html>

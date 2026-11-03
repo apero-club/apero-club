@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/ap-ro-design-system-08f13900-f1ef-48a4-af2c-ce8177ed615e/styles.css">
+<script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+<script src="_ds/ap-ro-design-system-08f13900-f1ef-48a4-af2c-ce8177ed615e/_ds_bundle.js"></script>
+<script src="./apero-content.js?v=6"></script>
+<style>
+body{margin:0;background:var(--cream-200);color:var(--fg-1)}
+a{color:var(--violet-500)}a:hover{color:var(--orange-500)}
+button{font-family:inherit}
+textarea::placeholder{color:var(--ink-500)}
+</style>
+</helmet>
+<div style="min-height:100vh;display:flex;align-items:center;justify-content:center;padding:32px 16px;background:var(--cream-200)">
+<x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" dark="{{ deviceDark }}" hint-size="402px,874px">
+<div style="height:100%;position:relative;display:flex;flex-direction:column;background:var(--bg);font-family:var(--font-body);color:var(--ink-900);overflow:hidden">
+
+<!-- HOME -->
+<sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
+  <div style="padding:58px 20px 12px;display:flex;align-items:center;justify-content:space-between;gap:12px">
+    <span style="font:900 22px/1 var(--font-display);letter-spacing:-0.05em;color:var(--violet-500);white-space:nowrap;flex:none">apéro club</span>
+    <x-import component-from-global-scope="ApRoDesignSystem_08f139.Badge" tone="violet" hint-size="76px,26px">B1 → B2</x-import>
+  </div>
+  <div ref="{{ scrollRef }}" style="flex:1;overflow-y:auto;scrollbar-width:none">
+    <section style="background:var(--violet-500);padding:24px 20px 26px;display:flex;flex-direction:column;gap:12px">
+      <span class="t-eyebrow" style="color:var(--lilac-500)">{{ dateLabel }}</span>
+      <h1 style="margin:0;font:900 40px/0.92 var(--font-display);letter-spacing:-0.05em;color:var(--lilac-500)">Le pain du samedi</h1>
+      <p style="margin:0;font-size:16px;line-height:1.5;color:var(--white)">A Saturday morning queue at a bakery on rue des Martyrs.</p>
+      <sc-if value="{{ allDone }}" hint-placeholder-val="{{ false }}">
+        <span style="font:700 26px/1 var(--font-hand);color:var(--lilac-500);transform:rotate(-2deg);align-self:flex-start">Séance terminée ! À demain.</span>
+      </sc-if>
+    </section>
+    <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr))">
+      <x-import component-from-global-scope="ApRoDesignSystem_08f139.ShapeTile" shape="arch" bg="orange-500" fg="sun-300" hint-size="100%,134px"></x-import>
+      <x-import component-from-global-scope="ApRoDesignSystem_08f139.ShapeTile" shape="circle" bg="sky-300" fg="violet-500" eyes="look" blink="{{ true }}" hint-size="100%,134px"></x-import>
+      <x-import component-from-global-scope="ApRoDesignSystem_08f139.ShapeTile" shape="flower" bg="green-900" fg="green-300" hint-size="100%,134px"></x-import>
+    </div>
+    <section style="padding:26px 20px 8px;display:flex;flex-direction:column;gap:6px">
+      <span class="t-eyebrow" style="color:var(--fg-3)">Today’s session · 10 min</span>
+      <div style="display:flex;flex-direction:column;gap:22px;padding:18px 0 8px">
+        <sc-for list="{{ nodes }}" as="nd" hint-placeholder-count="5">
+          <div style="display:flex;align-items:center;gap:16px;padding-left:{{ nd.indent }}">
+            <x-import component-from-global-scope="ApRoDesignSystem_08f139.LessonNode" state="{{ nd.state }}" icon="{{ nd.icon }}" size="{{ 64 }}" onClick="{{ nd.go }}" hint-size="64px,78px"></x-import>
+            <span style="display:flex;flex-direction:column;gap:4px;min-width:0">
+              <span style="font:800 16px/1.15 var(--font-display);letter-spacing:-0.03em;color:{{ nd.labelColor }}">{{ nd.label }}</span>
+              <span style="font-size:13px;color:var(--fg-3)">{{ nd.sub }}</span>
+              <sc-if value="{{ nd.isNext }}"><span style="font:700 22px/1 var(--font-hand);color:var(--violet-500);transform:rotate(-3deg);align-self:flex-start;margin-top:2px">you’re here!</span></sc-if>
+            </span>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+    <section style="padding:12px 20px 28px">
+      <button onClick="{{ goGrammar }}" style="width:100%;display:grid;grid-template-columns:minmax(0,1fr) 96px;padding:0;border:0;border-radius:var(--radius-lg);overflow:hidden;cursor:pointer;text-align:left;background:var(--white);box-shadow:0 4px 0 var(--cream-300)">
+        <span style="display:flex;flex-direction:column;gap:6px;padding:18px 18px 18px 20px">
+          <span class="t-eyebrow" style="color:var(--violet-700)">Grammar</span>
+          <span style="font:900 24px/1 var(--font-display);letter-spacing:-0.05em;color:var(--violet-500)">Pourquoi&#8239;?</span>
+          <span style="font-size:14px;line-height:1.4;color:var(--ink-700)">5 notes from today’s story</span>
+        </span>
+        <span style="position:relative;min-height:96px"><span style="position:absolute;inset:0"><x-import component-from-global-scope="ApRoDesignSystem_08f139.ShapeTile" shape="asterisk" bg="violet-500" fg="lilac-500" dc-props="{{ fillTile }}" style="width:100%;height:100%" hint-size="100%,100%"></x-import></span></span>
+      </button>
+    </section>
+  </div>
+  <div style="padding:14px 20px 34px;border-top:2px solid var(--cream-200);background:var(--bg)">
+    <x-import component-from-global-scope="ApRoDesignSystem_08f139.Button" size="lg" block="{{ true }}" icon-right="arrow-right" onClick="{{ startSession }}" hint-size="100%,56px">{{ startLabel }}</x-import>
+  </div>
+</sc-if>
+
+<!-- SESSION HEADER -->
+<sc-if value="{{ inSession }}" hint-placeholder-val="{{ false }}">
+  <div style="padding:56px 16px 10px;display:flex;align-items:center;gap:10px">
+    <x-import component-from-global-scope="ApRoDesignSystem_08f139.IconButton" icon="x" label="Back to today" variant="ghost" onClick="{{ goHome }}" hint-size="44px,44px"></x-import>
+    <div style="flex:1;min-width:0">
+      <x-import component-from-global-scope="ApRoDesignSystem_08f139.ProgressBar" value="{{ progVal }}" max="{{ progMax }}" tone="green" size="lg" hint-size="100%,18px"></x-import>
+    </div>
+    <x-import component-from-global-scope="ApRoDesignSystem_08f139.Badge" tone="violet" hint-size="48px,26px">{{ stepBadge }}</x-import>
+  </div>
+</sc-if>
+
+<!-- STORY -->
+<sc-if value="{{ isStory }}" hint-placeholder-val="{{ false }}">
+  <div ref="{{ scrollRef }}" style="flex:1;overflow-y:auto;scrollbar-width:none">
+    <div style="display:grid;grid-template-columns:minmax(0,1fr) 88px">
+      <div style="background:var(--violet-500);padding:18px 20px;display:flex;flex-direction:column;gap:8px">
+        <span class="t-eyebrow" style="color:var(--lilac-500)">01 · Écouter et lire</span>
+        <h2 style="margin:0;font:900 26px/0.95 var(--font-display);letter-spacing:-0.045em;color:var(--lilac-500)">Le pain du samedi</h2>
+      </div>
+      <div style="position:relative;min-height:88px"><div style="position:absolute;inset:0"><x-import component-from-global-scope="ApRoDesignSystem_08f139.ShapeTile" shape="arch" bg="orange-500" fg="sun-300" dc-props="{{ fillTile }}" style="width:100%;height:100%" hint-size="100%,100%"><x-import component-from-global-scope="ApRoDesignSystem_08f139.Icon" name="headphones" size="{{ 24 }}" color="var(--orange-700)" hint-size="24px,24px"></x-import></x-import></div></div>
+    </div>
+    <div style="padding:16px 20px 4px;display:flex;flex-wrap:wrap;gap:10px 16px">
+      <span style="display:flex;gap:6px;align-items:center"><x-import component-from-global-scope="ApRoDesignSystem_08f139.Critter" kind="bean" color="sun-500" size="30px" blink="{{ true }}" hint-size="30px,30px"></x-import><span style="font:700 13px/1 var(--font-body);color:var(--ink-900)">Moi</span></span>
+      <span style="display:flex;gap:6px;align-items:center"><x-import component-from-global-scope="ApRoDesignSystem_08f139.Critter" kind="dome" color="violet-500" size="30px" blink="{{ true }}" blink-delay="{{ 900 }}" hint-size="30px,30px"></x-import><span style="font:700 13px/1 var(--font-body);color:var(--violet-500)">Madame Lefèvre</span></span>
+      <span style="display:flex;gap:6px;align-items:center"><x-import component-from-global-scope="ApRoDesignSystem_08f139.Critter" kind="jelly" color="sky-500" size="30px" blink="{{ true }}" blink-delay="{{ 1700 }}" hint-size="30px,30px"></x-import><span style="font:700 13px/1 var(--font-body);color:var(--sky-700)">La boulangère</span></span>
+    </div>
+    <div style="padding:6px 20px 0;display:flex;flex-direction:column;gap:4px">
+      <span style="font:700 22px/1 var(--font-hand);color:var(--violet-500);transform:rotate(-2deg);align-self:flex-start;white-space:nowrap">tap any line to hear it</span>
+      <sc-if value="{{ noFr }}" hint-placeholder-val="{{ false }}"><span style="font-size:12px;color:var(--fg-3)">No French voice on this device, so audio uses the default voice.</span></sc-if>
+    </div>
+    <div style="padding:14px 20px 28px;display:flex;flex-direction:column;gap:16px">
+      <sc-for list="{{ blocks }}" as="b" hint-placeholder-count="5">
+        <div style="display:flex;flex-direction:column;gap:4px">
+          <sc-if value="{{ b.isDlg }}" hint-placeholder-val="{{ false }}"><span class="t-eyebrow" style="color:{{ b.whoLabel }}">{{ b.whoName }}</span></sc-if>
+          <p style="margin:0;font:500 18px/1.6 var(--font-body);color:var(--ink-900)"><sc-for list="{{ b.sents }}" as="s"><span onClick="{{ s.play }}" style="cursor:pointer;border-radius:8px;-webkit-box-decoration-break:clone;box-decoration-break:clone;padding:2px 1px;background:{{ s.rowBg }}"><sc-for list="{{ s.words }}" as="w"><span style="border-radius:6px;background:{{ w.bg }};color:{{ w.fg }}">{{ w.t }}</span>{{ w.sp }}</sc-for></span><sc-if value="{{ s.hasNote }}"><button onClick="{{ s.openNote }}" style="display:inline-flex;align-items:center;vertical-align:2px;margin-left:5px;height:24px;padding:0 10px;border:0;border-radius:var(--radius-pill);background:var(--violet-500);color:var(--white);font:700 11px/1 var(--font-display);cursor:pointer;box-shadow:0 2px 0 var(--violet-900)">why?</button></sc-if>{{ s.after }}</sc-for></p>
+          <sc-if value="{{ showEN }}" hint-placeholder-val="{{ false }}"><p style="margin:0;font-size:14px;line-height:1.45;color:var(--fg-3)">{{ b.en }}</p></sc-if>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+  <div style="padding:12px 16px 34px;border-top:2px solid var(--cream-200);background:var(--bg);display:flex;flex-direction:column;gap:12px">
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:6px">
+      <button onClick="{{ toggleSlow }}" style="display:inline-flex;align-items:center;gap:6px;height:40px;padding:0 14px;border:2px solid var(--violet-500);border-radius:var(--radius-pill);cursor:pointer;font:600 13px/1 var(--font-display);background:{{ slowBg }};color:{{ slowFg }}"><x-import component-from-global-scope="ApRoDesignSystem_08f139.Icon" name="turtle" size="{{ 16 }}" hint-size="16px,16px"></x-import>Slow</button>
+      <x-import component-from-global-scope="ApRoDesignSystem_08f139.IconButton" icon="skip-back" label="Previous line" variant="ghost" onClick="{{ prevS }}" hint-size="44px,44px"></x-import>
+      <x-import component-from-global-scope="ApRoDesignSystem_08f139.IconButton" icon="{{ playIcon }}" label="{{ playLabel }}" variant="primary" size="lg" shape="circle" onClick="{{ togglePlay }}" hint-size="56px,56px"></x-import>
+      <x-import component-from-global-scope="ApRoDesignSystem_08f139.IconButton" icon="skip-forward" label="Next line" variant="ghost" onClick="{{ nextS }}" hint-size="44px,44px"></x-import>
+      <button onClick="{{ toggleEN }}" style="display:inline-flex;align-items:center;height:40px;padding:0 14px;border:2px solid var(--violet-500);border-radius:var(--radius-pill);cursor:pointer;font:600 13px/1 var(--font-display);background:{{ enBg }};color:{{ enFg }}">EN</button>
+    </div>
+    <x-import component-from-global-scope="ApRoDesignSystem_08f139.Button" variant="secondary" size="md" block="{{ true }}" icon-right="arrow-right" onClick="{{ toQuiz }}" hint-size="100%,48px">Continue to quiz</x-import>
+  </div>
+</sc-if>
+
+<!-- QUIZ -->
+<sc-if value="{{ isQuizActive }}" hint-placeholder-val="{{ false }}">
+  <div ref="{{ scrollRef }}" style="flex:1;overflow-y:auto;scrollbar-width:none">
+    <h2 style="margin:0;padding:12px 20px 16px;font:800 20px/1.2 var(--font-display);letter-spacing:-0.035em;color:var(--ink-900);text-wrap:pretty">{{ qPrompt }}</h2>
+    <div style="display:grid;grid-template-columns:minmax(0,1fr) 84px">
+      <div style="background:var(--violet-500);padding:18px 20px;display:flex;flex-direction:column;gap:12px;justify-content:center;min-height:120px">
+        <span class="t-eyebrow" style="color:var(--lilac-500)">Question {{ qNum }} / 6 · {{ qKind }}</span>
+        <sc-if value="{{ qListen }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex;gap:12px;align-items:center">
+            <x-import component-from-global-scope="ApRoDesignSystem_08f139.IconButton" icon="volume-2" label="Play the line" variant="secondary" size="lg" onClick="{{ playQ }}" hint-size="56px,56px"></x-import>
+            <sc-if value="{{ answered }}" hint-placeholder-val="{{ false }}"><span style="font:600 15px/1.4 var(--font-body);color:var(--white)">« {{ qTranscript }} »</span></sc-if>
+            <sc-if value="{{ notAnswered }}" hint-placeholder-val="{{ true }}"><span style="font:700 24px/1 var(--font-hand);color:var(--lilac-500);transform:rotate(-3deg)">listen, no peeking!</span></sc-if>
+          </div>
+        </sc-if>
+        <sc-if value="{{ qHasQuote }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex;gap:12px;align-items:center">
+            <x-import component-from-global-scope="ApRoDesignSystem_08f139.IconButton" icon="volume-2" label="Play" variant="secondary" shape="circle" size="sm" onClick="{{ playQ }}" hint-size="40px,40px"></x-import>
+            <p style="margin:0;font:800 17px/1.3 var(--font-display);letter-spacing:-0.03em;color:var(--lilac-500)">{{ qQuote }}</p>
+          </div>
+        </sc-if>
+      </div>
+      <div style="position:relative;min-height:84px"><div style="position:absolute;inset:0"><x-import component-from-global-scope="ApRoDesignSystem_08f139.ShapeTile" shape="{{ qShape.shape }}" bg="{{ qShape.bg }}" fg="{{ qShape.fg }}" dc-props="{{ fillTile }}" style="width:100%;height:100%" hint-size="100%,100%"></x-import></div></div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--ink-900);border-top:2px solid var(--ink-900);border-bottom:2px solid var(--ink-900)">
+      <sc-for list="{{ opts }}" as="o" hint-placeholder-count="3">
+        <x-import component-from-global-scope="ApRoDesignSystem_08f139.ChoiceTile" variant="block" index="{{ o.idx }}" state="{{ o.state }}" onClick="{{ o.choose }}" dc-props="{{ o.extra }}" hint-size="100%,160px">{{ o.t }}</x-import>
+      </sc-for>
+      <div style="position:relative;min-height:112px"><div style="position:absolute;inset:0"><x-import component-from-global-scope="ApRoDesignSystem_08f139.ShapeTile" shape="{{ qShape2.shape }}" bg="{{ qShape2.bg }}" fg="{{ qShape2.fg }}" dc-props="{{ fillTile }}" style="width:100%;height:100%" hint-size="100%,100%"></x-import></div></div>
+    </div>
+    <sc-if value="{{ showQNote }}" hint-placeholder-val="{{ false }}">
+      <div style="padding:14px 12px 20px">
+        <x-import component-from-global-scope="ApRoDesignSystem_08f139.Button" variant="ghost" size="sm" icon="lightbulb" onClick="{{ openQNote }}" hint-size="200px,36px">Why? {{ qNoteTitle }}</x-import>
+      </div>
+    </sc-if>
+  </div>
+  <sc-if value="{{ notAnswered }}" hint-placeholder-val="{{ true }}">
+    <div style="padding:14px 20px 34px;border-top:2px solid var(--cream-200);background:var(--bg)">
+      <x-import component-from-global-scope="ApRoDesignSystem_08f139.Button" size="lg" block="{{ true }}" disabled="{{ noSel }}" onClick="{{ checkQ }}" hint-size="100%,56px">Check</x-import>
+    </div>
+  </sc-if>
+  <sc-if value="{{ answered }}" hint-placeholder-val="{{ false }}">
+    <x-import component-from-global-scope="ApRoDesignSystem_08f139.FeedbackBanner" result="{{ fbResult }}" title="{{ fbHead }}" answer="{{ fbAnswer }}" note="{{ fbNote }}" continue-label="{{ nextQLabel }}" on-continue="{{ nextQ }}" style="padding-bottom:34px" hint-size="100%,200px"></x-import>
+  </sc-if>
+</sc-if>
+
+<!-- QUIZ RESULTS -->
+<sc-if value="{{ isQuizDone }}" hint-placeholder-val="{{ false }}">
+  <div ref="{{ scrollRef }}" style="flex:1;overflow-y:auto;scrollbar-width:none;padding:12px 20px 24px;display:flex;flex-direction:column;gap:16px">
+    <div style="display:flex;align-items:flex-end;gap:14px">
+      <span style="font:900 88px/0.85 var(--font-display);letter-spacing:-0.06em;color:var(--violet-500)">{{ score }}<span style="color:var(--ink-500)">/6</span></span>
+      <span style="font:700 26px/1 var(--font-hand);color:var(--violet-500);transform:rotate(-3deg);padding-bottom:6px">{{ scoreHand }}</span>
+    </div>
+    <p style="margin:0;font-size:15px;line-height:1.5;color:var(--ink-700)">{{ scoreLine }}</p>
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <sc-for list="{{ summary }}" as="r" hint-placeholder-count="6">
+        <div style="display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:var(--radius-md);background:var(--white);box-shadow:inset 0 0 0 2px var(--cream-200)">
+          <span style="font:900 15px/1 var(--font-display);color:var(--violet-500)">{{ r.num }}</span>
+          <span style="flex:1;min-width:0;font-size:14px;line-height:1.35">{{ r.prompt }}</span>
+          <sc-if value="{{ r.canReview }}"><x-import component-from-global-scope="ApRoDesignSystem_08f139.IconButton" icon="lightbulb" label="Why?" variant="ghost" size="sm" onClick="{{ r.open }}" hint-size="40px,40px"></x-import></sc-if>
+          <x-import component-from-global-scope="ApRoDesignSystem_08f139.Badge" tone="{{ r.tone }}" hint-size="60px,26px">{{ r.label }}</x-import>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+  <div style="padding:14px 20px 34px;border-top:2px solid var(--cream-200);background:var(--bg);display:flex;gap:10px">
+    <x-import component-from-global-scope="ApRoDesignSystem_08f139.Button" variant="outline" size="lg" icon="rotate-ccw" onClick="{{ resetQuiz }}" hint-size="120px,56px">Retry</x-import>
+    <div style="flex:1"><x-import component-from-global-scope="ApRoDesignSystem_08f139.Button" size="lg" block="{{ true }}" icon-right="arrow-right" onClick="{{ toSpoken }}" hint-size="100%,56px">Continue</x-import></div>
+  </div>
+</sc-if>
+
+<!-- SAY IT -->
+<sc-if value="{{ isSpoken }}" hint-placeholder-val="{{ false }}">
+  <div ref="{{ scrollRef }}" style="flex:1;overflow-y:auto;scrollbar-width:none">
+    <div style="padding:12px 20px 18px;display:flex;flex-direction:column;gap:6px">
+      <span class="t-eyebrow" style="color:var(--violet-700)">03 · Comme on dit · {{ pairNum }} / 6</span>
+      <h2 style="margin:0;font:800 20px/1.2 var(--font-display);letter-spacing:-0.035em">Ce qu’on écrit, ce qu’on dit</h2>
+    </div>
+    <div style="background:var(--white);padding:20px;display:flex;flex-direction:column;gap:12px">
+      <span class="t-eyebrow" style="color:var(--fg-3)">Written</span>
+      <div style="display:flex;gap:12px;align-items:center">
+        <x-import component-from-global-scope="ApRoDesignSystem_08f139.IconButton" icon="volume-2" label="Listen" variant="outline" shape="circle" size="sm" onClick="{{ pair.sayW }}" hint-size="40px,40px"></x-import>
+        <span style="font-size:18px;line-height:1.35;color:var(--ink-700)">{{ pair.written }}</span>
+      </div>
+    </div>
+    <div style="background:var(--violet-500);padding:22px 20px 24px;display:flex;flex-direction:column;gap:14px">
+      <span style="display:flex;gap:8px;align-items:center;flex-wrap:wrap"><span class="t-eyebrow" style="color:var(--lilac-500)">Spoken, in Paris</span><x-import component-from-global-scope="ApRoDesignSystem_08f139.Badge" tone="{{ pair.tone }}" variant="soft" size="sm" hint-size="64px,22px">{{ pair.reg }}</x-import></span>
+      <div style="display:flex;gap:12px;align-items:center">
+        <x-import component-from-global-scope="ApRoDesignSystem_08f139.IconButton" icon="volume-2" label="Listen" variant="secondary" shape="circle" onClick="{{ pair.sayS }}" hint-size="48px,48px"></x-import>
+        <span style="font:800 24px/1.15 var(--font-display);letter-spacing:-0.035em;color:var(--white);text-wrap:balance">{{ pair.spoken }}</span>
+      </div>
+    </div>
+    <div style="background:var(--violet-50);padding:20px;display:flex;flex-direction:column;gap:8px">
+      <span class="t-eyebrow" style="color:var(--violet-700)">Why</span>
+      <p style="margin:0;font-size:15px;line-height:1.55;color:var(--ink-900);text-wrap:pretty">{{ pair.note }}</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr))">
+      <x-import component-from-global-scope="ApRoDesignSystem_08f139.ShapeTile" shape="halves" bg="sun-300" fg="orange-500" hint-size="100%,134px"></x-import>
+      <x-import component-from-global-scope="ApRoDesignSystem_08f139.ShapeTile" shape="pill" bg="green-900" fg="green-300" hint-size="100%,134px"></x-import>
+      <x-import component-from-global-scope="ApRoDesignSystem_08f139.ShapeTile" shape="circle" bg="sky-300" fg="sky-700" hint-size="100%,134px"></x-import>
+    </div>
+  </div>
+  <div style="padding:14px 20px 34px;border-top:2px solid var(--cream-200);background:var(--bg);display:flex;gap:10px">
+    <sc-if value="{{ hasPrevPair }}" hint-placeholder-val="{{ false }}"><x-import component-from-global-scope="ApRoDesignSystem_08f139.IconButton" icon="arrow-left" label="Previous" variant="outline" size="lg" onClick="{{ prevPair }}" hint-size="56px,56px"></x-import></sc-if>
+    <div style="flex:1"><x-import component-from-global-scope="ApRoDesignSystem_08f139.Button" size="lg" block="{{ true }}" icon-right="arrow-right" onClick="{{ nextPair }}" hint-size="100%,56px">{{ nextPairLabel }}</x-import></div>
+  </div>
+</sc-if>
+
+<!-- DESCRIBE -->
+<sc-if value="{{ isWrite }}" hint-placeholder-val="{{ false }}">
+  <div ref="{{ scrollRef }}" style="flex:1;overflow-y:auto;scrollbar-width:none">
+    <div style="background:var(--violet-500);padding:18px 40px 0;display:flex;justify-content:center">
+      <div style="width:100%;aspect-ratio:1;border-radius:var(--radius-arch-full);overflow:hidden;background:var(--cream-100)">
+        <img src="assets/scene-bakery.png" alt="Two pigeons at a bakery counter: a violet pigeon baker hands a coffee to a pink pigeon customer" style="display:block;width:100%;height:100%;object-fit:cover;object-position:50% 100%">
+      </div>
+    </div>
+    <div style="padding:18px 20px 24px;display:flex;flex-direction:column;gap:14px">
+      <div style="display:flex;flex-direction:column;gap:6px">
+        <span class="t-eyebrow" style="color:var(--violet-700)">04 · Décrire</span>
+        <h2 style="margin:0;font:900 26px/1 var(--font-display);letter-spacing:-0.045em;color:var(--violet-500)">Décris la scène</h2>
+        <p style="margin:0;font-size:15px;line-height:1.5;color:var(--ink-700)">Write 3 to 5 sentences: who is there, what are they doing, what’s in the shop?</p>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px">
+        <sc-for list="{{ helpers }}" as="hp" hint-placeholder-count="6">
+          <x-import component-from-global-scope="ApRoDesignSystem_08f139.WordChip" onClick="{{ hp.add }}" hint-size="90px,40px">{{ hp.t }}</x-import>
+        </sc-for>
+      </div>
+      <textarea value="{{ text }}" onChange="{{ onText }}" placeholder="Dans la boulangerie, il y a…" style="width:100%;min-height:150px;resize:none;padding:14px 16px;border-radius:var(--radius-md);border:2px solid var(--cream-300);background:var(--white);font:400 17px/1.5 var(--font-body);color:var(--ink-900);box-sizing:border-box" style-focus="border-color:var(--violet-500);box-shadow:0 0 0 4px var(--violet-100);outline:none"></textarea>
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px">
+        <span style="font-size:13px;color:var(--fg-3)">{{ wordCount }}</span>
+        <x-import component-from-global-scope="ApRoDesignSystem_08f139.Button" variant="ghost" size="sm" icon="sparkles" onClick="{{ fillSample }}" hint-size="130px,36px">Try a sample</x-import>
+      </div>
+      <sc-if value="{{ isError }}" hint-placeholder-val="{{ false }}"><p style="margin:0;font-size:14px;line-height:1.45;color:var(--orange-900)">{{ err }}</p></sc-if>
+    </div>
+  </div>
+  <div style="padding:14px 20px 34px;border-top:2px solid var(--cream-200);background:var(--bg)">
+    <x-import component-from-global-scope="ApRoDesignSystem_08f139.Button" size="lg" block="{{ true }}" disabled="{{ cantCorrect }}" onClick="{{ correct }}" hint-size="100%,56px">{{ correctLabel }}</x-import>
+  </div>
+</sc-if>
+
+<!-- CORRECTIONS -->
+<sc-if value="{{ isResult }}" hint-placeholder-val="{{ false }}">
+  <div ref="{{ scrollRef }}" style="flex:1;overflow-y:auto;scrollbar-width:none;display:flex;flex-direction:column">
+    <div style="padding:12px 20px 16px;display:flex;flex-direction:column;gap:12px">
+      <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+        <h2 style="margin:0;font:900 24px/1 var(--font-display);letter-spacing:-0.045em;color:var(--violet-500)">Corrections</h2>
+        <x-import component-from-global-scope="ApRoDesignSystem_08f139.Badge" tone="orange" hint-size="100px,26px">{{ nCorr }}</x-import>
+      </div>
+      <sc-if value="{{ hasPraise }}" hint-placeholder-val="{{ false }}"><span style="font:700 26px/1 var(--font-hand);color:var(--green-700);transform:rotate(-2deg);align-self:flex-start">{{ praise }}</span></sc-if>
+      <p style="margin:0;padding:18px;border-radius:var(--radius-lg);background:var(--white);box-shadow:inset 0 0 0 2px var(--cream-200);font:400 17px/1.85 var(--font-body)"><sc-for list="{{ segs }}" as="g"><sc-if value="{{ g.isPlain }}">{{ g.t }}</sc-if><sc-if value="{{ g.isChange }}"><span><sc-if value="{{ g.hasFrom }}"><del style="color:var(--orange-700);text-decoration-thickness:2px">{{ g.from }}</del>{{ g.gap }}</sc-if><strong style="color:var(--green-700)">{{ g.to }}</strong><sup style="font:800 10px/1 var(--font-display);color:var(--violet-500);margin-left:2px">{{ g.n }}</sup></span></sc-if></sc-for></p>
+    </div>
+    <sc-if value="{{ hasCorrs }}" hint-placeholder-val="{{ true }}">
+      <div style="background:var(--violet-500);padding:20px;display:flex;flex-direction:column;gap:14px">
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:10px">
+          <span class="t-eyebrow" style="color:var(--lilac-500)">{{ stepNum }} / {{ nCorrNum }} · {{ stepC.rule }}</span>
+          <div style="display:flex;gap:6px">
+            <x-import component-from-global-scope="ApRoDesignSystem_08f139.IconButton" icon="arrow-left" label="Previous" variant="secondary" shape="circle" size="sm" onClick="{{ prevStep }}" hint-size="40px,40px"></x-import>
+            <x-import component-from-global-scope="ApRoDesignSystem_08f139.IconButton" icon="arrow-right" label="Next" variant="secondary" shape="circle" size="sm" onClick="{{ nextStep }}" hint-size="40px,40px"></x-import>
+          </div>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:4px 12px;align-items:baseline">
+          <del style="font:600 20px/1.2 var(--font-body);color:var(--orange-300);text-decoration-thickness:2px">{{ stepC.from }}</del>
+          <span style="font:900 28px/1.05 var(--font-display);letter-spacing:-0.04em;color:var(--lilac-500)">{{ stepC.to }}</span>
+        </div>
+        <p style="margin:0;font-size:15px;line-height:1.55;color:var(--white)">{{ stepC.why }}</p>
+      </div>
+    </sc-if>
+    <sc-if value="{{ hasSpoken }}" hint-placeholder-val="{{ false }}">
+      <div style="padding:20px;display:flex;flex-direction:column;gap:10px">
+        <span class="t-eyebrow" style="color:var(--violet-700)">Spoken, in Paris</span>
+        <div style="display:flex;gap:12px;align-items:flex-start">
+          <x-import component-from-global-scope="ApRoDesignSystem_08f139.IconButton" icon="volume-2" label="Listen" variant="primary" shape="circle" size="sm" onClick="{{ saySpoken }}" hint-size="40px,40px"></x-import>
+          <p style="margin:0;font-size:16px;line-height:1.55">{{ spoken }}</p>
+        </div>
+        <p style="margin:0;font-size:14px;line-height:1.5;color:var(--fg-3)">{{ spokenNote }}</p>
+      </div>
+    </sc-if>
+  </div>
+  <div style="padding:14px 20px 34px;border-top:2px solid var(--cream-200);background:var(--bg);display:flex;gap:10px">
+    <x-import component-from-global-scope="ApRoDesignSystem_08f139.Button" variant="outline" size="lg" icon="pen-line" onClick="{{ rewrite }}" hint-size="130px,56px">Rewrite</x-import>
+    <div style="flex:1"><x-import component-from-global-scope="ApRoDesignSystem_08f139.Button" size="lg" block="{{ true }}" icon-right="arrow-right" onClick="{{ finish }}" hint-size="100%,56px">Finish</x-import></div>
+  </div>
+</sc-if>
+
+<!-- COMPLETE -->
+<sc-if value="{{ isComplete }}" hint-placeholder-val="{{ false }}">
+  <div style="flex:1;display:flex;flex-direction:column;background:var(--violet-500);padding-top:54px">
+    <div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:22px;padding:0 24px">
+      <div style="display:flex;justify-content:center;align-items:flex-end;gap:6px">
+        <x-import component-from-global-scope="ApRoDesignSystem_08f139.Critter" kind="bean" color="sun-300" size="88px" expression="happy" tilt="{{ -6 }}" style="animation:pop-in var(--dur-slow) var(--ease-bounce)" hint-size="88px,88px"></x-import>
+        <x-import component-from-global-scope="ApRoDesignSystem_08f139.Critter" kind="arch" color="lilac-500" size="112px" expression="happy" blink="{{ true }}" hint-size="112px,112px"></x-import>
+        <x-import component-from-global-scope="ApRoDesignSystem_08f139.Critter" kind="jelly" color="sky-300" size="88px" expression="wink" tilt="{{ 6 }}" hint-size="88px,88px"></x-import>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px;align-items:center;text-align:center">
+        <h1 style="margin:0;font:900 38px/0.95 var(--font-display);letter-spacing:-0.05em;color:var(--lilac-500)">Séance terminée&#8239;!</h1>
+        <p style="margin:0;font-size:16px;line-height:1.5;color:var(--white);max-width:30ch">You listened, checked, compared and wrote. À demain.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--violet-700);border-radius:var(--radius-lg);overflow:hidden">
+        <div style="background:var(--violet-500);padding:16px;display:flex;flex-direction:column;gap:6px;box-shadow:inset 0 0 0 2px var(--violet-700)">
+          <span style="font:900 34px/1 var(--font-display);letter-spacing:-0.05em;color:var(--white)">{{ score }}/6</span>
+          <span class="t-eyebrow" style="color:var(--lilac-500)">Quiz</span>
+        </div>
+        <div style="background:var(--violet-500);padding:16px;display:flex;flex-direction:column;gap:6px;box-shadow:inset 0 0 0 2px var(--violet-700)">
+          <span style="font:900 34px/1 var(--font-display);letter-spacing:-0.05em;color:var(--white)">{{ nCorrNum }}</span>
+          <span class="t-eyebrow" style="color:var(--lilac-500)">Corrections</span>
+        </div>
+      </div>
+    </div>
+    <div class="ribbon" style="height:72px;--pat-b:var(--violet-500)"></div>
+    <div style="padding:16px 20px 34px;display:flex;flex-direction:column;gap:8px">
+      <x-import component-from-global-scope="ApRoDesignSystem_08f139.Button" variant="secondary" size="lg" block="{{ true }}" onClick="{{ goHome }}" hint-size="100%,56px">Back to today</x-import>
+    </div>
+  </div>
+</sc-if>
+
+<!-- GRAMMAR LIST -->
+<sc-if value="{{ isGrammar }}" hint-placeholder-val="{{ false }}">
+  <div style="padding:56px 16px 10px;display:flex;align-items:center;gap:8px">
+    <x-import component-from-global-scope="ApRoDesignSystem_08f139.IconButton" icon="arrow-left" label="Back" variant="ghost" onClick="{{ goHome }}" hint-size="44px,44px"></x-import>
+    <span style="font:900 22px/1 var(--font-display);letter-spacing:-0.05em;color:var(--violet-500)">Pourquoi&#8239;?</span>
+  </div>
+  <div ref="{{ scrollRef }}" style="flex:1;overflow-y:auto;scrollbar-width:none;padding-bottom:34px">
+    <p style="margin:0;padding:0 20px 16px;font-size:15px;line-height:1.5;color:var(--ink-700)">The grammar behind today’s story, explained in English.</p>
+    <sc-for list="{{ allNotes }}" as="an" hint-placeholder-count="5">
+      <button onClick="{{ an.open }}" style="width:100%;display:grid;grid-template-columns:minmax(0,1fr) 96px;padding:0;border:0;cursor:pointer;text-align:left;background:{{ an.bg }};color:{{ an.fg }}">
+        <span style="display:flex;flex-direction:column;gap:8px;padding:18px 16px 18px 20px;min-width:0">
+          <span class="t-eyebrow">{{ an.num }} · {{ an.kicker }}</span>
+          <span style="font:900 19px/1.05 var(--font-display);letter-spacing:-0.04em;text-wrap:balance">{{ an.title }}</span>
+          <span style="font-size:14px;line-height:1.45">{{ an.short }}</span>
+        </span>
+        <span style="position:relative;min-height:96px"><span style="position:absolute;inset:0"><x-import component-from-global-scope="ApRoDesignSystem_08f139.ShapeTile" shape="{{ an.shape }}" bg="{{ an.tileBg }}" fg="{{ an.tileFg }}" accent="{{ an.tileAccent }}" dc-props="{{ fillTile }}" style="width:100%;height:100%" hint-size="100%,100%"></x-import></span></span>
+      </button>
+    </sc-for>
+  </div>
+</sc-if>
+
+<!-- NOTE SHEET -->
+<sc-if value="{{ noteOpen }}" hint-placeholder-val="{{ false }}">
+  <div style="position:absolute;inset:0;z-index:40;display:flex;flex-direction:column;justify-content:flex-end">
+    <div onClick="{{ closeNote }}" style="position:absolute;inset:0;background:var(--scrim)"></div>
+    <div style="position:relative;max-height:88%;display:flex;flex-direction:column;background:var(--bg);border-radius:32px 32px 0 0;overflow:hidden;box-shadow:var(--shadow-sheet);animation:slide-up var(--dur-slow) var(--ease-out)">
+      <div style="background:var(--violet-500);padding:16px 20px 22px;display:flex;flex-direction:column;gap:10px">
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:12px">
+          <span class="t-eyebrow" style="color:var(--lilac-500)">Why? · {{ note.kicker }}</span>
+          <x-import component-from-global-scope="ApRoDesignSystem_08f139.IconButton" icon="x" label="Close" variant="secondary" shape="circle" size="sm" onClick="{{ closeNote }}" hint-size="40px,40px"></x-import>
+        </div>
+        <h2 style="margin:0;font:900 24px/1 var(--font-display);letter-spacing:-0.045em;color:var(--lilac-500);text-wrap:balance">{{ note.title }}</h2>
+        <p style="margin:0;font:600 16px/1.4 var(--font-body);color:var(--white)">{{ note.short }}</p>
+      </div>
+      <div style="flex:1;overflow-y:auto;scrollbar-width:none;padding:20px 20px 40px;display:flex;flex-direction:column;gap:16px">
+        <sc-for list="{{ note.body }}" as="para" hint-placeholder-count="2">
+          <p style="margin:0;font-size:15px;line-height:1.6">{{ para }}</p>
+        </sc-for>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <sc-for list="{{ noteEx }}" as="ex" hint-placeholder-count="2">
+            <div style="display:flex;gap:12px;align-items:flex-start;padding:14px;border-radius:var(--radius-md);background:var(--white);box-shadow:inset 0 0 0 2px var(--cream-200)">
+              <x-import component-from-global-scope="ApRoDesignSystem_08f139.IconButton" icon="volume-2" label="Listen" variant="outline" shape="circle" size="sm" onClick="{{ ex.say }}" hint-size="40px,40px"></x-import>
+              <div style="display:flex;flex-direction:column;gap:4px;min-width:0">
+                <span style="font:800 16px/1.25 var(--font-display);letter-spacing:-0.03em;color:var(--violet-500)">{{ ex.fr }}</span>
+                <span style="font-size:13px;line-height:1.4;color:var(--fg-3)">{{ ex.en }}</span>
+                <span style="align-self:flex-start;font:600 11px/1 var(--font-display);padding:5px 9px;border-radius:var(--radius-pill);background:var(--violet-100);color:var(--violet-700);white-space:nowrap">{{ ex.tag }}</span>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:6px;padding:16px;border-radius:var(--radius-md);background:var(--sun-300)">
+          <span class="t-eyebrow" style="color:var(--sun-900)">Spoken, in Paris</span>
+          <p style="margin:0;font-size:14px;line-height:1.55;color:var(--ink-900)">{{ note.oral }}</p>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:6px;padding:16px;border-radius:var(--radius-md);background:var(--white);box-shadow:inset 0 0 0 2px var(--cream-200)">
+          <span style="font:700 24px/1 var(--font-hand);color:var(--orange-700);transform:rotate(-2deg);align-self:flex-start">the trap!</span>
+          <span style="font-size:16px"><del style="color:var(--orange-700);text-decoration-thickness:2px">{{ note.trapWrong }}</del></span>
+          <span style="font-size:16px;font-weight:700;color:var(--green-700)">{{ note.trapRight }}</span>
+          <p style="margin:0;font-size:14px;line-height:1.55;color:var(--ink-700)">{{ note.trapWhy }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</sc-if>
+
+</div>
+</x-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const FILL = { style: { width: '100%', height: '100%' } };
+const NOTE_LOOK = {
+  impf: { bg: 'var(--white)', fg: 'var(--ink-900)', shape: 'halves', tileBg: 'orange-500', tileFg: 'orange-300' },
+  en: { bg: 'var(--violet-500)', fg: 'var(--white)', shape: 'flower', tileBg: 'sun-300', tileFg: 'violet-500', tileAccent: 'orange-500' },
+  cond: { bg: 'var(--sun-300)', fg: 'var(--sun-900)', shape: 'arch', tileBg: 'orange-500', tileFg: 'sun-300' },
+  concord: { bg: 'var(--sky-300)', fg: 'var(--sky-900)', shape: 'circle', tileBg: 'violet-500', tileFg: 'sky-300' },
+  agree: { bg: 'var(--green-300)', fg: 'var(--green-900)', shape: 'pill', tileBg: 'green-900', tileFg: 'pink-500' }
+};
+const Q_SHAPES = [
+  [{ shape: 'asterisk', bg: 'sun-300', fg: 'orange-500' }, { shape: 'pill', bg: 'sky-300', fg: 'violet-500' }],
+  [{ shape: 'arch', bg: 'orange-500', fg: 'sun-300' }, { shape: 'halves', bg: 'green-900', fg: 'green-300' }],
+  [{ shape: 'halves', bg: 'sun-300', fg: 'orange-500' }, { shape: 'pill', bg: 'sky-300', fg: 'sky-700' }],
+  [{ shape: 'pill', bg: 'green-900', fg: 'green-300' }, { shape: 'asterisk', bg: 'violet-500', fg: 'lilac-500' }],
+  [{ shape: 'arch', bg: 'sky-300', fg: 'violet-500' }, { shape: 'asterisk', bg: 'sun-300', fg: 'orange-500' }],
+  [{ shape: 'pill', bg: 'orange-500', fg: 'sun-300' }, { shape: 'halves', bg: 'green-900', fg: 'green-300' }]
+];
+const NODE_ICON = { story: 'headphones', quiz: 'circle-help', spoken: 'messages-square', describe: 'pen-line' };
+const INDENT = ['0px', '56px', '104px', '56px', '0px'];
+const PRAISE = ['Nice one!', 'Très bien.', 'Perfect.', 'Exactement.', 'Bien vu.', 'Spot on.'];
+const HELPERS = ['il y a…', 'en train de', 'au premier plan', 'derrière le comptoir', 'dans la vitrine', 'on dirait que'];
+const MALE = /thomas|henri|r[ée]my|jacques|daniel|paul|claude|antoine|jean|alain|guillaume|yves|fabrice|j[ée]r[ôo]me|maurice|nicolas|mathieu|olivier|s[ée]bastien|louis|gilles|\bmale\b|homme/i;
+const FEMALE = /am[ée]lie|audrey|aur[ée]lie|marie|denise|elo[iï]se|vivienne|julie|hortense|c[ée]line|virginie|brigitte|coralie|jacqueline|jos[ée]phine|yvette|c[ée]leste|sylvie|chantal|google|female|femme|l[ée]a\b|juliette|charlotte|manon|alice|ariane|sabine/i;
+const NAT = /natural|neural|online|premium|enhanced|amélioré/i;
+const vScore = v => {
+  const n = v.name; let s = 0;
+  if (/fr[-_]FR/i.test(v.lang)) s += 40; else if (/fr[-_]CA/i.test(v.lang)) s -= 10;
+  if (/natural|neural|online/i.test(n)) s += 100;
+  if (/premium/i.test(n)) s += 90; else if (/enhanced|amélioré|siri/i.test(n)) s += 70;
+  if (/google/i.test(n)) s += 50;
+  if (/vivienne|denise|eloise|henri|remy|amélie|audrey|thomas|aurélie/i.test(n)) s += 15;
+  if (v.localService && /^(thomas|amélie|audrey|aurélie|marie|jacques)\b/i.test(n)) s += 45;
+  if (/multilingual/i.test(n)) s -= 300;
+  if (/compact|espeak|e-speak|eddy|flo|grandma|grandpa|reed|rocko|sandy|shelley/i.test(n)) s -= 60;
+  if (!v.localService) s += 5;
+  return s;
+};
+const forSpeech = t => t.replace(/[«»—]/g, ' ').replace(/[’‘]/g, "'").replace(/\u202F|\u00A0/g, ' ');
+const castVoices = fr => {
+  const good = fr.filter(v => vScore(v) > 0 && !/multilingual/i.test(v.name));
+  if (good.length) fr = good;
+  const isM = v => MALE.test(v.name) && !FEMALE.test(v.name);
+  const males = fr.filter(isM), fem = fr.filter(v => !isM(v)).sort((a, b) => (/fr[-_]FR/i.test(b.lang) ? 1 : 0) - (/fr[-_]FR/i.test(a.lang) ? 1 : 0));
+  const n = males[0] || fr[0] || null;
+  const l = fem.find(v => v !== n) || fr.find(v => v !== n) || n;
+  const isFR = v => v && /fr[-_]FR/i.test(v.lang);
+  const b = fem.find(v => v !== n && v !== l && isFR(v)) || (isFR(l) ? l : fem.find(v => v !== n && v !== l)) || l;
+  return { male: !!males[0],
+    n: { voice: n, pitch: males[0] ? 1 : 0.78 },
+    l: { voice: l, pitch: l === n ? 0.92 : 0.94, rate: 0.96 },
+    b: { voice: b, pitch: b === l ? 1.28 : b === n ? 1.15 : 1, rate: b === l ? 1.08 : 1 } };
+};
+
+class Component extends DCLogic {
+  state = { screen: 'home', note: null, cur: 0, playing: false, started: false, wordPos: -1, rate: 1, showEN: false, noFr: false,
+    q: 0, sel: null, picks: {}, quizDone: false, pi: 0, text: '', status: 'idle', result: null, err: '', step: 0, done: {} };
+  tok = 0;
+  scrollRef = el => { this.scrollEl = el; };
+
+  componentDidMount() {
+    if (!window.APERO || !window.APERO.PARAS) this._wait = setInterval(() => { if (window.APERO && window.APERO.PARAS) { clearInterval(this._wait); this.forceUpdate(); } }, 50);
+    const ss = window.speechSynthesis; if (!ss) return;
+    const pick = () => {
+      const vs = ss.getVoices(); if (!vs.length) return;
+      const fr = vs.filter(v => /^fr/i.test(v.lang)).sort((a, b) => vScore(b) - vScore(a));
+      this.cast = castVoices(fr);
+      this.setState({ noFr: !fr.length });
+    };
+    pick(); ss.addEventListener('voiceschanged', pick);
+  }
+  componentWillUnmount() { clearInterval(this._wait); this.stopAudio(); }
+  top() { if (this.scrollEl) this.scrollEl.scrollTop = 0; }
+
+  stopAudio() { this.tok++; if (window.speechSynthesis) speechSynthesis.cancel(); }
+  mkU(text, who) {
+    const c = (this.cast || {})[who || 'n'] || {}, u = new SpeechSynthesisUtterance(text), nat = !!c.voice && NAT.test(c.voice.name), slow = this.state.rate !== 1;
+    if (c.voice) { u.voice = c.voice; u.lang = c.voice.lang.replace('_', '-'); } else u.lang = 'fr-FR';
+    u.pitch = c.pitch || 1;
+    u.rate = (slow ? 0.62 : (nat ? 1 : 0.95)) * (c.rate || 1);
+    return u;
+  }
+  playFrom(i) {
+    if (!window.speechSynthesis) return;
+    this.stopAudio(); const tok = this.tok;
+    this.setState({ playing: true, started: true, cur: i, wordPos: -1 });
+    setTimeout(() => this.utter(i, 0, tok, true), 60);
+  }
+  utter(i, pi, tok, follow) {
+    if (tok !== this.tok) return;
+    const { STORY } = window.APERO;
+    const s = STORY[i], p = s.parts[pi], txt = forSpeech(s.fr.slice(p.start, p.end));
+    const next = () => {
+      if (tok !== this.tok) return;
+      if (pi + 1 < s.parts.length) setTimeout(() => this.utter(i, pi + 1, tok, follow), 140);
+      else if (follow && i + 1 < STORY.length) { this.setState({ cur: i + 1, wordPos: -1 }); setTimeout(() => this.utter(i + 1, 0, tok, follow), 300); }
+      else if (follow) this.setState({ playing: false, wordPos: -1 });
+    };
+    if (!txt.trim()) return next();
+    const u = this.mkU(txt, p.who);
+    if (follow) u.onboundary = e => { if (tok === this.tok && e.name !== 'sentence') this.setState({ wordPos: p.start + e.charIndex }); };
+    u.onend = next;
+    u.onerror = e => { if (e && (e.error === 'interrupted' || e.error === 'canceled')) return; next(); };
+    speechSynthesis.speak(u);
+  }
+  sayLine(i) {
+    if (!window.speechSynthesis) return;
+    this.stopAudio(); const tok = this.tok; this.setState({ playing: false, wordPos: -1 });
+    setTimeout(() => this.utter(i, 0, tok, false), 60);
+  }
+  pause() { this.stopAudio(); this.setState({ playing: false, wordPos: -1 }); }
+  say(text, who) {
+    if (!window.speechSynthesis || !text) return;
+    this.stopAudio(); const tok = this.tok; this.setState({ playing: false, wordPos: -1 });
+    setTimeout(() => { if (tok === this.tok) speechSynthesis.speak(this.mkU(forSpeech(window.APERO.spk(text)), who)); }, 60);
+  }
+  go(screen, markDone, extra) {
+    this.stopAudio();
+    this.setState(s => ({ screen, note: null, playing: false, wordPos: -1, done: markDone ? { ...s.done, [markDone]: true } : s.done, ...(extra || {}) }), () => this.top());
+  }
+  openNote(id) { if (id) { this.stopAudio(); this.setState({ note: id, playing: false }); } }
+  stopProp(fn) { return e => { if (e && e.stopPropagation) e.stopPropagation(); fn(); }; }
+
+  async correct() {
+    const { SCENE, SYS } = window.APERO;
+    const text = this.state.text.trim(); if (!text || this.state.status === 'loading') return;
+    if (!window.claude || typeof window.claude.complete !== 'function') {
+      this.setState({ status: 'error', err: 'Corrections need a connection to the apéro club tutor, which this offline copy doesn’t have. Open the project version to try it.' });
+      return;
+    }
+    this.setState({ status: 'loading', result: null, err: '', step: 0 });
+    const parse = raw => {
+      const t = String(raw || '').replace(/```(?:json)?/gi, '');
+      const j = JSON.parse(t.slice(t.indexOf('{'), t.lastIndexOf('}') + 1));
+      if (!Array.isArray(j.segments) || !Array.isArray(j.corrections)) throw new Error('shape');
+      return j;
+    };
+    const user = `Scene in the illustration: ${SCENE}\n\nLearner's description:\n${text}`;
+    let j = null, lastErr = null;
+    for (let attempt = 0; attempt < 2 && !j; attempt++) {
+      try {
+        const call = window.claude.complete({ model: 'claude-haiku-4-5', max_tokens: 2500, system: SYS,
+          messages: attempt === 0 ? [{ role: 'user', content: user }]
+            : [{ role: 'user', content: user + '\n\nReturn ONLY the JSON object. Escape any double quotes inside strings. No commentary.' }] });
+        const raw = await Promise.race([call, new Promise((_, rej) => setTimeout(() => rej(new Error('timeout')), 45000))]);
+        if (this.state.status !== 'loading') return;
+        j = parse(raw);
+      } catch (e) { lastErr = e; console.warn('correction attempt failed', e); }
+    }
+    if (j) { this.setState({ status: 'done', result: j, screen: 'result' }, () => this.top()); }
+    else {
+      const m = String(lastErr && (lastErr.message || lastErr));
+      this.setState({ status: 'error', err: /rate|429|limit/i.test(m) ? 'Too many checks in a row. Wait a minute, then try again.' : /timeout/i.test(m) ? 'The tutor took too long to answer. Try again.' : 'The correction didn’t come through. Try again in a moment.' });
+    }
+  }
+
+  renderVals() {
+    const A = window.APERO; if (!A || !A.PARAS) return {};
+    const { pad, STORY, PARAS, CAST, spk, NOTES, NOTE_ORDER, QUIZ, PAIRS, STEPS, SAMPLE } = A;
+    const st = this.state, scr = st.screen;
+    const isQuiz = scr === 'quiz';
+    const inSession = ['story', 'quiz', 'spoken', 'describe', 'result'].includes(scr);
+
+    const nextStep = STEPS.find(s => !st.done[s.id]);
+    const allDone = !nextStep;
+    const nodes = STEPS.map((s, i) => {
+      const isDone = !!st.done[s.id], isNext = !!nextStep && nextStep.id === s.id;
+      return { label: s.label, sub: s.mins, icon: NODE_ICON[s.id], indent: INDENT[i], isNext,
+        state: isDone ? 'done' : isNext ? 'current' : 'locked',
+        labelColor: isDone || isNext ? 'var(--ink-900)' : 'var(--fg-3)',
+        go: () => this.go(s.id, null, s.id === 'quiz' ? { q: 0, sel: null, picks: {}, quizDone: false } : s.id === 'spoken' ? { pi: 0 } : s.id === 'describe' ? { status: 'idle', err: '' } : { cur: 0, started: false }) };
+    });
+    nodes.push({ label: 'Séance terminée', sub: allDone ? 'Done today' : 'Finish all 4', icon: 'trophy', indent: INDENT[4], isNext: false,
+      state: allDone ? 'done' : 'locked', labelColor: allDone ? 'var(--ink-900)' : 'var(--fg-3)', go: () => this.go('complete') });
+
+    const sentences = STORY.map((s, i) => {
+      const isCur = i === st.cur, last = s.words.length - 1;
+      const partAt = pos => s.parts.find(p => pos >= p.start && pos < p.end) || s.parts[0];
+      return {
+        hasNote: !!s.note, openNote: this.stopProp(() => this.openNote(s.note)), play: () => this.playFrom(i),
+        rowBg: isCur && st.started ? 'var(--white)' : 'transparent',
+        words: s.words.map((w, j) => {
+          const a = isCur && st.playing && st.wordPos >= w.start && (j === last || st.wordPos < s.words[j + 1].start);
+          return { t: w.t, sp: j < last ? ' ' : '', bg: a ? 'var(--violet-500)' : 'transparent', fg: a ? 'var(--white)' : CAST[partAt(w.start).who].color };
+        })
+      };
+    });
+    const blocks = PARAS.map(ix => {
+      const f = STORY[ix[0]], c = CAST[f.who];
+      return { isDlg: f.dlg, whoName: c.name, whoLabel: c.label, en: ix.map(i => STORY[i].en).join(' '),
+        sents: ix.map((i, k) => ({ ...sentences[i], after: k < ix.length - 1 ? ' ' : '' })) };
+    });
+
+    const Q = QUIZ[st.q], pick = st.picks[st.q], answered = pick != null;
+    const okIdx = Q.options.findIndex(o => o.ok), correct = answered && !!Q.options[pick].ok;
+    const opts = Q.options.map((o, i) => {
+      const state = !answered ? (st.sel === i ? 'selected' : 'idle') : o.ok ? 'correct' : i === pick ? 'wrong' : 'disabled';
+      return { idx: i + 1, t: o.t, state, extra: state === 'correct' ? { style: { color: 'var(--ink-900)' } } : {},
+        choose: () => { if (!answered) this.setState({ sel: i }); } };
+    });
+    const score = QUIZ.filter((q, i) => st.picks[i] != null && q.options[st.picks[i]].ok).length;
+
+    const r = st.result || {};
+    const segs = (Array.isArray(r.segments) ? r.segments : []).map(g => {
+      const isChange = g.from != null || g.to != null;
+      return isChange ? { isChange: true, isPlain: false, hasFrom: !!g.from, from: g.from || '', gap: g.from && g.to ? ' ' : '', to: g.to || '', n: g.n ?? '' } : { isPlain: true, isChange: false, t: g.t || '' };
+    });
+    const corrs = (Array.isArray(r.corrections) ? r.corrections : []).map(c => ({ from: c.from || '—', to: c.to || '—', rule: c.rule || '', why: c.why || '' }));
+    const stepIdx = Math.min(st.step, Math.max(corrs.length - 1, 0));
+    const words = st.text.trim() ? st.text.trim().split(/\s+/).length : 0;
+    const noteObj = st.note ? NOTES[st.note] : null;
+    const pair = PAIRS[st.pi];
+
+    const prog = scr === 'story' ? [st.started ? st.cur + 1 : 0, STORY.length]
+      : isQuiz ? [st.quizDone ? QUIZ.length : st.q + (answered ? 1 : 0), QUIZ.length]
+      : scr === 'spoken' ? [st.pi + 1, PAIRS.length]
+      : scr === 'result' ? [1, 1] : [0, 1];
+    const badge = { story: '1/4', quiz: '2/4', spoken: '3/4', describe: '4/4', result: '4/4' }[scr] || '';
+
+    return {
+      fillTile: FILL, scrollRef: this.scrollRef, deviceDark: scr === 'complete',
+      isHome: scr === 'home', isStory: scr === 'story', isQuizActive: isQuiz && !st.quizDone, isQuizDone: isQuiz && st.quizDone,
+      isSpoken: scr === 'spoken', isWrite: scr === 'describe', isResult: scr === 'result', isComplete: scr === 'complete', isGrammar: scr === 'grammar',
+      inSession, progVal: prog[0], progMax: prog[1], stepBadge: badge,
+      goHome: () => this.go('home'), goGrammar: () => this.go('grammar'),
+      dateLabel: new Date().toLocaleDateString('fr-FR', { weekday: 'long', day: 'numeric', month: 'long' }),
+      nodes, allDone,
+      startLabel: allDone ? 'See today’s results' : st.done.story ? 'Continue · ' + nextStep.label : 'Start · 10 min',
+      startSession: () => allDone ? this.go('complete') : nodes.find(n => n.isNext).go(),
+
+      blocks, showEN: st.showEN, noFr: st.noFr,
+      playIcon: st.playing ? 'pause' : 'play', playLabel: st.playing ? 'Pause' : 'Play',
+      togglePlay: () => st.playing ? this.pause() : this.playFrom(st.cur),
+      prevS: () => st.playing ? this.playFrom(Math.max(0, st.cur - 1)) : this.setState({ cur: Math.max(0, st.cur - 1), started: true }),
+      nextS: () => st.playing ? this.playFrom(Math.min(STORY.length - 1, st.cur + 1)) : this.setState({ cur: Math.min(STORY.length - 1, st.cur + 1), started: true }),
+      slowBg: st.rate !== 1 ? 'var(--violet-500)' : 'transparent', slowFg: st.rate !== 1 ? 'var(--white)' : 'var(--violet-500)',
+      toggleSlow: () => {
+        const was = this.state.playing;
+        this.setState(s => ({ rate: s.rate === 1 ? 0.62 : 1 }), () => {
+          if (was) { this.stopAudio(); setTimeout(() => this.playFrom(this.state.cur), 150); }
+          else { this.sayLine(this.state.cur); this.setState({ started: true }); }
+        });
+      },
+      enBg: st.showEN ? 'var(--violet-500)' : 'transparent', enFg: st.showEN ? 'var(--white)' : 'var(--violet-500)',
+      toggleEN: () => this.setState({ showEN: !st.showEN }),
+      toQuiz: () => this.go('quiz', 'story', { q: 0, sel: null, picks: {}, quizDone: false }),
+
+      qNum: st.q + 1, qKind: Q.kind, qPrompt: Q.prompt,
+      qListen: Q.audio != null, qHasQuote: !!Q.quote, qQuote: Q.quote || '', qTranscript: Q.audio != null ? spk(STORY[Q.audio].fr) : '',
+      qShape: Q_SHAPES[st.q % 6][0], qShape2: Q_SHAPES[st.q % 6][1],
+      playQ: () => Q.audio != null ? this.sayLine(Q.audio) : this.say(Q.quote),
+      opts, answered, notAnswered: !answered, noSel: st.sel == null,
+      checkQ: () => { if (st.sel != null) { this.stopAudio(); this.setState(x => ({ picks: { ...x.picks, [x.q]: x.sel } })); } },
+      fbResult: correct ? 'correct' : 'wrong',
+      fbHead: correct ? PRAISE[st.q % PRAISE.length] : 'Not quite',
+      fbAnswer: answered ? (correct ? '' : Q.options[okIdx].t) : '',
+      fbNote: answered ? (correct ? Q.options[okIdx].why : Q.options[pick].why) : '',
+      showQNote: answered && !!Q.note, qNoteTitle: Q.note ? NOTES[Q.note].title : '', openQNote: () => this.openNote(Q.note),
+      nextQLabel: correct ? 'Continue' : 'Got it',
+      nextQ: () => { this.stopAudio(); if (st.q < QUIZ.length - 1) this.setState({ q: st.q + 1, sel: null }, () => this.top()); else this.setState(s => ({ quizDone: true, done: { ...s.done, quiz: true } }), () => this.top()); },
+      score, scoreHand: score === 6 ? 'tout juste!' : score >= 4 ? 'bien joué!' : 'one more listen?',
+      scoreLine: score === 6 ? 'Every question right.' : 'Tap the bulb next to a missed question to see the rule behind it.',
+      summary: QUIZ.map((q, i) => { const ok = st.picks[i] != null && q.options[st.picks[i]].ok; return { num: pad(i + 1), prompt: q.prompt, label: ok ? 'Right' : 'Review', tone: ok ? 'green' : 'orange', canReview: !ok && !!q.note, open: () => this.openNote(q.note) }; }),
+      resetQuiz: () => this.setState({ q: 0, sel: null, picks: {}, quizDone: false }, () => this.top()),
+      toSpoken: () => this.go('spoken', 'quiz', { pi: 0 }),
+
+      pair: { ...pair, tone: pair.reg === 'Familier' ? 'sun' : 'sky', sayW: () => this.say(pair.written), sayS: () => this.say(pair.spoken) },
+      pairNum: st.pi + 1, hasPrevPair: st.pi > 0,
+      prevPair: () => { this.stopAudio(); this.setState({ pi: Math.max(0, st.pi - 1) }, () => this.top()); },
+      nextPair: () => { this.stopAudio(); if (st.pi < PAIRS.length - 1) this.setState({ pi: st.pi + 1 }, () => this.top()); else this.go('describe', 'spoken', { status: 'idle', err: '' }); },
+      nextPairLabel: st.pi < PAIRS.length - 1 ? 'Next' : 'Continue',
+
+      helpers: HELPERS.map(t => ({ t, add: () => this.setState(s => ({ text: (s.text && !/\s$/.test(s.text) ? s.text + ' ' : s.text) + t.replace('…', '') + ' ' })) })),
+      text: st.text, onText: e => this.setState({ text: e.target.value }),
+      wordCount: `${words} word${words === 1 ? '' : 's'}`,
+      cantCorrect: !st.text.trim() || st.status === 'loading',
+      correctLabel: st.status === 'loading' ? 'Checking…' : 'Check',
+      correct: () => this.correct(), fillSample: () => this.setState({ text: SAMPLE, status: 'idle', err: '' }),
+      isError: st.status === 'error', err: st.err,
+      nCorr: corrs.length === 0 ? 'No mistakes' : `${corrs.length} correction${corrs.length > 1 ? 's' : ''}`,
+      hasPraise: !!r.praise, praise: r.praise || '',
+      segs, hasCorrs: corrs.length > 0, nCorrNum: corrs.length,
+      stepNum: stepIdx + 1, stepC: corrs[stepIdx] || { from: '', to: '', rule: '', why: '' },
+      prevStep: () => this.setState({ step: Math.max(0, stepIdx - 1) }), nextStep: () => this.setState({ step: Math.min(corrs.length - 1, stepIdx + 1) }),
+      hasSpoken: !!r.spoken, spoken: r.spoken || '', spokenNote: r.spokenNote || '', saySpoken: () => this.say(r.spoken || ''),
+      rewrite: () => this.go('describe', null, { status: 'idle', step: 0 }),
+      finish: () => this.go('complete', 'describe'),
+
+      allNotes: NOTE_ORDER.map((id, i) => ({ ...NOTES[id], ...NOTE_LOOK[id], tileAccent: NOTE_LOOK[id].tileAccent || '', num: pad(i + 1), open: () => this.openNote(id) })),
+      noteOpen: !!noteObj, closeNote: () => { this.stopAudio(); this.setState({ note: null }); },
+      note: noteObj ? { ...noteObj, trapWrong: noteObj.trap.wrong, trapRight: noteObj.trap.right, trapWhy: noteObj.trap.why } : { body: [] },
+      noteEx: noteObj ? noteObj.examples.map(ex => ({ ...ex, say: () => this.say(ex.fr) })) : []
+    };
+  }
+}
+</script>
+</body>
+</html>
