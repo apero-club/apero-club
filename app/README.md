@@ -2,7 +2,7 @@
 
 A daily French lesson for A2 to B1 learners, built from the Claude Design handoff in `../project/` (`Apero App v2.dc.html`). It shows today's lesson: a multi-voice story, a quiz that explains every answer, written vs. spoken French, a describe-the-scene exercise, and the grammar notes behind the story.
 
-Static site, free to host, no accounts and no payments.
+Hosted free on Vercel behind a shared access code. No accounts and no payments.
 
 ## Run it
 
@@ -29,9 +29,19 @@ src/audio/                   French voice casting and story playback (browser sp
 src/styles/                  design tokens copied from the DS, plus app layout
 ```
 
-## Deploying (GitHub Pages)
+## Deploying (Vercel, behind an access code)
 
-`.github/workflows/deploy.yml` tests, builds and deploys on every push to `main`. One-time setup: in the repo on GitHub, go to **Settings → Pages** and set **Source** to **GitHub Actions**. The site appears at `https://<user>.github.io/<repo>/`.
+Vercel builds from this `app/` folder on every push (`main` is production; other branches get preview URLs). `vercel.json` runs the tests first, so a broken lesson never deploys. GitHub Actions (`.github/workflows/ci.yml`) runs the same checks but doesn't deploy.
+
+**Access code.** `middleware.ts` runs on Vercel before every request, including the app's scripts and lesson files. Until a visitor enters the code, they only get the access-code screen (`gate/page.ts`). A correct code sets an HttpOnly cookie for 400 days, so a device only enters it once. The code is never in the repo or sent to the browser.
+
+- The code comes from the Vercel environment variable `ACCESS_CODE`. Changing an environment variable only takes effect after a redeploy (Deployments → ⋯ → Redeploy, no code change needed).
+- To change it instantly with no redeploy, connect a Vercel **Edge Config** store to the project and add an item `accessCode`; it takes priority over `ACCESS_CODE`.
+- Codes ignore case and surrounding spaces. Changing the code signs every device out.
+- If no code is set, nobody gets in.
+- Local `npm run dev` has no gate.
+
+**Search engines.** Every response carries `X-Robots-Tag: noindex, nofollow`, and the pages have a matching robots meta tag.
 
 Lessons can be pushed ahead of time: the app picks the right one on the learner's device each day, so there's no need to redeploy daily.
 

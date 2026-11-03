@@ -1,0 +1,94 @@
+/**
+ * The access-code screen. Self-contained HTML (no app bundle, which is behind the
+ * gate) built from the apéro club tokens: ultramarine hero band, lilac wordmark,
+ * a 3-tile poster strip with one blinking face, lipped pill button.
+ */
+const esc = (s: string) => s.replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]!);
+
+export type GateState = 'ask' | 'wrong' | 'unset';
+
+const MESSAGES: Record<Exclude<GateState, 'ask'>, string> = {
+  wrong: 'That code didn’t work. Check it and try again.',
+  unset: 'Access isn’t set up yet. Ask the person who invited you.',
+};
+
+export function gatePage(state: GateState, next: string): string {
+  const msg = state === 'ask' ? '' : `<p class="msg" role="alert">${MESSAGES[state]}</p>`;
+  return `<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#3A1FD4">
+<title>apéro club</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%233A1FD4'/%3E%3Cpath d='M16 56V32a16 16 0 0 1 32 0v24z' fill='%23F0A4EB'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600..900&family=Figtree:wght@400..700&family=Caveat:wght@700&display=swap">
+<style>
+:root{--violet-50:#EFECFF;--violet-100:#DDD7FF;--violet-500:#3A1FD4;--violet-700:#2913A6;--violet-900:#160A5C;--lilac-500:#F0A4EB;--lilac-700:#C463BE;
+--orange-500:#FF5A1F;--orange-900:#641B02;--sun-300:#FFCF66;--green-300:#86D9A9;--green-900:#004A3A;--sky-300:#ADD1F1;
+--white:#fff;--cream-100:#ECE9E3;--cream-200:#DFDBD2;--cream-300:#CBC5B9;--ink-500:#6C6773;--ink-700:#3B3741;--ink-900:#121014;
+--display:'Unbounded','Figtree',system-ui,sans-serif;--body:'Figtree',system-ui,sans-serif;--hand:'Caveat','Comic Sans MS',cursive;--ease:cubic-bezier(.22,1,.36,1)}
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0;min-height:100%;background:var(--cream-200);color:var(--ink-900);font:400 16px/1.5 var(--body);-webkit-font-smoothing:antialiased}
+.shell{display:flex;flex-direction:column;min-height:100dvh;max-width:440px;margin:0 auto;background:var(--cream-100);overflow:hidden}
+@media (min-width:520px) and (min-height:700px){body{min-height:100dvh;display:flex;align-items:center;padding:24px 16px}.shell{width:100%;min-height:0;border-radius:40px;box-shadow:0 0 0 10px var(--ink-900),0 18px 36px -14px rgba(18,16,20,.3)}}
+.hero{background:var(--violet-500);padding:calc(env(safe-area-inset-top,0px) + 40px) 24px 30px;display:flex;flex-direction:column;gap:12px}
+.eyebrow{font:700 12px/1 var(--display);letter-spacing:.04em;text-transform:uppercase;color:var(--lilac-500)}
+h1{margin:0;font:900 48px/.92 var(--display);letter-spacing:-.05em;color:var(--lilac-500)}
+.lede{margin:0;font-size:16px;line-height:1.5;color:var(--white);max-width:30ch}
+.tiles{display:grid;grid-template-columns:repeat(3,1fr)}
+.tile{aspect-ratio:1;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;container-type:inline-size}
+.t1{background:var(--sky-300)}.t1 .c{width:64%;height:64%;border-radius:50%;background:var(--violet-500)}
+.eyes{position:absolute;left:50%;top:48%;translate:-50% -50%;display:flex;gap:5cqw;animation:blink 4.6s infinite}
+.eyes i{display:block;width:15cqw;height:15cqw;border-radius:50%;background:var(--white);position:relative}
+.eyes i::after{content:'';position:absolute;left:50%;top:50%;width:56%;height:56%;border-radius:50%;background:var(--ink-900);translate:-50% -50%}
+.t2{background:var(--orange-500)}.t2 .a{width:56%;height:76%;border-radius:999px 999px 0 0;background:var(--sun-300);position:relative;top:12%}
+.t3{background:var(--green-900)}.f{position:relative;width:70%;height:70%}
+.f span{position:absolute;width:50%;height:50%;border-radius:50%;background:var(--green-300)}
+.f span:nth-child(1){left:0;top:25%}.f span:nth-child(2){left:50%;top:25%}.f span:nth-child(3){left:25%;top:0}.f span:nth-child(4){left:25%;top:50%}
+.f b{position:absolute;left:35%;top:35%;width:30%;height:30%;border-radius:50%;background:var(--violet-500)}
+form{padding:28px 24px calc(env(safe-area-inset-bottom,0px) + 32px);display:flex;flex-direction:column;gap:12px}
+label{font:700 12px/1 var(--display);letter-spacing:.04em;text-transform:uppercase;color:var(--violet-700)}
+input{width:100%;height:56px;padding:0 18px;border-radius:16px;border:2px solid var(--cream-300);background:var(--white);font:600 20px/1 var(--body);letter-spacing:.04em;color:var(--ink-900)}
+input:focus{outline:none;border-color:var(--violet-500);box-shadow:0 0 0 4px var(--violet-100)}
+input[aria-invalid=true]{border-color:var(--orange-500);animation:shake 360ms var(--ease)}
+button{margin-top:4px;height:56px;border:0;border-radius:999px;background:var(--violet-500);color:var(--white);font:600 16px/1 var(--display);letter-spacing:-.02em;cursor:pointer;
+box-shadow:0 4px 0 var(--violet-900);transition:transform 100ms var(--ease),box-shadow 100ms var(--ease),background 200ms var(--ease)}
+button:hover{background:#4A30EA}button:active{transform:translateY(4px);box-shadow:0 0 0 var(--violet-900)}
+:focus-visible{outline:3px solid var(--lilac-500);outline-offset:2px}
+.msg{margin:0;font-size:14px;line-height:1.45;color:var(--orange-900)}
+.hand{font:700 24px/1 var(--hand);color:var(--violet-500);transform:rotate(-2deg);align-self:flex-start;margin-top:4px}
+.fine{margin:0;font-size:13px;line-height:1.45;color:var(--ink-500)}
+@keyframes blink{0%,93%,100%{transform:scaleY(1)}96%{transform:scaleY(.08)}}
+@keyframes shake{0%,100%{transform:translateX(0)}20%{transform:translateX(-6px)}40%{transform:translateX(6px)}60%{transform:translateX(-4px)}80%{transform:translateX(4px)}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<main class="shell">
+  <section class="hero">
+    <span class="eyebrow">Private preview</span>
+    <h1>apéro club</h1>
+    <p class="lede">A short French story every day, with the why behind the grammar.</p>
+  </section>
+  <div class="tiles" aria-hidden="true">
+    <div class="tile t2"><div class="a"></div></div>
+    <div class="tile t1"><div class="c"></div><span class="eyes"><i></i><i></i></span></div>
+    <div class="tile t3"><div class="f"><span></span><span></span><span></span><span></span><b></b></div></div>
+  </div>
+  <form method="post" action="/__access">
+    <label for="code">Access code</label>
+    <input id="code" name="code" type="text" required autofocus autocomplete="off" autocapitalize="none" autocorrect="off" spellcheck="false" enterkeyhint="go"${state === 'wrong' ? ' aria-invalid="true"' : ''}>
+    <input type="hidden" name="next" value="${esc(next)}">
+    ${msg}
+    <button type="submit">Enter</button>
+    <span class="hand">ask the club for yours</span>
+    <p class="fine">You’ll only need it once on this device.</p>
+  </form>
+</main>
+</body>
+</html>`;
+}

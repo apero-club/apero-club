@@ -11,7 +11,7 @@ The source of truth for the format is [`src/lesson/schema.ts`](../src/lesson/sch
 1. Copy [`lesson-template.json`](./lesson-template.json) to `lessons/YYYY-MM-DD.json`. The file name is the day it goes live, and must match the `date` inside.
 2. Put its images in `public/lessons/YYYY-MM-DD/`.
 3. Preview it: `npm run dev`, then open `http://localhost:5173/?date=YYYY-MM-DD`.
-4. Run `npm test`, then commit and push. GitHub Pages redeploys.
+4. Run `npm test`, then commit and push. Vercel redeploys.
 
 You can push lessons ahead of time. The app shows the newest lesson dated today or earlier, using the learner's local date, so lessons switch at midnight wherever the learner is. If a day has no lesson, the previous one stays up. Each lesson is loaded as its own small file, so a long archive doesn't slow the app down.
 
