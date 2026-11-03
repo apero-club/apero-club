@@ -36,8 +36,8 @@
     "gilles": {
       "name": "Gilles",
       "description": "A retired Parisian man in his seventies who feeds the pigeons at the Trocadéro every morning. Dry, deadpan, unhurried; a low, calm voice.",
-      "voiceId": "",
-      "status": "needs-voice",
+      "voiceId": "jUHQdLfy668sllNiNTSW",
+      "status": "approved",
       "firstLesson": "lesson-002",
       "rejected": []
     }
