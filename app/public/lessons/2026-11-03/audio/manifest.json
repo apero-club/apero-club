@@ -2,7 +2,7 @@
   "version": 1,
   "model": "eleven_multilingual_v2",
   "clips": {
-    "baker|— Bonjour, qu’est-ce que je vous sers ?": {
+    "la-boulangere|— Bonjour, qu’est-ce que je vous sers ?": {
       "file": "5549f21126401bcf.mp3",
       "voice": "L9J8xZmPSCimnHB0LjN1",
       "words": [
@@ -36,7 +36,7 @@
         ]
       ]
     },
-    "baker|— Désolée, on n’en a plus, des pains au chocolat. Il me reste des croissants.": {
+    "la-boulangere|— Désolée, on n’en a plus, des pains au chocolat. Il me reste des croissants.": {
       "file": "c8762eb81114126b.mp3",
       "voice": "L9J8xZmPSCimnHB0LjN1",
       "words": [
@@ -95,6 +95,140 @@
         [
           66,
           3.646
+        ]
+      ]
+    },
+    "madame-lefevre|— Non, mon fils m’a réveillée à sept heures. Il voulait des croissants.": {
+      "file": "60a8e5f24a02ced5.mp3",
+      "voice": "QGfpyFuk3rtPv4pRSQwp",
+      "words": [
+        [
+          2,
+          0
+        ],
+        [
+          7,
+          0.348
+        ],
+        [
+          11,
+          0.569
+        ],
+        [
+          16,
+          0.929
+        ],
+        [
+          20,
+          1.08
+        ],
+        [
+          30,
+          1.544
+        ],
+        [
+          32,
+          1.672
+        ],
+        [
+          37,
+          2.043
+        ],
+        [
+          45,
+          2.694
+        ],
+        [
+          48,
+          2.961
+        ],
+        [
+          56,
+          3.286
+        ],
+        [
+          60,
+          3.402
+        ]
+      ]
+    },
+    "madame-lefevre|« C’est ce que vous dites tous les samedis ! »": {
+      "file": "6711763823b2dfe6.mp3",
+      "voice": "QGfpyFuk3rtPv4pRSQwp",
+      "words": [
+        [
+          2,
+          0
+        ],
+        [
+          8,
+          0.58
+        ],
+        [
+          11,
+          0.848
+        ],
+        [
+          15,
+          1.057
+        ],
+        [
+          20,
+          1.277
+        ],
+        [
+          26,
+          1.858
+        ],
+        [
+          31,
+          2.043
+        ],
+        [
+          35,
+          2.206
+        ],
+        [
+          43,
+          2.902
+        ]
+      ]
+    },
+    "madame-lefevre|« Vous voyez, il faut venir avant huit heures. »": {
+      "file": "a3ad6625e7f8e9ea.mp3",
+      "voice": "QGfpyFuk3rtPv4pRSQwp",
+      "words": [
+        [
+          2,
+          0
+        ],
+        [
+          7,
+          0.163
+        ],
+        [
+          14,
+          0.824
+        ],
+        [
+          17,
+          0.975
+        ],
+        [
+          22,
+          1.138
+        ],
+        [
+          28,
+          1.498
+        ],
+        [
+          34,
+          1.707
+        ],
+        [
+          39,
+          1.962
         ]
       ]
     },
@@ -1581,140 +1715,6 @@
         [
           15,
           0.662
-        ]
-      ]
-    },
-    "neighbour|— Non, mon fils m’a réveillée à sept heures. Il voulait des croissants.": {
-      "file": "60a8e5f24a02ced5.mp3",
-      "voice": "QGfpyFuk3rtPv4pRSQwp",
-      "words": [
-        [
-          2,
-          0
-        ],
-        [
-          7,
-          0.348
-        ],
-        [
-          11,
-          0.569
-        ],
-        [
-          16,
-          0.929
-        ],
-        [
-          20,
-          1.08
-        ],
-        [
-          30,
-          1.544
-        ],
-        [
-          32,
-          1.672
-        ],
-        [
-          37,
-          2.043
-        ],
-        [
-          45,
-          2.694
-        ],
-        [
-          48,
-          2.961
-        ],
-        [
-          56,
-          3.286
-        ],
-        [
-          60,
-          3.402
-        ]
-      ]
-    },
-    "neighbour|« C’est ce que vous dites tous les samedis ! »": {
-      "file": "6711763823b2dfe6.mp3",
-      "voice": "QGfpyFuk3rtPv4pRSQwp",
-      "words": [
-        [
-          2,
-          0
-        ],
-        [
-          8,
-          0.58
-        ],
-        [
-          11,
-          0.848
-        ],
-        [
-          15,
-          1.057
-        ],
-        [
-          20,
-          1.277
-        ],
-        [
-          26,
-          1.858
-        ],
-        [
-          31,
-          2.043
-        ],
-        [
-          35,
-          2.206
-        ],
-        [
-          43,
-          2.902
-        ]
-      ]
-    },
-    "neighbour|« Vous voyez, il faut venir avant huit heures. »": {
-      "file": "a3ad6625e7f8e9ea.mp3",
-      "voice": "QGfpyFuk3rtPv4pRSQwp",
-      "words": [
-        [
-          2,
-          0
-        ],
-        [
-          7,
-          0.163
-        ],
-        [
-          14,
-          0.824
-        ],
-        [
-          17,
-          0.975
-        ],
-        [
-          22,
-          1.138
-        ],
-        [
-          28,
-          1.498
-        ],
-        [
-          34,
-          1.707
-        ],
-        [
-          39,
-          1.962
         ]
       ]
     }

@@ -65,7 +65,8 @@ jobs:
           AUTHOR_NAME: ${{ github.event.head_commit.author.name || github.actor }}
           AUTHOR_EMAIL: ${{ github.event.head_commit.author.email || format('{0}+{1}@users.noreply.github.com', github.actor_id, github.actor) }}
         run: |
-          git add public/lessons public/voices voices
+          # -A picks up new, changed and deleted files, and doesn't fail if a folder doesn't exist yet.
+          git add -A public voices
           if git diff --cached --quiet; then echo "No new audio."; exit 0; fi
           git config user.name "$AUTHOR_NAME"
           git config user.email "$AUTHOR_EMAIL"
