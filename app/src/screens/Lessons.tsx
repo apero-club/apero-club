@@ -7,11 +7,9 @@ import { useState } from 'react';
 import { Badge, Button } from '../ds/controls';
 import { Icon } from '../ds/Icon';
 import type { Lesson } from '../lesson/schema';
-import { GROUPS, groupOf, isDone, lessonStatus, topicsOf, useLessonList } from '../library';
-import { lessonNumberOn } from '../lesson/schedule';
+import { groupLessons, isDone, lessonStatus, topicsOf, useLessonList } from '../library';
 import type { AppCtx } from './common';
 import { Eyebrow, STEPS, TabBar } from './common';
-import { frDate } from './Home';
 
 type Filter = 'all' | 'todo' | 'done';
 const FILTERS: [Filter, string][] = [['all', 'All'], ['todo', 'To do'], ['done', 'Done']];
@@ -28,8 +26,7 @@ export function Lessons({ app }: { app: AppCtx }) {
   const [open, setOpen] = useState<Lesson | null>(null);
   const today = library.today;
   const shown = past.filter(l => filter === 'all' || (filter === 'done') === isDone(l));
-  const daysAgo = (l: Lesson) => lessonNumberOn(l.date, today.date) - 1;
-  const groups = GROUPS.map(g => ({ name: g, items: shown.filter(l => groupOf(daysAgo(l)) === g) })).filter(g => g.items.length);
+  const groups = groupLessons(shown, library);
 
   return <>
     <div className="pad-top" style={{ paddingLeft: 20, paddingRight: 20, paddingBottom: 14, display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 12 }}>
@@ -41,9 +38,9 @@ export function Lessons({ app }: { app: AppCtx }) {
       </div>
     </div>
     <div className="scroll" style={{ padding: '0 20px 28px', display: 'flex', flexDirection: 'column', gap: 24 }}>
-      <p style={{ margin: 0, fontSize: 15, lineHeight: 1.5, color: 'var(--ink-700)' }}>A new story every morning, written for learners between A2 and B1.</p>
+      <p style={{ margin: 0, fontSize: 15, lineHeight: 1.5, color: 'var(--ink-700)' }}>{library.schedule.mode === 'open' ? 'Short stories from everyday Paris' : 'A new story every morning'}, written for learners between A2 and B1.</p>
       <div style={{ display: 'flex', flexDirection: 'column', gap: 10, padding: 20, borderRadius: 'var(--radius-lg)', background: 'var(--violet-500)' }}>
-        <Eyebrow color="var(--lilac-500)">Aujourd’hui · {frDate(today.date)}</Eyebrow>
+        <Eyebrow color="var(--lilac-500)">{library.schedule.mode === 'open' ? `Dernière leçon · ${today.label}` : `Aujourd’hui · ${today.label}`}</Eyebrow>
         <span style={{ font: '900 26px/0.95 var(--font-display)', letterSpacing: '-0.05em', color: 'var(--lilac-500)' }}>{today.title}</span>
         <span style={{ fontSize: 14, lineHeight: 1.45, color: 'var(--white)' }}>{today.summary}</span>
         <div style={{ paddingTop: 4 }}><Button variant="secondary" iconRight="arrow-right" onClick={() => (app.isToday ? go('home') : library.open(today.number))}>Today’s apéro</Button></div>
@@ -53,7 +50,7 @@ export function Lessons({ app }: { app: AppCtx }) {
         <LessonGroup name="Coming up · preview only" items={upcoming} onOpen={setOpen} note={l => lessonStatus(l, library)} />
       )}
       {groups.map(g => <LessonGroup key={g.name} name={g.name} items={g.items} onOpen={setOpen} />)}
-      {!loading && past.length === 0 && <p style={{ margin: 0, fontSize: 15, color: 'var(--fg-3)' }}>Past lessons will appear here, one more every day.</p>}
+      {!loading && past.length === 0 && <p style={{ margin: 0, fontSize: 15, color: 'var(--fg-3)' }}>{library.schedule.mode === 'open' ? 'Earlier lessons will appear here.' : 'Past lessons will appear here, one more every day.'}</p>}
       {past.length > 0 && !groups.length && <p style={{ margin: 0, fontSize: 15, color: 'var(--fg-3)' }}>No lessons match this filter.</p>}
       {hasMore && <div><Button variant="outline" onClick={more} disabled={loading}>{loading ? 'Loading…' : 'Show older lessons'}</Button></div>}
     </div>
@@ -67,7 +64,7 @@ function LessonGroup({ name, items, onOpen, note }: { name: string; items: Lesso
     <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
       <Eyebrow>{name}</Eyebrow>
       {items.map(l => {
-        const { weekday, day } = shortDay(l.date), done = isDone(l);
+        const { weekday, day } = l.label.startsWith('Leçon') ? { weekday: 'Leçon', day: String(l.number) } : shortDay(l.date), done = isDone(l);
         return (
           <button key={l.id} onClick={() => onOpen(l)} className="card-btn" style={{ display: 'flex', alignItems: 'center', gap: 14, padding: '12px 14px 12px 12px', borderRadius: 'var(--radius-lg)', background: 'var(--white)', boxShadow: 'inset 0 0 0 2px var(--cream-200), 0 3px 0 var(--cream-300)' }}>
             <span style={{ flex: 'none', width: 56, height: 60, borderRadius: 'var(--radius-md)', background: 'var(--cream-100)', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 4 }}>
@@ -97,7 +94,7 @@ export function LessonSheet({ lesson, app, onClose, centered }: { lesson: Lesson
       <div className="sheet" style={centered ? { width: 'min(520px, 100%)', borderRadius: 32, maxHeight: '90vh' } : undefined}>
         <div style={{ background: 'var(--violet-500)', padding: '16px 20px 22px', display: 'flex', flexDirection: 'column', gap: 10 }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 12 }}>
-            <Eyebrow color="var(--lilac-500)">{upcoming ? lessonStatus(lesson, app.library) : frDate(lesson.date)}</Eyebrow>
+            <Eyebrow color="var(--lilac-500)">{upcoming ? lessonStatus(lesson, app.library) : lesson.label}</Eyebrow>
             <button onClick={onClose} aria-label="Close" style={{ width: 36, height: 36, borderRadius: '50%', border: 0, background: 'var(--lilac-500)', color: 'var(--violet-500)', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', boxShadow: '0 3px 0 var(--lilac-700)' }}><Icon name="x" size={18} /></button>
           </div>
           <h2 style={{ margin: 0, font: '900 26px/1 var(--font-display)', letterSpacing: '-0.045em', color: 'var(--lilac-500)', textWrap: 'balance' }}>{lesson.title}</h2>

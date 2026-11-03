@@ -19,7 +19,7 @@ describe('schedule', () => {
     expect(todayIn('America/New_York', new Date('2026-11-03T23:30:00Z'))).toBe('2026-11-03');
   });
   it('caps the open lesson with readyThrough, never below lesson 1', () => {
-    const s = { startDate: '2026-11-03', timeZone: 'Europe/Paris' };
+    const s = { mode: 'dated' as const, startDate: '2026-11-03', timeZone: 'Europe/Paris' };
     expect(openUpTo(s, '2026-11-10')).toBe(8);
     expect(openUpTo({ ...s, readyThrough: 2 }, '2026-11-10')).toBe(2);
     expect(openUpTo({ ...s, readyThrough: 20 }, '2026-11-10')).toBe(8);

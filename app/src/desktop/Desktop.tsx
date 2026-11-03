@@ -10,12 +10,10 @@ import { Critter, FillTile, ShapeTile, tok, type ShapeName } from '../ds/brand';
 import { Icon } from '../ds/Icon';
 import { isDialogue, stripDash } from '../lesson/story';
 import type { HeroTileT, Lesson, LessonNote } from '../lesson/schema';
-import { GROUPS, groupOf, isDone, lessonStatus, topicsOf, useLessonList } from '../library';
-import { lessonNumberOn } from '../lesson/schedule';
+import { groupLessons, isDone, lessonStatus, topicsOf, useLessonList } from '../library';
 import { LessonSheet } from '../screens/Lessons';
 import type { AppCtx, Screen } from '../screens/common';
 import { Eyebrow, pad, PRAISE, STEPS } from '../screens/common';
-import { frDate } from '../screens/Home';
 import { HeroTile } from '../screens/HeroTile';
 
 const EN_LABEL = { story: 'Listen', quiz: 'Check', spoken: 'Say it', describe: 'Write' } as const;
@@ -101,7 +99,7 @@ function DHome({ app }: P) {
     <section style={{ background: 'var(--violet-500)', color: 'var(--white)' }}>
       <div className="band-grid" style={{ maxWidth: 1120, margin: '0 auto' }}>
         <div style={{ padding: '48px 20px 44px', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 20 }}>
-          <Eyebrow color="var(--lilac-500)">{frDate(lesson.date)} · {app.isToday ? 'Today’s apéro' : lesson.number > app.library.today.number ? 'Coming up' : 'From the archive'}</Eyebrow>
+          <Eyebrow color="var(--lilac-500)">{lesson.label} · {app.isToday ? 'Today’s apéro' : lesson.number > app.library.today.number ? 'Coming up' : 'From the archive'}</Eyebrow>
           <h1 style={{ font: '900 clamp(44px,7vw,80px)/0.92 var(--font-display)', letterSpacing: '-0.045em', color: 'var(--lilac-500)', margin: 0 }}>{lesson.title}</h1>
           <p style={{ margin: 0, fontSize: 18, lineHeight: 1.5, maxWidth: '44ch' }}>{lesson.summary} Listen, check you understood, see how it’s really said, then write.</p>
           {allDone && <span className="hand" style={{ fontSize: 30, color: 'var(--lilac-500)', transform: 'rotate(-2deg)' }}>Séance terminée ! À demain.</span>}
@@ -625,7 +623,7 @@ function DLessons({ app }: P) {
   const [open, setOpen] = useState<Lesson | null>(null);
   const today = library.today;
   const shown = past.filter(l => filter === 'all' || (filter === 'done') === isDone(l));
-  const groups = GROUPS.map(g => ({ name: g, items: shown.filter(l => groupOf(lessonNumberOn(l.date, today.date) - 1) === g) })).filter(g => g.items.length);
+  const groups = groupLessons(shown, library);
   const count = (n: number) => `${n} lesson${n === 1 ? '' : 's'}`;
 
   const Card = ({ l, note }: { l: Lesson; note?: string }) => {
@@ -633,7 +631,7 @@ function DLessons({ app }: P) {
     return (
       <button className="white-card lift" onClick={() => setOpen(l)} style={{ position: 'relative', display: 'flex', flexDirection: 'column', gap: 10, padding: 20, overflow: 'hidden', minHeight: 220 }}>
         <span style={{ position: 'absolute', top: 0, right: 0, width: 64, height: 64 }}><ShapeTile shape={sh.shape} bg={sh.bg} fg={sh.fg} size={64} /></span>
-        <Eyebrow style={{ paddingRight: 72 }}>{frDate(l.date)}</Eyebrow>
+        <Eyebrow style={{ paddingRight: 72 }}>{l.label}</Eyebrow>
         <span style={{ font: '800 20px/1.1 var(--font-display)', letterSpacing: '-0.035em', paddingRight: 52, textWrap: 'balance' }}>{l.title}</span>
         <span style={{ fontSize: 14, lineHeight: 1.5, color: 'var(--fg-2)', textWrap: 'pretty' }}>{l.summary}</span>
         <span style={{ marginTop: 'auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 10, flexWrap: 'wrap', paddingTop: 8 }}>
@@ -649,9 +647,9 @@ function DLessons({ app }: P) {
     <section style={{ background: 'var(--violet-500)', color: 'var(--white)' }}>
       <div className="band-grid" style={{ maxWidth: 1120, margin: '0 auto' }}>
         <div style={{ padding: '48px 20px 44px', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 18 }}>
-          <Eyebrow color="var(--lilac-500)">Lessons · a new story every morning</Eyebrow>
+          <Eyebrow color="var(--lilac-500)">{library.schedule.mode === 'open' ? 'Lessons · stories from everyday Paris' : 'Lessons · a new story every morning'}</Eyebrow>
           <h1 style={{ margin: 0, font: '900 clamp(44px,6.4vw,80px)/0.9 var(--font-display)', letterSpacing: '-0.05em', color: 'var(--lilac-500)' }}>Toutes les leçons</h1>
-          <p style={{ margin: 0, fontSize: 18, lineHeight: 1.5, maxWidth: '46ch' }}>Every daily lesson so far, each with its story, quiz, spoken French and writing prompt. Written for learners between A2 and B1.</p>
+          <p style={{ margin: 0, fontSize: 18, lineHeight: 1.5, maxWidth: '46ch' }}>{library.schedule.mode === 'open' ? 'Every lesson so far' : 'Every daily lesson so far'}, each with its story, quiz, spoken French and writing prompt. Written for learners between A2 and B1.</p>
         </div>
         <BandTiles tiles={[{ shape: 'halves', bg: 'sky-500' }, { shape: 'circle', bg: 'sky-300', fg: 'violet-500' }, { shape: 'arch', bg: 'orange-500', fg: 'sun-300' }]} />
       </div>
@@ -659,7 +657,7 @@ function DLessons({ app }: P) {
     <section className="wrap" style={{ paddingTop: 32, display: 'flex', flexDirection: 'column', gap: 40 }}>
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: 20, alignItems: 'center', justifyContent: 'space-between', padding: 24, borderRadius: 'var(--radius-lg)', background: 'var(--white)', boxShadow: 'inset 0 0 0 2px var(--violet-500)' }}>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 8, minWidth: 0, flex: '1 1 320px' }}>
-          <Eyebrow color="var(--violet-700)">Aujourd’hui · {frDate(today.date)}</Eyebrow>
+          <Eyebrow color="var(--violet-700)">{library.schedule.mode === 'open' ? 'Dernière leçon' : 'Aujourd’hui'} · {today.label}</Eyebrow>
           <span style={{ font: '900 clamp(24px,3vw,32px)/1 var(--font-display)', letterSpacing: '-0.045em', color: 'var(--violet-500)' }}>{today.title}</span>
           <span style={{ fontSize: 15, lineHeight: 1.5, color: 'var(--fg-2)' }}>{today.summary}</span>
         </div>
@@ -677,7 +675,7 @@ function DLessons({ app }: P) {
         <div className="seg">
           {([['all', 'All'], ['todo', 'To do'], ['done', 'Done']] as [Filter, string][]).map(([id, label]) => <button key={id} aria-pressed={filter === id} onClick={() => setFilter(id)}>{label}</button>)}
         </div>
-        <span style={{ fontSize: 14, color: 'var(--fg-3)' }}>{count(shown.length)} before today</span>
+        <span style={{ fontSize: 14, color: 'var(--fg-3)' }}>{count(shown.length)} before {library.schedule.mode === 'open' ? 'this one' : 'today'}</span>
       </div>
       {groups.map(g => (
         <div key={g.name} style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
@@ -685,7 +683,7 @@ function DLessons({ app }: P) {
           <Grid>{g.items.map(l => <Card key={l.id} l={l} />)}</Grid>
         </div>
       ))}
-      {!loading && past.length === 0 && <p style={{ margin: 0, fontSize: 16, color: 'var(--fg-3)' }}>Past lessons will appear here, one more every day.</p>}
+      {!loading && past.length === 0 && <p style={{ margin: 0, fontSize: 16, color: 'var(--fg-3)' }}>{library.schedule.mode === 'open' ? 'Earlier lessons will appear here.' : 'Past lessons will appear here, one more every day.'}</p>}
       {past.length > 0 && !groups.length && <p style={{ margin: 0, fontSize: 16, color: 'var(--fg-3)' }}>No lessons match this filter.</p>}
       {hasMore && <div><Button variant="outline" onClick={more} disabled={loading}>{loading ? 'Loading…' : 'Show older lessons'}</Button></div>}
     </section>

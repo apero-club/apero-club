@@ -69,7 +69,7 @@ function LessonRoot() {
   }, [schedule, today]);
 
   if (schedule && today && lesson) {
-    const library: Library = { schedule, today, todayNumber: todaysNumber(schedule), preview: isPreview(), open };
+    const library: Library = { schedule, today, todayNumber: schedule.mode === 'open' ? today.number : todaysNumber(schedule), preview: isPreview(), open };
     return <LessonApp key={lesson.id} lesson={lesson} library={library} start={!!state.start} wide={wide} />;
   }
   return (

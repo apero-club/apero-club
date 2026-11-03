@@ -17,15 +17,16 @@ The source of truth for the format is [`src/lesson/schema.ts`](../src/lesson/sch
 
 ### The schedule
 
-`public/lessons/schedule.json` sets `startDate`: lesson 1 goes live that day, lesson 2 the day after, and so on, switching at midnight in `timeZone` (Paris). Everyone sees the same lesson on the same day. If a day's lesson doesn't exist yet, the previous one stays up. Change `startDate` to move the whole schedule.
+`public/lessons/schedule.json` has two modes:
 
-You can push lessons weeks ahead: on the live site, a lesson's file, images and audio are only served from its day. The **Lessons** tab lists every lesson before today.
+- **`"mode": "open"`** (current): every lesson on the site is live as soon as it's pushed. Today shows the newest lesson, earlier ones are in the Lessons tab, and lessons are labelled "Leçon 1", "Leçon 2"… with no dates. Use this while building up a batch of lessons.
+- **`"mode": "dated"`**: lesson 1 goes live on `startDate`, lesson 2 the day after, and so on, at midnight in `timeZone` (Paris), the same for everyone. If a day's lesson doesn't exist yet, the previous one stays up; you can push lessons weeks ahead and the server only serves them from their day. `readyThrough` caps how far learners can get, so a backlog can wait for your review: raise it when you've checked a lesson.
 
-**Holding a backlog back:** `readyThrough` in `schedule.json` is the highest lesson learners can get, even after later lessons' days have come. Push new lessons whenever you like, review them in preview mode (their voices get recorded meanwhile), then raise `readyThrough`. If a lesson is held on its day, learners keep the latest ready lesson. Remove `readyThrough` to let every lesson go live on its date.
+Switching modes is a one-line change. In dated mode, lesson numbers are days, so set `startDate` so that today's lesson number is right.
 
 ### Preview mode
 
-To review lessons before they go live, open `/__preview` on the live site and enter the preview code (`PREVIEW_CODE` in Vercel). For 30 days on that device, every lesson opens: a dark bar shows which lesson you're on and when it goes live, the Lessons tab adds a **Coming up** section, and `?lesson=N` opens any lesson. `/__preview/exit` turns it off.
+To review lessons before they go live, open `/__preview` on the live site and enter the preview code (`PREVIEW_CODE` in Vercel). For 30 days on that device, every lesson opens (in open mode they all do anyway): a dark bar shows which lesson you're on and when it goes live, the Lessons tab adds a **Coming up** section, and `?lesson=N` opens any lesson. `/__preview/exit` turns it off.
 
 ## The fields
 

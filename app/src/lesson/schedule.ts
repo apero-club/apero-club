@@ -7,6 +7,11 @@
  * schedule.test.ts checks the two agree.
  */
 export type Schedule = {
+  /**
+   * "dated": lesson N goes live N-1 days after startDate (and not beyond readyThrough).
+   * "open": every lesson on the site is live, Today is the newest, and dates aren't shown.
+   */
+  mode: 'dated' | 'open';
   startDate: string; timeZone: string;
   /** Optional: lessons above this number stay hidden even after their day (a backlog not yet reviewed). */
   readyThrough?: number;
@@ -30,6 +35,12 @@ export const lessonNumberOn = (startDate: string, date: string) => Math.floor((u
 
 /** The date lesson N goes live. */
 export const dateOfLesson = (startDate: string, n: number) => iso(utc(startDate) + (n - 1) * DAY);
+
+/** "mardi 3 novembre" */
+export function frDate(iso: string) {
+  const [y, m, d] = iso.split('-').map(Number);
+  return new Date(y, m - 1, d).toLocaleDateString('fr-FR', { weekday: 'long', day: 'numeric', month: 'long' });
+}
 
 /** "lesson-007" */
 export const lessonId = (n: number) => `lesson-${String(n).padStart(3, '0')}`;

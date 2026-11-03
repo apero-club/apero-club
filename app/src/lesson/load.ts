@@ -1,5 +1,5 @@
 import { LessonSchema, type Lesson } from './schema';
-import { dateOfLesson, lessonId, openUpTo, todayIn, type Schedule } from './schedule';
+import { dateOfLesson, frDate, lessonId, openUpTo, todayIn, type Schedule } from './schedule';
 
 /**
  * Lessons are plain files under public/lessons/, fetched when needed (not bundled
@@ -17,7 +17,7 @@ export async function loadSchedule(): Promise<Schedule> {
   const s = await res.json();
   if (!/^\d{4}-\d{2}-\d{2}$/.test(s.startDate)) throw new Error('lessons/schedule.json needs "startDate": "YYYY-MM-DD".');
   const ready = Number.isInteger(s.readyThrough) && s.readyThrough >= 1 ? s.readyThrough : undefined;
-  return { startDate: s.startDate, timeZone: s.timeZone || 'Europe/Paris', readyThrough: ready };
+  return { mode: s.mode === 'open' ? 'open' : 'dated', startDate: s.startDate, timeZone: s.timeZone || 'Europe/Paris', readyThrough: ready };
 }
 
 /** Lesson N, or null if there's no such lesson (or it isn't live yet and preview is off). */
@@ -29,7 +29,8 @@ export async function loadLesson(n: number, schedule: Schedule): Promise<Lesson 
   if (!res.ok) throw new Error(`Couldn’t load ${id} (${res.status}).`);
   const parsed = LessonSchema.safeParse(await res.json());
   if (!parsed.success) throw new Error(`${id} is invalid:\n` + parsed.error.issues.map(i => `• ${i.path.join('.')}: ${i.message}`).join('\n'));
-  return { ...parsed.data, id, number: n, date: dateOfLesson(schedule.startDate, n) };
+  const date = dateOfLesson(schedule.startDate, n);
+  return { ...parsed.data, id, number: n, date, label: schedule.mode === 'open' ? `Leçon ${n}` : frDate(date) };
 }
 
 /** Today's lesson number: by date, capped by readyThrough, at least 1. */
@@ -40,12 +41,22 @@ export const todaysNumber = (s: Schedule, now = new Date()) => openUpTo(s, today
  * the most recent one that does. Before the start date, lesson 1.
  */
 export async function loadToday(s: Schedule): Promise<Lesson | null> {
-  const today = todaysNumber(s);
+  // Open mode: the newest lesson on the site.
+  const today = s.mode === 'open' ? Math.max(1, ...(await loadIndex())) : todaysNumber(s);
   for (let n = today; n >= 1 && n > today - 60; n--) {
     const l = await loadLesson(n, s);
     if (l) return l;
   }
   return null;
+}
+
+/** The lesson numbers on the site, from lessons/index.json (generated at build time). */
+export async function loadIndex(): Promise<number[]> {
+  try {
+    const res = await fetch(`${BASE}lessons/index.json`, { cache: 'no-cache' });
+    const j = res.ok ? await res.json() : null;
+    return Array.isArray(j?.lessons) ? j.lessons.filter((n: unknown) => Number.isInteger(n)) : [];
+  } catch { return []; }
 }
 
 /**

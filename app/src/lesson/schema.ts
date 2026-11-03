@@ -240,6 +240,8 @@ export type Lesson = LessonData & {
   number: number;
   /** The day it goes live, YYYY-MM-DD (from the schedule). */
   date: string;
+  /** How the app names it: its date ("mardi 3 novembre"), or "Leçon 2" when the schedule has no dates. */
+  label: string;
 };
 export type LessonLine = z.output<typeof Line>;
 export type LessonNote = z.output<typeof Note>;

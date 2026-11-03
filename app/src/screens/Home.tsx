@@ -8,10 +8,7 @@ import type { IconName } from '../ds/Icon';
 
 const INDENT = [0, 56, 104, 56, 0];
 
-export const frDate = (iso: string) => {
-  const [y, m, d] = iso.split('-').map(Number);
-  return new Date(y, m - 1, d).toLocaleDateString('fr-FR', { weekday: 'long', day: 'numeric', month: 'long' });
-};
+export { frDate } from '../lesson/schedule';
 
 export function Home({ app }: { app: AppCtx }) {
   const { lesson, progress, go } = app;
@@ -44,7 +41,7 @@ export function Home({ app }: { app: AppCtx }) {
     )}
     <div className="scroll">
       <section style={{ background: 'var(--violet-500)', padding: '24px 20px 26px', display: 'flex', flexDirection: 'column', gap: 12 }}>
-        <Eyebrow color="var(--lilac-500)">{frDate(lesson.date)}</Eyebrow>
+        <Eyebrow color="var(--lilac-500)">{lesson.label}</Eyebrow>
         <h1 style={{ margin: 0, font: '900 40px/0.92 var(--font-display)', letterSpacing: '-0.05em', color: 'var(--lilac-500)' }}>{lesson.title}</h1>
         <p style={{ margin: 0, fontSize: 16, lineHeight: 1.5, color: 'var(--white)' }}>{lesson.summary}</p>
         {allDone && <span className="hand" style={{ fontSize: 26, color: 'var(--lilac-500)', transform: 'rotate(-2deg)' }}>Séance terminée ! À demain.</span>}

@@ -158,6 +158,13 @@ describe('daily lessons and preview mode', () => {
     const pv = `${PREVIEW_COOKIE}=${await tokenFor('Editor-Only-9', 'preview')}`;
     expect(passes(await get('/lessons/lesson-003.json', `${access}; ${pv}`))).toBe(true);
   });
+  it('open mode serves every lesson, with no dates or hold', async () => {
+    vi.stubGlobal('fetch', async () => new Response(JSON.stringify({ mode: 'open', startDate: START, timeZone: 'Europe/Paris', readyThrough: 1 })));
+    at('2026-10-01T12:00:00Z'); // before the start date, even
+    expect(passes(await get('/lessons/lesson-009.json'))).toBe(true);
+    expect(passes(await get('/lessons/lesson-009/audio/abc.mp3'))).toBe(true);
+    expect((await get('/lessons/lesson-009.json', '')).status).toBe(401); // still needs the access code
+  });
   it('LESSON_START_DATE in Vercel overrides the file', async () => {
     process.env.LESSON_START_DATE = '2027-01-01';
     at('2027-01-02T12:00:00Z');

@@ -1,6 +1,6 @@
 {
-  "$comment": "Lesson 1 goes live on startDate; lesson N goes live N-1 days later, at midnight in timeZone. Everyone sees the same lesson that day. readyThrough: lessons above this number stay hidden from learners even after their day (you can still see them in preview); raise it when you've reviewed them. Changing startDate moves the whole schedule.",
+  "$comment": "mode \"open\": every lesson on the site is live, Today shows the newest one, and dates aren't shown. mode \"dated\": lesson 1 goes live on startDate and lesson N on the (N-1)th day after, at midnight in timeZone, the same for everyone; readyThrough (dated mode only) caps how far learners can get, so a backlog can wait for review.",
+  "mode": "open",
   "startDate": "2026-11-03",
-  "timeZone": "Europe/Paris",
-  "readyThrough": 2
+  "timeZone": "Europe/Paris"
 }

@@ -13,8 +13,9 @@
  * cookie holding a hash of the current code, so a cookie can't be forged without
  * the code, and changing the code signs every device out.
  *
- * Daily lessons: lesson N's file (lessons/lesson-00N.json) and folder (images,
- * audio) are refused until its day, per lessons/schedule.json and Paris time.
+ * Daily lessons ("mode": "dated" in lessons/schedule.json): lesson N's file and
+ * folder (images, audio) are refused until its day, in Paris time, and never
+ * beyond readyThrough. In "open" mode every lesson on the site is served.
  * Preview mode (PREVIEW_CODE, entered at /__preview) unlocks every lesson for
  * 30 days on that device; /__preview/exit turns it off.
  */
@@ -105,7 +106,8 @@ export function lessonNumberOn(start, date) {
   return Math.floor((utc(date) - utc(start)) / 86_400_000) + 1;
 }
 
-/** @type {{ at: number, value: { startDate: string, timeZone: string, readyThrough?: number } | null } | null} */
+/** @typedef {{ mode: 'dated' | 'open', startDate: string, timeZone: string, readyThrough?: number }} ScheduleInfo */
+/** @type {{ at: number, value: ScheduleInfo | null } | null} */
 let scheduleCache = null;
 /**
  * The schedule, read from the site's own lessons/schedule.json (cached 5 minutes).
@@ -115,14 +117,15 @@ let scheduleCache = null;
 async function loadSchedule(origin) {
   const age = scheduleCache ? Date.now() - scheduleCache.at : -1;
   if (scheduleCache && age >= 0 && age < (scheduleCache.value ? 300_000 : 30_000)) return scheduleCache.value;
-  /** @type {{ startDate: string, timeZone: string, readyThrough?: number } | null} */
+  /** @type {ScheduleInfo | null} */
   let value = null;
   try {
     const r = await fetch(`${origin}/lessons/schedule.json`);
-    if (r.ok) { const j = await r.json(); if (/^\d{4}-\d{2}-\d{2}$/.test(j.startDate)) value = { startDate: j.startDate, timeZone: j.timeZone || 'Europe/Paris', readyThrough: Number.isInteger(j.readyThrough) && j.readyThrough >= 1 ? j.readyThrough : undefined }; }
+    if (r.ok) { const j = await r.json(); if (j.mode === 'open') value = { mode: 'open', startDate: j.startDate, timeZone: j.timeZone || 'Europe/Paris' };
+    else if (/^\d{4}-\d{2}-\d{2}$/.test(j.startDate)) value = { mode: 'dated', startDate: j.startDate, timeZone: j.timeZone || 'Europe/Paris', readyThrough: Number.isInteger(j.readyThrough) && j.readyThrough >= 1 ? j.readyThrough : undefined }; }
   } catch { /* fall through */ }
   const override = process.env.LESSON_START_DATE?.trim();
-  if (override && /^\d{4}-\d{2}-\d{2}$/.test(override)) value = { startDate: override, timeZone: value?.timeZone ?? 'Europe/Paris', readyThrough: value?.readyThrough };
+  if (override && /^\d{4}-\d{2}-\d{2}$/.test(override)) value = { mode: 'dated', startDate: override, timeZone: value?.timeZone ?? 'Europe/Paris', readyThrough: value?.readyThrough };
   scheduleCache = { at: Date.now(), value };
   return value;
 }
@@ -133,6 +136,7 @@ async function loadSchedule(origin) {
  */
 async function openUpTo(origin) {
   const s = await loadSchedule(origin);
+  if (s?.mode === 'open') return Infinity;
   return s ? Math.max(1, Math.min(lessonNumberOn(s.startDate, todayIn(s.timeZone)), s.readyThrough ?? Infinity)) : 1;
 }
 

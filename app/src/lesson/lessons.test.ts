@@ -18,6 +18,7 @@ describe('lesson files', () => {
   it('has a valid schedule', () => {
     const s = JSON.parse(readFileSync(join(dir, 'schedule.json'), 'utf8'));
     expect(s.startDate).toMatch(/^\d{4}-\d{2}-\d{2}$/);
+    expect(['open', 'dated', undefined]).toContain(s.mode);
     expect(() => new Intl.DateTimeFormat('en', { timeZone: s.timeZone })).not.toThrow();
   });
   for (const f of files) {
