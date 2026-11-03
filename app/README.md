@@ -1,6 +1,6 @@
 # apéro club, the web app
 
-A daily French lesson for A2 to B1 learners, built from the Claude Design handoff in `../project/` (`Apero App v2.dc.html`). It shows today's lesson: a multi-voice story, a quiz that explains every answer, written vs. spoken French, a describe-the-scene exercise, and the grammar notes behind the story.
+A daily French lesson for A2 to B1 learners, built from the Claude Design handoff in `../project/`: `Apero App v2.dc.html` for phones and `Apero v3.dc.html` for desktop. It shows today's lesson: a multi-voice story, a quiz that explains every answer, written vs. spoken French, a describe-the-scene exercise, and the grammar notes behind the story.
 
 Hosted free on Vercel behind a shared access code. No accounts and no payments.
 
@@ -23,7 +23,8 @@ docs/lesson-format.md        how to write a lesson
 docs/lesson-template.json    a starting point to copy
 src/lesson/schema.ts         the lesson format (zod), and its validation rules
 src/lesson/load.ts           finds and loads today's lesson
-src/screens/                 the lesson template: one file per screen
+src/screens/                 the phone layout (Apero App v2): one file per screen
+src/desktop/                 the desktop layout (Apero v3), used at 900px and wider
 src/ds/                      design system components, ported from the apéro club DS bundle
 src/audio/                   French voice casting and story playback (browser speech synthesis)
 src/styles/                  design tokens copied from the DS, plus app layout

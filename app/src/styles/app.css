@@ -50,3 +50,26 @@ textarea::placeholder { color: var(--ink-500); }
 .card-btn:hover { transform: translateY(-2px); }
 
 .center-msg { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; padding: 32px 24px; text-align: center; }
+
+/* ── Desktop layout (≥ 900px), from the Apero v3 web design ─────────── */
+.desk { min-height: 100dvh; display: flex; flex-direction: column; background: var(--bg); color: var(--fg-1); font-family: var(--font-body); }
+.desk main { flex: 1; width: 100%; padding-bottom: 120px; }
+.wrap { max-width: 1120px; margin: 0 auto; padding-left: 20px; padding-right: 20px; }
+.desk-header { position: sticky; top: 0; z-index: 10; background: var(--bg); border-bottom: 2px solid var(--cream-200); }
+.seg { display: flex; gap: 4px; align-items: center; background: var(--cream-200); border-radius: var(--radius-pill); padding: 4px; }
+.seg button { border: 0; cursor: pointer; min-height: 36px; padding: 0 16px; border-radius: var(--radius-pill); font: 600 13px/1 var(--font-display); letter-spacing: -0.02em; background: transparent; color: var(--ink-700); }
+.seg button[aria-pressed="true"], .seg button[aria-current="page"] { background: var(--violet-500); color: var(--white); }
+.band-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); }
+.lift { transition: transform var(--dur) var(--ease-out); }
+.lift:hover { transform: translateY(-2px); }
+.white-card { border: 0; border-radius: var(--radius-lg); background: var(--white); box-shadow: inset 0 0 0 2px var(--cream-200), 0 4px 0 var(--cream-300); color: var(--fg-1); text-align: left; cursor: pointer; }
+.step-tile { display: flex; flex-direction: column; justify-content: space-between; align-items: flex-start; gap: 24px; text-align: left; border: 0; cursor: pointer; min-height: 240px; padding: 20px; }
+.step-tile:hover { filter: brightness(1.04); }
+.story-line:hover { background: var(--white) !important; }
+.desk .why-chip { vertical-align: 3px; margin-left: 6px; color: var(--lilac-500); }
+.desk .why-chip:hover { background: var(--primary-hover); }
+.helper-pill { font: 600 14px/1 var(--font-body); padding: 8px 12px; border: 0; border-radius: var(--radius-pill); background: var(--white); box-shadow: inset 0 0 0 2px var(--cream-300); color: var(--violet-700); cursor: pointer; }
+.helper-pill:hover { background: var(--cream-50); }
+.drawer-wrap { position: fixed; inset: 0; z-index: 40; display: flex; justify-content: flex-end; }
+.drawer { position: relative; width: min(580px, 100%); height: 100%; overflow-y: auto; background: var(--bg); box-shadow: var(--shadow-pop); display: flex; flex-direction: column; animation: drawer-in var(--dur-slow) var(--ease-out); }
+@keyframes drawer-in { from { transform: translateX(100%); } to { transform: none; } }

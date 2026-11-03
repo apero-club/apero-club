@@ -1,5 +1,6 @@
 import { Button, LessonNode, type NodeState } from '../ds/controls';
-import { FillTile, ShapeTile, tok } from '../ds/brand';
+import { FillTile } from '../ds/brand';
+import { HeroTile } from './HeroTile';
 import type { AppCtx } from './common';
 import { Eyebrow, STEPS, TabBar } from './common';
 import type { IconName } from '../ds/Icon';
@@ -43,11 +44,7 @@ export function Home({ app }: { app: AppCtx }) {
       </section>
 
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, minmax(0, 1fr))' }}>
-        {lesson.hero.map((t, i) => 'image' in t
-          ? <div key={i} style={{ aspectRatio: '1', background: tok(t.bg), display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <img src={app.asset(t.image)} alt={t.alt} style={{ display: 'block', width: '78%', height: '78%' }} />
-            </div>
-          : <ShapeTile key={i} shape={t.shape} bg={t.bg} fg={t.fg} accent={t.accent} eyes={t.eyes} blink={t.blink} />)}
+        {lesson.hero.map((t, i) => <HeroTile key={i} tile={t} asset={app.asset} />)}
       </div>
 
       <section style={{ padding: '26px 20px 8px', display: 'flex', flexDirection: 'column', gap: 6 }}>

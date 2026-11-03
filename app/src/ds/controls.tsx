@@ -108,19 +108,22 @@ const BLOCKS: Record<ChoiceState, { bg: string; hover: string; press: string; fg
 };
 
 /** Square answer block for the 2×2 grid. */
-export function ChoiceBlock({ state = 'idle', index, onClick, children }: { state?: ChoiceState; index: number; onClick?: () => void; children: ReactNode }) {
+export function ChoiceBlock({ state = 'idle', index, sublabel, minHeight = 112, onClick, children }: { state?: ChoiceState; index: number; sublabel?: string; minHeight?: number; onClick?: () => void; children: ReactNode }) {
   const locked = state === 'disabled' || state === 'correct' || state === 'wrong';
   const [hover, press, handlers] = usePress(locked);
   const b = BLOCKS[state];
   return (
     <button type="button" onClick={locked ? undefined : onClick} {...handlers} aria-pressed={state === 'selected'} style={{
-      display: 'flex', flexDirection: 'column', justifyContent: 'space-between', alignItems: 'flex-start', gap: 12, width: '100%', minHeight: 112,
+      display: 'flex', flexDirection: 'column', justifyContent: 'space-between', alignItems: 'flex-start', gap: 12, width: '100%', minHeight,
       padding: '14px 16px 16px', textAlign: 'left', border: 0, borderRadius: 0, background: press ? b.press : hover ? b.hover : b.bg, color: b.fg,
       cursor: locked ? 'default' : 'pointer', animation: state === 'wrong' ? 'shake 360ms var(--ease-out)' : state === 'correct' ? 'pop-in var(--dur-slow) var(--ease-bounce)' : 'none',
       transition: 'background var(--dur) var(--ease-out), color var(--dur) var(--ease-out)',
     }}>
       <span style={{ font: '900 30px/1 var(--font-display)', letterSpacing: '-0.05em', color: b.key }}>{index}</span>
-      <span style={{ font: '600 18px/1.2 var(--font-body)', alignSelf: 'stretch' }}>{children}</span>
+      <span style={{ display: 'flex', flexDirection: 'column', gap: 2, alignSelf: 'stretch' }}>
+        <span style={{ font: '600 18px/1.2 var(--font-body)' }}>{children}</span>
+        {sublabel && <span style={{ font: '400 13px/1.3 var(--font-body)', opacity: 0.75 }}>{sublabel}</span>}
+      </span>
     </button>
   );
 }

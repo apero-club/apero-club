@@ -16,7 +16,7 @@ describe('lesson files', () => {
       if (!r.success) throw new Error(r.error.issues.map(i => `${i.path.join('.')}: ${i.message}`).join('\n'));
       expect(f).toBe(`${r.data.date}.json`);
       const assets = join(__dirname, '../../public/lessons', r.data.date);
-      const images = [r.data.describe.image, ...r.data.hero.flatMap(t => ('image' in t ? [t.image] : []))];
+      const images = [r.data.describe.image, ...[...r.data.hero, ...(r.data.heroWide ?? [])].flatMap(t => ('image' in t ? [t.image] : []))];
       for (const img of images) expect(existsSync(join(assets, img)), `missing public/lessons/${r.data.date}/${img}`).toBe(true);
     });
   }

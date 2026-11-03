@@ -1,6 +1,6 @@
 # Writing a lesson
 
-Every apéro club lesson is one JSON file. The app reads it and renders it through the same template every day:
+Every apéro club lesson is one JSON file. The app reads it and renders it through the same template every day, as a phone layout or, on screens 900px and wider, the desktop layout:
 
 **Today → 01 Écouter et lire → 02 Comprendre → 03 Comme on dit → 04 Décrire → Séance terminée**, plus the **Grammar** tab.
 
@@ -23,7 +23,9 @@ You can push lessons ahead of time. The app shows the newest lesson dated today 
 | `title`, `summary` | Shown in the Today hero. Title in French, summary in English. |
 | `level` | Defaults to `"A2 to B1"`. Not shown in the app yet. |
 | `minutes` | Time for each step: `story`, `quiz`, `phrases`, `describe`. The Today total is their sum. |
-| `hero` | Exactly 3 squares under the hero. Each is either an illustration `{ "image", "bg", "alt" }` or a kit shape `{ "shape", "bg", "fg", "eyes"?, "blink"? }`. Make at least one about the story (the croissant), and give at most one shape eyes. |
+| `heroWide` | Optional. The 2×2 grid beside the hero on desktop: 4 squares, each an illustration, a kit shape, or a pattern `{ "pattern": "checker" \| "halves" \| "clouds", "a", "b" }`. Make one or two about the story, and give one shape eyes. Without it, desktop uses a checker plus the 3 `hero` squares. |
+| `place` | Optional. A short place line under the story title on desktop, e.g. `"rue des Martyrs, 9e"`. |
+| `hero` | Exactly 3 squares under the phone hero. Each is either an illustration `{ "image", "bg", "alt" }` or a kit shape `{ "shape", "bg", "fg", "eyes"?, "blink"? }`. Make at least one about the story (the croissant), and give at most one shape eyes. |
 | `cast` | The voices in the story. See below. |
 | `story` | Paragraphs, each a list of lines. See below. |
 | `notes` | The grammar notes ("Pourquoi ?"). Their order is the order in the Grammar tab. |
@@ -41,6 +43,7 @@ Colours are design system tokens without the `--`: `violet-500`, `sky-700`, `ora
 ```
 
 - `color` is the text colour of that person's lines. Stick to `ink-900`, `violet-500` and `sky-700`, which pass contrast on the page.
+- `role` (optional) is shown under the name in the desktop cast key, e.g. `"the baker"`.
 - `label` (optional) colours the small name above their dialogue. It defaults to `color`.
 - `voice` is `male` or `female`. The app gives each cast member a different French voice from the learner's device when it can. When the device has too few voices, they share one at different pitches. Put the narrator first.
 
@@ -80,7 +83,7 @@ Each note has an `id`, a `kicker` (e.g. "Temps du passé"), a `title`, a one-sen
 
 ### Describe
 
-- `image`: a square illustration, cropped into an arch. `imagePosition` sets the crop (CSS `object-position`).
+- `image`: a square illustration, cropped into an arch. `imagePosition` sets the crop (CSS `object-position`). `caption` (optional) appears under it on desktop.
 - `instructions`, `placeholder`, and up to 8 `helpers` (tap-to-insert phrases; a trailing `…` is dropped when inserted).
 - `scene`: a plain-English description of the image. It isn't shown. It's there for when a live AI check is added.
 - `sample`: a typical learner description with mistakes (`text`) and its worked `result`. **Check** shows this result, since there is no live correction yet.

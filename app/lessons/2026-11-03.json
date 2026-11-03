@@ -28,10 +28,36 @@
       "fg": "green-300"
     }
   ],
+  "heroWide": [
+    {
+      "pattern": "checker",
+      "a": "green-900",
+      "b": "green-500"
+    },
+    {
+      "image": "illo-coffee.svg",
+      "bg": "sky-300",
+      "alt": ""
+    },
+    {
+      "shape": "circle",
+      "bg": "lilac-500",
+      "fg": "pink-500",
+      "eyes": "look",
+      "blink": true
+    },
+    {
+      "image": "illo-croissant.svg",
+      "bg": "orange-500",
+      "alt": ""
+    }
+  ],
+  "place": "rue des Martyrs, 9e",
   "cast": [
     {
       "id": "narrator",
       "name": "Moi",
+      "role": "the narrator",
       "color": "ink-900",
       "label": "ink-500",
       "critter": {
@@ -43,6 +69,7 @@
     {
       "id": "neighbour",
       "name": "Madame Lefèvre",
+      "role": "the neighbour",
       "color": "violet-500",
       "critter": {
         "kind": "dome",
@@ -53,6 +80,7 @@
     {
       "id": "baker",
       "name": "La boulangère",
+      "role": "the baker",
       "color": "sky-700",
       "critter": {
         "kind": "jelly",
@@ -479,6 +507,7 @@
     "image": "scene-bakery.png",
     "alt": "Two pigeons at a bakery counter: a violet pigeon baker hands a coffee to a pink pigeon customer",
     "imagePosition": "50% 100%",
+    "caption": "La boulangerie des pigeons · samedi, 8 h 15",
     "instructions": "Write 3 to 5 sentences: who is there, what are they doing, what’s in the shop?",
     "placeholder": "Dans la boulangerie, il y a…",
     "helpers": [

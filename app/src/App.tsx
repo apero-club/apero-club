@@ -13,17 +13,32 @@ import { SayIt } from './screens/SayIt';
 import { Corrections, Describe } from './screens/Describe';
 import { Complete } from './screens/Complete';
 import { Critter } from './ds/brand';
+import { Desktop, NoteDrawer } from './desktop/Desktop';
+
+const WIDE = '(min-width: 900px)';
+/** True on screens wide enough for the desktop design. */
+function useWide() {
+  const [wide, setWide] = useState(() => typeof matchMedia !== 'undefined' && matchMedia(WIDE).matches);
+  useEffect(() => {
+    const m = matchMedia(WIDE), on = () => setWide(m.matches);
+    m.addEventListener('change', on);
+    return () => m.removeEventListener('change', on);
+  }, []);
+  return wide;
+}
 
 export default function App() {
+  const wide = useWide();
   const [state, setState] = useState<{ lesson?: Lesson; error?: string }>({});
   useEffect(() => {
     const date = requestedDate();
     loadLesson(date).then(lesson => setState({ lesson }), e => setState({ error: String(e?.message ?? e) }));
   }, []);
 
+  if (state.lesson) return <LessonApp lesson={state.lesson} wide={wide} />;
   return (
     <div className="shell">
-      {state.lesson ? <LessonApp lesson={state.lesson} />
+      {state.lesson ? null
         : <div className="center-msg">
             <Critter kind="olive" size={88} expression={state.error ? 'sleepy' : 'look'} blink />
             <p style={{ margin: 0, color: 'var(--fg-2)', whiteSpace: 'pre-wrap', textAlign: state.error ? 'left' : 'center', fontSize: 14 }}>
@@ -34,7 +49,7 @@ export default function App() {
   );
 }
 
-function LessonApp({ lesson }: { lesson: Lesson }) {
+function LessonApp({ lesson, wide }: { lesson: Lesson; wide: boolean }) {
   const { lines, paragraphs } = useMemo(() => flattenStory(lesson), [lesson]);
   const [screen, setScreen] = useState<Screen>('home');
   const [note, setNote] = useState<string | null>(null);
@@ -56,6 +71,7 @@ function LessonApp({ lesson }: { lesson: Lesson }) {
     if (markDone) setProgress({ done: { [markDone]: true } });
     setScreen(s);
     root.current?.querySelector('.scroll')?.scrollTo(0, 0);
+    if (wide) window.scrollTo(0, 0);
   };
 
   const app: AppCtx = {
@@ -70,10 +86,15 @@ function LessonApp({ lesson }: { lesson: Lesson }) {
   const Screens: Record<Screen, typeof Home> = { home: Home, grammar: Grammar, story: Story, quiz: Quiz, spoken: SayIt, describe: Describe, result: Corrections, complete: Complete };
   const Current = Screens[screen];
 
+  const closeNote = () => { speech.stop(); setNote(null); };
+  if (wide) return <>
+    <Desktop app={app} screen={screen} />
+    {noteObj && <NoteDrawer note={noteObj} onClose={closeNote} say={t => speech.say(t)} />}
+  </>;
   return (
-    <div ref={root} style={{ display: 'contents' }}>
+    <div className="shell" ref={root}>
       <Current key={screen} app={app} />
-      {noteObj && <NoteSheet note={noteObj} onClose={() => { speech.stop(); setNote(null); }} say={t => speech.say(t)} />}
+      {noteObj && <NoteSheet note={noteObj} onClose={closeNote} say={t => speech.say(t)} />}
     </div>
   );
 }

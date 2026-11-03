@@ -36,6 +36,12 @@ const HeroTile = z.union([
     bg: Token,
     alt: z.string().default(''),
   }).strict(),
+  z.object({
+    /** A brand pattern (desktop hero only). Never behind text. */
+    pattern: z.enum(['checker', 'halves', 'clouds']),
+    a: Token,
+    b: Token,
+  }).strict(),
 ]);
 
 const CastMember = z.object({
@@ -43,6 +49,8 @@ const CastMember = z.object({
   id: z.string().regex(/^[a-z][a-z0-9-]*$/),
   /** Shown in the cast key and above dialogue, e.g. "Madame Lefèvre". */
   name: z.string().min(1),
+  /** Shown under the name in the desktop cast key, e.g. "the baker". */
+  role: z.string().optional(),
   /** Text colour for this speaker's lines. Keep to ink-900, violet-500, sky-700 (AA on paper). */
   color: Token,
   /** Colour for the small name label above dialogue. Defaults to `color`. */
@@ -140,6 +148,8 @@ const Describe = z.object({
   alt: z.string(),
   /** Where the arch crop anchors, CSS object-position. */
   imagePosition: z.string().default('50% 100%'),
+  /** Small caption under the image on desktop. */
+  caption: z.string().optional(),
   instructions: z.string(),
   placeholder: z.string(),
   /** Tap-to-insert phrase chips. A trailing "…" is stripped when inserted. */
@@ -157,8 +167,16 @@ export const LessonSchema = z.object({
   summary: z.string().min(1),
   level: z.string().default('A2 to B1'),
   minutes: z.object({ story: z.number(), quiz: z.number(), phrases: z.number(), describe: z.number() }).strict(),
-  /** Exactly 3 squares under the Today hero. Make at least one about the story. */
+  /** Exactly 3 squares under the phone Today hero. Make at least one about the story. */
   hero: z.array(HeroTile).length(3),
+  /**
+   * The 2×2 grid beside the desktop Today hero. One or two squares about the story,
+   * the rest shapes or a pattern, with one blinking face. Defaults to a checker
+   * pattern plus the 3 `hero` squares.
+   */
+  heroWide: z.array(HeroTile).length(4).optional(),
+  /** Short place line for the desktop story header, e.g. "rue des Martyrs, 9e". */
+  place: z.string().optional(),
   cast: z.array(CastMember).min(1),
   /** Paragraphs of lines. A paragraph whose first line starts with "—" is shown as dialogue. */
   story: z.array(z.array(Line).min(1)).min(1),
@@ -181,6 +199,7 @@ export const LessonSchema = z.object({
     if (x.quoteSpeaker && !x.fr.includes('«')) err([...at, 'quoteSpeaker'], 'quoteSpeaker needs a «quote» in the line');
     if (x.note && !notes.has(x.note)) err([...at, 'note'], `Unknown note "${x.note}"`);
   }));
+  l.hero.forEach((t, i) => { if ('pattern' in t) err(['hero', i], 'Patterns are for heroWide only'); });
   l.quiz.forEach((q, qi) => {
     const right = q.options.filter(o => o.correct).length;
     if (right !== 1) err(['quiz', qi, 'options'], `Exactly one option must be correct (found ${right})`);
