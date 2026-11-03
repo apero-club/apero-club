@@ -14,13 +14,10 @@ import { groupLessons, isDone, lessonStatus, topicsOf, useLessonList } from '../
 import { LessonSheet } from '../screens/Lessons';
 import type { AppCtx, Screen } from '../screens/common';
 import { Eyebrow, pad, PRAISE, STEPS } from '../screens/common';
+import { stepColors } from '../lesson/palette';
 import { FillImage, HeroTile, listenColors, storyImage } from '../screens/HeroTile';
 
 const EN_LABEL = { story: 'Listen', quiz: 'Check', spoken: 'Say it', describe: 'Write' } as const;
-const STEP_TILE = [
-  { bg: 'var(--violet-500)', fg: 'var(--white)' }, { bg: 'var(--sun-300)', fg: 'var(--sun-900)' },
-  { bg: 'var(--orange-500)', fg: 'var(--ink-900)' }, { bg: 'var(--sky-300)', fg: 'var(--sky-900)' },
-];
 const NOTE_TILES: { shape: ShapeName; tileBg: string; tileFg: string; tileAccent?: string }[] = [
   { shape: 'halves', tileBg: 'orange-500', tileFg: 'orange-300' }, { shape: 'flower', tileBg: 'sun-300', tileFg: 'violet-500', tileAccent: 'orange-500' },
   { shape: 'arch', tileBg: 'orange-500', tileFg: 'sun-300' }, { shape: 'circle', tileBg: 'violet-500', tileFg: 'sky-300' },
@@ -89,6 +86,7 @@ function DHome({ app }: P) {
   const total = Object.values(lesson.minutes).reduce((a, b) => a + b, 0);
   const mins = (id: string) => lesson.minutes[id === 'spoken' ? 'phrases' : (id as 'story')];
   const wide: HeroTileT[] = lesson.heroWide ?? [{ pattern: 'checker', a: 'green-900', b: 'green-500' }, ...lesson.hero];
+  const stepTile = stepColors(wide, lesson.number);
   const desc: Record<string, string> = {
     story: `A ${app.lines.length}-sentence story read by ${lesson.cast.length} French voices. Tap any line to hear it.`,
     quiz: `${lesson.quiz.length} questions. Every wrong answer comes with the reason.`,
@@ -122,10 +120,10 @@ function DHome({ app }: P) {
         {STEPS.map((s, i) => {
           const isDone = !!progress.done[s.id], isNext = next?.id === s.id;
           return (
-            <button key={s.id} className="step-tile" onClick={() => go(s.id)} style={{ background: STEP_TILE[i].bg, color: STEP_TILE[i].fg }}>
+            <button key={s.id} className="step-tile" onClick={() => go(s.id)} style={{ background: tok(stepTile[i].bg), color: tok(stepTile[i].fg) }}>
               <span style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', width: '100%', gap: 12 }}>
                 <span style={{ font: '900 56px/0.9 var(--font-display)', letterSpacing: '-0.05em' }}>{s.n}</span>
-                <span style={{ font: '600 12px/1 var(--font-display)', padding: '7px 10px', borderRadius: 'var(--radius-pill)', background: isDone ? 'var(--green-500)' : isNext ? 'var(--violet-500)' : 'var(--white)', color: isNext && !isDone ? 'var(--white)' : 'var(--ink-900)' }}>
+                <span style={{ font: '600 12px/1 var(--font-display)', padding: '7px 10px', borderRadius: 'var(--radius-pill)', background: isDone ? 'var(--green-500)' : isNext ? (stepTile[i].family === 'violet' ? 'var(--ink-900)' : 'var(--violet-500)') : 'var(--white)', color: isNext && !isDone ? 'var(--white)' : 'var(--ink-900)' }}>
                   {isDone ? 'Done' : isNext ? `Up next · ${mins(s.id)} min` : `${mins(s.id)} min`}
                 </span>
               </span>
