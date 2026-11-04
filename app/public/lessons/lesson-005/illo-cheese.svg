@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="A wedge of cheese">
+  <!-- Lesson 5 hero tile: a wedge of comté, flat brand colours. Transparent background. -->
+  <!-- top face -->
+  <path d="M24 92 L150 52 L178 88 Z" fill="#FFF0CC"/>
+  <!-- cut face -->
+  <path d="M24 92 L178 88 L178 150 L24 156 Z" fill="#FFCF66"/>
+  <!-- rind -->
+  <path d="M150 52 L178 88 L178 150 L170 150 L170 92 L146 60 Z" fill="#B57200"/>
+  <path d="M24 156 L178 150 L178 160 L24 166 Z" fill="#B57200"/>
+  <!-- the little salt crystals of an old comté -->
+  <g fill="#FFF0CC">
+    <circle cx="62" cy="118" r="4"/><circle cx="96" cy="132" r="3"/><circle cx="128" cy="112" r="4.5"/>
+    <circle cx="150" cy="134" r="3"/><circle cx="44" cy="138" r="2.5"/><circle cx="110" cy="104" r="2.5"/>
+  </g>
+</svg>

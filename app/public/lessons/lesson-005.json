@@ -1,0 +1,651 @@
+{
+  "title": "Le fromager snob",
+  "summary": "A Saturday cheese shop where the cheesemonger tests his customers first.",
+  "level": "A2 to B1",
+  "minutes": {
+    "story": 4,
+    "quiz": 3,
+    "phrases": 1,
+    "describe": 2
+  },
+  "hero": [
+    {
+      "image": "illo-cheese.svg",
+      "bg": "sky-300",
+      "alt": ""
+    },
+    {
+      "shape": "arch",
+      "bg": "orange-500",
+      "fg": "sun-300",
+      "eyes": "wide",
+      "blink": true
+    },
+    {
+      "image": "illo-wine.svg",
+      "bg": "pink-500",
+      "alt": ""
+    }
+  ],
+  "heroWide": [
+    {
+      "image": "illo-cheese.svg",
+      "bg": "sky-300",
+      "alt": ""
+    },
+    {
+      "pattern": "checker",
+      "a": "sun-300",
+      "b": "sun-500"
+    },
+    {
+      "shape": "arch",
+      "bg": "orange-500",
+      "fg": "sun-300",
+      "eyes": "wide",
+      "blink": true
+    },
+    {
+      "image": "illo-wine.svg",
+      "bg": "pink-500",
+      "alt": ""
+    }
+  ],
+  "place": "rue Mouffetard, 5e",
+  "cast": [
+    {
+      "id": "narrator",
+      "name": "Moi",
+      "role": "the narrator",
+      "description": "The narrator, \"Moi\": a learner in their 30s who lives in Paris. Friendly, relaxed, a bit self-mocking.",
+      "color": "ink-900",
+      "label": "ink-500",
+      "critter": {
+        "kind": "bean",
+        "color": "sun-500"
+      },
+      "voice": "male"
+    },
+    {
+      "id": "margaux",
+      "name": "Margaux",
+      "role": "a customer in a hurry",
+      "description": "A Parisian woman of 35, middle-aged rather than young, shopping for a party. Friendly, quick, a little sheepish; a natural Parisian accent.",
+      "color": "sky-700",
+      "critter": {
+        "kind": "sugar",
+        "color": "sky-500"
+      },
+      "voice": "female"
+    },
+    {
+      "id": "monsieur-vasseur",
+      "name": "Monsieur Vasseur",
+      "role": "the cheesemonger",
+      "description": "A cheesemonger in his sixties, an older Parisian man who loves his cheeses like his children. Theatrical, grand and solemn, ridiculous but lovable.",
+      "color": "violet-500",
+      "critter": {
+        "kind": "dome",
+        "color": "sun-500"
+      },
+      "voice": "male"
+    }
+  ],
+  "story": [
+    [
+      {
+        "speaker": "narrator",
+        "fr": "Samedi, il y avait beaucoup de monde à la fromagerie de la rue Mouffetard.",
+        "en": "On Saturday the cheese shop on rue Mouffetard was packed.",
+        "note": "quantite-de"
+      },
+      {
+        "speaker": "narrator",
+        "fr": "Derrière le comptoir, Monsieur Vasseur parlait à ses fromages comme à ses enfants.",
+        "en": "Behind the counter, Monsieur Vasseur talked to his cheeses as if they were his children."
+      }
+    ],
+    [
+      {
+        "id": "margaux-demande",
+        "speaker": "margaux",
+        "fr": "— Bonjour ! Il me faut du fromage pour une soirée, ce soir.",
+        "en": "“Hello! I need some cheese for a party tonight.”",
+        "note": "partitif"
+      }
+    ],
+    [
+      {
+        "id": "vasseur-refuse",
+        "speaker": "monsieur-vasseur",
+        "fr": "— « Du fromage » ? Madame, je ne vends pas de fromage à n’importe qui.",
+        "en": "“‘Some cheese’? Madam, I don’t sell cheese to just anyone.",
+        "note": "negation-de"
+      },
+      {
+        "speaker": "monsieur-vasseur",
+        "fr": "D’abord, un petit test.",
+        "en": "First, a little test.”"
+      }
+    ],
+    [
+      {
+        "speaker": "narrator",
+        "fr": "Les yeux fermés, elle a reconnu un fromage à l’odeur : « Du munster. »",
+        "en": "With her eyes closed, she recognised a cheese by its smell: “Munster.”",
+        "quoteSpeaker": "margaux"
+      },
+      {
+        "speaker": "narrator",
+        "fr": "Pour son chèvre préféré, elle a choisi le bon vin : « Un sancerre. »",
+        "en": "For his favourite goat’s cheese, she picked the right wine: “A Sancerre.”",
+        "quoteSpeaker": "margaux"
+      },
+      {
+        "speaker": "narrator",
+        "fr": "Puis elle a expliqué la différence entre un comté de douze mois et un comté de trois ans.",
+        "en": "Then she explained the difference between a twelve-month comté and a three-year-old one."
+      }
+    ],
+    [
+      {
+        "speaker": "monsieur-vasseur",
+        "fr": "— Madame… Vous adorez le fromage, ça se voit.",
+        "en": "“Madam… You adore cheese, I can tell.",
+        "note": "aimer-le"
+      },
+      {
+        "speaker": "monsieur-vasseur",
+        "fr": "Pour vous, j’ai quelque chose de rare. Attendez.",
+        "en": "For you, I have something rare. Wait here.”",
+        "note": "quelque-chose-de"
+      }
+    ],
+    [
+      {
+        "speaker": "narrator",
+        "fr": "Il est revenu de la cave avec une minuscule meule au lait cru, affinée pendant deux ans.",
+        "en": "He came back from the cellar with a tiny raw-milk wheel, aged for two years."
+      }
+    ],
+    [
+      {
+        "speaker": "margaux",
+        "fr": "— En fait… je voulais juste du gruyère râpé. Pour des pâtes.",
+        "en": "“Actually… I just wanted some grated gruyère. For pasta.”",
+        "delivery": "calm"
+      }
+    ],
+    [
+      {
+        "speaker": "narrator",
+        "fr": "Un silence terrible. Par pitié, Margaux a acheté la petite meule.",
+        "en": "A terrible silence. Out of pity, Margaux bought the little wheel."
+      },
+      {
+        "id": "vasseur-emballe",
+        "speaker": "narrator",
+        "fr": "Il l’a emballée dans trois feuilles de papier, comme un nouveau-né.",
+        "en": "He wrapped it in three sheets of paper, like a newborn baby."
+      }
+    ],
+    [
+      {
+        "speaker": "monsieur-vasseur",
+        "fr": "— Prenez-en soin. Et pour le gruyère râpé, il y a le supermarché.",
+        "en": "“Take good care of it. And for grated gruyère, there’s the supermarket.”",
+        "delivery": "flat"
+      }
+    ]
+  ],
+  "notes": [
+    {
+      "id": "partitif",
+      "kicker": "Articles",
+      "title": "« Du fromage » : pourquoi « du » ?",
+      "short": "Du, de la, de l’ and des mean some: an amount you don’t count or don’t specify.",
+      "body": [
+        "English often says nothing at all: “I need cheese”, “I want bread”. French can’t leave the noun bare, so it uses a partitive article: du fromage, de la crème, de l’eau, des pâtes.",
+        "Pick it like le and la: du for masculine (du comté), de la for feminine (de la tomme), de l’ before a vowel (de l’emmental), des for plurals (des olives).",
+        "Quick check: could you say “some” in English, even if you wouldn’t? Then it’s du, de la or des."
+      ],
+      "examples": [
+        {
+          "fr": "Il me faut du fromage pour une soirée.",
+          "en": "I need some cheese for a party.",
+          "tag": "Du"
+        },
+        {
+          "fr": "Je voulais juste du gruyère râpé.",
+          "en": "I just wanted some grated gruyère.",
+          "tag": "Du"
+        },
+        {
+          "fr": "Vous avez de la crème fraîche ?",
+          "en": "Do you have any crème fraîche?",
+          "tag": "De la"
+        }
+      ],
+      "spoken": "At any counter in Paris you’ll hear « Je voudrais du pain », « Vous avez de la burrata ? ». Shopkeepers ask « Et avec ça ? » (anything else?), and you answer with another du or de la.",
+      "trap": {
+        "wrong": "Il me faut fromage pour ce soir.",
+        "right": "Il me faut du fromage pour ce soir.",
+        "why": "French nouns almost never stand alone. Where English says just “cheese”, French needs du."
+      }
+    },
+    {
+      "id": "negation-de",
+      "kicker": "Articles",
+      "title": "« Pas de fromage » : où est passé « du » ?",
+      "short": "After a negation, du, de la and des become de (or d’ before a vowel).",
+      "body": [
+        "Je vends du fromage, but je ne vends pas de fromage. The same goes for plus, jamais and the other negations from lesson 2: il n’y a plus de comté, je ne mange jamais d’olives.",
+        "The logic: once there’s none, there’s no amount left to talk about, so only de remains.",
+        "The exception is être. C’est du comté becomes ce n’est pas du comté, because you’re saying what it is, not how much there is."
+      ],
+      "examples": [
+        {
+          "fr": "Je ne vends pas de fromage à n’importe qui.",
+          "en": "I don’t sell cheese to just anyone.",
+          "tag": "Pas de"
+        },
+        {
+          "fr": "Il n’y a plus de brie.",
+          "en": "There’s no brie left.",
+          "tag": "Plus de"
+        },
+        {
+          "fr": "Ce n’est pas du comté, c’est du beaufort.",
+          "en": "It isn’t comté, it’s beaufort.",
+          "tag": "Être : du"
+        }
+      ],
+      "spoken": "With the ne dropped, the de is what tells you it’s negative: « J’ai pas de monnaie », « Y a plus de pain ». Listen for it at the end of a shop day.",
+      "trap": {
+        "wrong": "Je ne veux pas du camembert.",
+        "right": "Je ne veux pas de camembert.",
+        "why": "After pas, the partitive du becomes de. « Pas du camembert » is only right with être: ce n’est pas du camembert."
+      }
+    },
+    {
+      "id": "quantite-de",
+      "kicker": "Articles",
+      "title": "« Beaucoup de monde » : pourquoi juste « de » ?",
+      "short": "After a word of quantity, French uses de alone: beaucoup de, un morceau de, un peu de.",
+      "body": [
+        "The quantity already says how much, so the article drops out: beaucoup de monde, un morceau de brie, une tranche de jambon, un kilo de pommes, trois feuilles de papier.",
+        "This is why it’s never « beaucoup des fromages », a very common slip. De stays the same before a plural, and becomes d’ before a vowel: un peu d’emmental.",
+        "Quick check: is there a word for how much (beaucoup, peu, assez, trop, un morceau)? Then just de."
+      ],
+      "examples": [
+        {
+          "fr": "Il y avait beaucoup de monde à la fromagerie.",
+          "en": "The cheese shop was packed.",
+          "tag": "Beaucoup de"
+        },
+        {
+          "fr": "Je vais prendre un morceau de comté.",
+          "en": "I’ll take a piece of comté.",
+          "tag": "Un morceau de"
+        },
+        {
+          "fr": "Il l’a emballée dans trois feuilles de papier.",
+          "en": "He wrapped it in three sheets of paper.",
+          "tag": "Trois feuilles de"
+        }
+      ],
+      "spoken": "In speech, beaucoup de often becomes plein de: « Y avait plein de monde. » And at the counter, un morceau is often un bout: « Un petit bout de comté, s’il vous plaît. »",
+      "trap": {
+        "wrong": "Il y a beaucoup des fromages.",
+        "right": "Il y a beaucoup de fromages.",
+        "why": "After beaucoup, only de, even before a plural. Des would be a second article on top of the quantity."
+      }
+    },
+    {
+      "id": "aimer-le",
+      "kicker": "Articles",
+      "title": "Pourquoi « vous adorez le fromage » et pas « du fromage » ?",
+      "short": "Aimer, adorer, détester and préférer take le, la, les: you’re talking about the thing in general.",
+      "body": [
+        "This is the classic mistake. Je voudrais du comté: some comté, a piece of it. J’adore le comté: comté in general, as a whole category.",
+        "Verbs of taste are always about the whole thing, so they take the definite article: j’aime le chèvre, je déteste la coriandre, je préfère les pâtes.",
+        "Quick check: are you buying, eating or wanting an amount? Du. Are you saying how you feel about it? Le."
+      ],
+      "examples": [
+        {
+          "fr": "Vous adorez le fromage, ça se voit.",
+          "en": "You adore cheese, I can tell.",
+          "tag": "Adorer + le"
+        },
+        {
+          "fr": "J’adore le comté, alors je voudrais du comté.",
+          "en": "I love comté, so I’d like some comté.",
+          "tag": "Le / du"
+        },
+        {
+          "fr": "Je déteste les fromages trop forts.",
+          "en": "I hate cheeses that are too strong.",
+          "tag": "Détester + les"
+        }
+      ],
+      "spoken": "You’ll hear the two side by side all the time: « J’aime pas le bleu, mais je veux bien du brie. » In English both are just “cheese”; in French the article tells you which meaning.",
+      "trap": {
+        "wrong": "J’aime du fromage.",
+        "right": "J’aime le fromage.",
+        "why": "You love cheese as a whole, not some amount of it. After aimer, adorer, détester and préférer, use le, la, les."
+      }
+    },
+    {
+      "id": "quelque-chose-de",
+      "kicker": "Construction",
+      "title": "« Quelque chose de rare » : pourquoi « de » ?",
+      "short": "After quelque chose, rien, personne and quelqu’un, an adjective needs de and stays masculine.",
+      "body": [
+        "English puts the adjective straight after: something rare. French slips in de: quelque chose de rare, rien de spécial, quelqu’un de gentil.",
+        "The adjective stays masculine singular even though chose is feminine: quelque chose de bon, never de bonne.",
+        "It works with the negative words too: rien de grave (nothing serious), personne d’intéressant (nobody interesting)."
+      ],
+      "examples": [
+        {
+          "fr": "J’ai quelque chose de rare.",
+          "en": "I have something rare.",
+          "tag": "Quelque chose de"
+        },
+        {
+          "fr": "Ce n’est rien de grave.",
+          "en": "It’s nothing serious.",
+          "tag": "Rien de"
+        },
+        {
+          "fr": "C’est quelqu’un de très gentil.",
+          "en": "He’s a really kind person.",
+          "tag": "Quelqu’un de"
+        }
+      ],
+      "spoken": "« Rien de spécial » is the standard answer to « Quoi de neuf ? » (What’s new?), which uses the same de. In speech you’ll also hear « un truc de dingue » for something crazy.",
+      "trap": {
+        "wrong": "J’ai quelque chose rare.",
+        "right": "J’ai quelque chose de rare.",
+        "why": "After quelque chose, the adjective needs de in front of it, and it stays masculine: de rare, de bon, de nouveau."
+      }
+    }
+  ],
+  "quiz": [
+    {
+      "kind": "Écoute",
+      "prompt": "Listen to Margaux. What does she ask for?",
+      "listen": "margaux-demande",
+      "note": "partitif",
+      "options": [
+        {
+          "text": "A particular cheese she tasted at a party.",
+          "why": "She doesn’t name any cheese. « Du fromage » is any cheese at all, which is exactly what upsets him."
+        },
+        {
+          "text": "Some cheese for a party tonight.",
+          "correct": true,
+          "why": "« Il me faut du fromage pour une soirée, ce soir »: some cheese, no particular kind, for tonight."
+        },
+        {
+          "text": "A cheese board for twenty people.",
+          "why": "No number and no plateau: she just says « du fromage », some cheese."
+        }
+      ]
+    },
+    {
+      "kind": "Écoute",
+      "prompt": "Listen to Monsieur Vasseur. How does he answer her?",
+      "listen": "vasseur-refuse",
+      "note": "negation-de",
+      "options": [
+        {
+          "text": "He says he has no cheese left today.",
+          "why": "That would be « je n’ai plus de fromage ». He says « je ne vends pas de fromage à n’importe qui »."
+        },
+        {
+          "text": "He tells her the shop is closed.",
+          "why": "Nothing about closing. He’s fussy, not closed: she has to pass a test first."
+        },
+        {
+          "text": "He doesn’t sell cheese to just anyone: she must pass a test.",
+          "correct": true,
+          "why": "« À n’importe qui » = to just anyone, then « D’abord, un petit test »: first, a little test."
+        }
+      ]
+    },
+    {
+      "kind": "Grammaire",
+      "quote": "— Madame… Vous adorez le fromage, ça se voit.",
+      "prompt": "Why “le fromage” here, when Margaux asked for “du fromage”?",
+      "note": "aimer-le",
+      "options": [
+        {
+          "text": "Adorer talks about cheese in general, so it takes le.",
+          "correct": true,
+          "why": "Verbs of taste (aimer, adorer, détester, préférer) are about the whole category: le fromage. Du is for an amount."
+        },
+        {
+          "text": "Because he’s talking about one particular cheese.",
+          "why": "He isn’t pointing at one cheese: he means cheese in general, all of it. That’s why it’s le."
+        },
+        {
+          "text": "He’s being formal, and le sounds more polite.",
+          "why": "Le isn’t more polite than du. They mean different things: in general versus some."
+        }
+      ]
+    },
+    {
+      "kind": "Grammaire",
+      "quote": "— « Du fromage » ? Madame, je ne vends pas de fromage à n’importe qui.",
+      "prompt": "Why “pas de fromage” and not “pas du fromage”?",
+      "note": "negation-de",
+      "options": [
+        {
+          "text": "After a negation like pas, du becomes de.",
+          "correct": true,
+          "why": "Je vends du fromage, je ne vends pas de fromage. Once there’s none, the amount disappears and only de remains."
+        },
+        {
+          "text": "Fromage is used without an article in shops.",
+          "why": "There’s still a de, and in the positive it’s du fromage. The change comes from the negation."
+        },
+        {
+          "text": "He’s quoting her, so he changes the article.",
+          "why": "He quotes her with « Du fromage ? », then makes his own sentence negative: that’s what turns du into de."
+        }
+      ]
+    },
+    {
+      "kind": "Lecture",
+      "quote": "Il l’a emballée dans trois feuilles de papier, comme un nouveau-né.",
+      "prompt": "In “Il l’a emballée”, what does “l’” stand for?",
+      "options": [
+        {
+          "text": "Margaux.",
+          "why": "He’s wrapping something in paper, like a baby. Margaux bought it; she isn’t being wrapped."
+        },
+        {
+          "text": "The little wheel of cheese.",
+          "correct": true,
+          "why": "L’ = la petite meule. Emballée takes an -e because meule is feminine and comes before avoir."
+        },
+        {
+          "text": "The grated gruyère.",
+          "why": "He never sells her the gruyère: he sends her to the supermarket for that. And gruyère is masculine."
+        }
+      ]
+    },
+    {
+      "kind": "Compréhension",
+      "quote": "— Prenez-en soin. Et pour le gruyère râpé, il y a le supermarché.",
+      "prompt": "What does Monsieur Vasseur mean by his last line?",
+      "options": [
+        {
+          "text": "The supermarket has better gruyère than his shop.",
+          "why": "Quite the opposite: he thinks grated gruyère is beneath his shop."
+        },
+        {
+          "text": "He’s recommending a friend’s shop down the road.",
+          "why": "« Le supermarché » isn’t a friend’s shop: it’s the last place a cheesemonger would send you."
+        },
+        {
+          "text": "Grated gruyère is beneath him: go and buy that somewhere else.",
+          "correct": true,
+          "why": "Wounded pride, delivered with dignity: his shop is for treasures, not cheese for pasta."
+        }
+      ]
+    }
+  ],
+  "phrases": [
+    {
+      "written": "Que désirez-vous ?",
+      "spoken": "Qu’est-ce qu’il vous faudrait ?",
+      "register": "Courant",
+      "note": "What can I get you? The polite counter question you’ll hear at every fromagerie and boucherie. Answer with « Il me faudrait du… »."
+    },
+    {
+      "written": "En voulez-vous davantage ?",
+      "spoken": "Comme ça ? Un peu plus ?",
+      "register": "Courant",
+      "note": "The cheesemonger holds the knife over the wheel and asks. Say « C’est parfait » or « Un peu moins »."
+    },
+    {
+      "written": "Désirez-vous autre chose ?",
+      "spoken": "Et avec ça ?",
+      "register": "Courant",
+      "note": "Anything else? Every Paris shopkeeper says it. « Ce sera tout » or « C’est tout, merci » means you’re done."
+    },
+    {
+      "written": "Je voudrais un morceau de comté.",
+      "spoken": "Je vais vous prendre un bout de comté.",
+      "register": "Familier",
+      "note": "« Je vais vous prendre » is how people really order. Un bout (a bit) is the relaxed word for un morceau."
+    },
+    {
+      "written": "Ce fromage sent très fort.",
+      "spoken": "Il pue, ce fromage !",
+      "register": "Familier",
+      "note": "Puer means to stink. Said about a munster, it’s almost a compliment. Keep it among friends, not with the cheesemonger."
+    },
+    {
+      "written": "Il n’y a plus de fromage.",
+      "spoken": "Y a plus de fromage.",
+      "register": "Courant",
+      "note": "Il n’y a shrinks to y a, and the ne drops. Plus is said [ply]: no more cheese, the saddest sentence at a party."
+    }
+  ],
+  "describe": {
+    "image": "scene-fromagerie.svg",
+    "alt": "Inside a small Paris cheese shop: wheels of cheese on wooden shelves, a slate of prices, a cheesemonger in an apron holding a little wrapped wheel, a customer at the counter, and cheeses under glass",
+    "imagePosition": "50% 70%",
+    "caption": "Rue Mouffetard · samedi, 10 h",
+    "instructions": "Write 3 to 5 sentences: what can you see in the fromagerie, and what would you buy? Use du, de la or des, a negation, and a quantity.",
+    "placeholder": "Dans la fromagerie, il y a…",
+    "helpers": [
+      "il y a du…",
+      "de la…",
+      "un morceau de…",
+      "beaucoup de…",
+      "il n’y a pas de…",
+      "derrière le comptoir",
+      "une meule",
+      "à pâte dure"
+    ],
+    "scene": "A flat, colourful illustration of a small Paris cheese shop. On the back wall, two wooden shelves hold big golden wheels of cheese and smaller white cheeses, with a black slate of prices between them. Behind the counter, a cheesemonger with white hair, a violet jacket and a white apron holds a small wheel of cheese wrapped in pink paper, very tenderly. Across the counter stands a customer with dark hair and a blue coat. The dark green counter has a glass front, with a wedge of comté, two small round goat’s cheeses, an orange washed-rind cheese, a soft cheese and a blue cheese inside.",
+    "sample": {
+      "text": "Dans la fromagerie, il y a beaucoup des fromages. Sur le comptoir, il y a de le comté et du chèvre. Le fromager ne vend pas du gruyère râpé. Moi, j’aime du brie, alors je voudrais un morceau du brie.",
+      "result": {
+        "segments": [
+          {
+            "t": "Dans la fromagerie, il y a "
+          },
+          {
+            "from": "beaucoup des",
+            "to": "beaucoup de",
+            "n": 1
+          },
+          {
+            "t": " fromages. Sur le comptoir, il y a "
+          },
+          {
+            "from": "de le",
+            "to": "du",
+            "n": 2
+          },
+          {
+            "t": " comté et du chèvre. Le fromager ne vend pas "
+          },
+          {
+            "from": "du",
+            "to": "de",
+            "n": 3
+          },
+          {
+            "t": " gruyère râpé. Moi, "
+          },
+          {
+            "from": "j’aime du",
+            "to": "j’aime le",
+            "n": 4
+          },
+          {
+            "t": " brie, alors je voudrais un morceau "
+          },
+          {
+            "from": "du",
+            "to": "de",
+            "n": 5
+          },
+          {
+            "t": " brie."
+          }
+        ],
+        "corrections": [
+          {
+            "n": 1,
+            "from": "beaucoup des",
+            "to": "beaucoup de",
+            "rule": "Quantité + de",
+            "why": "After beaucoup, only de, even before a plural: beaucoup de fromages."
+          },
+          {
+            "n": 2,
+            "from": "de le",
+            "to": "du",
+            "rule": "De + le = du",
+            "why": "De and le always merge into du: du comté. Only de la and de l’ stay apart."
+          },
+          {
+            "n": 3,
+            "from": "du",
+            "to": "de",
+            "rule": "Négation + de",
+            "why": "After a negation, du becomes de: il ne vend pas de gruyère râpé."
+          },
+          {
+            "n": 4,
+            "from": "j’aime du",
+            "to": "j’aime le",
+            "rule": "Aimer + le",
+            "why": "Aimer talks about brie in general, so it takes the definite article: j’aime le brie."
+          },
+          {
+            "n": 5,
+            "from": "du",
+            "to": "de",
+            "rule": "Un morceau de",
+            "why": "After a quantity like un morceau, only de: un morceau de brie."
+          }
+        ],
+        "corrected": "Dans la fromagerie, il y a beaucoup de fromages. Sur le comptoir, il y a du comté et du chèvre. Le fromager ne vend pas de gruyère râpé. Moi, j’aime le brie, alors je voudrais un morceau de brie.",
+        "spoken": "Dans la fromagerie, y a plein de fromages. Sur le comptoir, y a du comté et du chèvre. Le gruyère râpé, il en vend pas. Moi, j’adore le brie, donc je vais prendre un bout de brie.",
+        "spokenNote": "Il y a becomes y a, beaucoup becomes plein, and en stands in for the gruyère, with the ne dropped. Un morceau becomes un bout.",
+        "praise": "Nice “du chèvre”!"
+      }
+    }
+  },
+  "ambience": {
+    "prompt": "Inside a small cheese shop on a busy Paris market street on a Saturday morning: a murmur of customers waiting, a cheese wire slicing, paper being folded and wrapped, a shop door bell, coins on a counter, faint market bustle outside. Calm and steady. No music, no clear speech.",
+    "volume": 0.26
+  }
+}

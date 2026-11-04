@@ -171,6 +171,36 @@
         "lesson-004"
       ],
       "voice": "female"
+    },
+    "margaux": {
+      "name": "Margaux",
+      "description": "A Parisian woman of 35, middle-aged rather than young, shopping for a party. Friendly, quick, a little sheepish; a natural Parisian accent.",
+      "voiceId": "",
+      "status": "needs-voice",
+      "firstLesson": "lesson-005",
+      "rejected": [
+        "2oMnSKxLeHBxE0KdeHJD",
+        "L9J8xZmPSCimnHB0LjN1",
+        "NpMqpbmlioUVh6og0U5p",
+        "QGfpyFuk3rtPv4pRSQwp",
+        "WQKwBV2Uzw1gSGr69N8I"
+      ],
+      "delivery": "warm"
+    },
+    "monsieur-vasseur": {
+      "name": "Monsieur Vasseur",
+      "description": "A cheesemonger in his sixties, an older Parisian man who loves his cheeses like his children. Theatrical, grand and solemn, ridiculous but lovable.",
+      "voiceId": "",
+      "status": "needs-voice",
+      "firstLesson": "lesson-005",
+      "rejected": [
+        "MJKL8oE6ZYeX9UUCDFcR",
+        "SsVUx1gFlvniIrUMZtgF",
+        "Xy5q4w05TJGcKXPWeWoz",
+        "jUHQdLfy668sllNiNTSW",
+        "vCsptCe91UKbZe2sIB2T"
+      ],
+      "delivery": "theatrical"
     }
   }
 }

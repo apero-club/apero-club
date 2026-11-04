@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" role="img" aria-label="Inside a small Paris cheese shop">
+  <!-- Placeholder drawing for lesson 5 (flat brand colours). Replace with illustrator artwork of the same name. -->
+  <rect width="600" height="600" fill="#FFF0CC"/>
+  <!-- shelves of wheels on the back wall -->
+  <g fill="#B57200"><rect x="40" y="110" width="520" height="12" rx="4"/><rect x="40" y="220" width="520" height="12" rx="4"/></g>
+  <g fill="#FFCF66">
+    <rect x="60" y="70" width="90" height="40" rx="18"/><rect x="170" y="78" width="70" height="32" rx="14"/><rect x="420" y="66" width="110" height="44" rx="20"/>
+    <rect x="70" y="182" width="80" height="38" rx="16"/><rect x="380" y="186" width="70" height="34" rx="14"/><rect x="470" y="180" width="70" height="40" rx="16"/>
+  </g>
+  <g fill="#FFFFFF"><rect x="262" y="84" width="60" height="26" rx="13"/><rect x="336" y="84" width="60" height="26" rx="13"/><rect x="180" y="192" width="40" height="28" rx="8"/><rect x="230" y="192" width="40" height="28" rx="8"/></g>
+  <!-- slate with prices -->
+  <rect x="290" y="140" width="80" height="60" rx="6" fill="#121014"/>
+  <g fill="#FFFFFF"><rect x="302" y="154" width="56" height="5" rx="2.5"/><rect x="302" y="168" width="40" height="5" rx="2.5"/><rect x="302" y="182" width="48" height="5" rx="2.5"/></g>
+  <!-- Monsieur Vasseur behind the counter, apron, cradling a small wrapped wheel -->
+  <circle cx="200" cy="300" r="34" fill="#F29A00"/>
+  <path d="M180 278 C186 266 214 266 220 278" fill="none" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round"/>
+  <rect x="152" y="338" width="96" height="120" rx="36" fill="#3A1FD4"/>
+  <rect x="176" y="348" width="48" height="110" rx="10" fill="#FFFFFF"/>
+  <ellipse cx="200" cy="392" rx="34" ry="22" fill="#F7CDF4"/>
+  <ellipse cx="200" cy="388" rx="18" ry="10" fill="#FFCF66"/>
+  <!-- Margaux at the counter -->
+  <circle cx="440" cy="320" r="30" fill="#C93C07"/>
+  <path d="M410 316 C410 284 470 284 470 316 L470 340 L410 340 Z" fill="#121014"/>
+  <circle cx="440" cy="326" r="24" fill="#C93C07"/>
+  <rect x="398" y="352" width="84" height="110" rx="32" fill="#0A86D6"/>
+  <!-- the counter, with cheeses under glass -->
+  <rect x="0" y="440" width="600" height="160" fill="#004A3A"/>
+  <rect x="20" y="420" width="560" height="40" rx="8" fill="#ADD1F1" opacity="0.8"/>
+  <g>
+    <path d="M60 456 L130 432 L150 456 Z" fill="#FFCF66"/>
+    <circle cx="200" cy="448" r="14" fill="#FFFFFF"/><circle cx="232" cy="448" r="14" fill="#FFFFFF"/>
+    <rect x="270" y="436" width="80" height="22" rx="11" fill="#F29A00"/>
+    <path d="M380 456 C380 436 430 436 430 456 Z" fill="#FFF0CC"/>
+    <rect x="460" y="440" width="70" height="18" rx="9" fill="#9D8FFF"/>
+  </g>
+  <rect x="0" y="470" width="600" height="10" fill="#137A45"/>
+</svg>
