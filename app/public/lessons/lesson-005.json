@@ -109,8 +109,8 @@
       {
         "id": "margaux-demande",
         "speaker": "margaux",
-        "fr": "— Bonjour ! Il me faut du fromage pour une soirée, ce soir.",
-        "en": "“Hello! I need some cheese for a party tonight.”",
+        "fr": "— Bonjour ! Il me faudrait du fromage pour une soirée, ce soir.",
+        "en": "“Hello! I’d need some cheese for a party tonight.”",
         "note": "partitif"
       }
     ],
@@ -131,8 +131,8 @@
     [
       {
         "speaker": "narrator",
-        "fr": "Les yeux fermés, elle a reconnu un fromage à l’odeur : « Du munster. »",
-        "en": "With her eyes closed, she recognised a cheese by its smell: “Munster.”",
+        "fr": "Les yeux fermés, elle a reconnu un fromage à pâte molle à l’odeur : « Du munster. »",
+        "en": "With her eyes closed, she recognised a soft cheese by its smell: “Munster.”",
         "quoteSpeaker": "margaux"
       },
       {
@@ -143,8 +143,8 @@
       },
       {
         "speaker": "narrator",
-        "fr": "Puis elle a expliqué la différence entre un comté de douze mois et un comté de trois ans.",
-        "en": "Then she explained the difference between a twelve-month comté and a three-year-old one."
+        "fr": "Puis elle a expliqué pourquoi un comté de douze mois est doux, et un comté de trois ans plus fort.",
+        "en": "Then she explained why a twelve-month comté is mild, and a three-year-old one stronger."
       }
     ],
     [
@@ -211,8 +211,8 @@
       ],
       "examples": [
         {
-          "fr": "Il me faut du fromage pour une soirée.",
-          "en": "I need some cheese for a party.",
+          "fr": "Il me faudrait du fromage pour une soirée.",
+          "en": "I’d need some cheese for a party.",
           "tag": "Du"
         },
         {
@@ -221,15 +221,15 @@
           "tag": "Du"
         },
         {
-          "fr": "Vous avez de la crème fraîche ?",
-          "en": "Do you have any crème fraîche?",
+          "fr": "Vous avez de la tomme de brebis ?",
+          "en": "Do you have any sheep’s-milk tomme?",
           "tag": "De la"
         }
       ],
       "spoken": "At any counter in Paris you’ll hear « Je voudrais du pain », « Vous avez de la burrata ? ». Shopkeepers ask « Et avec ça ? » (anything else?), and you answer with another du or de la.",
       "trap": {
-        "wrong": "Il me faut fromage pour ce soir.",
-        "right": "Il me faut du fromage pour ce soir.",
+        "wrong": "Il me faudrait fromage pour ce soir.",
+        "right": "Il me faudrait du fromage pour ce soir.",
         "why": "French nouns almost never stand alone. Where English says just “cheese”, French needs du."
       }
     },
@@ -264,7 +264,7 @@
       "trap": {
         "wrong": "Je ne veux pas du camembert.",
         "right": "Je ne veux pas de camembert.",
-        "why": "After pas, the partitive du becomes de. « Pas du camembert » is only right with être: ce n’est pas du camembert."
+        "why": "After pas, the partitive du becomes de. « Pas du camembert » only works with être (ce n’est pas du camembert) or in a contrast: pas du camembert, du brie."
       }
     },
     {
@@ -384,7 +384,7 @@
         {
           "text": "Some cheese for a party tonight.",
           "correct": true,
-          "why": "« Il me faut du fromage pour une soirée, ce soir »: some cheese, no particular kind, for tonight."
+          "why": "« Il me faudrait du fromage pour une soirée, ce soir »: some cheese, no particular kind, for tonight."
         },
         {
           "text": "A cheese board for twenty people.",
@@ -539,17 +539,17 @@
     "alt": "Inside a small Paris cheese shop: wheels of cheese on wooden shelves, a slate of prices, a cheesemonger in an apron holding a little wrapped wheel, a customer at the counter, and cheeses under glass",
     "imagePosition": "50% 70%",
     "caption": "Rue Mouffetard · samedi, 10 h",
-    "instructions": "Write 3 to 5 sentences: what can you see in the fromagerie, and what would you buy? Use du, de la or des, a negation, and a quantity.",
+    "instructions": "Write 3 to 5 sentences: what can you see in the fromagerie, and what would you put on your plateau de fromages? Use du, de la or des, a negation, and a quantity.",
     "placeholder": "Dans la fromagerie, il y a…",
     "helpers": [
       "il y a du…",
-      "de la…",
       "un morceau de…",
       "beaucoup de…",
       "il n’y a pas de…",
-      "derrière le comptoir",
-      "une meule",
-      "à pâte dure"
+      "à pâte molle",
+      "crémeux",
+      "fort ou doux",
+      "au lait cru"
     ],
     "scene": "A flat, colourful illustration of a small Paris cheese shop. On the back wall, two wooden shelves hold big golden wheels of cheese and smaller white cheeses, with a black slate of prices between them. Behind the counter, a cheesemonger with white hair, a violet jacket and a white apron holds a small wheel of cheese wrapped in pink paper, very tenderly. Across the counter stands a customer with dark hair and a blue coat. The dark green counter has a glass front, with a wedge of comté, two small round goat’s cheeses, an orange washed-rind cheese, a soft cheese and a blue cheese inside.",
     "sample": {
