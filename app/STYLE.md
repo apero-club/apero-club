@@ -75,7 +75,7 @@ Rules marked **(checked)** are enforced by `npm test` (`src/lesson/style.test.ts
 
 - **Always include one (checked).** Describe the place and its sounds in one or two sentences, add "Calm and steady", and always end with **"No music, no clear speech."** **(checked)** so it never competes with the French.
 - Lesson 1: *Inside a small Paris bakery on a rainy Saturday morning: a quiet murmur of customers waiting in line, a door bell, paper bags rustling, coins on a counter, an espresso machine hissing, soft rain outside. Calm and steady. No music, no clear speech.*
-- Leave `volume` at 0.18 unless a place is naturally loud.
+- Leave `volume` at 0.26 unless a place is naturally loud.
 
 ## Title, summary and timing
 

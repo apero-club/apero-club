@@ -100,7 +100,7 @@ function LessonApp({ lesson, library, start, wide }: { lesson: Lesson; library: 
   const [manifest, setManifest] = useState<AudioManifest | null>(null);
   useEffect(() => { loadManifest(assetUrl(lesson.id, 'audio/manifest.json')).then(setManifest); }, [lesson.id]);
   const speech = useSpeech(lesson.cast, lines, prefs.slow, manifest, assetUrl(lesson.id, 'audio/'));
-  const ambience = useAmbience(manifest?.ambience ? assetUrl(lesson.id, 'audio/' + manifest.ambience.file) : null, lesson.ambience?.volume ?? 0.18);
+  const ambience = useAmbience(manifest?.ambience ? assetUrl(lesson.id, 'audio/' + manifest.ambience.file) : null, lesson.ambience?.volume ?? 0.26);
   const root = useRef<HTMLDivElement>(null);
 
   const setProgress = useCallback((p: Partial<Progress>) => setProgressState(prev => {

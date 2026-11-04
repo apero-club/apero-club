@@ -213,7 +213,7 @@ export const LessonSchema = z.object({
     /** What it should sound like. Ask for no music and no clear speech, so it never competes with the French. */
     prompt: z.string().min(10).max(450),
     /** Loudness under the voices, 0 to 1. Keep it low. */
-    volume: z.number().min(0).max(1).default(0.18),
+    volume: z.number().min(0).max(1).default(0.26),
   }).strict().optional(),
 }).strict().superRefine((l, ctx) => {
   const cast = new Set(l.cast.map(c => c.id));

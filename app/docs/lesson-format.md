@@ -126,14 +126,14 @@ Add an optional `ambience` to a lesson for background sound during the story:
 ```json
 "ambience": {
   "prompt": "Inside a small Paris bakery on a rainy Saturday morning: a quiet murmur of customers waiting in line, a door bell, paper bags rustling… No music, no clear speech.",
-  "volume": 0.18
+  "volume": 0.26
 }
 ```
 
 - The same GitHub Action generates it once with ElevenLabs Sound Effects (a 30-second loop) and commits it. Changing the `prompt` generates a new one.
 - Describe a place and its sounds. Always ask for **no music and no clear speech**, so it never competes with the French.
 - It plays quietly, only while the story audio plays, and fades out on pause or when leaving the story. Learners can turn it off with the **Ambience** button; the choice is remembered.
-- `volume` is 0 to 1 (default 0.18). Keep it low.
+- `volume` is 0 to 1 (default 0.26). Keep it low.
 
 ### Voice casting
 
