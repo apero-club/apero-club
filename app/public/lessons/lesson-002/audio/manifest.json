@@ -3,8 +3,9 @@
   "model": "eleven_multilingual_v2",
   "clips": {
     "gilles|— Elle n’est jamais partie.": {
-      "file": "86275e59f36db37a.mp3",
+      "file": "e2bea518b4ae05e0.mp3",
       "voice": "jUHQdLfy668sllNiNTSW",
+      "delivery": "dfe025ca",
       "words": [
         [
           2,
@@ -16,17 +17,18 @@
         ],
         [
           13,
-          0.395
+          0.418
         ],
         [
           20,
-          0.685
+          0.731
         ]
       ]
     },
     "gilles|— Pas de panique, madame. Elle a pas bougé, votre tour.": {
-      "file": "5ae1961ce9c477c4.mp3",
+      "file": "29603ae013cb21b8.mp3",
       "voice": "jUHQdLfy668sllNiNTSW",
+      "delivery": "dfe025ca",
       "words": [
         [
           2,
@@ -38,153 +40,11 @@
         ],
         [
           9,
-          0.279
+          0.337
         ],
         [
           18,
-          1.242
-        ],
-        [
-          26,
-          1.881
-        ],
-        [
-          31,
-          2.101
-        ],
-        [
-          33,
-          2.194
-        ],
-        [
-          37,
-          2.38
-        ],
-        [
-          44,
-          2.717
-        ],
-        [
-          50,
-          3.042
-        ]
-      ]
-    },
-    "gilles|— Personne n’a volé votre tour. Le matin, on n’y voit rien, c’est tout.": {
-      "file": "6fc47d632b4364b3.mp3",
-      "voice": "jUHQdLfy668sllNiNTSW",
-      "words": [
-        [
-          2,
-          0
-        ],
-        [
-          11,
-          0.522
-        ],
-        [
-          15,
-          0.662
-        ],
-        [
-          20,
-          0.894
-        ],
-        [
-          26,
-          1.196
-        ],
-        [
-          32,
-          2.078
-        ],
-        [
-          35,
-          2.241
-        ],
-        [
-          42,
-          2.798
-        ],
-        [
-          45,
-          2.995
-        ],
-        [
-          49,
-          3.111
-        ],
-        [
-          54,
-          3.286
-        ],
-        [
-          60,
-          3.646
-        ],
-        [
-          66,
-          3.878
-        ]
-      ]
-    },
-    "gilles|C’est le soleil qui ne revient plus.": {
-      "file": "f4a5420386ad8bf7.mp3",
-      "voice": "jUHQdLfy668sllNiNTSW",
-      "words": [
-        [
-          0,
-          0
-        ],
-        [
-          6,
-          0.244
-        ],
-        [
-          9,
-          0.36
-        ],
-        [
-          16,
-          0.778
-        ],
-        [
-          20,
-          0.929
-        ],
-        [
-          23,
-          1.045
-        ],
-        [
-          31,
-          1.382
-        ]
-      ]
-    },
-    "gilles|Ne vous inquiétez pas, je vous assure : ça arrive tout le temps.": {
-      "file": "00426b46568578f2.mp3",
-      "voice": "jUHQdLfy668sllNiNTSW",
-      "words": [
-        [
-          0,
-          0
-        ],
-        [
-          3,
-          0.186
-        ],
-        [
-          8,
-          0.383
-        ],
-        [
-          18,
-          0.778
-        ],
-        [
-          23,
-          1.196
+          0.731
         ],
         [
           26,
@@ -192,37 +52,183 @@
         ],
         [
           31,
-          1.533
+          1.556
         ],
         [
-          38,
-          1.997
+          33,
+          1.637
         ],
         [
-          40,
-          2.194
+          37,
+          1.8
         ],
         [
-          43,
-          2.368
+          44,
+          2.101
         ],
         [
           50,
-          2.705
+          2.415
+        ]
+      ]
+    },
+    "gilles|— Personne n’a volé votre tour. Le matin, on n’y voit rien, c’est tout.": {
+      "file": "a0435422590ad6dd.mp3",
+      "voice": "jUHQdLfy668sllNiNTSW",
+      "delivery": "dfe025ca",
+      "words": [
+        [
+          2,
+          0
+        ],
+        [
+          11,
+          0.499
+        ],
+        [
+          15,
+          0.615
+        ],
+        [
+          20,
+          0.836
+        ],
+        [
+          26,
+          1.149
+        ],
+        [
+          32,
+          2.02
+        ],
+        [
+          35,
+          2.183
+        ],
+        [
+          42,
+          2.659
+        ],
+        [
+          45,
+          2.856
+        ],
+        [
+          49,
+          2.972
+        ],
+        [
+          54,
+          3.146
+        ],
+        [
+          60,
+          3.622
+        ],
+        [
+          66,
+          3.855
+        ]
+      ]
+    },
+    "gilles|C’est le soleil qui ne revient plus.": {
+      "file": "114d32ff7a6f3719.mp3",
+      "voice": "jUHQdLfy668sllNiNTSW",
+      "delivery": "dfe025ca",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          6,
+          0.209
+        ],
+        [
+          9,
+          0.337
+        ],
+        [
+          16,
+          0.72
+        ],
+        [
+          20,
+          0.859
+        ],
+        [
+          23,
+          0.987
+        ],
+        [
+          31,
+          1.312
+        ]
+      ]
+    },
+    "gilles|Ne vous inquiétez pas, je vous assure : ça arrive tout le temps.": {
+      "file": "bc3a0874527e741a.mp3",
+      "voice": "jUHQdLfy668sllNiNTSW",
+      "delivery": "dfe025ca",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          0.174
+        ],
+        [
+          8,
+          0.348
+        ],
+        [
+          18,
+          0.708
+        ],
+        [
+          23,
+          1.126
+        ],
+        [
+          26,
+          1.254
+        ],
+        [
+          31,
+          1.44
+        ],
+        [
+          38,
+          1.823
+        ],
+        [
+          40,
+          2.125
+        ],
+        [
+          43,
+          2.264
+        ],
+        [
+          50,
+          2.566
         ],
         [
           55,
-          2.879
+          2.74
         ],
         [
           58,
-          3.03
+          2.868
         ]
       ]
     },
     "harriet|— Elle est revenue !": {
-      "file": "e78a874d8f7b9109.mp3",
+      "file": "5b4fd802418dcbd0.mp3",
       "voice": "WQKwBV2Uzw1gSGr69N8I",
+      "delivery": "6b698d5f",
       "words": [
         [
           2,
@@ -230,7 +236,7 @@
         ],
         [
           7,
-          0.232
+          0.255
         ],
         [
           11,
@@ -238,13 +244,14 @@
         ],
         [
           19,
-          0.813
+          0.859
         ]
       ]
     },
     "harriet|— Excusez-moi, monsieur… La tour Eiffel ! Elle n’est plus là !": {
-      "file": "09958d893747abbc.mp3",
+      "file": "cb732382ef0a6fa3.mp3",
       "voice": "WQKwBV2Uzw1gSGr69N8I",
+      "delivery": "6b698d5f",
       "words": [
         [
           2,
@@ -252,39 +259,39 @@
         ],
         [
           15,
-          0.604
+          0.65
         ],
         [
           25,
-          1.231
+          1.324
         ],
         [
           28,
-          1.428
+          1.474
         ],
         [
           33,
-          1.672
+          1.718
         ],
         [
           40,
-          2.09
+          2.101
         ],
         [
           42,
-          2.241
+          2.287
         ],
         [
           47,
-          2.426
+          2.45
         ],
         [
           53,
-          2.577
+          2.601
         ],
         [
           58,
-          2.786
+          2.763
         ],
         [
           61,
@@ -293,8 +300,9 @@
       ]
     },
     "harriet|— Mais je ne vois rien ! On l’a volée ? On l’a démolie ?": {
-      "file": "537d4f928bea75d7.mp3",
+      "file": "9f74b3c65ee39b49.mp3",
       "voice": "WQKwBV2Uzw1gSGr69N8I",
+      "delivery": "6b698d5f",
       "words": [
         [
           2,
@@ -310,47 +318,47 @@
         ],
         [
           13,
-          0.406
+          0.418
         ],
         [
           18,
-          0.58
+          0.662
         ],
         [
           23,
-          0.952
+          0.929
         ],
         [
           25,
-          1.196
+          1.033
         ],
         [
           28,
-          1.393
+          1.207
         ],
         [
           32,
-          1.544
+          1.358
         ],
         [
           38,
-          1.95
+          1.707
         ],
         [
           40,
-          2.125
+          1.869
         ],
         [
           43,
-          2.31
+          2.043
         ],
         [
           47,
-          2.45
+          2.183
         ],
         [
           55,
-          2.984
+          2.659
         ]
       ]
     },
