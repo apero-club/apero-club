@@ -175,8 +175,8 @@
     "margaux": {
       "name": "Margaux",
       "description": "A Parisian woman of 35, middle-aged rather than young, shopping for a party. Friendly, quick, a little sheepish; a natural Parisian accent.",
-      "voiceId": "",
-      "status": "needs-voice",
+      "voiceId": "ucMmKRQbfDEYyb2IIGax",
+      "status": "approved",
       "firstLesson": "lesson-005",
       "rejected": [
         "2oMnSKxLeHBxE0KdeHJD",
@@ -190,8 +190,8 @@
     "monsieur-vasseur": {
       "name": "Monsieur Vasseur",
       "description": "A cheesemonger in his sixties, an older Parisian man who loves his cheeses like his children. Theatrical, grand and solemn, ridiculous but lovable.",
-      "voiceId": "",
-      "status": "needs-voice",
+      "voiceId": "MckrPTWwhRk9MdBsg8c4",
+      "status": "approved",
       "firstLesson": "lesson-005",
       "rejected": [
         "MJKL8oE6ZYeX9UUCDFcR",

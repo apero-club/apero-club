@@ -117,6 +117,32 @@
         "expressive"
       ],
       "notes": "Monsieur Fabre's voice (chosen by hand)."
+    },
+    {
+      "id": "ucMmKRQbfDEYyb2IIGax",
+      "name": "",
+      "gender": "female",
+      "age": "middle",
+      "accent": "parisian",
+      "tags": [
+        "warm",
+        "friendly",
+        "natural"
+      ],
+      "notes": "Margaux's voice (chosen by hand)."
+    },
+    {
+      "id": "MckrPTWwhRk9MdBsg8c4",
+      "name": "",
+      "gender": "male",
+      "age": "older",
+      "accent": "parisian",
+      "tags": [
+        "theatrical",
+        "grand",
+        "solemn"
+      ],
+      "notes": "Monsieur Vasseur's voice (chosen by hand)."
     }
   ]
 }
