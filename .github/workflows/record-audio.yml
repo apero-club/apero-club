@@ -72,5 +72,9 @@ jobs:
           git config user.name "$AUTHOR_NAME"
           git config user.email "$AUTHOR_EMAIL"
           git commit -m "Record lesson audio and voice samples (automatic)"
-          git pull --rebase origin main
-          git push origin HEAD:main
+          # GitHub sometimes answers a push with a passing server error: retry, so paid recordings aren't lost.
+          for wait in 2 4 8 16 32 0; do
+            git pull --rebase origin main && git push origin HEAD:main && exit 0
+            [ "$wait" = 0 ] && exit 1
+            echo "Push failed; retrying in ${wait}s"; sleep "$wait"
+          done
