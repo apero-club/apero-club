@@ -1,0 +1,655 @@
+{
+  "title": "Le gardien du musée",
+  "summary": "The morning after an alarm, a night guard explains what he saw.",
+  "level": "A2 to B1",
+  "minutes": {
+    "story": 4,
+    "quiz": 3,
+    "phrases": 1,
+    "describe": 2
+  },
+  "hero": [
+    {
+      "image": "illo-frame.svg",
+      "bg": "lilac-500",
+      "alt": ""
+    },
+    {
+      "shape": "circle",
+      "bg": "sun-300",
+      "fg": "violet-500",
+      "eyes": "wide",
+      "blink": true
+    },
+    {
+      "image": "illo-armchair.svg",
+      "bg": "pink-300",
+      "alt": ""
+    }
+  ],
+  "heroWide": [
+    {
+      "image": "illo-frame.svg",
+      "bg": "lilac-500",
+      "alt": ""
+    },
+    {
+      "pattern": "halves",
+      "a": "green-900",
+      "b": "green-500"
+    },
+    {
+      "shape": "circle",
+      "bg": "sun-300",
+      "fg": "violet-500",
+      "eyes": "wide",
+      "blink": true
+    },
+    {
+      "image": "illo-armchair.svg",
+      "bg": "pink-300",
+      "alt": ""
+    }
+  ],
+  "place": "le Marais, 3e",
+  "cast": [
+    {
+      "id": "narrator",
+      "name": "Moi",
+      "role": "the narrator",
+      "description": "The narrator, \"Moi\": a learner in their 30s who lives in Paris. Friendly, relaxed, a bit self-mocking.",
+      "color": "ink-900",
+      "label": "ink-500",
+      "critter": {
+        "kind": "bean",
+        "color": "sun-500"
+      },
+      "voice": "male"
+    },
+    {
+      "id": "madame-delorme",
+      "name": "Madame Delorme",
+      "role": "the museum director",
+      "description": "The director of a small Paris museum, a Parisian woman in her fifties. Brisk, no-nonsense, dry and sceptical but fair; crisp, precise speech.",
+      "color": "violet-500",
+      "critter": {
+        "kind": "arch",
+        "color": "orange-500"
+      },
+      "voice": "female"
+    },
+    {
+      "id": "raymond",
+      "name": "Raymond",
+      "role": "the night guard",
+      "description": "The museum’s night guard, an older Parisian man of 64. Sincere, earnest, a little shaken; tells his story warmly, with wide eyes.",
+      "color": "sky-700",
+      "critter": {
+        "kind": "bowl",
+        "color": "sky-500"
+      },
+      "voice": "male"
+    }
+  ],
+  "story": [
+    [
+      {
+        "speaker": "narrator",
+        "fr": "Lundi, sept heures du matin. J’apportais les cafés à Madame Delorme, la directrice du musée.",
+        "en": "Monday, seven in the morning. I was bringing the coffees to Madame Delorme, the museum’s director."
+      },
+      {
+        "speaker": "narrator",
+        "fr": "Raymond, le gardien de nuit, était assis devant son bureau, tout pâle.",
+        "en": "Raymond, the night guard, was sitting in front of her desk, white as a sheet."
+      }
+    ],
+    [
+      {
+        "speaker": "madame-delorme",
+        "fr": "— L’alarme a sonné à trois heures, Raymond. Je vous écoute.",
+        "en": "“The alarm went off at three, Raymond. I’m listening.”"
+      }
+    ],
+    [
+      {
+        "speaker": "raymond",
+        "fr": "— Pendant ma ronde, je me suis assis un moment devant le portrait de la Comtesse.",
+        "en": "“During my round, I sat down for a moment in front of the portrait of the Countess.",
+        "note": "reflexif-etre"
+      },
+      {
+        "id": "raymond-cache",
+        "speaker": "raymond",
+        "fr": "Il faisait noir. J’ai entendu un craquement, alors je me suis caché derrière une sculpture.",
+        "en": "It was dark. I heard a creak, so I hid behind a sculpture.”"
+      }
+    ],
+    [
+      {
+        "speaker": "narrator",
+        "fr": "Madame Delorme a levé un sourcil. Raymond a continué, à voix basse.",
+        "en": "Madame Delorme raised an eyebrow. Raymond went on, in a low voice."
+      }
+    ],
+    [
+      {
+        "id": "raymond-comtesse",
+        "speaker": "raymond",
+        "fr": "— Et là, la Comtesse s’est levée, et elle est sortie de son cadre !",
+        "en": "“And then the Countess stood up, and she stepped out of her frame!",
+        "note": "accord-sujet",
+        "delivery": "animated"
+      },
+      {
+        "speaker": "raymond",
+        "fr": "Elle s’est étiré les bras, comme après une longue nuit.",
+        "en": "She stretched her arms, like after a long night.",
+        "note": "pas-accord"
+      },
+      {
+        "speaker": "raymond",
+        "fr": "On s’est regardés, mais on ne s’est pas parlé.",
+        "en": "We looked at each other, but we didn’t speak.",
+        "note": "pas-accord"
+      },
+      {
+        "speaker": "raymond",
+        "fr": "Puis elle s’est assise dans le fauteuil des visiteurs… et l’alarme a sonné.",
+        "en": "Then she sat down in the visitors’ armchair… and the alarm went off.”",
+        "note": "on-entend"
+      }
+    ],
+    [
+      {
+        "speaker": "madame-delorme",
+        "fr": "— Raymond… Vous vous êtes endormi.",
+        "en": "“Raymond… You fell asleep.”"
+      }
+    ],
+    [
+      {
+        "id": "raymond-nie",
+        "speaker": "raymond",
+        "fr": "— Je ne me suis pas endormi ! Enfin… cinq minutes, mais avant tout ça.",
+        "en": "“I did not fall asleep! Well… five minutes, but before all that.”",
+        "note": "negation-reflexif"
+      }
+    ],
+    [
+      {
+        "speaker": "narrator",
+        "fr": "Alors elle a ouvert son ordinateur et lancé les images de la caméra de surveillance.",
+        "en": "So she opened her laptop and played the security camera footage."
+      },
+      {
+        "speaker": "narrator",
+        "fr": "À trois heures, le cadre était vide, et le fauteuil des visiteurs était tourné.",
+        "en": "At three o’clock, the frame was empty, and the visitors’ armchair had been turned."
+      },
+      {
+        "speaker": "narrator",
+        "fr": "J’ai eu la chair de poule. Madame Delorme a refermé l’ordinateur, très lentement.",
+        "en": "I got goosebumps. Madame Delorme closed the laptop again, very slowly."
+      }
+    ],
+    [
+      {
+        "speaker": "madame-delorme",
+        "fr": "— Raymond… on ne dit rien à personne.",
+        "en": "“Raymond… we don’t say a word to anyone.”",
+        "delivery": "calm"
+      }
+    ]
+  ],
+  "notes": [
+    {
+      "id": "reflexif-etre",
+      "kicker": "Passé composé",
+      "title": "« Je me suis assis » : pourquoi « être » ?",
+      "short": "Reflexive verbs always form the passé composé with être, for every person.",
+      "body": [
+        "Apps teach the être verbs as a list: aller, venir, partir… Add a second rule: every reflexive verb takes être, with no exceptions. Je me suis assis, tu t’es endormi, nous nous sommes cachés.",
+        "The pronoun stays glued in front of être: me, te, se, nous, vous, se.",
+        "Quick check: is there a me, te, se, nous or vous that points back to the subject? Then it’s être."
+      ],
+      "examples": [
+        {
+          "fr": "Je me suis assis un moment devant le portrait.",
+          "en": "I sat down for a moment in front of the portrait.",
+          "tag": "Je me suis"
+        },
+        {
+          "fr": "Tu t’es endormi ?",
+          "en": "Did you fall asleep?",
+          "tag": "Tu t’es"
+        },
+        {
+          "fr": "Nous nous sommes cachés derrière une statue.",
+          "en": "We hid behind a statue.",
+          "tag": "Nous nous sommes"
+        }
+      ],
+      "spoken": "In speech, nous nous sommes becomes on s’est: « On s’est cachés derrière une statue. » And je me suis often blurs into « j’me suis » in fast speech.",
+      "trap": {
+        "wrong": "Je m’ai assis.",
+        "right": "Je me suis assis.",
+        "why": "Avoir never goes with a reflexive verb. Once you have me, te or se, you need être."
+      }
+    },
+    {
+      "id": "accord-sujet",
+      "kicker": "Accord",
+      "title": "« La Comtesse s’est levée » : pourquoi un -e ?",
+      "short": "With reflexive verbs, the past participle usually agrees with the subject, like other être verbs.",
+      "body": [
+        "The Countess is feminine, so levée takes an -e. Plurals add -s: ils se sont levés, elles se sont levées.",
+        "Strictly, it agrees with se, the direct object in front of the verb. But se is the same person as the subject, so in practice: match the subject.",
+        "That’s why Raymond, a man, says je me suis caché, while the Countess would say je me suis cachée."
+      ],
+      "examples": [
+        {
+          "fr": "La Comtesse s’est levée.",
+          "en": "The Countess stood up.",
+          "tag": "Levée"
+        },
+        {
+          "fr": "Je me suis caché derrière une sculpture.",
+          "en": "I hid behind a sculpture.",
+          "tag": "Caché"
+        },
+        {
+          "fr": "Elles se sont levées tôt.",
+          "en": "They got up early. (women)",
+          "tag": "Levées"
+        }
+      ],
+      "spoken": "Levé, levée and levés all sound the same, so you see this agreement far more than you hear it. The note on assise shows when you can hear it.",
+      "trap": {
+        "wrong": "La Comtesse s’est levé.",
+        "right": "La Comtesse s’est levée.",
+        "why": "The Countess is feminine, so the participle takes an -e, even though you can’t hear it."
+      }
+    },
+    {
+      "id": "pas-accord",
+      "kicker": "Accord",
+      "title": "Pourquoi « on s’est regardés » mais « on ne s’est pas parlé » ?",
+      "short": "No agreement when se is an indirect object, or when a direct object comes after the verb.",
+      "body": [
+        "Agreement follows the direct object. You look at someone (regarder quelqu’un), so se is the direct object and it agrees: on s’est regardés.",
+        "But you speak to someone (parler à quelqu’un): se means “to each other”, an indirect object, so no agreement. Same for se téléphoner, se dire, se sourire.",
+        "And in elle s’est étiré les bras, the direct object is les bras, after the verb: no agreement with elle."
+      ],
+      "examples": [
+        {
+          "fr": "On s’est regardés, mais on ne s’est pas parlé.",
+          "en": "We looked at each other, but we didn’t speak.",
+          "tag": "Regardés / parlé"
+        },
+        {
+          "fr": "Elle s’est étiré les bras.",
+          "en": "She stretched her arms.",
+          "tag": "Pas d’accord"
+        },
+        {
+          "fr": "Elles se sont téléphoné hier.",
+          "en": "They phoned each other yesterday.",
+          "tag": "Pas d’accord"
+        }
+      ],
+      "spoken": "These endings are silent, so you won’t hear the difference, and many French people get it wrong in writing. Get it right in an email and you’ll impress.",
+      "trap": {
+        "wrong": "Ils se sont parlés.",
+        "right": "Ils se sont parlé.",
+        "why": "You speak to someone (parler à), so se is indirect and the participle doesn’t agree."
+      }
+    },
+    {
+      "id": "on-entend",
+      "kicker": "Prononciation",
+      "title": "« Elle s’est assise » : ça s’entend ?",
+      "short": "When the participle ends in a silent consonant, the feminine -e makes it heard: assis, assise.",
+      "body": [
+        "Most participles end in a vowel (levé, endormi), so the -e changes nothing out loud. A few end in a silent consonant: assis, mis, pris. The -e brings that consonant back.",
+        "Il s’est assis is said [asi]; elle s’est assise, [asiz]. When Raymond says assise, you know it’s the Countess who sat down, not him.",
+        "Same with mettre: elle s’est mise à rire, she started laughing."
+      ],
+      "examples": [
+        {
+          "fr": "Puis elle s’est assise dans le fauteuil.",
+          "en": "Then she sat down in the armchair.",
+          "tag": "Assise [asiz]"
+        },
+        {
+          "fr": "Je me suis assis un moment.",
+          "en": "I sat down for a moment.",
+          "tag": "Assis [asi]"
+        },
+        {
+          "fr": "Elle s’est mise à chanter.",
+          "en": "She started singing.",
+          "tag": "Mise [miz]"
+        }
+      ],
+      "spoken": "A listening tip: a [z] at the end of the participle (assise, mise, prise) tells you the subject is feminine, even if you missed who it was.",
+      "trap": {
+        "wrong": "Elle s’est assis.",
+        "right": "Elle s’est assise.",
+        "why": "Say the [z]. Without it, a French ear pictures a man sitting down."
+      }
+    },
+    {
+      "id": "negation-reflexif",
+      "kicker": "Négation",
+      "title": "« Je ne me suis pas endormi ! » : où va la négation ?",
+      "short": "Ne goes before the pronoun, and pas after être: the pronoun and être stay together.",
+      "body": [
+        "The pronoun and être stick together, and the negation wraps around both: je ne me suis pas endormi, elle ne s’est pas levée.",
+        "Never put ne between them: not « je me ne suis pas ».",
+        "It works the same with the other negations from lesson 2: on ne s’est jamais parlé, il ne s’est rien passé."
+      ],
+      "examples": [
+        {
+          "fr": "Je ne me suis pas endormi !",
+          "en": "I did not fall asleep!",
+          "tag": "Ne… pas"
+        },
+        {
+          "fr": "On ne s’est pas parlé.",
+          "en": "We didn’t speak.",
+          "tag": "Ne… pas"
+        },
+        {
+          "fr": "Il ne s’est rien passé !",
+          "en": "Nothing happened!",
+          "tag": "Ne… rien"
+        }
+      ],
+      "spoken": "In speech the ne goes, as usual: « Je me suis pas endormi ! » Fast, it sounds like « j’me suis pas endormi ».",
+      "trap": {
+        "wrong": "Je me ne suis pas endormi.",
+        "right": "Je ne me suis pas endormi.",
+        "why": "Ne goes in front of the pronoun, never between the pronoun and être."
+      }
+    }
+  ],
+  "quiz": [
+    {
+      "kind": "Écoute",
+      "listen": "raymond-cache",
+      "note": "reflexif-etre",
+      "prompt": "Listen to Raymond. What did he do when he heard a noise?",
+      "options": [
+        {
+          "text": "He switched on all the lights.",
+          "why": "Nothing about lights: « il faisait noir », it was dark, and he stayed in the dark."
+        },
+        {
+          "text": "He hid behind a sculpture.",
+          "why": "« Je me suis caché derrière une sculpture »: I hid behind a sculpture. Se cacher, with être.",
+          "correct": true
+        },
+        {
+          "text": "He called Madame Delorme.",
+          "why": "He doesn’t call anyone. He hears « un craquement », a creak, and hides."
+        }
+      ]
+    },
+    {
+      "kind": "Écoute",
+      "listen": "raymond-nie",
+      "note": "negation-reflexif",
+      "prompt": "Listen to Raymond. What does he admit?",
+      "options": [
+        {
+          "text": "He slept through the whole night.",
+          "why": "Not the whole night: « cinq minutes », only five minutes."
+        },
+        {
+          "text": "He set off the alarm by mistake.",
+          "why": "He never says that. In his story, the alarm goes off when the Countess sits down."
+        },
+        {
+          "text": "He dozed for five minutes, but before it all happened.",
+          "why": "« Enfin… cinq minutes, mais avant tout ça »: well, five minutes, but before all that.",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "kind": "Grammaire",
+      "quote": "— Et là, la Comtesse s’est levée, et elle est sortie de son cadre !",
+      "note": "accord-sujet",
+      "prompt": "Why “levée”, with an extra -e?",
+      "options": [
+        {
+          "text": "The Countess is feminine, and the participle agrees with the subject.",
+          "why": "Reflexive verbs take être, and the participle agrees: la Comtesse s’est levée, Raymond s’est levé.",
+          "correct": true
+        },
+        {
+          "text": "Se lever always ends in -ée in the past.",
+          "why": "Not always: a man says je me suis levé, with no extra -e. It depends on who gets up."
+        },
+        {
+          "text": "Levée is a noun here, like “la levée du courrier”.",
+          "why": "It’s the verb se lever in the passé composé, after s’est. La levée is a different word."
+        }
+      ]
+    },
+    {
+      "kind": "Grammaire",
+      "quote": "On s’est regardés, mais on ne s’est pas parlé.",
+      "note": "pas-accord",
+      "prompt": "Why “regardés” with an -s, but “parlé” with no ending?",
+      "options": [
+        {
+          "text": "You look at someone, but you speak to someone: only a direct object agrees.",
+          "why": "Regarder quelqu’un: se is direct, so it agrees. Parler à quelqu’un: se is indirect, so no agreement.",
+          "correct": true
+        },
+        {
+          "text": "Parlé is in the negative, and negatives never agree.",
+          "why": "Negation has nothing to do with it: on s’est parlé, positive, doesn’t agree either."
+        },
+        {
+          "text": "Regarder uses être and parler uses avoir.",
+          "why": "Both are reflexive here, so both use être: on s’est regardés, on ne s’est pas parlé."
+        }
+      ]
+    },
+    {
+      "kind": "Lecture",
+      "quote": "— Raymond… on ne dit rien à personne.",
+      "prompt": "In “on ne dit rien à personne”, who is “on”?",
+      "options": [
+        {
+          "text": "People in general.",
+          "why": "On can mean people in general, but here she’s making a pact with the people in the room."
+        },
+        {
+          "text": "The Countess.",
+          "why": "The Countess is on the video, not in the office. On is the people watching it."
+        },
+        {
+          "text": "Madame Delorme, Raymond and the narrator: “we”.",
+          "why": "In speech on usually means nous. She means: none of us says anything.",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "kind": "Compréhension",
+      "quote": "À trois heures, le cadre était vide, et le fauteuil des visiteurs était tourné.",
+      "prompt": "Why does Madame Delorme close the laptop so slowly?",
+      "options": [
+        {
+          "text": "She’s angry that Raymond slept on duty.",
+          "why": "If she were angry, she’d say so. Instead she asks everyone to keep quiet."
+        },
+        {
+          "text": "The footage shows the empty frame and the turned chair: Raymond may be telling the truth.",
+          "why": "She was sure he’d dreamed it. The video says otherwise, and she isn’t ready to say it out loud.",
+          "correct": true
+        },
+        {
+          "text": "The video is blank because the camera was broken.",
+          "why": "The video works: it shows the frame, empty, and the armchair, turned."
+        }
+      ]
+    }
+  ],
+  "phrases": [
+    {
+      "written": "Il faisait très sombre.",
+      "spoken": "On y voyait que dalle.",
+      "register": "Familier",
+      "note": "« Que dalle » means nothing at all, very familiar. « Il faisait noir » is the everyday neutral version."
+    },
+    {
+      "written": "J’ai eu très peur.",
+      "spoken": "J’ai eu une de ces trouilles !",
+      "register": "Familier",
+      "note": "La trouille is fear, familiar. « J’ai eu la chair de poule » (goosebumps) works anywhere."
+    },
+    {
+      "written": "Je ne me suis pas endormi.",
+      "spoken": "Je me suis pas endormi.",
+      "register": "Courant",
+      "note": "The ne drops in speech, and the pronoun and être stay together: me suis, never split."
+    },
+    {
+      "written": "Il ne s’est rien passé.",
+      "spoken": "Il s’est rien passé.",
+      "register": "Courant",
+      "note": "What everyone says after something definitely happened. Rien carries the negation once ne is gone."
+    },
+    {
+      "written": "Nous ne dirons rien à personne.",
+      "spoken": "On dit rien à personne.",
+      "register": "Courant",
+      "note": "On replaces nous, the present replaces the future, and the ne goes. Same promise, more conspiratorial."
+    },
+    {
+      "written": "Je me suis assoupi quelques instants.",
+      "spoken": "J’ai piqué du nez cinq minutes.",
+      "register": "Familier",
+      "note": "Piquer du nez: your nose drops as you nod off. What Raymond would say to a friend, never to his director."
+    }
+  ],
+  "describe": {
+    "image": "scene-musee.svg",
+    "alt": "A museum gallery at night: an empty gilded frame on the wall, a sculpture on a plinth, a security camera, moonlight from a tall window, and an armchair turned towards the window",
+    "imagePosition": "50% 60%",
+    "caption": "Salle 3 · 3 h du matin",
+    "instructions": "Write 3 to 5 sentences: you’re the night guard. What happened in this room at 3 a.m.? Use reflexive verbs in the passé composé (je me suis…, elle s’est…).",
+    "placeholder": "Il faisait noir, et je me suis…",
+    "helpers": [
+      "je me suis caché(e)",
+      "elle s’est levée",
+      "il faisait noir",
+      "un craquement",
+      "derrière la sculpture",
+      "le cadre est vide",
+      "la caméra de surveillance",
+      "j’ai eu la chair de poule"
+    ],
+    "scene": "A flat, colourful illustration of a museum gallery at night, in deep blues. On the wall hangs a large gilded frame, and the painting inside is empty except for a small plum-coloured chair. In the corner, a security camera with a red light. On the left, a white sculpture of a head on a plinth. A tall arched window shows the moon, and moonlight falls across the parquet floor. In the middle of the room, a blue visitors’ armchair is turned towards the window. A faint beam of torchlight crosses the floor.",
+    "sample": {
+      "text": "Il faisait noir dans la salle. Je me suis assis devant le tableau, et je m’ai endormi. Puis j’ai entendu un craquement et je me suis caché derrière la sculpture. La femme du portrait s’est levé et elle s’est assis dans le fauteuil. Nous nous sommes parlés, mais elle ne s’est retourné pas.",
+      "result": {
+        "segments": [
+          {
+            "t": "Il faisait noir dans la salle. Je me suis assis devant le tableau, et "
+          },
+          {
+            "from": "je m’ai endormi",
+            "to": "je me suis endormi",
+            "n": 1
+          },
+          {
+            "t": ". Puis j’ai entendu un craquement et je me suis caché derrière la sculpture. La femme du portrait "
+          },
+          {
+            "from": "s’est levé",
+            "to": "s’est levée",
+            "n": 2
+          },
+          {
+            "t": " et elle "
+          },
+          {
+            "from": "s’est assis",
+            "to": "s’est assise",
+            "n": 3
+          },
+          {
+            "t": " dans le fauteuil. Nous nous sommes "
+          },
+          {
+            "from": "parlés",
+            "to": "parlé",
+            "n": 4
+          },
+          {
+            "t": ", mais elle "
+          },
+          {
+            "from": "ne s’est retourné pas",
+            "to": "ne s’est pas retournée",
+            "n": 5
+          },
+          {
+            "t": "."
+          }
+        ],
+        "corrections": [
+          {
+            "n": 1,
+            "from": "je m’ai endormi",
+            "to": "je me suis endormi",
+            "rule": "Pronominal + être",
+            "why": "Reflexive verbs always take être, never avoir: je me suis endormi."
+          },
+          {
+            "n": 2,
+            "from": "s’est levé",
+            "to": "s’est levée",
+            "rule": "Accord avec le sujet",
+            "why": "The woman in the portrait is feminine, so the participle takes an -e: elle s’est levée."
+          },
+          {
+            "n": 3,
+            "from": "s’est assis",
+            "to": "s’est assise",
+            "rule": "Accord : assise",
+            "why": "Feminine subject, so assise. Here you can hear it: the -e brings back the [z]."
+          },
+          {
+            "n": 4,
+            "from": "parlés",
+            "to": "parlé",
+            "rule": "Parler à : pas d’accord",
+            "why": "You speak to someone, so se is indirect and the participle doesn’t agree: nous nous sommes parlé."
+          },
+          {
+            "n": 5,
+            "from": "ne s’est retourné pas",
+            "to": "ne s’est pas retournée",
+            "rule": "Ne… pas autour",
+            "why": "Ne and pas wrap around the pronoun and être, and the participle agrees with elle: ne s’est pas retournée."
+          }
+        ],
+        "corrected": "Il faisait noir dans la salle. Je me suis assis devant le tableau, et je me suis endormi. Puis j’ai entendu un craquement et je me suis caché derrière la sculpture. La femme du portrait s’est levée et elle s’est assise dans le fauteuil. Nous nous sommes parlé, mais elle ne s’est pas retournée.",
+        "spoken": "Il faisait noir dans la salle. Je me suis posé devant le tableau, et j’ai piqué du nez. Puis y a eu un craquement, et je me suis planqué derrière la statue. La dame du portrait s’est levée, elle s’est assise dans le fauteuil. On s’est parlé, mais elle s’est pas retournée.",
+        "spokenNote": "Se poser (to sit down), piquer du nez (to doze off) and se planquer (to hide) are relaxed everyday verbs. Nous becomes on, and the ne disappears.",
+        "praise": "Nice “je me suis caché”!"
+      }
+    }
+  },
+  "ambience": {
+    "prompt": "A small museum office early in the morning: the hum of a laptop, a radiator ticking, a wall clock, coffee cups set down on a wooden desk, distant footsteps echoing in an empty gallery, an old building creaking softly. Calm and steady. No music, no clear speech.",
+    "volume": 0.26
+  }
+}

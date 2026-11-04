@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="A museum armchair, slightly turned">
+  <!-- Lesson 6 hero tile: the visitors' armchair. Flat brand colours, transparent background. -->
+  <g transform="rotate(-8 100 120)">
+    <!-- back -->
+    <path d="M52 112 V66 C52 40 148 40 148 66 V112 Z" fill="#3A1FD4"/>
+    <path d="M64 108 V70 C64 52 136 52 136 70 V108 Z" fill="#9D8FFF"/>
+    <!-- seat and arms -->
+    <rect x="44" y="104" width="112" height="34" rx="14" fill="#3A1FD4"/>
+    <rect x="36" y="90" width="24" height="56" rx="12" fill="#2913A6"/>
+    <rect x="140" y="90" width="24" height="56" rx="12" fill="#2913A6"/>
+    <!-- legs -->
+    <g fill="#B57200"><rect x="50" y="144" width="10" height="34" rx="4"/><rect x="140" y="144" width="10" height="34" rx="4"/></g>
+    <!-- buttons -->
+    <g fill="#F7CDF4"><circle cx="84" cy="78" r="3"/><circle cx="100" cy="72" r="3"/><circle cx="116" cy="78" r="3"/><circle cx="92" cy="92" r="3"/><circle cx="108" cy="92" r="3"/></g>
+  </g>
+</svg>

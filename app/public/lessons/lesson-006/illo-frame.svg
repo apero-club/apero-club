@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="An empty gilded picture frame">
+  <!-- Lesson 6 hero tile: the Countess's frame, empty. Flat brand colours, transparent background. -->
+  <rect x="40" y="22" width="120" height="156" rx="10" fill="#F29A00"/>
+  <rect x="50" y="32" width="100" height="136" rx="6" fill="#FFCF66"/>
+  <rect x="60" y="42" width="80" height="116" rx="4" fill="#160A5C"/>
+  <!-- corner ornaments -->
+  <g fill="#FFCF66"><circle cx="40" cy="22" r="9"/><circle cx="160" cy="22" r="9"/><circle cx="40" cy="178" r="9"/><circle cx="160" cy="178" r="9"/></g>
+  <path d="M86 22 C86 10 114 10 114 22 Z" fill="#F29A00"/>
+  <!-- what's left: the chair she sat on, and a few stars of dust -->
+  <rect x="80" y="122" width="40" height="8" rx="4" fill="#5C1D58"/>
+  <rect x="84" y="96" width="32" height="28" rx="8" fill="#5C1D58"/>
+  <g fill="#FFFFFF"><circle cx="76" cy="62" r="2"/><circle cx="118" cy="74" r="2.5"/><circle cx="100" cy="56" r="1.5"/><circle cx="128" cy="140" r="2"/></g>
+</svg>

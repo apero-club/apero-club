@@ -201,6 +201,50 @@
         "vCsptCe91UKbZe2sIB2T"
       ],
       "delivery": "theatrical"
+    },
+    "madame-delorme": {
+      "name": "Madame Delorme",
+      "description": "The director of a small Paris museum, a Parisian woman in her fifties. Brisk, no-nonsense, dry and sceptical but fair; crisp, precise speech.",
+      "voiceId": "",
+      "status": "needs-voice",
+      "firstLesson": "lesson-006",
+      "rejected": [
+        "2oMnSKxLeHBxE0KdeHJD",
+        "L9J8xZmPSCimnHB0LjN1",
+        "NpMqpbmlioUVh6og0U5p",
+        "QGfpyFuk3rtPv4pRSQwp",
+        "WQKwBV2Uzw1gSGr69N8I",
+        "ucMmKRQbfDEYyb2IIGax"
+      ],
+      "delivery": "flat"
+    },
+    "raymond": {
+      "name": "Raymond",
+      "description": "The museum’s night guard, an older Parisian man of 64. Sincere, earnest, a little shaken; tells his story warmly, with wide eyes.",
+      "voiceId": "",
+      "status": "needs-voice",
+      "firstLesson": "lesson-006",
+      "rejected": [
+        "MJKL8oE6ZYeX9UUCDFcR",
+        "MckrPTWwhRk9MdBsg8c4",
+        "SsVUx1gFlvniIrUMZtgF",
+        "Xy5q4w05TJGcKXPWeWoz",
+        "jUHQdLfy668sllNiNTSW",
+        "vCsptCe91UKbZe2sIB2T"
+      ],
+      "delivery": "warm"
+    },
+    "la-comtesse": {
+      "name": "La Comtesse",
+      "description": "The Countess in the museum portrait, who may or may not step out of her frame at night. Never speaks… yet.",
+      "voiceId": "",
+      "status": "future",
+      "firstLesson": "",
+      "rejected": [],
+      "mentionedIn": [
+        "lesson-006"
+      ],
+      "voice": "female"
     }
   }
 }
