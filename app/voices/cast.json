@@ -205,8 +205,8 @@
     "madame-delorme": {
       "name": "Madame Delorme",
       "description": "The director of a small Paris museum, a Parisian woman in her fifties. Brisk, no-nonsense, dry and sceptical but fair; crisp, precise speech.",
-      "voiceId": "",
-      "status": "needs-voice",
+      "voiceId": "Nk8FhlqSFRIESn1xR4Tx",
+      "status": "approved",
       "firstLesson": "lesson-006",
       "rejected": [
         "2oMnSKxLeHBxE0KdeHJD",
@@ -221,8 +221,8 @@
     "raymond": {
       "name": "Raymond",
       "description": "The museum’s night guard, an older Parisian man of 64. Sincere, earnest, a little shaken; tells his story warmly, with wide eyes.",
-      "voiceId": "",
-      "status": "needs-voice",
+      "voiceId": "OKpKhTrwN6S16IfQTHzZ",
+      "status": "approved",
       "firstLesson": "lesson-006",
       "rejected": [
         "MJKL8oE6ZYeX9UUCDFcR",

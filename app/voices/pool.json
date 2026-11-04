@@ -143,6 +143,32 @@
         "solemn"
       ],
       "notes": "Monsieur Vasseur's voice (chosen by hand)."
+    },
+    {
+      "id": "OKpKhTrwN6S16IfQTHzZ",
+      "name": "",
+      "gender": "male",
+      "age": "older",
+      "accent": "parisian",
+      "tags": [
+        "warm",
+        "sincere",
+        "earnest"
+      ],
+      "notes": "Raymond's voice (chosen by hand)."
+    },
+    {
+      "id": "Nk8FhlqSFRIESn1xR4Tx",
+      "name": "",
+      "gender": "female",
+      "age": "middle",
+      "accent": "parisian",
+      "tags": [
+        "brisk",
+        "dry",
+        "crisp"
+      ],
+      "notes": "Madame Delorme's voice (chosen by hand)."
     }
   ]
 }
