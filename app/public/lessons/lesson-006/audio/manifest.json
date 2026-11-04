@@ -1,0 +1,1458 @@
+{
+  "version": 1,
+  "model": "eleven_multilingual_v2",
+  "clips": {
+    "narrator|— Et là, la Comtesse s’est levée, et elle est sortie de son cadre !": {
+      "file": "1099cf299b58f349.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          2,
+          0
+        ],
+        [
+          5,
+          0.151
+        ],
+        [
+          9,
+          0.267
+        ],
+        [
+          12,
+          0.395
+        ],
+        [
+          21,
+          0.789
+        ],
+        [
+          27,
+          0.987
+        ],
+        [
+          34,
+          2.055
+        ],
+        [
+          37,
+          2.183
+        ],
+        [
+          42,
+          2.334
+        ],
+        [
+          46,
+          2.473
+        ],
+        [
+          53,
+          2.902
+        ],
+        [
+          56,
+          2.995
+        ],
+        [
+          60,
+          3.17
+        ],
+        [
+          66,
+          3.529
+        ]
+      ]
+    },
+    "narrator|— Raymond… on ne dit rien à personne.": {
+      "file": "6700b807c9929f55.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          2,
+          0
+        ],
+        [
+          11,
+          1.184
+        ],
+        [
+          14,
+          1.37
+        ],
+        [
+          17,
+          1.498
+        ],
+        [
+          21,
+          1.637
+        ],
+        [
+          26,
+          1.892
+        ],
+        [
+          28,
+          1.962
+        ]
+      ]
+    },
+    "narrator|À trois heures, le cadre était vide, et le fauteuil des visiteurs était tourné.": {
+      "file": "1dadc65704a816db.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          2,
+          0.174
+        ],
+        [
+          8,
+          0.464
+        ],
+        [
+          16,
+          1.08
+        ],
+        [
+          19,
+          1.219
+        ],
+        [
+          25,
+          1.556
+        ],
+        [
+          31,
+          1.753
+        ],
+        [
+          37,
+          2.357
+        ],
+        [
+          40,
+          2.496
+        ],
+        [
+          43,
+          2.624
+        ],
+        [
+          52,
+          2.972
+        ],
+        [
+          56,
+          3.088
+        ],
+        [
+          66,
+          3.587
+        ],
+        [
+          72,
+          3.773
+        ]
+      ]
+    },
+    "narrator|Alors elle a ouvert son ordinateur et lancé les images de la caméra de surveillance.": {
+      "file": "07126b6d4942296e.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          6,
+          0.383
+        ],
+        [
+          11,
+          0.522
+        ],
+        [
+          13,
+          0.662
+        ],
+        [
+          20,
+          0.998
+        ],
+        [
+          24,
+          1.219
+        ],
+        [
+          35,
+          1.811
+        ],
+        [
+          38,
+          1.974
+        ],
+        [
+          44,
+          2.241
+        ],
+        [
+          48,
+          2.426
+        ],
+        [
+          55,
+          2.694
+        ],
+        [
+          58,
+          2.798
+        ],
+        [
+          61,
+          2.914
+        ],
+        [
+          68,
+          3.274
+        ],
+        [
+          71,
+          3.344
+        ]
+      ]
+    },
+    "narrator|Elle s’est étiré les bras.": {
+      "file": "01ad2bc0b9d67187.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          5,
+          0.197
+        ],
+        [
+          11,
+          0.406
+        ],
+        [
+          17,
+          0.731
+        ],
+        [
+          21,
+          0.859
+        ]
+      ]
+    },
+    "narrator|Elle s’est mise à chanter.": {
+      "file": "67723e26d44100c9.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          5,
+          0.232
+        ],
+        [
+          11,
+          0.395
+        ],
+        [
+          16,
+          0.615
+        ],
+        [
+          18,
+          0.673
+        ]
+      ]
+    },
+    "narrator|Elles se sont levées tôt.": {
+      "file": "9245278c0d288a67.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          6,
+          0.221
+        ],
+        [
+          9,
+          0.337
+        ],
+        [
+          14,
+          0.511
+        ],
+        [
+          21,
+          0.813
+        ]
+      ]
+    },
+    "narrator|Elles se sont téléphoné hier.": {
+      "file": "53790d14624d7162.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          6,
+          0.255
+        ],
+        [
+          9,
+          0.406
+        ],
+        [
+          14,
+          0.615
+        ],
+        [
+          24,
+          1.184
+        ]
+      ]
+    },
+    "narrator|Il faisait noir dans la salle. Je me suis posé devant le tableau, et j’ai piqué du nez. Puis y a eu un craquement, et je me suis planqué derrière la statue. La dame du portrait s’est levée, elle s’est assise dans le fauteuil. On s’est parlé, mais elle s’est pas retournée.": {
+      "file": "79f2cd3b4865369a.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          0.174
+        ],
+        [
+          11,
+          0.476
+        ],
+        [
+          16,
+          0.801
+        ],
+        [
+          21,
+          0.94
+        ],
+        [
+          24,
+          1.068
+        ],
+        [
+          31,
+          1.695
+        ],
+        [
+          34,
+          1.846
+        ],
+        [
+          37,
+          1.95
+        ],
+        [
+          42,
+          2.125
+        ],
+        [
+          47,
+          2.392
+        ],
+        [
+          54,
+          2.612
+        ],
+        [
+          57,
+          2.728
+        ],
+        [
+          66,
+          3.262
+        ],
+        [
+          69,
+          3.413
+        ],
+        [
+          74,
+          3.553
+        ],
+        [
+          80,
+          3.82
+        ],
+        [
+          83,
+          3.971
+        ],
+        [
+          88,
+          4.737
+        ],
+        [
+          93,
+          5.004
+        ],
+        [
+          95,
+          5.062
+        ],
+        [
+          97,
+          5.108
+        ],
+        [
+          100,
+          5.259
+        ],
+        [
+          103,
+          5.375
+        ],
+        [
+          115,
+          6.293
+        ],
+        [
+          118,
+          6.444
+        ],
+        [
+          121,
+          6.536
+        ],
+        [
+          124,
+          6.641
+        ],
+        [
+          129,
+          6.815
+        ],
+        [
+          137,
+          7.233
+        ],
+        [
+          146,
+          7.535
+        ],
+        [
+          149,
+          7.639
+        ],
+        [
+          157,
+          8.533
+        ],
+        [
+          160,
+          8.696
+        ],
+        [
+          165,
+          8.905
+        ],
+        [
+          168,
+          9.033
+        ],
+        [
+          177,
+          9.462
+        ],
+        [
+          183,
+          9.625
+        ],
+        [
+          190,
+          10.391
+        ],
+        [
+          195,
+          10.6
+        ],
+        [
+          201,
+          10.809
+        ],
+        [
+          208,
+          11.122
+        ],
+        [
+          213,
+          11.273
+        ],
+        [
+          216,
+          11.378
+        ],
+        [
+          226,
+          11.935
+        ],
+        [
+          229,
+          12.098
+        ],
+        [
+          235,
+          12.249
+        ],
+        [
+          242,
+          12.806
+        ],
+        [
+          247,
+          13.038
+        ],
+        [
+          252,
+          13.224
+        ],
+        [
+          258,
+          13.386
+        ],
+        [
+          262,
+          13.514
+        ]
+      ]
+    },
+    "narrator|Il faisait très sombre.": {
+      "file": "1630d2fe5995f003.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          0.186
+        ],
+        [
+          11,
+          0.476
+        ],
+        [
+          16,
+          0.697
+        ]
+      ]
+    },
+    "narrator|Il ne s’est rien passé !": {
+      "file": "07aa265ff4868f7d.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          0.174
+        ],
+        [
+          6,
+          0.313
+        ],
+        [
+          12,
+          0.511
+        ],
+        [
+          17,
+          0.697
+        ],
+        [
+          23,
+          1.091
+        ]
+      ]
+    },
+    "narrator|Il ne s’est rien passé.": {
+      "file": "31c7f75cd3ca9c5e.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          0.174
+        ],
+        [
+          6,
+          0.29
+        ],
+        [
+          12,
+          0.488
+        ],
+        [
+          17,
+          0.673
+        ]
+      ]
+    },
+    "narrator|Il s’est rien passé.": {
+      "file": "8b661404854b3867.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          0.174
+        ],
+        [
+          9,
+          0.372
+        ],
+        [
+          14,
+          0.592
+        ]
+      ]
+    },
+    "narrator|J’ai eu la chair de poule. Madame Delorme a refermé l’ordinateur, très lentement.": {
+      "file": "97b7dffbcbe1b09a.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          5,
+          0.232
+        ],
+        [
+          8,
+          0.325
+        ],
+        [
+          11,
+          0.453
+        ],
+        [
+          17,
+          0.685
+        ],
+        [
+          20,
+          0.801
+        ],
+        [
+          27,
+          1.614
+        ],
+        [
+          34,
+          1.974
+        ],
+        [
+          42,
+          2.368
+        ],
+        [
+          44,
+          2.438
+        ],
+        [
+          52,
+          2.833
+        ],
+        [
+          66,
+          3.506
+        ],
+        [
+          71,
+          3.762
+        ]
+      ]
+    },
+    "narrator|J’ai eu très peur.": {
+      "file": "839432e03639bc2b.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          5,
+          0.232
+        ],
+        [
+          8,
+          0.348
+        ],
+        [
+          13,
+          0.58
+        ]
+      ]
+    },
+    "narrator|J’ai eu une de ces trouilles !": {
+      "file": "b18b45d760d24892.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          5,
+          0.232
+        ],
+        [
+          8,
+          0.418
+        ],
+        [
+          12,
+          0.592
+        ],
+        [
+          15,
+          0.72
+        ],
+        [
+          19,
+          0.882
+        ],
+        [
+          29,
+          1.289
+        ]
+      ]
+    },
+    "narrator|J’ai piqué du nez cinq minutes.": {
+      "file": "45df77613266c54f.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          5,
+          0.209
+        ],
+        [
+          11,
+          0.499
+        ],
+        [
+          14,
+          0.627
+        ],
+        [
+          18,
+          0.801
+        ],
+        [
+          23,
+          1.068
+        ]
+      ]
+    },
+    "narrator|Je me suis assis un moment devant le portrait.": {
+      "file": "2ce2f47eca02c576.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          0.186
+        ],
+        [
+          6,
+          0.302
+        ],
+        [
+          11,
+          0.488
+        ],
+        [
+          17,
+          0.766
+        ],
+        [
+          20,
+          0.894
+        ],
+        [
+          27,
+          1.254
+        ],
+        [
+          34,
+          1.521
+        ],
+        [
+          37,
+          1.637
+        ]
+      ]
+    },
+    "narrator|Je me suis assis un moment.": {
+      "file": "e332f19df9a98503.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          0.197
+        ],
+        [
+          6,
+          0.325
+        ],
+        [
+          11,
+          0.534
+        ],
+        [
+          17,
+          0.824
+        ],
+        [
+          20,
+          0.929
+        ]
+      ]
+    },
+    "narrator|Je me suis assoupi quelques instants.": {
+      "file": "d63d75c49bab87ee.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          0.197
+        ],
+        [
+          6,
+          0.29
+        ],
+        [
+          11,
+          0.499
+        ],
+        [
+          19,
+          0.813
+        ],
+        [
+          28,
+          1.184
+        ]
+      ]
+    },
+    "narrator|Je me suis caché derrière une sculpture.": {
+      "file": "4b4fc9d970af7f47.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          0.197
+        ],
+        [
+          6,
+          0.302
+        ],
+        [
+          11,
+          0.464
+        ],
+        [
+          17,
+          0.789
+        ],
+        [
+          26,
+          1.138
+        ],
+        [
+          30,
+          1.254
+        ]
+      ]
+    },
+    "narrator|Je me suis pas endormi.": {
+      "file": "fc1cc896729b75aa.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          0.209
+        ],
+        [
+          6,
+          0.325
+        ],
+        [
+          11,
+          0.511
+        ],
+        [
+          15,
+          0.65
+        ]
+      ]
+    },
+    "narrator|Je ne me suis pas endormi !": {
+      "file": "be7ed1553ead2370.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          0.197
+        ],
+        [
+          6,
+          0.279
+        ],
+        [
+          9,
+          0.406
+        ],
+        [
+          14,
+          0.592
+        ],
+        [
+          18,
+          0.731
+        ],
+        [
+          26,
+          1.196
+        ]
+      ]
+    },
+    "narrator|Je ne me suis pas endormi.": {
+      "file": "c7ea462f7fd6d215.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          0.186
+        ],
+        [
+          6,
+          0.29
+        ],
+        [
+          9,
+          0.395
+        ],
+        [
+          14,
+          0.546
+        ],
+        [
+          18,
+          0.662
+        ]
+      ]
+    },
+    "narrator|La Comtesse s’est levée.": {
+      "file": "2e0f72235fc38f2b.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          0.197
+        ],
+        [
+          12,
+          0.615
+        ],
+        [
+          18,
+          0.801
+        ]
+      ]
+    },
+    "narrator|Lundi, sept heures du matin. J’apportais les cafés à Madame Delorme, la directrice du musée.": {
+      "file": "1627a99fd38cfec9.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          7,
+          0.383
+        ],
+        [
+          12,
+          0.58
+        ],
+        [
+          19,
+          0.743
+        ],
+        [
+          22,
+          0.859
+        ],
+        [
+          29,
+          1.939
+        ],
+        [
+          41,
+          2.426
+        ],
+        [
+          45,
+          2.531
+        ],
+        [
+          51,
+          2.868
+        ],
+        [
+          53,
+          2.937
+        ],
+        [
+          60,
+          3.251
+        ],
+        [
+          69,
+          4.052
+        ],
+        [
+          72,
+          4.191
+        ],
+        [
+          83,
+          4.69
+        ],
+        [
+          86,
+          4.818
+        ]
+      ]
+    },
+    "narrator|Madame Delorme a levé un sourcil. Raymond a continué, à voix basse.": {
+      "file": "b9b869b020269079.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          7,
+          0.36
+        ],
+        [
+          15,
+          0.697
+        ],
+        [
+          17,
+          0.766
+        ],
+        [
+          22,
+          1.045
+        ],
+        [
+          25,
+          1.149
+        ],
+        [
+          34,
+          2.032
+        ],
+        [
+          42,
+          2.322
+        ],
+        [
+          44,
+          2.415
+        ],
+        [
+          54,
+          3.228
+        ],
+        [
+          56,
+          3.344
+        ],
+        [
+          61,
+          3.495
+        ]
+      ]
+    },
+    "narrator|Nous ne dirons rien à personne.": {
+      "file": "f4cede28c2c5fdc3.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          5,
+          0.232
+        ],
+        [
+          8,
+          0.36
+        ],
+        [
+          15,
+          0.673
+        ],
+        [
+          20,
+          0.975
+        ],
+        [
+          22,
+          1.103
+        ]
+      ]
+    },
+    "narrator|Nous nous sommes cachés derrière une statue.": {
+      "file": "d718ce84467a8e23.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          5,
+          0.221
+        ],
+        [
+          10,
+          0.372
+        ],
+        [
+          17,
+          0.58
+        ],
+        [
+          24,
+          0.906
+        ],
+        [
+          33,
+          1.265
+        ],
+        [
+          37,
+          1.382
+        ]
+      ]
+    },
+    "narrator|On dit rien à personne.": {
+      "file": "f1d2639a1c0e48dc.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          0.186
+        ],
+        [
+          7,
+          0.337
+        ],
+        [
+          12,
+          0.58
+        ],
+        [
+          14,
+          0.65
+        ]
+      ]
+    },
+    "narrator|On ne s’est pas parlé.": {
+      "file": "53f140312c43da46.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          0.163
+        ],
+        [
+          6,
+          0.267
+        ],
+        [
+          12,
+          0.43
+        ],
+        [
+          16,
+          0.58
+        ]
+      ]
+    },
+    "narrator|On s’est regardés, mais on ne s’est pas parlé.": {
+      "file": "3e41a481109429b0.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          0.174
+        ],
+        [
+          9,
+          0.337
+        ],
+        [
+          19,
+          0.917
+        ],
+        [
+          24,
+          1.057
+        ],
+        [
+          27,
+          1.149
+        ],
+        [
+          30,
+          1.265
+        ],
+        [
+          36,
+          1.428
+        ],
+        [
+          40,
+          1.567
+        ]
+      ]
+    },
+    "narrator|On y voyait que dalle.": {
+      "file": "d5497ee940017434.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          0.186
+        ],
+        [
+          5,
+          0.244
+        ],
+        [
+          12,
+          0.522
+        ],
+        [
+          16,
+          0.685
+        ]
+      ]
+    },
+    "narrator|Puis elle s’est assise dans le fauteuil.": {
+      "file": "b3b68c71c2bca167.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          5,
+          0.221
+        ],
+        [
+          10,
+          0.348
+        ],
+        [
+          16,
+          0.569
+        ],
+        [
+          23,
+          0.859
+        ],
+        [
+          28,
+          1.01
+        ],
+        [
+          31,
+          1.126
+        ]
+      ]
+    },
+    "narrator|Raymond, le gardien de nuit, était assis devant son bureau, tout pâle.": {
+      "file": "1f16930f2d580361.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          9,
+          0.557
+        ],
+        [
+          12,
+          0.673
+        ],
+        [
+          20,
+          1.045
+        ],
+        [
+          23,
+          1.173
+        ],
+        [
+          29,
+          1.8
+        ],
+        [
+          35,
+          2.136
+        ],
+        [
+          41,
+          2.322
+        ],
+        [
+          48,
+          2.566
+        ],
+        [
+          52,
+          2.728
+        ],
+        [
+          60,
+          3.123
+        ],
+        [
+          65,
+          3.286
+        ]
+      ]
+    },
+    "narrator|Tu t’es endormi ?": {
+      "file": "390e17b5881d2e43.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          0.197
+        ],
+        [
+          8,
+          0.372
+        ],
+        [
+          16,
+          0.906
+        ]
+      ]
+    }
+  },
+  "ambience": {
+    "file": "ambience-4782d43303a3.mp3",
+    "prompt": "A small museum office early in the morning: the hum of a laptop, a radiator ticking, a wall clock, coffee cups set down on a wooden desk, distant footsteps echoing in an empty gallery, an old building creaking softly. Calm and steady. No music, no clear speech."
+  }
+}
