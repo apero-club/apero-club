@@ -1,0 +1,1612 @@
+{
+  "version": 1,
+  "model": "eleven_multilingual_v2",
+  "clips": {
+    "narrator|— « Du fromage » ? Madame, je ne vends pas de fromage à n’importe qui.": {
+      "file": "ea5bfcbb1c26c617.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          4,
+          0
+        ],
+        [
+          7,
+          0.209
+        ],
+        [
+          17,
+          0.615
+        ],
+        [
+          19,
+          0.917
+        ],
+        [
+          27,
+          1.289
+        ],
+        [
+          30,
+          1.405
+        ],
+        [
+          33,
+          1.486
+        ],
+        [
+          39,
+          1.66
+        ],
+        [
+          43,
+          1.811
+        ],
+        [
+          46,
+          1.927
+        ],
+        [
+          54,
+          2.299
+        ],
+        [
+          56,
+          2.368
+        ],
+        [
+          66,
+          2.81
+        ]
+      ]
+    },
+    "narrator|— Madame… Vous adorez le fromage, ça se voit.": {
+      "file": "fd9c500446ce22fa.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          2,
+          0
+        ],
+        [
+          10,
+          0.569
+        ],
+        [
+          15,
+          0.766
+        ],
+        [
+          22,
+          1.08
+        ],
+        [
+          25,
+          1.184
+        ],
+        [
+          34,
+          1.614
+        ],
+        [
+          37,
+          1.753
+        ],
+        [
+          40,
+          1.823
+        ]
+      ]
+    },
+    "narrator|— Prenez-en soin. Et pour le gruyère râpé, il y a le supermarché.": {
+      "file": "c9d800689411592c.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          2,
+          0
+        ],
+        [
+          12,
+          0.476
+        ],
+        [
+          18,
+          0.894
+        ],
+        [
+          21,
+          1.033
+        ],
+        [
+          26,
+          1.184
+        ],
+        [
+          29,
+          1.289
+        ],
+        [
+          37,
+          1.625
+        ],
+        [
+          43,
+          1.974
+        ],
+        [
+          46,
+          2.078
+        ],
+        [
+          48,
+          2.125
+        ],
+        [
+          50,
+          2.183
+        ],
+        [
+          53,
+          2.287
+        ]
+      ]
+    },
+    "narrator|C’est quelqu’un de très gentil.": {
+      "file": "0274ef6f30a24499.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          6,
+          0.267
+        ],
+        [
+          16,
+          0.615
+        ],
+        [
+          19,
+          0.731
+        ],
+        [
+          24,
+          0.94
+        ]
+      ]
+    },
+    "narrator|Ce fromage sent très fort.": {
+      "file": "4c6e09a1948ac919.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          0.221
+        ],
+        [
+          11,
+          0.569
+        ],
+        [
+          16,
+          0.743
+        ],
+        [
+          21,
+          0.917
+        ]
+      ]
+    },
+    "narrator|Ce n’est pas du comté, c’est du beaufort.": {
+      "file": "d81ba806efc561cc.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          0.151
+        ],
+        [
+          9,
+          0.313
+        ],
+        [
+          13,
+          0.453
+        ],
+        [
+          16,
+          0.569
+        ],
+        [
+          23,
+          1.161
+        ],
+        [
+          29,
+          1.358
+        ],
+        [
+          32,
+          1.486
+        ]
+      ]
+    },
+    "narrator|Ce n’est rien de grave.": {
+      "file": "571f34cc6c7a70ae.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          0.221
+        ],
+        [
+          9,
+          0.43
+        ],
+        [
+          14,
+          0.673
+        ],
+        [
+          17,
+          0.801
+        ]
+      ]
+    },
+    "narrator|Comme ça ? Un peu plus ?": {
+      "file": "c969545eeebb4154.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          6,
+          0.255
+        ],
+        [
+          9,
+          0.395
+        ],
+        [
+          11,
+          0.464
+        ],
+        [
+          14,
+          0.569
+        ],
+        [
+          18,
+          0.708
+        ],
+        [
+          23,
+          0.998
+        ]
+      ]
+    },
+    "narrator|Dans la fromagerie, y a plein de fromages. Sur le comptoir, y a du comté et du chèvre. Le gruyère râpé, il en vend pas. Moi, j’adore le brie, donc je vais prendre un bout de brie.": {
+      "file": "6cd6361ba4487fbd.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          5,
+          0.232
+        ],
+        [
+          8,
+          0.348
+        ],
+        [
+          20,
+          1.207
+        ],
+        [
+          22,
+          1.335
+        ],
+        [
+          24,
+          1.44
+        ],
+        [
+          30,
+          1.718
+        ],
+        [
+          33,
+          1.8
+        ],
+        [
+          43,
+          2.717
+        ],
+        [
+          47,
+          2.937
+        ],
+        [
+          50,
+          3.053
+        ],
+        [
+          60,
+          3.878
+        ],
+        [
+          62,
+          3.971
+        ],
+        [
+          64,
+          4.04
+        ],
+        [
+          67,
+          4.191
+        ],
+        [
+          73,
+          4.505
+        ],
+        [
+          76,
+          4.574
+        ],
+        [
+          79,
+          4.714
+        ],
+        [
+          87,
+          5.608
+        ],
+        [
+          90,
+          5.77
+        ],
+        [
+          98,
+          6.142
+        ],
+        [
+          104,
+          6.653
+        ],
+        [
+          107,
+          6.815
+        ],
+        [
+          110,
+          6.92
+        ],
+        [
+          115,
+          7.094
+        ],
+        [
+          120,
+          7.488
+        ],
+        [
+          125,
+          7.663
+        ],
+        [
+          133,
+          7.999
+        ],
+        [
+          136,
+          8.115
+        ],
+        [
+          142,
+          8.359
+        ],
+        [
+          147,
+          8.545
+        ],
+        [
+          150,
+          8.615
+        ],
+        [
+          155,
+          8.731
+        ],
+        [
+          163,
+          9.009
+        ],
+        [
+          166,
+          9.172
+        ],
+        [
+          171,
+          9.334
+        ],
+        [
+          174,
+          9.416
+        ]
+      ]
+    },
+    "narrator|Derrière le comptoir, Monsieur Vasseur parlait à ses fromages comme à ses enfants.": {
+      "file": "3eac5d9a267a4855.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          9,
+          0.383
+        ],
+        [
+          12,
+          0.488
+        ],
+        [
+          22,
+          0.882
+        ],
+        [
+          31,
+          1.173
+        ],
+        [
+          39,
+          1.625
+        ],
+        [
+          47,
+          1.974
+        ],
+        [
+          49,
+          2.055
+        ],
+        [
+          53,
+          2.218
+        ],
+        [
+          62,
+          3.053
+        ],
+        [
+          68,
+          3.32
+        ],
+        [
+          70,
+          3.39
+        ],
+        [
+          74,
+          3.587
+        ]
+      ]
+    },
+    "narrator|Désirez-vous autre chose ?": {
+      "file": "8e9c51daa69092d6.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          13,
+          0.639
+        ],
+        [
+          19,
+          0.929
+        ],
+        [
+          25,
+          1.231
+        ]
+      ]
+    },
+    "narrator|En voulez-vous davantage ?": {
+      "file": "5ae9e6717175d031.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          0.163
+        ],
+        [
+          15,
+          0.522
+        ],
+        [
+          25,
+          1.103
+        ]
+      ]
+    },
+    "narrator|Et avec ça ?": {
+      "file": "70ac4bd107d99a20.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          0.163
+        ],
+        [
+          8,
+          0.43
+        ],
+        [
+          11,
+          0.697
+        ]
+      ]
+    },
+    "narrator|Il est revenu de la cave avec une minuscule meule au lait cru, affinée pendant deux ans.": {
+      "file": "13285ca9b8d2aaa9.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          0.221
+        ],
+        [
+          7,
+          0.313
+        ],
+        [
+          14,
+          0.615
+        ],
+        [
+          17,
+          0.685
+        ],
+        [
+          20,
+          0.836
+        ],
+        [
+          25,
+          1.149
+        ],
+        [
+          30,
+          1.44
+        ],
+        [
+          34,
+          1.556
+        ],
+        [
+          44,
+          2.183
+        ],
+        [
+          50,
+          2.485
+        ],
+        [
+          53,
+          2.624
+        ],
+        [
+          58,
+          2.763
+        ],
+        [
+          63,
+          3.495
+        ],
+        [
+          71,
+          3.924
+        ],
+        [
+          79,
+          4.203
+        ],
+        [
+          84,
+          4.389
+        ]
+      ]
+    },
+    "narrator|Il l’a emballée dans trois feuilles de papier, comme un nouveau-né.": {
+      "file": "4be991f34a87a463.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          0.174
+        ],
+        [
+          7,
+          0.325
+        ],
+        [
+          16,
+          0.72
+        ],
+        [
+          21,
+          0.906
+        ],
+        [
+          27,
+          1.231
+        ],
+        [
+          36,
+          1.486
+        ],
+        [
+          39,
+          1.602
+        ],
+        [
+          47,
+          2.101
+        ],
+        [
+          53,
+          2.357
+        ],
+        [
+          56,
+          2.426
+        ]
+      ]
+    },
+    "narrator|Il l’a emballée dans trois feuilles de papier.": {
+      "file": "1700ddcc29065c13.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          0.209
+        ],
+        [
+          7,
+          0.325
+        ],
+        [
+          16,
+          0.673
+        ],
+        [
+          21,
+          0.836
+        ],
+        [
+          27,
+          1.08
+        ],
+        [
+          36,
+          1.312
+        ],
+        [
+          39,
+          1.416
+        ]
+      ]
+    },
+    "narrator|Il me faut du fromage pour une soirée.": {
+      "file": "9a6c4c0c64f515f8.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          0.151
+        ],
+        [
+          6,
+          0.279
+        ],
+        [
+          11,
+          0.441
+        ],
+        [
+          14,
+          0.557
+        ],
+        [
+          22,
+          0.975
+        ],
+        [
+          27,
+          1.149
+        ],
+        [
+          31,
+          1.254
+        ]
+      ]
+    },
+    "narrator|Il n’y a plus de brie.": {
+      "file": "64177e2689727dff.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          0.128
+        ],
+        [
+          7,
+          0.232
+        ],
+        [
+          9,
+          0.313
+        ],
+        [
+          14,
+          0.488
+        ],
+        [
+          17,
+          0.604
+        ]
+      ]
+    },
+    "narrator|Il n’y a plus de fromage.": {
+      "file": "182099b2493bdba3.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          0.151
+        ],
+        [
+          7,
+          0.279
+        ],
+        [
+          9,
+          0.36
+        ],
+        [
+          14,
+          0.534
+        ],
+        [
+          17,
+          0.662
+        ]
+      ]
+    },
+    "narrator|Il pue, ce fromage !": {
+      "file": "39e7b641965cba2f.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          0.221
+        ],
+        [
+          8,
+          0.488
+        ],
+        [
+          11,
+          0.639
+        ],
+        [
+          19,
+          1.126
+        ]
+      ]
+    },
+    "narrator|Il y avait beaucoup de monde à la fromagerie.": {
+      "file": "db073588094cf82a.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          0.128
+        ],
+        [
+          5,
+          0.197
+        ],
+        [
+          11,
+          0.36
+        ],
+        [
+          20,
+          0.639
+        ],
+        [
+          23,
+          0.766
+        ],
+        [
+          29,
+          1.103
+        ],
+        [
+          31,
+          1.242
+        ],
+        [
+          34,
+          1.358
+        ]
+      ]
+    },
+    "narrator|J’adore le comté, alors je voudrais du comté.": {
+      "file": "ca9b9165357651a9.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          8,
+          0.406
+        ],
+        [
+          11,
+          0.522
+        ],
+        [
+          18,
+          0.848
+        ],
+        [
+          24,
+          1.08
+        ],
+        [
+          27,
+          1.207
+        ],
+        [
+          36,
+          1.521
+        ],
+        [
+          39,
+          1.649
+        ]
+      ]
+    },
+    "narrator|J’ai quelque chose de rare.": {
+      "file": "214366540b154e19.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          5,
+          0.221
+        ],
+        [
+          13,
+          0.511
+        ],
+        [
+          19,
+          0.743
+        ],
+        [
+          22,
+          0.894
+        ]
+      ]
+    },
+    "narrator|Je déteste les fromages trop forts.": {
+      "file": "b54abaa93b163f2b.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          0.244
+        ],
+        [
+          11,
+          0.639
+        ],
+        [
+          15,
+          0.766
+        ],
+        [
+          24,
+          1.138
+        ],
+        [
+          29,
+          1.347
+        ]
+      ]
+    },
+    "narrator|Je ne vends pas de fromage à n’importe qui.": {
+      "file": "58be484098a52d02.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          0.186
+        ],
+        [
+          6,
+          0.267
+        ],
+        [
+          12,
+          0.453
+        ],
+        [
+          16,
+          0.604
+        ],
+        [
+          19,
+          0.731
+        ],
+        [
+          27,
+          1.149
+        ],
+        [
+          29,
+          1.231
+        ],
+        [
+          39,
+          1.649
+        ]
+      ]
+    },
+    "narrator|Je vais prendre un morceau de comté.": {
+      "file": "6c9884099e2eb9cb.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          0.174
+        ],
+        [
+          8,
+          0.313
+        ],
+        [
+          16,
+          0.604
+        ],
+        [
+          19,
+          0.743
+        ],
+        [
+          27,
+          1.057
+        ],
+        [
+          30,
+          1.138
+        ]
+      ]
+    },
+    "narrator|Je vais vous prendre un bout de comté.": {
+      "file": "a946d19b801a6351.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          0.221
+        ],
+        [
+          8,
+          0.36
+        ],
+        [
+          13,
+          0.488
+        ],
+        [
+          21,
+          0.882
+        ],
+        [
+          24,
+          0.987
+        ],
+        [
+          29,
+          1.161
+        ],
+        [
+          32,
+          1.289
+        ]
+      ]
+    },
+    "narrator|Je voudrais un morceau de comté.": {
+      "file": "3045777e778ae123.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          0.197
+        ],
+        [
+          12,
+          0.511
+        ],
+        [
+          15,
+          0.615
+        ],
+        [
+          23,
+          0.998
+        ],
+        [
+          26,
+          1.115
+        ]
+      ]
+    },
+    "narrator|Je voulais juste du gruyère râpé.": {
+      "file": "ae71f77242743c90.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          0.221
+        ],
+        [
+          11,
+          0.488
+        ],
+        [
+          17,
+          0.766
+        ],
+        [
+          20,
+          0.917
+        ],
+        [
+          28,
+          1.324
+        ]
+      ]
+    },
+    "narrator|Les yeux fermés, elle a reconnu un fromage à l’odeur : ": {
+      "file": "0452e4676fa17063.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          4,
+          0.255
+        ],
+        [
+          9,
+          0.383
+        ],
+        [
+          17,
+          0.801
+        ],
+        [
+          22,
+          0.998
+        ],
+        [
+          24,
+          1.057
+        ],
+        [
+          32,
+          1.463
+        ],
+        [
+          35,
+          1.579
+        ],
+        [
+          43,
+          1.974
+        ],
+        [
+          45,
+          2.043
+        ],
+        [
+          53,
+          2.45
+        ]
+      ]
+    },
+    "narrator|Pour son chèvre préféré, elle a choisi le bon vin : ": {
+      "file": "c02e15b686317e4f.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          5,
+          0.255
+        ],
+        [
+          9,
+          0.453
+        ],
+        [
+          16,
+          0.801
+        ],
+        [
+          25,
+          1.37
+        ],
+        [
+          30,
+          1.567
+        ],
+        [
+          32,
+          1.637
+        ],
+        [
+          39,
+          1.974
+        ],
+        [
+          42,
+          2.09
+        ],
+        [
+          46,
+          2.299
+        ],
+        [
+          50,
+          2.531
+        ]
+      ]
+    },
+    "narrator|Puis elle a expliqué la différence entre un comté de douze mois et un comté de trois ans.": {
+      "file": "fb98c7420893d391.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          5,
+          0.279
+        ],
+        [
+          10,
+          0.453
+        ],
+        [
+          12,
+          0.569
+        ],
+        [
+          21,
+          1.033
+        ],
+        [
+          24,
+          1.149
+        ],
+        [
+          35,
+          1.718
+        ],
+        [
+          41,
+          1.95
+        ],
+        [
+          44,
+          2.055
+        ],
+        [
+          50,
+          2.392
+        ],
+        [
+          53,
+          2.554
+        ],
+        [
+          59,
+          2.879
+        ],
+        [
+          64,
+          3.158
+        ],
+        [
+          67,
+          3.355
+        ],
+        [
+          70,
+          3.471
+        ],
+        [
+          76,
+          3.785
+        ],
+        [
+          79,
+          3.913
+        ],
+        [
+          85,
+          4.238
+        ]
+      ]
+    },
+    "narrator|Qu’est-ce qu’il vous faudrait ?": {
+      "file": "5d4acb57edcb3157.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          10,
+          0.302
+        ],
+        [
+          16,
+          0.499
+        ],
+        [
+          21,
+          0.662
+        ],
+        [
+          30,
+          1.08
+        ]
+      ]
+    },
+    "narrator|Que désirez-vous ?": {
+      "file": "bf73a8db22b64e23.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          4,
+          0.232
+        ],
+        [
+          17,
+          0.848
+        ]
+      ]
+    },
+    "narrator|Samedi, il y avait beaucoup de monde à la fromagerie de la rue Mouffetard.": {
+      "file": "aa1aa652d4ae2a65.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          8,
+          0.43
+        ],
+        [
+          11,
+          0.534
+        ],
+        [
+          13,
+          0.592
+        ],
+        [
+          19,
+          0.813
+        ],
+        [
+          28,
+          1.126
+        ],
+        [
+          31,
+          1.196
+        ],
+        [
+          37,
+          1.509
+        ],
+        [
+          39,
+          1.614
+        ],
+        [
+          42,
+          1.741
+        ],
+        [
+          53,
+          2.299
+        ],
+        [
+          56,
+          2.426
+        ],
+        [
+          59,
+          2.543
+        ],
+        [
+          63,
+          2.682
+        ]
+      ]
+    },
+    "narrator|Un silence terrible. Par pitié, Margaux a acheté la petite meule.": {
+      "file": "698e92959eac9bb1.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          0.197
+        ],
+        [
+          11,
+          0.58
+        ],
+        [
+          21,
+          1.509
+        ],
+        [
+          25,
+          1.765
+        ],
+        [
+          32,
+          2.101
+        ],
+        [
+          40,
+          2.426
+        ],
+        [
+          42,
+          2.473
+        ],
+        [
+          49,
+          2.763
+        ],
+        [
+          52,
+          2.868
+        ],
+        [
+          59,
+          3.135
+        ]
+      ]
+    },
+    "narrator|Vous adorez le fromage, ça se voit.": {
+      "file": "13ca9d4c1ab48607.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          5,
+          0.255
+        ],
+        [
+          12,
+          0.522
+        ],
+        [
+          15,
+          0.604
+        ],
+        [
+          24,
+          1.265
+        ],
+        [
+          27,
+          1.44
+        ],
+        [
+          30,
+          1.521
+        ]
+      ]
+    },
+    "narrator|Vous avez de la crème fraîche ?": {
+      "file": "fb092ef01283875c.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          5,
+          0.244
+        ],
+        [
+          10,
+          0.418
+        ],
+        [
+          13,
+          0.488
+        ],
+        [
+          16,
+          0.604
+        ],
+        [
+          22,
+          0.871
+        ],
+        [
+          30,
+          1.219
+        ]
+      ]
+    },
+    "narrator|Y a plus de fromage.": {
+      "file": "bce7d2750a5ad1a3.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          2,
+          0.151
+        ],
+        [
+          4,
+          0.221
+        ],
+        [
+          9,
+          0.441
+        ],
+        [
+          12,
+          0.557
+        ]
+      ]
+    }
+  },
+  "ambience": {
+    "file": "ambience-01fac6c2b183.mp3",
+    "prompt": "Inside a small cheese shop on a busy Paris market street on a Saturday morning: a murmur of customers waiting, a cheese wire slicing, paper being folded and wrapped, a shop door bell, coins on a counter, faint market bustle outside. Calm and steady. No music, no clear speech."
+  }
+}
