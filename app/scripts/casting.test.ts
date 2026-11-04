@@ -55,7 +55,7 @@ describe('castLesson', () => {
   it('gives a new character the best-matching unused voice, pending approval', () => {
     const reg: Registry = { characters: {} };
     const r = castLesson(lessonWith([char('mamie', 'female', 'An elderly grandmother, warm and dry.')]), 'lesson-010', pool, reg);
-    expect(reg.characters.mamie).toMatchObject({ voiceId: 'f1', status: 'pending', firstLesson: 'lesson-010' });
+    expect(reg.characters.mamie).toMatchObject({ voiceId: 'f1', status: 'pending', firstLesson: 'lesson-010', delivery: 'flat' });
     expect(r.pending).toEqual([{ id: 'mamie', voiceId: 'f1', needsSample: true }]);
     expect(r.approved).toEqual({});
   });

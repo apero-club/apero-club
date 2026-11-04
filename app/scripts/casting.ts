@@ -11,7 +11,8 @@
  * short sample. "approved" records their lines; "rejected" moves to the next-best
  * voice and makes a new sample.
  */
-import type { LessonData } from '../src/lesson/schema';
+import type { Delivery, LessonData } from '../src/lesson/schema';
+import { suggestDelivery, type VoiceSettings } from './delivery';
 
 export type PoolVoice = {
   id: string; name?: string; gender: 'male' | 'female';
@@ -34,6 +35,10 @@ export type CastEntry = {
   /** For a future character: lessons that mention them, and the voice they'll need. */
   mentionedIn?: string[];
   voice?: 'male' | 'female';
+  /** How animated they sound (a preset from audio.config.json), suggested from the description. */
+  delivery?: Delivery;
+  /** Optional fine-tuning on top of the preset, e.g. { "speed": 0.95 }. */
+  settings?: VoiceSettings;
 };
 export type Registry = { characters: Record<string, CastEntry> };
 
@@ -91,7 +96,7 @@ export function castLesson(lesson: LessonData, lessonId: string, pool: Pool, reg
       const fresh = candidates.filter(v => !usedAnywhere.has(v.id));
       const from = fresh.length ? fresh : candidates;
       if (!from.length) {
-        reg.characters[c.id] = { name: c.name, description: c.description, voiceId: '', status: 'needs-voice', firstLesson: first, rejected };
+        reg.characters[c.id] = { name: c.name, description: c.description, voiceId: '', status: 'needs-voice', firstLesson: first, rejected, delivery: e?.delivery ?? suggestDelivery(c.description), ...(e?.settings ? { settings: e.settings } : {}) };
         res.needsVoice.push({ id: c.id, name: c.name });
         res.notes.push(`${c.name} (${lessonId}) needs a ${c.voice} voice: none left in voices/pool.json. Add one to the pool, or set their voiceId and "approved" in voices/cast.json. Until then their lines use device voices.`);
         continue;
@@ -102,6 +107,8 @@ export function castLesson(lesson: LessonData, lessonId: string, pool: Pool, reg
       e = reg.characters[c.id] = {
         name: c.name, description: c.description, voiceId: best.id, status: 'pending',
         firstLesson: first, rejected,
+        // Keep a delivery chosen by hand; otherwise suggest one from the description.
+        delivery: e?.delivery ?? suggestDelivery(c.description), ...(e?.settings ? { settings: e.settings } : {}),
       };
       res.notes.push(`${c.name}: suggested ${best.name || best.id} (${needsVoice && rejected.length ? 'after rejecting ' + rejected.length : 'new character'}). Waiting for approval.`);
     }

@@ -70,6 +70,13 @@ const CastMember = z.object({
   voice: z.enum(['male', 'female']),
 }).strict();
 
+/**
+ * How animated a voice sounds (ElevenLabs settings; the values are in audio.config.json).
+ * Characters get one in voices/cast.json; a line can override it for the moment.
+ */
+export const Delivery = z.enum(['flat', 'calm', 'standard', 'warm', 'animated', 'theatrical']);
+export type Delivery = z.infer<typeof Delivery>;
+
 const Line = z.object({
   /** Optional id so quiz questions can play this line. */
   id: z.string().regex(/^[a-z0-9-]+$/).optional(),
@@ -84,6 +91,12 @@ const Line = z.object({
    * this speaker's voice.
    */
   quoteSpeaker: z.string().optional(),
+  /**
+   * How this line is said, when the moment calls for something other than the
+   * character's usual delivery: "animated" for panic or excitement, "calm" for a
+   * whispered secret, "flat" for a deadpan punchline.
+   */
+  delivery: Delivery.optional(),
 }).strict();
 
 const Note = z.object({

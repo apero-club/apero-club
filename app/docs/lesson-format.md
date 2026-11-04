@@ -73,6 +73,7 @@ Colours are design system tokens without the `--`: `violet-500`, `sky-700`, `ora
 - `note` adds a **why?** chip that opens that grammar note.
 - `id` is only needed if a listening question plays the line.
 - When narration quotes someone in «guillemets», add `"quoteSpeaker": "neighbour"` so the quote plays in that person's voice.
+- `delivery` (optional) changes how that one line is said: `flat`, `calm`, `standard`, `warm`, `animated` or `theatrical`, instead of the character's usual delivery from `voices/cast.json`. The presets' ElevenLabs settings are in `audio.config.json`. Changing it re-records that line.
 - Use real French typography: `’`, «guillemets», and a narrow no-break space before `! ? : ;` (or a regular space, as in the first lesson).
 
 ### Grammar notes

@@ -6,10 +6,11 @@
  * A clip's key is `speaker|text`: editing a line's text (or who says it) makes it
  * a new clip, which gets recorded on the next run; unchanged lines are reused.
  */
-import type { LessonData } from './schema';
+import type { Delivery, LessonData } from './schema';
 import { flattenStory, forSpeech, stripDash } from './story';
 
-export type Clip = { key: string; speaker: string; text: string };
+/** `delivery` is set when the story line asks for a delivery of its own. */
+export type Clip = { key: string; speaker: string; text: string; delivery?: Delivery };
 
 export const clipKey = (speaker: string, text: string) => `${speaker}|${text}`;
 
@@ -18,16 +19,16 @@ export const speechText = (text: string) => forSpeech(stripDash(text)).trim();
 
 export function collectClips(lesson: LessonData): Clip[] {
   const out = new Map<string, Clip>();
-  const add = (speaker: string, text: string) => {
+  const add = (speaker: string, text: string, delivery?: Delivery) => {
     if (!speechText(text)) return;
     const key = clipKey(speaker, text);
-    if (!out.has(key)) out.set(key, { key, speaker, text });
+    if (!out.has(key)) out.set(key, delivery ? { key, speaker, text, delivery } : { key, speaker, text });
   };
   const narrator = lesson.cast[0].id;
 
   // Story: one clip per voice part (a narration line that quotes someone is two parts).
   for (const line of flattenStory(lesson).lines)
-    for (const p of line.parts) add(p.speaker, line.fr.slice(p.start, p.end));
+    for (const p of line.parts) add(p.speaker, line.fr.slice(p.start, p.end), line.delivery);
 
   // Everything else is read by the narrator, matching what the app plays.
   for (const q of lesson.quiz) if (q.quote) add(narrator, q.quote);

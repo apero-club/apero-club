@@ -127,7 +127,8 @@
         "speaker": "harriet",
         "fr": "— Excusez-moi, monsieur… La tour Eiffel ! Elle n’est plus là !",
         "en": "“Excuse me, sir… The Eiffel Tower! It’s not there any more!”",
-        "note": "ne-plus"
+        "note": "ne-plus",
+        "delivery": "animated"
       }
     ],
     [
@@ -180,7 +181,8 @@
       {
         "speaker": "harriet",
         "fr": "— Elle est revenue !",
-        "en": "“It’s come back!”"
+        "en": "“It’s come back!”",
+        "delivery": "animated"
       }
     ],
     [

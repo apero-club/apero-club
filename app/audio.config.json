@@ -1,5 +1,5 @@
 {
-  "$comment": "Settings for scripts/record-audio.ts (ElevenLabs). Which voice each character uses lives in voices/cast.json; the voices to choose from are in voices/pool.json.",
+  "$comment": "Settings for scripts/record-audio.ts (ElevenLabs). Which voice each character uses lives in voices/cast.json; the voices to choose from are in voices/pool.json. \"deliveries\" are presets layered on voiceSettings: each character has one in voices/cast.json, and a story line can ask for another. Lower stability = more varied and expressive; higher style = more exaggerated; speed 0.7 to 1.2. Changing a preset re-records every line that uses it.",
   "model": "eleven_multilingual_v2",
   "outputFormat": "mp3_44100_64",
   "voiceSettings": {
@@ -7,6 +7,32 @@
     "similarity_boost": 0.75,
     "style": 0,
     "use_speaker_boost": true
+  },
+  "deliveries": {
+    "flat": {
+      "stability": 0.8,
+      "style": 0,
+      "speed": 0.97
+    },
+    "calm": {
+      "stability": 0.65,
+      "style": 0.05,
+      "speed": 0.95
+    },
+    "standard": {},
+    "warm": {
+      "stability": 0.45,
+      "style": 0.2
+    },
+    "animated": {
+      "stability": 0.35,
+      "style": 0.35,
+      "speed": 1.03
+    },
+    "theatrical": {
+      "stability": 0.25,
+      "style": 0.55
+    }
   },
   "ambience": {
     "model": "eleven_text_to_sound_v2",

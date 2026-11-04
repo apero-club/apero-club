@@ -9,6 +9,8 @@ export type ClipAudio = {
   words: [number, number][];
   /** Which voice recorded it, so changing a speaker's voice re-records their lines. */
   voice: string;
+  /** Fingerprint of the delivery settings it was recorded with (absent for the plain base settings). */
+  delivery?: string;
 };
 export type AmbienceAudio = {
   file: string;

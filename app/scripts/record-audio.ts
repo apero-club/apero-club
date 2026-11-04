@@ -26,6 +26,8 @@ import { collectClips, speechText, wordTimes, type Clip } from '../src/lesson/cl
 import { forSpeech } from '../src/lesson/story';
 import type { AudioManifest } from '../src/audio/manifest';
 import { castLesson, CastingError, sampleText, type Pool, type Registry } from './casting';
+import { settingsFor, settingsSignature, type VoiceSettings } from './delivery';
+import type { Delivery } from '../src/lesson/schema';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const API = process.env.ELEVENLABS_API_BASE || 'https://api.elevenlabs.io';
@@ -36,7 +38,9 @@ const ONLY = args.find(a => a.startsWith('--lesson='))?.slice(9);
 
 type Config = {
   model: string; outputFormat: string;
-  voiceSettings?: Record<string, unknown>;
+  voiceSettings?: VoiceSettings;
+  /** Delivery presets (flat … theatrical), applied on top of voiceSettings. See scripts/delivery.ts. */
+  deliveries?: Partial<Record<Delivery, VoiceSettings>>;
   ambience?: { model?: string; durationSeconds?: number; promptInfluence?: number };
 };
 const config: Config = JSON.parse(readFileSync(join(ROOT, 'audio.config.json'), 'utf8'));
@@ -53,10 +57,17 @@ const saveRegistry = () => { if (!DRY) writeFileSync(REGISTRY, JSON.stringify(re
 /** Where the spoken text starts inside a clip's original text (after a dialogue dash, spaces). */
 const leadOf = (text: string) => Math.max(0, forSpeech(text).indexOf(speechText(text)));
 
-const fileFor = (voice: string, clip: Clip) =>
-  createHash('sha1').update(`${voice}|${config.model}|${speechText(clip.text)}`).digest('hex').slice(0, 16) + '.mp3';
+/** Voice settings for a clip: the speaker's delivery, or the line's own. */
+const clipSettings = (c: Clip) => settingsFor(config, registry.characters[c.speaker], c.delivery);
+/** Fingerprint of those settings ('' for the plain base settings). */
+const clipSig = (c: Clip) => settingsSignature(config, clipSettings(c));
 
-async function record(voice: string, text: string) {
+const fileFor = (voice: string, clip: Clip) => {
+  const sig = clipSig(clip);
+  return createHash('sha1').update(`${voice}|${config.model}|${speechText(clip.text)}${sig ? `|${sig}` : ''}`).digest('hex').slice(0, 16) + '.mp3';
+};
+
+async function record(voice: string, text: string, settings: VoiceSettings = config.voiceSettings ?? {}) {
   const key = process.env.ELEVENLABS_API_KEY;
   if (!key) throw new Stop('ELEVENLABS_API_KEY is not set.');
   const url = `${API}/v1/text-to-speech/${encodeURIComponent(voice)}/with-timestamps?output_format=${encodeURIComponent(config.outputFormat)}`;
@@ -64,7 +75,7 @@ async function record(voice: string, text: string) {
     const res = await fetch(url, {
       method: 'POST',
       headers: { 'xi-api-key': key, 'Content-Type': 'application/json', Accept: 'application/json' },
-      body: JSON.stringify({ text, model_id: config.model, voice_settings: config.voiceSettings }),
+      body: JSON.stringify({ text, model_id: config.model, voice_settings: settings }),
     });
     if (res.ok) {
       const j = await res.json() as { audio_base64: string; alignment?: { characters: string[]; character_start_times_seconds: number[] } };
@@ -131,7 +142,7 @@ async function main() {
       console.log(`  · ${entry.name}: sample to make (${text.length} characters)`);
       total += text.length;
       if (DRY) continue;
-      const { audio } = await record(p.voiceId, speechText(text));
+      const { audio } = await record(p.voiceId, speechText(text), settingsFor(config, entry));
       mkdirSync(SAMPLES, { recursive: true });
       if (entry.sample && existsSync(join(SAMPLES, entry.sample))) unlinkSync(join(SAMPLES, entry.sample));
       entry.sample = `${p.id}-${p.voiceId}.mp3`;
@@ -156,7 +167,7 @@ async function main() {
     const waiting = allClips.length - clips.length;
     const todo = clips.filter(c => {
       const have = manifest.clips[c.key];
-      return FORCE || !have || have.voice !== voices[c.speaker] || manifest.model !== config.model || !existsSync(join(out, have.file));
+      return FORCE || !have || have.voice !== voices[c.speaker] || (have.delivery ?? '') !== clipSig(c) || manifest.model !== config.model || !existsSync(join(out, have.file));
     });
     // Count only audio that doesn't exist yet: identical sentences in the same voice are reused.
     const uniq = new Map(todo.map(c => [fileFor(voices[c.speaker], c), c] as const).filter(([f]) => FORCE || !existsSync(join(out, f))));
@@ -179,17 +190,18 @@ async function main() {
       const file = fileFor(voice, c);
       // The same sentence in the same voice (e.g. a story line quoted in the quiz) shares one
       // recording; only the word offsets differ, by where the spoken text starts in each.
+      const sig = clipSig(c), delivery = sig ? { delivery: sig } : {};
       const twin = !FORCE && Object.entries(manifest.clips).find(([k, v]) => v.file === file && v.voice === voice && k !== c.key && existsSync(join(out, file)));
       if (twin) {
         const shift = leadOf(c.text) - leadOf(twin[0].slice(twin[0].indexOf('|') + 1));
-        manifest.clips[c.key] = { file, voice, words: twin[1].words.map(([o, t]) => [o + shift, t]) };
+        manifest.clips[c.key] = { file, voice, ...delivery, words: twin[1].words.map(([o, t]) => [o + shift, t]) };
         save();
         console.log(`  = ${c.speaker}: ${speechText(c.text).slice(0, 60)} (reused)`);
         continue;
       }
-      const { audio, alignment } = await record(voice, speechText(c.text));
+      const { audio, alignment } = await record(voice, speechText(c.text), clipSettings(c));
       writeFileSync(join(out, file), audio);
-      manifest.clips[c.key] = { file, voice, words: alignment ? wordTimes(c.text, alignment) : [] };
+      manifest.clips[c.key] = { file, voice, ...delivery, words: alignment ? wordTimes(c.text, alignment) : [] };
       save();
       recorded++;
       console.log(`  ✓ ${c.speaker}: ${speechText(c.text).slice(0, 60)}`);

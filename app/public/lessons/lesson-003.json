@@ -175,7 +175,8 @@
       {
         "speaker": "clement",
         "fr": "— Et sur moi, vous dites quoi ?",
-        "en": "“And what do you say about me?”"
+        "en": "“And what do you say about me?”",
+        "delivery": "warm"
       }
     ],
     [
@@ -189,14 +190,16 @@
       {
         "speaker": "clement",
         "fr": "— Comment vous savez ça ?!",
-        "en": "“How do you know that?!”"
+        "en": "“How do you know that?!”",
+        "delivery": "animated"
       }
     ],
     [
       {
         "speaker": "madame-benali",
         "fr": "— Je suis la gardienne. C’est mon métier.",
-        "en": "“I’m the gardienne. It’s my job.”"
+        "en": "“I’m the gardienne. It’s my job.”",
+        "delivery": "flat"
       }
     ]
   ],

@@ -9,7 +9,7 @@ import poolFile from '../../voices/pool.json';
 import { Badge, IconButton, type BadgeTone } from '../ds/controls';
 import { Eyebrow } from '../screens/common';
 
-type Entry = { name: string; voiceId: string; status: string; firstLesson: string; rejected: string[]; sample?: string; description?: string; mentionedIn?: string[]; voice?: string };
+type Entry = { name: string; voiceId: string; status: string; firstLesson: string; rejected: string[]; sample?: string; description?: string; mentionedIn?: string[]; voice?: string; delivery?: string; settings?: Record<string, unknown> };
 type Voice = { id: string; name?: string; gender: string; age?: string; accent?: string; tags?: string[]; notes?: string };
 
 const STATUS: Record<string, [BadgeTone, string]> = {
@@ -70,7 +70,7 @@ export function Casting() {
                 </span>
               </div>
               <span style={{ fontSize: 13, color: 'var(--fg-3)' }}>
-                {e.status === 'future' ? 'Not in a cast yet' : `First appears ${e.firstLesson}`}{e.rejected.length ? ` · ${e.rejected.length} voice${e.rejected.length > 1 ? 's' : ''} rejected` : ''}{others.length ? ` · also used by ${others.join(', ')}` : ''}
+                {e.status === 'future' ? 'Not in a cast yet' : `First appears ${e.firstLesson}`}{e.delivery ? ` · delivery: ${e.delivery}${e.settings ? ' (fine-tuned)' : ''}` : ''}{e.rejected.length ? ` · ${e.rejected.length} voice${e.rejected.length > 1 ? 's' : ''} rejected` : ''}{others.length ? ` · also used by ${others.join(', ')}` : ''}
               </span>
             </article>
           );
@@ -82,6 +82,7 @@ export function Casting() {
             <li>On GitHub, open <code>{REPO_FILE}</code> and click the pencil to edit.</li>
             <li>Find the character and change <code>"status": "pending"</code> to <code>"approved"</code>, or to <code>"rejected"</code> to hear another voice. To choose a voice yourself, put its ID in <code>"voiceId"</code> and set <code>"approved"</code>.</li>
             <li>Commit. Approved characters' lines are recorded in a minute or two; rejected ones get the next-best voice and a new sample here.</li>
+            <li>To make someone more animated or flatter, change their <code>"delivery"</code>: <code>flat</code>, <code>calm</code>, <code>standard</code>, <code>warm</code>, <code>animated</code> or <code>theatrical</code>. Their lines are re-recorded with it (this uses credits).</li>
           </ol>
           <span style={{ color: 'var(--sun-900)' }}>{pool.length} voices in the pool (<code>app/voices/pool.json</code>). Until a character is approved, their lines use the device voice.</span>
         </section>

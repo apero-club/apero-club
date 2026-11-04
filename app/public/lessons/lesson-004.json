@@ -171,7 +171,8 @@
         "id": "samir-chat",
         "speaker": "samir",
         "fr": "— Celui-là ! Ma grand-mère va l’adorer. Vous me faites un prix ?",
-        "en": "“That one! My grandmother will love it. Can you do me a deal?”"
+        "en": "“That one! My grandmother will love it. Can you do me a deal?”",
+        "delivery": "animated"
       }
     ],
     [
@@ -205,13 +206,15 @@
       {
         "speaker": "madame-lucchini",
         "fr": "— Eh oui, on est mariés. Les clients préfèrent les disputes aux prix fixes.",
-        "en": "“That’s right, we’re married. Customers prefer arguments to fixed prices."
+        "en": "“That’s right, we’re married. Customers prefer arguments to fixed prices.",
+        "delivery": "warm"
       },
       {
         "speaker": "madame-lucchini",
         "fr": "C’est mieux pour les affaires.",
         "en": "It’s better for business.”",
-        "note": "cest-mieux"
+        "note": "cest-mieux",
+        "delivery": "warm"
       }
     ]
   ],

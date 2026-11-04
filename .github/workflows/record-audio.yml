@@ -14,6 +14,7 @@ on:
       - app/src/lesson/**
       - app/scripts/record-audio.ts
       - app/scripts/casting.ts
+      - app/scripts/delivery.ts
   workflow_dispatch:
 
 permissions:

@@ -6,7 +6,8 @@
       "voiceId": "Xy5q4w05TJGcKXPWeWoz",
       "status": "approved",
       "firstLesson": "lesson-001",
-      "rejected": []
+      "rejected": [],
+      "delivery": "standard"
     },
     "madame-lefevre": {
       "name": "Madame Lefèvre",
@@ -15,14 +16,16 @@
       "firstLesson": "lesson-001",
       "rejected": [
         "2oMnSKxLeHBxE0KdeHJD"
-      ]
+      ],
+      "delivery": "warm"
     },
     "la-boulangere": {
       "name": "La boulangère",
       "voiceId": "L9J8xZmPSCimnHB0LjN1",
       "status": "approved",
       "firstLesson": "lesson-001",
-      "rejected": []
+      "rejected": [],
+      "delivery": "animated"
     },
     "harriet": {
       "name": "Harriet",
@@ -30,7 +33,8 @@
       "voiceId": "WQKwBV2Uzw1gSGr69N8I",
       "status": "approved",
       "firstLesson": "lesson-002",
-      "rejected": []
+      "rejected": [],
+      "delivery": "animated"
     },
     "gilles": {
       "name": "Gilles",
@@ -38,7 +42,8 @@
       "voiceId": "jUHQdLfy668sllNiNTSW",
       "status": "approved",
       "firstLesson": "lesson-002",
-      "rejected": []
+      "rejected": [],
+      "delivery": "flat"
     },
     "madame-benali": {
       "name": "Madame Benali",
@@ -48,7 +53,8 @@
       "firstLesson": "lesson-003",
       "rejected": [
         "2oMnSKxLeHBxE0KdeHJD"
-      ]
+      ],
+      "delivery": "theatrical"
     },
     "clement": {
       "name": "Clément",
@@ -58,7 +64,8 @@
       "firstLesson": "lesson-003",
       "rejected": [
         "jUHQdLfy668sllNiNTSW"
-      ]
+      ],
+      "delivery": "calm"
     },
     "monsieur-petrovic": {
       "name": "Monsieur Petrovic",
@@ -129,7 +136,8 @@
       "rejected": [
         "jUHQdLfy668sllNiNTSW",
         "SsVUx1gFlvniIrUMZtgF"
-      ]
+      ],
+      "delivery": "warm"
     },
     "monsieur-fabre": {
       "name": "Monsieur Fabre",
@@ -140,7 +148,8 @@
       "rejected": [
         "jUHQdLfy668sllNiNTSW",
         "SsVUx1gFlvniIrUMZtgF"
-      ]
+      ],
+      "delivery": "theatrical"
     },
     "madame-lucchini": {
       "name": "Madame Lucchini",
@@ -148,7 +157,8 @@
       "voiceId": "2oMnSKxLeHBxE0KdeHJD",
       "status": "approved",
       "firstLesson": "lesson-004",
-      "rejected": []
+      "rejected": [],
+      "delivery": "flat"
     },
     "mamie-yasmina": {
       "name": "Mamie Yasmina",
