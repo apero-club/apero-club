@@ -2,6 +2,357 @@
   "version": 1,
   "model": "eleven_multilingual_v2",
   "clips": {
+    "margaux|— Bonjour ! Il me faudrait du fromage pour une soirée, ce soir.": {
+      "file": "92e69e03fc82664a.mp3",
+      "voice": "ucMmKRQbfDEYyb2IIGax",
+      "delivery": "7dcbd293",
+      "words": [
+        [
+          2,
+          0
+        ],
+        [
+          10,
+          0.569
+        ],
+        [
+          12,
+          0.871
+        ],
+        [
+          15,
+          0.998
+        ],
+        [
+          18,
+          1.149
+        ],
+        [
+          27,
+          1.463
+        ],
+        [
+          30,
+          1.591
+        ],
+        [
+          38,
+          1.985
+        ],
+        [
+          43,
+          2.148
+        ],
+        [
+          47,
+          2.276
+        ],
+        [
+          55,
+          2.601
+        ],
+        [
+          58,
+          2.752
+        ]
+      ]
+    },
+    "margaux|— En fait… je voulais juste du gruyère râpé. Pour des pâtes.": {
+      "file": "f924b5a79287d8a4.mp3",
+      "voice": "ucMmKRQbfDEYyb2IIGax",
+      "delivery": "5476c6bd",
+      "words": [
+        [
+          2,
+          0
+        ],
+        [
+          5,
+          0.197
+        ],
+        [
+          11,
+          1.184
+        ],
+        [
+          14,
+          1.312
+        ],
+        [
+          22,
+          1.591
+        ],
+        [
+          28,
+          1.858
+        ],
+        [
+          31,
+          1.985
+        ],
+        [
+          39,
+          2.345
+        ],
+        [
+          45,
+          3.088
+        ],
+        [
+          50,
+          3.32
+        ],
+        [
+          54,
+          3.46
+        ]
+      ]
+    },
+    "margaux|« Du munster. »": {
+      "file": "6250036b1254968f.mp3",
+      "voice": "ucMmKRQbfDEYyb2IIGax",
+      "delivery": "7dcbd293",
+      "words": [
+        [
+          2,
+          0
+        ],
+        [
+          5,
+          0.279
+        ]
+      ]
+    },
+    "margaux|« Un sancerre. »": {
+      "file": "3c69188dc3393fbf.mp3",
+      "voice": "ucMmKRQbfDEYyb2IIGax",
+      "delivery": "7dcbd293",
+      "words": [
+        [
+          2,
+          0
+        ],
+        [
+          5,
+          0.232
+        ]
+      ]
+    },
+    "monsieur-vasseur|— « Du fromage » ? Madame, je ne vends pas de fromage à n’importe qui.": {
+      "file": "775e00233945b029.mp3",
+      "voice": "MckrPTWwhRk9MdBsg8c4",
+      "delivery": "8800ea84",
+      "words": [
+        [
+          4,
+          0
+        ],
+        [
+          7,
+          0.232
+        ],
+        [
+          17,
+          0.859
+        ],
+        [
+          19,
+          1.602
+        ],
+        [
+          27,
+          1.916
+        ],
+        [
+          30,
+          2.032
+        ],
+        [
+          33,
+          2.125
+        ],
+        [
+          39,
+          2.299
+        ],
+        [
+          43,
+          2.45
+        ],
+        [
+          46,
+          2.566
+        ],
+        [
+          54,
+          2.984
+        ],
+        [
+          56,
+          3.065
+        ],
+        [
+          66,
+          3.483
+        ]
+      ]
+    },
+    "monsieur-vasseur|— Madame… Vous adorez le fromage, ça se voit.": {
+      "file": "8a87ef3e587d5aea.mp3",
+      "voice": "MckrPTWwhRk9MdBsg8c4",
+      "delivery": "8800ea84",
+      "words": [
+        [
+          2,
+          0
+        ],
+        [
+          10,
+          0.975
+        ],
+        [
+          15,
+          1.219
+        ],
+        [
+          22,
+          1.533
+        ],
+        [
+          25,
+          1.649
+        ],
+        [
+          34,
+          2.31
+        ],
+        [
+          37,
+          2.485
+        ],
+        [
+          40,
+          2.624
+        ]
+      ]
+    },
+    "monsieur-vasseur|— Prenez-en soin. Et pour le gruyère râpé, il y a le supermarché.": {
+      "file": "fb79849930a4597e.mp3",
+      "voice": "MckrPTWwhRk9MdBsg8c4",
+      "delivery": "dfe025ca",
+      "words": [
+        [
+          2,
+          0
+        ],
+        [
+          12,
+          0.511
+        ],
+        [
+          18,
+          1.207
+        ],
+        [
+          21,
+          1.382
+        ],
+        [
+          26,
+          1.556
+        ],
+        [
+          29,
+          1.672
+        ],
+        [
+          37,
+          2.067
+        ],
+        [
+          43,
+          2.752
+        ],
+        [
+          46,
+          2.972
+        ],
+        [
+          48,
+          3.03
+        ],
+        [
+          50,
+          3.1
+        ],
+        [
+          53,
+          3.216
+        ]
+      ]
+    },
+    "monsieur-vasseur|D’abord, un petit test.": {
+      "file": "f746f7c0bff2f96b.mp3",
+      "voice": "MckrPTWwhRk9MdBsg8c4",
+      "delivery": "8800ea84",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          9,
+          0.488
+        ],
+        [
+          12,
+          0.615
+        ],
+        [
+          18,
+          0.906
+        ]
+      ]
+    },
+    "monsieur-vasseur|Pour vous, j’ai quelque chose de rare. Attendez.": {
+      "file": "9744c8b3691068e9.mp3",
+      "voice": "MckrPTWwhRk9MdBsg8c4",
+      "delivery": "8800ea84",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          5,
+          0.267
+        ],
+        [
+          11,
+          0.801
+        ],
+        [
+          16,
+          0.998
+        ],
+        [
+          24,
+          1.289
+        ],
+        [
+          30,
+          1.544
+        ],
+        [
+          33,
+          1.672
+        ],
+        [
+          39,
+          2.322
+        ]
+      ]
+    },
     "narrator|— « Du fromage » ? Madame, je ne vends pas de fromage à n’importe qui.": {
       "file": "ea5bfcbb1c26c617.mp3",
       "voice": "Xy5q4w05TJGcKXPWeWoz",
