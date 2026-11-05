@@ -169,6 +169,32 @@
         "crisp"
       ],
       "notes": "Madame Delorme's voice (chosen by hand)."
+    },
+    {
+      "id": "9tZ0TkblLDiUBWp2EbTv",
+      "name": "",
+      "gender": "male",
+      "age": "middle",
+      "accent": "parisian",
+      "tags": [
+        "dry",
+        "precise",
+        "sceptical"
+      ],
+      "notes": "Antoine's voice (chosen by hand)."
+    },
+    {
+      "id": "cuo3D4C6LVenyV7b2Kpd",
+      "name": "",
+      "gender": "female",
+      "age": "older",
+      "accent": "parisian",
+      "tags": [
+        "theatrical",
+        "mysterious",
+        "expressive"
+      ],
+      "notes": "Madame Zara's voice (chosen by hand)."
     }
   ]
 }

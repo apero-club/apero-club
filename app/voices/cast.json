@@ -249,8 +249,8 @@
     "antoine": {
       "name": "Antoine",
       "description": "An accountant of 41, a middle-aged Parisian man who trusts only spreadsheets. Dry, precise and sceptical, then flustered.",
-      "voiceId": "",
-      "status": "needs-voice",
+      "voiceId": "9tZ0TkblLDiUBWp2EbTv",
+      "status": "approved",
       "firstLesson": "lesson-007",
       "rejected": [
         "MJKL8oE6ZYeX9UUCDFcR",
@@ -266,8 +266,8 @@
     "madame-zara": {
       "name": "Madame Zara",
       "description": "A fortune teller in Montmartre, an older Parisian woman. Theatrical and mysterious in her predictions, completely ordinary in between.",
-      "voiceId": "",
-      "status": "needs-voice",
+      "voiceId": "cuo3D4C6LVenyV7b2Kpd",
+      "status": "approved",
       "firstLesson": "lesson-007",
       "rejected": [
         "2oMnSKxLeHBxE0KdeHJD",
