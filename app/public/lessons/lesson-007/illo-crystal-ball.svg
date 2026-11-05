@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="A crystal ball">
+  <!-- Lesson 7 hero tile: Madame Zara's crystal ball. Flat brand colours, transparent background. -->
+  <circle cx="100" cy="92" r="62" fill="#ADD1F1"/>
+  <circle cx="100" cy="92" r="46" fill="#F7CDF4"/>
+  <circle cx="100" cy="92" r="28" fill="#F0A4EB"/>
+  <path d="M68 66 C76 54 90 48 104 48" fill="none" stroke="#FFFFFF" stroke-width="9" stroke-linecap="round"/>
+  <g fill="#FFFFFF"><path d="M128 76 L131 84 L139 87 L131 90 L128 98 L125 90 L117 87 L125 84 Z"/><circle cx="88" cy="112" r="3"/><circle cx="114" cy="118" r="2"/></g>
+  <!-- stand -->
+  <path d="M58 150 C66 140 134 140 142 150 L150 176 H50 Z" fill="#3A1FD4"/>
+  <rect x="42" y="172" width="116" height="14" rx="7" fill="#2913A6"/>
+  <g fill="#FFCF66"><circle cx="78" cy="160" r="4"/><circle cx="100" cy="158" r="4"/><circle cx="122" cy="160" r="4"/></g>
+</svg>

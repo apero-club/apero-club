@@ -26,6 +26,8 @@ Rules marked **(checked)** are enforced by `npm test` (`src/lesson/style.test.ts
 
 ## Grammar notes ("Pourquoi ?")
 
+- **Check `docs/grammar-tracker.md` first**, so a lesson doesn't re-teach a point, and reuse one or two earlier points lightly in the story (no new note). **Update the tracker** with every new lesson.
+
 - **4 to 6 notes (checked)**, each attached as a "why?" chip to the story line where it appears **(checked: every note is linked from the story)**. Lesson 1 has 5.
 - **Pick what an app course skips:** the *why* behind choices (imparfait vs passé composé, why *je voudrais*, why *en* can't be dropped, the future-in-the-past, agreement with a preceding object), not vocabulary lists.
 - **Each note has:**

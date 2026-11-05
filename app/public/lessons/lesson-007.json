@@ -1,0 +1,665 @@
+{
+  "title": "La voyante de Montmartre",
+  "summary": "A sceptical accountant visits a Montmartre fortune teller, just for a laugh.",
+  "level": "A2 to B1",
+  "minutes": {
+    "story": 4,
+    "quiz": 3,
+    "phrases": 1,
+    "describe": 2
+  },
+  "hero": [
+    {
+      "image": "illo-crystal-ball.svg",
+      "bg": "orange-500",
+      "alt": ""
+    },
+    {
+      "shape": "circle",
+      "bg": "green-300",
+      "fg": "violet-500",
+      "eyes": "look",
+      "blink": true
+    },
+    {
+      "image": "illo-umbrella.svg",
+      "bg": "sun-300",
+      "alt": ""
+    }
+  ],
+  "heroWide": [
+    {
+      "image": "illo-crystal-ball.svg",
+      "bg": "orange-500",
+      "alt": ""
+    },
+    {
+      "pattern": "clouds",
+      "a": "lilac-300",
+      "b": "lilac-500"
+    },
+    {
+      "shape": "circle",
+      "bg": "green-300",
+      "fg": "violet-500",
+      "eyes": "look",
+      "blink": true
+    },
+    {
+      "image": "illo-umbrella.svg",
+      "bg": "sun-300",
+      "alt": ""
+    }
+  ],
+  "place": "Montmartre, 18e",
+  "cast": [
+    {
+      "id": "narrator",
+      "name": "Moi",
+      "role": "the narrator",
+      "description": "The narrator, \"Moi\": a learner in their 30s who lives in Paris. Friendly, relaxed, a bit self-mocking.",
+      "color": "ink-900",
+      "label": "ink-500",
+      "critter": {
+        "kind": "bean",
+        "color": "sun-500"
+      },
+      "voice": "male"
+    },
+    {
+      "id": "antoine",
+      "name": "Antoine",
+      "role": "the narrator’s colleague",
+      "description": "An accountant of 41, a middle-aged Parisian man who trusts only spreadsheets. Dry, precise and sceptical, then flustered.",
+      "color": "sky-700",
+      "critter": {
+        "kind": "diamond",
+        "color": "sky-500"
+      },
+      "voice": "male"
+    },
+    {
+      "id": "madame-zara",
+      "name": "Madame Zara",
+      "role": "the fortune teller",
+      "description": "A fortune teller in Montmartre, an older Parisian woman. Theatrical and mysterious in her predictions, completely ordinary in between.",
+      "color": "violet-500",
+      "critter": {
+        "kind": "spark",
+        "color": "pink-500"
+      },
+      "voice": "female"
+    }
+  ],
+  "story": [
+    [
+      {
+        "speaker": "narrator",
+        "fr": "Pour mon anniversaire, j’ai lancé un défi à mon collègue Antoine : aller voir une voyante à Montmartre.",
+        "en": "For my birthday, I set my colleague Antoine a challenge: go and see a fortune teller in Montmartre."
+      },
+      {
+        "speaker": "narrator",
+        "fr": "Antoine est comptable, et il ne croit qu’aux chiffres.",
+        "en": "Antoine is an accountant, and he only believes in numbers."
+      }
+    ],
+    [
+      {
+        "speaker": "madame-zara",
+        "fr": "— Donnez-moi votre main. Vous rencontrerez une personne qui connaît votre secret.",
+        "en": "“Give me your hand. You will meet someone who knows your secret.",
+        "note": "futur-simple"
+      },
+      {
+        "speaker": "madame-zara",
+        "fr": "Et vous serez très riche… un jour.",
+        "en": "And you will be very rich… one day.”",
+        "note": "zara-change"
+      }
+    ],
+    [
+      {
+        "speaker": "narrator",
+        "fr": "Puis elle a regardé son téléphone et soupiré : « Mon loyer va encore augmenter. »",
+        "en": "Then she looked at her phone and sighed: “My rent’s going up again.”",
+        "quoteSpeaker": "madame-zara"
+      }
+    ],
+    [
+      {
+        "speaker": "madame-zara",
+        "fr": "— Bon. Dans dix minutes, votre téléphone va sonner trois fois.",
+        "en": "“Right. In ten minutes, your phone is going to ring three times.",
+        "id": "zara-telephone",
+        "note": "futur-proche"
+      },
+      {
+        "speaker": "madame-zara",
+        "fr": "Vous allez perdre quelque chose de rouge, et un inconnu va vous offrir un parapluie.",
+        "en": "You’re going to lose something red, and a stranger is going to give you an umbrella.",
+        "note": "zara-change"
+      },
+      {
+        "speaker": "madame-zara",
+        "fr": "Quand vous sortirez, il pleuvra. Et vous reviendrez avant dix-sept heures.",
+        "en": "When you go out, it will rain. And you will come back before five o’clock.”",
+        "note": "quand-futur"
+      }
+    ],
+    [
+      {
+        "speaker": "narrator",
+        "fr": "Antoine a ri, et il est parti. Dix minutes plus tard, son téléphone a sonné trois fois.",
+        "en": "Antoine laughed and left. Ten minutes later, his phone rang three times."
+      },
+      {
+        "speaker": "narrator",
+        "fr": "Puis il s’est mis à pleuvoir, et le vent a emporté son écharpe rouge.",
+        "en": "Then it started to rain, and the wind carried off his red scarf."
+      },
+      {
+        "speaker": "narrator",
+        "fr": "Un inconnu lui a offert son parapluie, sans un mot.",
+        "en": "A stranger gave him his umbrella, without a word.",
+        "id": "inconnu-parapluie"
+      },
+      {
+        "speaker": "narrator",
+        "fr": "À seize heures trente, Antoine m’a appelé, paniqué.",
+        "en": "At half past four, Antoine called me in a panic."
+      }
+    ],
+    [
+      {
+        "speaker": "antoine",
+        "fr": "— C’est impossible ! Je ne vais pas y retourner. Jamais !",
+        "en": "“It’s impossible! I’m not going back there. Never!”",
+        "id": "antoine-panique",
+        "note": "futur-proche",
+        "delivery": "animated"
+      }
+    ],
+    [
+      {
+        "speaker": "narrator",
+        "fr": "À seize heures cinquante-neuf, il a poussé sa porte. Elle n’a même pas levé les yeux.",
+        "en": "At 4:59, he pushed open her door. She didn’t even look up."
+      }
+    ],
+    [
+      {
+        "speaker": "madame-zara",
+        "fr": "— Asseyez-vous. Ce sera quarante euros.",
+        "en": "“Sit down. That’ll be forty euros.”",
+        "note": "ce-sera",
+        "delivery": "flat"
+      }
+    ]
+  ],
+  "notes": [
+    {
+      "id": "futur-proche",
+      "kicker": "Futur",
+      "title": "« Votre téléphone va sonner » : le futur proche",
+      "short": "Aller + infinitive is the everyday future: something close, likely, or already on its way.",
+      "body": [
+        "Take aller in the present and add an infinitive: je vais partir, votre téléphone va sonner, il va pleuvoir. It’s the future most people use in conversation.",
+        "It suggests the thing is close or already in motion: the clouds are there, so il va pleuvoir. Madame Zara uses it for the small things about to happen this afternoon.",
+        "In the negative, ne… pas wraps around aller: je ne vais pas y retourner."
+      ],
+      "examples": [
+        {
+          "fr": "Dans dix minutes, votre téléphone va sonner trois fois.",
+          "en": "In ten minutes, your phone is going to ring three times.",
+          "tag": "Aller + infinitif"
+        },
+        {
+          "fr": "Je ne vais pas y retourner.",
+          "en": "I’m not going back there.",
+          "tag": "Négation"
+        },
+        {
+          "fr": "Il va pleuvoir, prenez un parapluie.",
+          "en": "It’s going to rain, take an umbrella.",
+          "tag": "Aller + infinitif"
+        }
+      ],
+      "spoken": "In everyday speech the futur proche is everywhere, even for things months away: « L’année prochaine, on va déménager. » Fast, je vais often shrinks to « j’vais ».",
+      "trap": {
+        "wrong": "Votre téléphone va sonne.",
+        "right": "Votre téléphone va sonner.",
+        "why": "After aller, the second verb stays in the infinitive: va sonner, vais partir."
+      }
+    },
+    {
+      "id": "futur-simple",
+      "kicker": "Futur",
+      "title": "« Vous rencontrerez » : comment se forme le futur simple ?",
+      "short": "Add -ai, -as, -a, -ons, -ez, -ont to the infinitive: rencontrer becomes vous rencontrerez.",
+      "body": [
+        "Start from the infinitive and add the endings: je rencontrerai, vous rencontrerez. Verbs in -re drop their final e: prendre, vous prendrez.",
+        "A handful of common verbs have their own stem, to learn by heart: être → ser- (vous serez), avoir → aur-, aller → ir-, faire → fer-, venir → viendr-, pleuvoir → pleuvr-.",
+        "The endings never change, so once you know the stem, you know the whole verb."
+      ],
+      "examples": [
+        {
+          "fr": "Vous rencontrerez une personne qui connaît votre secret.",
+          "en": "You will meet someone who knows your secret.",
+          "tag": "Rencontrer + -ez"
+        },
+        {
+          "fr": "Vous serez très riche… un jour.",
+          "en": "You will be very rich… one day.",
+          "tag": "Être → ser-"
+        },
+        {
+          "fr": "Vous reviendrez avant dix-sept heures.",
+          "en": "You will come back before five o’clock.",
+          "tag": "Revenir → reviendr-"
+        }
+      ],
+      "spoken": "Out loud, the futur simple sounds a little formal, so you’ll mostly hear it in promises, plans and set phrases: « On verra », « Ça ira », « Ce sera tout ? »",
+      "trap": {
+        "wrong": "Vous êterez riche.",
+        "right": "Vous serez riche.",
+        "why": "Être has its own future stem, ser-. So do avoir (aur-) and aller (ir-)."
+      }
+    },
+    {
+      "id": "zara-change",
+      "kicker": "Futur",
+      "title": "Pourquoi Madame Zara change-t-elle de futur ?",
+      "short": "The futur simple sounds like destiny; the futur proche sounds like it’s about to happen.",
+      "body": [
+        "Both futures can describe the same event, but they don’t feel the same. « Vous serez très riche » is distant and solemn: a prophecy written in the stars.",
+        "« Vous allez perdre quelque chose de rouge » is close and concrete, practically happening already. That’s why her small predictions sound so casual.",
+        "Apps teach “futur proche for soon, futur simple for later”. That’s a start, but tone matters as much as time: solemn and certain, or chatty and immediate."
+      ],
+      "examples": [
+        {
+          "fr": "Et vous serez très riche… un jour.",
+          "en": "And you will be very rich… one day.",
+          "tag": "Destin"
+        },
+        {
+          "fr": "Vous allez perdre quelque chose de rouge.",
+          "en": "You’re going to lose something red.",
+          "tag": "Tout de suite"
+        },
+        {
+          "fr": "Un jour, vous comprendrez.",
+          "en": "One day, you will understand.",
+          "tag": "Destin"
+        }
+      ],
+      "spoken": "Horoscopes, speeches and wedding vows love the futur simple: « Vous trouverez l’amour », « Nous construirons ». At the café, it’s the futur proche: « On va voir. »",
+      "trap": {
+        "wrong": "Attention, vous tomberez !",
+        "right": "Attention, vous allez tomber !",
+        "why": "For a warning about something right in front of you, use the futur proche: the fall is already on its way."
+      }
+    },
+    {
+      "id": "quand-futur",
+      "kicker": "Futur",
+      "title": "« Quand vous sortirez, il pleuvra » : pourquoi le futur après « quand » ?",
+      "short": "After quand, lorsque and dès que, French uses the future where English uses the present.",
+      "body": [
+        "English says “when you go out, it will rain”, with a present after “when”. French is more logical: you haven’t gone out yet, so both verbs are in the future.",
+        "The same goes for lorsque (when), dès que and aussitôt que (as soon as): dès que vous arriverez, appelez-moi.",
+        "Careful: si works the other way. Si vous sortez, il pleuvra: present after si, just like English."
+      ],
+      "examples": [
+        {
+          "fr": "Quand vous sortirez, il pleuvra.",
+          "en": "When you go out, it will rain.",
+          "tag": "Quand + futur"
+        },
+        {
+          "fr": "Dès que j’aurai les résultats, je vous appellerai.",
+          "en": "As soon as I have the results, I’ll call you.",
+          "tag": "Dès que + futur"
+        },
+        {
+          "fr": "Si vous sortez, prenez un parapluie.",
+          "en": "If you go out, take an umbrella.",
+          "tag": "Si + présent"
+        }
+      ],
+      "spoken": "Habits are different: « Quand il pleut, je prends le métro » uses the present, because it’s true every time. The future after quand is for one event that hasn’t happened yet.",
+      "trap": {
+        "wrong": "Quand vous sortez, il pleuvra.",
+        "right": "Quand vous sortirez, il pleuvra.",
+        "why": "You haven’t gone out yet: after quand, a future event takes the future. Only si takes the present."
+      }
+    },
+    {
+      "id": "ce-sera",
+      "kicker": "Politesse",
+      "title": "« Ce sera quarante euros » : pourquoi le futur ?",
+      "short": "Shopkeepers announce a price in the futur simple: it sounds softer than the present.",
+      "body": [
+        "At the till you’ll hear « Ça fera douze euros » or « Ce sera tout ? ». Nothing is in the future: it’s a polite habit that makes the bill sound less blunt than « C’est douze euros ».",
+        "Madame Zara uses it without looking up, as if she’d known all along. The future turns her bill into one last prophecy."
+      ],
+      "examples": [
+        {
+          "fr": "Asseyez-vous. Ce sera quarante euros.",
+          "en": "Sit down. That’ll be forty euros.",
+          "tag": "Ce sera"
+        },
+        {
+          "fr": "Ça fera douze euros cinquante.",
+          "en": "That’ll be twelve euros fifty.",
+          "tag": "Ça fera"
+        },
+        {
+          "fr": "Ce sera tout, merci.",
+          "en": "That’s everything, thanks.",
+          "tag": "Ce sera"
+        }
+      ],
+      "spoken": "« Ça vous fera vingt euros » is the classic at any market stall. Answer « Ce sera tout » when the cheesemonger from lesson 5 asks « Et avec ça ? ».",
+      "trap": {
+        "wrong": "Ça faira quarante euros.",
+        "right": "Ça fera quarante euros.",
+        "why": "Faire has its own future stem, fer-: ça fera, vous ferez."
+      }
+    }
+  ],
+  "quiz": [
+    {
+      "kind": "Écoute",
+      "listen": "zara-telephone",
+      "note": "futur-proche",
+      "prompt": "Listen to Madame Zara. What will happen in ten minutes?",
+      "options": [
+        {
+          "text": "His phone will ring three times.",
+          "why": "« Votre téléphone va sonner trois fois »: aller + infinitive, something about to happen.",
+          "correct": true
+        },
+        {
+          "text": "He will get three text messages.",
+          "why": "She says sonner, to ring, not messages. And three times: « trois fois »."
+        },
+        {
+          "text": "He will call his colleague three times.",
+          "why": "He doesn’t call anyone: his phone is the one that rings."
+        }
+      ]
+    },
+    {
+      "kind": "Écoute",
+      "listen": "antoine-panique",
+      "note": "futur-proche",
+      "prompt": "Listen to Antoine on the phone. What does he say?",
+      "options": [
+        {
+          "text": "He wants to go back to her straight away.",
+          "why": "The opposite: « je ne vais pas y retourner », I’m not going back there."
+        },
+        {
+          "text": "He’ll go back tomorrow, after work.",
+          "why": "No tomorrow: « Jamais ! », never. (He goes back anyway.)"
+        },
+        {
+          "text": "It’s impossible, and he’s never going back there.",
+          "why": "« C’est impossible ! Je ne vais pas y retourner. Jamais ! » Y means there: to her studio.",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "kind": "Grammaire",
+      "quote": "Quand vous sortirez, il pleuvra. Et vous reviendrez avant dix-sept heures.",
+      "note": "quand-futur",
+      "prompt": "Why “quand vous sortirez” and not “quand vous sortez”?",
+      "options": [
+        {
+          "text": "Sortirez is the polite form, for vous.",
+          "why": "Vous sortez is just as polite. The future comes from quand, not from vous."
+        },
+        {
+          "text": "After quand, a future event takes the future, where English uses the present.",
+          "why": "He hasn’t gone out yet, so French puts both verbs in the future: quand vous sortirez, il pleuvra.",
+          "correct": true
+        },
+        {
+          "text": "It’s a mistake: it should be the present, like in English.",
+          "why": "It’s correct French. The present after quand is only for habits: quand il pleut, je prends le métro."
+        }
+      ]
+    },
+    {
+      "kind": "Grammaire",
+      "quote": "Et vous serez très riche… un jour.",
+      "note": "zara-change",
+      "prompt": "Why “vous serez très riche”, but “votre téléphone va sonner”?",
+      "options": [
+        {
+          "text": "Être can’t be used in the futur proche.",
+          "why": "It can: vous allez être riche is fine. The choice here is about tone."
+        },
+        {
+          "text": "The futur simple sounds solemn and far off; the futur proche, close and casual.",
+          "why": "Riches one day is a prophecy; a phone ringing in ten minutes is almost happening already.",
+          "correct": true
+        },
+        {
+          "text": "Serez is for people and va sonner is for objects.",
+          "why": "Both futures work with anyone and anything: votre téléphone sonnera is correct too."
+        }
+      ]
+    },
+    {
+      "kind": "Lecture",
+      "quote": "Un inconnu lui a offert son parapluie, sans un mot.",
+      "prompt": "In “Un inconnu lui a offert son parapluie”, who is “lui”?",
+      "options": [
+        {
+          "text": "Antoine.",
+          "why": "Lui means to him: the stranger offered his umbrella to Antoine, as predicted.",
+          "correct": true
+        },
+        {
+          "text": "The stranger.",
+          "why": "The stranger is the one giving. Lui is the person receiving: Antoine."
+        },
+        {
+          "text": "Madame Zara.",
+          "why": "She’s back in her studio. Lui is masculine here, and points to Antoine in the rain."
+        }
+      ]
+    },
+    {
+      "kind": "Compréhension",
+      "quote": "— Asseyez-vous. Ce sera quarante euros.",
+      "note": "ce-sera",
+      "prompt": "What makes Madame Zara’s last line funny?",
+      "options": [
+        {
+          "text": "She’s angry that Antoine came back so late.",
+          "why": "He’s early, at 16 h 59, just as she predicted. She isn’t angry at all."
+        },
+        {
+          "text": "She didn’t expect to see him again.",
+          "why": "She doesn’t even look up: she knew he’d come."
+        },
+        {
+          "text": "She knew he’d come back, and goes straight to the bill, as if it were ordinary.",
+          "why": "Mystic and practical at once: the prophecy came true, so, forty euros please.",
+          "correct": true
+        }
+      ]
+    }
+  ],
+  "phrases": [
+    {
+      "written": "Je n’y retournerai jamais.",
+      "spoken": "J’y retourne pas, jamais de la vie !",
+      "register": "Courant",
+      "note": "Spoken French often uses the present for a decision about the future. « Jamais de la vie » means not on your life."
+    },
+    {
+      "written": "Nous verrons bien.",
+      "spoken": "On verra bien.",
+      "register": "Courant",
+      "note": "The futur simple survives in set phrases like this one: we’ll see. Also « ça ira » (it’ll be fine)."
+    },
+    {
+      "written": "Il va pleuvoir.",
+      "spoken": "Il va flotter.",
+      "register": "Familier",
+      "note": "Flotter is a familiar word for rain. You’ll hear « ça flotte » on a grey Paris morning."
+    },
+    {
+      "written": "Je n’ai vraiment pas de chance.",
+      "spoken": "J’ai la poisse.",
+      "register": "Familier",
+      "note": "Avoir la poisse is to be jinxed, to have rotten luck. The opposite: avoir du bol."
+    },
+    {
+      "written": "J’espère que cela va fonctionner.",
+      "spoken": "Je croise les doigts !",
+      "register": "Courant",
+      "note": "Fingers crossed. For a bit of extra luck, « je touche du bois », knock on wood."
+    },
+    {
+      "written": "Combien vous dois-je ?",
+      "spoken": "Je vous dois combien ?",
+      "register": "Courant",
+      "note": "Spoken questions keep normal word order. Expect the answer in the future: « Ça fera quarante euros. »"
+    }
+  ],
+  "describe": {
+    "image": "scene-voyante.svg",
+    "alt": "Madame Zara at her table in a small Montmartre studio: a crystal ball, three tarot cards, a black cat, and a phone in her hand",
+    "imagePosition": "50% 70%",
+    "caption": "Montmartre · un mardi, 15 h",
+    "instructions": "Write 3 to 5 sentences: you’re the fortune teller. Make three predictions for the person in front of you: one in the futur simple, one in the futur proche, and one with quand + future.",
+    "placeholder": "Je vois dans la boule de cristal que…",
+    "helpers": [
+      "vous allez…",
+      "vous rencontrerez…",
+      "quand vous…",
+      "dans dix minutes",
+      "un jour",
+      "les cartes disent que…",
+      "vous aurez de la chance",
+      "un chat noir"
+    ],
+    "checklist": [
+      {
+        "text": "Did you use the futur simple and the futur proche? *vous rencontrerez*, *vous allez…*"
+      },
+      {
+        "text": "Did you use *quand* + future? *Quand vous sortirez, il pleuvra.*"
+      },
+      {
+        "text": "Did you use two luck or fortune words? *le destin*, *la chance*, *un chat noir*…"
+      },
+      {
+        "text": "Try an irregular futur simple: *vous serez*, *vous aurez*, *vous irez*.",
+        "bonus": true
+      }
+    ],
+    "scene": "A flat, colourful illustration of a tiny fortune teller’s studio in Montmartre, all in plum and pink. Behind a round table sits Madame Zara, a woman with an orange headscarf, a yellow headband and big gold earrings, holding a mobile phone. On the pink tablecloth: a crystal ball on a dark blue stand in the middle, three tarot cards laid out (a sun, a triangle, a moon), and a black cat with yellow eyes sitting on the right. Through a small arched window behind her, the white dome of the Sacré-Cœur and a pale moon.",
+    "sample": {
+      "text": "Je vois votre avenir dans la boule de cristal. Dans dix minute, vous va recevoir un message. Quand vous sortez d’ici, il pleuvra. Un chat noir va croiser votre route. Demain, vous aurerez de la chance, et un jour, vous allerez à Rome.",
+      "result": {
+        "segments": [
+          {
+            "t": "Je vois votre avenir dans la boule de cristal. Dans dix "
+          },
+          {
+            "from": "minute",
+            "to": "minutes",
+            "n": 1
+          },
+          {
+            "t": ", "
+          },
+          {
+            "from": "vous va",
+            "to": "vous allez",
+            "n": 2
+          },
+          {
+            "t": " recevoir un message. Quand vous "
+          },
+          {
+            "from": "sortez",
+            "to": "sortirez",
+            "n": 3
+          },
+          {
+            "t": " d’ici, il pleuvra. Un chat noir va croiser votre route. Demain, vous "
+          },
+          {
+            "from": "aurerez",
+            "to": "aurez",
+            "n": 4
+          },
+          {
+            "t": " de la chance, et un jour, vous "
+          },
+          {
+            "from": "allerez",
+            "to": "irez",
+            "n": 5
+          },
+          {
+            "t": " à Rome."
+          }
+        ],
+        "corrections": [
+          {
+            "n": 1,
+            "from": "minute",
+            "to": "minutes",
+            "rule": "Pluriel : minutes",
+            "why": "Dix is more than one, so minute takes an -s: dans dix minutes."
+          },
+          {
+            "n": 2,
+            "from": "vous va",
+            "to": "vous allez",
+            "rule": "Aller : vous allez",
+            "why": "The futur proche uses aller in the present, matched to the subject: vous allez recevoir."
+          },
+          {
+            "n": 3,
+            "from": "sortez",
+            "to": "sortirez",
+            "rule": "Quand + futur",
+            "why": "They haven’t gone out yet, so after quand French uses the future: quand vous sortirez."
+          },
+          {
+            "n": 4,
+            "from": "aurerez",
+            "to": "aurez",
+            "rule": "Avoir → aur-",
+            "why": "Avoir has its own future stem, aur-, plus the usual ending: vous aurez."
+          },
+          {
+            "n": 5,
+            "from": "allerez",
+            "to": "irez",
+            "rule": "Aller → ir-",
+            "why": "Aller has a very short future stem, ir-: vous irez, j’irai."
+          }
+        ],
+        "corrected": "Je vois votre avenir dans la boule de cristal. Dans dix minutes, vous allez recevoir un message. Quand vous sortirez d’ici, il pleuvra. Un chat noir va croiser votre route. Demain, vous aurez de la chance, et un jour, vous irez à Rome.",
+        "spoken": "Je vois votre avenir dans la boule. Dans dix minutes, vous allez recevoir un message. Quand vous sortirez, il va pleuvoir, hein. Un chat noir va vous passer devant. Demain, vous allez avoir de la chance, et un jour, vous irez à Rome.",
+        "spokenNote": "Out loud the futur proche takes over almost everywhere (il va pleuvoir, vous allez avoir de la chance). The futur simple stays for the dreamy, far-off part: un jour, vous irez à Rome.",
+        "praise": "Nice “il pleuvra”!"
+      }
+    }
+  },
+  "ambience": {
+    "prompt": "A tiny fortune teller’s studio in Montmartre on a quiet afternoon: a ticking clock, the soft clink of a teacup, tarot cards being shuffled, a cat purring nearby, light rain against a small window, muffled street sounds far below. Calm and steady. No music, no clear speech.",
+    "volume": 0.26
+  }
+}

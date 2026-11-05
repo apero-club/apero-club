@@ -245,6 +245,40 @@
         "lesson-006"
       ],
       "voice": "female"
+    },
+    "antoine": {
+      "name": "Antoine",
+      "description": "An accountant of 41, a middle-aged Parisian man who trusts only spreadsheets. Dry, precise and sceptical, then flustered.",
+      "voiceId": "",
+      "status": "needs-voice",
+      "firstLesson": "lesson-007",
+      "rejected": [
+        "MJKL8oE6ZYeX9UUCDFcR",
+        "MckrPTWwhRk9MdBsg8c4",
+        "OKpKhTrwN6S16IfQTHzZ",
+        "SsVUx1gFlvniIrUMZtgF",
+        "Xy5q4w05TJGcKXPWeWoz",
+        "jUHQdLfy668sllNiNTSW",
+        "vCsptCe91UKbZe2sIB2T"
+      ],
+      "delivery": "flat"
+    },
+    "madame-zara": {
+      "name": "Madame Zara",
+      "description": "A fortune teller in Montmartre, an older Parisian woman. Theatrical and mysterious in her predictions, completely ordinary in between.",
+      "voiceId": "",
+      "status": "needs-voice",
+      "firstLesson": "lesson-007",
+      "rejected": [
+        "2oMnSKxLeHBxE0KdeHJD",
+        "L9J8xZmPSCimnHB0LjN1",
+        "Nk8FhlqSFRIESn1xR4Tx",
+        "NpMqpbmlioUVh6og0U5p",
+        "QGfpyFuk3rtPv4pRSQwp",
+        "WQKwBV2Uzw1gSGr69N8I",
+        "ucMmKRQbfDEYyb2IIGax"
+      ],
+      "delivery": "theatrical"
     }
   }
 }
