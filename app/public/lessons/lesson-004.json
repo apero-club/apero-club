@@ -555,112 +555,112 @@
     }
   ],
   "describe": {
-    "image": "scene-brocante.svg",
-    "alt": "A cluttered brocante stall on a sunny morning: a gilded mirror, two mismatched lamps, an old radio, a stack of records, a chipped teapot, a box of postcards, and a little orange cat under the table",
-    "imagePosition": "50% 70%",
-    "caption": "Place d’Aligre · dimanche, 9 h",
-    "instructions": "Write 3 to 5 sentences: you’re a seller at the brocante. Present three objects, comparing them. Use a comparative, a superlative, and meilleur or mieux.",
-    "placeholder": "Regardez cette radio : elle est…",
+    "image": "scene-velo.webp",
+    "alt": "A woman with blue hair cycles away from the brocante on a pink bike, with a wobbling tower of finds in her basket: a record player with a grumpy orange cat inside, books, a teapot and a lamp with a blue pigeon on the shade",
+    "imagePosition": "50% 50%",
+    "caption": "Place d’Aligre · dimanche, midi",
+    "instructions": "Write 3 to 5 sentences: describe the cyclist and her finds. Which object is the biggest, the heaviest, the most fragile? Use a comparative, a superlative, and meilleur or mieux.",
+    "placeholder": "Elle rentre de la brocante avec…",
     "helpers": [
-      "plus ancien que…",
-      "moins cher que…",
-      "le plus… de la brocante",
+      "plus lourd que…",
+      "moins fragile que…",
+      "le plus haut de…",
       "la meilleure affaire",
-      "marche mieux que…",
-      "en bon état",
-      "un peu ébréché",
-      "ça vaut le coup"
+      "elle roule mieux que…",
+      "en équilibre",
+      "un tourne-disque",
+      "une théière"
     ],
-    "scene": "A flat, colourful illustration of a brocante stall on a Paris square on a sunny Sunday morning, under an orange and white striped awning. On a table with a lilac cloth: an old red radio, a stack of black vinyl records, a white teapot with a small chip in the lid, and a wooden box of vintage postcards. Behind the table: a large gilded oval mirror and two mismatched lamps, one with a pink shade and one with a green base. Under the table sits a little orange ceramic cat with one eye bigger than the other. Trees and pale buildings line the square, and the sun shines in a blue sky.",
+    "scene": "A flat, colourful illustration of a sunny street at a flea market, with pink and white striped stalls on both sides: on the left a white vase and a small framed picture of a plant, on the right a white bust and an orange lamp. In the middle, a smiling but nervous woman with a blue bun, a pink scarf and a pink shoulder bag rides a pink bicycle. In the front basket she carries a wobbling tower of finds: an open orange record player with a black record, an orange cat sitting inside it looking worried, a stack of pink and lilac books, a white teapot with a green leaf, and on top a lamp with a cream shade, where a grumpy blue pigeon is perched. The sky is blue with an orange sun, small clouds and green trees.",
     "sample": {
-      "text": "Regardez cette radio : elle est plus vieille que les lampes, et elle marche meilleur que ma voiture ! Ces disques sont moins chers que le miroir, mais ils sont les plus bons de la brocante. Et cette théière ? Elle est un peu ébréché, mais c’est l’objet plus charmant dans mon stand.",
+      "text": "Cette femme rentre de la brocante. Le tourne-disque est plus lourd que la théière, mais la lampe est la objet le plus haut. Le chat est l’animal le plus grognon dans la rue. Elle a fait les meilleur affaires de la journée, et elle roule meilleur que moi ! Franchement, sa journée est plus bonne que la mienne.",
       "result": {
         "segments": [
           {
-            "t": "Regardez cette radio : elle est plus vieille que les lampes, et elle marche "
+            "t": "Cette femme rentre de la brocante. Le tourne-disque est plus lourd que la théière, mais la lampe est "
           },
           {
-            "from": "meilleur",
-            "to": "mieux",
+            "from": "la objet",
+            "to": "l’objet",
             "n": 1
           },
           {
-            "t": " que ma voiture ! Ces disques sont moins chers que le miroir, mais ils sont les "
-          },
-          {
-            "from": "plus bons",
-            "to": "meilleurs",
-            "n": 2
-          },
-          {
-            "t": " de la brocante. Et cette théière ? Elle est un peu "
-          },
-          {
-            "from": "ébréché",
-            "to": "ébréchée",
-            "n": 3
-          },
-          {
-            "t": ", mais c’est l’objet "
-          },
-          {
-            "from": "plus charmant",
-            "to": "le plus charmant",
-            "n": 4
-          },
-          {
-            "t": " "
+            "t": " le plus haut. Le chat est l’animal le plus grognon "
           },
           {
             "from": "dans",
             "to": "de",
+            "n": 2
+          },
+          {
+            "t": " la rue. Elle a fait les "
+          },
+          {
+            "from": "meilleur",
+            "to": "meilleures",
+            "n": 3
+          },
+          {
+            "t": " affaires de la journée, et elle roule "
+          },
+          {
+            "from": "meilleur",
+            "to": "mieux",
+            "n": 4
+          },
+          {
+            "t": " que moi ! Franchement, sa journée est "
+          },
+          {
+            "from": "plus bonne",
+            "to": "meilleure",
             "n": 5
           },
           {
-            "t": " mon stand."
+            "t": " que la mienne."
           }
         ],
         "corrections": [
           {
             "n": 1,
-            "from": "meilleur",
-            "to": "mieux",
-            "rule": "Mieux : adverbe",
-            "why": "Marcher is an action, and the base word is bien (it works well), so it’s mieux."
+            "from": "la objet",
+            "to": "l’objet",
+            "rule": "Élision : l’objet",
+            "why": "Objet is masculine and starts with a vowel, so the article becomes l’: l’objet le plus haut."
           },
           {
             "n": 2,
-            "from": "plus bons",
-            "to": "meilleurs",
-            "rule": "Bon → meilleur",
-            "why": "Bon has its own comparative: meilleur, never plus bon. It agrees with disques: meilleurs."
-          },
-          {
-            "n": 3,
-            "from": "ébréché",
-            "to": "ébréchée",
-            "rule": "Accord de l’adjectif",
-            "why": "Théière is feminine, so the adjective takes an -e: elle est ébréchée."
-          },
-          {
-            "n": 4,
-            "from": "plus charmant",
-            "to": "le plus charmant",
-            "rule": "Superlatif : deux articles",
-            "why": "Charmant goes after the noun, so the superlative repeats the article: l’objet le plus charmant."
-          },
-          {
-            "n": 5,
             "from": "dans",
             "to": "de",
             "rule": "Superlatif + de",
-            "why": "After a superlative, the group takes de, even where English says “in”: le plus charmant de mon stand."
+            "why": "After a superlative, the group takes de, even where English says “in”: le plus grognon de la rue."
+          },
+          {
+            "n": 3,
+            "from": "meilleur",
+            "to": "meilleures",
+            "rule": "Accord de meilleur",
+            "why": "Meilleur is an adjective and agrees with affaires, feminine plural: les meilleures affaires."
+          },
+          {
+            "n": 4,
+            "from": "meilleur",
+            "to": "mieux",
+            "rule": "Mieux : adverbe",
+            "why": "Rouler is an action, and the base word is bien (she rides well), so it’s mieux."
+          },
+          {
+            "n": 5,
+            "from": "plus bonne",
+            "to": "meilleure",
+            "rule": "Bon → meilleur",
+            "why": "Bon has its own comparative, meilleur, never plus bon. It agrees with journée: meilleure."
           }
         ],
-        "corrected": "Regardez cette radio : elle est plus vieille que les lampes, et elle marche mieux que ma voiture ! Ces disques sont moins chers que le miroir, mais ils sont les meilleurs de la brocante. Et cette théière ? Elle est un peu ébréchée, mais c’est l’objet le plus charmant de mon stand.",
-        "spoken": "Regardez-moi cette radio : elle est plus vieille que les lampes, et elle marche mieux que ma bagnole ! Les disques, ils sont moins chers que le miroir, mais c’est les meilleurs de la brocante. Et la théière ? Bon, elle est un peu ébréchée, mais c’est le truc le plus mignon du stand.",
-        "spokenNote": "Regardez-moi adds sales energy, voiture becomes bagnole, ce sont becomes c’est, and objet becomes truc.",
-        "praise": "Nice “plus vieille que”!"
+        "corrected": "Cette femme rentre de la brocante. Le tourne-disque est plus lourd que la théière, mais la lampe est l’objet le plus haut. Le chat est l’animal le plus grognon de la rue. Elle a fait les meilleures affaires de la journée, et elle roule mieux que moi ! Franchement, sa journée est meilleure que la mienne.",
+        "spoken": "Cette nana rentre de la brocante. Le tourne-disque, il est plus lourd que la théière, mais le truc le plus haut, c’est la lampe. Le chat, c’est le plus grognon de la rue. Elle a fait les meilleures affaires de la journée, et elle roule mieux que moi ! Franchement, sa journée est bien meilleure que la mienne.",
+        "spokenNote": "Nana (a familiar word for woman) and truc replace femme and objet, and nouns move to the front for emphasis (le tourne-disque, il est…). Bien meilleure makes the comparison stronger.",
+        "praise": "Nice “plus lourd que”!"
       }
     }
   },
