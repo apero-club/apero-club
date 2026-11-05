@@ -555,21 +555,6 @@
       "la loge de la gardienne",
       "il paraît que"
     ],
-    "checklist": [
-      {
-        "text": "Did you use *qui* and *que* at least once each?"
-      },
-      {
-        "text": "Did you use *où* for a place? *l’étage où…*"
-      },
-      {
-        "text": "Did you use two building words? *le palier*, *la loge*, *l’étage*…"
-      },
-      {
-        "text": "Try *dont* in a sentence: *le chat dont tout le monde parle*.",
-        "bonus": true
-      }
-    ],
     "scene": "A flat, colourful cutaway of a six-storey Paris apartment building, with the front wall removed so every floor shows. Ground floor: the gardienne's lodge with a woman behind a window, a row of letterboxes, and a young man in blue carrying two cardboard boxes next to an orange front door. Third floor: an older man in black singing, with music notes floating out and a clock nearby showing night. Fourth floor: a couple standing beside a ladder and paint pots, with no workers anywhere. Fifth floor: a woman next to a tall pile of orange parcels. Sixth floor, under the mansard roof: an empty armchair and a black cat with yellow eyes. A staircase runs up the right side. The sky behind is pale yellow.",
     "sample": {
       "text": "Au rez-de-chaussée, il y a la loge où la gardienne travaille. Au troisième, il y a un homme que chante la nuit. Au quatrième, c’est le couple qui on voit toujours avec des pots de peinture. Au cinquième, il y a beaucoup des colis. Le sixième, c’est l’étage dont il y a un chat noir sur la fenêtre.",

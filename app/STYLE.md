@@ -64,11 +64,6 @@ Rules marked **(checked)** are enforced by `npm test` (`src/lesson/style.test.ts
 - **The image:** a flat, colourful illustration in the brand style (the pigeon bakery), of a scene from the story's world. Square; it's cropped into an arch.
 - `instructions`: "Write 3 to 5 sentences: …" plus 2 or 3 prompts about the picture.
 - `helpers`: **4 to 8 chips (checked)**, phrases that help describe *this* image (*derrière le comptoir*, *dans la vitrine*, *on dirait que*).
-- `checklist`: **3 or 4 self-check items (checked)**, shown between the writing box and **Compare**. Learners tick them off for themselves; nothing is graded or saved.
-  - **1 or 2 on the grammar** of the lesson: *Did you use \*ne… plus\* at least once?*
-  - **1 on the vocab**, naming 2 or 3 example words: *Did you use two fog words? \*le brouillard\*, \*la brume\*…*
-  - **Optionally 1 bonus** stretch item, last, with `"bonus": true` (the app adds the Bonus tag; don't write "Bonus:"): *Try \*dont\* in a sentence.*
-  - **How to write them:** English, friendly, and short: **16 words at most (checked)**, one thing per item. Every item carries a French example **between asterisks, shown in italics (checked)**. Ask about what a learner can spot in their own text in a few seconds (*Did you use…?*, *Do your participles agree?*), never about whether it's "correct" overall. Match what the `instructions` ask for, so the checklist and the prompt agree.
 - `scene`: a literal English description of everything in the image, for the future AI tutor.
 - **The sample:** a 4- or 5-sentence description by a typical B1 learner, about 50 words, with **4 to 7 realistic mistakes (checked)**: accents (*a la*), gender (*la pigeon*), *beaucoup des*, agreement, a verb not matching its subject. Each correction gets a `rule` (4 words max, in French) and a `why` that explains the rule in 1 or 2 English sentences. `spoken` retells it the Parisian way and `spokenNote` says what changed. `praise` is a hand note: **5 words at most, ending in "!" (checked)**; put French in curly quotes, and a quoted expression counts as one word (*Great use of “il y a”!*).
 

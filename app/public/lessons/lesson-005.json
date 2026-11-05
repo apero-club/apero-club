@@ -551,21 +551,6 @@
       "fort ou doux",
       "au lait cru"
     ],
-    "checklist": [
-      {
-        "text": "Did you use *du*, *de la* or *des* for an amount?"
-      },
-      {
-        "text": "Did you use *de* after a negation or a quantity? *pas de…*, *un morceau de…*"
-      },
-      {
-        "text": "Did you use two cheese words? *à pâte molle*, *crémeux*, *au lait cru*…"
-      },
-      {
-        "text": "Say what you love with *le*: *J’adore le comté.*",
-        "bonus": true
-      }
-    ],
     "scene": "A flat, colourful illustration of a small Paris cheese shop. On the back wall, two wooden shelves hold big golden wheels of cheese and smaller white cheeses, with a black slate of prices between them. Behind the counter, a cheesemonger with white hair, a violet jacket and a white apron holds a small wheel of cheese wrapped in pink paper, very tenderly. Across the counter stands a customer with dark hair and a blue coat. The dark green counter has a glass front, with a wedge of comté, two small round goat’s cheeses, an orange washed-rind cheese, a soft cheese and a blue cheese inside.",
     "sample": {
       "text": "Dans la fromagerie, il y a beaucoup des fromages. Sur le comptoir, il y a de le comté et du chèvre. Le fromager ne vend pas du gruyère râpé. Moi, j’aime du brie, alors je voudrais un morceau du brie.",

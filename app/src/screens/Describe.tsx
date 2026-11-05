@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { Badge, Button, IconButton, WordChip } from '../ds/controls';
 import type { AppCtx } from './common';
 import { Eyebrow, SessionHeader } from './common';
-import { Checklist } from './Checklist';
 
 /**
  * Step 04. There's no live AI check yet (free tier, no API), so "Compare" shows the
@@ -39,7 +38,6 @@ export function Describe({ app }: { app: AppCtx }) {
           <span style={{ fontSize: 13, color: 'var(--fg-3)' }}>{words} word{words === 1 ? '' : 's'}</span>
           <Button variant="ghost" size="sm" icon="sparkles" onClick={() => setText(d.sample.text)}>Try a sample</Button>
         </div>
-        <Checklist items={d.checklist} compact />
         <p style={{ margin: 0, fontSize: 13, lineHeight: 1.45, color: 'var(--fg-3)' }}>Checking your own writing is coming soon. For now, Compare shows a typical description of the scene with every correction explained.</p>
       </div>
     </div>

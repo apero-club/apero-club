@@ -571,21 +571,6 @@
       "un peu ébréché",
       "ça vaut le coup"
     ],
-    "checklist": [
-      {
-        "text": "Did you compare two objects with *plus*, *moins* or *aussi… que*?"
-      },
-      {
-        "text": "Did you use a superlative with *de*? *le plus beau de la brocante*"
-      },
-      {
-        "text": "Did you describe an object’s condition? *en bon état*, *ébréché*, *rayé*…"
-      },
-      {
-        "text": "Use both *meilleur* and *mieux*, in two different sentences.",
-        "bonus": true
-      }
-    ],
     "scene": "A flat, colourful illustration of a brocante stall on a Paris square on a sunny Sunday morning, under an orange and white striped awning. On a table with a lilac cloth: an old red radio, a stack of black vinyl records, a white teapot with a small chip in the lid, and a wooden box of vintage postcards. Behind the table: a large gilded oval mirror and two mismatched lamps, one with a pink shade and one with a green base. Under the table sits a little orange ceramic cat with one eye bigger than the other. Trees and pale buildings line the square, and the sun shines in a blue sky.",
     "sample": {
       "text": "Regardez cette radio : elle est plus vieille que les lampes, et elle marche meilleur que ma voiture ! Ces disques sont moins chers que le miroir, mais ils sont les plus bons de la brocante. Et cette théière ? Elle est un peu ébréché, mais c’est l’objet plus charmant dans mon stand.",

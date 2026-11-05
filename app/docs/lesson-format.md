@@ -101,7 +101,6 @@ Each note has an `id`, a `kicker` (e.g. "Temps du passé"), a `title`, a one-sen
 - `image`: a square illustration, cropped into an arch. `imagePosition` sets the crop (CSS `object-position`). `caption` (optional) appears under it on desktop.
 - `instructions`, `placeholder`, and up to 8 `helpers` (tap-to-insert phrases; a trailing `…` is dropped when inserted).
 - `scene`: a plain-English description of the image. It isn't shown. It's there for when a live AI check is added.
-- `checklist` (required): 3 or 4 self-check items, `{ "text": "Did you use *ne… plus* at least once?" }`, shown between the writing box and **Compare** for learners to tick off. Put French between asterisks (shown in italics). The last may be `"bonus": true`. Rules are in STYLE.md; a lesson without a checklist fails the build.
 - `sample`: a typical learner description with mistakes (`text`) and its worked `result`. **Compare** shows this result, since there is no live correction yet.
 
 The `result` uses the same shape the prototype's AI tutor returned, so a live check can return it directly later:

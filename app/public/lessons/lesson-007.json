@@ -550,21 +550,6 @@
       "vous aurez de la chance",
       "un chat noir"
     ],
-    "checklist": [
-      {
-        "text": "Did you use the futur simple and the futur proche? *vous rencontrerez*, *vous allez…*"
-      },
-      {
-        "text": "Did you use *quand* + future? *Quand vous sortirez, il pleuvra.*"
-      },
-      {
-        "text": "Did you use two luck or fortune words? *le destin*, *la chance*, *un chat noir*…"
-      },
-      {
-        "text": "Try an irregular futur simple: *vous serez*, *vous aurez*, *vous irez*.",
-        "bonus": true
-      }
-    ],
     "scene": "A flat, colourful illustration of a tiny fortune teller’s studio in Montmartre, all in plum and pink. Behind a round table sits Madame Zara, a woman with an orange headscarf, a yellow headband and big gold earrings, holding a mobile phone. On the pink tablecloth: a crystal ball on a dark blue stand in the middle, three tarot cards laid out (a sun, a triangle, a moon), and a black cat with yellow eyes sitting on the right. Through a small arched window behind her, the white dome of the Sacré-Cœur and a pale moon.",
     "sample": {
       "text": "Je vois votre avenir dans la boule de cristal. Dans dix minute, vous va recevoir un message. Quand vous sortez d’ici, il pleuvra. Un chat noir va croiser votre route. Demain, vous aurerez de la chance, et un jour, vous allerez à Rome.",

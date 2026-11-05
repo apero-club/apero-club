@@ -89,18 +89,6 @@ describe.each(lessons)('%s follows STYLE.md', (_id, l) => {
     expect(praise.trim().endsWith('!')).toBe(true);
   });
 
-  it('Décrire checklist: 3–4 short items, French in *italics*, bonus marked by the field', () => {
-    const cl = l.describe.checklist;
-    expect(cl.length).toBeGreaterThanOrEqual(3);
-    expect(cl.length).toBeLessThanOrEqual(4);
-    for (const { text } of cl) {
-      expect((text.match(/\*/g) ?? []).length % 2, `unbalanced asterisks in: ${text}`).toBe(0);
-      expect(text, `put a French example in *italics*: ${text}`).toMatch(/\*[^*]+\*/);
-      expect(words(text.replace(/\*/g, '')), `too long: ${text}`).toBeLessThanOrEqual(16);
-      expect(text, `use "bonus": true instead of writing Bonus: ${text}`).not.toMatch(/^bonus\b/i);
-    }
-  });
-
   it('ambience: present, asks for no music and no clear speech', () => {
     expect(l.ambience, 'add an "ambience" prompt').toBeDefined();
     expect(l.ambience!.prompt).toMatch(/no music/i);
