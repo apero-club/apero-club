@@ -534,112 +534,112 @@
     }
   ],
   "describe": {
-    "image": "scene-voyante.svg",
-    "alt": "Madame Zara at her table in a small Montmartre studio: a crystal ball, three tarot cards, a black cat, and a phone in her hand",
-    "imagePosition": "50% 70%",
+    "image": "scene-poisson.webp",
+    "alt": "A fortune teller in a pink headscarf frowns into her crystal ball, where a pink fish is swimming; an orange cat on the next chair stares at it excitedly, and a grumpy blue pigeon watches from the windowsill",
+    "imagePosition": "50% 50%",
     "caption": "Montmartre · un mardi, 15 h",
-    "instructions": "Write 3 to 5 sentences: you’re the fortune teller. Make three predictions for the person in front of you: one in the futur simple, one in the futur proche, and one with quand + future.",
-    "placeholder": "Je vois dans la boule de cristal que…",
+    "instructions": "Write 3 to 5 sentences: look at the scene and predict what happens next. Use the futur proche, the futur simple, and quand + future.",
+    "placeholder": "Dans deux secondes, le chat va…",
     "helpers": [
-      "vous allez…",
-      "vous rencontrerez…",
-      "quand vous…",
-      "dans dix minutes",
-      "un jour",
-      "les cartes disent que…",
-      "vous aurez de la chance",
-      "un chat noir"
+      "le chat va…",
+      "dans deux secondes",
+      "quand le chat sautera…",
+      "la voyante sera…",
+      "un jour, elle…",
+      "la boule de cristal",
+      "un poisson rose",
+      "les cartes de tarot"
     ],
-    "scene": "A flat, colourful illustration of a tiny fortune teller’s studio in Montmartre, all in plum and pink. Behind a round table sits Madame Zara, a woman with an orange headscarf, a yellow headband and big gold earrings, holding a mobile phone. On the pink tablecloth: a crystal ball on a dark blue stand in the middle, three tarot cards laid out (a sun, a triangle, a moon), and a black cat with yellow eyes sitting on the right. Through a small arched window behind her, the white dome of the Sacré-Cœur and a pale moon.",
+    "scene": "A flat, colourful illustration of a fortune teller’s room with lilac curtains. At a round table with a pink scalloped tablecloth sits a fortune teller with long blue hair, a pink headscarf, big gold hoop earrings and a pink waistcoat. She frowns and looks surprised at her crystal ball, in which a pink and orange fish is swimming and smiling. Three tarot cards with green leaves lie face up on the table. On the chair next to her, an orange cat with white spots leans on the table and stares at the fish with wide, excited eyes. Through an arched window behind them, a grumpy blue pigeon sits on the windowsill, with a blue sky, a cloud and green bushes outside.",
     "sample": {
-      "text": "Je vois votre avenir dans la boule de cristal. Dans dix minute, vous va recevoir un message. Quand vous sortez d’ici, il pleuvra. Un chat noir va croiser votre route. Demain, vous aurerez de la chance, et un jour, vous allerez à Rome.",
+      "text": "Dans la boule de cristal, il y a une poisson rose. Dans deux secondes, le chat va saute sur la table. Quand il attrape le poisson, la voyante sera furieuse. Demain, elle achetera un nouveau poisson, mais elle ne pouvera pas oublier ce chat. Et le pigeon ? Il va rigoler, comme d’habitude !",
       "result": {
         "segments": [
           {
-            "t": "Je vois votre avenir dans la boule de cristal. Dans dix "
+            "t": "Dans la boule de cristal, il y a "
           },
           {
-            "from": "minute",
-            "to": "minutes",
+            "from": "une",
+            "to": "un",
             "n": 1
           },
           {
-            "t": ", "
+            "t": " poisson rose. Dans deux secondes, le chat va "
           },
           {
-            "from": "vous va",
-            "to": "vous allez",
+            "from": "saute",
+            "to": "sauter",
             "n": 2
           },
           {
-            "t": " recevoir un message. Quand vous "
+            "t": " sur la table. Quand il "
           },
           {
-            "from": "sortez",
-            "to": "sortirez",
+            "from": "attrape",
+            "to": "attrapera",
             "n": 3
           },
           {
-            "t": " d’ici, il pleuvra. Un chat noir va croiser votre route. Demain, vous "
+            "t": " le poisson, la voyante sera furieuse. Demain, elle "
           },
           {
-            "from": "aurerez",
-            "to": "aurez",
+            "from": "achetera",
+            "to": "achètera",
             "n": 4
           },
           {
-            "t": " de la chance, et un jour, vous "
+            "t": " un nouveau poisson, mais elle ne "
           },
           {
-            "from": "allerez",
-            "to": "irez",
+            "from": "pouvera",
+            "to": "pourra",
             "n": 5
           },
           {
-            "t": " à Rome."
+            "t": " pas oublier ce chat. Et le pigeon ? Il va rigoler, comme d’habitude !"
           }
         ],
         "corrections": [
           {
             "n": 1,
-            "from": "minute",
-            "to": "minutes",
-            "rule": "Pluriel : minutes",
-            "why": "Dix is more than one, so minute takes an -s: dans dix minutes."
+            "from": "une",
+            "to": "un",
+            "rule": "Masculin : un poisson",
+            "why": "Poisson is masculine: un poisson, le poisson."
           },
           {
             "n": 2,
-            "from": "vous va",
-            "to": "vous allez",
-            "rule": "Aller : vous allez",
-            "why": "The futur proche uses aller in the present, matched to the subject: vous allez recevoir."
+            "from": "saute",
+            "to": "sauter",
+            "rule": "Aller + infinitif",
+            "why": "In the futur proche, the second verb stays in the infinitive: le chat va sauter."
           },
           {
             "n": 3,
-            "from": "sortez",
-            "to": "sortirez",
+            "from": "attrape",
+            "to": "attrapera",
             "rule": "Quand + futur",
-            "why": "They haven’t gone out yet, so after quand French uses the future: quand vous sortirez."
+            "why": "It hasn’t happened yet, so after quand French uses the future: quand il attrapera le poisson."
           },
           {
             "n": 4,
-            "from": "aurerez",
-            "to": "aurez",
-            "rule": "Avoir → aur-",
-            "why": "Avoir has its own future stem, aur-, plus the usual ending: vous aurez."
+            "from": "achetera",
+            "to": "achètera",
+            "rule": "Acheter : achètera",
+            "why": "In the future, acheter takes a grave accent on the e: j’achèterai, elle achètera."
           },
           {
             "n": 5,
-            "from": "allerez",
-            "to": "irez",
-            "rule": "Aller → ir-",
-            "why": "Aller has a very short future stem, ir-: vous irez, j’irai."
+            "from": "pouvera",
+            "to": "pourra",
+            "rule": "Pouvoir → pourr-",
+            "why": "Pouvoir has its own future stem, pourr-: elle pourra, vous pourrez."
           }
         ],
-        "corrected": "Je vois votre avenir dans la boule de cristal. Dans dix minutes, vous allez recevoir un message. Quand vous sortirez d’ici, il pleuvra. Un chat noir va croiser votre route. Demain, vous aurez de la chance, et un jour, vous irez à Rome.",
-        "spoken": "Je vois votre avenir dans la boule. Dans dix minutes, vous allez recevoir un message. Quand vous sortirez, il va pleuvoir, hein. Un chat noir va vous passer devant. Demain, vous allez avoir de la chance, et un jour, vous irez à Rome.",
-        "spokenNote": "Out loud the futur proche takes over almost everywhere (il va pleuvoir, vous allez avoir de la chance). The futur simple stays for the dreamy, far-off part: un jour, vous irez à Rome.",
-        "praise": "Nice “il pleuvra”!"
+        "corrected": "Dans la boule de cristal, il y a un poisson rose. Dans deux secondes, le chat va sauter sur la table. Quand il attrapera le poisson, la voyante sera furieuse. Demain, elle achètera un nouveau poisson, mais elle ne pourra pas oublier ce chat. Et le pigeon ? Il va rigoler, comme d’habitude !",
+        "spoken": "Dans la boule, y a un poisson rose. Dans deux secondes, le chat va sauter sur la table. Quand il va attraper le poisson, la voyante va être furax ! Demain, elle va racheter un poisson, mais ce chat, elle l’oubliera pas de sitôt. Et le pigeon ? Lui, il va se marrer, comme d’hab.",
+        "spokenNote": "Out loud the futur proche takes over, even after quand (quand il va attraper). Furax (furious), se marrer (to laugh) and comme d’hab (as usual) are familiar.",
+        "praise": "Nice “la voyante sera furieuse”!"
       }
     }
   },
