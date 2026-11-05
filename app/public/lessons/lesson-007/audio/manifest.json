@@ -2,6 +2,362 @@
   "version": 1,
   "model": "eleven_multilingual_v2",
   "clips": {
+    "antoine|— C’est impossible ! Je ne vais pas y retourner. Jamais !": {
+      "file": "60c5eab63291caba.mp3",
+      "voice": "9tZ0TkblLDiUBWp2EbTv",
+      "delivery": "6b698d5f",
+      "words": [
+        [
+          2,
+          0
+        ],
+        [
+          8,
+          0.279
+        ],
+        [
+          19,
+          0.813
+        ],
+        [
+          21,
+          1.033
+        ],
+        [
+          24,
+          1.196
+        ],
+        [
+          27,
+          1.289
+        ],
+        [
+          32,
+          1.44
+        ],
+        [
+          36,
+          1.602
+        ],
+        [
+          38,
+          1.695
+        ],
+        [
+          49,
+          2.403
+        ],
+        [
+          56,
+          2.856
+        ]
+      ]
+    },
+    "madame-zara|— Asseyez-vous. Ce sera quarante euros.": {
+      "file": "f7c5f7dafad3f956.mp3",
+      "voice": "cuo3D4C6LVenyV7b2Kpd",
+      "delivery": "dfe025ca",
+      "words": [
+        [
+          2,
+          0
+        ],
+        [
+          16,
+          1.068
+        ],
+        [
+          19,
+          1.231
+        ],
+        [
+          24,
+          1.44
+        ],
+        [
+          33,
+          1.846
+        ]
+      ]
+    },
+    "madame-zara|— Bon. Dans dix minutes, votre téléphone va sonner trois fois.": {
+      "file": "3e5d836c24a810c5.mp3",
+      "voice": "cuo3D4C6LVenyV7b2Kpd",
+      "delivery": "8800ea84",
+      "words": [
+        [
+          2,
+          0
+        ],
+        [
+          7,
+          0.604
+        ],
+        [
+          12,
+          0.813
+        ],
+        [
+          16,
+          0.94
+        ],
+        [
+          25,
+          1.498
+        ],
+        [
+          31,
+          1.8
+        ],
+        [
+          41,
+          2.218
+        ],
+        [
+          44,
+          2.345
+        ],
+        [
+          51,
+          2.601
+        ],
+        [
+          57,
+          2.844
+        ]
+      ]
+    },
+    "madame-zara|— Donnez-moi votre main. Vous rencontrerez une personne qui connaît votre secret.": {
+      "file": "5b19d87645f4645b.mp3",
+      "voice": "cuo3D4C6LVenyV7b2Kpd",
+      "delivery": "8800ea84",
+      "words": [
+        [
+          2,
+          0
+        ],
+        [
+          13,
+          0.522
+        ],
+        [
+          19,
+          0.848
+        ],
+        [
+          25,
+          1.382
+        ],
+        [
+          30,
+          1.66
+        ],
+        [
+          43,
+          2.438
+        ],
+        [
+          47,
+          2.554
+        ],
+        [
+          56,
+          3.007
+        ],
+        [
+          60,
+          3.17
+        ],
+        [
+          68,
+          3.46
+        ],
+        [
+          74,
+          3.773
+        ]
+      ]
+    },
+    "madame-zara|« Mon loyer va encore augmenter. »": {
+      "file": "47281a07abcf23e1.mp3",
+      "voice": "cuo3D4C6LVenyV7b2Kpd",
+      "delivery": "8800ea84",
+      "words": [
+        [
+          2,
+          0
+        ],
+        [
+          6,
+          0.244
+        ],
+        [
+          12,
+          0.557
+        ],
+        [
+          15,
+          0.662
+        ],
+        [
+          22,
+          1.01
+        ]
+      ]
+    },
+    "madame-zara|Et vous serez très riche… un jour.": {
+      "file": "a11c2c7fe4293edb.mp3",
+      "voice": "cuo3D4C6LVenyV7b2Kpd",
+      "delivery": "8800ea84",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          0.163
+        ],
+        [
+          8,
+          0.337
+        ],
+        [
+          14,
+          0.65
+        ],
+        [
+          19,
+          0.894
+        ],
+        [
+          26,
+          1.498
+        ],
+        [
+          29,
+          1.683
+        ]
+      ]
+    },
+    "madame-zara|Quand vous sortirez, il pleuvra. Et vous reviendrez avant dix-sept heures.": {
+      "file": "85c08a69a7c13a71.mp3",
+      "voice": "cuo3D4C6LVenyV7b2Kpd",
+      "delivery": "8800ea84",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          6,
+          0.244
+        ],
+        [
+          11,
+          0.406
+        ],
+        [
+          21,
+          1.277
+        ],
+        [
+          24,
+          1.509
+        ],
+        [
+          33,
+          2.368
+        ],
+        [
+          36,
+          2.543
+        ],
+        [
+          41,
+          2.705
+        ],
+        [
+          52,
+          3.332
+        ],
+        [
+          58,
+          3.634
+        ],
+        [
+          67,
+          4.586
+        ]
+      ]
+    },
+    "madame-zara|Vous allez perdre quelque chose de rouge, et un inconnu va vous offrir un parapluie.": {
+      "file": "176e0b2974780ed5.mp3",
+      "voice": "cuo3D4C6LVenyV7b2Kpd",
+      "delivery": "8800ea84",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          5,
+          0.267
+        ],
+        [
+          11,
+          0.499
+        ],
+        [
+          18,
+          0.917
+        ],
+        [
+          26,
+          1.254
+        ],
+        [
+          32,
+          1.509
+        ],
+        [
+          35,
+          1.672
+        ],
+        [
+          42,
+          2.345
+        ],
+        [
+          45,
+          2.577
+        ],
+        [
+          48,
+          2.705
+        ],
+        [
+          56,
+          3.077
+        ],
+        [
+          59,
+          3.204
+        ],
+        [
+          64,
+          3.413
+        ],
+        [
+          71,
+          3.762
+        ],
+        [
+          74,
+          3.855
+        ]
+      ]
+    },
     "narrator|— Asseyez-vous. Ce sera quarante euros.": {
       "file": "154bea934c012c9f.mp3",
       "voice": "Xy5q4w05TJGcKXPWeWoz",
