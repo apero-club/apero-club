@@ -15,9 +15,9 @@
       "alt": ""
     },
     {
-      "shape": "circle",
-      "bg": "green-300",
-      "fg": "violet-500",
+      "shape": "halves",
+      "bg": "green-900",
+      "fg": "sun-300",
       "eyes": "look",
       "blink": true
     },
@@ -39,16 +39,16 @@
       "b": "lilac-500"
     },
     {
-      "shape": "circle",
-      "bg": "green-300",
-      "fg": "violet-500",
-      "eyes": "look",
-      "blink": true
-    },
-    {
       "image": "illo-umbrella.svg",
       "bg": "sun-300",
       "alt": ""
+    },
+    {
+      "shape": "halves",
+      "bg": "green-900",
+      "fg": "sun-300",
+      "eyes": "look",
+      "blink": true
     }
   ],
   "place": "Montmartre, 18e",

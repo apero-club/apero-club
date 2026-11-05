@@ -15,40 +15,40 @@
       "alt": ""
     },
     {
-      "shape": "circle",
-      "bg": "sun-300",
-      "fg": "violet-500",
-      "eyes": "wide",
-      "blink": true
-    },
-    {
       "image": "illo-armchair.svg",
       "bg": "sky-300",
       "alt": ""
+    },
+    {
+      "shape": "pill",
+      "bg": "sun-300",
+      "fg": "pink-500",
+      "eyes": "wide",
+      "blink": true
     }
   ],
   "heroWide": [
+    {
+      "shape": "pill",
+      "bg": "sun-300",
+      "fg": "pink-500",
+      "eyes": "wide",
+      "blink": true
+    },
     {
       "image": "illo-frame.svg",
       "bg": "lilac-500",
       "alt": ""
     },
     {
-      "pattern": "halves",
-      "a": "green-900",
-      "b": "green-500"
-    },
-    {
-      "shape": "circle",
-      "bg": "sun-300",
-      "fg": "violet-500",
-      "eyes": "wide",
-      "blink": true
-    },
-    {
       "image": "illo-armchair.svg",
       "bg": "sky-300",
       "alt": ""
+    },
+    {
+      "pattern": "halves",
+      "a": "green-900",
+      "b": "green-500"
     }
   ],
   "place": "le Marais, 3e",

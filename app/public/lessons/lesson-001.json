@@ -15,35 +15,35 @@
       "alt": ""
     },
     {
-      "shape": "circle",
-      "bg": "sky-300",
-      "fg": "violet-500",
-      "eyes": "look",
-      "blink": true
+      "shape": "pill",
+      "bg": "green-900",
+      "fg": "green-300"
     },
     {
       "shape": "flower",
-      "bg": "green-900",
-      "fg": "green-300"
+      "bg": "sun-300",
+      "fg": "violet-500",
+      "eyes": "look",
+      "blink": true
     }
   ],
   "heroWide": [
-    {
-      "pattern": "checker",
-      "a": "green-900",
-      "b": "green-500"
-    },
     {
       "image": "illo-coffee.svg",
       "bg": "sky-300",
       "alt": ""
     },
     {
-      "shape": "circle",
-      "bg": "lilac-500",
-      "fg": "pink-500",
+      "shape": "flower",
+      "bg": "sun-300",
+      "fg": "violet-500",
       "eyes": "look",
       "blink": true
+    },
+    {
+      "pattern": "checker",
+      "a": "green-900",
+      "b": "green-500"
     },
     {
       "image": "illo-croissant.svg",

@@ -10,16 +10,16 @@
   },
   "hero": [
     {
+      "shape": "flower",
+      "bg": "orange-500",
+      "fg": "sun-300",
+      "eyes": "dots",
+      "blink": true
+    },
+    {
       "image": "illo-cheese.svg",
       "bg": "sky-300",
       "alt": ""
-    },
-    {
-      "shape": "arch",
-      "bg": "orange-500",
-      "fg": "sun-300",
-      "eyes": "wide",
-      "blink": true
     },
     {
       "image": "illo-wine.svg",
@@ -34,16 +34,16 @@
       "alt": ""
     },
     {
+      "shape": "flower",
+      "bg": "orange-500",
+      "fg": "sun-300",
+      "eyes": "dots",
+      "blink": true
+    },
+    {
       "pattern": "checker",
       "a": "sun-300",
       "b": "sun-500"
-    },
-    {
-      "shape": "arch",
-      "bg": "orange-500",
-      "fg": "sun-300",
-      "eyes": "wide",
-      "blink": true
     },
     {
       "image": "illo-wine.svg",

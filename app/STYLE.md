@@ -75,6 +75,11 @@ Rules marked **(checked)** are enforced by `npm test` (`src/lesson/style.test.ts
 ## Today screen art
 
 - `hero` (phone) has 3 squares and `heroWide` (desktop) has 4. Make **one or two about the story** (lesson 1: the croissant and the coffee cup), drawn flat in the brand style. The rest are kit shapes or one pattern, with **exactly one blinking face**.
+- **The character** (the one kit shape with eyes) **changes every lesson (checked)**:
+  - **Shape:** arch, circle, halves, flower or pill (the asterisk has no room for eyes), never the same shape as either of the two lessons before.
+  - **Square:** never in the same desktop square or the same phone slot as the lesson before. Move it around: corners, middle, either end.
+  - **Colours:** pick a background and colour pair not used for the character in recent lessons. Eyes must be `look`, `wide` or `dots` (the ones that blink).
+- **Neighbouring squares never share a background (checked)**, on phone or desktop (a pattern counts as both its colours).
 - The **first picture in `hero`** is also shown at the top of the story page, so make it the one that best sums up the story (lesson 1: the croissant; lesson 2: the tower in fog). The tiles beside it change colour automatically to avoid a clash.
 - **Use the whole palette.** The four step tiles under the desktop hero (01 to 04) pick their colours automatically for each lesson: any brand colour your hero squares leave out (violet, lilac, pink, orange, sun, green, sky) goes there first. So feel free to vary the hero colours from lesson to lesson.
 

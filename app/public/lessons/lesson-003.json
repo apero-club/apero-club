@@ -16,9 +16,9 @@
     },
     {
       "shape": "circle",
-      "bg": "sky-300",
-      "fg": "violet-500",
-      "eyes": "look",
+      "bg": "sky-500",
+      "fg": "sun-300",
+      "eyes": "dots",
       "blink": true
     },
     {
@@ -29,26 +29,26 @@
   ],
   "heroWide": [
     {
+      "shape": "circle",
+      "bg": "sky-500",
+      "fg": "sun-300",
+      "eyes": "dots",
+      "blink": true
+    },
+    {
       "image": "illo-building.svg",
       "bg": "sun-300",
+      "alt": ""
+    },
+    {
+      "image": "illo-cat.svg",
+      "bg": "green-300",
       "alt": ""
     },
     {
       "pattern": "halves",
       "a": "pink-500",
       "b": "pink-300"
-    },
-    {
-      "shape": "circle",
-      "bg": "sky-300",
-      "fg": "violet-500",
-      "eyes": "look",
-      "blink": true
-    },
-    {
-      "image": "illo-cat.svg",
-      "bg": "green-300",
-      "alt": ""
     }
   ],
   "place": "Belleville, 20e",

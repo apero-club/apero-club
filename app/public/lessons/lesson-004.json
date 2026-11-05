@@ -15,16 +15,16 @@
       "alt": ""
     },
     {
-      "shape": "circle",
-      "bg": "green-300",
-      "fg": "violet-500",
-      "eyes": "happy",
-      "blink": true
-    },
-    {
       "image": "illo-mirror.svg",
       "bg": "lilac-500",
       "alt": ""
+    },
+    {
+      "shape": "arch",
+      "bg": "green-900",
+      "fg": "pink-500",
+      "eyes": "look",
+      "blink": true
     }
   ],
   "heroWide": [
@@ -39,10 +39,10 @@
       "b": "sky-300"
     },
     {
-      "shape": "circle",
-      "bg": "green-300",
-      "fg": "violet-500",
-      "eyes": "happy",
+      "shape": "arch",
+      "bg": "green-900",
+      "fg": "pink-500",
+      "eyes": "look",
       "blink": true
     },
     {

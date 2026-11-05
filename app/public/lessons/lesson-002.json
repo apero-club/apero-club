@@ -10,6 +10,13 @@
   },
   "hero": [
     {
+      "shape": "pill",
+      "bg": "green-900",
+      "fg": "green-300",
+      "eyes": "wide",
+      "blink": true
+    },
+    {
       "image": "illo-tower-fog.svg",
       "bg": "sky-300",
       "alt": ""
@@ -17,14 +24,7 @@
     {
       "shape": "circle",
       "bg": "lilac-500",
-      "fg": "violet-500",
-      "eyes": "wide",
-      "blink": true
-    },
-    {
-      "shape": "pill",
-      "bg": "green-900",
-      "fg": "green-300"
+      "fg": "violet-500"
     }
   ],
   "heroWide": [
@@ -39,16 +39,16 @@
       "alt": ""
     },
     {
-      "shape": "circle",
-      "bg": "sun-300",
-      "fg": "violet-500",
-      "eyes": "wide",
-      "blink": true
-    },
-    {
       "shape": "arch",
       "bg": "orange-500",
       "fg": "sun-300"
+    },
+    {
+      "shape": "pill",
+      "bg": "green-900",
+      "fg": "green-300",
+      "eyes": "wide",
+      "blink": true
     }
   ],
   "place": "Trocadéro, 16e",

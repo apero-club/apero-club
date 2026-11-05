@@ -107,3 +107,51 @@ describe.each(lessons)('%s follows STYLE.md', (_id, l) => {
     expect(l.ambience!.prompt).toMatch(/no clear speech/i);
   });
 });
+
+/**
+ * Today screen art across lessons (STYLE.md, "Today screen art"): the character (the one
+ * kit shape with eyes) changes shape, colours and square from lesson to lesson, and no two
+ * neighbouring squares share a background.
+ */
+describe('Today art: variety across lessons', () => {
+  type Tile = LessonData['hero'][number];
+  const isFace = (t: Tile) => 'shape' in t && !!t.eyes;
+  const bgs = (t: Tile) => ('pattern' in t ? [t.a, t.b] : [t.bg]);
+  const wide = (l: LessonData) => l.heroWide ?? [];
+  const BLINKING = ['look', 'wide', 'dots'];
+  // Desktop squares are a 2×2 grid: 0 1 / 2 3. Phone squares are a row: 0 1 2.
+  const WIDE_NEXT: [number, number][] = [[0, 1], [0, 2], [1, 3], [2, 3]];
+  const ROW_NEXT: [number, number][] = [[0, 1], [1, 2]];
+
+  it.each(lessons)('%s: exactly one blinking character on phone and desktop, never an asterisk', (_id, l) => {
+    for (const row of [l.hero, wide(l)]) {
+      const faces = row.filter(isFace);
+      expect(faces).toHaveLength(1);
+      const f = faces[0] as Extract<Tile, { shape: string }>;
+      expect(f.shape, 'the asterisk has no room for eyes').not.toBe('asterisk');
+      expect(BLINKING, `eyes "${f.eyes}" don't blink: use look, wide or dots`).toContain(f.eyes);
+    }
+  });
+
+  it.each(lessons)('%s: neighbouring squares never share a background', (_id, l) => {
+    const check = (row: Tile[], pairs: [number, number][], where: string) => {
+      for (const [a, b] of pairs) if (row[a] && row[b]) {
+        const shared = bgs(row[a]).filter(c => bgs(row[b]).includes(c));
+        expect(shared, `${where} squares ${a + 1} and ${b + 1} are both ${shared.join(', ')}`).toEqual([]);
+      }
+    };
+    check(l.hero, ROW_NEXT, 'phone');
+    if (l.heroWide) check(l.heroWide, WIDE_NEXT, 'desktop');
+  });
+
+  it('the character changes square from one lesson to the next, and its shape within any 3 lessons', () => {
+    for (let i = 1; i < lessons.length; i++) {
+      const [id, l] = lessons[i], [prevId, prev] = lessons[i - 1];
+      expect(wide(l).findIndex(isFace), `${id} puts its character in the same desktop square as ${prevId}`).not.toBe(wide(prev).findIndex(isFace));
+      expect(l.hero.findIndex(isFace), `${id} puts its character in the same phone square as ${prevId}`).not.toBe(prev.hero.findIndex(isFace));
+      const shape = (x: LessonData) => (x.hero.find(isFace) as { shape: string }).shape;
+      for (const [oid, other] of lessons.slice(Math.max(0, i - 2), i)) expect(shape(l), `${id} reuses the ${shape(l)} character from ${oid}`).not.toBe(shape(other));
+    }
+  });
+});
+
