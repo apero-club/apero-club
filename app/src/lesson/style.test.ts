@@ -118,7 +118,8 @@ describe('Today art: variety across lessons', () => {
   const isFace = (t: Tile) => 'shape' in t && !!t.eyes;
   const bgs = (t: Tile) => ('pattern' in t ? [t.a, t.b] : [t.bg]);
   const wide = (l: LessonData) => l.heroWide ?? [];
-  const BLINKING = ['look', 'wide', 'dots'];
+  // White eyes that blink: no solid black dots (they read as empty holes).
+  const BLINKING = ['look', 'wide'];
   // Desktop squares are a 2×2 grid: 0 1 / 2 3. Phone squares are a row: 0 1 2.
   const WIDE_NEXT: [number, number][] = [[0, 1], [0, 2], [1, 3], [2, 3]];
   const ROW_NEXT: [number, number][] = [[0, 1], [1, 2]];
@@ -129,7 +130,7 @@ describe('Today art: variety across lessons', () => {
       expect(faces).toHaveLength(1);
       const f = faces[0] as Extract<Tile, { shape: string }>;
       expect(f.shape, 'the asterisk has no room for eyes').not.toBe('asterisk');
-      expect(BLINKING, `eyes "${f.eyes}" don't blink: use look, wide or dots`).toContain(f.eyes);
+      expect(BLINKING, `eyes "${f.eyes}": use look or wide (white eyes that blink)`).toContain(f.eyes);
     }
   });
 

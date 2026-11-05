@@ -23,7 +23,7 @@
       "shape": "arch",
       "bg": "green-900",
       "fg": "pink-500",
-      "eyes": "look",
+      "eyes": "wide",
       "blink": true
     }
   ],
@@ -42,7 +42,7 @@
       "shape": "arch",
       "bg": "green-900",
       "fg": "pink-500",
-      "eyes": "look",
+      "eyes": "wide",
       "blink": true
     },
     {
