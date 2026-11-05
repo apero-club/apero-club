@@ -539,112 +539,112 @@
     }
   ],
   "describe": {
-    "image": "scene-musee.svg",
-    "alt": "A museum gallery at night: an empty gilded frame on the wall, a sculpture on a plinth, a security camera, moonlight from a tall window, and an armchair turned towards the window",
+    "image": "scene-chiens.webp",
+    "alt": "A pink museum gallery: a guard in a blue suit spreads his arms in front of a big blue sculpture while three dogs run across the chequered floor; a woman on a bench looks at her phone and a man looks at a painting",
     "imagePosition": "50% 60%",
-    "caption": "Salle 3 · 3 h du matin",
-    "instructions": "Write 3 to 5 sentences: you’re the night guard. What happened in this room at 3 a.m.? Use reflexive verbs in the passé composé (je me suis…, elle s’est…).",
-    "placeholder": "Il faisait noir, et je me suis…",
+    "caption": "Le musée · un mardi, 10 h",
+    "instructions": "Write 3 to 5 sentences: what happened in the museum this morning? Who did what? Use reflexive verbs in the passé composé (ils se sont échappés, il s’est mis…).",
+    "placeholder": "Ce matin, trois chiens se sont…",
     "helpers": [
-      "je me suis caché(e)",
-      "elle s’est levée",
-      "il faisait noir",
-      "un craquement",
-      "derrière la sculpture",
-      "le cadre est vide",
-      "la caméra de surveillance",
-      "j’ai eu la chair de poule"
+      "les chiens se sont échappés",
+      "le gardien s’est mis devant…",
+      "ils se sont mis à courir",
+      "la sculpture bleue",
+      "assise sur un banc",
+      "un visiteur regarde…",
+      "un dalmatien",
+      "il a eu peur"
     ],
-    "scene": "A flat, colourful illustration of a museum gallery at night, in deep blues. On the wall hangs a large gilded frame, and the painting inside is empty except for a small plum-coloured chair. In the corner, a security camera with a red light. On the left, a white sculpture of a head on a plinth. A tall arched window shows the moon, and moonlight falls across the parquet floor. In the middle of the room, a blue visitors’ armchair is turned towards the window. A faint beam of torchlight crosses the floor.",
+    "scene": "A flat, colourful illustration of a bright museum gallery with pink walls and a pink and white chequered floor. In the middle, a museum guard in a blue suit and burgundy tie, with a walkie-talkie on his jacket, spreads his arms wide and looks alarmed, protecting a large blue knotted sculpture on a white plinth behind him. Three dogs run past him: a black-and-white dalmatian with its tongue out, a small blue French bulldog with a yellow collar, and an orange-and-white long-eared dog with a green collar. On the left, a woman with pink hair sits on a pink bench looking at her phone, next to a potted plant, under an arched window showing green bushes. On the right, a man in a green jumper stands with his hands behind his back looking at a small abstract painting. On the back wall hangs a large framed painting of a green bird, and two blue pendant lamps hang from the ceiling.",
     "sample": {
-      "text": "Il faisait noir dans la salle. Je me suis assis devant le tableau, et je m’ai endormi. Puis j’ai entendu un craquement et je me suis caché derrière la sculpture. La femme du portrait s’est levé et elle s’est assis dans le fauteuil. Nous nous sommes parlés, mais elle ne s’est retourné pas.",
+      "text": "Ce matin, trois chiens se sont échappé et ils sont entrés dans le musée. Le gardien s’a mis devant la sculpture bleu. Une dame s’est assis sur un banc, mais elle regarde son téléphone. Un visiteur ne s’est retourné pas. Moi, je me suis bien amusée !",
       "result": {
         "segments": [
           {
-            "t": "Il faisait noir dans la salle. Je me suis assis devant le tableau, et "
+            "t": "Ce matin, trois chiens se sont "
           },
           {
-            "from": "je m’ai endormi",
-            "to": "je me suis endormi",
+            "from": "échappé",
+            "to": "échappés",
             "n": 1
           },
           {
-            "t": ". Puis j’ai entendu un craquement et je me suis caché derrière la sculpture. La femme du portrait "
+            "t": " et ils sont entrés dans le musée. Le gardien "
           },
           {
-            "from": "s’est levé",
-            "to": "s’est levée",
+            "from": "s’a mis",
+            "to": "s’est mis",
             "n": 2
           },
           {
-            "t": " et elle "
+            "t": " devant la sculpture "
           },
           {
-            "from": "s’est assis",
-            "to": "s’est assise",
+            "from": "bleu",
+            "to": "bleue",
             "n": 3
           },
           {
-            "t": " dans le fauteuil. Nous nous sommes "
+            "t": ". Une dame s’est "
           },
           {
-            "from": "parlés",
-            "to": "parlé",
+            "from": "assis",
+            "to": "assise",
             "n": 4
           },
           {
-            "t": ", mais elle "
+            "t": " sur un banc, mais elle regarde son téléphone. Un visiteur "
           },
           {
             "from": "ne s’est retourné pas",
-            "to": "ne s’est pas retournée",
+            "to": "ne s’est pas retourné",
             "n": 5
           },
           {
-            "t": "."
+            "t": ". Moi, je me suis bien amusée !"
           }
         ],
         "corrections": [
           {
             "n": 1,
-            "from": "je m’ai endormi",
-            "to": "je me suis endormi",
-            "rule": "Pronominal + être",
-            "why": "Reflexive verbs always take être, never avoir: je me suis endormi."
+            "from": "échappé",
+            "to": "échappés",
+            "rule": "Accord avec le sujet",
+            "why": "S’échapper takes être, and the subject is trois chiens, masculine plural: se sont échappés."
           },
           {
             "n": 2,
-            "from": "s’est levé",
-            "to": "s’est levée",
-            "rule": "Accord avec le sujet",
-            "why": "The woman in the portrait is feminine, so the participle takes an -e: elle s’est levée."
+            "from": "s’a mis",
+            "to": "s’est mis",
+            "rule": "Pronominal + être",
+            "why": "Reflexive verbs always take être, never avoir: il s’est mis devant la sculpture."
           },
           {
             "n": 3,
-            "from": "s’est assis",
-            "to": "s’est assise",
-            "rule": "Accord : assise",
-            "why": "Feminine subject, so assise. Here you can hear it: the -e brings back the [z]."
+            "from": "bleu",
+            "to": "bleue",
+            "rule": "Accord de l’adjectif",
+            "why": "Sculpture is feminine, so the adjective takes an -e: la sculpture bleue."
           },
           {
             "n": 4,
-            "from": "parlés",
-            "to": "parlé",
-            "rule": "Parler à : pas d’accord",
-            "why": "You speak to someone, so se is indirect and the participle doesn’t agree: nous nous sommes parlé."
+            "from": "assis",
+            "to": "assise",
+            "rule": "Accord : assise",
+            "why": "The subject is une dame, so the participle takes an -e, and you can hear it: assise [asiz]."
           },
           {
             "n": 5,
             "from": "ne s’est retourné pas",
-            "to": "ne s’est pas retournée",
+            "to": "ne s’est pas retourné",
             "rule": "Ne… pas autour",
-            "why": "Ne and pas wrap around the pronoun and être, and the participle agrees with elle: ne s’est pas retournée."
+            "why": "Ne and pas wrap around the pronoun and être, before the participle: il ne s’est pas retourné."
           }
         ],
-        "corrected": "Il faisait noir dans la salle. Je me suis assis devant le tableau, et je me suis endormi. Puis j’ai entendu un craquement et je me suis caché derrière la sculpture. La femme du portrait s’est levée et elle s’est assise dans le fauteuil. Nous nous sommes parlé, mais elle ne s’est pas retournée.",
-        "spoken": "Il faisait noir dans la salle. Je me suis posé devant le tableau, et j’ai piqué du nez. Puis y a eu un craquement, et je me suis planqué derrière la statue. La dame du portrait s’est levée, elle s’est assise dans le fauteuil. On s’est parlé, mais elle s’est pas retournée.",
-        "spokenNote": "Se poser (to sit down), piquer du nez (to doze off) and se planquer (to hide) are relaxed everyday verbs. Nous becomes on, and the ne disappears.",
-        "praise": "Nice “je me suis caché”!"
+        "corrected": "Ce matin, trois chiens se sont échappés et ils sont entrés dans le musée. Le gardien s’est mis devant la sculpture bleue. Une dame s’est assise sur un banc, mais elle regarde son téléphone. Un visiteur ne s’est pas retourné. Moi, je me suis bien amusée !",
+        "spoken": "Ce matin, trois chiens se sont échappés et ils ont débarqué dans le musée. Le gardien s’est jeté devant la sculpture bleue. Y a une dame assise sur un banc, elle regarde son téléphone. Et un monsieur s’est même pas retourné. Franchement, je me suis bien marrée !",
+        "spokenNote": "Débarquer (to burst in), se jeter (to throw yourself) and se marrer (to have a laugh) are everyday spoken verbs. Il y a becomes y a, and the ne disappears.",
+        "praise": "Nice “je me suis bien amusée”!"
       }
     }
   },
