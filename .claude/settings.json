@@ -1,0 +1,29 @@
+{
+  "permissions": {
+    "allow": [
+      "Edit(**)",
+      "Bash(node *)",
+      "Bash(npm *)",
+      "Bash(npx *)",
+      "Bash(python3 *)",
+      "Bash(git *)",
+      "Bash(gh run *)",
+      "Bash(gh api *)",
+      "Bash(gh workflow *)",
+      "Bash(pgrep *)",
+      "Bash(kill *)",
+      "Bash(sleep *)",
+      "Bash(cd *)",
+      "Bash(ls *)",
+      "Bash(cat *)",
+      "Bash(head *)",
+      "Bash(tail *)",
+      "Bash(grep *)",
+      "Bash(sed *)",
+      "Bash(echo *)",
+      "Bash(mkdir *)",
+      "Bash(wc *)",
+      "Bash(sort *)"
+    ]
+  }
+}
