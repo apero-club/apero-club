@@ -535,25 +535,25 @@
     }
   ],
   "describe": {
-    "image": "scene-fromagerie.svg",
-    "alt": "Inside a small Paris cheese shop: wheels of cheese on wooden shelves, a slate of prices, a cheesemonger in an apron holding a little wrapped wheel, a customer at the counter, and cheeses under glass",
-    "imagePosition": "50% 70%",
-    "caption": "Rue Mouffetard · samedi, 10 h",
-    "instructions": "Write 3 to 5 sentences: what can you see in the fromagerie, and what would you put on your plateau de fromages? Use du, de la or des, a negation, and a quantity.",
+    "image": "scene-souris.webp",
+    "alt": "A pink cheese shop: three mice push a giant wedge of cheese across the chequered floor, the comté board on the counter is empty except for crumbs, and a grumpy pigeon sits on the cash register",
+    "imagePosition": "50% 50%",
+    "caption": "La fromagerie · samedi, 19 h",
+    "instructions": "Write 3 to 5 sentences: what’s happening in the fromagerie? What’s in the display case, and what’s missing? Use du, de la or des, a negation, and a quantity.",
     "placeholder": "Dans la fromagerie, il y a…",
     "helpers": [
       "il y a du…",
-      "un morceau de…",
-      "beaucoup de…",
-      "il n’y a pas de…",
-      "à pâte molle",
-      "crémeux",
-      "fort ou doux",
-      "au lait cru"
+      "un gros morceau de…",
+      "il n’y a plus de…",
+      "trois souris",
+      "dans la vitrine",
+      "sur la caisse",
+      "des bûches de chèvre",
+      "à pâte molle"
     ],
-    "scene": "A flat, colourful illustration of a small Paris cheese shop. On the back wall, two wooden shelves hold big golden wheels of cheese and smaller white cheeses, with a black slate of prices between them. Behind the counter, a cheesemonger with white hair, a violet jacket and a white apron holds a small wheel of cheese wrapped in pink paper, very tenderly. Across the counter stands a customer with dark hair and a blue coat. The dark green counter has a glass front, with a wedge of comté, two small round goat’s cheeses, an orange washed-rind cheese, a soft cheese and a blue cheese inside.",
+    "scene": "A flat, colourful illustration of a cheese shop with pale pink walls and a pink and white chequered floor. In the foreground, three mice (orange, pink and blue) strain with their eyes squeezed shut to push an enormous wedge of yellow cheese with holes across the floor; the pink mouse is crying. On the pink counter behind them, a round wooden board holds only crumbs, with a little sign reading “Comté 24 mois”. The glass display case shows a wheel of white soft cheese with a slice cut out, a stack of white goat’s cheese logs, and a darker brown wheel with a slice missing. On the right, a blue pigeon with heavy eyelids sits on a black cash register, looking unimpressed. On a shelf on the wall: a plant in a yellow pot and two round golden cheeses. On the left, an arched window shows a blue sky and green bushes.",
     "sample": {
-      "text": "Dans la fromagerie, il y a beaucoup des fromages. Sur le comptoir, il y a de le comté et du chèvre. Le fromager ne vend pas du gruyère râpé. Moi, j’aime du brie, alors je voudrais un morceau du brie.",
+      "text": "Dans la fromagerie, il y a beaucoup des fromages. Trois souris poussent un gros morceau du fromage. Sur le comptoir, il n’y a plus du comté. Dans la vitrine, il y a de le brie et des chèvres. Le pigeon n’aime pas des souris !",
       "result": {
         "segments": [
           {
@@ -565,15 +565,15 @@
             "n": 1
           },
           {
-            "t": " fromages. Sur le comptoir, il y a "
+            "t": " fromages. Trois souris poussent un gros morceau "
           },
           {
-            "from": "de le",
-            "to": "du",
+            "from": "du",
+            "to": "de",
             "n": 2
           },
           {
-            "t": " comté et du chèvre. Le fromager ne vend pas "
+            "t": " fromage. Sur le comptoir, il n’y a plus "
           },
           {
             "from": "du",
@@ -581,23 +581,23 @@
             "n": 3
           },
           {
-            "t": " gruyère râpé. Moi, "
+            "t": " comté. Dans la vitrine, il y a "
           },
           {
-            "from": "j’aime du",
-            "to": "j’aime le",
+            "from": "de le",
+            "to": "du",
             "n": 4
           },
           {
-            "t": " brie, alors je voudrais un morceau "
+            "t": " brie et des chèvres. Le pigeon "
           },
           {
-            "from": "du",
-            "to": "de",
+            "from": "n’aime pas des",
+            "to": "n’aime pas les",
             "n": 5
           },
           {
-            "t": " brie."
+            "t": " souris !"
           }
         ],
         "corrections": [
@@ -610,37 +610,37 @@
           },
           {
             "n": 2,
-            "from": "de le",
-            "to": "du",
-            "rule": "De + le = du",
-            "why": "De and le always merge into du: du comté. Only de la and de l’ stay apart."
+            "from": "du",
+            "to": "de",
+            "rule": "Un morceau de",
+            "why": "After a quantity like un morceau, only de: un gros morceau de fromage."
           },
           {
             "n": 3,
             "from": "du",
             "to": "de",
             "rule": "Négation + de",
-            "why": "After a negation, du becomes de: il ne vend pas de gruyère râpé."
+            "why": "After a negation, du becomes de: il n’y a plus de comté."
           },
           {
             "n": 4,
-            "from": "j’aime du",
-            "to": "j’aime le",
-            "rule": "Aimer + le",
-            "why": "Aimer talks about brie in general, so it takes the definite article: j’aime le brie."
+            "from": "de le",
+            "to": "du",
+            "rule": "De + le = du",
+            "why": "De and le always merge into du: du brie. Only de la and de l’ stay apart."
           },
           {
             "n": 5,
-            "from": "du",
-            "to": "de",
-            "rule": "Un morceau de",
-            "why": "After a quantity like un morceau, only de: un morceau de brie."
+            "from": "n’aime pas des",
+            "to": "n’aime pas les",
+            "rule": "Aimer + les",
+            "why": "Aimer talks about mice in general, so it takes the definite article, even in the negative: il n’aime pas les souris."
           }
         ],
-        "corrected": "Dans la fromagerie, il y a beaucoup de fromages. Sur le comptoir, il y a du comté et du chèvre. Le fromager ne vend pas de gruyère râpé. Moi, j’aime le brie, alors je voudrais un morceau de brie.",
-        "spoken": "Dans la fromagerie, y a plein de fromages. Sur le comptoir, y a du comté et du chèvre. Le gruyère râpé, il en vend pas. Moi, j’adore le brie, donc je vais prendre un bout de brie.",
-        "spokenNote": "Il y a becomes y a, beaucoup becomes plein, and en stands in for the gruyère, with the ne dropped. Un morceau becomes un bout.",
-        "praise": "Nice “du chèvre”!"
+        "corrected": "Dans la fromagerie, il y a beaucoup de fromages. Trois souris poussent un gros morceau de fromage. Sur le comptoir, il n’y a plus de comté. Dans la vitrine, il y a du brie et des chèvres. Le pigeon n’aime pas les souris !",
+        "spoken": "Dans la fromagerie, y a plein de fromages. Trois souris poussent un énorme bout de fromage. Sur le comptoir, y a plus de comté : elles l’ont tout mangé ! Dans la vitrine, y a du brie et des chèvres. Et le pigeon, les souris, il les aime pas du tout !",
+        "spokenNote": "Y a for il y a, plein de for beaucoup de, un bout for un morceau, and the ne drops. The mice move to the front for emphasis: les souris, il les aime pas.",
+        "praise": "Nice “des chèvres”!"
       }
     }
   },
