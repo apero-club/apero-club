@@ -16,8 +16,8 @@
     },
     {
       "shape": "halves",
-      "bg": "green-900",
-      "fg": "sun-300",
+      "bg": "sky-300",
+      "fg": "violet-500",
       "eyes": "look",
       "blink": true
     },
@@ -45,8 +45,8 @@
     },
     {
       "shape": "halves",
-      "bg": "green-900",
-      "fg": "sun-300",
+      "bg": "sky-300",
+      "fg": "violet-500",
       "eyes": "look",
       "blink": true
     }

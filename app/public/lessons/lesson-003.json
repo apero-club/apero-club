@@ -16,8 +16,8 @@
     },
     {
       "shape": "circle",
-      "bg": "sky-500",
-      "fg": "sun-300",
+      "bg": "lilac-500",
+      "fg": "violet-500",
       "eyes": "look",
       "blink": true
     },
@@ -30,8 +30,8 @@
   "heroWide": [
     {
       "shape": "circle",
-      "bg": "sky-500",
-      "fg": "sun-300",
+      "bg": "lilac-500",
+      "fg": "violet-500",
       "eyes": "look",
       "blink": true
     },

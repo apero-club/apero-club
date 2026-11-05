@@ -12,7 +12,7 @@
     {
       "shape": "flower",
       "bg": "orange-500",
-      "fg": "sun-300",
+      "fg": "violet-500",
       "eyes": "look",
       "blink": true
     },
@@ -34,11 +34,9 @@
       "alt": ""
     },
     {
-      "shape": "flower",
-      "bg": "orange-500",
-      "fg": "sun-300",
-      "eyes": "look",
-      "blink": true
+      "image": "illo-wine.svg",
+      "bg": "pink-500",
+      "alt": ""
     },
     {
       "pattern": "checker",
@@ -46,9 +44,11 @@
       "b": "sun-500"
     },
     {
-      "image": "illo-wine.svg",
-      "bg": "pink-500",
-      "alt": ""
+      "shape": "flower",
+      "bg": "orange-500",
+      "fg": "violet-500",
+      "eyes": "look",
+      "blink": true
     }
   ],
   "place": "rue Mouffetard, 5e",

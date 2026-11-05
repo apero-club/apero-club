@@ -145,6 +145,14 @@ describe('Today art: variety across lessons', () => {
     if (l.heroWide) check(l.heroWide, WIDE_NEXT, 'desktop');
   });
 
+  it('blue (violet-500, the ultramarine) is the character colour at least twice as often as any other', () => {
+    const family = (tok: string) => tok.split('-')[0];
+    const counts: Record<string, number> = {};
+    for (const [, l] of lessons) { const f = family((l.hero.find(isFace) as { fg: string }).fg); counts[f] = (counts[f] ?? 0) + 1; }
+    const blue = counts.violet ?? 0;
+    for (const [f, n] of Object.entries(counts)) if (f !== 'violet') expect(blue, `blue characters: ${blue}, ${f}: ${n}. Make the next character blue.`).toBeGreaterThanOrEqual(2 * n);
+  });
+
   it('the character changes square from one lesson to the next, and its shape within any 3 lessons', () => {
     for (let i = 1; i < lessons.length; i++) {
       const [id, l] = lessons[i], [prevId, prev] = lessons[i - 1];

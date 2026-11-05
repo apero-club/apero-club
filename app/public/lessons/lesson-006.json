@@ -22,7 +22,7 @@
     {
       "shape": "pill",
       "bg": "sun-300",
-      "fg": "pink-500",
+      "fg": "orange-500",
       "eyes": "wide",
       "blink": true
     }
@@ -31,7 +31,7 @@
     {
       "shape": "pill",
       "bg": "sun-300",
-      "fg": "pink-500",
+      "fg": "orange-500",
       "eyes": "wide",
       "blink": true
     },
