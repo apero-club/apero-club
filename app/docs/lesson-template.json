@@ -135,6 +135,18 @@
       "en train de",
       "au premier plan"
     ],
+    "checklist": [
+      {
+        "text": "Did you use *the grammar point* at least once? *un exemple*"
+      },
+      {
+        "text": "Did you use two words from the story’s world? *un mot*, *un autre*…"
+      },
+      {
+        "text": "Try something a bit harder: *un exemple*.",
+        "bonus": true
+      }
+    ],
     "scene": "Plain-English description of everything in the image, for a future AI tutor.",
     "sample": {
       "text": "Il y a un pigeon. Il porte un chapeau blanc.",

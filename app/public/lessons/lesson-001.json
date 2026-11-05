@@ -520,6 +520,21 @@
       "dans la vitrine",
       "on dirait que"
     ],
+    "checklist": [
+      {
+        "text": "Did you use *en* to avoid repeating a word? *Il y en a trois.*"
+      },
+      {
+        "text": "Did you add one polite request with *je voudrais*?"
+      },
+      {
+        "text": "Did you use two bakery words? *le comptoir*, *la vitrine*, *une baguette*…"
+      },
+      {
+        "text": "Write one sentence in the past, mixing *imparfait* and *passé composé*.",
+        "bonus": true
+      }
+    ],
     "scene": "A flat, colourful illustration of a bakery run by pigeons. Behind the counter, a violet pigeon baker in a white chef’s hat and apron hands a takeaway coffee across the counter and holds a plate with a croissant. In front, a pink pigeon customer with orange legs carries a cream tote bag with a croissant printed on it and points at the coffee. The glass display case holds croissants, a long loaf, a strawberry cream cake, chocolate chip cookies and a dark chocolate cake topped with cherries. On the pink shelves behind: a loaf, sesame brioche buns, cupcakes with cherries and a hanging plant. Two violet pendant lamps hang from the ceiling. There is a potted plant on the counter, a coffee machine with cups, cookies under a glass dome, an arched window with green bushes outside, and a pink and white checkerboard floor.",
     "sample": {
       "text": "Dans la boulangerie, il y a deux pigeons. Le boulanger porte un chapeau blanc et il donne un café a la cliente. La pigeon rose a un sac avec un croissant dessus. Dans la vitrine, il y a beaucoup des gâteaux et des croissants qui a l’air délicieux. Au plafond, on voit deux lampes violet.",

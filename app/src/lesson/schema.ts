@@ -165,6 +165,17 @@ export const CorrectionResult = z.object({
   praise: z.string(),
 }).strict();
 
+/**
+ * One self-check item on the Décrire step, in English, with French examples between
+ * asterisks (shown in italics): "Did you use *ne… plus* at least once?".
+ * `bonus` marks the optional stretch item (shown with a Bonus tag; don't write "Bonus:").
+ */
+const ChecklistItem = z.object({
+  text: z.string().min(1),
+  bonus: z.boolean().optional(),
+}).strict();
+export type ChecklistItem = z.output<typeof ChecklistItem>;
+
 const Describe = z.object({
   /** File in public/lessons/<date>/. Square, cropped into an arch. */
   image: z.string(),
@@ -177,6 +188,11 @@ const Describe = z.object({
   placeholder: z.string(),
   /** Tap-to-insert phrase chips. A trailing "…" is stripped when inserted. */
   helpers: z.array(z.string()).max(8),
+  /**
+   * 3 or 4 things to look for in your own writing, shown between the writing box and
+   * Compare: 1–2 on the grammar, 1 on the vocab, and optionally 1 bonus, last.
+   */
+  checklist: z.array(ChecklistItem).min(3).max(4),
   /** Plain-English description of the image, for a future AI tutor. Never shown. */
   scene: z.string(),
   /** A typical learner description with mistakes, and its worked corrections. */
@@ -238,6 +254,11 @@ export const LessonSchema = z.object({
     if (q.listen && q.quote) err(['quiz', qi], 'Use either listen or quote, not both');
     if (q.note && !notes.has(q.note)) err(['quiz', qi, 'note'], `Unknown note "${q.note}"`);
   });
+  const cl = l.describe.checklist;
+  const bonuses = cl.filter(i => i.bonus).length;
+  if (bonuses > 1) err(['describe', 'checklist'], 'At most one bonus item');
+  if (bonuses === 1 && !cl[cl.length - 1].bonus) err(['describe', 'checklist'], 'The bonus item goes last');
+  if (cl.length - bonuses < 2 || cl.length - bonuses > 3) err(['describe', 'checklist'], 'Write 2 or 3 regular items (grammar and vocab), plus at most one bonus');
   const s = l.describe.sample;
   const rebuilt = s.result.segments.map(g => ('t' in g ? g.t : g.from)).join('');
   if (rebuilt !== s.text) err(['describe', 'sample', 'result', 'segments'], 'Segments must rebuild sample.text exactly');

@@ -551,6 +551,21 @@
       "à travers la brume",
       "on dirait que"
     ],
+    "checklist": [
+      {
+        "text": "Did you use *ne… plus* at least once? *On ne voit plus…*"
+      },
+      {
+        "text": "Did you use *rien*, *personne* or *jamais*?"
+      },
+      {
+        "text": "Did you use two fog or visibility words? *le brouillard*, *la brume*, *au loin*…"
+      },
+      {
+        "text": "Write one sentence the Parisian way, without the *ne*: *on voit rien*.",
+        "bonus": true
+      }
+    ],
     "scene": "A flat, colourful illustration of the Trocadéro esplanade in Paris in thick fog. In the foreground, on a green bench, an older man in a dark coat and flat cap throws bread to four pigeons on the paving stones. Beside the bench stands a woman with grey hair, a raincoat and a paper map, looking worried. Behind them, pale grey bands of fog cover the view; across the river, the top of the Eiffel Tower is only a faint violet outline, and the rest of the tower has disappeared into the fog. A row of street lamps fades into the mist. The sky is overcast and grey. There is no sun.",
     "sample": {
       "text": "Il y a beaucoup de brouillard au Trocadéro. Le ciel est gris et les nuages est bas. On ne voit pas rien au loin, et la tour Eiffel n’est pas plus là. Sur le banc, un homme donne du pain à les pigeons. Il ne y a personne d’autre.",

@@ -15,6 +15,7 @@ import { LessonSheet } from '../screens/Lessons';
 import type { AppCtx, Screen } from '../screens/common';
 import { Eyebrow, pad, PRAISE, STEPS } from '../screens/common';
 import { stepColors } from '../lesson/palette';
+import { Checklist } from '../screens/Checklist';
 import { FillImage, HeroTile, listenColors, storyImage } from '../screens/HeroTile';
 
 const EN_LABEL = { story: 'Listen', quiz: 'Check', spoken: 'Say it', describe: 'Write' } as const;
@@ -509,12 +510,13 @@ function DDescribe({ app, screen }: P) {
           <span style={{ font: '700 14px/1 var(--font-body)' }}>Your description</span>
           <textarea className="textarea" rows={7} lang="fr" value={text} onChange={e => setText(e.target.value)} placeholder={d.placeholder} style={{ minHeight: 180, resize: 'vertical', lineHeight: 1.55 }} />
         </label>
+        <Checklist items={d.checklist} />
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10, alignItems: 'center' }}>
-          <Button size="lg" icon="check" onClick={() => go('result')}>Check</Button>
+          <Button size="lg" icon="arrow-right" onClick={() => go('result')}>Compare</Button>
           <Button variant="ghost" size="lg" icon="sparkles" onClick={() => setText(d.sample.text)}>Try a sample</Button>
           <span style={{ marginLeft: 'auto', fontSize: 13, color: 'var(--fg-3)' }}>{words} word{words === 1 ? '' : 's'}</span>
         </div>
-        <p style={{ margin: 0, fontSize: 13, lineHeight: 1.45, color: 'var(--fg-3)' }}>Checking your own writing is coming soon. For now, Check shows a typical description with every correction explained.</p>
+        <p style={{ margin: 0, fontSize: 13, lineHeight: 1.45, color: 'var(--fg-3)' }}>Checking your own writing is coming soon. For now, Compare shows a typical description of the scene with every correction explained.</p>
       </div>
     </section>
 

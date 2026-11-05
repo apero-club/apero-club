@@ -555,6 +555,21 @@
       "la caméra de surveillance",
       "j’ai eu la chair de poule"
     ],
+    "checklist": [
+      {
+        "text": "Did you use two reflexive verbs with *être*? *je me suis caché*"
+      },
+      {
+        "text": "Do your participles agree? *elle s’est levée*, *elle s’est assise*"
+      },
+      {
+        "text": "Did you use two night or museum words? *un craquement*, *le cadre*, *il faisait noir*…"
+      },
+      {
+        "text": "Try a reflexive verb in the negative: *je ne me suis pas endormi*.",
+        "bonus": true
+      }
+    ],
     "scene": "A flat, colourful illustration of a museum gallery at night, in deep blues. On the wall hangs a large gilded frame, and the painting inside is empty except for a small plum-coloured chair. In the corner, a security camera with a red light. On the left, a white sculpture of a head on a plinth. A tall arched window shows the moon, and moonlight falls across the parquet floor. In the middle of the room, a blue visitors’ armchair is turned towards the window. A faint beam of torchlight crosses the floor.",
     "sample": {
       "text": "Il faisait noir dans la salle. Je me suis assis devant le tableau, et je m’ai endormi. Puis j’ai entendu un craquement et je me suis caché derrière la sculpture. La femme du portrait s’est levé et elle s’est assis dans le fauteuil. Nous nous sommes parlés, mais elle ne s’est retourné pas.",
