@@ -283,8 +283,8 @@
     "lea": {
       "name": "Léa",
       "description": "A Parisian woman in her thirties, middle-aged rather than young. Charming and warm, slightly flustered; speaks her most elegant French.",
-      "voiceId": "",
-      "status": "needs-voice",
+      "voiceId": "sQfOhaIRbFZ7R8bP1x9f",
+      "status": "approved",
       "firstLesson": "lesson-008",
       "rejected": [
         "2oMnSKxLeHBxE0KdeHJD",
@@ -301,8 +301,8 @@
     "henri": {
       "name": "Henri",
       "description": "The maître d’ of a smart Paris restaurant, an older man in his fifties. Theatrical and grandiose, endlessly obsequious, grand gestures.",
-      "voiceId": "",
-      "status": "needs-voice",
+      "voiceId": "n1u6R6yj3qEpDLH3liBh",
+      "status": "approved",
       "firstLesson": "lesson-008",
       "rejected": [
         "9tZ0TkblLDiUBWp2EbTv",
@@ -319,8 +319,8 @@
     "madame-dupont": {
       "name": "Madame Dupont",
       "description": "The most feared food critic in Paris, an older Parisian woman in her sixties. Dry, sharp and calm, with a sudden warm laugh.",
-      "voiceId": "",
-      "status": "needs-voice",
+      "voiceId": "40Rmxv431tMaTTYB09bz",
+      "status": "approved",
       "firstLesson": "lesson-008",
       "rejected": [
         "2oMnSKxLeHBxE0KdeHJD",

@@ -195,6 +195,44 @@
         "expressive"
       ],
       "notes": "Madame Zara's voice (chosen by hand)."
+    },
+    {
+      "id": "sQfOhaIRbFZ7R8bP1x9f",
+      "name": "",
+      "gender": "female",
+      "age": "middle",
+      "accent": "parisian",
+      "tags": [
+        "warm",
+        "charming"
+      ],
+      "notes": "Léa's voice (chosen by hand)."
+    },
+    {
+      "id": "n1u6R6yj3qEpDLH3liBh",
+      "name": "",
+      "gender": "male",
+      "age": "older",
+      "accent": "parisian",
+      "tags": [
+        "theatrical",
+        "grand",
+        "obsequious"
+      ],
+      "notes": "Henri's voice (chosen by hand)."
+    },
+    {
+      "id": "40Rmxv431tMaTTYB09bz",
+      "name": "",
+      "gender": "female",
+      "age": "older",
+      "accent": "parisian",
+      "tags": [
+        "dry",
+        "sharp",
+        "calm"
+      ],
+      "notes": "Madame Dupont's voice (chosen by hand)."
     }
   ]
 }

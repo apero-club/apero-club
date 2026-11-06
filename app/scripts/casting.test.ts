@@ -30,6 +30,14 @@ describe('the real pool and registry', () => {
     expect(r.approved).toEqual({ narrator: 'Xy5q4w05TJGcKXPWeWoz', 'madame-lefevre': 'QGfpyFuk3rtPv4pRSQwp', 'la-boulangere': 'L9J8xZmPSCimnHB0LjN1' });
     expect(reg).toEqual(realReg);
   });
+  it('no two characters share a voice (tell the user if a new voice ID is already taken)', () => {
+    const owner = new Map<string, string>();
+    for (const [id, c] of Object.entries(realReg.characters)) {
+      if (!c.voiceId || c.status === 'rejected') continue;
+      expect(owner.get(c.voiceId), `${id} and ${owner.get(c.voiceId)} both use voice ${c.voiceId}`).toBeUndefined();
+      owner.set(c.voiceId, id);
+    }
+  });
   it('every approved character has a voice ID', () => {
     for (const c of Object.values(realReg.characters)) if (c.status === 'approved') expect(c.voiceId).toMatch(/^\w{10,}$/);
   });
