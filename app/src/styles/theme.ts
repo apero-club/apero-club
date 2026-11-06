@@ -1,6 +1,7 @@
 /**
- * Lesson hero colour pairs. Each lesson picks one by id in its `heroPair` field
- * (default: ultramarine-pink, the original look). The hero band takes `bg`; the
+ * Lesson hero colour pairs. Every lesson uses ultramarine-pink, the signature look
+ * (leave `heroPair` out). The others are parked for special editions, such as
+ * holiday lessons, and are only used when the user asks for one. The hero band takes `bg`; the
  * headline, eyebrow and the Start button take `accent`. The summary text colour
  * is derived from `bg` (src/ds/color.ts), so a light background gets dark text.
  *

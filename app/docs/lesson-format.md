@@ -36,7 +36,7 @@ To review lessons before they go live, open `/__preview` on the live site and en
 | `level` | Defaults to `"A2 to B1"`. Not shown in the app yet. |
 | `minutes` | Time for each step: `story`, `quiz`, `phrases`, `describe`. The Today total is their sum. |
 | `heroWide` | Optional. The 2×2 grid beside the hero on desktop: 4 squares, each an illustration, a kit shape, or a pattern `{ "pattern": "checker" \| "halves" \| "clouds", "a", "b" }`. Make one or two about the story, and give one shape eyes. Without it, desktop uses a checker plus the 3 `hero` squares. |
-| `heroPair` | Optional. The hero's colour pair, by id from `src/styles/theme.ts`: background for the band, accent for the headline, eyebrow and Start button. Defaults to `ultramarine-pink`. |
+| `heroPair` | Optional, and normally left out: every lesson uses `ultramarine-pink`. The other pairs in `src/styles/theme.ts` are for special editions (holidays) only. |
 | `place` | Optional. A short place line under the story title on desktop, e.g. `"rue des Martyrs, 9e"`. |
 | `hero` | Exactly 3 squares under the phone hero. Each is either an illustration `{ "image", "bg", "alt" }` or a kit shape `{ "shape", "bg", "fg", "eyes"?, "blink"? }`. Make at least one about the story (the croissant), and give at most one shape eyes. |
 | `cast` | The voices in the story. See below. |
