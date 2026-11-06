@@ -535,7 +535,7 @@
   ],
   "describe": {
     "image": "scene-poisson.webp",
-    "alt": "A fortune teller in a pink headscarf frowns into her crystal ball, where a pink fish is swimming; an orange cat on the next chair stares at it excitedly, and a grumpy blue pigeon watches from the windowsill",
+    "alt": "A fortune teller in a striped headscarf frowns into her crystal ball, where a pink fish is swimming; an orange cat on the next chair stares at it excitedly, and a grumpy blue pigeon watches from the windowsill",
     "imagePosition": "50% 50%",
     "caption": "Montmartre · un mardi, 15 h",
     "instructions": "Write 3 to 5 sentences: look at the scene and predict what happens next. Use the futur proche, the futur simple, and quand + future.",
@@ -550,7 +550,7 @@
       "un poisson rose",
       "les cartes de tarot"
     ],
-    "scene": "A flat, colourful illustration of a fortune teller’s room with lilac curtains. At a round table with a pink scalloped tablecloth sits a fortune teller with long blue hair, a pink headscarf, big gold hoop earrings and a pink waistcoat. She frowns and looks surprised at her crystal ball, in which a pink and orange fish is swimming and smiling. Three tarot cards with green leaves lie face up on the table. On the chair next to her, an orange cat with white spots leans on the table and stares at the fish with wide, excited eyes. Through an arched window behind them, a grumpy blue pigeon sits on the windowsill, with a blue sky, a cloud and green bushes outside.",
+    "scene": "A flat, colourful illustration of a fortune teller’s room with lilac curtains. At a round table with a pink scalloped tablecloth sits a fortune teller with long blue hair, a striped pink, orange and yellow headscarf, small gold earrings and a pink waistcoat. She frowns and looks surprised at her crystal ball, in which a pink and orange fish is swimming and smiling. Three tarot cards with green leaves lie face up on the table. On the chair next to her, an orange cat with white spots leans on the table and stares at the fish with wide, excited eyes. Through an arched window behind them, a grumpy blue pigeon sits on the windowsill, with a blue sky, a cloud and green bushes outside.",
     "sample": {
       "text": "Dans la boule de cristal, il y a une poisson rose. Dans deux secondes, le chat va saute sur la table. Quand il attrape le poisson, la voyante sera furieuse. Demain, elle achetera un nouveau poisson, mais elle ne pouvera pas oublier ce chat. Et le pigeon ? Il va rigoler, comme d’habitude !",
       "result": {
