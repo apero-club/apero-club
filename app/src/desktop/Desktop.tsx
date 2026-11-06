@@ -8,7 +8,7 @@ import { useEffect, useState, type ReactNode } from 'react';
 import { Badge, Button, ChoiceBlock, IconButton, type ChoiceState } from '../ds/controls';
 import { Critter, FillTile, ShapeTile, tok, type ShapeName } from '../ds/brand';
 import { Icon } from '../ds/Icon';
-import { isDialogue, stripDash } from '../lesson/story';
+import { castGroups, isDialogue, stripDash } from '../lesson/story';
 import type { HeroTileT, Lesson, LessonNote } from '../lesson/schema';
 import { groupLessons, isDone, lessonStatus, topicsOf, useLessonList } from '../library';
 import { LessonSheet } from '../screens/Lessons';
@@ -248,12 +248,16 @@ function DStory({ app }: P) {
 
     <section style={{ maxWidth: 880, margin: '0 auto', padding: '20px 20px 0' }}>
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px 22px', alignItems: 'center', padding: '6px 0 18px' }}>
-        {lesson.cast.map((c, i) => (
-          <span key={c.id} style={{ display: 'flex', gap: 10, alignItems: 'center' }}>
-            <Critter kind={c.critter.kind} color={c.critter.color} size={44} blink blinkDelay={i * 0.8} />
+        {castGroups(lesson.cast).map((g, gi) => (
+          <span key={g[0].id} style={{ display: 'flex', gap: 10, alignItems: 'center' }}>
+            <span style={{ display: 'flex', gap: 2 }}>
+              {g.map((c, k) => <Critter key={c.id} kind={c.critter.kind} color={c.critter.color} size={44} blink blinkDelay={(gi + k) * 0.8} />)}
+            </span>
             <span style={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
-              <span style={{ font: '700 15px/1.1 var(--font-body)', color: tok(c.color) }}>{c.name}</span>
-              {c.role && <span style={{ fontSize: 13, color: 'var(--fg-3)' }}>{c.role}</span>}
+              <span style={{ font: '700 15px/1.1 var(--font-body)' }}>
+                {g.map((c, k) => <span key={c.id}>{k > 0 && <span style={{ color: 'var(--fg-3)' }}> & </span>}<span style={{ color: tok(c.color) }}>{c.name}</span></span>)}
+              </span>
+              {g[0].role && <span style={{ fontSize: 13, color: 'var(--fg-3)' }}>{g[0].role}</span>}
             </span>
           </span>
         ))}

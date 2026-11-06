@@ -69,7 +69,7 @@
     {
       "id": "lea",
       "name": "Léa",
-      "role": "celebrating her anniversary",
+      "role": "celebrating their anniversary",
       "description": "A Parisian woman in her thirties, middle-aged rather than young. Charming and warm, slightly flustered; speaks her most elegant French.",
       "color": "violet-500",
       "critter": {
@@ -81,7 +81,7 @@
     {
       "id": "malik",
       "name": "Malik",
-      "role": "Léa’s husband",
+      "role": "celebrating their anniversary",
       "description": "Léa’s husband, a Parisian man in his thirties, middle-aged rather than young. Sweet and a little nervous, trying his politest French; warm.",
       "color": "sun-900",
       "critter": {

@@ -25,3 +25,16 @@ export function flattenStory(lesson: LessonData): { lines: FlatLine[]; paragraph
   }));
   return { lines, paragraphs };
 }
+
+/**
+ * The cast key's entries: characters next to each other in the cast list who share
+ * the same role (Léa and Malik, "celebrating their anniversary") show as one entry.
+ */
+export function castGroups<C extends { id: string; role?: string }>(cast: C[]): C[][] {
+  const groups: C[][] = [];
+  for (const c of cast) {
+    const last = groups[groups.length - 1];
+    if (last && c.role && last[0].role === c.role) last.push(c); else groups.push([c]);
+  }
+  return groups;
+}

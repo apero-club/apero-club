@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Button, IconButton } from '../ds/controls';
 import { Critter, FillTile, tok } from '../ds/brand';
 import { Icon } from '../ds/Icon';
-import { isDialogue } from '../lesson/story';
+import { castGroups, isDialogue } from '../lesson/story';
 import type { AppCtx } from './common';
 import { Eyebrow, SessionHeader } from './common';
 import { FillImage, listenColors, storyImage } from './HeroTile';
@@ -47,10 +47,12 @@ export function Story({ app }: { app: AppCtx }) {
       </div>
 
       <div style={{ padding: '16px 20px 4px', display: 'flex', flexWrap: 'wrap', gap: '10px 16px' }}>
-        {lesson.cast.map((c, i) => (
-          <span key={c.id} style={{ display: 'flex', gap: 6, alignItems: 'center' }}>
-            <Critter kind={c.critter.kind} color={c.critter.color} size={30} blink blinkDelay={i * 0.8} />
-            <span style={{ font: '700 13px/1 var(--font-body)', color: tok(c.color) }}>{c.name}</span>
+        {castGroups(lesson.cast).map((g, gi) => (
+          <span key={g[0].id} style={{ display: 'flex', gap: 6, alignItems: 'center' }}>
+            {g.map((c, k) => <Critter key={c.id} kind={c.critter.kind} color={c.critter.color} size={30} blink blinkDelay={(gi + k) * 0.8} />)}
+            <span style={{ font: '700 13px/1 var(--font-body)' }}>
+              {g.map((c, k) => <span key={c.id}>{k > 0 && <span style={{ color: 'var(--fg-3)' }}> & </span>}<span style={{ color: tok(c.color) }}>{c.name}</span></span>)}
+            </span>
           </span>
         ))}
       </div>
