@@ -316,6 +316,49 @@
         ]
       ]
     },
+    "malik|« Ce serait possible d’avoir un peu de pain ? »": {
+      "file": "0914c894648c0c7e.mp3",
+      "voice": "QXJCt9L8UTCLre9Ufe5Q",
+      "delivery": "7dcbd293",
+      "words": [
+        [
+          2,
+          0
+        ],
+        [
+          5,
+          0.232
+        ],
+        [
+          12,
+          0.534
+        ],
+        [
+          21,
+          0.975
+        ],
+        [
+          29,
+          1.324
+        ],
+        [
+          32,
+          1.451
+        ],
+        [
+          36,
+          1.602
+        ],
+        [
+          39,
+          1.741
+        ],
+        [
+          44,
+          1.985
+        ]
+      ]
+    },
     "narrator|— Installez-moi avec eux. Je voudrais savoir comment ils ont fait.": {
       "file": "4c3049f5679cd0f2.mp3",
       "voice": "Xy5q4w05TJGcKXPWeWoz",
