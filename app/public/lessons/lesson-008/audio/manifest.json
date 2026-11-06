@@ -3,8 +3,8 @@
   "model": "eleven_multilingual_v2",
   "clips": {
     "henri|— Madame Dupont ! Quel honneur ! Je vous ai gardé notre meilleure table.": {
-      "file": "01a59c1f016711c2.mp3",
-      "voice": "n1u6R6yj3qEpDLH3liBh",
+      "file": "a82d335b0c59f475.mp3",
+      "voice": "AgCKJTfnUgOEB18JJpqg",
       "delivery": "8800ea84",
       "words": [
         [
@@ -13,57 +13,57 @@
         ],
         [
           9,
-          0.372
+          0.464
         ],
         [
           16,
-          0.72
+          0.952
         ],
         [
           18,
-          0.975
+          1.207
         ],
         [
           23,
-          1.196
+          1.486
         ],
         [
           31,
-          1.533
+          1.985
         ],
         [
           33,
-          1.811
+          2.334
         ],
         [
           36,
-          1.939
+          2.473
         ],
         [
           41,
-          2.101
+          2.647
         ],
         [
           44,
-          2.206
+          2.728
         ],
         [
           50,
-          2.554
+          3.065
         ],
         [
           56,
-          3.053
+          3.379
         ],
         [
           66,
-          3.727
+          3.738
         ]
       ]
     },
     "henri|— Mais bien sûr ! Tout ce que vous voudrez, madame, monsieur.": {
-      "file": "53bbbf2d5e2a0c9e.mp3",
-      "voice": "n1u6R6yj3qEpDLH3liBh",
+      "file": "fb34633345cddcb4.mp3",
+      "voice": "AgCKJTfnUgOEB18JJpqg",
       "delivery": "8800ea84",
       "words": [
         [
@@ -76,39 +76,39 @@
         ],
         [
           12,
-          0.441
+          0.453
         ],
         [
           16,
-          0.778
+          0.871
         ],
         [
           18,
-          1.254
+          1.103
         ],
         [
           23,
-          1.474
+          1.324
         ],
         [
           26,
-          1.637
+          1.463
         ],
         [
           30,
-          1.788
+          1.602
         ],
         [
           35,
-          1.939
+          1.765
         ],
         [
           44,
-          2.299
+          2.125
         ],
         [
           52,
-          2.647
+          2.496
         ]
       ]
     },
@@ -281,6 +281,41 @@
         ]
       ]
     },
+    "madame-dupont|« Bonsoir. J’avais réservé au nom de Dupont. »": {
+      "file": "b5af79563b162d2f.mp3",
+      "voice": "40Rmxv431tMaTTYB09bz",
+      "delivery": "dfe025ca",
+      "words": [
+        [
+          2,
+          0
+        ],
+        [
+          11,
+          0.824
+        ],
+        [
+          19,
+          1.126
+        ],
+        [
+          27,
+          1.556
+        ],
+        [
+          30,
+          1.66
+        ],
+        [
+          34,
+          1.834
+        ],
+        [
+          37,
+          1.962
+        ]
+      ]
+    },
     "narrator|— Installez-moi avec eux. Je voudrais savoir comment ils ont fait.": {
       "file": "4c3049f5679cd0f2.mp3",
       "voice": "Xy5q4w05TJGcKXPWeWoz",
@@ -382,40 +417,6 @@
         [
           81,
           3.843
-        ]
-      ]
-    },
-    "narrator|« Bonsoir. J’avais réservé au nom de Dupont. »": {
-      "file": "6944ae7632fb5ec5.mp3",
-      "voice": "Xy5q4w05TJGcKXPWeWoz",
-      "words": [
-        [
-          2,
-          0
-        ],
-        [
-          11,
-          0.511
-        ],
-        [
-          19,
-          0.778
-        ],
-        [
-          27,
-          1.126
-        ],
-        [
-          30,
-          1.231
-        ],
-        [
-          34,
-          1.405
-        ],
-        [
-          37,
-          1.533
         ]
       ]
     },
