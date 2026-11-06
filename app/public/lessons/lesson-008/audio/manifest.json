@@ -59,7 +59,8 @@
           66,
           3.738
         ]
-      ]
+      ],
+      "lufs": -17.7
     },
     "henri|— Mais bien sûr ! Tout ce que vous voudrez, madame, monsieur.": {
       "file": "fb34633345cddcb4.mp3",
@@ -110,7 +111,8 @@
           52,
           2.496
         ]
-      ]
+      ],
+      "lufs": -19.5
     },
     "lea|— Nous aimerions goûter votre plat du jour. Pourriez-vous nous conseiller un vin ?": {
       "file": "ccc19245af55b6b9.mp3",
@@ -169,7 +171,8 @@
           81,
           3.634
         ]
-      ]
+      ],
+      "lufs": -19.4
     },
     "lea|— Nous sommes vraiment désolés… Ça vous dérangerait de nous laisser finir le dessert ?": {
       "file": "52adeffa47280701.mp3",
@@ -232,7 +235,8 @@
           85,
           4.11
         ]
-      ]
+      ],
+      "lufs": -19.7
     },
     "madame-dupont|— Installez-moi avec eux. Je voudrais savoir comment ils ont fait.": {
       "file": "b39588ebc22110ed.mp3",
@@ -279,7 +283,8 @@
           61,
           3.135
         ]
-      ]
+      ],
+      "lufs": -20.2
     },
     "madame-dupont|« Bonsoir. J’avais réservé au nom de Dupont. »": {
       "file": "b5af79563b162d2f.mp3",
@@ -314,7 +319,8 @@
           37,
           1.962
         ]
-      ]
+      ],
+      "lufs": -18.2
     },
     "malik|« Ce serait possible d’avoir un peu de pain ? »": {
       "file": "0914c894648c0c7e.mp3",
@@ -357,7 +363,8 @@
           44,
           1.985
         ]
-      ]
+      ],
+      "lufs": -19.4
     },
     "narrator|— Installez-moi avec eux. Je voudrais savoir comment ils ont fait.": {
       "file": "4c3049f5679cd0f2.mp3",
@@ -403,7 +410,8 @@
           61,
           2.879
         ]
-      ]
+      ],
+      "lufs": -20.1
     },
     "narrator|— Nous aimerions goûter votre plat du jour. Pourriez-vous nous conseiller un vin ?": {
       "file": "de56dbc9bc31e36b.mp3",
@@ -461,7 +469,8 @@
           81,
           3.843
         ]
-      ]
+      ],
+      "lufs": -19.8
     },
     "narrator|Au dessert, une dame en manteau noir est entrée.": {
       "file": "99f5277ccd1ac031.mp3",
@@ -503,7 +512,8 @@
           41,
           2.125
         ]
-      ]
+      ],
+      "lufs": -20.2
     },
     "narrator|Auriez-vous une table près de la fenêtre ?": {
       "file": "070859a693ef4713.mp3",
@@ -541,7 +551,8 @@
           41,
           1.73
         ]
-      ]
+      ],
+      "lufs": -18.4
     },
     "narrator|Avant, nous aimions ce restaurant.": {
       "file": "1f410abbdf0b8b5d.mp3",
@@ -567,7 +578,8 @@
           23,
           1.103
         ]
-      ]
+      ],
+      "lufs": -19.5
     },
     "narrator|Bonsoir ! La carte, s’il vous plaît. On aimerait goûter le plat du jour. Vous pourriez nous conseiller un vin ? Et on pourrait avoir une carafe d’eau ? En dessert, je vais prendre la tarte au citron. Et on pourra avoir l’addition après ?": {
       "file": "1456979f84feb195.mp3",
@@ -753,7 +765,8 @@
           236,
           13.816
         ]
-      ]
+      ],
+      "lufs": -19.7
     },
     "narrator|Bonsoir. J’avais réservé au nom de Dupont.": {
       "file": "6944ae7632fb5ec5.mp3",
@@ -787,7 +800,8 @@
           35,
           1.533
         ]
-      ]
+      ],
+      "lufs": -19
     },
     "narrator|C’était délicieux.": {
       "file": "e01503417a018085.mp3",
@@ -801,7 +815,8 @@
           8,
           0.395
         ]
-      ]
+      ],
+      "lufs": -19
     },
     "narrator|C’était trop bon !": {
       "file": "aa3ac708180429eb.mp3",
@@ -823,7 +838,8 @@
           17,
           0.929
         ]
-      ]
+      ],
+      "lufs": -18.7
     },
     "narrator|Ça vous dérange si j’ouvre la fenêtre ?": {
       "file": "d9436090f4516f19.mp3",
@@ -861,7 +877,8 @@
           38,
           1.625
         ]
-      ]
+      ],
+      "lufs": -19.1
     },
     "narrator|Ça vous dérangerait de nous laisser finir le dessert ?": {
       "file": "decdb78145f2b60c.mp3",
@@ -907,7 +924,8 @@
           53,
           2.252
         ]
-      ]
+      ],
+      "lufs": -20.2
     },
     "narrator|Ce serait possible d’avoir de l’eau ?": {
       "file": "248b27271afa702d.mp3",
@@ -941,7 +959,8 @@
           36,
           1.416
         ]
-      ]
+      ],
+      "lufs": -18.3
     },
     "narrator|Ce serait possible d’avoir un peu de pain ?": {
       "file": "0e0b5151864a04b3.mp3",
@@ -983,7 +1002,8 @@
           42,
           1.625
         ]
-      ]
+      ],
+      "lufs": -18.4
     },
     "narrator|Cela vous dérangerait-il que j’ouvre la fenêtre ?": {
       "file": "3881a4126f593d2d.mp3",
@@ -1021,7 +1041,8 @@
           48,
           2.113
         ]
-      ]
+      ],
+      "lufs": -18.6
     },
     "narrator|Henri est devenu tout blanc. Léa a posé sa fourchette.": {
       "file": "36350528c11048c4.mp3",
@@ -1067,7 +1088,8 @@
           43,
           2.368
         ]
-      ]
+      ],
+      "lufs": -19.3
     },
     "narrator|Henri, le maître d’hôtel, les a pris pour Madame Dupont, la critique gastronomique la plus redoutée de Paris.": {
       "file": "477872053534ccc1.mp3",
@@ -1145,7 +1167,8 @@
           103,
           5.735
         ]
-      ]
+      ],
+      "lufs": -19.4
     },
     "narrator|J’ai réservé une table pour deux.": {
       "file": "dd86036f6975a1de.mp3",
@@ -1175,7 +1198,8 @@
           28,
           1.382
         ]
-      ]
+      ],
+      "lufs": -19.1
     },
     "narrator|Je prendrai le plat du jour.": {
       "file": "56b11e5012a769c6.mp3",
@@ -1205,7 +1229,8 @@
           23,
           0.917
         ]
-      ]
+      ],
+      "lufs": -17.8
     },
     "narrator|Je vais prendre le plat du jour.": {
       "file": "d423f2273ed86d28.mp3",
@@ -1239,7 +1264,8 @@
           27,
           0.998
         ]
-      ]
+      ],
+      "lufs": -18.6
     },
     "narrator|Je veux la carte.": {
       "file": "bd71bb64a20258a7.mp3",
@@ -1261,7 +1287,8 @@
           11,
           0.476
         ]
-      ]
+      ],
+      "lufs": -18
     },
     "narrator|Je voudrais la carte, s’il vous plaît.": {
       "file": "3256dbbe20d16e4d.mp3",
@@ -1295,7 +1322,8 @@
           32,
           1.509
         ]
-      ]
+      ],
+      "lufs": -20.3
     },
     "narrator|Je voudrais savoir comment ils ont fait.": {
       "file": "ee0fade00a9123a5.mp3",
@@ -1329,7 +1357,8 @@
           35,
           1.44
         ]
-      ]
+      ],
+      "lufs": -20
     },
     "narrator|Je voulais vous demander un conseil.": {
       "file": "8c51396809eebdc1.mp3",
@@ -1359,7 +1388,8 @@
           28,
           1.184
         ]
-      ]
+      ],
+      "lufs": -18.8
     },
     "narrator|La carte, s’il vous plaît.": {
       "file": "16289fea75a53676.mp3",
@@ -1385,7 +1415,8 @@
           20,
           0.836
         ]
-      ]
+      ],
+      "lufs": -20.2
     },
     "narrator|La critique les a regardés longtemps… puis elle a éclaté de rire.": {
       "file": "afae4248a2c984cd.mp3",
@@ -1439,7 +1470,8 @@
           60,
           3.216
         ]
-      ]
+      ],
+      "lufs": -19.2
     },
     "narrator|Le chef a envoyé un amuse-bouche, et le sommelier ne les quittait plus.": {
       "file": "e9646e13b5aa520b.mp3",
@@ -1497,7 +1529,8 @@
           66,
           3.367
         ]
-      ]
+      ],
+      "lufs": -19.9
     },
     "narrator|Léa et Malik fêtaient leur anniversaire de mariage. Leur réservation était au nom de Dupont.": {
       "file": "d47fa45c851f4a7c.mp3",
@@ -1563,7 +1596,8 @@
           85,
           4.725
         ]
-      ]
+      ],
+      "lufs": -20
     },
     "narrator|Malik, très nerveux, a ajouté : ": {
       "file": "877d7e68c9c9ca3d.mp3",
@@ -1593,7 +1627,8 @@
           30,
           1.637
         ]
-      ]
+      ],
+      "lufs": -19.9
     },
     "narrator|Non, pas du tout. Allez-y.": {
       "file": "c70ec78cab292f8e.mp3",
@@ -1619,7 +1654,8 @@
           18,
           0.731
         ]
-      ]
+      ],
+      "lufs": -19
     },
     "narrator|Nous aimerions goûter votre plat du jour.": {
       "file": "dff9aeafea9bd8c1.mp3",
@@ -1653,7 +1689,8 @@
           36,
           1.556
         ]
-      ]
+      ],
+      "lufs": -18.2
     },
     "narrator|Nous préférerions la terrasse.": {
       "file": "fb733fda204d62b1.mp3",
@@ -1675,7 +1712,8 @@
           21,
           0.917
         ]
-      ]
+      ],
+      "lufs": -20
     },
     "narrator|Nous sommes très gênés.": {
       "file": "188c9155e13ef52f.mp3",
@@ -1697,7 +1735,8 @@
           17,
           0.766
         ]
-      ]
+      ],
+      "lufs": -18.7
     },
     "narrator|On a trop la honte !": {
       "file": "0176fe07dc285d4b.mp3",
@@ -1727,7 +1766,8 @@
           19,
           0.917
         ]
-      ]
+      ],
+      "lufs": -18.2
     },
     "narrator|On pourrait avoir l’addition ?": {
       "file": "9c93db6797c026a7.mp3",
@@ -1753,7 +1793,8 @@
           29,
           1.184
         ]
-      ]
+      ],
+      "lufs": -18.4
     },
     "narrator|Pourriez-vous nous apporter l’addition ?": {
       "file": "68064766ff188148.mp3",
@@ -1779,7 +1820,8 @@
           39,
           1.533
         ]
-      ]
+      ],
+      "lufs": -18.5
     },
     "narrator|Pourriez-vous nous conseiller un vin ?": {
       "file": "c29bafd0cfb84c7d.mp3",
@@ -1809,7 +1851,8 @@
           37,
           1.637
         ]
-      ]
+      ],
+      "lufs": -19.1
     },
     "narrator|Samedi soir, je dînais seul dans un grand restaurant du Marais, à côté d’un couple très élégant.": {
       "file": "1a6a3d80ea3e232a.mp3",
@@ -1883,7 +1926,8 @@
           88,
           5.097
         ]
-      ]
+      ],
+      "lufs": -19.5
     }
   },
   "ambience": {

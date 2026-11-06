@@ -55,7 +55,8 @@
           58,
           2.752
         ]
-      ]
+      ],
+      "lufs": -18.7
     },
     "margaux|— En fait… je voulais juste du gruyère râpé. Pour des pâtes.": {
       "file": "f924b5a79287d8a4.mp3",
@@ -106,7 +107,8 @@
           54,
           3.46
         ]
-      ]
+      ],
+      "lufs": -19.6
     },
     "margaux|« Du munster. »": {
       "file": "6250036b1254968f.mp3",
@@ -121,7 +123,8 @@
           5,
           0.279
         ]
-      ]
+      ],
+      "lufs": -19.8
     },
     "margaux|« Un sancerre. »": {
       "file": "3c69188dc3393fbf.mp3",
@@ -136,7 +139,8 @@
           5,
           0.232
         ]
-      ]
+      ],
+      "lufs": -19.7
     },
     "monsieur-vasseur|— « Du fromage » ? Madame, je ne vends pas de fromage à n’importe qui.": {
       "file": "775e00233945b029.mp3",
@@ -195,7 +199,8 @@
           66,
           3.483
         ]
-      ]
+      ],
+      "lufs": -19.7
     },
     "monsieur-vasseur|— Madame… Vous adorez le fromage, ça se voit.": {
       "file": "8a87ef3e587d5aea.mp3",
@@ -234,7 +239,8 @@
           40,
           2.624
         ]
-      ]
+      ],
+      "lufs": -19.5
     },
     "monsieur-vasseur|— Prenez-en soin. Et pour le gruyère râpé, il y a le supermarché.": {
       "file": "fb79849930a4597e.mp3",
@@ -289,7 +295,8 @@
           53,
           3.216
         ]
-      ]
+      ],
+      "lufs": -19.7
     },
     "monsieur-vasseur|D’abord, un petit test.": {
       "file": "f746f7c0bff2f96b.mp3",
@@ -312,7 +319,8 @@
           18,
           0.906
         ]
-      ]
+      ],
+      "lufs": -19.7
     },
     "monsieur-vasseur|Pour vous, j’ai quelque chose de rare. Attendez.": {
       "file": "9744c8b3691068e9.mp3",
@@ -351,7 +359,8 @@
           39,
           2.322
         ]
-      ]
+      ],
+      "lufs": -19.6
     },
     "narrator|— « Du fromage » ? Madame, je ne vends pas de fromage à n’importe qui.": {
       "file": "ea5bfcbb1c26c617.mp3",
@@ -409,7 +418,8 @@
           66,
           2.81
         ]
-      ]
+      ],
+      "lufs": -20.4
     },
     "narrator|— Madame… Vous adorez le fromage, ça se voit.": {
       "file": "fd9c500446ce22fa.mp3",
@@ -447,7 +457,8 @@
           40,
           1.823
         ]
-      ]
+      ],
+      "lufs": -19.1
     },
     "narrator|— Prenez-en soin. Et pour le gruyère râpé, il y a le supermarché.": {
       "file": "c9d800689411592c.mp3",
@@ -501,7 +512,8 @@
           53,
           2.287
         ]
-      ]
+      ],
+      "lufs": -18.7
     },
     "narrator|C’est quelqu’un de très gentil.": {
       "file": "0274ef6f30a24499.mp3",
@@ -527,7 +539,8 @@
           24,
           0.94
         ]
-      ]
+      ],
+      "lufs": -20.5
     },
     "narrator|Ce fromage sent très fort.": {
       "file": "4c6e09a1948ac919.mp3",
@@ -553,7 +566,8 @@
           21,
           0.917
         ]
-      ]
+      ],
+      "lufs": -19.1
     },
     "narrator|Ce n’est pas du comté, c’est du beaufort.": {
       "file": "d81ba806efc561cc.mp3",
@@ -591,7 +605,8 @@
           32,
           1.486
         ]
-      ]
+      ],
+      "lufs": -19.7
     },
     "narrator|Ce n’est rien de grave.": {
       "file": "571f34cc6c7a70ae.mp3",
@@ -617,7 +632,8 @@
           17,
           0.801
         ]
-      ]
+      ],
+      "lufs": -19.6
     },
     "narrator|Comme ça ? Un peu plus ?": {
       "file": "c969545eeebb4154.mp3",
@@ -651,7 +667,8 @@
           23,
           0.998
         ]
-      ]
+      ],
+      "lufs": -19.9
     },
     "narrator|Dans la fromagerie, y a plein de fromages. Trois souris poussent un énorme bout de fromage. Sur le comptoir, y a plus de comté : elles l’ont tout mangé ! Dans la vitrine, y a du brie et des chèvres. Et le pigeon, les souris, il les aime pas du tout !": {
       "file": "05e073412acdb4e5.mp3",
@@ -865,7 +882,8 @@
           249,
           15.743
         ]
-      ]
+      ],
+      "lufs": -20
     },
     "narrator|Derrière le comptoir, Monsieur Vasseur parlait à ses fromages comme à ses enfants.": {
       "file": "3eac5d9a267a4855.mp3",
@@ -923,7 +941,8 @@
           74,
           3.587
         ]
-      ]
+      ],
+      "lufs": -19.9
     },
     "narrator|Désirez-vous autre chose ?": {
       "file": "8e9c51daa69092d6.mp3",
@@ -945,7 +964,8 @@
           25,
           1.231
         ]
-      ]
+      ],
+      "lufs": -19.9
     },
     "narrator|En voulez-vous davantage ?": {
       "file": "5ae9e6717175d031.mp3",
@@ -967,7 +987,8 @@
           25,
           1.103
         ]
-      ]
+      ],
+      "lufs": -19.9
     },
     "narrator|Et avec ça ?": {
       "file": "70ac4bd107d99a20.mp3",
@@ -989,7 +1010,8 @@
           11,
           0.697
         ]
-      ]
+      ],
+      "lufs": -18.2
     },
     "narrator|Il est revenu de la cave avec une minuscule meule au lait cru, affinée pendant deux ans.": {
       "file": "13285ca9b8d2aaa9.mp3",
@@ -1063,7 +1085,8 @@
           84,
           4.389
         ]
-      ]
+      ],
+      "lufs": -19.7
     },
     "narrator|Il l’a emballée dans trois feuilles de papier, comme un nouveau-né.": {
       "file": "4be991f34a87a463.mp3",
@@ -1113,7 +1136,8 @@
           56,
           2.426
         ]
-      ]
+      ],
+      "lufs": -19.3
     },
     "narrator|Il l’a emballée dans trois feuilles de papier.": {
       "file": "1700ddcc29065c13.mp3",
@@ -1151,7 +1175,8 @@
           39,
           1.416
         ]
-      ]
+      ],
+      "lufs": -19.2
     },
     "narrator|Il me faudrait du fromage pour une soirée.": {
       "file": "363b733c847b1063.mp3",
@@ -1189,7 +1214,8 @@
           35,
           1.382
         ]
-      ]
+      ],
+      "lufs": -19.2
     },
     "narrator|Il n’y a plus de brie.": {
       "file": "64177e2689727dff.mp3",
@@ -1219,7 +1245,8 @@
           17,
           0.604
         ]
-      ]
+      ],
+      "lufs": -18.4
     },
     "narrator|Il n’y a plus de fromage.": {
       "file": "182099b2493bdba3.mp3",
@@ -1249,7 +1276,8 @@
           17,
           0.662
         ]
-      ]
+      ],
+      "lufs": -19.2
     },
     "narrator|Il pue, ce fromage !": {
       "file": "39e7b641965cba2f.mp3",
@@ -1275,7 +1303,8 @@
           19,
           1.126
         ]
-      ]
+      ],
+      "lufs": -18.5
     },
     "narrator|Il y avait beaucoup de monde à la fromagerie.": {
       "file": "db073588094cf82a.mp3",
@@ -1317,7 +1346,8 @@
           34,
           1.358
         ]
-      ]
+      ],
+      "lufs": -19.1
     },
     "narrator|J’adore le comté, alors je voudrais du comté.": {
       "file": "ca9b9165357651a9.mp3",
@@ -1355,7 +1385,8 @@
           39,
           1.649
         ]
-      ]
+      ],
+      "lufs": -19.4
     },
     "narrator|J’ai quelque chose de rare.": {
       "file": "214366540b154e19.mp3",
@@ -1381,7 +1412,8 @@
           22,
           0.894
         ]
-      ]
+      ],
+      "lufs": -19.4
     },
     "narrator|Je déteste les fromages trop forts.": {
       "file": "b54abaa93b163f2b.mp3",
@@ -1411,7 +1443,8 @@
           29,
           1.347
         ]
-      ]
+      ],
+      "lufs": -19
     },
     "narrator|Je ne vends pas de fromage à n’importe qui.": {
       "file": "58be484098a52d02.mp3",
@@ -1453,7 +1486,8 @@
           39,
           1.649
         ]
-      ]
+      ],
+      "lufs": -19.2
     },
     "narrator|Je vais prendre un morceau de comté.": {
       "file": "6c9884099e2eb9cb.mp3",
@@ -1487,7 +1521,8 @@
           30,
           1.138
         ]
-      ]
+      ],
+      "lufs": -19.5
     },
     "narrator|Je vais vous prendre un bout de comté.": {
       "file": "a946d19b801a6351.mp3",
@@ -1525,7 +1560,8 @@
           32,
           1.289
         ]
-      ]
+      ],
+      "lufs": -20
     },
     "narrator|Je voudrais un morceau de comté.": {
       "file": "3045777e778ae123.mp3",
@@ -1555,7 +1591,8 @@
           26,
           1.115
         ]
-      ]
+      ],
+      "lufs": -18.4
     },
     "narrator|Je voulais juste du gruyère râpé.": {
       "file": "ae71f77242743c90.mp3",
@@ -1585,7 +1622,8 @@
           28,
           1.324
         ]
-      ]
+      ],
+      "lufs": -19
     },
     "narrator|Les yeux fermés, elle a reconnu un fromage à pâte molle à l’odeur : ": {
       "file": "41dce5cc8c4caed0.mp3",
@@ -1647,7 +1685,8 @@
           66,
           3.228
         ]
-      ]
+      ],
+      "lufs": -19
     },
     "narrator|Pour son chèvre préféré, elle a choisi le bon vin : ": {
       "file": "c02e15b686317e4f.mp3",
@@ -1697,7 +1736,8 @@
           50,
           2.531
         ]
-      ]
+      ],
+      "lufs": -18.1
     },
     "narrator|Puis elle a expliqué pourquoi un comté de douze mois est doux, et un comté de trois ans plus fort.": {
       "file": "4b9d82f661bba421.mp3",
@@ -1783,7 +1823,8 @@
           93,
           4.702
         ]
-      ]
+      ],
+      "lufs": -19.9
     },
     "narrator|Qu’est-ce qu’il vous faudrait ?": {
       "file": "5d4acb57edcb3157.mp3",
@@ -1809,7 +1850,8 @@
           30,
           1.08
         ]
-      ]
+      ],
+      "lufs": -18.5
     },
     "narrator|Que désirez-vous ?": {
       "file": "bf73a8db22b64e23.mp3",
@@ -1827,7 +1869,8 @@
           17,
           0.848
         ]
-      ]
+      ],
+      "lufs": -20
     },
     "narrator|Samedi, il y avait beaucoup de monde à la fromagerie de la rue Mouffetard.": {
       "file": "aa1aa652d4ae2a65.mp3",
@@ -1889,7 +1932,8 @@
           63,
           2.682
         ]
-      ]
+      ],
+      "lufs": -18.6
     },
     "narrator|Un silence terrible. Par pitié, Margaux a acheté la petite meule.": {
       "file": "698e92959eac9bb1.mp3",
@@ -1939,7 +1983,8 @@
           59,
           3.135
         ]
-      ]
+      ],
+      "lufs": -19.5
     },
     "narrator|Vous adorez le fromage, ça se voit.": {
       "file": "13ca9d4c1ab48607.mp3",
@@ -1973,7 +2018,8 @@
           30,
           1.521
         ]
-      ]
+      ],
+      "lufs": -20
     },
     "narrator|Vous avez de la tomme de brebis ?": {
       "file": "833a4d23459e4d44.mp3",
@@ -2011,7 +2057,8 @@
           32,
           1.324
         ]
-      ]
+      ],
+      "lufs": -18.4
     },
     "narrator|Y a plus de fromage.": {
       "file": "bce7d2750a5ad1a3.mp3",
@@ -2037,7 +2084,8 @@
           12,
           0.557
         ]
-      ]
+      ],
+      "lufs": -19.1
     }
   },
   "ambience": {

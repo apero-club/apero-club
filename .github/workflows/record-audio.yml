@@ -52,6 +52,10 @@ jobs:
       - if: steps.setup.outputs.ready == 'true'
         run: npm ci
 
+      - name: Make sure ffmpeg is there (levels loudness between voices)
+        if: steps.setup.outputs.ready == 'true'
+        run: command -v ffmpeg || (sudo apt-get update -q && sudo apt-get install -y -q ffmpeg)
+
       - name: Record missing audio
         if: steps.setup.outputs.ready == 'true'
         env:

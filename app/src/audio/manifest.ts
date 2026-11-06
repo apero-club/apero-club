@@ -11,6 +11,8 @@ export type ClipAudio = {
   voice: string;
   /** Fingerprint of the delivery settings it was recorded with (absent for the plain base settings). */
   delivery?: string;
+  /** Loudness after levelling to the shared target (scripts/level-audio.ts); absent until levelled. */
+  lufs?: number;
 };
 export type AmbienceAudio = {
   file: string;

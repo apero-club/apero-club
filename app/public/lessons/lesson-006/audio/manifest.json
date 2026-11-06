@@ -47,7 +47,8 @@
           52,
           2.229
         ]
-      ]
+      ],
+      "lufs": -21.3
     },
     "madame-delorme|— Raymond… on ne dit rien à personne.": {
       "file": "050bc382cf00b2a5.mp3",
@@ -82,7 +83,8 @@
           28,
           1.741
         ]
-      ]
+      ],
+      "lufs": -21.2
     },
     "madame-delorme|— Raymond… Vous vous êtes endormi.": {
       "file": "2b49fe9ef0a7c406.mp3",
@@ -109,7 +111,8 @@
           26,
           1.382
         ]
-      ]
+      ],
+      "lufs": -20.4
     },
     "narrator|— Et là, la Comtesse s’est levée, et elle est sortie de son cadre !": {
       "file": "1099cf299b58f349.mp3",
@@ -171,7 +174,8 @@
           66,
           3.529
         ]
-      ]
+      ],
+      "lufs": -19.1
     },
     "narrator|— Raymond… on ne dit rien à personne.": {
       "file": "6700b807c9929f55.mp3",
@@ -205,7 +209,8 @@
           28,
           1.962
         ]
-      ]
+      ],
+      "lufs": -20.1
     },
     "narrator|À trois heures, le cadre était vide, et le fauteuil des visiteurs était tourné.": {
       "file": "1dadc65704a816db.mp3",
@@ -267,7 +272,8 @@
           72,
           3.773
         ]
-      ]
+      ],
+      "lufs": -19.7
     },
     "narrator|Alors elle a ouvert son ordinateur et lancé les images de la caméra de surveillance.": {
       "file": "07126b6d4942296e.mp3",
@@ -333,7 +339,8 @@
           71,
           3.344
         ]
-      ]
+      ],
+      "lufs": -20.3
     },
     "narrator|Ce matin, trois chiens se sont échappés et ils ont débarqué dans le musée. Le gardien s’est jeté devant la sculpture bleue. Y a une dame assise sur un banc, elle regarde son téléphone. Et un monsieur s’est même pas retourné. Franchement, je me suis bien marrée !": {
       "file": "bd25a16180835fce.mp3",
@@ -531,7 +538,8 @@
           261,
           15.128
         ]
-      ]
+      ],
+      "lufs": -19.6
     },
     "narrator|Elle s’est étiré les bras.": {
       "file": "01ad2bc0b9d67187.mp3",
@@ -557,7 +565,8 @@
           21,
           0.859
         ]
-      ]
+      ],
+      "lufs": -19
     },
     "narrator|Elle s’est mise à chanter.": {
       "file": "67723e26d44100c9.mp3",
@@ -583,7 +592,8 @@
           18,
           0.673
         ]
-      ]
+      ],
+      "lufs": -19.2
     },
     "narrator|Elles se sont levées tôt.": {
       "file": "9245278c0d288a67.mp3",
@@ -609,7 +619,8 @@
           21,
           0.813
         ]
-      ]
+      ],
+      "lufs": -19.3
     },
     "narrator|Elles se sont téléphoné hier.": {
       "file": "53790d14624d7162.mp3",
@@ -635,7 +646,8 @@
           24,
           1.184
         ]
-      ]
+      ],
+      "lufs": -19.1
     },
     "narrator|Il faisait très sombre.": {
       "file": "1630d2fe5995f003.mp3",
@@ -657,7 +669,8 @@
           16,
           0.697
         ]
-      ]
+      ],
+      "lufs": -19
     },
     "narrator|Il ne s’est rien passé !": {
       "file": "07aa265ff4868f7d.mp3",
@@ -687,7 +700,8 @@
           23,
           1.091
         ]
-      ]
+      ],
+      "lufs": -19.5
     },
     "narrator|Il ne s’est rien passé.": {
       "file": "31c7f75cd3ca9c5e.mp3",
@@ -713,7 +727,8 @@
           17,
           0.673
         ]
-      ]
+      ],
+      "lufs": -19.2
     },
     "narrator|Il s’est rien passé.": {
       "file": "8b661404854b3867.mp3",
@@ -735,7 +750,8 @@
           14,
           0.592
         ]
-      ]
+      ],
+      "lufs": -19.5
     },
     "narrator|J’ai eu la chair de poule. Madame Delorme a refermé l’ordinateur, très lentement.": {
       "file": "97b7dffbcbe1b09a.mp3",
@@ -793,7 +809,8 @@
           71,
           3.762
         ]
-      ]
+      ],
+      "lufs": -19.8
     },
     "narrator|J’ai eu très peur.": {
       "file": "839432e03639bc2b.mp3",
@@ -815,7 +832,8 @@
           13,
           0.58
         ]
-      ]
+      ],
+      "lufs": -18.9
     },
     "narrator|J’ai eu une de ces trouilles !": {
       "file": "b18b45d760d24892.mp3",
@@ -849,7 +867,8 @@
           29,
           1.289
         ]
-      ]
+      ],
+      "lufs": -18.5
     },
     "narrator|J’ai piqué du nez cinq minutes.": {
       "file": "45df77613266c54f.mp3",
@@ -879,7 +898,8 @@
           23,
           1.068
         ]
-      ]
+      ],
+      "lufs": -17.9
     },
     "narrator|Je me suis assis un moment devant le portrait.": {
       "file": "2ce2f47eca02c576.mp3",
@@ -921,7 +941,8 @@
           37,
           1.637
         ]
-      ]
+      ],
+      "lufs": -18.3
     },
     "narrator|Je me suis assis un moment.": {
       "file": "e332f19df9a98503.mp3",
@@ -951,7 +972,8 @@
           20,
           0.929
         ]
-      ]
+      ],
+      "lufs": -17.5
     },
     "narrator|Je me suis assoupi quelques instants.": {
       "file": "d63d75c49bab87ee.mp3",
@@ -981,7 +1003,8 @@
           28,
           1.184
         ]
-      ]
+      ],
+      "lufs": -19.6
     },
     "narrator|Je me suis caché derrière une sculpture.": {
       "file": "4b4fc9d970af7f47.mp3",
@@ -1015,7 +1038,8 @@
           30,
           1.254
         ]
-      ]
+      ],
+      "lufs": -18.8
     },
     "narrator|Je me suis pas endormi.": {
       "file": "fc1cc896729b75aa.mp3",
@@ -1041,7 +1065,8 @@
           15,
           0.65
         ]
-      ]
+      ],
+      "lufs": -18.3
     },
     "narrator|Je ne me suis pas endormi !": {
       "file": "be7ed1553ead2370.mp3",
@@ -1075,7 +1100,8 @@
           26,
           1.196
         ]
-      ]
+      ],
+      "lufs": -19.4
     },
     "narrator|Je ne me suis pas endormi.": {
       "file": "c7ea462f7fd6d215.mp3",
@@ -1105,7 +1131,8 @@
           18,
           0.662
         ]
-      ]
+      ],
+      "lufs": -18.4
     },
     "narrator|La Comtesse s’est levée.": {
       "file": "2e0f72235fc38f2b.mp3",
@@ -1127,7 +1154,8 @@
           18,
           0.801
         ]
-      ]
+      ],
+      "lufs": -18.7
     },
     "narrator|Lundi, sept heures du matin. J’apportais les cafés à Madame Delorme, la directrice du musée.": {
       "file": "1627a99fd38cfec9.mp3",
@@ -1193,7 +1221,8 @@
           86,
           4.818
         ]
-      ]
+      ],
+      "lufs": -20.2
     },
     "narrator|Madame Delorme a levé un sourcil. Raymond a continué, à voix basse.": {
       "file": "b9b869b020269079.mp3",
@@ -1247,7 +1276,8 @@
           61,
           3.495
         ]
-      ]
+      ],
+      "lufs": -20.2
     },
     "narrator|Nous ne dirons rien à personne.": {
       "file": "f4cede28c2c5fdc3.mp3",
@@ -1277,7 +1307,8 @@
           22,
           1.103
         ]
-      ]
+      ],
+      "lufs": -19.4
     },
     "narrator|Nous nous sommes cachés derrière une statue.": {
       "file": "d718ce84467a8e23.mp3",
@@ -1311,7 +1342,8 @@
           37,
           1.382
         ]
-      ]
+      ],
+      "lufs": -19.7
     },
     "narrator|On dit rien à personne.": {
       "file": "f1d2639a1c0e48dc.mp3",
@@ -1337,7 +1369,8 @@
           14,
           0.65
         ]
-      ]
+      ],
+      "lufs": -20
     },
     "narrator|On ne s’est pas parlé.": {
       "file": "53f140312c43da46.mp3",
@@ -1363,7 +1396,8 @@
           16,
           0.58
         ]
-      ]
+      ],
+      "lufs": -18.3
     },
     "narrator|On s’est regardés, mais on ne s’est pas parlé.": {
       "file": "3e41a481109429b0.mp3",
@@ -1405,7 +1439,8 @@
           40,
           1.567
         ]
-      ]
+      ],
+      "lufs": -19
     },
     "narrator|On y voyait que dalle.": {
       "file": "d5497ee940017434.mp3",
@@ -1431,7 +1466,8 @@
           16,
           0.685
         ]
-      ]
+      ],
+      "lufs": -18.1
     },
     "narrator|Puis elle s’est assise dans le fauteuil.": {
       "file": "b3b68c71c2bca167.mp3",
@@ -1465,7 +1501,8 @@
           31,
           1.126
         ]
-      ]
+      ],
+      "lufs": -19.6
     },
     "narrator|Raymond, le gardien de nuit, était assis devant son bureau, tout pâle.": {
       "file": "1f16930f2d580361.mp3",
@@ -1519,7 +1556,8 @@
           65,
           3.286
         ]
-      ]
+      ],
+      "lufs": -19.9
     },
     "narrator|Tu t’es endormi ?": {
       "file": "390e17b5881d2e43.mp3",
@@ -1541,7 +1579,8 @@
           16,
           0.906
         ]
-      ]
+      ],
+      "lufs": -18.2
     },
     "raymond|— Et là, la Comtesse s’est levée, et elle est sortie de son cadre !": {
       "file": "bd8cc2b189a05224.mp3",
@@ -1604,7 +1643,8 @@
           66,
           3.088
         ]
-      ]
+      ],
+      "lufs": -18.2
     },
     "raymond|— Je ne me suis pas endormi ! Enfin… cinq minutes, mais avant tout ça.": {
       "file": "dbb4acfb8e5eb159.mp3",
@@ -1667,7 +1707,8 @@
           67,
           3.483
         ]
-      ]
+      ],
+      "lufs": -19.2
     },
     "raymond|— Pendant ma ronde, je me suis assis un moment devant le portrait de la Comtesse.": {
       "file": "69efc6b4a2c6e3d2.mp3",
@@ -1734,7 +1775,8 @@
           72,
           2.891
         ]
-      ]
+      ],
+      "lufs": -19.8
     },
     "raymond|Elle s’est étiré les bras, comme après une longue nuit.": {
       "file": "6184e6ecd46a8291.mp3",
@@ -1781,7 +1823,8 @@
           50,
           2.299
         ]
-      ]
+      ],
+      "lufs": -20.4
     },
     "raymond|Il faisait noir. J’ai entendu un craquement, alors je me suis caché derrière une sculpture.": {
       "file": "96cff0de3ee1e544.mp3",
@@ -1848,7 +1891,8 @@
           81,
           3.704
         ]
-      ]
+      ],
+      "lufs": -19.4
     },
     "raymond|On s’est regardés, mais on ne s’est pas parlé.": {
       "file": "f6773bcd5d05d39f.mp3",
@@ -1891,7 +1935,8 @@
           40,
           1.765
         ]
-      ]
+      ],
+      "lufs": -21.8
     },
     "raymond|Puis elle s’est assise dans le fauteuil des visiteurs… et l’alarme a sonné.": {
       "file": "ce562ceac8a6fe6b.mp3",
@@ -1950,7 +1995,8 @@
           69,
           3.437
         ]
-      ]
+      ],
+      "lufs": -20.2
     }
   },
   "ambience": {

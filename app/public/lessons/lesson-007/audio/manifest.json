@@ -51,7 +51,8 @@
           56,
           2.856
         ]
-      ]
+      ],
+      "lufs": -19.9
     },
     "madame-zara|— Asseyez-vous. Ce sera quarante euros.": {
       "file": "f7c5f7dafad3f956.mp3",
@@ -78,7 +79,8 @@
           33,
           1.846
         ]
-      ]
+      ],
+      "lufs": -21.3
     },
     "madame-zara|— Bon. Dans dix minutes, votre téléphone va sonner trois fois.": {
       "file": "3e5d836c24a810c5.mp3",
@@ -125,7 +127,8 @@
           57,
           2.844
         ]
-      ]
+      ],
+      "lufs": -19.9
     },
     "madame-zara|— Donnez-moi votre main. Vous rencontrerez une personne qui connaît votre secret.": {
       "file": "5b19d87645f4645b.mp3",
@@ -176,7 +179,8 @@
           74,
           3.773
         ]
-      ]
+      ],
+      "lufs": -20
     },
     "madame-zara|« Mon loyer va encore augmenter. »": {
       "file": "47281a07abcf23e1.mp3",
@@ -203,7 +207,8 @@
           22,
           1.01
         ]
-      ]
+      ],
+      "lufs": -19.4
     },
     "madame-zara|Et vous serez très riche… un jour.": {
       "file": "a11c2c7fe4293edb.mp3",
@@ -238,7 +243,8 @@
           29,
           1.683
         ]
-      ]
+      ],
+      "lufs": -22
     },
     "madame-zara|Quand vous sortirez, il pleuvra. Et vous reviendrez avant dix-sept heures.": {
       "file": "85c08a69a7c13a71.mp3",
@@ -289,7 +295,8 @@
           67,
           4.586
         ]
-      ]
+      ],
+      "lufs": -19.7
     },
     "madame-zara|Vous allez perdre quelque chose de rouge, et un inconnu va vous offrir un parapluie.": {
       "file": "176e0b2974780ed5.mp3",
@@ -356,7 +363,8 @@
           74,
           3.855
         ]
-      ]
+      ],
+      "lufs": -19.7
     },
     "narrator|— Asseyez-vous. Ce sera quarante euros.": {
       "file": "154bea934c012c9f.mp3",
@@ -382,7 +390,8 @@
           33,
           1.776
         ]
-      ]
+      ],
+      "lufs": -20.5
     },
     "narrator|À seize heures cinquante-neuf, il a poussé sa porte. Elle n’a même pas levé les yeux.": {
       "file": "1793c9f5b48b857e.mp3",
@@ -452,7 +461,8 @@
           80,
           3.971
         ]
-      ]
+      ],
+      "lufs": -19.2
     },
     "narrator|À seize heures trente, Antoine m’a appelé, paniqué.": {
       "file": "f062648024d9ac4c.mp3",
@@ -490,7 +500,8 @@
           43,
           1.73
         ]
-      ]
+      ],
+      "lufs": -18.3
     },
     "narrator|Antoine a ri, et il est parti. Dix minutes plus tard, son téléphone a sonné trois fois.": {
       "file": "ae3c82d0a8c9a6f5.mp3",
@@ -564,7 +575,8 @@
           82,
           4.748
         ]
-      ]
+      ],
+      "lufs": -20.3
     },
     "narrator|Antoine est comptable, et il ne croit qu’aux chiffres.": {
       "file": "d387ef3f328852ff.mp3",
@@ -606,7 +618,8 @@
           45,
           2.148
         ]
-      ]
+      ],
+      "lufs": -19.4
     },
     "narrator|Asseyez-vous. Ce sera quarante euros.": {
       "file": "154bea934c012c9f.mp3",
@@ -632,7 +645,8 @@
           31,
           1.776
         ]
-      ]
+      ],
+      "lufs": -20.5
     },
     "narrator|Ça fera douze euros cinquante.": {
       "file": "3e75d32f547c2b40.mp3",
@@ -658,7 +672,8 @@
           20,
           0.987
         ]
-      ]
+      ],
+      "lufs": -19.7
     },
     "narrator|Ce sera tout, merci.": {
       "file": "c761be222a7fcf6b.mp3",
@@ -680,7 +695,8 @@
           14,
           0.58
         ]
-      ]
+      ],
+      "lufs": -20.7
     },
     "narrator|Combien vous dois-je ?": {
       "file": "92d21047df6b2ab3.mp3",
@@ -702,7 +718,8 @@
           21,
           0.998
         ]
-      ]
+      ],
+      "lufs": -18.3
     },
     "narrator|Dans dix minutes, votre téléphone va sonner trois fois.": {
       "file": "24012dc622c13b18.mp3",
@@ -744,7 +761,8 @@
           50,
           2.392
         ]
-      ]
+      ],
+      "lufs": -19.4
     },
     "narrator|Dans la boule, y a un poisson rose. Dans deux secondes, le chat va sauter sur la table. Quand il va attraper le poisson, la voyante va être furax ! Demain, elle va racheter un poisson, mais ce chat, elle l’oubliera pas de sitôt. Et le pigeon ? Lui, il va se marrer, comme d’hab.": {
       "file": "31a1697d5812ea60.mp3",
@@ -970,7 +988,8 @@
           272,
           16.022
         ]
-      ]
+      ],
+      "lufs": -19.8
     },
     "narrator|Dès que j’aurai les résultats, je vous appellerai.": {
       "file": "559639ca6682b135.mp3",
@@ -1008,7 +1027,8 @@
           39,
           1.858
         ]
-      ]
+      ],
+      "lufs": -19.5
     },
     "narrator|Et vous serez très riche… un jour.": {
       "file": "9e89e3a61c2b6748.mp3",
@@ -1042,7 +1062,8 @@
           29,
           1.73
         ]
-      ]
+      ],
+      "lufs": -19.5
     },
     "narrator|Il va flotter.": {
       "file": "0a581a36b83d7a4a.mp3",
@@ -1060,7 +1081,8 @@
           6,
           0.313
         ]
-      ]
+      ],
+      "lufs": -18.8
     },
     "narrator|Il va pleuvoir, prenez un parapluie.": {
       "file": "8798d1cafd46a226.mp3",
@@ -1090,7 +1112,8 @@
           26,
           1.126
         ]
-      ]
+      ],
+      "lufs": -19.8
     },
     "narrator|Il va pleuvoir.": {
       "file": "de1ab277fd3c196c.mp3",
@@ -1108,7 +1131,8 @@
           6,
           0.302
         ]
-      ]
+      ],
+      "lufs": -17.9
     },
     "narrator|J’ai la poisse.": {
       "file": "2ee1ecfa2dba3c2f.mp3",
@@ -1126,7 +1150,8 @@
           8,
           0.348
         ]
-      ]
+      ],
+      "lufs": -18.4
     },
     "narrator|J’espère que cela va fonctionner.": {
       "file": "945e79b0afed7d89.mp3",
@@ -1152,7 +1177,8 @@
           21,
           0.871
         ]
-      ]
+      ],
+      "lufs": -18
     },
     "narrator|J’y retourne pas, jamais de la vie !": {
       "file": "1dbe13e634ca811f.mp3",
@@ -1190,7 +1216,8 @@
           35,
           1.707
         ]
-      ]
+      ],
+      "lufs": -19
     },
     "narrator|Je croise les doigts !": {
       "file": "6c03220f3c8c4a8d.mp3",
@@ -1216,7 +1243,8 @@
           21,
           0.952
         ]
-      ]
+      ],
+      "lufs": -18.7
     },
     "narrator|Je n’ai vraiment pas de chance.": {
       "file": "d45a8b7715e77720.mp3",
@@ -1246,7 +1274,8 @@
           24,
           0.94
         ]
-      ]
+      ],
+      "lufs": -18.6
     },
     "narrator|Je n’y retournerai jamais.": {
       "file": "3882e7c42a78a107.mp3",
@@ -1268,7 +1297,8 @@
           19,
           0.801
         ]
-      ]
+      ],
+      "lufs": -19.5
     },
     "narrator|Je ne vais pas y retourner.": {
       "file": "7a423d58a6bf9483.mp3",
@@ -1298,7 +1328,8 @@
           17,
           0.662
         ]
-      ]
+      ],
+      "lufs": -19.9
     },
     "narrator|Je vous dois combien ?": {
       "file": "0827c0e949fca95d.mp3",
@@ -1324,7 +1355,8 @@
           21,
           0.952
         ]
-      ]
+      ],
+      "lufs": -17.9
     },
     "narrator|Nous verrons bien.": {
       "file": "34589efe790c52d0.mp3",
@@ -1342,7 +1374,8 @@
           13,
           0.511
         ]
-      ]
+      ],
+      "lufs": -18.4
     },
     "narrator|On verra bien.": {
       "file": "f2ebe209d7e53b0c.mp3",
@@ -1360,7 +1393,8 @@
           9,
           0.464
         ]
-      ]
+      ],
+      "lufs": -18
     },
     "narrator|Pour mon anniversaire, j’ai lancé un défi à mon collègue Antoine : aller voir une voyante à Montmartre.": {
       "file": "659f9ee7122e5117.mp3",
@@ -1438,7 +1472,8 @@
           92,
           4.957
         ]
-      ]
+      ],
+      "lufs": -19.6
     },
     "narrator|Puis elle a regardé son téléphone et soupiré : ": {
       "file": "4dbf2376b7736cd1.mp3",
@@ -1480,7 +1515,8 @@
           45,
           2.113
         ]
-      ]
+      ],
+      "lufs": -19
     },
     "narrator|Puis il s’est mis à pleuvoir, et le vent a emporté son écharpe rouge.": {
       "file": "bee0c35c57bb31e2.mp3",
@@ -1542,7 +1578,8 @@
           63,
           3.019
         ]
-      ]
+      ],
+      "lufs": -19.6
     },
     "narrator|Quand vous sortirez, il pleuvra.": {
       "file": "c8596327b891dc18.mp3",
@@ -1568,7 +1605,8 @@
           24,
           1.242
         ]
-      ]
+      ],
+      "lufs": -20.1
     },
     "narrator|Quand vous sortirez, il pleuvra. Et vous reviendrez avant dix-sept heures.": {
       "file": "bd50392df2832fa7.mp3",
@@ -1618,7 +1656,8 @@
           67,
           3.634
         ]
-      ]
+      ],
+      "lufs": -20
     },
     "narrator|Si vous sortez, prenez un parapluie.": {
       "file": "2c4cebfe1f11ee4e.mp3",
@@ -1648,7 +1687,8 @@
           26,
           1.068
         ]
-      ]
+      ],
+      "lufs": -19.1
     },
     "narrator|Un inconnu lui a offert son parapluie, sans un mot.": {
       "file": "30accad146e49d69.mp3",
@@ -1694,7 +1734,8 @@
           47,
           2.38
         ]
-      ]
+      ],
+      "lufs": -19.4
     },
     "narrator|Un jour, vous comprendrez.": {
       "file": "a636691d1a3ac7ed.mp3",
@@ -1716,7 +1757,8 @@
           14,
           0.592
         ]
-      ]
+      ],
+      "lufs": -18.7
     },
     "narrator|Vous allez perdre quelque chose de rouge.": {
       "file": "23f6313ebe2bba2a.mp3",
@@ -1750,7 +1792,8 @@
           35,
           1.416
         ]
-      ]
+      ],
+      "lufs": -18.9
     },
     "narrator|Vous rencontrerez une personne qui connaît votre secret.": {
       "file": "da3d8eb581a357cd.mp3",
@@ -1788,7 +1831,8 @@
           49,
           2.136
         ]
-      ]
+      ],
+      "lufs": -19.5
     },
     "narrator|Vous reviendrez avant dix-sept heures.": {
       "file": "9733cab7d63a59e7.mp3",
@@ -1814,7 +1858,8 @@
           31,
           1.3
         ]
-      ]
+      ],
+      "lufs": -18.7
     },
     "narrator|Vous serez très riche… un jour.": {
       "file": "72e9ade8e2c9a8fd.mp3",
@@ -1844,7 +1889,8 @@
           26,
           1.881
         ]
-      ]
+      ],
+      "lufs": -19.3
     }
   },
   "ambience": {

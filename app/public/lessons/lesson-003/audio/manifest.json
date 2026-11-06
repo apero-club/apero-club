@@ -27,7 +27,8 @@
           24,
           1.254
         ]
-      ]
+      ],
+      "lufs": -19.4
     },
     "clement|— Et sur moi, vous dites quoi ?": {
       "file": "43704c2d38af9e88.mp3",
@@ -62,7 +63,8 @@
           30,
           1.312
         ]
-      ]
+      ],
+      "lufs": -19.5
     },
     "madame-benali|— Au troisième, Monsieur Petrovic, un ancien chanteur d’opéra qui chante encore à deux heures du matin.": {
       "file": "53da00203ac35bdb.mp3",
@@ -133,7 +135,8 @@
           97,
           5.631
         ]
-      ]
+      ],
+      "lufs": -19.5
     },
     "madame-benali|— Bienvenue, monsieur Clément ! Ici, je connais tout le monde depuis le jour où je suis arrivée.": {
       "file": "5d652972063d6aae.mp3",
@@ -208,7 +211,8 @@
           88,
           4.621
         ]
-      ]
+      ],
+      "lufs": -20.4
     },
     "madame-benali|— Ça, c’est Inès. Un colis par jour ! Ça ne me regarde pas, mais… qu’est-ce qu’il y a dedans ?": {
       "file": "cdf4d91fabc470af.mp3",
@@ -295,7 +299,8 @@
           93,
           6.409
         ]
-      ]
+      ],
+      "lufs": -20.1
     },
     "madame-benali|— Je suis la gardienne. C’est mon métier.": {
       "file": "34f85ad00cb2a455.mp3",
@@ -330,7 +335,8 @@
           34,
           1.788
         ]
-      ]
+      ],
+      "lufs": -18.3
     },
     "madame-benali|— Vous ? Vous êtes infirmier, votre mère vous appelle tous les dimanches et vous détestez la coriandre.": {
       "file": "615d2d803f7a485c.mp3",
@@ -405,7 +411,8 @@
           93,
           4.876
         ]
-      ]
+      ],
+      "lufs": -20.3
     },
     "madame-benali|Au quatrième, les Martin, le couple que vous verrez partout : ils font des travaux depuis six ans.": {
       "file": "8b63c3c002608cbe.mp3",
@@ -484,7 +491,8 @@
           94,
           5.851
         ]
-      ]
+      ],
+      "lufs": -20.3
     },
     "madame-benali|Entre nous, personne n’a jamais vu un seul ouvrier.": {
       "file": "ae0b9116b50069cb.mp3",
@@ -527,7 +535,8 @@
           43,
           2.485
         ]
-      ]
+      ],
+      "lufs": -19.5
     },
     "madame-benali|Et le sixième, c’est l’étage où habite notre locataire mystère.": {
       "file": "1993103304bf9219.mp3",
@@ -574,7 +583,8 @@
           55,
           2.519
         ]
-      ]
+      ],
+      "lufs": -20.5
     },
     "madame-benali|Le monsieur dont je vous parle, personne ne l’a jamais vu. Seulement son chat.": {
       "file": "df812e40322b3f4d.mp3",
@@ -637,7 +647,8 @@
           73,
           3.924
         ]
-      ]
+      ],
+      "lufs": -19.4
     },
     "narrator|— Au troisième, Monsieur Petrovic, un ancien chanteur d’opéra qui chante encore à deux heures du matin.": {
       "file": "de08f27790d3be15.mp3",
@@ -707,7 +718,8 @@
           97,
           5.155
         ]
-      ]
+      ],
+      "lufs": -20
     },
     "narrator|— Je suis la gardienne. C’est mon métier.": {
       "file": "91c6786041943721.mp3",
@@ -741,7 +753,8 @@
           34,
           1.416
         ]
-      ]
+      ],
+      "lufs": -18.8
     },
     "narrator|Au cinquième, devant une porte, il y avait trois colis.": {
       "file": "7f2cc03114c4a8d3.mp3",
@@ -787,7 +800,8 @@
           49,
           2.206
         ]
-      ]
+      ],
+      "lufs": -18.9
     },
     "narrator|Au moment où j’ai ouvert la porte, le chat est sorti.": {
       "file": "e40a68bf5d2bee83.mp3",
@@ -837,7 +851,8 @@
           47,
           2.136
         ]
-      ]
+      ],
+      "lufs": -18.2
     },
     "narrator|Bordeaux, c’est la ville où Clément est né.": {
       "file": "8355049221c25847.mp3",
@@ -875,7 +890,8 @@
           40,
           1.602
         ]
-      ]
+      ],
+      "lufs": -18.4
     },
     "narrator|C’est la gardienne qui sait tout.": {
       "file": "fcdb433b8a23bae1.mp3",
@@ -905,7 +921,8 @@
           28,
           1.103
         ]
-      ]
+      ],
+      "lufs": -19.1
     },
     "narrator|C’est une soirée dont je me souviens encore.": {
       "file": "57c3256e846a27df.mp3",
@@ -943,7 +960,8 @@
           37,
           1.567
         ]
-      ]
+      ],
+      "lufs": -18.7
     },
     "narrator|Ça me regarde pas, mais…": {
       "file": "785ad31e5f5172f7.mp3",
@@ -969,7 +987,8 @@
           19,
           0.906
         ]
-      ]
+      ],
+      "lufs": -18.6
     },
     "narrator|Cela ne me regarde pas, mais…": {
       "file": "b9007d28c811f971.mp3",
@@ -999,7 +1018,8 @@
           24,
           1.231
         ]
-      ]
+      ],
+      "lufs": -19.6
     },
     "narrator|Comment savez-vous cela ?": {
       "file": "dafe03e6eb609262.mp3",
@@ -1021,7 +1041,8 @@
           24,
           1.091
         ]
-      ]
+      ],
+      "lufs": -19.1
     },
     "narrator|Comment vous savez ça ?": {
       "file": "9a5b06da265cafde.mp3",
@@ -1047,7 +1068,8 @@
           22,
           1.057
         ]
-      ]
+      ],
+      "lufs": -20
     },
     "narrator|Dans mon immeuble, il est deux heures du mat’, et le monsieur en robe de chambre rose chante sur son balcon : c’est le chanteur dont tout le monde parle. La voisine de gauche, elle s’est mis l’oreiller sur la tête. Celle de droite, elle supporte pas sa musique. Le seul qui aime l’opéra, c’est le pigeon.": {
       "file": "c7dec373d04a72da.mp3",
@@ -1281,7 +1303,8 @@
           297,
           16.753
         ]
-      ]
+      ],
+      "lufs": -19.9
     },
     "narrator|Devant la loge, la gardienne nous attendait déjà : Madame Benali.": {
       "file": "729271c28fe80b29.mp3",
@@ -1331,7 +1354,8 @@
           58,
           3.065
         ]
-      ]
+      ],
+      "lufs": -19.8
     },
     "narrator|Il arrivait de Bordeaux avec douze cartons, et bien sûr, l’ascenseur était en panne.": {
       "file": "c3335f6b8df521b0.mp3",
@@ -1393,7 +1417,8 @@
           78,
           4.18
         ]
-      ]
+      ],
+      "lufs": -20
     },
     "narrator|Il paraît qu’elle reçoit un colis par jour.": {
       "file": "93c854b8ee32ce2c.mp3",
@@ -1431,7 +1456,8 @@
           38,
           1.649
         ]
-      ]
+      ],
+      "lufs": -18.5
     },
     "narrator|J’dis rien, mais…": {
       "file": "bea44537162590da.mp3",
@@ -1449,7 +1475,8 @@
           12,
           0.929
         ]
-      ]
+      ],
+      "lufs": -18.7
     },
     "narrator|J’vais demander à la concierge.": {
       "file": "5fca185cd95ab346.mp3",
@@ -1475,7 +1502,8 @@
           21,
           0.801
         ]
-      ]
+      ],
+      "lufs": -19.1
     },
     "narrator|Je connais tout le monde depuis le jour où je suis arrivée.": {
       "file": "e52e9610b6c40c6c.mp3",
@@ -1529,7 +1557,8 @@
           51,
           1.974
         ]
-      ]
+      ],
+      "lufs": -18.4
     },
     "narrator|Je ne dis rien, mais…": {
       "file": "cb94fb7d7ae13374.mp3",
@@ -1555,7 +1584,8 @@
           16,
           0.743
         ]
-      ]
+      ],
+      "lufs": -19.3
     },
     "narrator|Je vais demander à la gardienne.": {
       "file": "7c5f4e86383e094e.mp3",
@@ -1585,7 +1615,8 @@
           22,
           0.952
         ]
-      ]
+      ],
+      "lufs": -17.6
     },
     "narrator|L’ascenseur est en panne.": {
       "file": "05fac2aed91f30c0.mp3",
@@ -1607,7 +1638,8 @@
           19,
           0.801
         ]
-      ]
+      ],
+      "lufs": -19.7
     },
     "narrator|L’ascenseur est en rade.": {
       "file": "e28cdb30d2b6049f.mp3",
@@ -1629,7 +1661,8 @@
           19,
           0.848
         ]
-      ]
+      ],
+      "lufs": -18.9
     },
     "narrator|La loge, c’est l’endroit où on récupère ses colis.": {
       "file": "ad6e97193fa6f042.mp3",
@@ -1671,7 +1704,8 @@
           44,
           1.869
         ]
-      ]
+      ],
+      "lufs": -19.9
     },
     "narrator|Le colis qui est devant la porte, c’est pour Inès.": {
       "file": "f492aa40f4ff402c.mp3",
@@ -1717,7 +1751,8 @@
           45,
           2.299
         ]
-      ]
+      ],
+      "lufs": -19.8
     },
     "narrator|Le monsieur dont je vous parle, personne ne l’a jamais vu.": {
       "file": "ef2550b335edd93f.mp3",
@@ -1767,7 +1802,8 @@
           55,
           2.171
         ]
-      ]
+      ],
+      "lufs": -19.3
     },
     "narrator|Le monsieur dont je vous parle, personne ne l’a jamais vu. Seulement son chat.": {
       "file": "c17ec9078803749a.mp3",
@@ -1829,7 +1865,8 @@
           73,
           2.868
         ]
-      ]
+      ],
+      "lufs": -19.9
     },
     "narrator|Le sixième, c’est l’étage où habite notre locataire mystère.": {
       "file": "5b9271ff4ec417ea.mp3",
@@ -1871,7 +1908,8 @@
           52,
           2.415
         ]
-      ]
+      ],
+      "lufs": -20.1
     },
     "narrator|Les colis qu’Inès reçoit sont énormes.": {
       "file": "80cdd631b32cf05d.mp3",
@@ -1901,7 +1939,8 @@
           30,
           1.428
         ]
-      ]
+      ],
+      "lufs": -18.5
     },
     "narrator|Les Martin, le couple que vous verrez partout.": {
       "file": "0e7fe9f553a3bcaa.mp3",
@@ -1939,7 +1978,8 @@
           38,
           2.02
         ]
-      ]
+      ],
+      "lufs": -19.1
     },
     "narrator|On a monté l’escalier avec les cartons, et à chaque palier, elle avait une histoire.": {
       "file": "5cdefe175eeeb3ef.mp3",
@@ -2005,7 +2045,8 @@
           75,
           3.855
         ]
-      ]
+      ],
+      "lufs": -19.6
     },
     "narrator|Paraît qu’elle reçoit un colis par jour.": {
       "file": "34e26b16dd261727.mp3",
@@ -2039,7 +2080,8 @@
           35,
           1.44
         ]
-      ]
+      ],
+      "lufs": -19.3
     },
     "narrator|Samedi, j’ai aidé mon ami Clément à emménager dans son premier appartement parisien.": {
       "file": "0001342771271023.mp3",
@@ -2097,7 +2139,8 @@
           75,
           4.052
         ]
-      ]
+      ],
+      "lufs": -20
     },
     "narrator|Tu te souviens de la fois où l’ascenseur a marché ?": {
       "file": "0a01205a44aa8a63.mp3",
@@ -2147,7 +2190,8 @@
           50,
           2.31
         ]
-      ]
+      ],
+      "lufs": -18.8
     },
     "narrator|Un ancien chanteur d’opéra qui chante encore à deux heures du matin.": {
       "file": "5ce64978e7bc3092.mp3",
@@ -2201,7 +2245,8 @@
           62,
           2.659
         ]
-      ]
+      ],
+      "lufs": -19
     },
     "narrator|Voilà la clé que vous cherchiez.": {
       "file": "77f79d4a54470ec9.mp3",
@@ -2231,7 +2276,8 @@
           22,
           0.998
         ]
-      ]
+      ],
+      "lufs": -18.9
     },
     "narrator|Voilà le code dont vous avez besoin.": {
       "file": "3bc02e5e2cb5ae3e.mp3",
@@ -2265,7 +2311,8 @@
           29,
           1.242
         ]
-      ]
+      ],
+      "lufs": -19.1
     }
   },
   "ambience": {

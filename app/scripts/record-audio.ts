@@ -27,6 +27,7 @@ import { forSpeech } from '../src/lesson/story';
 import type { AudioManifest } from '../src/audio/manifest';
 import { castLesson, CastingError, sampleText, type Pool, type Registry } from './casting';
 import { settingsFor, settingsSignature, type VoiceSettings } from './delivery';
+import { hasFfmpeg, levelClip } from './level-audio';
 import type { Delivery } from '../src/lesson/schema';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
@@ -121,6 +122,7 @@ async function main() {
   const dir = join(ROOT, 'public/lessons');
   const files = readdirSync(dir).filter(f => /^lesson-\d{3,}\.json$/.test(f) && (!ONLY || f === `${ONLY}.json`)).sort();
   let total = 0, recorded = 0;
+  const ffmpeg = !DRY && hasFfmpeg();
   for (const f of files) {
     const lesson = LessonSchema.parse(JSON.parse(readFileSync(join(dir, f), 'utf8')));
     const id = f.slice(0, -5); // lesson-001
@@ -218,6 +220,18 @@ async function main() {
     for (const [k, v] of Object.entries(manifest.clips)) if (!keep.has(k) || v.voice !== voices[k.slice(0, k.indexOf('|'))]) delete manifest.clips[k];
     const files = new Set([...Object.values(manifest.clips).map(c => c.file), ...(manifest.ambience ? [manifest.ambience.file] : [])]);
     for (const mp3 of readdirSync(out)) if (mp3.endsWith('.mp3') && !files.has(mp3)) unlinkSync(join(out, mp3));
+    // Even out loudness between voices (no credit used): each file is levelled once, then remembered as `lufs`.
+    const unlevelled = Object.values(manifest.clips).filter(c => c.lufs === undefined);
+    if (unlevelled.length && !ffmpeg) warn(`${id}: ffmpeg not found, so ${unlevelled.length} clips aren't levelled yet.`);
+    else if (unlevelled.length) {
+      const done = new Map<string, number | null>();
+      for (const c of unlevelled) {
+        if (!done.has(c.file)) done.set(c.file, Object.values(manifest.clips).find(o => o.file === c.file && o.lufs !== undefined)?.lufs ?? levelClip(join(out, c.file)));
+        const l = done.get(c.file);
+        if (l != null) c.lufs = l;
+      }
+      console.log(`  ✓ levelled ${done.size} clips`);
+    }
     save();
   }
   // Remove samples nobody points to any more (re-cast or approved characters).

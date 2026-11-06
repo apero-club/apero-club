@@ -35,7 +35,8 @@
           38,
           1.8
         ]
-      ]
+      ],
+      "lufs": -18.3
     },
     "la-boulangere|— Désolée, on n’en a plus, des pains au chocolat. Il me reste des croissants.": {
       "file": "9e142d8ad0d523c7.mp3",
@@ -98,7 +99,8 @@
           66,
           3.82
         ]
-      ]
+      ],
+      "lufs": -18.1
     },
     "madame-lefevre|— Non, mon fils m’a réveillée à sept heures. Il voulait des croissants.": {
       "file": "4616be4cf84c3178.mp3",
@@ -153,7 +155,8 @@
           60,
           3.657
         ]
-      ]
+      ],
+      "lufs": -18.1
     },
     "madame-lefevre|« C’est ce que vous dites tous les samedis ! »": {
       "file": "3fa6af74c195a44d.mp3",
@@ -196,7 +199,8 @@
           43,
           2.252
         ]
-      ]
+      ],
+      "lufs": -19.5
     },
     "madame-lefevre|« Vous voyez, il faut venir avant huit heures. »": {
       "file": "bffdf5aa630bf809.mp3",
@@ -235,7 +239,8 @@
           39,
           2.357
         ]
-      ]
+      ],
+      "lufs": -19.5
     },
     "narrator|— Ah, bonjour ! Vous non plus, vous n’avez pas pu faire la grasse mat’ ?": {
       "file": "93213462f91b833c.mp3",
@@ -301,7 +306,8 @@
           71,
           3.251
         ]
-      ]
+      ],
+      "lufs": -19.9
     },
     "narrator|— Bon, ben, j’en prends deux, alors.": {
       "file": "d9fae8d38b8edc46.mp3",
@@ -331,7 +337,8 @@
           30,
           1.149
         ]
-      ]
+      ],
+      "lufs": -17.8
     },
     "narrator|— Je voudrais une tradi bien cuite et deux pains au chocolat, s’il vous plaît.": {
       "file": "f08c12e79fc6c8b6.mp3",
@@ -393,7 +400,8 @@
           72,
           3.019
         ]
-      ]
+      ],
+      "lufs": -19.6
     },
     "narrator|— Non, mon fils m’a réveillée à sept heures.": {
       "file": "c2ea15bb92dded72.mp3",
@@ -431,7 +439,8 @@
           37,
           1.602
         ]
-      ]
+      ],
+      "lufs": -19
     },
     "narrator|Bon, ben, j’en prends deux, alors.": {
       "file": "d9fae8d38b8edc46.mp3",
@@ -461,7 +470,8 @@
           28,
           1.149
         ]
-      ]
+      ],
+      "lufs": -17.8
     },
     "narrator|Bon, ben, j’en prends deux.": {
       "file": "46cebaa2daea7db2.mp3",
@@ -487,7 +497,8 @@
           22,
           0.859
         ]
-      ]
+      ],
+      "lufs": -19.4
     },
     "narrator|Ce samedi-là, il pleuvait et la queue débordait sur le trottoir.": {
       "file": "04726f84717d2969.mp3",
@@ -537,7 +548,8 @@
           55,
           2.473
         ]
-      ]
+      ],
+      "lufs": -19.6
     },
     "narrator|Dans la boulangerie, y a deux pigeons. Le boulanger, il a un chapeau blanc, et il file un café à la cliente. Le pigeon rose, il a un sac avec un croissant dessus. Dans la vitrine, y a plein de gâteaux et de croissants qui ont l’air trop bons. Et au plafond, y a deux lampes violettes.": {
       "file": "8cdc93b41a32c20c.mp3",
@@ -771,7 +783,8 @@
           274,
           16.486
         ]
-      ]
+      ],
+      "lufs": -19.4
     },
     "narrator|Devant moi, il y avait Madame Lefèvre, ma voisine du troisième.": {
       "file": "90d0f1cc5a77fa48.mp3",
@@ -821,7 +834,8 @@
           53,
           2.577
         ]
-      ]
+      ],
+      "lufs": -20
     },
     "narrator|Eh bien, j’en prends deux.": {
       "file": "2a9756775b587931.mp3",
@@ -847,7 +861,8 @@
           21,
           0.789
         ]
-      ]
+      ],
+      "lufs": -19.5
     },
     "narrator|Elle a haussé les épaules : ": {
       "file": "3fcaf324c3b0fb55.mp3",
@@ -877,7 +892,8 @@
           26,
           1.231
         ]
-      ]
+      ],
+      "lufs": -20
     },
     "narrator|Elle a haussé les épaules : « C’est ce que vous dites tous les samedis ! »": {
       "file": "24b9d271fdf2c434.mp3",
@@ -943,7 +959,8 @@
           71,
           3.762
         ]
-      ]
+      ],
+      "lufs": -19.7
     },
     "narrator|Elle m’a dit qu’elle viendrait à huit heures.": {
       "file": "d0c30104c9d84433.mp3",
@@ -981,7 +998,8 @@
           38,
           1.265
         ]
-      ]
+      ],
+      "lufs": -18.7
     },
     "narrator|En sortant, Madame Lefèvre m’a dit en riant : ": {
       "file": "935e8ac328a8058b.mp3",
@@ -1023,7 +1041,8 @@
           44,
           1.985
         ]
-      ]
+      ],
+      "lufs": -19.3
     },
     "narrator|Faire la grasse mat’": {
       "file": "563035524dc0a6f7.mp3",
@@ -1045,7 +1064,8 @@
           16,
           0.708
         ]
-      ]
+      ],
+      "lufs": -19.3
     },
     "narrator|Faire la grasse matinée": {
       "file": "2bf319d02e7a9423.mp3",
@@ -1067,7 +1087,8 @@
           16,
           0.743
         ]
-      ]
+      ],
+      "lufs": -19.3
     },
     "narrator|Il pleuvait et la queue débordait sur le trottoir.": {
       "file": "1bb534576099b2d2.mp3",
@@ -1109,7 +1130,8 @@
           41,
           2.067
         ]
-      ]
+      ],
+      "lufs": -19.4
     },
     "narrator|Il voulait des croissants.": {
       "file": "3c98151e8b4ff745.mp3",
@@ -1131,7 +1153,8 @@
           15,
           0.557
         ]
-      ]
+      ],
+      "lufs": -20
     },
     "narrator|Il y avait Madame Lefèvre.": {
       "file": "61ba2361e3812ce6.mp3",
@@ -1157,7 +1180,8 @@
           18,
           0.72
         ]
-      ]
+      ],
+      "lufs": -17.8
     },
     "narrator|Je lui ai répondu que je mettrais un réveil.": {
       "file": "7a028bce67c6789a.mp3",
@@ -1199,7 +1223,8 @@
           37,
           1.521
         ]
-      ]
+      ],
+      "lufs": -18.7
     },
     "narrator|Je lui ai répondu que la semaine prochaine, je mettrais un réveil.": {
       "file": "e501c52537c5a1e1.mp3",
@@ -1253,7 +1278,8 @@
           59,
           2.415
         ]
-      ]
+      ],
+      "lufs": -18.6
     },
     "narrator|Je vais prendre une tradi, s’il vous plaît.": {
       "file": "2477aa3884947d43.mp3",
@@ -1291,7 +1317,8 @@
           37,
           1.474
         ]
-      ]
+      ],
+      "lufs": -19.6
     },
     "narrator|Je voudrais une tradi bien cuite, s’il vous plaît.": {
       "file": "9655c68fa49810d5.mp3",
@@ -1333,7 +1360,8 @@
           44,
           1.811
         ]
-      ]
+      ],
+      "lufs": -19.6
     },
     "narrator|Les croissants ? Je les ai mangés.": {
       "file": "4546ed47f544fc03.mp3",
@@ -1367,7 +1395,8 @@
           27,
           1.486
         ]
-      ]
+      ],
+      "lufs": -20.2
     },
     "narrator|Mon fils m’a réveillée à sept heures.": {
       "file": "88da1875254d6831.mp3",
@@ -1401,7 +1430,8 @@
           30,
           1.451
         ]
-      ]
+      ],
+      "lufs": -19.9
     },
     "narrator|Nous n’avons plus de pains au chocolat.": {
       "file": "22e8a1a0d62520cd.mp3",
@@ -1435,7 +1465,8 @@
           30,
           1.37
         ]
-      ]
+      ],
+      "lufs": -19.2
     },
     "narrator|On n’en a plus, des pains au chocolat.": {
       "file": "d9aa188e5ea0e767.mp3",
@@ -1473,7 +1504,8 @@
           29,
           1.115
         ]
-      ]
+      ],
+      "lufs": -19.8
     },
     "narrator|Quand notre tour est arrivé, la boulangère m’a souri.": {
       "file": "3b12868bec9a0a7b.mp3",
@@ -1515,7 +1547,8 @@
           47,
           2.264
         ]
-      ]
+      ],
+      "lufs": -18.5
     },
     "narrator|Tous les samedis matin, je descends à la boulangerie en bas de chez moi.": {
       "file": "9aa2e55928bbcae2.mp3",
@@ -1577,7 +1610,8 @@
           68,
           3.309
         ]
-      ]
+      ],
+      "lufs": -19.2
     },
     "narrator|Une baguette de tradition": {
       "file": "847cede974014ceb.mp3",
@@ -1599,7 +1633,8 @@
           16,
           0.627
         ]
-      ]
+      ],
+      "lufs": -19.7
     },
     "narrator|Une tradi": {
       "file": "7ad8f74fc80fe593.mp3",
@@ -1613,7 +1648,8 @@
           4,
           0.197
         ]
-      ]
+      ],
+      "lufs": -19.5
     },
     "narrator|Voulez-vous venir avant huit heures ?": {
       "file": "d74100ed9b57f3a6.mp3",
@@ -1643,7 +1679,8 @@
           36,
           2.113
         ]
-      ]
+      ],
+      "lufs": -19.1
     },
     "narrator|Vous auriez des croissants ?": {
       "file": "48f323a831de1b88.mp3",
@@ -1669,7 +1706,8 @@
           27,
           1.01
         ]
-      ]
+      ],
+      "lufs": -18.5
     },
     "narrator|Vous venez avant huit heures ?": {
       "file": "af419c28c3c6486f.mp3",
@@ -1699,7 +1737,8 @@
           29,
           1.231
         ]
-      ]
+      ],
+      "lufs": -19.5
     },
     "narrator|Y avait Madame Lefèvre.": {
       "file": "1934d034d62e815d.mp3",
@@ -1721,7 +1760,8 @@
           15,
           0.662
         ]
-      ]
+      ],
+      "lufs": -19.6
     }
   },
   "ambience": {
