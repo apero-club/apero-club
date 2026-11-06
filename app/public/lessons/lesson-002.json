@@ -537,35 +537,37 @@
     }
   ],
   "describe": {
-    "image": "scene-fog.svg",
-    "alt": "The Trocadéro in thick fog: a bench with a man feeding pigeons, a woman with a map, and the faint outline of the Eiffel Tower across the river",
-    "imagePosition": "50% 100%",
-    "caption": "Le Trocadéro dans le brouillard · dimanche, 8 h 30",
-    "instructions": "Write 3 to 5 sentences: what can you still see, what has disappeared, who is on the bench?",
-    "placeholder": "Dans le brouillard, on voit…",
+    "image": "scene-cartes.webp",
+    "alt": "A tourist on the Trocadéro holds up a sunny postcard of the Eiffel Tower and stares, mouth open, at the real view, where the tower has almost vanished into lilac fog; a pigeon sleeps on top of the postcard rack",
+    "imagePosition": "50% 50%",
+    "caption": "Le Trocadéro dans le brouillard · dimanche, 9 h",
+    "instructions": "Write 3 to 5 sentences: what does the tourist see on the postcard, and what can (or can’t) he see in real life? Use ne… plus, ne… rien, ne… jamais or personne.",
+    "placeholder": "Sur la carte postale, il y a…",
     "helpers": [
       "on ne voit plus…",
-      "il n’y a personne",
-      "au loin",
+      "il n’y a rien",
+      "sur la carte postale",
+      "en vrai",
       "à peine",
-      "à travers la brume",
-      "on dirait que"
+      "dans le brouillard",
+      "il n’a jamais vu…",
+      "le pigeon ne bouge pas"
     ],
-    "scene": "A flat, colourful illustration of the Trocadéro esplanade in Paris in thick fog. In the foreground, on a green bench, an older man in a dark coat and flat cap throws bread to four pigeons on the paving stones. Beside the bench stands a woman with grey hair, a raincoat and a paper map, looking worried. Behind them, pale grey bands of fog cover the view; across the river, the top of the Eiffel Tower is only a faint violet outline, and the rest of the tower has disappeared into the fog. A row of street lamps fades into the mist. The sky is overcast and grey. There is no sun.",
+    "scene": "A flat, colourful illustration of the Trocadéro terrace in Paris on a foggy morning, all in pale lilac. On the left stands a pink rotating postcard rack with three rows of bright postcards, each showing an orange Eiffel Tower under a deep blue sky with a yellow sun and white clouds. On top of the rack, a blue pigeon sits calmly with its eyes closed. Next to the rack, a tourist with curly blue hair and a medium-brown skin tone, wearing an orange striped jacket, blue trousers and a pink backpack, holds up one of the postcards, shades his eyes with his other hand and stares into the distance with his mouth wide open. Behind him, a stone balustrade and a few green bushes; beyond it, a wall of pale lilac fog where only a very faint outline of the Eiffel Tower can be guessed. The paving is lilac and the sky is grey-lilac.",
     "sample": {
-      "text": "Il y a beaucoup de brouillard au Trocadéro. Le ciel est gris et les nuages est bas. On ne voit pas rien au loin, et la tour Eiffel n’est pas plus là. Sur le banc, un homme donne du pain à les pigeons. Il ne y a personne d’autre.",
+      "text": "Les cartes postales sont toutes ensoleillé, avec un ciel bleu. Mais en vrai, on ne voit pas rien : la tour Eiffel n’est pas plus là. Le touriste n’a vu jamais autant de brouillard ! Il ne y a personne d’autre sur la terrasse, et le pigeon, lui, dort tranquillement.",
       "result": {
         "segments": [
           {
-            "t": "Il y a beaucoup de brouillard au Trocadéro. Le ciel est gris et les nuages "
+            "t": "Les cartes postales sont toutes "
           },
           {
-            "from": "est",
-            "to": "sont",
+            "from": "ensoleillé",
+            "to": "ensoleillées",
             "n": 1
           },
           {
-            "t": " bas. On ne voit "
+            "t": ", avec un ciel bleu. Mais en vrai, on ne voit "
           },
           {
             "from": "pas rien",
@@ -573,7 +575,7 @@
             "n": 2
           },
           {
-            "t": " au loin, et la tour Eiffel n’est "
+            "t": " : la tour Eiffel n’est "
           },
           {
             "from": "pas plus",
@@ -581,15 +583,15 @@
             "n": 3
           },
           {
-            "t": " là. Sur le banc, un homme donne du pain "
+            "t": " là. Le touriste "
           },
           {
-            "from": "à les",
-            "to": "aux",
+            "from": "n’a vu jamais",
+            "to": "n’a jamais vu",
             "n": 4
           },
           {
-            "t": " pigeons. Il "
+            "t": " autant de brouillard ! Il "
           },
           {
             "from": "ne y",
@@ -597,16 +599,16 @@
             "n": 5
           },
           {
-            "t": " a personne d’autre."
+            "t": " a personne d’autre sur la terrasse, et le pigeon, lui, dort tranquillement."
           }
         ],
         "corrections": [
           {
             "n": 1,
-            "from": "est",
-            "to": "sont",
-            "rule": "Accord du verbe",
-            "why": "The verb agrees with its subject: les nuages is plural, so être becomes sont."
+            "from": "ensoleillé",
+            "to": "ensoleillées",
+            "rule": "Accord de l’adjectif",
+            "why": "Cartes postales is feminine plural, so the adjective takes -es: elles sont ensoleillées."
           },
           {
             "n": 2,
@@ -620,14 +622,14 @@
             "from": "pas plus",
             "to": "plus",
             "rule": "Ne… plus, sans pas",
-            "why": "Plus replaces pas: elle n’est plus là means it’s no longer there. « Pas plus » means not more."
+            "why": "Plus replaces pas: la tour n’est plus là, it’s no longer there. « Pas plus » means not more."
           },
           {
             "n": 4,
-            "from": "à les",
-            "to": "aux",
-            "rule": "À + les = aux",
-            "why": "À and les always merge into aux: on donne du pain aux pigeons."
+            "from": "n’a vu jamais",
+            "to": "n’a jamais vu",
+            "rule": "Jamais avant le participe",
+            "why": "In the passé composé, jamais goes before the past participle, like pas: il n’a jamais vu."
           },
           {
             "n": 5,
@@ -637,10 +639,10 @@
             "why": "Ne loses its e before a vowel sound, and y counts: il n’y a personne."
           }
         ],
-        "corrected": "Il y a beaucoup de brouillard au Trocadéro. Le ciel est gris et les nuages sont bas. On ne voit rien au loin, et la tour Eiffel n’est plus là. Sur le banc, un homme donne du pain aux pigeons. Il n’y a personne d’autre.",
-        "spoken": "Y a un brouillard pas possible au Trocadéro. Le ciel est tout gris, les nuages sont super bas. On voit rien au loin, et la tour Eiffel, elle est plus là. Sur le banc, y a un monsieur qui donne du pain aux pigeons. Et à part lui, y a personne.",
-        "spokenNote": "Out loud, the ne disappears (on voit rien, elle est plus là, y a personne), il y a becomes y a, and the tower gets named twice for emphasis.",
-        "praise": "Nice use of “au loin”!"
+        "corrected": "Les cartes postales sont toutes ensoleillées, avec un ciel bleu. Mais en vrai, on ne voit rien : la tour Eiffel n’est plus là. Le touriste n’a jamais vu autant de brouillard ! Il n’y a personne d’autre sur la terrasse, et le pigeon, lui, dort tranquillement.",
+        "spoken": "Sur les cartes postales, y a du soleil et un grand ciel bleu. Mais en vrai, on voit rien : la tour Eiffel, elle est plus là. Le touriste, il a jamais vu un brouillard pareil ! Y a personne d’autre sur la terrasse, et le pigeon, lui, il pionce tranquille.",
+        "spokenNote": "The ne disappears everywhere (on voit rien, elle est plus là, il a jamais vu), il y a becomes y a, and pioncer is a familiar word for sleeping.",
+        "praise": "Nice “dort tranquillement”!"
       }
     }
   },
