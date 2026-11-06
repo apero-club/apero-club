@@ -15,6 +15,8 @@ import { LessonSheet } from '../screens/Lessons';
 import type { AppCtx, Screen } from '../screens/common';
 import { Eyebrow, pad, PRAISE, STEPS } from '../screens/common';
 import { stepColors } from '../lesson/palette';
+import { isLight, numeralOn, textOn } from '../ds/color';
+import { heroColors } from '../screens/heroColors';
 import { FillImage, HeroTile, listenColors, storyImage } from '../screens/HeroTile';
 
 const EN_LABEL = { story: 'Listen', quiz: 'Check', spoken: 'Say it', describe: 'Write' } as const;
@@ -95,6 +97,7 @@ function DHome({ app }: P) {
   const mins = (id: string) => lesson.minutes[id === 'spoken' ? 'phrases' : (id as 'story')];
   const wide: HeroTileT[] = lesson.heroWide ?? [{ pattern: 'checker', a: 'green-900', b: 'green-500' }, ...lesson.hero];
   const stepTile = stepColors(wide, lesson.number);
+  const hc = heroColors(lesson.heroPair);
   const desc: Record<string, string> = {
     story: `A ${app.lines.length}-sentence story read by ${lesson.cast.length} French voices. Tap any line to hear it.`,
     quiz: `${lesson.quiz.length} questions. Every wrong answer comes with the reason.`,
@@ -102,14 +105,14 @@ function DHome({ app }: P) {
     describe: 'Describe a scene in French. Each correction is explained.',
   };
   return <>
-    <section style={{ background: 'var(--violet-500)', color: 'var(--white)' }}>
+    <section style={{ background: hc.bg, color: hc.text }}>
       <div className="band-grid" style={{ maxWidth: 1120, margin: '0 auto' }}>
         <div style={{ padding: '48px 20px 44px', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 20 }}>
-          <Eyebrow color="var(--lilac-500)">{lesson.label} · {app.isToday ? 'Today’s apéro' : lesson.number > app.library.today.number ? 'Coming up' : 'From the archive'}</Eyebrow>
-          <h1 style={{ font: `900 ${titleSize(lesson.title)}/0.92 var(--font-display)`, letterSpacing: '-0.045em', color: 'var(--lilac-500)', margin: 0 }}>{lesson.title}</h1>
+          <Eyebrow color={hc.accent}>{lesson.label} · {app.isToday ? 'Today’s apéro' : lesson.number > app.library.today.number ? 'Coming up' : 'From the archive'}</Eyebrow>
+          <h1 style={{ font: `900 ${titleSize(lesson.title)}/0.92 var(--font-display)`, letterSpacing: '-0.045em', color: hc.accent, margin: 0 }}>{lesson.title}</h1>
           <p style={{ margin: 0, fontSize: 18, lineHeight: 1.5, maxWidth: '44ch' }}>{lesson.summary} Listen, check you understood, see how it’s really said, then write.</p>
-          {allDone && <span className="hand" style={{ fontSize: 30, color: 'var(--lilac-500)', transform: 'rotate(-2deg)' }}>Séance terminée ! À demain.</span>}
-          <Button variant="secondary" size="lg" iconRight="arrow-right" onClick={() => go(allDone ? 'story' : next.id)}>
+          {allDone && <span className="hand" style={{ fontSize: 30, color: hc.accent, transform: 'rotate(-2deg)' }}>Séance terminée ! À demain.</span>}
+          <Button variant="secondary" size="lg" iconRight="arrow-right" tone={hc.button} onClick={() => go(allDone ? 'story' : next.id)}>
             {allDone ? 'Do it again' : progress.done.story ? `Continue · ${next.label}` : `Start · ${total} min`}
           </Button>
         </div>
@@ -128,10 +131,10 @@ function DHome({ app }: P) {
         {STEPS.map((s, i) => {
           const isDone = !!progress.done[s.id], isNext = next?.id === s.id;
           return (
-            <button key={s.id} className="step-tile" onClick={() => go(s.id)} style={{ background: tok(stepTile[i].bg), color: tok(stepTile[i].fg) }}>
+            <button key={s.id} className="step-tile" onClick={() => go(s.id)} style={{ background: tok(stepTile[i].bg), color: textOn(stepTile[i].bg) }}>
               <span style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', width: '100%', gap: 12 }}>
-                <span style={{ font: '900 56px/0.9 var(--font-display)', letterSpacing: '-0.05em' }}>{s.n}</span>
-                <span style={{ font: '600 12px/1 var(--font-display)', padding: '7px 10px', borderRadius: 'var(--radius-pill)', background: isDone ? 'var(--green-500)' : isNext ? (stepTile[i].family === 'violet' ? 'var(--ink-900)' : 'var(--violet-500)') : 'var(--white)', color: isNext && !isDone ? 'var(--white)' : 'var(--ink-900)' }}>
+                <span style={{ font: '900 56px/0.9 var(--font-display)', letterSpacing: '-0.05em', color: numeralOn(stepTile[i].bg) }}>{s.n}</span>
+                <span style={{ font: '600 12px/1 var(--font-display)', padding: '7px 10px', borderRadius: 'var(--radius-pill)', background: isDone ? 'var(--green-500)' : isNext ? (stepTile[i].family === 'violet' || !isLight(stepTile[i].bg) ? 'var(--ink-900)' : 'var(--violet-500)') : 'var(--white)', color: isNext && !isDone ? 'var(--white)' : 'var(--ink-900)' }}>
                   {isDone ? 'Done' : isNext ? `Up next · ${mins(s.id)} min` : `${mins(s.id)} min`}
                 </span>
               </span>

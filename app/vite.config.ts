@@ -25,5 +25,6 @@ function lessonIndex(): Plugin {
 export default defineConfig({
   base: process.env.BASE_PATH || '/',
   plugins: [react(), lessonIndex()],
-  test: { environment: 'node' },
+  // css.include lets tests read colors.css (?raw) for the colour rules in src/ds/color.ts.
+  test: { environment: 'node', css: { include: [/colors\.css/] } },
 });

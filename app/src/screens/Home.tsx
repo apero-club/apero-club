@@ -1,6 +1,7 @@
 import { Button, LessonNode, type NodeState } from '../ds/controls';
 import { FillTile } from '../ds/brand';
 import { HeroTile } from './HeroTile';
+import { heroColors } from './heroColors';
 import { Icon } from '../ds/Icon';
 import type { AppCtx } from './common';
 import { Eyebrow, STEPS, TabBar } from './common';
@@ -18,6 +19,7 @@ export function Home({ app }: { app: AppCtx }) {
   const total = Object.values(lesson.minutes).reduce((a, b) => a + b, 0);
   const startLabel = allDone ? 'See today’s results' : done.story ? `Continue · ${next.label}` : `Start · ${total} min`;
   const start = () => go(allDone ? 'complete' : next.id);
+  const hc = heroColors(lesson.heroPair);
 
   type Node = { key: string; label: string; sub: string; icon: IconName; indent: number; isNext: boolean; state: NodeState; onClick: () => void };
   const nodes: Node[] = STEPS.map((s, i) => {
@@ -40,12 +42,12 @@ export function Home({ app }: { app: AppCtx }) {
       </button>
     )}
     <div className="scroll">
-      <section style={{ background: 'var(--violet-500)', padding: '24px 20px 26px', display: 'flex', flexDirection: 'column', gap: 12 }}>
-        <Eyebrow color="var(--lilac-500)">{lesson.label}</Eyebrow>
-        <h1 style={{ margin: 0, font: '900 40px/0.92 var(--font-display)', letterSpacing: '-0.05em', color: 'var(--lilac-500)' }}>{lesson.title}</h1>
-        <p style={{ margin: 0, fontSize: 16, lineHeight: 1.5, color: 'var(--white)' }}>{lesson.summary}</p>
-        {allDone && <span className="hand" style={{ fontSize: 26, color: 'var(--lilac-500)', transform: 'rotate(-2deg)' }}>Séance terminée ! À demain.</span>}
-        <div style={{ paddingTop: 6 }}><Button variant="secondary" size="lg" iconRight="arrow-right" onClick={start}>{startLabel}</Button></div>
+      <section style={{ background: hc.bg, padding: '24px 20px 26px', display: 'flex', flexDirection: 'column', gap: 12 }}>
+        <Eyebrow color={hc.accent}>{lesson.label}</Eyebrow>
+        <h1 style={{ margin: 0, font: '900 40px/0.92 var(--font-display)', letterSpacing: '-0.05em', color: hc.accent }}>{lesson.title}</h1>
+        <p style={{ margin: 0, fontSize: 16, lineHeight: 1.5, color: hc.text }}>{lesson.summary}</p>
+        {allDone && <span className="hand" style={{ fontSize: 26, color: hc.accent, transform: 'rotate(-2deg)' }}>Séance terminée ! À demain.</span>}
+        <div style={{ paddingTop: 6 }}><Button variant="secondary" size="lg" iconRight="arrow-right" tone={hc.button} onClick={start}>{startLabel}</Button></div>
       </section>
 
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, minmax(0, 1fr))' }}>

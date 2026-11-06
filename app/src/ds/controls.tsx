@@ -28,11 +28,13 @@ const BTN: Record<string, Variant> = {
 };
 const BTN_SIZE = { sm: { h: 36, px: 16, font: 13, icon: 18, gap: 6 }, md: { h: 48, px: 24, font: 15, icon: 20, gap: 8 }, lg: { h: 56, px: 28, font: 16, icon: 22, gap: 10 } };
 
-export function Button({ variant = 'primary', size = 'md', icon, iconRight, block = false, disabled = false, onClick, children, style }: {
+export function Button({ variant = 'primary', size = 'md', icon, iconRight, block = false, disabled = false, onClick, children, style, tone }: {
   variant?: keyof typeof BTN; size?: keyof typeof BTN_SIZE; icon?: IconName; iconRight?: IconName; block?: boolean; disabled?: boolean;
   onClick?: () => void; children?: ReactNode; style?: CSSProperties;
+  /** Colours that replace the variant's, e.g. to match a lesson's hero pair. */
+  tone?: { bg: string; hover: string; fg: string; lip: string };
 }) {
-  const v = BTN[variant], s = BTN_SIZE[size];
+  const v = tone ? { ...BTN[variant], ...tone, border: 'transparent' } : BTN[variant], s = BTN_SIZE[size];
   const [hover, press, handlers] = usePress(disabled);
   const lipPx = size === 'sm' ? 3 : 4, showLip = !!v.lip && !disabled;
   return (

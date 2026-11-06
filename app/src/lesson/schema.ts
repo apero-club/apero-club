@@ -10,6 +10,7 @@
  * See docs/lesson-format.md for an author-facing walkthrough.
  */
 import { z } from 'zod';
+import { HERO_PAIR_IDS } from '../styles/theme';
 
 /** A design-system colour token without the `--` prefix, e.g. "violet-500". */
 const Token = z
@@ -196,6 +197,8 @@ export const LessonSchema = z.object({
    * pattern plus the 3 `hero` squares.
    */
   heroWide: z.array(HeroTile).length(4).optional(),
+  /** The hero's colour pair, by id from src/styles/theme.ts (default: ultramarine-pink). */
+  heroPair: z.enum(HERO_PAIR_IDS).optional(),
   /** Short place line for the desktop story header, e.g. "rue des Martyrs, 9e". */
   place: z.string().optional(),
   cast: z.array(CastMember).min(1),
