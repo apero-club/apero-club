@@ -301,7 +301,7 @@
     "henri": {
       "name": "Henri",
       "description": "The maître d’ of a smart Paris restaurant, an older man in his fifties. Theatrical and grandiose, endlessly obsequious, grand gestures.",
-      "voiceId": "n1u6R6yj3qEpDLH3liBh",
+      "voiceId": "AgCKJTfnUgOEB18JJpqg",
       "status": "approved",
       "firstLesson": "lesson-008",
       "rejected": [
@@ -312,6 +312,7 @@
         "SsVUx1gFlvniIrUMZtgF",
         "Xy5q4w05TJGcKXPWeWoz",
         "jUHQdLfy668sllNiNTSW",
+        "n1u6R6yj3qEpDLH3liBh",
         "vCsptCe91UKbZe2sIB2T"
       ],
       "delivery": "theatrical"

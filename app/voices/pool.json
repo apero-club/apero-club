@@ -215,11 +215,9 @@
       "age": "older",
       "accent": "parisian",
       "tags": [
-        "theatrical",
-        "grand",
-        "obsequious"
+        "calm"
       ],
-      "notes": "Henri's voice (chosen by hand)."
+      "notes": "Tried for Henri: too dull, delivery lacked emotion."
     },
     {
       "id": "40Rmxv431tMaTTYB09bz",
@@ -233,6 +231,19 @@
         "calm"
       ],
       "notes": "Madame Dupont's voice (chosen by hand)."
+    },
+    {
+      "id": "AgCKJTfnUgOEB18JJpqg",
+      "name": "",
+      "gender": "male",
+      "age": "older",
+      "accent": "parisian",
+      "tags": [
+        "theatrical",
+        "expressive",
+        "grand"
+      ],
+      "notes": "Henri's voice (chosen by hand)."
     }
   ]
 }

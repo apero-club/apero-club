@@ -16,9 +16,10 @@ export function flattenStory(lesson: LessonData): { lines: FlatLine[]; paragraph
   const paragraphs = lesson.story.map(p => p.map(line => {
     const words = [...line.fr.matchAll(/\S+/g)].map(m => ({ t: m[0], start: m.index! }));
     const q = line.quoteSpeaker ? line.fr.indexOf('«') : -1;
+    // Narration then «quote»: two voices. A line that is all quote: the quoted speaker alone.
     const parts: Part[] = q > 0
       ? [{ speaker: line.speaker, start: 0, end: q }, { speaker: line.quoteSpeaker!, start: q, end: line.fr.length }]
-      : [{ speaker: line.speaker, start: 0, end: line.fr.length }];
+      : [{ speaker: q === 0 ? line.quoteSpeaker! : line.speaker, start: 0, end: line.fr.length }];
     lines.push({ ...line, index: lines.length, words, parts });
     return lines.length - 1;
   }));

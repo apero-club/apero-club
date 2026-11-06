@@ -53,3 +53,16 @@ describe('wordTimes', () => {
     expect(w[4]).toEqual([text.indexOf('huit'), text.indexOf('huit') / 10]);
   });
 });
+
+describe('quoted speakers', () => {
+  it('a narration line that is only a «quote» is spoken by the quoted character, not the narrator', async () => {
+    const { flattenStory } = await import('./story');
+    const { LessonSchema } = await import('./schema');
+    const { readFileSync } = await import('node:fs');
+    const { join } = await import('node:path');
+    const l8 = LessonSchema.parse(JSON.parse(readFileSync(join(__dirname, '../../public/lessons/lesson-008.json'), 'utf8')));
+    const line = flattenStory(l8).lines.find(x => x.fr.startsWith('« Bonsoir'))!;
+    expect(line.parts).toEqual([{ speaker: 'madame-dupont', start: 0, end: line.fr.length }]);
+  });
+});
+
