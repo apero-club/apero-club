@@ -539,112 +539,112 @@
     }
   ],
   "describe": {
-    "image": "scene-building.svg",
-    "alt": "A cutaway of a Paris apartment building: the gardienne in her lodge, a singer on the third floor, a ladder on the fourth, parcels on the fifth and a black cat in the attic",
+    "image": "scene-chanteur.webp",
+    "alt": "A Paris apartment building at night: an old man in a pink dressing gown sings on his balcony next to a pigeon, while three neighbours in pyjamas react at their windows, one with a pillow on her head and one covering her ears",
     "imagePosition": "50% 50%",
-    "caption": "Un immeuble à Belleville · samedi, 10 h",
-    "instructions": "Write 3 to 5 sentences: who lives on each floor? Try to use qui, que, dont and où to describe the neighbours.",
-    "placeholder": "Au rez-de-chaussée, il y a…",
+    "caption": "Belleville · 2 h du matin",
+    "instructions": "Write 3 to 5 sentences: who are these neighbours, and what is happening at 2 a.m.? Use qui, que, dont and où to describe them.",
+    "placeholder": "C’est l’immeuble où…",
     "helpers": [
-      "au rez-de-chaussée",
-      "l’étage où…",
-      "le voisin qui…",
-      "le couple que…",
-      "le chat dont…",
-      "sur le palier",
-      "la loge de la gardienne",
-      "il paraît que"
+      "le voisin qui chante…",
+      "la voisine qui…",
+      "la musique que…",
+      "le monsieur dont tout le monde parle",
+      "le balcon où…",
+      "à deux heures du matin",
+      "en pyjama",
+      "un oreiller"
     ],
-    "scene": "A flat, colourful cutaway of a six-storey Paris apartment building, with the front wall removed so every floor shows. Ground floor: the gardienne's lodge with a woman behind a window, a row of letterboxes, and a young man in blue carrying two cardboard boxes next to an orange front door. Third floor: an older man in black singing, with music notes floating out and a clock nearby showing night. Fourth floor: a couple standing beside a ladder and paint pots, with no workers anywhere. Fifth floor: a woman next to a tall pile of orange parcels. Sixth floor, under the mansard roof: an empty armchair and a black cat with yellow eyes. A staircase runs up the right side. The sky behind is pale yellow.",
+    "scene": "A flat, colourful illustration of a lilac Paris apartment building at night, with a deep blue sky, a full moon, a dark blue mansard roof with dormer windows and pink chimneys. On the central balcony, an old man with grey hair and a moustache, in a pink dressing gown, sings opera with his arms wide and his eyes closed, next to a green music stand; a blue pigeon sits happily on the balustrade beside him. At the window top left, a woman with blue hair in orange polka-dot pyjamas holds a pillow over her head, looking furious. Below her, a young man with curly blue hair in orange striped pyjamas leans out and looks up, surprised. At the window on the right, a woman with a blue bun in pink pyjamas covers her ears with her eyes shut. Most of the other windows are lit, and green bushes stand at the bottom corners.",
     "sample": {
-      "text": "Au rez-de-chaussée, il y a la loge où la gardienne travaille. Au troisième, il y a un homme que chante la nuit. Au quatrième, c’est le couple qui on voit toujours avec des pots de peinture. Au cinquième, il y a beaucoup des colis. Le sixième, c’est l’étage dont il y a un chat noir sur la fenêtre.",
+      "text": "C’est l’immeuble dont j’habite. Il est deux heures du matin, et le monsieur qui porte une robe de chambre rose chante sur son balcon : c’est le chanteur que tout le monde parle. La voisine que habite à gauche met un oreiller sur sa tête. La dame à droite déteste la musique que il chante. Le pigeon est le seul voisin dont aime l’opéra.",
       "result": {
         "segments": [
           {
-            "t": "Au rez-de-chaussée, il y a la loge où la gardienne travaille. Au troisième, il y a un homme "
-          },
-          {
-            "from": "que",
-            "to": "qui",
-            "n": 1
-          },
-          {
-            "t": " chante la nuit. Au quatrième, c’est le couple "
-          },
-          {
-            "from": "qui on",
-            "to": "qu’on",
-            "n": 2
-          },
-          {
-            "t": " voit toujours avec des pots de peinture. Au cinquième, il y a "
-          },
-          {
-            "from": "beaucoup des",
-            "to": "beaucoup de",
-            "n": 3
-          },
-          {
-            "t": " colis. Le sixième, c’est l’étage "
+            "t": "C’est l’immeuble "
           },
           {
             "from": "dont",
             "to": "où",
+            "n": 1
+          },
+          {
+            "t": " j’habite. Il est deux heures du matin, et le monsieur qui porte une robe de chambre rose chante sur son balcon : c’est le chanteur "
+          },
+          {
+            "from": "que",
+            "to": "dont",
+            "n": 2
+          },
+          {
+            "t": " tout le monde parle. La voisine "
+          },
+          {
+            "from": "que",
+            "to": "qui",
+            "n": 3
+          },
+          {
+            "t": " habite à gauche met un oreiller sur sa tête. La dame à droite déteste la musique "
+          },
+          {
+            "from": "que il",
+            "to": "qu’il",
             "n": 4
           },
           {
-            "t": " il y a un chat noir "
+            "t": " chante. Le pigeon est le seul voisin "
           },
           {
-            "from": "sur",
-            "to": "à",
+            "from": "dont",
+            "to": "qui",
             "n": 5
           },
           {
-            "t": " la fenêtre."
+            "t": " aime l’opéra."
           }
         ],
         "corrections": [
           {
             "n": 1,
-            "from": "que",
-            "to": "qui",
-            "rule": "Qui : le sujet",
-            "why": "The man is the one singing, the subject of chante, so it’s qui. Que needs its own subject after it."
-          },
-          {
-            "n": 2,
-            "from": "qui on",
-            "to": "qu’on",
-            "rule": "Que : l’objet",
-            "why": "On is the subject and the couple is what you see, the object, so it’s que. Before on, que becomes qu’."
-          },
-          {
-            "n": 3,
-            "from": "beaucoup des",
-            "to": "beaucoup de",
-            "rule": "Beaucoup de + nom",
-            "why": "After beaucoup, use de on its own, never des: beaucoup de colis."
-          },
-          {
-            "n": 4,
             "from": "dont",
             "to": "où",
             "rule": "Où : un lieu",
-            "why": "The sixth floor is a place: the cat is there, au sixième. Dont replaces de + something, and there’s no de here."
+            "why": "You live in a building (dans l’immeuble), so the place takes où. Dont replaces de + something."
+          },
+          {
+            "n": 2,
+            "from": "que",
+            "to": "dont",
+            "rule": "Dont : parler de",
+            "why": "You parle de someone, so the relative pronoun is dont: le chanteur dont tout le monde parle."
+          },
+          {
+            "n": 3,
+            "from": "que",
+            "to": "qui",
+            "rule": "Qui : le sujet",
+            "why": "The neighbour is the one who lives on the left, the subject of habite, so it’s qui."
+          },
+          {
+            "n": 4,
+            "from": "que il",
+            "to": "qu’il",
+            "rule": "Que → qu’",
+            "why": "Que drops its e before a vowel: la musique qu’il chante. Qui never does."
           },
           {
             "n": 5,
-            "from": "sur",
-            "to": "à",
-            "rule": "À la fenêtre",
-            "why": "Someone looking out of a window is à la fenêtre. Sur la fenêtre would put the cat on the glass."
+            "from": "dont",
+            "to": "qui",
+            "rule": "Qui devant le verbe",
+            "why": "The pigeon is the one who loves opera, the subject of aime, so it’s qui."
           }
         ],
-        "corrected": "Au rez-de-chaussée, il y a la loge où la gardienne travaille. Au troisième, il y a un homme qui chante la nuit. Au quatrième, c’est le couple qu’on voit toujours avec des pots de peinture. Au cinquième, il y a beaucoup de colis. Le sixième, c’est l’étage où il y a un chat noir à la fenêtre.",
-        "spoken": "En bas, y a la loge, c’est là que la gardienne bosse. Au troisième, y a un monsieur qui chante la nuit. Au quatrième, c’est le couple qu’on voit toujours avec des pots de peinture. Au cinquième, y a des colis partout. Et au sixième, y a un chat noir à la fenêtre, mais son proprio, personne l’a jamais vu.",
-        "spokenNote": "Il y a becomes y a, travailler becomes bosser, and the ne disappears. « C’est là que » is the everyday way round où.",
-        "praise": "Nice use of “la loge où”!"
+        "corrected": "C’est l’immeuble où j’habite. Il est deux heures du matin, et le monsieur qui porte une robe de chambre rose chante sur son balcon : c’est le chanteur dont tout le monde parle. La voisine qui habite à gauche met un oreiller sur sa tête. La dame à droite déteste la musique qu’il chante. Le pigeon est le seul voisin qui aime l’opéra.",
+        "spoken": "Dans mon immeuble, il est deux heures du mat’, et le monsieur en robe de chambre rose chante sur son balcon : c’est le chanteur dont tout le monde parle. La voisine de gauche, elle s’est mis l’oreiller sur la tête. Celle de droite, elle supporte pas sa musique. Le seul qui aime l’opéra, c’est le pigeon.",
+        "spokenNote": "Du mat’ is clipped, the neighbours are named and then picked up with elle, and the ne drops (elle supporte pas). « Le seul qui…, c’est le pigeon » saves the punchline for the end.",
+        "praise": "Nice “le monsieur qui porte”!"
       }
     }
   },
