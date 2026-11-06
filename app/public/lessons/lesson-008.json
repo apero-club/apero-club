@@ -82,7 +82,7 @@
       "id": "malik",
       "name": "Malik",
       "role": "celebrating their anniversary",
-      "description": "Léa’s husband, a Parisian man in his thirties, middle-aged rather than young. Sweet and a little nervous, trying his politest French; warm.",
+      "description": "Léa’s husband, a Parisian man in his thirties, middle-aged rather than young. Sweet and a bit shy, trying his politest French; warm.",
       "color": "sun-900",
       "critter": {
         "kind": "jelly",
@@ -106,7 +106,7 @@
       "id": "madame-dupont",
       "name": "Madame Dupont",
       "role": "the food critic",
-      "description": "The most feared food critic in Paris, an older Parisian woman in her sixties. Dry, sharp and calm, with a sudden warm laugh.",
+      "description": "The most feared food critic in Paris, an older Parisian woman in her sixties. Dry, sharp and calm; says very little.",
       "color": "pink-900",
       "critter": {
         "kind": "olive",
@@ -124,16 +124,16 @@
       },
       {
         "speaker": "narrator",
-        "fr": "Léa et Malik fêtaient leur anniversaire de mariage. Leur réservation était au nom de Dupont.",
-        "en": "Léa and Malik were celebrating their wedding anniversary. Their booking was under the name Dupont."
+        "fr": "Léa et Malik fêtaient leur anniversaire de mariage. Leur table était au nom de Léa : Dupont.",
+        "en": "Léa and Malik were celebrating their wedding anniversary. Their table was booked in Léa’s name: Dupont."
       }
     ],
     [
       {
+        "id": "henri-accueil",
         "speaker": "henri",
         "fr": "— Madame Dupont ! Quel honneur ! Je vous ai gardé notre meilleure table.",
-        "en": "“Madame Dupont! What an honour! I’ve kept our best table for you.”",
-        "id": "henri-accueil"
+        "en": "“Madame Dupont! What an honour! I’ve kept our best table for you.”"
       }
     ],
     [
@@ -144,78 +144,83 @@
       },
       {
         "speaker": "narrator",
-        "fr": "Le chef a envoyé un amuse-bouche, et le sommelier ne les quittait plus.",
-        "en": "The chef sent out an amuse-bouche, and the sommelier wouldn’t leave their side."
+        "fr": "Le chef a envoyé du champagne, et le sommelier ne les quittait plus.",
+        "en": "The chef sent over champagne, and the sommelier wouldn’t leave their side."
       }
     ],
     [
       {
+        "id": "lea-commande",
         "speaker": "lea",
         "fr": "— Nous aimerions goûter votre plat du jour. Pourriez-vous nous conseiller un vin ?",
         "en": "“We’d like to try your dish of the day. Could you recommend a wine?”",
-        "id": "lea-commande",
         "note": "nous-aimerions"
       }
     ],
     [
       {
         "speaker": "narrator",
-        "fr": "Malik, très nerveux, a ajouté : « Ce serait possible d’avoir un peu de pain ? »",
-        "en": "Malik, very nervous, added: “Would it be possible to have a little bread?”",
-        "note": "formation",
-        "quoteSpeaker": "malik"
+        "quoteSpeaker": "malik",
+        "fr": "Malik, un peu surpris, a demandé : « Ce serait possible d’avoir un peu de pain ? »",
+        "en": "Malik, a little surprised, asked: “Would it be possible to have a little bread?”",
+        "note": "formation"
+      },
+      {
+        "speaker": "narrator",
+        "fr": "Deux minutes plus tard, il avait trois sortes de pain.",
+        "en": "Two minutes later, he had three kinds of bread."
+      }
+    ],
+    [
+      {
+        "speaker": "narrator",
+        "fr": "Pendant ce temps, une dame en manteau noir attendait à l’entrée.",
+        "en": "Meanwhile, a woman in a black coat was waiting at the door."
+      },
+      {
+        "speaker": "narrator",
+        "quoteSpeaker": "madame-dupont",
+        "fr": "« Bonsoir. J’avais réservé au nom de Dupont. »",
+        "en": "“Good evening. I had a booking under the name Dupont.”",
+        "note": "imparfait-politesse"
+      }
+    ],
+    [
+      {
+        "id": "henri-attendre",
+        "speaker": "henri",
+        "fr": "— Madame Dupont est déjà là, madame. Ça vous dérangerait d’attendre un peu ?",
+        "en": "“Madame Dupont is already here, madam. Would you mind waiting a little?”",
+        "note": "formules-douces",
+        "delivery": "flat"
+      }
+    ],
+    [
+      {
+        "speaker": "narrator",
+        "fr": "Elle a attendu une heure, puis elle a dîné seule, près des cuisines.",
+        "en": "She waited an hour, then ate alone, next to the kitchens."
+      },
+      {
+        "speaker": "narrator",
+        "fr": "En partant, elle a laissé sa carte. Henri est devenu tout blanc : c’était la vraie critique.",
+        "en": "On her way out, she left her card. Henri went white: she was the real critic."
+      }
+    ],
+    [
+      {
+        "speaker": "malik",
+        "fr": "— Je voudrais l’addition, s’il vous plaît. C’était délicieux !",
+        "en": "“I’d like the bill, please. That was delicious!”",
+        "note": "je-veux"
       }
     ],
     [
       {
         "speaker": "henri",
-        "fr": "— Mais bien sûr ! Tout ce que vous voudrez, madame, monsieur.",
-        "en": "“But of course! Anything you like, madam, sir.”",
-        "delivery": "theatrical"
-      }
-    ],
-    [
-      {
-        "speaker": "narrator",
-        "fr": "Au dessert, une dame en manteau noir est entrée.",
-        "en": "At dessert, a woman in a black coat came in."
-      },
-      {
-        "speaker": "narrator",
-        "fr": "« Bonsoir. J’avais réservé au nom de Dupont. »",
-        "en": "“Good evening. I had a booking under the name Dupont.”",
-        "quoteSpeaker": "madame-dupont",
-        "note": "imparfait-politesse"
-      },
-      {
-        "speaker": "narrator",
-        "fr": "Henri est devenu tout blanc. Léa a posé sa fourchette.",
-        "en": "Henri went white. Léa put down her fork."
-      }
-    ],
-    [
-      {
-        "speaker": "lea",
-        "fr": "— Nous sommes vraiment désolés… Ça vous dérangerait de nous laisser finir le dessert ?",
-        "en": "“We’re so sorry… Would you mind letting us finish our dessert?”",
-        "id": "lea-dessert",
-        "note": "formules-douces"
-      }
-    ],
-    [
-      {
-        "speaker": "narrator",
-        "fr": "La critique les a regardés longtemps… puis elle a éclaté de rire.",
-        "en": "The critic looked at them for a long time… then burst out laughing."
-      }
-    ],
-    [
-      {
-        "speaker": "madame-dupont",
-        "fr": "— Installez-moi avec eux. Je voudrais savoir comment ils ont fait.",
-        "en": "“Seat me with them. I’d like to know how they did it.”",
-        "note": "je-veux",
-        "delivery": "warm"
+        "fr": "— Bien sûr, monsieur. Le champagne, c’est quatre-vingts euros.",
+        "en": "“Of course, sir. The champagne is eighty euros.”",
+        "delivery": "flat"
       }
     ]
   ],
@@ -228,12 +233,12 @@
       "body": [
         "You met je voudrais at the bakery in lesson 1. In a smart restaurant the gap is even bigger: « Je veux la carte » sounds like a child at the table, or a customer about to complain.",
         "The conditional adds a layer of “if you don’t mind”: you’re not demanding, you’re wishing. « Je voudrais la carte, s’il vous plaît » is neutral and polite.",
-        "Madame Dupont, who can have anything she likes, still says « je voudrais »."
+        "Even treated like royalty, Malik asks for the bill with « je voudrais »."
       ],
       "examples": [
         {
-          "fr": "Je voudrais savoir comment ils ont fait.",
-          "en": "I’d like to know how they did it.",
+          "fr": "Je voudrais l’addition, s’il vous plaît.",
+          "en": "I’d like the bill, please.",
           "tag": "Je voudrais"
         },
         {
@@ -328,14 +333,14 @@
       "title": "« Ça vous dérangerait de… ? » : les formules qui adoucissent",
       "short": "Ça vous dérangerait de, ce serait possible de and auriez-vous turn a request into an offer the other person can refuse.",
       "body": [
-        "These phrases wrap the request in a question about the other person: would it bother you, would it be possible. They’re followed by de + infinitive: ça vous dérangerait de nous laisser finir ?",
+        "These phrases wrap the request in a question about the other person: would it bother you, would it be possible. They’re followed by de + infinitive: ça vous dérangerait d’attendre ?",
         "Careful with the answer. « Ça vous dérange ? » asks if it bothers you, so « Non, pas du tout » means yes, go ahead.",
-        "The stronger the favour, the softer the phrase: auriez-vous for a table, ça vous dérangerait de for something awkward."
+        "They can also be a very polite brush-off. Henri uses his softest phrase on the one guest he should have welcomed."
       ],
       "examples": [
         {
-          "fr": "Ça vous dérangerait de nous laisser finir le dessert ?",
-          "en": "Would you mind letting us finish our dessert?",
+          "fr": "Ça vous dérangerait d’attendre un peu ?",
+          "en": "Would you mind waiting a little?",
           "tag": "Ça vous dérangerait de"
         },
         {
@@ -414,22 +419,22 @@
     },
     {
       "kind": "Écoute",
-      "listen": "lea-dessert",
+      "listen": "henri-attendre",
       "note": "formules-douces",
-      "prompt": "Listen to Léa. What does she ask the real Madame Dupont?",
+      "prompt": "Listen to Henri. What does he ask the woman in the black coat?",
       "options": [
         {
-          "text": "If they could finish their dessert.",
-          "why": "« Ça vous dérangerait de nous laisser finir le dessert ? » Would you mind letting us finish dessert?",
+          "text": "If she would mind waiting a little, because Madame Dupont is already there.",
+          "why": "« Ça vous dérangerait d’attendre un peu ? » He thinks the real Madame Dupont is at the best table.",
           "correct": true
         },
         {
-          "text": "If Madame Dupont would like to join them.",
-          "why": "That’s Madame Dupont’s idea, at the end. Léa only asks to finish the dessert."
+          "text": "If she would like the best table.",
+          "why": "The best table is taken by the couple. He asks her « d’attendre », to wait."
         },
         {
-          "text": "For the bill, quickly.",
-          "why": "No bill: she asks « de nous laisser finir le dessert », to let them finish."
+          "text": "If she has a booking.",
+          "why": "She has just said she booked. He answers « Madame Dupont est déjà là »: someone already has her name."
         }
       ]
     },
@@ -456,21 +461,21 @@
     },
     {
       "kind": "Grammaire",
-      "quote": "— Installez-moi avec eux. Je voudrais savoir comment ils ont fait.",
+      "quote": "— Je voudrais l’addition, s’il vous plaît. C’était délicieux !",
       "note": "je-veux",
-      "prompt": "Why does Madame Dupont say “je voudrais”, rather than “je veux”?",
+      "prompt": "Why does Malik say “je voudrais”, rather than “je veux”?",
       "options": [
         {
-          "text": "She isn’t sure she wants to know.",
-          "why": "She’s very sure: she wants to know. The conditional is about politeness, not doubt."
+          "text": "He isn’t sure he wants the bill yet.",
+          "why": "He’s sure: he’s asking for it. The conditional is about politeness, not doubt."
         },
         {
           "text": "Voudrais is a past tense.",
           "why": "Voudrais is the conditional (future stem voudr- + -ais), not a past tense."
         },
         {
-          "text": "The conditional softens it into a polite request, even for her.",
-          "why": "« Je veux » would sound like an order. Even the most feared critic in Paris says « je voudrais ».",
+          "text": "The conditional softens it into a polite request.",
+          "why": "« Je veux l’addition » would sound like an order to the waiter. « Je voudrais » makes it a request.",
           "correct": true
         }
       ]
@@ -486,7 +491,7 @@
         },
         {
           "text": "Léa and Malik.",
-          "why": "Les = the couple: Henri took them for Madame Dupont, because the booking was under Dupont.",
+          "why": "Les = the couple: Henri took them for Madame Dupont, because the table was booked under Dupont.",
           "correct": true
         },
         {
@@ -497,21 +502,21 @@
     },
     {
       "kind": "Compréhension",
-      "quote": "— Installez-moi avec eux. Je voudrais savoir comment ils ont fait.",
-      "prompt": "Why does Madame Dupont laugh and join them?",
+      "quote": "— Bien sûr, monsieur. Le champagne, c’est quatre-vingts euros.",
+      "prompt": "What is Henri really saying at the end?",
       "options": [
         {
-          "text": "She’s amused, and curious to hear how they pulled it off.",
-          "why": "« Je voudrais savoir comment ils ont fait »: she’s impressed, not angry.",
+          "text": "Now that he knows they aren’t the critic, the special treatment is over.",
+          "why": "He has just read the real critic’s card. The free champagne suddenly has a price.",
           "correct": true
         },
         {
-          "text": "She’s furious and wants to complain to Henri.",
-          "why": "She laughs and asks to sit with them: not exactly a complaint."
+          "text": "The champagne is a gift, worth eighty euros.",
+          "why": "He isn’t offering it: « c’est quatre-vingts euros » puts it on the bill."
         },
         {
-          "text": "She thinks Léa and Malik are friends of hers.",
-          "why": "She has never met them; that’s why she wants to know how they did it."
+          "text": "Malik ordered the wrong champagne.",
+          "why": "Malik never ordered it. The chef sent it when Henri thought they were the critic."
         }
       ]
     }
@@ -551,7 +556,7 @@
       "written": "Nous sommes très gênés.",
       "spoken": "On a trop la honte !",
       "register": "Familier",
-      "note": "Avoir la honte is to be mortified. What Léa and Malik were thinking when the real Madame Dupont walked in."
+      "note": "Avoir la honte is to be mortified. What Henri was thinking when he read the real critic’s card."
     }
   ],
   "describe": {

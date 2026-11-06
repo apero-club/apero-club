@@ -149,6 +149,7 @@ async function main() {
       if (entry.sample && existsSync(join(SAMPLES, entry.sample))) unlinkSync(join(SAMPLES, entry.sample));
       entry.sample = `${p.id}-${p.voiceId}.mp3`;
       writeFileSync(join(SAMPLES, entry.sample), audio);
+      if (ffmpeg) levelClip(join(SAMPLES, entry.sample)); // same loudness as the lesson lines, so voices are compared fairly
       saveRegistry();
       console.log(`  ✓ sample for ${entry.name}: listen on the site with ?casting, then approve in voices/cast.json`);
     }

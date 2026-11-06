@@ -10,6 +10,7 @@ A daily French lesson web app for A2 to B1 learners living in Paris. The app is 
 - Keep `app/docs/grammar-tracker.md` up to date: it lists what each lesson teaches and what's not covered yet.
 - Run `npm test` in `app/` before committing: it validates the format and the "(checked)" rules of STYLE.md.
 - Reuse recurring characters' ids (`narrator`, `madame-lefevre`, `la-boulangere`) so they keep their voices; give new characters a `description`. Voices are cast from `app/voices/pool.json` and approved in `app/voices/cast.json`. When the user gives a voice ID, check it isn't already used by another character and tell them if it is (a test also fails on shared voices).
+- Every recorded line and voice sample is levelled to the same loudness (-19 LUFS, `app/scripts/level-audio.ts`) as part of recording, because ElevenLabs voices come out at very different volumes. This is automatic and costs no credit; keep it for any new audio.
 - Don't edit `app/public/lessons/*/audio/`: the "Record lesson audio" GitHub Action records it with ElevenLabs after a push. A new lesson costs about 2,000 characters of ElevenLabs credit.
 
 ## Code notes
