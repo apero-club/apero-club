@@ -244,6 +244,19 @@
         "grand"
       ],
       "notes": "Henri's voice (chosen by hand)."
+    },
+    {
+      "id": "QXJCt9L8UTCLre9Ufe5Q",
+      "name": "",
+      "gender": "male",
+      "age": "middle",
+      "accent": "parisian",
+      "tags": [
+        "warm",
+        "sweet",
+        "nervous"
+      ],
+      "notes": "Malik's voice (chosen by hand)."
     }
   ]
 }
