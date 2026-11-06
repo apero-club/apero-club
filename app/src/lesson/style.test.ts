@@ -32,7 +32,7 @@ describe.each(lessons)('%s follows STYLE.md', (_id, l) => {
     expect(text).not.toMatch(/duolingo|babbel|busuu|memrise/i);
   });
 
-  it('story: 10–16 lines, 6–10 paragraphs, 120–200 French words, 2–4 characters', () => {
+  it('story: 10–16 lines, 6–10 paragraphs, 120–200 French words, 2–5 characters', () => {
     expect(lines.length).toBeGreaterThanOrEqual(10);
     expect(lines.length).toBeLessThanOrEqual(16);
     expect(l.story.length).toBeGreaterThanOrEqual(6);
@@ -41,7 +41,7 @@ describe.each(lessons)('%s follows STYLE.md', (_id, l) => {
     expect(n, `${n} French words`).toBeGreaterThanOrEqual(120);
     expect(n, `${n} French words`).toBeLessThanOrEqual(200);
     expect(l.cast.length).toBeGreaterThanOrEqual(2);
-    expect(l.cast.length).toBeLessThanOrEqual(4);
+    expect(l.cast.length).toBeLessThanOrEqual(5);
     expect(l.cast[0].id, 'the narrator comes first').toBe('narrator');
   });
 

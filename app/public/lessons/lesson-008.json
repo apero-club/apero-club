@@ -79,6 +79,18 @@
       "voice": "female"
     },
     {
+      "id": "malik",
+      "name": "Malik",
+      "role": "Léa’s husband",
+      "description": "Léa’s husband, a Parisian man in his thirties, middle-aged rather than young. Sweet and a little nervous, trying his politest French; warm.",
+      "color": "sun-900",
+      "critter": {
+        "kind": "jelly",
+        "color": "orange-500"
+      },
+      "voice": "male"
+    },
+    {
       "id": "henri",
       "name": "Henri",
       "role": "the maître d’",
@@ -150,7 +162,8 @@
         "speaker": "narrator",
         "fr": "Malik, très nerveux, a ajouté : « Ce serait possible d’avoir un peu de pain ? »",
         "en": "Malik, very nervous, added: “Would it be possible to have a little bread?”",
-        "note": "formation"
+        "note": "formation",
+        "quoteSpeaker": "malik"
       }
     ],
     [
