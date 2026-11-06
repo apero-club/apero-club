@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="A silver cloche on a plate">
+  <!-- Lesson 8 hero tile: the chef's amuse-bouche under a cloche. Flat brand colours, transparent background. -->
+  <ellipse cx="100" cy="150" rx="78" ry="14" fill="#FFF0CC"/>
+  <rect x="22" y="144" width="156" height="8" rx="4" fill="#FFCF66"/>
+  <path d="M38 144 C38 98 66 70 100 70 C134 70 162 98 162 144 Z" fill="#ECE9E3"/>
+  <path d="M52 132 C54 104 72 84 98 80" fill="none" stroke="#FFFFFF" stroke-width="9" stroke-linecap="round"/>
+  <rect x="88" y="56" width="24" height="16" rx="8" fill="#3A1FD4"/>
+  <g fill="none" stroke="#F0A4EB" stroke-width="5" stroke-linecap="round"><path d="M70 50 C64 40 76 34 70 24"/><path d="M130 50 C124 40 136 34 130 24"/></g>
+</svg>

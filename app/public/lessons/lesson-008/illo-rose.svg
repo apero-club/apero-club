@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="A rose in a small vase">
+  <!-- Lesson 8 hero tile: the anniversary rose. Flat brand colours, transparent background. -->
+  <rect x="97" y="72" width="6" height="80" rx="3" fill="#004A3A"/>
+  <path d="M100 118 C84 106 70 110 64 120 C80 126 92 124 100 118 Z" fill="#004A3A"/>
+  <path d="M100 100 C116 88 130 92 136 102 C120 108 108 106 100 100 Z" fill="#004A3A"/>
+  <circle cx="100" cy="58" r="28" fill="#FF7ADB"/>
+  <path d="M84 52 C88 40 112 40 116 52 C110 46 92 46 84 52 Z" fill="#D236A5"/>
+  <path d="M90 64 C92 52 108 52 110 64 C104 58 96 58 90 64 Z" fill="#D236A5"/>
+  <path d="M74 150 H126 L118 186 C117 190 113 192 109 192 H91 C87 192 83 190 82 186 Z" fill="#3A1FD4"/>
+  <rect x="70" y="144" width="60" height="10" rx="5" fill="#2913A6"/>
+</svg>

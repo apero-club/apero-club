@@ -1,0 +1,658 @@
+{
+  "title": "Une table au nom de Dupont",
+  "summary": "An anniversary dinner, a mistaken booking, and the most feared critic in Paris.",
+  "level": "A2 to B1",
+  "minutes": {
+    "story": 4,
+    "quiz": 3,
+    "phrases": 1,
+    "describe": 2
+  },
+  "hero": [
+    {
+      "shape": "arch",
+      "bg": "sun-300",
+      "fg": "violet-500",
+      "eyes": "wide",
+      "blink": true
+    },
+    {
+      "image": "illo-cloche.svg",
+      "bg": "pink-500",
+      "alt": ""
+    },
+    {
+      "image": "illo-rose.svg",
+      "bg": "sky-300",
+      "alt": ""
+    }
+  ],
+  "heroWide": [
+    {
+      "shape": "arch",
+      "bg": "sun-300",
+      "fg": "violet-500",
+      "eyes": "wide",
+      "blink": true
+    },
+    {
+      "image": "illo-cloche.svg",
+      "bg": "pink-500",
+      "alt": ""
+    },
+    {
+      "pattern": "checker",
+      "a": "green-900",
+      "b": "green-500"
+    },
+    {
+      "image": "illo-rose.svg",
+      "bg": "sky-300",
+      "alt": ""
+    }
+  ],
+  "place": "le Marais, 4e",
+  "cast": [
+    {
+      "id": "narrator",
+      "name": "Moi",
+      "role": "the narrator",
+      "description": "The narrator, \"Moi\": a learner in their 30s who lives in Paris. Friendly, relaxed, a bit self-mocking.",
+      "color": "ink-900",
+      "label": "ink-500",
+      "critter": {
+        "kind": "bean",
+        "color": "sun-500"
+      },
+      "voice": "male"
+    },
+    {
+      "id": "lea",
+      "name": "Léa",
+      "role": "celebrating her anniversary",
+      "description": "A Parisian woman in her thirties, middle-aged rather than young. Charming and warm, slightly flustered; speaks her most elegant French.",
+      "color": "violet-500",
+      "critter": {
+        "kind": "flower",
+        "color": "pink-500"
+      },
+      "voice": "female"
+    },
+    {
+      "id": "henri",
+      "name": "Henri",
+      "role": "the maître d’",
+      "description": "The maître d’ of a smart Paris restaurant, an older man in his fifties. Theatrical and grandiose, endlessly obsequious, grand gestures.",
+      "color": "sky-700",
+      "critter": {
+        "kind": "tower",
+        "color": "sky-500"
+      },
+      "voice": "male"
+    },
+    {
+      "id": "madame-dupont",
+      "name": "Madame Dupont",
+      "role": "the food critic",
+      "description": "The most feared food critic in Paris, an older Parisian woman in her sixties. Dry, sharp and calm, with a sudden warm laugh.",
+      "color": "pink-900",
+      "critter": {
+        "kind": "olive",
+        "color": "ink-900"
+      },
+      "voice": "female"
+    }
+  ],
+  "story": [
+    [
+      {
+        "speaker": "narrator",
+        "fr": "Samedi soir, je dînais seul dans un grand restaurant du Marais, à côté d’un couple très élégant.",
+        "en": "On Saturday night I was dining alone in a smart restaurant in the Marais, next to a very elegant couple."
+      },
+      {
+        "speaker": "narrator",
+        "fr": "Léa et Malik fêtaient leur anniversaire de mariage. Leur réservation était au nom de Dupont.",
+        "en": "Léa and Malik were celebrating their wedding anniversary. Their booking was under the name Dupont."
+      }
+    ],
+    [
+      {
+        "speaker": "henri",
+        "fr": "— Madame Dupont ! Quel honneur ! Je vous ai gardé notre meilleure table.",
+        "en": "“Madame Dupont! What an honour! I’ve kept our best table for you.”",
+        "id": "henri-accueil"
+      }
+    ],
+    [
+      {
+        "speaker": "narrator",
+        "fr": "Henri, le maître d’hôtel, les a pris pour Madame Dupont, la critique gastronomique la plus redoutée de Paris.",
+        "en": "Henri, the maître d’, had taken them for Madame Dupont, the most feared food critic in Paris."
+      },
+      {
+        "speaker": "narrator",
+        "fr": "Le chef a envoyé un amuse-bouche, et le sommelier ne les quittait plus.",
+        "en": "The chef sent out an amuse-bouche, and the sommelier wouldn’t leave their side."
+      }
+    ],
+    [
+      {
+        "speaker": "lea",
+        "fr": "— Nous aimerions goûter votre plat du jour. Pourriez-vous nous conseiller un vin ?",
+        "en": "“We’d like to try your dish of the day. Could you recommend a wine?”",
+        "id": "lea-commande",
+        "note": "nous-aimerions"
+      }
+    ],
+    [
+      {
+        "speaker": "narrator",
+        "fr": "Malik, très nerveux, a ajouté : « Ce serait possible d’avoir un peu de pain ? »",
+        "en": "Malik, very nervous, added: “Would it be possible to have a little bread?”",
+        "note": "formation"
+      }
+    ],
+    [
+      {
+        "speaker": "henri",
+        "fr": "— Mais bien sûr ! Tout ce que vous voudrez, madame, monsieur.",
+        "en": "“But of course! Anything you like, madam, sir.”",
+        "delivery": "theatrical"
+      }
+    ],
+    [
+      {
+        "speaker": "narrator",
+        "fr": "Au dessert, une dame en manteau noir est entrée.",
+        "en": "At dessert, a woman in a black coat came in."
+      },
+      {
+        "speaker": "narrator",
+        "fr": "« Bonsoir. J’avais réservé au nom de Dupont. »",
+        "en": "“Good evening. I had a booking under the name Dupont.”",
+        "quoteSpeaker": "madame-dupont",
+        "note": "imparfait-politesse"
+      },
+      {
+        "speaker": "narrator",
+        "fr": "Henri est devenu tout blanc. Léa a posé sa fourchette.",
+        "en": "Henri went white. Léa put down her fork."
+      }
+    ],
+    [
+      {
+        "speaker": "lea",
+        "fr": "— Nous sommes vraiment désolés… Ça vous dérangerait de nous laisser finir le dessert ?",
+        "en": "“We’re so sorry… Would you mind letting us finish our dessert?”",
+        "id": "lea-dessert",
+        "note": "formules-douces"
+      }
+    ],
+    [
+      {
+        "speaker": "narrator",
+        "fr": "La critique les a regardés longtemps… puis elle a éclaté de rire.",
+        "en": "The critic looked at them for a long time… then burst out laughing."
+      }
+    ],
+    [
+      {
+        "speaker": "madame-dupont",
+        "fr": "— Installez-moi avec eux. Je voudrais savoir comment ils ont fait.",
+        "en": "“Seat me with them. I’d like to know how they did it.”",
+        "note": "je-veux",
+        "delivery": "warm"
+      }
+    ]
+  ],
+  "notes": [
+    {
+      "id": "je-veux",
+      "kicker": "Politesse",
+      "title": "« Je veux la carte » : pourquoi ça choque ?",
+      "short": "In a restaurant, je veux sounds like a demand, almost childish; the conditional turns it into a request.",
+      "body": [
+        "You met je voudrais at the bakery in lesson 1. In a smart restaurant the gap is even bigger: « Je veux la carte » sounds like a child at the table, or a customer about to complain.",
+        "The conditional adds a layer of “if you don’t mind”: you’re not demanding, you’re wishing. « Je voudrais la carte, s’il vous plaît » is neutral and polite.",
+        "Madame Dupont, who can have anything she likes, still says « je voudrais »."
+      ],
+      "examples": [
+        {
+          "fr": "Je voudrais savoir comment ils ont fait.",
+          "en": "I’d like to know how they did it.",
+          "tag": "Je voudrais"
+        },
+        {
+          "fr": "Je voudrais la carte, s’il vous plaît.",
+          "en": "I’d like the menu, please.",
+          "tag": "Poli"
+        },
+        {
+          "fr": "Je veux la carte.",
+          "en": "I want the menu. (blunt)",
+          "tag": "Trop direct"
+        }
+      ],
+      "spoken": "To order, Parisians mostly say « je vais prendre… » or just name the dish with « s’il vous plaît »: « Le plat du jour, s’il vous plaît. » Both are polite. Only « je veux » stands out.",
+      "trap": {
+        "wrong": "Je veux un café.",
+        "right": "Je voudrais un café, s’il vous plaît.",
+        "why": "Je veux is fine for wishes and plans (je veux voyager), but asking a waiter for something, use je voudrais."
+      }
+    },
+    {
+      "id": "formation",
+      "kicker": "Conditionnel",
+      "title": "« Ce serait possible » : comment se forme le conditionnel ?",
+      "short": "Take the future stem from lesson 7 and add the imparfait endings: -ais, -ais, -ait, -ions, -iez, -aient.",
+      "body": [
+        "The conditional borrows its stem from the futur simple and its endings from the imparfait. Pouvoir: future stem pourr-, so je pourrais, vous pourriez.",
+        "The irregular stems are the same as in the future: être → ser- (ce serait), avoir → aur- (auriez-vous), vouloir → voudr- (je voudrais), aller → ir-.",
+        "Regular verbs keep the whole infinitive: aimer → j’aimerais, préférer → nous préférerions."
+      ],
+      "examples": [
+        {
+          "fr": "Ce serait possible d’avoir un peu de pain ?",
+          "en": "Would it be possible to have a little bread?",
+          "tag": "Être → ser-"
+        },
+        {
+          "fr": "Pourriez-vous nous conseiller un vin ?",
+          "en": "Could you recommend a wine?",
+          "tag": "Pouvoir → pourr-"
+        },
+        {
+          "fr": "Auriez-vous une table près de la fenêtre ?",
+          "en": "Would you have a table by the window?",
+          "tag": "Avoir → aur-"
+        }
+      ],
+      "spoken": "Listen for the r before the ending: je pourrais, vous voudriez, ce serait. It’s the sound that tells you it’s a conditional, not an imparfait.",
+      "trap": {
+        "wrong": "Vous pouviez nous conseiller ?",
+        "right": "Vous pourriez nous conseiller ?",
+        "why": "Pouviez is the imparfait (you could, in the past). The polite request needs the conditional, with the future stem pourr-."
+      }
+    },
+    {
+      "id": "nous-aimerions",
+      "kicker": "Conditionnel",
+      "title": "« Nous aimerions » ou « nous aimions » ?",
+      "short": "Nous aimerions (we’d like) is conditional; nous aimions (we used to like) is the imparfait. The -er- makes the difference.",
+      "body": [
+        "The two look almost the same, but they mean very different things. Nous aimions: we used to like, in the past. Nous aimerions: we would like, now.",
+        "It’s the future stem that tells them apart: aimer- + -ions. Same with nous préférerions (we’d rather) and nous voudrions (we’d like).",
+        "Say the extra syllable: ai-me-rions. Swallow it, and Léa would be telling the waiter what she used to enjoy."
+      ],
+      "examples": [
+        {
+          "fr": "Nous aimerions goûter votre plat du jour.",
+          "en": "We’d like to try your dish of the day.",
+          "tag": "Conditionnel"
+        },
+        {
+          "fr": "Nous préférerions la terrasse.",
+          "en": "We’d rather sit on the terrace.",
+          "tag": "Conditionnel"
+        },
+        {
+          "fr": "Avant, nous aimions ce restaurant.",
+          "en": "We used to love this restaurant.",
+          "tag": "Imparfait"
+        }
+      ],
+      "spoken": "In speech, nous becomes on, so you’ll hear « on aimerait » and « on préférerait » far more than « nous aimerions ». The rule is the same: listen for the r.",
+      "trap": {
+        "wrong": "Nous aimions goûter le plat du jour.",
+        "right": "Nous aimerions goûter le plat du jour.",
+        "why": "Without the -er-, it’s the imparfait: we used to like trying it. The request needs aimerions."
+      }
+    },
+    {
+      "id": "formules-douces",
+      "kicker": "Politesse",
+      "title": "« Ça vous dérangerait de… ? » : les formules qui adoucissent",
+      "short": "Ça vous dérangerait de, ce serait possible de and auriez-vous turn a request into an offer the other person can refuse.",
+      "body": [
+        "These phrases wrap the request in a question about the other person: would it bother you, would it be possible. They’re followed by de + infinitive: ça vous dérangerait de nous laisser finir ?",
+        "Careful with the answer. « Ça vous dérange ? » asks if it bothers you, so « Non, pas du tout » means yes, go ahead.",
+        "The stronger the favour, the softer the phrase: auriez-vous for a table, ça vous dérangerait de for something awkward."
+      ],
+      "examples": [
+        {
+          "fr": "Ça vous dérangerait de nous laisser finir le dessert ?",
+          "en": "Would you mind letting us finish our dessert?",
+          "tag": "Ça vous dérangerait de"
+        },
+        {
+          "fr": "Ce serait possible d’avoir de l’eau ?",
+          "en": "Would it be possible to have some water?",
+          "tag": "Ce serait possible de"
+        },
+        {
+          "fr": "Non, pas du tout. Allez-y.",
+          "en": "No, not at all. Go ahead.",
+          "tag": "La réponse"
+        }
+      ],
+      "spoken": "In everyday speech the present works too: « Ça vous dérange si j’ouvre la fenêtre ? » The conditional is the extra-polite version, for a stranger or a favour.",
+      "trap": {
+        "wrong": "Ça vous dérangerait de nous laissez finir ?",
+        "right": "Ça vous dérangerait de nous laisser finir ?",
+        "why": "After de, the verb stays in the infinitive: de nous laisser, d’avoir, de fermer."
+      }
+    },
+    {
+      "id": "imparfait-politesse",
+      "kicker": "Politesse",
+      "title": "« J’avais réservé » : pourquoi le passé ?",
+      "short": "French also softens with past tenses: j’avais réservé, je voulais savoir. It sounds less pushy than the present.",
+      "body": [
+        "Madame Dupont’s booking is for tonight, but she says « j’avais réservé », not « j’ai réservé ». The past puts a little distance between her and her demand.",
+        "The same trick works with vouloir: « Je voulais vous demander… » (I wanted to ask you…) is a very common, gentle way to start a request.",
+        "It’s optional: « J’ai réservé au nom de Dupont » is perfectly correct. The past just sounds softer."
+      ],
+      "examples": [
+        {
+          "fr": "Bonsoir. J’avais réservé au nom de Dupont.",
+          "en": "Good evening. I had a booking under the name Dupont.",
+          "tag": "Plus-que-parfait"
+        },
+        {
+          "fr": "Je voulais vous demander un conseil.",
+          "en": "I wanted to ask your advice.",
+          "tag": "Imparfait"
+        },
+        {
+          "fr": "J’ai réservé une table pour deux.",
+          "en": "I’ve booked a table for two.",
+          "tag": "Neutre"
+        }
+      ],
+      "spoken": "At a restaurant door you’ll often hear « J’avais réservé… », and on the phone « Je voulais savoir si… ». Both are softeners, like the conditional.",
+      "trap": {
+        "wrong": "Je voudrais vous demandais…",
+        "right": "Je voulais vous demander…",
+        "why": "Either je voudrais vous demander or je voulais vous demander: one conjugated verb, then the infinitive."
+      }
+    }
+  ],
+  "quiz": [
+    {
+      "kind": "Écoute",
+      "listen": "henri-accueil",
+      "prompt": "Listen to Henri. What does he tell the couple?",
+      "options": [
+        {
+          "text": "Their table isn’t ready yet.",
+          "why": "The opposite: « je vous ai gardé notre meilleure table », he kept the best table."
+        },
+        {
+          "text": "He has kept his best table for them, whom he thinks are Madame Dupont.",
+          "why": "« Madame Dupont ! Quel honneur ! » He mistakes them for the critic and gives them the best table.",
+          "correct": true
+        },
+        {
+          "text": "The restaurant is full tonight.",
+          "why": "Nothing about being full. He’s delighted, not apologetic."
+        }
+      ]
+    },
+    {
+      "kind": "Écoute",
+      "listen": "lea-dessert",
+      "note": "formules-douces",
+      "prompt": "Listen to Léa. What does she ask the real Madame Dupont?",
+      "options": [
+        {
+          "text": "If they could finish their dessert.",
+          "why": "« Ça vous dérangerait de nous laisser finir le dessert ? » Would you mind letting us finish dessert?",
+          "correct": true
+        },
+        {
+          "text": "If Madame Dupont would like to join them.",
+          "why": "That’s Madame Dupont’s idea, at the end. Léa only asks to finish the dessert."
+        },
+        {
+          "text": "For the bill, quickly.",
+          "why": "No bill: she asks « de nous laisser finir le dessert », to let them finish."
+        }
+      ]
+    },
+    {
+      "kind": "Grammaire",
+      "quote": "— Nous aimerions goûter votre plat du jour. Pourriez-vous nous conseiller un vin ?",
+      "note": "nous-aimerions",
+      "prompt": "Why “nous aimerions”, and not “nous aimions”?",
+      "options": [
+        {
+          "text": "Aimions is more polite.",
+          "why": "Aimions is the imparfait: we used to like. It isn’t a request at all."
+        },
+        {
+          "text": "Both mean the same; aimerions is just longer.",
+          "why": "They mean different things: aimerions is now (would like), aimions is the past (used to like)."
+        },
+        {
+          "text": "Aimerions is the conditional, would like; aimions is the imparfait, used to like.",
+          "why": "The future stem aimer- + -ions makes the conditional: a polite wish, right now.",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "kind": "Grammaire",
+      "quote": "— Installez-moi avec eux. Je voudrais savoir comment ils ont fait.",
+      "note": "je-veux",
+      "prompt": "Why does Madame Dupont say “je voudrais”, rather than “je veux”?",
+      "options": [
+        {
+          "text": "She isn’t sure she wants to know.",
+          "why": "She’s very sure: she wants to know. The conditional is about politeness, not doubt."
+        },
+        {
+          "text": "Voudrais is a past tense.",
+          "why": "Voudrais is the conditional (future stem voudr- + -ais), not a past tense."
+        },
+        {
+          "text": "The conditional softens it into a polite request, even for her.",
+          "why": "« Je veux » would sound like an order. Even the most feared critic in Paris says « je voudrais ».",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "kind": "Lecture",
+      "quote": "Henri, le maître d’hôtel, les a pris pour Madame Dupont, la critique gastronomique la plus redoutée de Paris.",
+      "prompt": "In “Henri les a pris pour Madame Dupont”, who is “les”?",
+      "options": [
+        {
+          "text": "The chef and the sommelier.",
+          "why": "They come in the next line. Les points back to the couple Henri has just greeted."
+        },
+        {
+          "text": "Léa and Malik.",
+          "why": "Les = the couple: Henri took them for Madame Dupont, because the booking was under Dupont.",
+          "correct": true
+        },
+        {
+          "text": "The other diners.",
+          "why": "Henri only mistakes one table: the couple’s, booked under Dupont."
+        }
+      ]
+    },
+    {
+      "kind": "Compréhension",
+      "quote": "— Installez-moi avec eux. Je voudrais savoir comment ils ont fait.",
+      "prompt": "Why does Madame Dupont laugh and join them?",
+      "options": [
+        {
+          "text": "She’s amused, and curious to hear how they pulled it off.",
+          "why": "« Je voudrais savoir comment ils ont fait »: she’s impressed, not angry.",
+          "correct": true
+        },
+        {
+          "text": "She’s furious and wants to complain to Henri.",
+          "why": "She laughs and asks to sit with them: not exactly a complaint."
+        },
+        {
+          "text": "She thinks Léa and Malik are friends of hers.",
+          "why": "She has never met them; that’s why she wants to know how they did it."
+        }
+      ]
+    }
+  ],
+  "phrases": [
+    {
+      "written": "Je voudrais la carte, s’il vous plaît.",
+      "spoken": "La carte, s’il vous plaît.",
+      "register": "Courant",
+      "note": "Just the noun and s’il vous plaît is perfectly polite at a table. It’s « je veux » that sounds rude."
+    },
+    {
+      "written": "Je prendrai le plat du jour.",
+      "spoken": "Je vais prendre le plat du jour.",
+      "register": "Courant",
+      "note": "How most people actually order: je vais prendre. Polite, natural, and no conditional needed."
+    },
+    {
+      "written": "Pourriez-vous nous apporter l’addition ?",
+      "spoken": "On pourrait avoir l’addition ?",
+      "register": "Courant",
+      "note": "On replaces nous and the question keeps normal word order. Still a conditional, still polite."
+    },
+    {
+      "written": "Cela vous dérangerait-il que j’ouvre la fenêtre ?",
+      "spoken": "Ça vous dérange si j’ouvre la fenêtre ?",
+      "register": "Courant",
+      "note": "The everyday version uses the present and si. Answer « Pas du tout » if you don’t mind."
+    },
+    {
+      "written": "C’était délicieux.",
+      "spoken": "C’était trop bon !",
+      "register": "Familier",
+      "note": "Trop bon means really good, not too good. Say it to friends; to the chef, « c’était délicieux »."
+    },
+    {
+      "written": "Nous sommes très gênés.",
+      "spoken": "On a trop la honte !",
+      "register": "Familier",
+      "note": "Avoir la honte is to be mortified. What Léa and Malik were thinking when the real Madame Dupont walked in."
+    }
+  ],
+  "describe": {
+    "image": "scene-restaurant.svg",
+    "alt": "An elegant Paris restaurant: a couple at the best table, the maître d’ bowing, and a woman in a black coat at the door",
+    "imagePosition": "50% 50%",
+    "caption": "Le Marais · samedi, 21 h",
+    "instructions": "Write 3 to 5 sentences: you’re at the next table. Order your meal from Henri, as politely as you can. Use at least three different conditionals (je voudrais, pourriez-vous, ce serait possible de…).",
+    "placeholder": "Bonsoir, je voudrais…",
+    "helpers": [
+      "je voudrais…",
+      "nous aimerions…",
+      "pourriez-vous…",
+      "auriez-vous…",
+      "ce serait possible de…",
+      "ça vous dérangerait de…",
+      "le plat du jour",
+      "l’addition"
+    ],
+    "scene": "Placeholder until the illustration arrives. A flat, colourful illustration of an elegant Paris restaurant: a couple in their thirties at the best table with a white tablecloth, a rose and a silver cloche; a maître d’ in a blue suit bowing deeply beside them; a chandelier; and, at the door, a woman in a long black coat looking in.",
+    "sample": {
+      "text": "Bonsoir ! Je veux la carte, s’il vous plaît. Nous aimions goûter le plat du jour. Pouvriez-vous nous conseiller un vin ? Ce serait possible d’avoir de l’eau, aussi ? Pour le dessert, je voudrai la tarte au citron. Et ça vous dérangerait de nous apportez l’addition ?",
+      "result": {
+        "segments": [
+          {
+            "t": "Bonsoir ! "
+          },
+          {
+            "from": "Je veux",
+            "to": "Je voudrais",
+            "n": 1
+          },
+          {
+            "t": " la carte, s’il vous plaît. Nous "
+          },
+          {
+            "from": "aimions",
+            "to": "aimerions",
+            "n": 2
+          },
+          {
+            "t": " goûter le plat du jour. "
+          },
+          {
+            "from": "Pouvriez-vous",
+            "to": "Pourriez-vous",
+            "n": 3
+          },
+          {
+            "t": " nous conseiller un vin ? Ce serait possible d’avoir de l’eau, aussi ? Pour le dessert, je "
+          },
+          {
+            "from": "voudrai",
+            "to": "voudrais",
+            "n": 4
+          },
+          {
+            "t": " la tarte au citron. Et ça vous dérangerait de nous "
+          },
+          {
+            "from": "apportez",
+            "to": "apporter",
+            "n": 5
+          },
+          {
+            "t": " l’addition ?"
+          }
+        ],
+        "corrections": [
+          {
+            "n": 1,
+            "from": "Je veux",
+            "to": "Je voudrais",
+            "rule": "Conditionnel de politesse",
+            "why": "« Je veux » sounds like an order to a waiter. The conditional, je voudrais, makes it a polite request."
+          },
+          {
+            "n": 2,
+            "from": "aimions",
+            "to": "aimerions",
+            "rule": "Aimer → aimer-",
+            "why": "Aimions is the imparfait (used to like). The conditional keeps the whole infinitive: nous aimerions."
+          },
+          {
+            "n": 3,
+            "from": "Pouvriez-vous",
+            "to": "Pourriez-vous",
+            "rule": "Pouvoir → pourr-",
+            "why": "Pouvoir has its own stem in the future and the conditional: pourr-. So pourriez-vous."
+          },
+          {
+            "n": 4,
+            "from": "voudrai",
+            "to": "voudrais",
+            "rule": "Conditionnel en -ais",
+            "why": "Je voudrai (no s) is the future: I will want. The polite request is the conditional, je voudrais."
+          },
+          {
+            "n": 5,
+            "from": "apportez",
+            "to": "apporter",
+            "rule": "De + infinitif",
+            "why": "After ça vous dérangerait de, the verb stays in the infinitive: de nous apporter."
+          }
+        ],
+        "corrected": "Bonsoir ! Je voudrais la carte, s’il vous plaît. Nous aimerions goûter le plat du jour. Pourriez-vous nous conseiller un vin ? Ce serait possible d’avoir de l’eau, aussi ? Pour le dessert, je voudrais la tarte au citron. Et ça vous dérangerait de nous apporter l’addition ?",
+        "spoken": "Bonsoir ! La carte, s’il vous plaît. On aimerait goûter le plat du jour. Vous pourriez nous conseiller un vin ? Et on pourrait avoir une carafe d’eau ? En dessert, je vais prendre la tarte au citron. Et on pourra avoir l’addition après ?",
+        "spokenNote": "On replaces nous, questions keep normal word order (vous pourriez…?), and je vais prendre is the everyday way to order. Une carafe d’eau is free tap water.",
+        "praise": "Nice “ce serait possible”!"
+      }
+    }
+  },
+  "ambience": {
+    "prompt": "An elegant Paris restaurant on a Saturday evening: a soft murmur of diners, cutlery on porcelain, a cork popping, wine being poured, a waiter’s footsteps on a wooden floor, a door opening and closing. Calm and steady. No music, no clear speech.",
+    "volume": 0.26
+  }
+}

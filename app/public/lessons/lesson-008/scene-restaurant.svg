@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" role="img" aria-label="An elegant Paris restaurant">
+  <!-- Placeholder drawing for lesson 8 until the illustration arrives (brief: docs/image-briefs.md). -->
+  <rect width="600" height="600" fill="#FCEBFB"/>
+  <rect y="420" width="600" height="180" fill="#F7CDF4"/>
+  <!-- door with the real Madame Dupont -->
+  <rect x="460" y="150" width="110" height="270" rx="55" fill="#ADD1F1"/>
+  <circle cx="515" cy="250" r="22" fill="#C93C07"/><rect x="488" y="274" width="54" height="146" rx="20" fill="#121014"/>
+  <!-- chandelier -->
+  <rect x="246" y="0" width="6" height="60" fill="#B57200"/><path d="M200 60 H300 L280 96 H220 Z" fill="#FFCF66"/>
+  <!-- the best table: Léa, Malik, a rose, a cloche -->
+  <circle cx="170" cy="300" r="26" fill="#F29A00"/><rect x="146" y="326" width="48" height="90" rx="18" fill="#FF5A1F"/>
+  <circle cx="330" cy="300" r="26" fill="#C93C07"/><rect x="306" y="326" width="48" height="90" rx="18" fill="#004A3A"/>
+  <rect x="140" y="390" width="240" height="20" rx="8" fill="#FFFFFF"/><rect x="150" y="410" width="220" height="80" fill="#FFFFFF"/>
+  <path d="M220 390 C220 360 280 360 280 390 Z" fill="#ECE9E3"/><rect x="244" y="350" width="12" height="12" rx="6" fill="#3A1FD4"/>
+  <circle cx="320" cy="368" r="10" fill="#FF7ADB"/><rect x="318" y="372" width="4" height="18" fill="#004A3A"/>
+  <!-- Henri, bowing -->
+  <g transform="rotate(-20 80 420)"><circle cx="80" cy="250" r="24" fill="#F29A00"/><rect x="58" y="276" width="44" height="140" rx="18" fill="#3A1FD4"/></g>
+</svg>
