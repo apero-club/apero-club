@@ -1,0 +1,1606 @@
+{
+  "version": 1,
+  "model": "eleven_multilingual_v2",
+  "clips": {
+    "narrator|— Installez-moi avec eux. Je voudrais savoir comment ils ont fait.": {
+      "file": "4c3049f5679cd0f2.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          2,
+          0
+        ],
+        [
+          16,
+          0.58
+        ],
+        [
+          21,
+          0.859
+        ],
+        [
+          26,
+          1.556
+        ],
+        [
+          29,
+          1.683
+        ],
+        [
+          38,
+          1.962
+        ],
+        [
+          45,
+          2.299
+        ],
+        [
+          53,
+          2.601
+        ],
+        [
+          57,
+          2.74
+        ],
+        [
+          61,
+          2.879
+        ]
+      ]
+    },
+    "narrator|— Nous aimerions goûter votre plat du jour. Pourriez-vous nous conseiller un vin ?": {
+      "file": "de56dbc9bc31e36b.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          2,
+          0
+        ],
+        [
+          7,
+          0.244
+        ],
+        [
+          17,
+          0.662
+        ],
+        [
+          24,
+          0.987
+        ],
+        [
+          30,
+          1.3
+        ],
+        [
+          35,
+          1.509
+        ],
+        [
+          38,
+          1.637
+        ],
+        [
+          44,
+          2.473
+        ],
+        [
+          58,
+          2.914
+        ],
+        [
+          63,
+          3.053
+        ],
+        [
+          74,
+          3.529
+        ],
+        [
+          77,
+          3.622
+        ],
+        [
+          81,
+          3.843
+        ]
+      ]
+    },
+    "narrator|« Bonsoir. J’avais réservé au nom de Dupont. »": {
+      "file": "6944ae7632fb5ec5.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          2,
+          0
+        ],
+        [
+          11,
+          0.511
+        ],
+        [
+          19,
+          0.778
+        ],
+        [
+          27,
+          1.126
+        ],
+        [
+          30,
+          1.231
+        ],
+        [
+          34,
+          1.405
+        ],
+        [
+          37,
+          1.533
+        ]
+      ]
+    },
+    "narrator|Au dessert, une dame en manteau noir est entrée.": {
+      "file": "99f5277ccd1ac031.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          0.174
+        ],
+        [
+          12,
+          0.824
+        ],
+        [
+          16,
+          0.998
+        ],
+        [
+          21,
+          1.219
+        ],
+        [
+          24,
+          1.3
+        ],
+        [
+          32,
+          1.66
+        ],
+        [
+          37,
+          1.997
+        ],
+        [
+          41,
+          2.125
+        ]
+      ]
+    },
+    "narrator|Auriez-vous une table près de la fenêtre ?": {
+      "file": "070859a693ef4713.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          12,
+          0.453
+        ],
+        [
+          16,
+          0.592
+        ],
+        [
+          22,
+          0.952
+        ],
+        [
+          27,
+          1.126
+        ],
+        [
+          30,
+          1.231
+        ],
+        [
+          33,
+          1.335
+        ],
+        [
+          41,
+          1.73
+        ]
+      ]
+    },
+    "narrator|Avant, nous aimions ce restaurant.": {
+      "file": "1f410abbdf0b8b5d.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          7,
+          0.395
+        ],
+        [
+          12,
+          0.604
+        ],
+        [
+          20,
+          0.964
+        ],
+        [
+          23,
+          1.103
+        ]
+      ]
+    },
+    "narrator|Bonsoir ! La carte, s’il vous plaît. On aimerait goûter le plat du jour. Vous pourriez nous conseiller un vin ? Et on pourrait avoir une carafe d’eau ? En dessert, je vais prendre la tarte au citron. Et on pourra avoir l’addition après ?": {
+      "file": "1456979f84feb195.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          8,
+          0.615
+        ],
+        [
+          10,
+          0.859
+        ],
+        [
+          13,
+          1.022
+        ],
+        [
+          20,
+          1.37
+        ],
+        [
+          25,
+          1.533
+        ],
+        [
+          30,
+          1.672
+        ],
+        [
+          37,
+          2.531
+        ],
+        [
+          40,
+          2.752
+        ],
+        [
+          49,
+          3.042
+        ],
+        [
+          56,
+          3.32
+        ],
+        [
+          59,
+          3.437
+        ],
+        [
+          64,
+          3.646
+        ],
+        [
+          67,
+          3.773
+        ],
+        [
+          73,
+          4.505
+        ],
+        [
+          78,
+          4.702
+        ],
+        [
+          87,
+          5.016
+        ],
+        [
+          92,
+          5.155
+        ],
+        [
+          103,
+          5.666
+        ],
+        [
+          106,
+          5.805
+        ],
+        [
+          110,
+          6.06
+        ],
+        [
+          112,
+          6.653
+        ],
+        [
+          115,
+          6.954
+        ],
+        [
+          118,
+          7.082
+        ],
+        [
+          127,
+          7.372
+        ],
+        [
+          133,
+          7.663
+        ],
+        [
+          137,
+          7.802
+        ],
+        [
+          144,
+          8.22
+        ],
+        [
+          150,
+          8.51
+        ],
+        [
+          152,
+          9.056
+        ],
+        [
+          155,
+          9.276
+        ],
+        [
+          164,
+          9.95
+        ],
+        [
+          167,
+          10.101
+        ],
+        [
+          172,
+          10.24
+        ],
+        [
+          180,
+          10.6
+        ],
+        [
+          183,
+          10.728
+        ],
+        [
+          189,
+          10.995
+        ],
+        [
+          192,
+          11.076
+        ],
+        [
+          200,
+          12.121
+        ],
+        [
+          203,
+          12.295
+        ],
+        [
+          206,
+          12.411
+        ],
+        [
+          213,
+          12.725
+        ],
+        [
+          219,
+          12.98
+        ],
+        [
+          230,
+          13.456
+        ],
+        [
+          236,
+          13.816
+        ]
+      ]
+    },
+    "narrator|Bonsoir. J’avais réservé au nom de Dupont.": {
+      "file": "6944ae7632fb5ec5.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          9,
+          0.511
+        ],
+        [
+          17,
+          0.778
+        ],
+        [
+          25,
+          1.126
+        ],
+        [
+          28,
+          1.231
+        ],
+        [
+          32,
+          1.405
+        ],
+        [
+          35,
+          1.533
+        ]
+      ]
+    },
+    "narrator|C’était délicieux.": {
+      "file": "e01503417a018085.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          8,
+          0.395
+        ]
+      ]
+    },
+    "narrator|C’était trop bon !": {
+      "file": "aa3ac708180429eb.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          8,
+          0.395
+        ],
+        [
+          13,
+          0.662
+        ],
+        [
+          17,
+          0.929
+        ]
+      ]
+    },
+    "narrator|Ça vous dérange si j’ouvre la fenêtre ?": {
+      "file": "d9436090f4516f19.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          0.209
+        ],
+        [
+          8,
+          0.325
+        ],
+        [
+          16,
+          0.65
+        ],
+        [
+          19,
+          0.813
+        ],
+        [
+          27,
+          1.091
+        ],
+        [
+          30,
+          1.219
+        ],
+        [
+          38,
+          1.625
+        ]
+      ]
+    },
+    "narrator|Ça vous dérangerait de nous laisser finir le dessert ?": {
+      "file": "decdb78145f2b60c.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          0.221
+        ],
+        [
+          8,
+          0.337
+        ],
+        [
+          20,
+          0.848
+        ],
+        [
+          23,
+          0.964
+        ],
+        [
+          28,
+          1.115
+        ],
+        [
+          36,
+          1.393
+        ],
+        [
+          42,
+          1.683
+        ],
+        [
+          45,
+          1.8
+        ],
+        [
+          53,
+          2.252
+        ]
+      ]
+    },
+    "narrator|Ce serait possible d’avoir de l’eau ?": {
+      "file": "248b27271afa702d.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          0.197
+        ],
+        [
+          10,
+          0.418
+        ],
+        [
+          19,
+          0.801
+        ],
+        [
+          27,
+          1.091
+        ],
+        [
+          30,
+          1.207
+        ],
+        [
+          36,
+          1.416
+        ]
+      ]
+    },
+    "narrator|Ce serait possible d’avoir un peu de pain ?": {
+      "file": "0e0b5151864a04b3.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          0.221
+        ],
+        [
+          10,
+          0.406
+        ],
+        [
+          19,
+          0.778
+        ],
+        [
+          27,
+          1.068
+        ],
+        [
+          30,
+          1.161
+        ],
+        [
+          34,
+          1.3
+        ],
+        [
+          37,
+          1.382
+        ],
+        [
+          42,
+          1.625
+        ]
+      ]
+    },
+    "narrator|Cela vous dérangerait-il que j’ouvre la fenêtre ?": {
+      "file": "3881a4126f593d2d.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          5,
+          0.325
+        ],
+        [
+          10,
+          0.453
+        ],
+        [
+          25,
+          1.173
+        ],
+        [
+          29,
+          1.3
+        ],
+        [
+          37,
+          1.567
+        ],
+        [
+          40,
+          1.695
+        ],
+        [
+          48,
+          2.113
+        ]
+      ]
+    },
+    "narrator|Henri est devenu tout blanc. Léa a posé sa fourchette.": {
+      "file": "36350528c11048c4.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          6,
+          0.325
+        ],
+        [
+          10,
+          0.418
+        ],
+        [
+          17,
+          0.731
+        ],
+        [
+          22,
+          0.894
+        ],
+        [
+          29,
+          1.498
+        ],
+        [
+          33,
+          1.858
+        ],
+        [
+          35,
+          1.962
+        ],
+        [
+          40,
+          2.218
+        ],
+        [
+          43,
+          2.368
+        ]
+      ]
+    },
+    "narrator|Henri, le maître d’hôtel, les a pris pour Madame Dupont, la critique gastronomique la plus redoutée de Paris.": {
+      "file": "477872053534ccc1.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          7,
+          0.406
+        ],
+        [
+          10,
+          0.511
+        ],
+        [
+          17,
+          0.801
+        ],
+        [
+          26,
+          1.788
+        ],
+        [
+          30,
+          1.997
+        ],
+        [
+          32,
+          2.067
+        ],
+        [
+          37,
+          2.264
+        ],
+        [
+          42,
+          2.426
+        ],
+        [
+          49,
+          2.74
+        ],
+        [
+          57,
+          3.622
+        ],
+        [
+          60,
+          3.75
+        ],
+        [
+          69,
+          4.145
+        ],
+        [
+          83,
+          4.83
+        ],
+        [
+          86,
+          4.946
+        ],
+        [
+          91,
+          5.166
+        ],
+        [
+          100,
+          5.608
+        ],
+        [
+          103,
+          5.735
+        ]
+      ]
+    },
+    "narrator|J’ai réservé une table pour deux.": {
+      "file": "dd86036f6975a1de.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          5,
+          0.209
+        ],
+        [
+          13,
+          0.673
+        ],
+        [
+          17,
+          0.848
+        ],
+        [
+          23,
+          1.184
+        ],
+        [
+          28,
+          1.382
+        ]
+      ]
+    },
+    "narrator|Je prendrai le plat du jour.": {
+      "file": "56b11e5012a769c6.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          0.221
+        ],
+        [
+          12,
+          0.511
+        ],
+        [
+          15,
+          0.592
+        ],
+        [
+          20,
+          0.789
+        ],
+        [
+          23,
+          0.917
+        ]
+      ]
+    },
+    "narrator|Je vais prendre le plat du jour.": {
+      "file": "d423f2273ed86d28.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          0.174
+        ],
+        [
+          8,
+          0.313
+        ],
+        [
+          16,
+          0.557
+        ],
+        [
+          19,
+          0.673
+        ],
+        [
+          24,
+          0.871
+        ],
+        [
+          27,
+          0.998
+        ]
+      ]
+    },
+    "narrator|Je veux la carte.": {
+      "file": "bd71bb64a20258a7.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          0.209
+        ],
+        [
+          8,
+          0.36
+        ],
+        [
+          11,
+          0.476
+        ]
+      ]
+    },
+    "narrator|Je voudrais la carte, s’il vous plaît.": {
+      "file": "3256dbbe20d16e4d.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          0.174
+        ],
+        [
+          12,
+          0.488
+        ],
+        [
+          15,
+          0.615
+        ],
+        [
+          22,
+          1.196
+        ],
+        [
+          27,
+          1.382
+        ],
+        [
+          32,
+          1.509
+        ]
+      ]
+    },
+    "narrator|Je voudrais savoir comment ils ont fait.": {
+      "file": "ee0fade00a9123a5.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          0.197
+        ],
+        [
+          12,
+          0.522
+        ],
+        [
+          19,
+          0.917
+        ],
+        [
+          27,
+          1.184
+        ],
+        [
+          31,
+          1.324
+        ],
+        [
+          35,
+          1.44
+        ]
+      ]
+    },
+    "narrator|Je voulais vous demander un conseil.": {
+      "file": "8c51396809eebdc1.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          0.209
+        ],
+        [
+          11,
+          0.43
+        ],
+        [
+          16,
+          0.557
+        ],
+        [
+          25,
+          1.033
+        ],
+        [
+          28,
+          1.184
+        ]
+      ]
+    },
+    "narrator|La carte, s’il vous plaît.": {
+      "file": "16289fea75a53676.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          0.209
+        ],
+        [
+          10,
+          0.522
+        ],
+        [
+          15,
+          0.685
+        ],
+        [
+          20,
+          0.836
+        ]
+      ]
+    },
+    "narrator|La critique les a regardés longtemps… puis elle a éclaté de rire.": {
+      "file": "afae4248a2c984cd.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          0.186
+        ],
+        [
+          12,
+          0.569
+        ],
+        [
+          16,
+          0.743
+        ],
+        [
+          18,
+          0.801
+        ],
+        [
+          27,
+          1.184
+        ],
+        [
+          38,
+          1.985
+        ],
+        [
+          43,
+          2.241
+        ],
+        [
+          48,
+          2.438
+        ],
+        [
+          50,
+          2.647
+        ],
+        [
+          57,
+          3.111
+        ],
+        [
+          60,
+          3.216
+        ]
+      ]
+    },
+    "narrator|Le chef a envoyé un amuse-bouche, et le sommelier ne les quittait plus.": {
+      "file": "e9646e13b5aa520b.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          0.197
+        ],
+        [
+          8,
+          0.499
+        ],
+        [
+          10,
+          0.569
+        ],
+        [
+          17,
+          0.929
+        ],
+        [
+          20,
+          1.068
+        ],
+        [
+          34,
+          2.125
+        ],
+        [
+          37,
+          2.299
+        ],
+        [
+          40,
+          2.403
+        ],
+        [
+          50,
+          2.844
+        ],
+        [
+          53,
+          2.984
+        ],
+        [
+          57,
+          3.1
+        ],
+        [
+          66,
+          3.367
+        ]
+      ]
+    },
+    "narrator|Léa et Malik fêtaient leur anniversaire de mariage. Leur réservation était au nom de Dupont.": {
+      "file": "d47fa45c851f4a7c.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          4,
+          0.383
+        ],
+        [
+          7,
+          0.488
+        ],
+        [
+          13,
+          1.115
+        ],
+        [
+          22,
+          1.474
+        ],
+        [
+          27,
+          1.614
+        ],
+        [
+          40,
+          2.148
+        ],
+        [
+          43,
+          2.264
+        ],
+        [
+          52,
+          3.309
+        ],
+        [
+          57,
+          3.506
+        ],
+        [
+          69,
+          4.11
+        ],
+        [
+          75,
+          4.307
+        ],
+        [
+          78,
+          4.412
+        ],
+        [
+          82,
+          4.586
+        ],
+        [
+          85,
+          4.725
+        ]
+      ]
+    },
+    "narrator|Malik, très nerveux, a ajouté : « Ce serait possible d’avoir un peu de pain ? »": {
+      "file": "d1fc6ea775da3fea.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          7,
+          0.476
+        ],
+        [
+          12,
+          0.697
+        ],
+        [
+          21,
+          1.126
+        ],
+        [
+          23,
+          1.231
+        ],
+        [
+          30,
+          1.741
+        ],
+        [
+          34,
+          2.136
+        ],
+        [
+          37,
+          2.31
+        ],
+        [
+          44,
+          2.508
+        ],
+        [
+          53,
+          2.856
+        ],
+        [
+          61,
+          3.135
+        ],
+        [
+          64,
+          3.239
+        ],
+        [
+          68,
+          3.367
+        ],
+        [
+          71,
+          3.448
+        ],
+        [
+          76,
+          3.715
+        ]
+      ]
+    },
+    "narrator|Non, pas du tout. Allez-y.": {
+      "file": "c70ec78cab292f8e.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          5,
+          0.232
+        ],
+        [
+          9,
+          0.372
+        ],
+        [
+          12,
+          0.488
+        ],
+        [
+          18,
+          0.731
+        ]
+      ]
+    },
+    "narrator|Nous aimerions goûter votre plat du jour.": {
+      "file": "dff9aeafea9bd8c1.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          5,
+          0.244
+        ],
+        [
+          15,
+          0.662
+        ],
+        [
+          22,
+          0.94
+        ],
+        [
+          28,
+          1.231
+        ],
+        [
+          33,
+          1.44
+        ],
+        [
+          36,
+          1.556
+        ]
+      ]
+    },
+    "narrator|Nous préférerions la terrasse.": {
+      "file": "fb733fda204d62b1.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          5,
+          0.209
+        ],
+        [
+          18,
+          0.789
+        ],
+        [
+          21,
+          0.917
+        ]
+      ]
+    },
+    "narrator|Nous sommes très gênés.": {
+      "file": "188c9155e13ef52f.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          5,
+          0.209
+        ],
+        [
+          12,
+          0.476
+        ],
+        [
+          17,
+          0.766
+        ]
+      ]
+    },
+    "narrator|On a trop la honte !": {
+      "file": "0176fe07dc285d4b.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          0.221
+        ],
+        [
+          5,
+          0.29
+        ],
+        [
+          10,
+          0.511
+        ],
+        [
+          13,
+          0.615
+        ],
+        [
+          19,
+          0.917
+        ]
+      ]
+    },
+    "narrator|On pourrait avoir l’addition ?": {
+      "file": "9c93db6797c026a7.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          0.221
+        ],
+        [
+          12,
+          0.511
+        ],
+        [
+          18,
+          0.697
+        ],
+        [
+          29,
+          1.184
+        ]
+      ]
+    },
+    "narrator|Pourriez-vous nous apporter l’addition ?": {
+      "file": "68064766ff188148.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          14,
+          0.464
+        ],
+        [
+          19,
+          0.65
+        ],
+        [
+          28,
+          1.022
+        ],
+        [
+          39,
+          1.533
+        ]
+      ]
+    },
+    "narrator|Pourriez-vous nous conseiller un vin ?": {
+      "file": "c29bafd0cfb84c7d.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          14,
+          0.511
+        ],
+        [
+          19,
+          0.639
+        ],
+        [
+          30,
+          1.161
+        ],
+        [
+          33,
+          1.358
+        ],
+        [
+          37,
+          1.637
+        ]
+      ]
+    },
+    "narrator|Samedi soir, je dînais seul dans un grand restaurant du Marais, à côté d’un couple très élégant.": {
+      "file": "1a6a3d80ea3e232a.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          7,
+          0.43
+        ],
+        [
+          13,
+          1.196
+        ],
+        [
+          16,
+          1.382
+        ],
+        [
+          23,
+          1.695
+        ],
+        [
+          28,
+          1.962
+        ],
+        [
+          33,
+          2.171
+        ],
+        [
+          36,
+          2.264
+        ],
+        [
+          42,
+          2.496
+        ],
+        [
+          53,
+          2.961
+        ],
+        [
+          56,
+          3.077
+        ],
+        [
+          64,
+          3.913
+        ],
+        [
+          66,
+          4.029
+        ],
+        [
+          71,
+          4.307
+        ],
+        [
+          76,
+          4.481
+        ],
+        [
+          83,
+          4.83
+        ],
+        [
+          88,
+          5.097
+        ]
+      ]
+    }
+  },
+  "ambience": {
+    "file": "ambience-28af878196cd.mp3",
+    "prompt": "An elegant Paris restaurant on a Saturday evening: a soft murmur of diners, cutlery on porcelain, a cork popping, wine being poured, a waiter’s footsteps on a wooden floor, a door opening and closing. Calm and steady. No music, no clear speech."
+  }
+}
