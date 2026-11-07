@@ -236,7 +236,7 @@
       },
       {
         "speaker": "madame-dupont",
-        "fr": "Mais la prochaine fois, j’aimerais bien du champagne, moi aussi.",
+        "fr": "Mais la prochaine fois… j’aimerais bien du champagne, moi aussi.",
         "en": "But next time, I’d like some champagne too.”",
         "note": "j-aimerais-bien"
       }
@@ -391,7 +391,7 @@
       ],
       "examples": [
         {
-          "fr": "Mais la prochaine fois, j’aimerais bien du champagne, moi aussi.",
+          "fr": "Mais la prochaine fois… j’aimerais bien du champagne, moi aussi.",
           "en": "But next time, I’d quite like some champagne too.",
           "tag": "Souhait"
         },
@@ -520,7 +520,7 @@
     },
     {
       "kind": "Compréhension",
-      "quote": "Mais la prochaine fois, j’aimerais bien du champagne, moi aussi.",
+      "quote": "Mais la prochaine fois… j’aimerais bien du champagne, moi aussi.",
       "note": "j-aimerais-bien",
       "prompt": "What does Madame Dupont mean with her last line?",
       "options": [
