@@ -180,44 +180,44 @@
       "lufs": -19.4
     },
     "henri|« Madame Dupont ?! Alors… eux, c’est qui ? »": {
-      "file": "2161421fc3c89fc0.mp3",
+      "file": "7e7ed992841f0225.mp3",
       "voice": "AgCKJTfnUgOEB18JJpqg",
-      "delivery": "b301d19e",
+      "delivery": "b301d19e|v3:gasps,panicked,incredulous",
       "words": [
         [
           2,
-          0
+          0.85
         ],
         [
           9,
-          0.383
+          0.96
         ],
         [
           16,
-          0.836
+          1.64
         ],
         [
           19,
-          1.149
+          2.027
         ],
         [
           26,
-          2.043
+          2.68
         ],
         [
           31,
-          2.322
+          2.92
         ],
         [
           37,
-          2.589
+          3.18
         ],
         [
           41,
-          2.879
+          3.44
         ]
       ],
-      "lufs": -18.4
+      "lufs": -19.4
     },
     "lea|« Ce serait possible d’avoir un peu d’eau ? »": {
       "file": "d7892f430bec31ee.mp3",
