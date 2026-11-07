@@ -75,7 +75,7 @@ const CastMember = z.object({
  * How animated a voice sounds (ElevenLabs settings; the values are in audio.config.json).
  * Characters get one in voices/cast.json; a line can override it for the moment.
  */
-export const Delivery = z.enum(['flat', 'calm', 'standard', 'warm', 'animated', 'theatrical', 'dramatic']);
+export const Delivery = z.enum(['flat', 'calm', 'standard', 'warm', 'animated', 'theatrical', 'dramatic', 'ecstatic', 'cheeky']);
 export type Delivery = z.infer<typeof Delivery>;
 
 const Line = z.object({
@@ -98,7 +98,8 @@ const Line = z.object({
    * How this line is said, when the moment calls for something other than the
    * character's usual delivery: "animated" for panic or excitement, "calm" for a
    * whispered secret, "flat" for a deadpan punchline, "dramatic" for a big theatrical
-   * shock. On a narration line with a «quote», it applies to the quote only.
+   * shock, "ecstatic" for overjoyed, "cheeky" for a knowing joke. The last three get
+   * 3 takes and keep the most expressive. On a narration line with a «quote», it applies to the quote only.
    */
   delivery: Delivery.optional(),
 }).strict();

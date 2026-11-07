@@ -78,3 +78,14 @@ export function endRise(file: string): number {
   const body = median(span.slice(0, Math.floor(n * 0.7))), tail = median(span.slice(Math.floor(n * 0.85)));
   return Math.round(12 * Math.log2(tail / body) * 10) / 10;
 }
+
+/**
+ * How widely the voice moves, in semitones (10th to 90th percentile of the pitch).
+ * Excited or playful readings move a lot; flat ones stay in a narrow band.
+ */
+export function pitchRange(file: string): number {
+  const v = pitchTrack(file).filter(x => !Number.isNaN(x)).sort((a, b) => a - b);
+  if (v.length < 10) return 0;
+  const at = (q: number) => v[Math.min(v.length - 1, Math.floor(q * v.length))];
+  return Math.round(12 * Math.log2(at(0.9) / at(0.1)) * 10) / 10;
+}

@@ -37,6 +37,16 @@
       "stability": 0.2,
       "style": 0.9,
       "speed": 1.05
+    },
+    "ecstatic": {
+      "stability": 0.15,
+      "style": 1.0,
+      "speed": 1.1
+    },
+    "cheeky": {
+      "stability": 0.3,
+      "style": 0.75,
+      "speed": 0.92
     }
   },
   "ambience": {

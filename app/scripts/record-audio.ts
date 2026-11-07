@@ -28,7 +28,7 @@ import type { AudioManifest } from '../src/audio/manifest';
 import { castLesson, CastingError, sampleText, type Pool, type Registry } from './casting';
 import { settingsFor, settingsSignature, type VoiceSettings } from './delivery';
 import { hasFfmpeg, levelClip } from './level-audio';
-import { endRise, isIntonationQuestion, MIN_RISE } from './intonation';
+import { endRise, isIntonationQuestion, MIN_RISE, pitchRange } from './intonation';
 import type { Delivery } from '../src/lesson/schema';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
@@ -71,12 +71,15 @@ const fileFor = (voice: string, clip: Clip) => {
   return createHash('sha1').update(`${voice}|${config.model}|${speechText(clip.text)}${sig ? `|${sig}` : ''}${q}`).digest('hex').slice(0, 16) + '.mp3';
 };
 
-/** Pitch rise at the end of an MP3 (see scripts/intonation.ts). */
-function riseOf(audio: Buffer): number {
-  const tmp = join(ROOT, `.rise-${process.pid}.mp3`);
+/** Measures an MP3 in memory with one of the scripts/intonation.ts functions. */
+function measureAudio(audio: Buffer, fn: (file: string) => number): number {
+  const tmp = join(ROOT, `.measure-${process.pid}.mp3`);
   writeFileSync(tmp, audio);
-  try { return endRise(tmp); } finally { unlinkSync(tmp); }
+  try { return fn(tmp); } finally { unlinkSync(tmp); }
 }
+const riseOf = (audio: Buffer) => measureAudio(audio, endRise);
+/** Big-emotion lines: record this many takes and keep the most expressive. */
+const BIG_DELIVERIES = new Set(['dramatic', 'ecstatic', 'cheeky']), BIG_TAKES = 3;
 
 async function record(voice: string, text: string, settings: VoiceSettings = config.voiceSettings ?? {}) {
   const key = process.env.ELEVENLABS_API_KEY;
@@ -225,6 +228,17 @@ async function main() {
         continue;
       }
       let { audio, alignment } = await record(voice, speechText(c.text), clipSettings(c));
+      // A big-emotion line (excited, cheeky…): more takes, keep the one whose voice moves the most.
+      if (ffmpeg && c.delivery && BIG_DELIVERIES.has(c.delivery)) {
+        let best = measureAudio(audio, pitchRange);
+        console.log(`    take 1: range ${best} st`);
+        for (let take = 2; take <= BIG_TAKES; take++) {
+          total += speechText(c.text).length;
+          const t = await record(voice, speechText(c.text), clipSettings(c)), r = measureAudio(t.audio, pitchRange);
+          console.log(`    take ${take}: range ${r} st`);
+          if (r > best) ({ audio, alignment } = t), (best = r);
+        }
+      }
       let rise: number | undefined;
       // A question that comes out sounding like a statement: up to 3 more takes, keep the one that rises most.
       if (ffmpeg && isIntonationQuestion(c.text)) {
