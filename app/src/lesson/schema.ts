@@ -92,6 +92,8 @@ const Line = z.object({
    * this speaker's voice.
    */
   quoteSpeaker: z.string().optional(),
+  /** Shown above a dialogue line instead of the speaker's name, e.g. « La dame » before a reveal. The voice stays the speaker's. */
+  name: z.string().optional(),
   /**
    * How this line is said, when the moment calls for something other than the
    * character's usual delivery: "animated" for panic or excitement, "calm" for a

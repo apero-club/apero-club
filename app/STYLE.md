@@ -13,7 +13,7 @@ Rules marked **(checked)** are enforced by `npm test` (`src/lesson/style.test.ts
 
 ## The story
 
-- **Length (checked):** 10 to 16 lines in 6 to 10 paragraphs, about 120 to 200 French words. Lesson 1: 13 lines, 9 paragraphs, 151 words. Lines are short: 6 to 16 words each, one breath when read aloud.
+- **Length (checked):** 10 to 16 lines in 6 to 10 paragraphs, about 120 to 225 French words. Lesson 1: 13 lines, 9 paragraphs, 151 words. Lines are short: 6 to 16 words each, one breath when read aloud.
 - **Cast (checked):** 2 to 5 characters, with **the narrator first**. Everyone who speaks, even one quoted line, is in the cast (quoted in narration with `quoteSpeaker`), so they appear in the cast key and get their own voice. The narrator, "Moi", is the same person in every lesson: a learner in their 30s living in Paris, friendly and a bit self-mocking. They tell the story in the first person and take part in it.
 - **Recurring characters** keep their `id` (and so their voice): `madame-lefevre` is the neighbour from the third floor; `la-boulangere` is the baker on rue des Martyrs. Bring them back when it fits; new characters need a `description` of age, personality and how they talk.
 - **Shape:** narration paragraphs (2 to 3 lines) set the scene; dialogue lines are one paragraph each, starting with `— `. End on a small, dry punchline, usually from a Parisian character (Madame Lefèvre's "C'est ce que vous dites tous les samedis !").

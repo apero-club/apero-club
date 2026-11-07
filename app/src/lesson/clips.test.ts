@@ -55,14 +55,16 @@ describe('wordTimes', () => {
 });
 
 describe('quoted speakers', () => {
-  it('a narration line that is only a «quote» is spoken by the quoted character, not the narrator', async () => {
-    const { flattenStory } = await import('./story');
-    const { LessonSchema } = await import('./schema');
-    const { readFileSync } = await import('node:fs');
-    const { join } = await import('node:path');
-    const l8 = LessonSchema.parse(JSON.parse(readFileSync(join(__dirname, '../../public/lessons/lesson-008.json'), 'utf8')));
-    const line = flattenStory(l8).lines.find(x => x.fr.startsWith('« Bonsoir'))!;
-    expect(line.parts).toEqual([{ speaker: 'madame-dupont', start: 0, end: line.fr.length }]);
+  it('a narration line that is only a «quote» is spoken by the quoted character, not the narrator', () => {
+    const l = structuredClone(lesson);
+    l.story[0][0] = { ...l.story[0][0], speaker: 'narrator', quoteSpeaker: 'madame-lefevre', fr: '« Bonsoir. J’avais réservé au nom de Dupont. »' };
+    const line = flattenStory(l).lines[0];
+    expect(line.parts).toEqual([{ speaker: 'madame-lefevre', start: 0, end: line.fr.length }]);
+  });
+  it('narration then «quote» splits into two voices', () => {
+    const l = structuredClone(lesson);
+    l.story[0][0] = { ...l.story[0][0], speaker: 'narrator', quoteSpeaker: 'madame-lefevre', fr: 'Elle a dit : « Bonsoir. »' };
+    expect(flattenStory(l).lines[0].parts.map(p => p.speaker)).toEqual(['narrator', 'madame-lefevre']);
   });
 });
 

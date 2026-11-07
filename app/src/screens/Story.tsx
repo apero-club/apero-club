@@ -71,7 +71,7 @@ export function Story({ app }: { app: AppCtx }) {
           const first = lines[ix[0]], who = cast[first.speaker];
           return (
             <div key={pi} style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
-              {isDialogue(first.fr) && <Eyebrow color={tok(who.label ?? who.color)}>{who.name}</Eyebrow>}
+              {isDialogue(first.fr) && <Eyebrow color={tok(who.label ?? who.color)}>{first.name ?? who.name}</Eyebrow>}
               <p style={{ margin: 0, font: '500 18px/1.6 var(--font-body)', color: 'var(--ink-900)' }}>
                 {ix.map((li, k) => {
                   const line = lines[li], isCur = li === sp.cur;
