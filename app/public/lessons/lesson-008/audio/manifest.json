@@ -416,8 +416,8 @@
       ],
       "lufs": -19.5
     },
-    "madame-dupont|Mais la prochaine fois, j’aimerais bien du champagne, moi aussi.": {
-      "file": "50c45b40dce6e41d.mp3",
+    "madame-dupont|Mais la prochaine fois… j’aimerais bien du champagne, moi aussi.": {
+      "file": "6c54d737208198a0.mp3",
       "voice": "40Rmxv431tMaTTYB09bz",
       "delivery": "dfe025ca",
       "words": [
@@ -427,42 +427,42 @@
         ],
         [
           5,
-          0.197
+          0.209
         ],
         [
           8,
-          0.325
+          0.337
         ],
         [
           18,
-          0.72
+          0.755
         ],
         [
           24,
-          0.929
-        ],
-        [
-          35,
           1.277
         ],
         [
+          35,
+          1.637
+        ],
+        [
           40,
-          1.486
+          1.834
         ],
         [
           43,
-          1.614
+          1.95
         ],
         [
           54,
-          2.113
+          2.426
         ],
         [
           58,
-          2.264
+          2.566
         ]
       ],
-      "lufs": -20.3
+      "lufs": -19.4
     },
     "malik|« Ils sont comme ça avec tout le monde ? »": {
       "file": "b9fa901b7cbf11ad.mp3",
@@ -1469,8 +1469,8 @@
       ],
       "lufs": -18.7
     },
-    "narrator|Mais la prochaine fois, j’aimerais bien du champagne, moi aussi.": {
-      "file": "0791e1a6bc5f1be9.mp3",
+    "narrator|Mais la prochaine fois… j’aimerais bien du champagne, moi aussi.": {
+      "file": "223171f8babb1003.mp3",
       "voice": "Xy5q4w05TJGcKXPWeWoz",
       "words": [
         [
@@ -1479,7 +1479,7 @@
         ],
         [
           5,
-          0.209
+          0.197
         ],
         [
           8,
@@ -1487,34 +1487,34 @@
         ],
         [
           18,
-          0.639
+          0.72
         ],
         [
           24,
-          0.848
+          1.138
         ],
         [
           35,
-          1.184
+          1.486
         ],
         [
           40,
-          1.358
+          1.672
         ],
         [
           43,
-          1.463
+          1.788
         ],
         [
           54,
-          2.113
+          2.264
         ],
         [
           58,
-          2.31
+          2.392
         ]
       ],
-      "lufs": -19.6
+      "lufs": -19
     },
     "narrator|Malik a chuchoté : ": {
       "file": "55f45a673b6e7f6f.mp3",
