@@ -49,6 +49,10 @@
       "speed": 0.92
     }
   },
+  "directedModel": "eleven_v3",
+  "directedSettings": {
+    "stability": 0
+  },
   "ambience": {
     "model": "eleven_text_to_sound_v2",
     "durationSeconds": 30,

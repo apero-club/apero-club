@@ -41,6 +41,9 @@ const ONLY = args.find(a => a.startsWith('--lesson='))?.slice(9);
 type Config = {
   model: string; outputFormat: string;
   voiceSettings?: VoiceSettings;
+  /** Model and settings for lines with acting directions (a story line's "direction"). */
+  directedModel?: string;
+  directedSettings?: VoiceSettings;
   /** Delivery presets (flat … theatrical), applied on top of voiceSettings. See scripts/delivery.ts. */
   deliveries?: Partial<Record<Delivery, VoiceSettings>>;
   ambience?: { model?: string; durationSeconds?: number; promptInfluence?: number };
@@ -62,7 +65,32 @@ const leadOf = (text: string) => Math.max(0, forSpeech(text).indexOf(speechText(
 /** Voice settings for a clip: the speaker's delivery, or the line's own. */
 const clipSettings = (c: Clip) => settingsFor(config, registry.characters[c.speaker], c.delivery);
 /** Fingerprint of those settings ('' for the plain base settings). */
-const clipSig = (c: Clip) => settingsSignature(config, clipSettings(c));
+const clipSig = (c: Clip) => [settingsSignature(config, clipSettings(c)), c.direction ? `v3:${c.direction.join(',')}` : ''].filter(Boolean).join('|');
+
+/** ElevenLabs refused this request (bad voice, model or settings): not worth retrying. */
+class Rejected extends Error {}
+
+/** The tags v3 reads as acting directions, e.g. "[gasps] [panicked] ". */
+const directionPrefix = (d: string[]) => d.map(x => `[${x}]`).join(' ') + ' ';
+
+/** Records a clip; one with acting directions goes to the v3 model, or the usual one if v3 refuses. */
+async function recordClip(voice: string, c: Clip) {
+  const text = speechText(c.text);
+  if (c.direction) {
+    const prefix = directionPrefix(c.direction);
+    try {
+      const r = await record(voice, prefix + text, config.directedSettings ?? { stability: 0 }, config.directedModel ?? 'eleven_v3');
+      const a = r.alignment;
+      // Drop the tags from the timing so word highlights line up with the story text.
+      if (a && a.characters.join('').startsWith(prefix)) return { audio: r.audio, alignment: { ...a, characters: a.characters.slice(prefix.length), character_start_times_seconds: a.character_start_times_seconds.slice(prefix.length) } };
+      return r;
+    } catch (e) {
+      if (!(e instanceof Rejected)) throw e;
+      warn(`${c.speaker}: the v3 model refused « ${text} » (${e.message.split('\n')[0]}); recorded with ${config.model} instead.`);
+    }
+  }
+  return record(voice, text, clipSettings(c));
+}
 
 const fileFor = (voice: string, clip: Clip) => {
   const sig = clipSig(clip);
@@ -81,7 +109,7 @@ const riseOf = (audio: Buffer) => measureAudio(audio, endRise);
 /** Big-emotion lines: record this many takes and keep the most expressive. */
 const BIG_DELIVERIES = new Set(['dramatic', 'ecstatic', 'cheeky']), BIG_TAKES = 3;
 
-async function record(voice: string, text: string, settings: VoiceSettings = config.voiceSettings ?? {}) {
+async function record(voice: string, text: string, settings: VoiceSettings = config.voiceSettings ?? {}, model = config.model) {
   const key = process.env.ELEVENLABS_API_KEY;
   if (!key) throw new Stop('ELEVENLABS_API_KEY is not set.');
   const url = `${API}/v1/text-to-speech/${encodeURIComponent(voice)}/with-timestamps?output_format=${encodeURIComponent(config.outputFormat)}`;
@@ -89,7 +117,7 @@ async function record(voice: string, text: string, settings: VoiceSettings = con
     const res = await fetch(url, {
       method: 'POST',
       headers: { 'xi-api-key': key, 'Content-Type': 'application/json', Accept: 'application/json' },
-      body: JSON.stringify({ text, model_id: config.model, voice_settings: settings }),
+      body: JSON.stringify({ text, model_id: model, voice_settings: settings }),
     });
     if (res.ok) {
       const j = await res.json() as { audio_base64: string; alignment?: { characters: string[]; character_start_times_seconds: number[] } };
@@ -97,7 +125,10 @@ async function record(voice: string, text: string, settings: VoiceSettings = con
     }
     const body = await res.text();
     if (res.status === 401 || res.status === 403) throw new Stop(`ElevenLabs refused the request (${res.status}). ${/quota/i.test(body) ? 'You are out of credits for this month.' : 'Check ELEVENLABS_API_KEY.'}\n${body.slice(0, 300)}`);
-    if (res.status === 404 || res.status === 422 || res.status === 400) throw new Stop(`ElevenLabs rejected voice "${voice}" or the settings (${res.status}).\n${body.slice(0, 300)}`);
+    if (res.status === 404 || res.status === 422 || res.status === 400) {
+      const msg = `ElevenLabs rejected voice "${voice}", model ${model} or the settings (${res.status}).\n${body.slice(0, 300)}`;
+      throw model === config.model ? new Stop(msg) : new Rejected(msg);
+    }
     if (attempt >= 5) throw new Stop(`ElevenLabs kept failing (${res.status}).\n${body.slice(0, 300)}`);
     await new Promise(r => setTimeout(r, 2000 * 2 ** (attempt - 1)));
   }
@@ -227,14 +258,14 @@ async function main() {
         console.log(`  = ${c.speaker}: ${speechText(c.text).slice(0, 60)} (reused)`);
         continue;
       }
-      let { audio, alignment } = await record(voice, speechText(c.text), clipSettings(c));
+      let { audio, alignment } = await recordClip(voice, c);
       // A big-emotion line (excited, cheeky…): more takes, keep the one whose voice moves the most.
       if (ffmpeg && c.delivery && BIG_DELIVERIES.has(c.delivery)) {
         let best = measureAudio(audio, pitchRange);
         console.log(`    take 1: range ${best} st`);
         for (let take = 2; take <= BIG_TAKES; take++) {
           total += speechText(c.text).length;
-          const t = await record(voice, speechText(c.text), clipSettings(c)), r = measureAudio(t.audio, pitchRange);
+          const t = await recordClip(voice, c), r = measureAudio(t.audio, pitchRange);
           console.log(`    take ${take}: range ${r} st`);
           if (r > best) ({ audio, alignment } = t), (best = r);
         }
@@ -245,7 +276,7 @@ async function main() {
         rise = riseOf(audio);
         for (let take = 1; (Number.isNaN(rise) ? false : rise < MIN_RISE) && take <= 3; take++) {
           total += speechText(c.text).length;
-          const t = await record(voice, speechText(c.text), clipSettings(c)), r = riseOf(t.audio);
+          const t = await recordClip(voice, c), r = riseOf(t.audio);
           console.log(`    take ${take + 1}: ${r} st`);
           if (r > rise!) ({ audio, alignment } = t), (rise = r);
         }

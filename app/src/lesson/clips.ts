@@ -10,7 +10,7 @@ import type { Delivery, LessonData } from './schema';
 import { flattenStory, forSpeech, stripDash } from './story';
 
 /** `delivery` is set when the story line asks for a delivery of its own. */
-export type Clip = { key: string; speaker: string; text: string; delivery?: Delivery };
+export type Clip = { key: string; speaker: string; text: string; delivery?: Delivery; direction?: string[] };
 
 export const clipKey = (speaker: string, text: string) => `${speaker}|${text}`;
 
@@ -19,17 +19,20 @@ export const speechText = (text: string) => forSpeech(stripDash(text)).trim();
 
 export function collectClips(lesson: LessonData): Clip[] {
   const out = new Map<string, Clip>();
-  const add = (speaker: string, text: string, delivery?: Delivery) => {
+  const add = (speaker: string, text: string, delivery?: Delivery, direction?: string[]) => {
     if (!speechText(text)) return;
     const key = clipKey(speaker, text);
-    if (!out.has(key)) out.set(key, delivery ? { key, speaker, text, delivery } : { key, speaker, text });
+    if (!out.has(key)) out.set(key, { key, speaker, text, ...(delivery ? { delivery } : {}), ...(direction ? { direction } : {}) });
   };
   const narrator = lesson.cast[0].id;
 
   // Story: one clip per voice part (a narration line that quotes someone is two parts).
   for (const line of flattenStory(lesson).lines)
     // On a narration line that quotes someone, the line's delivery is the quoted person's: the narrator stays neutral.
-    for (const p of line.parts) add(p.speaker, line.fr.slice(p.start, p.end), line.quoteSpeaker && p.speaker !== line.quoteSpeaker ? undefined : line.delivery);
+    for (const p of line.parts) {
+      const own = !line.quoteSpeaker || p.speaker === line.quoteSpeaker;
+      add(p.speaker, line.fr.slice(p.start, p.end), own ? line.delivery : undefined, own ? line.direction : undefined);
+    }
 
   // Everything else is read by the narrator, matching what the app plays.
   for (const q of lesson.quiz) if (q.quote) add(narrator, q.quote);

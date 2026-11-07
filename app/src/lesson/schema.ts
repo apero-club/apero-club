@@ -102,6 +102,12 @@ const Line = z.object({
    * 3 takes and keep the most expressive. On a narration line with a «quote», it applies to the quote only.
    */
   delivery: Delivery.optional(),
+  /**
+   * Acting directions for a moment settings can't reach (["gasps", "panicked"]): the
+   * line is recorded with ElevenLabs' v3 model, which reads them as [tags]. Use rarely.
+   * On a narration line with a «quote», it applies to the quote only.
+   */
+  direction: z.array(z.string().regex(/^[a-z][a-z ,'-]*$/i)).min(1).max(4).optional(),
 }).strict();
 
 const Note = z.object({

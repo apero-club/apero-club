@@ -73,4 +73,11 @@ describe('quoted speakers', () => {
     expect(clips.find(c => c.key === clipKey('narrator', 'Elle a crié : '))?.delivery).toBeUndefined();
     expect(clips.find(c => c.key === clipKey('madame-lefevre', '« Au secours ! »'))?.delivery).toBe('dramatic');
   });
+  it('acting directions go with the quote only', () => {
+    const l = structuredClone(lesson);
+    l.story[0][0] = { ...l.story[0][0], speaker: 'narrator', quoteSpeaker: 'madame-lefevre', direction: ['gasps'], fr: 'Elle a crié : « Au secours ! »' };
+    const clips = collectClips(l);
+    expect(clips.find(c => c.key === clipKey('narrator', 'Elle a crié : '))?.direction).toBeUndefined();
+    expect(clips.find(c => c.key === clipKey('madame-lefevre', '« Au secours ! »'))?.direction).toEqual(['gasps']);
+  });
 });
