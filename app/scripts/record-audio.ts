@@ -28,6 +28,7 @@ import type { AudioManifest } from '../src/audio/manifest';
 import { castLesson, CastingError, sampleText, type Pool, type Registry } from './casting';
 import { settingsFor, settingsSignature, type VoiceSettings } from './delivery';
 import { hasFfmpeg, levelClip } from './level-audio';
+import { endRise, isIntonationQuestion, MIN_RISE } from './intonation';
 import type { Delivery } from '../src/lesson/schema';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
@@ -65,8 +66,17 @@ const clipSig = (c: Clip) => settingsSignature(config, clipSettings(c));
 
 const fileFor = (voice: string, clip: Clip) => {
   const sig = clipSig(clip);
-  return createHash('sha1').update(`${voice}|${config.model}|${speechText(clip.text)}${sig ? `|${sig}` : ''}`).digest('hex').slice(0, 16) + '.mp3';
+  // Questions get their own names: a retake must not reuse a file browsers have cached.
+  const q = isIntonationQuestion(clip.text) ? '|q' : '';
+  return createHash('sha1').update(`${voice}|${config.model}|${speechText(clip.text)}${sig ? `|${sig}` : ''}${q}`).digest('hex').slice(0, 16) + '.mp3';
 };
+
+/** Pitch rise at the end of an MP3 (see scripts/intonation.ts). */
+function riseOf(audio: Buffer): number {
+  const tmp = join(ROOT, `.rise-${process.pid}.mp3`);
+  writeFileSync(tmp, audio);
+  try { return endRise(tmp); } finally { unlinkSync(tmp); }
+}
 
 async function record(voice: string, text: string, settings: VoiceSettings = config.voiceSettings ?? {}) {
   const key = process.env.ELEVENLABS_API_KEY;
@@ -122,7 +132,7 @@ async function main() {
   const dir = join(ROOT, 'public/lessons');
   const files = readdirSync(dir).filter(f => /^lesson-\d{3,}\.json$/.test(f) && (!ONLY || f === `${ONLY}.json`)).sort();
   let total = 0, recorded = 0;
-  const ffmpeg = !DRY && hasFfmpeg();
+  const ffmpeg = hasFfmpeg();
   for (const f of files) {
     const lesson = LessonSchema.parse(JSON.parse(readFileSync(join(dir, f), 'utf8')));
     const id = f.slice(0, -5); // lesson-001
@@ -168,10 +178,22 @@ async function main() {
     // Lines of characters still waiting for voice approval aren't recorded yet (the app uses device voices for them).
     const clips = allClips.filter(c => voices[c.speaker]);
     const waiting = allClips.length - clips.length;
-    const todo = clips.filter(c => {
+    // Questions recorded before the intonation check are measured once (free); one that
+    // falls like a statement is recorded again, along with any clip sharing its file.
+    const retake = new Set<string>();
+    const stale = (c: Clip) => {
       const have = manifest.clips[c.key];
       return FORCE || !have || have.voice !== voices[c.speaker] || (have.delivery ?? '') !== clipSig(c) || manifest.model !== config.model || !existsSync(join(out, have.file));
-    });
+    };
+    for (const c of clips) {
+      const have = manifest.clips[c.key];
+      if (!ffmpeg || stale(c) || have.rise !== undefined || !isIntonationQuestion(c.text)) continue;
+      const r = endRise(join(out, have.file));
+      if (Number.isNaN(r) || r >= MIN_RISE) have.rise = Number.isNaN(r) ? 0 : r;
+      else { retake.add(have.file); console.log(`  ? ${c.speaker}: « ${speechText(c.text).slice(0, 50)} » sounds like a statement (${r} st); recording it again`); }
+    }
+    const todo = clips.filter(c => stale(c) || retake.has(manifest.clips[c.key]?.file));
+    if (!DRY) for (const c of todo) if (retake.has(manifest.clips[c.key]?.file)) delete manifest.clips[c.key];
     // Count only audio that doesn't exist yet: identical sentences in the same voice are reused.
     const uniq = new Map(todo.map(c => [fileFor(voices[c.speaker], c), c] as const).filter(([f]) => FORCE || !existsSync(join(out, f))));
     const chars = [...uniq.values()].reduce((n, c) => n + speechText(c.text).length, 0);
@@ -197,17 +219,30 @@ async function main() {
       const twin = !FORCE && Object.entries(manifest.clips).find(([k, v]) => v.file === file && v.voice === voice && k !== c.key && existsSync(join(out, file)));
       if (twin) {
         const shift = leadOf(c.text) - leadOf(twin[0].slice(twin[0].indexOf('|') + 1));
-        manifest.clips[c.key] = { file, voice, ...delivery, words: twin[1].words.map(([o, t]) => [o + shift, t]) };
+        manifest.clips[c.key] = { file, voice, ...delivery, words: twin[1].words.map(([o, t]) => [o + shift, t]), ...(twin[1].rise !== undefined ? { rise: twin[1].rise } : {}) };
         save();
         console.log(`  = ${c.speaker}: ${speechText(c.text).slice(0, 60)} (reused)`);
         continue;
       }
-      const { audio, alignment } = await record(voice, speechText(c.text), clipSettings(c));
+      let { audio, alignment } = await record(voice, speechText(c.text), clipSettings(c));
+      let rise: number | undefined;
+      // A question that comes out sounding like a statement: up to 3 more takes, keep the one that rises most.
+      if (ffmpeg && isIntonationQuestion(c.text)) {
+        rise = riseOf(audio);
+        for (let take = 1; (Number.isNaN(rise) ? false : rise < MIN_RISE) && take <= 3; take++) {
+          total += speechText(c.text).length;
+          const t = await record(voice, speechText(c.text), clipSettings(c)), r = riseOf(t.audio);
+          console.log(`    take ${take + 1}: ${r} st`);
+          if (r > rise!) ({ audio, alignment } = t), (rise = r);
+        }
+        if (rise! < MIN_RISE) warn(`${id}: « ${speechText(c.text)} » still sounds like a statement after 4 takes (${rise} st). Try rewording it.`);
+        if (Number.isNaN(rise)) rise = 0;
+      }
       writeFileSync(join(out, file), audio);
-      manifest.clips[c.key] = { file, voice, ...delivery, words: alignment ? wordTimes(c.text, alignment) : [] };
+      manifest.clips[c.key] = { file, voice, ...delivery, words: alignment ? wordTimes(c.text, alignment) : [], ...(rise !== undefined ? { rise } : {}) };
       save();
       recorded++;
-      console.log(`  ✓ ${c.speaker}: ${speechText(c.text).slice(0, 60)}`);
+      console.log(`  ✓ ${c.speaker}: ${speechText(c.text).slice(0, 60)}${rise !== undefined ? ` (rises ${rise} st)` : ''}`);
     }
     if (ambTodo) {
       writeFileSync(join(out, ambFile!), await generateAmbience(amb!.prompt));

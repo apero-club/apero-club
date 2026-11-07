@@ -66,5 +66,11 @@ describe('quoted speakers', () => {
     l.story[0][0] = { ...l.story[0][0], speaker: 'narrator', quoteSpeaker: 'madame-lefevre', fr: 'Elle a dit : « Bonsoir. »' };
     expect(flattenStory(l).lines[0].parts.map(p => p.speaker)).toEqual(['narrator', 'madame-lefevre']);
   });
+  it('a line’s delivery changes only the quote, not the narrator’s part', () => {
+    const l = structuredClone(lesson);
+    l.story[0][0] = { ...l.story[0][0], speaker: 'narrator', quoteSpeaker: 'madame-lefevre', delivery: 'dramatic', fr: 'Elle a crié : « Au secours ! »' };
+    const clips = collectClips(l);
+    expect(clips.find(c => c.key === clipKey('narrator', 'Elle a crié : '))?.delivery).toBeUndefined();
+    expect(clips.find(c => c.key === clipKey('madame-lefevre', '« Au secours ! »'))?.delivery).toBe('dramatic');
+  });
 });
-

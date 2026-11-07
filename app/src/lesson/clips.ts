@@ -28,7 +28,8 @@ export function collectClips(lesson: LessonData): Clip[] {
 
   // Story: one clip per voice part (a narration line that quotes someone is two parts).
   for (const line of flattenStory(lesson).lines)
-    for (const p of line.parts) add(p.speaker, line.fr.slice(p.start, p.end), line.delivery);
+    // On a narration line that quotes someone, the line's delivery is the quoted person's: the narrator stays neutral.
+    for (const p of line.parts) add(p.speaker, line.fr.slice(p.start, p.end), line.quoteSpeaker && p.speaker !== line.quoteSpeaker ? undefined : line.delivery);
 
   // Everything else is read by the narrator, matching what the app plays.
   for (const q of lesson.quiz) if (q.quote) add(narrator, q.quote);

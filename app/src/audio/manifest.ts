@@ -13,6 +13,8 @@ export type ClipAudio = {
   delivery?: string;
   /** Loudness after levelling to the shared target (scripts/level-audio.ts); absent until levelled. */
   lufs?: number;
+  /** For a question carried by intonation: how much the voice rises at the end, in semitones (scripts/intonation.ts). */
+  rise?: number;
 };
 export type AmbienceAudio = {
   file: string;

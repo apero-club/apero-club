@@ -32,6 +32,11 @@
     "theatrical": {
       "stability": 0.25,
       "style": 0.55
+    },
+    "dramatic": {
+      "stability": 0.2,
+      "style": 0.9,
+      "speed": 1.05
     }
   },
   "ambience": {
