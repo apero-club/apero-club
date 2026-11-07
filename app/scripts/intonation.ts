@@ -89,3 +89,10 @@ export function pitchRange(file: string): number {
   const at = (q: number) => v[Math.min(v.length - 1, Math.floor(q * v.length))];
   return Math.round(12 * Math.log2(at(0.9) / at(0.1)) * 10) / 10;
 }
+
+/** Length of the voiced part, in seconds (silence before and after left out). */
+export function duration(file: string): number {
+  const f = pitchTrack(file);
+  const voiced = f.flatMap((x, i) => (Number.isNaN(x) ? [] : [i]));
+  return voiced.length ? Math.round(((voiced[voiced.length - 1] - voiced[0] + 1) * HOP / RATE) * 100) / 100 : 0;
+}

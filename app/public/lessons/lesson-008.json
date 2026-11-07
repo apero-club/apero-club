@@ -209,8 +209,16 @@
         "delivery": "dramatic",
         "direction": [
           "gasps",
-          "panicked",
-          "incredulous"
+          "incredulous",
+          {
+            "at": "Alors",
+            "tags": [
+              "long pause",
+              "slowly",
+              "apprehensive",
+              "scared"
+            ]
+          }
         ]
       }
     ],

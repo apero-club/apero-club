@@ -77,6 +77,8 @@ const CastMember = z.object({
  */
 export const Delivery = z.enum(['flat', 'calm', 'standard', 'warm', 'animated', 'theatrical', 'dramatic', 'ecstatic', 'cheeky']);
 export type Delivery = z.infer<typeof Delivery>;
+const Tag = z.string().regex(/^[a-z][a-z ,'-]*$/i);
+export type Direction = (string | { at: string; tags: string[] })[];
 
 const Line = z.object({
   /** Optional id so quiz questions can play this line. */
@@ -103,11 +105,12 @@ const Line = z.object({
    */
   delivery: Delivery.optional(),
   /**
-   * Acting directions for a moment settings can't reach (["gasps", "panicked"]): the
-   * line is recorded with ElevenLabs' v3 model, which reads them as [tags]. Use rarely.
-   * On a narration line with a «quote», it applies to the quote only.
+   * Acting directions for a moment settings can't reach: the line is recorded with
+   * ElevenLabs' v3 model, which reads them as [tags]. A plain string goes at the start
+   * ("gasps"); { at, tags } goes just before the words `at` (mid-line change of tone).
+   * Use rarely. On a narration line with a «quote», it applies to the quote only.
    */
-  direction: z.array(z.string().regex(/^[a-z][a-z ,'-]*$/i)).min(1).max(4).optional(),
+  direction: z.array(z.union([Tag, z.object({ at: z.string().min(1), tags: z.array(Tag).min(1).max(4) }).strict()])).min(1).max(6).optional(),
 }).strict();
 
 const Note = z.object({
