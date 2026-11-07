@@ -368,7 +368,8 @@
           2.659
         ]
       ],
-      "lufs": -19.5
+      "lufs": -19.5,
+      "rise": 3.5
     },
     "narrator|— Elle n’est jamais partie. C’est le soleil qui ne revient plus.": {
       "file": "e7151c076f11730b.mp3",
@@ -482,7 +483,8 @@
           2.914
         ]
       ],
-      "lufs": -19.2
+      "lufs": -19.2,
+      "rise": 1.3
     },
     "narrator|— Pas de panique, madame. Elle a pas bougé, votre tour.": {
       "file": "556bd456b967fe8e.mp3",
@@ -1117,7 +1119,8 @@
           1.463
         ]
       ],
-      "lufs": -19.5
+      "lufs": -19.5,
+      "rise": 1.1
     },
     "narrator|J’en veux plus, merci.": {
       "file": "4d4162fdd919ca70.mp3",

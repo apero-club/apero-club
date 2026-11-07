@@ -1580,7 +1580,8 @@
           0.906
         ]
       ],
-      "lufs": -18.2
+      "lufs": -18.2,
+      "rise": 2.8
     },
     "raymond|— Et là, la Comtesse s’est levée, et elle est sortie de son cadre !": {
       "file": "bd8cc2b189a05224.mp3",

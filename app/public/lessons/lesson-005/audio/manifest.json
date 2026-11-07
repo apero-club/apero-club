@@ -668,7 +668,8 @@
           0.998
         ]
       ],
-      "lufs": -19.9
+      "lufs": -19.9,
+      "rise": 12.2
     },
     "narrator|Dans la fromagerie, y a plein de fromages. Trois souris poussent un énorme bout de fromage. Sur le comptoir, y a plus de comté : elles l’ont tout mangé ! Dans la vitrine, y a du brie et des chèvres. Et le pigeon, les souris, il les aime pas du tout !": {
       "file": "05e073412acdb4e5.mp3",
@@ -1011,7 +1012,8 @@
           0.697
         ]
       ],
-      "lufs": -18.2
+      "lufs": -18.2,
+      "rise": 9.3
     },
     "narrator|Il est revenu de la cave avec une minuscule meule au lait cru, affinée pendant deux ans.": {
       "file": "13285ca9b8d2aaa9.mp3",
@@ -2022,7 +2024,7 @@
       "lufs": -20
     },
     "narrator|Vous avez de la tomme de brebis ?": {
-      "file": "833a4d23459e4d44.mp3",
+      "file": "bbefe85a0d599f2f.mp3",
       "voice": "Xy5q4w05TJGcKXPWeWoz",
       "words": [
         [
@@ -2035,7 +2037,7 @@
         ],
         [
           10,
-          0.418
+          0.395
         ],
         [
           13,
@@ -2043,22 +2045,23 @@
         ],
         [
           16,
-          0.627
+          0.615
         ],
         [
           22,
-          0.824
+          0.813
         ],
         [
           25,
-          0.929
+          0.917
         ],
         [
           32,
-          1.324
+          1.265
         ]
       ],
-      "lufs": -18.4
+      "rise": 7.8,
+      "lufs": -17.9
     },
     "narrator|Y a plus de fromage.": {
       "file": "bce7d2750a5ad1a3.mp3",

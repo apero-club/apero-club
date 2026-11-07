@@ -507,7 +507,8 @@
           2.937
         ]
       ],
-      "lufs": -20.1
+      "lufs": -20.1,
+      "rise": 2.2
     },
     "narrator|— Eh oui, on est mariés. Les clients préfèrent les disputes aux prix fixes. C’est mieux pour les affaires.": {
       "file": "b20d35822c89dcf7.mp3",
@@ -2281,7 +2282,8 @@
           1.022
         ]
       ],
-      "lufs": -19.1
+      "lufs": -19.1,
+      "rise": 9.8
     },
     "samir|— Celui-là ! Ma grand-mère va l’adorer. Vous me faites un prix ?": {
       "file": "36471fe6169a9990.mp3",
@@ -2337,7 +2339,8 @@
           3.657
         ]
       ],
-      "lufs": -18.9
+      "lufs": -18.9,
+      "rise": 9.6
     }
   },
   "ambience": {
