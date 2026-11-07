@@ -303,9 +303,9 @@
       "lufs": -20.1
     },
     "madame-benali|— Je suis la gardienne. C’est mon métier.": {
-      "file": "34f85ad00cb2a455.mp3",
+      "file": "d16a2d82dd28c921.mp3",
       "voice": "NpMqpbmlioUVh6og0U5p",
-      "delivery": "dfe025ca",
+      "delivery": "9f4adcba",
       "words": [
         [
           2,
@@ -313,11 +313,11 @@
         ],
         [
           5,
-          0.209
+          0.197
         ],
         [
           10,
-          0.372
+          0.36
         ],
         [
           13,
@@ -325,18 +325,18 @@
         ],
         [
           24,
-          1.44
+          1.405
         ],
         [
           30,
-          1.649
+          1.637
         ],
         [
           34,
           1.788
         ]
       ],
-      "lufs": -18.3
+      "lufs": -19.9
     },
     "madame-benali|— Vous ? Vous êtes infirmier, votre mère vous appelle tous les dimanches et vous détestez la coriandre.": {
       "file": "615d2d803f7a485c.mp3",

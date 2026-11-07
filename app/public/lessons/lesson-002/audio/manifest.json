@@ -231,9 +231,9 @@
       "lufs": -19.5
     },
     "harriet|— Elle est revenue !": {
-      "file": "5b4fd802418dcbd0.mp3",
+      "file": "6af150fd139a991a.mp3",
       "voice": "WQKwBV2Uzw1gSGr69N8I",
-      "delivery": "6b698d5f",
+      "delivery": "5651a2cb",
       "words": [
         [
           2,
@@ -241,18 +241,18 @@
         ],
         [
           7,
-          0.255
+          0.232
         ],
         [
           11,
-          0.348
+          0.372
         ],
         [
           19,
-          0.859
+          0.964
         ]
       ],
-      "lufs": -19.4
+      "lufs": -19.5
     },
     "harriet|— Excusez-moi, monsieur… La tour Eiffel ! Elle n’est plus là !": {
       "file": "cb732382ef0a6fa3.mp3",
