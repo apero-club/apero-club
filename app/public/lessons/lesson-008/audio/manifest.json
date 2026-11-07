@@ -2,6 +2,46 @@
   "version": 1,
   "model": "eleven_multilingual_v2",
   "clips": {
+    "henri|— Bien sûr, monsieur. Le champagne, c’est quatre-vingts euros.": {
+      "file": "e3a92e2125cfce83.mp3",
+      "voice": "AgCKJTfnUgOEB18JJpqg",
+      "delivery": "dfe025ca",
+      "words": [
+        [
+          2,
+          0
+        ],
+        [
+          7,
+          0.302
+        ],
+        [
+          12,
+          0.604
+        ],
+        [
+          22,
+          1.219
+        ],
+        [
+          25,
+          1.382
+        ],
+        [
+          36,
+          2.067
+        ],
+        [
+          42,
+          2.322
+        ],
+        [
+          56,
+          2.879
+        ]
+      ],
+      "lufs": -19.6
+    },
     "henri|— Madame Dupont ! Quel honneur ! Je vous ai gardé notre meilleure table.": {
       "file": "a82d335b0c59f475.mp3",
       "voice": "AgCKJTfnUgOEB18JJpqg",
@@ -62,54 +102,62 @@
       ],
       "lufs": -17.7
     },
-    "henri|— Mais bien sûr ! Tout ce que vous voudrez, madame, monsieur.": {
-      "file": "fb34633345cddcb4.mp3",
+    "henri|— Madame Dupont est déjà là, madame. Ça vous dérangerait d’attendre un peu ?": {
+      "file": "ecee15c911b71081.mp3",
       "voice": "AgCKJTfnUgOEB18JJpqg",
-      "delivery": "8800ea84",
+      "delivery": "dfe025ca",
       "words": [
         [
           2,
           0
         ],
         [
-          7,
-          0.221
-        ],
-        [
-          12,
-          0.453
+          9,
+          0.395
         ],
         [
           16,
-          0.871
+          0.789
         ],
         [
-          18,
-          1.103
+          20,
+          0.882
         ],
         [
-          23,
+          25,
+          1.161
+        ],
+        [
+          29,
           1.324
         ],
         [
-          26,
-          1.463
-        ],
-        [
-          30,
-          1.602
-        ],
-        [
-          35,
-          1.765
-        ],
-        [
-          44,
+          37,
           2.125
         ],
         [
-          52,
-          2.496
+          40,
+          2.322
+        ],
+        [
+          45,
+          2.461
+        ],
+        [
+          57,
+          2.949
+        ],
+        [
+          68,
+          3.367
+        ],
+        [
+          71,
+          3.46
+        ],
+        [
+          75,
+          3.715
         ]
       ],
       "lufs": -19.5
@@ -174,118 +222,6 @@
       ],
       "lufs": -19.4
     },
-    "lea|— Nous sommes vraiment désolés… Ça vous dérangerait de nous laisser finir le dessert ?": {
-      "file": "52adeffa47280701.mp3",
-      "voice": "sQfOhaIRbFZ7R8bP1x9f",
-      "delivery": "7dcbd293",
-      "words": [
-        [
-          2,
-          0
-        ],
-        [
-          7,
-          0.221
-        ],
-        [
-          14,
-          0.441
-        ],
-        [
-          23,
-          0.789
-        ],
-        [
-          32,
-          1.707
-        ],
-        [
-          35,
-          1.904
-        ],
-        [
-          40,
-          2.043
-        ],
-        [
-          52,
-          2.554
-        ],
-        [
-          55,
-          2.67
-        ],
-        [
-          60,
-          2.821
-        ],
-        [
-          68,
-          3.1
-        ],
-        [
-          74,
-          3.437
-        ],
-        [
-          77,
-          3.564
-        ],
-        [
-          85,
-          4.11
-        ]
-      ],
-      "lufs": -19.7
-    },
-    "madame-dupont|— Installez-moi avec eux. Je voudrais savoir comment ils ont fait.": {
-      "file": "b39588ebc22110ed.mp3",
-      "voice": "40Rmxv431tMaTTYB09bz",
-      "delivery": "7dcbd293",
-      "words": [
-        [
-          2,
-          0
-        ],
-        [
-          16,
-          0.697
-        ],
-        [
-          21,
-          1.045
-        ],
-        [
-          26,
-          1.37
-        ],
-        [
-          29,
-          1.556
-        ],
-        [
-          38,
-          1.892
-        ],
-        [
-          45,
-          2.438
-        ],
-        [
-          53,
-          2.786
-        ],
-        [
-          57,
-          2.972
-        ],
-        [
-          61,
-          3.135
-        ]
-      ],
-      "lufs": -20.2
-    },
     "madame-dupont|« Bonsoir. J’avais réservé au nom de Dupont. »": {
       "file": "b5af79563b162d2f.mp3",
       "voice": "40Rmxv431tMaTTYB09bz",
@@ -321,6 +257,50 @@
         ]
       ],
       "lufs": -18.2
+    },
+    "malik|— Je voudrais l’addition, s’il vous plaît. C’était délicieux !": {
+      "file": "bd98b3d3346d9275.mp3",
+      "voice": "QXJCt9L8UTCLre9Ufe5Q",
+      "delivery": "7dcbd293",
+      "words": [
+        [
+          2,
+          0
+        ],
+        [
+          5,
+          0.186
+        ],
+        [
+          14,
+          0.522
+        ],
+        [
+          26,
+          1.091
+        ],
+        [
+          31,
+          1.254
+        ],
+        [
+          36,
+          1.405
+        ],
+        [
+          43,
+          1.881
+        ],
+        [
+          51,
+          2.264
+        ],
+        [
+          61,
+          2.833
+        ]
+      ],
+      "lufs": -19.7
     },
     "malik|« Ce serait possible d’avoir un peu de pain ? »": {
       "file": "0914c894648c0c7e.mp3",
@@ -366,8 +346,8 @@
       ],
       "lufs": -19.4
     },
-    "narrator|— Installez-moi avec eux. Je voudrais savoir comment ils ont fait.": {
-      "file": "4c3049f5679cd0f2.mp3",
+    "narrator|— Bien sûr, monsieur. Le champagne, c’est quatre-vingts euros.": {
+      "file": "7f2ae57efa9b0d18.mp3",
       "voice": "Xy5q4w05TJGcKXPWeWoz",
       "words": [
         [
@@ -375,43 +355,78 @@
           0
         ],
         [
-          16,
-          0.58
+          7,
+          0.267
         ],
         [
-          21,
-          0.859
+          12,
+          0.499
+        ],
+        [
+          22,
+          0.917
+        ],
+        [
+          25,
+          1.057
+        ],
+        [
+          36,
+          1.509
+        ],
+        [
+          42,
+          1.718
+        ],
+        [
+          56,
+          2.31
+        ]
+      ],
+      "lufs": -18.5
+    },
+    "narrator|— Je voudrais l’addition, s’il vous plaît. C’était délicieux !": {
+      "file": "bb0df54af96c06e9.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          2,
+          0
+        ],
+        [
+          5,
+          0.151
+        ],
+        [
+          14,
+          0.476
         ],
         [
           26,
-          1.556
+          1.033
         ],
         [
-          29,
-          1.683
+          31,
+          1.196
         ],
         [
-          38,
-          1.962
+          36,
+          1.335
         ],
         [
-          45,
-          2.299
+          43,
+          1.707
         ],
         [
-          53,
-          2.601
-        ],
-        [
-          57,
-          2.74
+          51,
+          2.055
         ],
         [
           61,
-          2.879
+          2.589
         ]
       ],
-      "lufs": -20.1
+      "lufs": -19.6
     },
     "narrator|— Nous aimerions goûter votre plat du jour. Pourriez-vous nous conseiller un vin ?": {
       "file": "de56dbc9bc31e36b.mp3",
@@ -471,49 +486,6 @@
         ]
       ],
       "lufs": -19.8
-    },
-    "narrator|Au dessert, une dame en manteau noir est entrée.": {
-      "file": "99f5277ccd1ac031.mp3",
-      "voice": "Xy5q4w05TJGcKXPWeWoz",
-      "words": [
-        [
-          0,
-          0
-        ],
-        [
-          3,
-          0.174
-        ],
-        [
-          12,
-          0.824
-        ],
-        [
-          16,
-          0.998
-        ],
-        [
-          21,
-          1.219
-        ],
-        [
-          24,
-          1.3
-        ],
-        [
-          32,
-          1.66
-        ],
-        [
-          37,
-          1.997
-        ],
-        [
-          41,
-          2.125
-        ]
-      ],
-      "lufs": -20.2
     },
     "narrator|Auriez-vous une table près de la fenêtre ?": {
       "file": "070859a693ef4713.mp3",
@@ -880,8 +852,8 @@
       ],
       "lufs": -19.1
     },
-    "narrator|Ça vous dérangerait de nous laisser finir le dessert ?": {
-      "file": "decdb78145f2b60c.mp3",
+    "narrator|Ça vous dérangerait d’attendre un peu ?": {
+      "file": "b1a495469fd11a6b.mp3",
       "voice": "Xy5q4w05TJGcKXPWeWoz",
       "words": [
         [
@@ -890,42 +862,30 @@
         ],
         [
           3,
-          0.221
+          0.197
         ],
         [
           8,
-          0.337
+          0.325
         ],
         [
           20,
-          0.848
+          0.789
         ],
         [
-          23,
-          0.964
+          31,
+          1.207
         ],
         [
-          28,
-          1.115
+          34,
+          1.289
         ],
         [
-          36,
-          1.393
-        ],
-        [
-          42,
-          1.683
-        ],
-        [
-          45,
-          1.8
-        ],
-        [
-          53,
-          2.252
+          38,
+          1.509
         ]
       ],
-      "lufs": -20.2
+      "lufs": -19
     },
     "narrator|Ce serait possible d’avoir de l’eau ?": {
       "file": "248b27271afa702d.mp3",
@@ -1044,8 +1004,8 @@
       ],
       "lufs": -18.6
     },
-    "narrator|Henri est devenu tout blanc. Léa a posé sa fourchette.": {
-      "file": "36350528c11048c4.mp3",
+    "narrator|Deux minutes plus tard, il avait trois sortes de pain.": {
+      "file": "066ce78d52055ffa.mp3",
       "voice": "Xy5q4w05TJGcKXPWeWoz",
       "words": [
         [
@@ -1053,43 +1013,177 @@
           0
         ],
         [
-          6,
-          0.325
+          5,
+          0.221
         ],
         [
-          10,
-          0.418
+          13,
+          0.546
         ],
         [
-          17,
+          18,
           0.731
         ],
         [
-          22,
-          0.894
+          24,
+          1.463
         ],
         [
-          29,
-          1.498
+          27,
+          1.625
         ],
         [
           33,
-          1.858
+          1.823
         ],
         [
-          35,
+          39,
+          2.078
+        ],
+        [
+          46,
+          2.461
+        ],
+        [
+          49,
+          2.601
+        ]
+      ],
+      "lufs": -20.2
+    },
+    "narrator|Elle a attendu une heure, puis elle a dîné seule, près des cuisines.": {
+      "file": "2528a57882086682.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          5,
+          0.232
+        ],
+        [
+          7,
+          0.279
+        ],
+        [
+          15,
+          0.639
+        ],
+        [
+          19,
+          0.801
+        ],
+        [
+          26,
+          1.521
+        ],
+        [
+          31,
+          1.741
+        ],
+        [
+          36,
+          1.881
+        ],
+        [
+          38,
           1.962
         ],
         [
-          40,
-          2.218
+          43,
+          2.241
         ],
         [
-          43,
-          2.368
+          50,
+          2.612
+        ],
+        [
+          55,
+          2.798
+        ],
+        [
+          59,
+          2.914
         ]
       ],
-      "lufs": -19.3
+      "lufs": -19.8
+    },
+    "narrator|En partant, elle a laissé sa carte. Henri est devenu tout blanc : c’était la vraie critique.": {
+      "file": "ea5739e67dbb1e14.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          0.174
+        ],
+        [
+          12,
+          0.615
+        ],
+        [
+          17,
+          0.778
+        ],
+        [
+          19,
+          0.848
+        ],
+        [
+          26,
+          1.103
+        ],
+        [
+          29,
+          1.265
+        ],
+        [
+          36,
+          1.974
+        ],
+        [
+          42,
+          2.299
+        ],
+        [
+          46,
+          2.392
+        ],
+        [
+          53,
+          2.717
+        ],
+        [
+          58,
+          2.868
+        ],
+        [
+          64,
+          3.135
+        ],
+        [
+          66,
+          3.495
+        ],
+        [
+          74,
+          3.796
+        ],
+        [
+          77,
+          3.889
+        ],
+        [
+          83,
+          4.087
+        ]
+      ],
+      "lufs": -19.8
     },
     "narrator|Henri, le maître d’hôtel, les a pris pour Madame Dupont, la critique gastronomique la plus redoutée de Paris.": {
       "file": "477872053534ccc1.mp3",
@@ -1290,6 +1384,37 @@
       ],
       "lufs": -18
     },
+    "narrator|Je voudrais l’addition, s’il vous plaît.": {
+      "file": "c8aad409c83160c4.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          0.174
+        ],
+        [
+          12,
+          0.488
+        ],
+        [
+          24,
+          0.975
+        ],
+        [
+          29,
+          1.149
+        ],
+        [
+          34,
+          1.289
+        ]
+      ],
+      "lufs": -19.3
+    },
     "narrator|Je voudrais la carte, s’il vous plaît.": {
       "file": "3256dbbe20d16e4d.mp3",
       "voice": "Xy5q4w05TJGcKXPWeWoz",
@@ -1324,41 +1449,6 @@
         ]
       ],
       "lufs": -20.3
-    },
-    "narrator|Je voudrais savoir comment ils ont fait.": {
-      "file": "ee0fade00a9123a5.mp3",
-      "voice": "Xy5q4w05TJGcKXPWeWoz",
-      "words": [
-        [
-          0,
-          0
-        ],
-        [
-          3,
-          0.197
-        ],
-        [
-          12,
-          0.522
-        ],
-        [
-          19,
-          0.917
-        ],
-        [
-          27,
-          1.184
-        ],
-        [
-          31,
-          1.324
-        ],
-        [
-          35,
-          1.44
-        ]
-      ],
-      "lufs": -20
     },
     "narrator|Je voulais vous demander un conseil.": {
       "file": "8c51396809eebdc1.mp3",
@@ -1418,8 +1508,8 @@
       ],
       "lufs": -20.2
     },
-    "narrator|La critique les a regardés longtemps… puis elle a éclaté de rire.": {
-      "file": "afae4248a2c984cd.mp3",
+    "narrator|Le chef a envoyé du champagne, et le sommelier ne les quittait plus.": {
+      "file": "1797002d56c8ab87.mp3",
       "voice": "Xy5q4w05TJGcKXPWeWoz",
       "words": [
         [
@@ -1428,112 +1518,57 @@
         ],
         [
           3,
-          0.186
-        ],
-        [
-          12,
-          0.569
-        ],
-        [
-          16,
-          0.743
-        ],
-        [
-          18,
-          0.801
-        ],
-        [
-          27,
-          1.184
-        ],
-        [
-          38,
-          1.985
-        ],
-        [
-          43,
-          2.241
-        ],
-        [
-          48,
-          2.438
-        ],
-        [
-          50,
-          2.647
-        ],
-        [
-          57,
-          3.111
-        ],
-        [
-          60,
-          3.216
-        ]
-      ],
-      "lufs": -19.2
-    },
-    "narrator|Le chef a envoyé un amuse-bouche, et le sommelier ne les quittait plus.": {
-      "file": "e9646e13b5aa520b.mp3",
-      "voice": "Xy5q4w05TJGcKXPWeWoz",
-      "words": [
-        [
-          0,
-          0
-        ],
-        [
-          3,
-          0.197
+          0.209
         ],
         [
           8,
-          0.499
+          0.534
         ],
         [
           10,
-          0.569
+          0.627
         ],
         [
           17,
-          0.929
+          0.917
         ],
         [
           20,
-          1.068
+          1.033
+        ],
+        [
+          31,
+          1.858
         ],
         [
           34,
-          2.125
+          2.009
         ],
         [
           37,
-          2.299
+          2.125
         ],
         [
-          40,
-          2.403
+          47,
+          2.612
         ],
         [
           50,
-          2.844
+          2.74
         ],
         [
-          53,
-          2.984
+          54,
+          2.891
         ],
         [
-          57,
-          3.1
-        ],
-        [
-          66,
-          3.367
+          63,
+          3.239
         ]
       ],
-      "lufs": -19.9
+      "lufs": -18.7
     },
-    "narrator|Léa et Malik fêtaient leur anniversaire de mariage. Leur réservation était au nom de Dupont.": {
-      "file": "d47fa45c851f4a7c.mp3",
+    "narrator|Léa et Malik fêtaient leur anniversaire de mariage. Leur table était au nom de Léa : Dupont.": {
+      "file": "63b2bdfd75c3b2e9.mp3",
       "voice": "Xy5q4w05TJGcKXPWeWoz",
       "words": [
         [
@@ -1542,7 +1577,7 @@
         ],
         [
           4,
-          0.383
+          0.395
         ],
         [
           7,
@@ -1550,57 +1585,65 @@
         ],
         [
           13,
-          1.115
+          0.848
         ],
         [
           22,
-          1.474
+          1.184
         ],
         [
           27,
-          1.614
+          1.37
         ],
         [
           40,
-          2.148
+          1.962
         ],
         [
           43,
-          2.264
+          2.067
         ],
         [
           52,
-          3.309
+          3.065
         ],
         [
           57,
-          3.506
+          3.309
+        ],
+        [
+          63,
+          3.692
         ],
         [
           69,
-          4.11
+          4.029
         ],
         [
-          75,
-          4.307
+          72,
+          4.145
         ],
         [
-          78,
-          4.412
+          76,
+          4.331
         ],
         [
-          82,
-          4.586
+          79,
+          4.458
+        ],
+        [
+          83,
+          4.772
         ],
         [
           85,
-          4.725
+          5.027
         ]
       ],
-      "lufs": -20
+      "lufs": -20.4
     },
-    "narrator|Malik, très nerveux, a ajouté : ": {
-      "file": "877d7e68c9c9ca3d.mp3",
+    "narrator|Malik, un peu surpris, a demandé : ": {
+      "file": "3c90a2be911bb8ff.mp3",
       "voice": "Xy5q4w05TJGcKXPWeWoz",
       "words": [
         [
@@ -1609,22 +1652,26 @@
         ],
         [
           7,
-          0.395
+          0.464
         ],
         [
-          12,
-          0.569
+          10,
+          0.557
         ],
         [
-          21,
-          1.045
+          14,
+          0.685
         ],
         [
           23,
           1.138
         ],
         [
-          30,
+          25,
+          1.242
+        ],
+        [
+          33,
           1.637
         ]
       ],
@@ -1795,6 +1842,57 @@
         ]
       ],
       "lufs": -18.4
+    },
+    "narrator|Pendant ce temps, une dame en manteau noir attendait à l’entrée.": {
+      "file": "c2c89a4d1ae2192a.mp3",
+      "voice": "Xy5q4w05TJGcKXPWeWoz",
+      "words": [
+        [
+          0,
+          0
+        ],
+        [
+          8,
+          0.36
+        ],
+        [
+          11,
+          0.511
+        ],
+        [
+          18,
+          1.184
+        ],
+        [
+          22,
+          1.37
+        ],
+        [
+          27,
+          1.614
+        ],
+        [
+          30,
+          1.695
+        ],
+        [
+          38,
+          1.997
+        ],
+        [
+          43,
+          2.31
+        ],
+        [
+          53,
+          2.728
+        ],
+        [
+          55,
+          2.833
+        ]
+      ],
+      "lufs": -19.6
     },
     "narrator|Pourriez-vous nous apporter l’addition ?": {
       "file": "68064766ff188148.mp3",
